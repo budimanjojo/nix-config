@@ -11,7 +11,7 @@ set wildmenu
 set wildignorecase		" ignore case in directory autocompletion
 set ignorecase smartcase	" ignore case in searches, unless they contain upper-case letters
 set background=dark
-let g:solarized_termcolors=256
+set t_Co=256
 colorscheme default
 
 " set the runtime path to include Vundle and initialize
@@ -28,7 +28,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'valloric/youcompleteme'
 
 " All of your Plugins must be added before the following line
@@ -46,6 +45,7 @@ let g:airline_detect_modified=1
 let g:airline_detect_paste=1
 let g:airline_detect_spell=1
 let g:airline_theme='base16_google'
+set laststatus=2
 
 " syntastic settings
 set statusline+=%#warningmsg#
@@ -57,3 +57,5 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" YCM functions
+set omnifunc=syntaxcomplete#Complete
