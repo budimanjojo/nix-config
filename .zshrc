@@ -68,6 +68,10 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 #   export EDITOR='mvim'
 # fi
 
+# Preferred text editor
+export VISUAL="vim"
+export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'gedit'; else echo 'vim'; fi)"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
