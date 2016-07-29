@@ -13,6 +13,7 @@ set ignorecase smartcase	" ignore case in searches, unless they contain upper-ca
 set background=dark
 set t_Co=256
 colorscheme default
+let mapleader = ","		" leader key is ','
 
 " set the runtime path to include Vundle and initialize
 set rtp+=/home/budiman/.vim/bundle/Vundle.vim
@@ -22,7 +23,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
@@ -59,3 +59,16 @@ let g:syntastic_check_on_wq = 0
 
 " YCM functions
 set omnifunc=syntaxcomplete#Complete
+
+" MAPPINGS GOES HERE
+nmap <leader>w :w!<cr>
+nmap <leader>q :qa!<cr>
+nmap <leader>x :x<cr>
+
+" Tabbing
+map <leader>tn :tabnew<cr>
+map <leader>tc :tabclose<cr>
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
