@@ -3,17 +3,21 @@ set nocompatible
 filetype plugin indent on
 syntax on
 set mouse=a
-set whichwrap=b,s,<,>,[,]	" better arrow key cursor mapping
-set number			" line number
-" set spell
-set noswapfile			" do not add .swapfile after editing file
+set whichwrap=b,s,<,>,[,]   " better arrow key cursor mapping
+set number                  " line number
+set linebreak               " only wrap at a character in breakat option
+set expandtab               " tab is spaces
+set tabstop=2               " number of spaces in a tab
+set shiftwidth=2            " number of spaces for indentation
+set spell                   " enable spelling check
+set noswapfile              " do not add .swapfile after editing file
 set wildmenu
-set wildignorecase		" ignore case in directory autocompletion
-set ignorecase smartcase	" ignore case in searches, unless they contain upper-case letters
+set wildignorecase          " ignore case in directory autocompletion
+set ignorecase smartcase    " ignore case in searches, unless they contain upper-case letters
 set background=dark
 set t_Co=256
 colorscheme default
-let mapleader = ","		" leader key is ','
+let mapleader = ","         " leader key is ','
 
 " set the runtime path to include Vundle and initialize
 set rtp+=/home/budiman/.vim/bundle/Vundle.vim
@@ -31,8 +35,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'valloric/youcompleteme'
 
 " All of your Plugins must be added before the following line
-call vundle#end()		" required
-filetype plugin indent on	" required
+call vundle#end()             " required
+filetype plugin indent on     " required
 
 " plugin functions goes here
 
