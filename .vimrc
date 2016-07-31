@@ -6,6 +6,7 @@ set mouse=a
 set whichwrap=b,s,<,>,[,]   " better arrow key cursor mapping
 set number                  " line number
 set linebreak               " only wrap at a character in breakat option
+set hlsearch                " highlight search
 set expandtab               " tab is spaces
 set tabstop=2               " number of spaces in a tab
 set shiftwidth=2            " number of spaces for indentation
@@ -65,6 +66,8 @@ let g:syntastic_check_on_wq = 0
 set omnifunc=syntaxcomplete#Complete
 
 " MAPPINGS GOES HERE
+
+" Basic functions
 nmap <leader>w :w!<cr>
 nmap <leader>q :qa!<cr>
 nmap <leader>x :x<cr>
@@ -72,7 +75,16 @@ nmap <leader>x :x<cr>
 " Tabbing
 map <leader>tn :tabnew<cr>
 map <leader>tc :tabclose<cr>
+map <leader><Right> :tabNext<cr>
+map <leader><Left> :tabprevious<cr>
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+" Move cursor intuitively, not by line number
+map j gj
+map k gk
+map <Down> gj
+map <Up> gk
+
