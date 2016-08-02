@@ -1,0 +1,52 @@
+-- ******************************************
+--
+-- By Budiman JoJo (budimanjojo@gmail.com)
+--
+-- ******************************************
+
+conky.config = {
+	background = true,
+	double_buffer = true,
+	alignment = 'top_middle',
+	border_width = 0,
+	cpu_avg_samples = 2,
+	default_color = 'white',
+	default_outline_color = 'white',
+	default_shade_color = 'white',
+	draw_borders = false,
+	draw_graph_borders = false,
+	draw_outline = false,
+	draw_shades = false,
+	gap_x = 960,
+	gap_y = 20,
+	net_avg_samples = 2,
+	no_buffers = true,
+	out_to_console = false,
+	out_to_stderr = false,
+	extra_newline = false,
+	own_window = true,
+	own_window_type = 'dock',
+	own_window_transparent = false,
+	own_window_colour = '1D1D1C',
+	own_window_argb_visual = false,
+	own_window_argb_value = 0,
+	own_window_hints = 'undecorated,above,sticky,skip_taskbar,skip_pager',
+	stippled_borders = 0,
+	update_interval = 1.0,
+	uppercase = false,
+	use_spacer = 'none',
+	show_graph_scale = false,
+	show_graph_range = false,
+	use_xft = true,
+	xftalpha = 0.1,
+	xftfont = 'Ubuntu Sans:size=8',
+	override_utf8_locale = true,
+	color0 = 'white',
+	color1 = 'EAEAEA',
+	color2 = 'FFA300',
+	color3 = 'grey',
+}
+
+conky.text = [[
+${font Ubuntu Sans:bold:size=7.5}${color0}${time %a %b %e, %l:%M %p}${font}
+]]
