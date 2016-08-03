@@ -77,6 +77,13 @@ export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'gedit'; else echo 'vim'; fi)"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+if ! pgrep -u $USER ssh-agent > /dev/null; then
+      ssh-agent > ~/.ssh-agent-thing
+    fi
+    if [[ "$SSH_AGENT_PID" == "" ]]; then
+          eval $(<~/.ssh-agent-thing)
+        fi
+        ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
