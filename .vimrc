@@ -83,8 +83,14 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Move cursor intuitively, not by line number
-map j gj
-map k gk
-map <Down> gj
-map <Up> gk
+nnoremap <buffer> <Up> gk
+nnoremap <buffer> <Down> gj
+nnoremap <Down> gj
+nnoremap <Up> gk
+inoremap <buffer> <Up> <C-O>gk
+inoremap <buffer> <Down> <C-O>gj
+vnoremap <buffer> <Up> gk
+vnoremap <buffer> <Down> gj
+nnoremap <buffer>j gj
+nnoremap <buffer>k gk
 
