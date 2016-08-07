@@ -52,6 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git systemd)
 
 source $ZSH/oh-my-zsh.sh
+[[ -e /home/budiman/.profile ]] && emulate sh -c 'source /home/budiman/.profile'
 
 # User configuration
 
@@ -83,3 +84,5 @@ export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'gedit'; else echo 'vim'; fi)"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias sudo='nocorrect sudo -E'
