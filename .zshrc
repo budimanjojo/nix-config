@@ -86,3 +86,4 @@ export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'gedit'; else echo 'vim'; fi)"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias sudo='nocorrect sudo -E'
+alias su='su -m'
