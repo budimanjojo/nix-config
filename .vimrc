@@ -20,6 +20,8 @@ set ignorecase smartcase    " ignore case in searches, unless they contain upper
 set background=dark
 set t_Co=256
 colorscheme default
+highlight SpellBad ctermfg=yellow ctermbg=none
+highlight SpellBad cterm=underline,bold
 let mapleader = ","         " leader key is ','
 
 
