@@ -87,7 +87,8 @@ noremap B ^
 noremap E $
 " }}}
 
-" Tabbing {{{
+" Tabbing and Splitting {{{
+" Tabbing
 map <leader>tn :tabnew<cr>
 map <leader>tc :tabclose<cr>
 map <leader><Right> :tabNext<cr>
@@ -96,6 +97,13 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+" Splitting
+nmap <silent> <A-Up> :wincmd k<cr>
+nmap <silent> <A-Down> :wincmd j<cr>
+nmap <silent> <A-Left> :wincmd h<cr>
+nmap <silent> <A-Right> :wincmd l<cr>
+map <leader>sp :split<cr>
+map <leader>vsp :vsplit<cr>
 " }}}
 
 " Move cursor intuitively, not by line number {{{
@@ -116,7 +124,7 @@ nnoremap <buffer>k gk
 " Requires xclip to be installed first
 " Usage: select texts from Visual mode and press Ctrl+c to copy
 " and Ctrl+v to paste (will disable default Visual Block mapping)
-vnoremap <C-c> :!xclip -f -sel clip<CR>
+vmap <C-c> :!xclip -f -sel clip<CR>
 map <C-v> mz:-1r !xclip -o -sel clip<CR>`z
 "}}}
 
