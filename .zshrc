@@ -2,6 +2,8 @@
 for config_file (/home/budiman/.my-zsh/*.zsh); do
   source $config_file
 done
+# Load git prompt https://github.com/budimanjojo/my-git-prompt.git
+source /home/budiman/.my-git-prompt/git-prompt.zsh
 
 ## All the Basic Stuffs
 bindkey -e                                    # use emacs keybindings
