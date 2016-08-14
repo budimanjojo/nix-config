@@ -1,14 +1,14 @@
 autoload -U compinit && compinit
 unsetopt menucomplete                       # do not autoselect the first completion entry (setting this overwrite automenu)
-setopt autolist								# automatically list choices of ambiguous completion
+setopt autolist								              # automatically list choices of ambiguous completion
 setopt automenu                             # show completion menu on successive tab press
 setopt complete_in_word                     # cursor will stay before and after completion
-setopt correctall							# enable autocorrect
+setopt correctall							              # enable autocorrect
 setopt always_to_end                        # cursor will always moved to the end of word after completion
 setopt globdots                             # enable completion of dotfiles
 setopt longlistjobs                         # list jobs in long format
 zmodload -i zsh/complist
-zstyle ':completion:*' rehash true			# newly added executables are added immediately
+zstyle ':completion:*' rehash true			    # newly added executables are added immediately
 zstyle ':completion:*:*:*:*:*' menu select  # menu selection on tab press
 zstyle ':completion:*' list-colors ''       # show colors on menu completion
 zstyle ':completion:*' insert-tab false     # pressing tab will not insert tab no matter what
@@ -36,6 +36,7 @@ zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+export SPROMPT="By %R do you mean %r?? ([Y]es, [N]o, [A]bort, [E]dit) "
 
 # Don't complete uninteresting users
 zstyle ':completion:*:*:*:users' ignored-patterns \

@@ -6,8 +6,9 @@
 
 conky.config = {
 	background = true,
+  xinerama_head= true,
 	double_buffer = true,
-	alignment = 'top_middle',
+	alignment = 'top_left',
 	border_width = 0,
 	cpu_avg_samples = 2,
 	default_color = 'white',
@@ -17,18 +18,19 @@ conky.config = {
 	draw_graph_borders = false,
 	draw_outline = false,
 	draw_shades = false,
-	gap_x = 960,
-	gap_y = 20,
+	gap_x = -1200,
+	gap_y = 60,
+  minimum_height = 600,
 	net_avg_samples = 2,
 	no_buffers = true,
 	out_to_console = false,
 	out_to_stderr = false,
 	extra_newline = false,
 	own_window = true,
-	own_window_type = 'dock',
-	own_window_transparent = false,
-	own_window_colour = '1D1D1C',
-	own_window_argb_visual = false,
+	own_window_type = 'desktop',
+	own_window_transparent = true,
+	own_window_colour = 'black',
+	own_window_argb_visual = true,
 	own_window_argb_value = 0,
 	own_window_hints = 'undecorated,above,sticky,skip_taskbar,skip_pager',
 	stippled_borders = 0,
@@ -48,5 +50,6 @@ conky.config = {
 }
 
 conky.text = [[
-${font Ubuntu Sans:bold:size=7.5}${color0}${time %a %b %e, %l:%M %p}${font}
+${voffset 10}${color3}${font Ubuntu Sans:bold:size=100}${time %I:%M}${font}${voffset -60}${color2}${font Ubuntu Sans:size=35}${time %d} ${voffset 0}${color1}${font Ubuntu Sans:bold:size=22}${time %B} ${time %Y}${font}${voffset 20}${font Ubuntu Sans:size=58}${offset -210}${time %A}${font}
 ]]
+
