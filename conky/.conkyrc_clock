@@ -6,7 +6,7 @@
 
 conky.config = {
 	background = true,
-  xinerama_head= true,
+  xinerama_head= 0,
 	double_buffer = true,
 	alignment = 'top_left',
 	border_width = 0,
