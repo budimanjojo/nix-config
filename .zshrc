@@ -2,8 +2,6 @@
 for config_file (/home/budiman/.my-zsh/*.zsh); do
   source $config_file
 done
-# Load git prompt https://github.com/budimanjojo/my-git-prompt.git
-source /home/budiman/.my-git-prompt/git-prompt.zsh
 
 ## All the Basic Stuffs
 bindkey -e                                    # use emacs keybindings
@@ -19,3 +17,30 @@ setopt interactivecomments                    # enable comments in interactive s
 ## Default editor
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
+##########################################################################
+################ This section is added by JOJO ZSH PROMPT ################
+###### Please remove all these line below if you no longer using it ######
+######## Thanks for trying me out though, really appreciate it :D ########
+##########################################################################
+
+# Modify this if you have a different installation path, can also make it to something like /home/jojo/ so that you can link this configuration for other users (such as root)
+_JOJO_ZSH_HOME=$HOME
+
+# Modify this to the themes you want to use inside the /themes folder, the theme name without the .zsh, default is jojo theme
+_JOJO_ZSH_THEME=""
+
+# Source JoJo ZSH Prompt Themes
+if [[ -s "${_JOJO_ZSH_HOME}/.jojo-zsh-prompt/base.zsh" ]]; then
+  source "${_JOJO_ZSH_HOME}/.jojo-zsh-prompt/base.zsh"
+fi
+
+# Theme loading
+if [[ $_JOJO_ZSH_THEME != "" ]]; then
+  source "${_JOJO_ZSH_HOME}/.jojo-zsh-prompt/themes/${_JOJO_ZSH_THEME}.zsh"
+else
+  source "${_JOJO_ZSH_HOME}/.jojo-zsh-prompt/themes/jojo.zsh"
+fi
+
+#########################################################################
+######################### END OF JOJO ZSH PROMPT ########################
+#########################################################################
