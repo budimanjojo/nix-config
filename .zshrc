@@ -17,6 +17,8 @@ setopt interactivecomments                    # enable comments in interactive s
 ## Default editor
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
+
+
 ##########################################################################
 ################ This section is added by JOJO ZSH PROMPT ################
 ###### Please remove all these line below if you no longer using it ######
