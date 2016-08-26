@@ -387,3 +387,19 @@ function apt-list-packages {
     awk '{print $1" "$2}'
 }
 # }}}
+
+## MY OWN ALIASES
+# Edit configuration files
+alias vim-alias='$EDITOR ~/.my-zsh/alias.zsh'
+alias vim-vimrc='$EDITOR ~/.vimrc'
+alias vim-zshrc='$EDITOR ~/.zshrc'
+alias vim-i3wm='$EDITOR ~/.config/i3/config'
+alias vim-mirrors='sudo $EDITOR /etc/pacman-mirrors.conf'
+alias vim-pacman='sudo $EDITOR /etc/pacman.conf'
+alias vim-sudoers='sudo $EDITOR visudo'
+alias vim-makepkg='sudo $EDITOR /etc/makepkg.conf'
+alias vim-completion='$EDITOR ~/.my-zsh/completion.zsh'
+alias vim-keybinding='$EDITOR ~/.my-zsh/keybinding.zsh'
+# Basic functions
+alias cpr='cp -R'
+alias mvr='mv -R'

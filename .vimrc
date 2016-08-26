@@ -4,7 +4,7 @@ filetype plugin indent on
 syntax on
 set mouse=a
 set whichwrap=b,s,<,>,[,]   " better arrow key cursor mapping
-set number                  " line number
+set relativenumber          " relative line number
 set linebreak               " only wrap at a character in breakat option
 set hlsearch                " highlight search
 set expandtab               " tab is spaces
