@@ -15,42 +15,45 @@ floating_modifier $alt
 bindsym $alt+F4 kill
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $alt+h focus left
+bindsym $alt+j focus down
+bindsym $alt+k focus up
+bindsym $alt+l right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $alt+Left focus left
+bindsym $alt+Down focus down
+bindsym $alt+Up focus up
+bindsym $alt+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $alt+Shift+h move left
+bindsym $alt+Shift+j move down
+bindsym $alt+Shift+k move up
+bindsym $alt+Shift+l right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $alt+Shift+Left move left
+bindsym $alt+Shift+Down move down
+bindsym $alt+Shift+Up move up
+bindsym $alt+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+h split h
+# split in orientation
+bindsym $mod+h split h; exec notify-send 'tile horizontally'
+bindsym $mod+v split v; exec notify-send 'tile vertically'
+bindsym $mod+q split toggle
 
-# split in vertical orientation
-bindsym $mod+v split v
+# next/previous workspace
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace previous
 
 # enter fullscreen mode for the focused container
-bindsym $mod+Shift+f fullscreen toggle
+bindsym $alt+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+Shift+s layout stacking
-bindsym $mod+Shift+w layout tabbed
-bindsym $mod+Shift+e layout toggle split
+bindsym $alt+Shift+s layout stacking
+bindsym $alt+Shift+w layout tabbed
+bindsym $alt+Shift+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -59,37 +62,37 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $alt+1 workspace $ws1
+bindsym $alt+2 workspace $ws2
+bindsym $alt+3 workspace $ws3
+bindsym $alt+4 workspace $ws4
+bindsym $alt+5 workspace $ws5
+bindsym $alt+6 workspace $ws6
+bindsym $alt+7 workspace $ws7
+bindsym $alt+8 workspace $ws8
+bindsym $alt+9 workspace $ws9
+bindsym $alt+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $alt+Shift+1 move container to workspace $ws1
+bindsym $alt+Shift+2 move container to workspace $ws2
+bindsym $alt+Shift+3 move container to workspace $ws3
+bindsym $alt+Shift+4 move container to workspace $ws4
+bindsym $alt+Shift+5 move container to workspace $ws5
+bindsym $alt+Shift+6 move container to workspace $ws6
+bindsym $alt+Shift+7 move container to workspace $ws7
+bindsym $alt+Shift+8 move container to workspace $ws8
+bindsym $alt+Shift+9 move container to workspace $ws9
+bindsym $alt+Shift+0 move container to workspace $ws10
 
 # resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize"
+bindsym $alt+Shift+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -97,10 +100,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -118,7 +121,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # }}}
 
 ## APPLICATION SHORTCUTS {{{ 
@@ -138,42 +141,101 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton                       
 exec --no-startup-id nm-applet                                                  # Network Manager applet
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1  # Gnome polkit
 exec --no-startup-id xfce4-power-manager                                        # For screen timeout handling
-exec --no-startup-id dropbox                                                    # Dropbox
+exec --no-startup-id dropbox start                                              # Dropbox
 exec --no-startup-id volumeicon                                                 # Volume applet
 exec --no-startup-id xfce4-panel                                                # Xfce panel as dock
 
 # }}}
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
+## WORKSPACE NAMING AND PLACEMENT {{{
+# workspace naming
+set $ws1 1:Browse
+set $ws2 2:Media
+set $ws3 3:VIM
+set $ws4 4:Game
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
+
+# workspace placement
+workspace $ws1 output $monleft
+workspace $ws2 output $monright
+workspace $ws3 output $monleft
+workspace $ws4 output $monright
+workspace $ws5 output $monleft
+workspace $ws6 output $monright
+workspace $ws7 output $monleft
+workspace $ws8 output $monright
+workspace $ws9 output $monleft
+workspace $ws10 output $monright
+
+# }}}
+
+## WINDOW RULES {{{
+for window [window_role="pop-up"] floating enable
+for window [window_role="prefwindow"] floating enable
+for_window [window_role="browser"] floating enable
+for_window [class="notify"] floating enable border pixel 1
+for_window [title="File Transfer*"] floating enable
+for_window [class="Galculator"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Oblogout"] fullscreen enable
+for_window [class="octopi"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="Skype"] floating enable
+
+# }}}
+
+## APPEARANCE {{{
+#colors
+set $border-color #000000
+set $bg-color #2B2B2C
+set $inac-bg-color #2B2B2C
+set $text-color #F3F3F5
+set $inac-text-color #AFAFB1
+set $urgent-bg-color #5d6464
+set $indi-color #4080FB
+
+# title bar colors
+#                         border            background        text              indicator
+client.focused            $border-color     $bg-color         $text-color       $indi-color
+client.unfocused          $border-color     $inac-bg-color    $inac-text-color  $indi-color
+client.focused.inactive   $border-color     $inac-bg-color    $inac-text-color  $indi-color
+client.urgent             $urgent-bg-color  $urgent-bg-color  $text-color       $indi-color
+
+# bar
+set $monleft DVI-I-0
+set $monright HDMI-0
+
+bar {
+  status_command i3blocks
+  color {
+         #                  border            background        text
+         focused_workspace  $border-color     $bg-color         $text-color
+         inactive_workspace $border-color     $inac-bg-color    $inac-text-color
+         urgent_workspace   $urgent-bg-color  $urgent-bg-color  $text-color
+  }
+  strip_workspace_numbers yes
+  position top
+  output $monleft
+}
+
+bar {
+  output $monright
+  strip_workspace_numbers yes
+  position top
+  status_command i3blocks
+  tray_output $monright
+}
+
+# font
 font pango:Ubuntu 10
 
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
-
-
-
-
-
-
-
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3blocks
-        position top
-        output DVI-I-0
-        tray_output DVI-I-0
-}
-bar {
-        output HDMI-0
-        position top
-        status_command i3blocks
-        tray_output HDMI-0
-}
+# }}}
 
