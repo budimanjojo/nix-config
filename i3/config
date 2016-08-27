@@ -129,7 +129,7 @@ bindsym $mod+t exec konsole                               # Terminal
 bindsym $mod+w exec chromium                              # Web Browser
 bindsym $mod+s exec steam                                 # Steam
 bindsym $mod+f exec thunar                                # File Manager
-bindsym $mod+grave exec dmenu_run                         # Program Launcher
+bindsym $mod+grave exec rofi -show run -monitor HDMI-0  # Program Launcher
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop    # dmenu alternative
 
 # }}}
@@ -143,13 +143,15 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1  
 exec --no-startup-id xfce4-power-manager                                        # For screen timeout handling
 exec --no-startup-id dropbox start                                              # Dropbox
 exec --no-startup-id volumeicon                                                 # Volume applet
-exec --no-startup-id xfce4-panel                                                # Xfce panel as dock
+exec --no-startup-id /usr/local/bin/numlock                                     # Numlock on startup
+exec --no-startup-id cairo-dock                                                 # Start Cairo Dock on startup
+exec --no-startup-id $HOME/.conkyrc/.conkyrci3/start_conky_i3.sh                # Start Conky
 
 # }}}
 
 ## WORKSPACE NAMING AND PLACEMENT {{{
 # workspace naming
-set $ws1 1:Browse
+set $ws1 1:
 set $ws2 2:Media
 set $ws3 3:VIM
 set $ws4 4:Game
@@ -175,8 +177,9 @@ workspace $ws10 output $monright
 # }}}
 
 ## WINDOW RULES {{{
-for window [window_role="pop-up"] floating enable
-for window [window_role="prefwindow"] floating enable
+for_window [window_type="dialog,utility,toolbar,splash,menu,dropdown_menu,popup_menu,tooltip,notification"] floating enable border pixel 1
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="prefwindow"] floating enable
 for_window [window_role="browser"] floating enable
 for_window [class="notify"] floating enable border pixel 1
 for_window [title="File Transfer*"] floating enable
@@ -189,6 +192,8 @@ for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Skype"] floating enable
+for_window [class="Cairo-dock"] floating enable
+for_window [class="Steam"] floating enable
 
 # }}}
 
@@ -197,7 +202,7 @@ for_window [class="Skype"] floating enable
 set $border-color #000000
 set $bg-color #2B2B2C
 set $inac-bg-color #2B2B2C
-set $text-color #F3F3F5
+set $text-color #FFFFFF
 set $inac-text-color #AFAFB1
 set $urgent-bg-color #5d6464
 set $indi-color #4080FB
@@ -206,16 +211,17 @@ set $indi-color #4080FB
 #                         border            background        text              indicator
 client.focused            $border-color     $bg-color         $text-color       $indi-color
 client.unfocused          $border-color     $inac-bg-color    $inac-text-color  $indi-color
-client.focused.inactive   $border-color     $inac-bg-color    $inac-text-color  $indi-color
+client.focused_inactive   $border-color     $inac-bg-color    $inac-text-color  $indi-color
 client.urgent             $urgent-bg-color  $urgent-bg-color  $text-color       $indi-color
 
 # bar
-set $monleft DVI-I-0
-set $monright HDMI-0
+set $monleft HDMI-0
+set $monright DVI-I-0
 
 bar {
   status_command i3blocks
-  color {
+  font pango:Ubuntu, Awesome 11
+  colors {
          #                  border            background        text
          focused_workspace  $border-color     $bg-color         $text-color
          inactive_workspace $border-color     $inac-bg-color    $inac-text-color
@@ -223,19 +229,25 @@ bar {
   }
   strip_workspace_numbers yes
   position top
-  output $monleft
-}
-
-bar {
-  output $monright
-  strip_workspace_numbers yes
-  position top
-  status_command i3blocks
-  tray_output $monright
 }
 
 # font
-font pango:Ubuntu 10
+font pango:Ubuntu, Awesome 11
 
 # }}}
 
+set $Locker i3lock && sleep 1
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+  bindsym l exec --no-startup-id $Locker, mode "default"
+  bindsym e exec --no-startup-id i3-msg exit, mode "default"
+  bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+  bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+  bindsym r exec --no-startup-id systemctl reboot, mode "default"
+  bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+bindsym Control+$alt+Delete mode "$mode_system"
