@@ -221,13 +221,9 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Skype"] floating enable
 for_window [class="Cairo-dock"] floating enable
-for_window [class="Steam"] floating enable
+for_window [class="Steam"] floating enable, move container to $ws4
 for_window [class="(?i)nvidia-settings"] floating enable
-for_window [class="smplayer"] fullscreen enable
-
-# window assigned to workspace
-assign [class="Steam"]            → $ws4
-assign [class="smplayer"]         → $ws3
+for_window [class="smplayer"] fullscreen enable, move container to $ws3
 
 # }}}
 
