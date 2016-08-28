@@ -1,3 +1,32 @@
+" VUNDLE PLUGINS {{{
+set nocompatible            " be iMproved, required
+filetype off                " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=/home/budiman/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+" call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Plugins
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'valloric/youcompleteme'
+
+" Color schemes
+Plugin 'flazz/vim-colorschemes'
+
+" All of your Plugins must be added before the following line
+call vundle#end()             " required
+filetype plugin indent on     " required
+"}}}
+
 " VIM BUILT IN OPTIONS
 set nocompatible
 filetype plugin indent on
@@ -5,6 +34,7 @@ syntax on
 set mouse=a
 set whichwrap=b,s,<,>,[,]   " better arrow key cursor mapping
 set relativenumber          " relative line number
+set number                  " display current actual line number too
 set linebreak               " only wrap at a character in breakat option
 set hlsearch                " highlight search
 set expandtab               " tab is spaces
@@ -19,32 +49,8 @@ set wildignorecase          " ignore case in directory autocompletion
 set ignorecase smartcase    " ignore case in searches, unless they contain upper-case letters
 set background=dark
 set t_Co=256
-colorscheme default
-highlight SpellBad ctermfg=yellow ctermbg=none
-highlight SpellBad cterm=underline,bold
+colorscheme maui
 let mapleader = ","         " leader key is ','
-
-
-" VUNDLE PLUGINS {{{
-" set the runtime path to include Vundle and initialize
-set rtp+=/home/budiman/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-" call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/syntastic'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'valloric/youcompleteme'
-
-" All of your Plugins must be added before the following line
-call vundle#end()             " required
-filetype plugin indent on     " required
-"}}}
 
 " PLUGIN OPTIONS GO HERE
 

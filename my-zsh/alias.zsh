@@ -388,7 +388,7 @@ function apt-list-packages {
 }
 # }}}
 
-## MY OWN ALIASES
+## MY OWN ALIASES {{{
 # Edit configuration files
 alias vim-alias='$EDITOR ~/.my-zsh/alias.zsh'
 alias vim-vimrc='$EDITOR ~/.vimrc'
@@ -402,4 +402,5 @@ alias vim-completion='$EDITOR ~/.my-zsh/completion.zsh'
 alias vim-keybinding='$EDITOR ~/.my-zsh/keybinding.zsh'
 # Basic functions
 alias cpr='cp -R'
-alias mvr='mv -R'
+alias rmr='rm -R'
+# }}}
