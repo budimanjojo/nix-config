@@ -91,7 +91,6 @@ bindsym $alt+Shift+9 move container to workspace $ws9
 bindsym $alt+Shift+0 move container to workspace $ws10
 
 # resize window (you can also use the mouse for that)
-bindsym $alt+Shift+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -114,6 +113,7 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+bindsym $alt+Shift+r mode "resize"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -146,44 +146,28 @@ bindsym $mod+f exec thunar                                # File Manager
 bindsym $mod+m exec thunderbird                           # Email Browser
 
 # take a screenshot with scrot, put it in Desktop folder
-bindsym Print exec scrot 'screenshot-%Y-%m-%d_%H-%M.png' -e 'mv $f ~/Desktop/'
-bindsym --release $mod+Print exec scrot 'screenshot-%Y-%m-%d_%H-%M.png' -s -e 'mv $f ~/Desktop/'
+set $mode_screenshot Screenshot (Enter) Full Screen, (s) Select Region 
+mode "$mode_screenshot" {
+  bindsym Return exec --no-startup-id scrot 'screenshot-%Y-%m-%d_%H-%M.png' -e 'mv $f ~/Desktop/', mode "default"
+  bindsym --release s exec --no-startup-id scrot 'screenshot-%Y-%m-%d_%H-%M.png' -s -e 'mv $f ~/Desktop/', mode "default"
+  bindsym Escape mode "default"
+}
+bindsym Print mode "$mode_screenshot"
 
 # rofi as dmenu replacement
-bindsym $mod+grave exec rofi -show run -monitor $monright -lines 15 -eh 2 -width 100 -padding 400 -opacity 85 -config ~/.i3/rofi_config
-
-# }}}
-
-## AUTOSTART APPLICATIONS {{{
-# daemons and applets
-exec --no-startup-id cadence-session-start --maybe-system-start                 # JackAudio server
-exec --no-startup-id pamac-tray                                                 # pamac
-exec --no-startup-id nitrogen --restore; sleep 1; compton                       # Wallpaper and Compositor
-exec --no-startup-id nm-applet                                                  # Network Manager applet
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1  # Gnome polkit
-exec --no-startup-id xfce4-power-manager                                        # For screen timeout handling
-exec --no-startup-id dropbox start                                              # Dropbox
-exec --no-startup-id volumeicon                                                 # Volume applet
-exec --no-startup-id /usr/local/bin/numlock                                     # Numlock on startup
-exec --no-startup-id cairo-dock                                                 # Start Cairo Dock on startup
-exec --no-startup-id $HOME/.conkyrc/.conkyrci3/start_conky_i3.sh                # Start Conky
-
-# applications
-exec --no-startup-id i3-msg '$ws6; exec konsole;'
-exec --no-startup-id i3-msg '$ws4; exec thunar;'
-exec --no-startup-id i3-msg '$ws1; exec chromium --new-window www.youtube.com;'
-exec --no-startup-id i3-msg '$ws2; exec chromium --new-window;'
+bindsym $mod+grave exec rofi -show run -config ~/.i3/rofi_config
+bindsym $alt+Tab exec rofi -show window -config ~/.i3/rofi_config
 
 # }}}
 
 ## WORKSPACE NAMING AND PLACEMENT {{{
 # workspace naming
-set $ws1 1:Youtube
-set $ws2 2:Browse
-set $ws3 3:Movie
-set $ws4 4:Game
-set $ws5 5:File
-set $ws6 6:Terminal
+set $ws1 1:
+set $ws2 2:
+set $ws3 3:
+set $ws4 4:
+set $ws5 5:
+set $ws6 6:
 set $ws7 7
 set $ws8 8
 set $ws9 9
@@ -203,12 +187,36 @@ workspace $ws10 output $monright
 
 # }}}
 
+## AUTOSTART APPLICATIONS {{{
+# daemons and applets
+exec --no-startup-id cadence-session-start --maybe-system-start                 # JackAudio server
+exec --no-startup-id pamac-tray                                                 # pamac
+exec --no-startup-id nitrogen --restore; sleep 1; compton                       # Wallpaper and Compositor
+exec --no-startup-id nm-applet                                                  # Network Manager applet
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1  # Gnome polkit
+exec --no-startup-id xfce4-power-manager                                        # For screen timeout handling
+exec --no-startup-id dropbox start                                              # Dropbox
+exec --no-startup-id volumeicon                                                 # Volume applet
+exec --no-startup-id /usr/local/bin/numlock                                     # Numlock on startup
+exec --no-startup-id docky                                                      # Start Docky on startup
+exec --no-startup-id $HOME/.conkyrc/.conkyrci3/start_conky_i3.sh                # Start Conky
+
+# applications
+exec --no-startup-id exec chromium --new-window www.youtube.com
+exec --no-startup-id exec chromium --new-window
+exec --no-startup-id exec thunar
+exec --no-startup-id exec konsole
+
+# }}}
+
 ## WINDOW RULES {{{
+floating_maximum_size 1676 x 948          # maximum size so that the window will not overlap monitor
+
 # window floating by default
 for_window [window_type="dialog,utility,toolbar,splash,menu,dropdown_menu,popup_menu,tooltip,notification"] floating enable border pixel 1
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="prefwindow"] floating enable
-for_window [window_role="browser"] floating enable resize set 640 480
+for_window [window_role="browser"] floating enable resize set 1000 640, move to workspace $ws2
 for_window [class="notify"] floating enable border pixel 1
 for_window [title="File Transfer*"] floating enable
 for_window [class="Galculator"] floating enable
@@ -218,12 +226,13 @@ for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
-for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="(?VirtualBox"] floating enable
 for_window [class="Skype"] floating enable
-for_window [class="Cairo-dock"] floating enable
-for_window [class="Steam"] floating enable, move container to $ws4
+for_window [class="Steam"] floating enable, move to workspace $ws4
 for_window [class="(?i)nvidia-settings"] floating enable
-for_window [class="smplayer"] fullscreen enable, move container to $ws3
+for_window [class="smplayer"] floating enable, move to workspace $ws3
+for_window [class="Eog"] floating enable
+for_window [title="YouTube - Chromium" window_role="browser" class="chromium"] move to workspace $ws1
 
 # }}}
 
@@ -236,34 +245,37 @@ set $text-color #FFFFFF
 set $inac-text-color #AFAFB1
 set $urgent-bg-color #5d6464
 set $indi-color #4080FB
+set $urgent-text-color #DC322f
 
 # title bar colors
-#                         border            background        text              indicator
-client.focused            $border-color     $bg-color         $text-color       $indi-color
-client.unfocused          $border-color     $inac-bg-color    $inac-text-color  $indi-color
-client.focused_inactive   $border-color     $inac-bg-color    $inac-text-color  $indi-color
-client.urgent             $urgent-bg-color  $urgent-bg-color  $text-color       $indi-color
+#                         border            background        text                indicator
+client.focused            $bg-color         $bg-color         $text-color         $indi-color
+client.unfocused          $bg-color         $inac-bg-color    $inac-text-color    $indi-color
+client.focused_inactive   $bg-color         $inac-bg-color    $inac-text-color    $indi-color
+client.urgent             $urgent-bg-color  $urgent-bg-color  $urgent-text-color  $indi-color
 
 # bar
 set $monleft HDMI-0
 set $monright DVI-I-0
 
 bar {
+  tray_output $monright
   status_command i3blocks
   font pango:Ubuntu, Awesome 11
+  position top
   colors {
          #                  border            background        text
          focused_workspace  $border-color     $bg-color         $text-color
          inactive_workspace $border-color     $inac-bg-color    $inac-text-color
-         urgent_workspace   $urgent-bg-color  $urgent-bg-color  $text-color
+         urgent_workspace   $urgent-bg-color  $urgent-bg-color  $urgent-text-color
   }
-  strip_workspace_numbers yes
-  position top
 }
 
 # font
 font pango:Ubuntu, Awesome 11
 
+# window title
+for_window [class=".*"] title_format "<b> %title</b>"
 # }}}
 
 
