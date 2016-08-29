@@ -109,10 +109,10 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 " Splitting
-nmap <silent> <A-Up> :wincmd k<cr>
-nmap <silent> <A-Down> :wincmd j<cr>
-nmap <silent> <A-Left> :wincmd h<cr>
-nmap <silent> <A-Right> :wincmd l<cr>
+nmap <silent> <C-S-Up> :wincmd k<cr>
+nmap <silent> <C-S-Down> :wincmd j<cr>
+nmap <silent> <C-S-Left> :wincmd h<cr>
+nmap <silent> <C-S-Right> :wincmd l<cr>
 map <leader>sp :split<cr>
 map <leader>vsp :vsplit<cr>
 " }}}

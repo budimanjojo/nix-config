@@ -47,7 +47,7 @@ bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace previous
 
 # enter fullscreen mode for the focused container
-bindsym $alt+f fullscreen toggle
+bindsym $alt+Control+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $alt+Shift+s layout stacking
@@ -139,17 +139,17 @@ bindsym Control+$alt+Delete mode "$mode_system"
 # }}}
 
 ## APPLICATION SHORTCUTS {{{ 
-bindsym $mod+t exec konsole                               # Terminal
+bindsym $mod+t exec gnome-terminal                        # Terminal
 bindsym $mod+w exec chromium                              # Web Browser
 bindsym $mod+s exec steam                                 # Steam
 bindsym $mod+f exec thunar                                # File Manager
 bindsym $mod+m exec thunderbird                           # Email Browser
 
 # take a screenshot with scrot, put it in Desktop folder
-set $mode_screenshot Screenshot (Enter) Full Screen, (s) Select Region 
+set $mode_screenshot Screenshot (Enter) Fullscree Shot, (S) Select Region, (D) 5 secs Delayed Screenshot 
 mode "$mode_screenshot" {
-  bindsym Return exec --no-startup-id scrot 'screenshot-%Y-%m-%d_%H-%M.png' -e 'mv $f ~/Desktop/', mode "default"
-  bindsym --release s exec --no-startup-id scrot 'screenshot-%Y-%m-%d_%H-%M.png' -s -e 'mv $f ~/Desktop/', mode "default"
+  bindsym Return exec --no-startup-id scrot 'screenshot-%Y-%m-%d_%H-%M.png' -e 'mv $f ~/Desktop/' && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
+  bindsym --release s exec --no-startup-id scrot 'screenshot-%Y-%m-%d_%H-%M.png' -s -e 'mv $f ~/Desktop/' && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
   bindsym Escape mode "default"
 }
 bindsym Print mode "$mode_screenshot"
@@ -162,13 +162,13 @@ bindsym $alt+Tab exec rofi -show window -config ~/.i3/rofi_config
 
 ## WORKSPACE NAMING AND PLACEMENT {{{
 # workspace naming
-set $ws1 1:
-set $ws2 2:
-set $ws3 3:
-set $ws4 4:
-set $ws5 5:
-set $ws6 6:
-set $ws7 7
+set $ws1 1:Youtube
+set $ws2 2:Home
+set $ws3 3:Media
+set $ws4 4:Steam
+set $ws5 5:File
+set $ws6 6:Browser
+set $ws7 7:Gimp
 set $ws8 8
 set $ws9 9
 set $ws10 10
@@ -198,14 +198,11 @@ exec --no-startup-id xfce4-power-manager                                        
 exec --no-startup-id dropbox start                                              # Dropbox
 exec --no-startup-id volumeicon                                                 # Volume applet
 exec --no-startup-id /usr/local/bin/numlock                                     # Numlock on startup
-exec --no-startup-id docky                                                      # Start Docky on startup
+exec --no-startup-id xfce4-panel --disable-wm-check                             # Start xfce4-panel on startup
 exec --no-startup-id $HOME/.conkyrc/.conkyrci3/start_conky_i3.sh                # Start Conky
 
 # applications
 exec --no-startup-id exec chromium --new-window www.youtube.com
-exec --no-startup-id exec chromium --new-window
-exec --no-startup-id exec thunar
-exec --no-startup-id exec konsole
 
 # }}}
 
@@ -213,10 +210,10 @@ exec --no-startup-id exec konsole
 floating_maximum_size 1676 x 948          # maximum size so that the window will not overlap monitor
 
 # window floating by default
-for_window [window_type="dialog,utility,toolbar,splash,menu,dropdown_menu,popup_menu,tooltip,notification"] floating enable border pixel 1
+for_window [window_type="dialog,utility,toolbar,splash,menu,dropdown_menu,popup_menu,tooltip,notification,dock"] floating enable border pixel 1
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="prefwindow"] floating enable
-for_window [window_role="browser"] floating enable resize set 1000 640, move to workspace $ws2
+for_window [window_role="browser"] floating enable resize set 1000 640
 for_window [class="notify"] floating enable border pixel 1
 for_window [title="File Transfer*"] floating enable
 for_window [class="Galculator"] floating enable
@@ -228,12 +225,13 @@ for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="(?VirtualBox"] floating enable
 for_window [class="Skype"] floating enable
-for_window [class="Steam"] floating enable, move to workspace $ws4
+for_window [class="Steam"] floating enable, move to workspace $ws4, urgent_workspace
 for_window [class="(?i)nvidia-settings"] floating enable
-for_window [class="smplayer"] floating enable, move to workspace $ws3
+for_window [class="smplayer"] floating enable, move to workspace $ws3, urgent_workspace
 for_window [class="Eog"] floating enable
-for_window [title="YouTube - Chromium" window_role="browser" class="chromium"] move to workspace $ws1
-
+for_window [title="(?i)YouTube - Chromium" window_role="browser" class="chromium"] move to workspace $ws1, urgent_workspace
+for_window [class="Gimp"] move to workspace $ws7, urgent_workspace
+for_window [class="Rhythmbox"] floating enable resize set 1000 640, move to workspace $ws3, urgent_workspace
 # }}}
 
 ## APPEARANCE {{{
@@ -243,16 +241,16 @@ set $bg-color #2B2B2C
 set $inac-bg-color #2B2B2C
 set $text-color #FFFFFF
 set $inac-text-color #AFAFB1
-set $urgent-bg-color #5d6464
+set $urgent-bg-color #DC322F
 set $indi-color #4080FB
-set $urgent-text-color #DC322f
+set $urgent-text-color #000000
 
 # title bar colors
 #                         border            background        text                indicator
 client.focused            $bg-color         $bg-color         $text-color         $indi-color
 client.unfocused          $bg-color         $inac-bg-color    $inac-text-color    $indi-color
 client.focused_inactive   $bg-color         $inac-bg-color    $inac-text-color    $indi-color
-client.urgent             $urgent-bg-color  $urgent-bg-color  $urgent-text-color  $indi-color
+client.urgent             $urgent-bg-color  $urgent-bg-color  $text-color  $indi-color
 
 # bar
 set $monleft HDMI-0
@@ -260,14 +258,18 @@ set $monright DVI-I-0
 
 bar {
   tray_output $monright
-  status_command i3blocks
-  font pango:Ubuntu, Awesome 11
+  status_command i3blocks -c ~/.i3/i3blocks.conf
+  font pango:Ubuntu, Awesome 12
   position top
+  strip_workspace_numbers yes 
   colors {
-         #                  border            background        text
-         focused_workspace  $border-color     $bg-color         $text-color
-         inactive_workspace $border-color     $inac-bg-color    $inac-text-color
-         urgent_workspace   $urgent-bg-color  $urgent-bg-color  $urgent-text-color
+    background #000000
+    statusline #ffffff
+    separator #666666
+    #                  border            background        text
+    focused_workspace  $border-color     $bg-color         $text-color
+    inactive_workspace $border-color     $inac-bg-color    $inac-text-color
+    urgent_workspace   $urgent-bg-color  $urgent-bg-color  $text-color
   }
 }
 
@@ -277,5 +279,3 @@ font pango:Ubuntu, Awesome 11
 # window title
 for_window [class=".*"] title_format "<b> %title</b>"
 # }}}
-
-
