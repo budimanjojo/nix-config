@@ -17,7 +17,7 @@ setopt interactivecomments                    # enable comments in interactive s
 ## Default editor
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
-
+export TERM=xterm-256color
 
 ##########################################################################
 ################ This section is added by JOJO ZSH PROMPT ################
@@ -26,7 +26,7 @@ export VISUAL=/usr/bin/vim
 ##########################################################################
 
 # Modify this if you have a different installation path, can also make it to something like /home/jojo/ so that you can link this configuration for other users (such as root)
-_JOJO_ZSH_HOME=$HOME
+_JOJO_ZSH_HOME=/home/budiman
 
 # Modify this to the themes you want to use inside the /themes folder, the theme name without the .zsh, default is jojo theme
 _JOJO_ZSH_THEME=""

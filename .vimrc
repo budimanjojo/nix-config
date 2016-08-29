@@ -93,6 +93,9 @@ nmap <leader>x :x<cr>
 " Go to beginning and end of line
 noremap B ^
 noremap E $
+" Toggle paste mode, paste using Ctrl+Shift+v inside paste mode will not add
+" comments to the pasted content
+set pastetoggle=<F2>
 " }}}
 
 " Tabbing and Splitting {{{
