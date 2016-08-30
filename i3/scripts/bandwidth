@@ -1,90 +1,96 @@
 #!/bin/bash
-# Copyright (C) 2012 Stefan Breunig <stefan+measure-net-speed@mathphys.fsk.uni-heidelberg.de>
-# Copyright (C) 2014 kaueraal
-# Copyright (C) 2015 Thiago Perrotta <perrotta dot thiago at poli dot ufrj dot br>
+# Source: http://www.onlamp.com/pub/a/linux/2000/11/16/LinuxAdmin.html
 
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
+INSTANCE="${BLOCK_INSTANCE}"
 
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+if [[ "${INSTANCE}" = "" ]]; then
+  INSTANCE="wlp3s0;both"
+fi
 
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+DISPLAY=$(echo "${INSTANCE}" | awk -F ';' '{print $2}')
+INSTANCE=$(echo "${INSTANCE}" | awk -F ';' '{print $1}')
 
-# Use the provided interface, otherwise the device used for the default route.
-if [[ -n $BLOCK_INSTANCE ]]; then
-  INTERFACE=$BLOCK_INSTANCE
+if [[ "${DISPLAY}" = "" ]]; then
+  DISPLAY="both"
+fi
+
+ONE_KB=1024
+ONE_MB=$(echo "${ONE_KB}*1024" | bc -l)
+TEN_MB=$(echo "${ONE_MB}*10" | bc -l)
+OHD_MB=$(echo "${TEN_MB}*10" | bc -l)
+
+URGENT_VALUE="${ONE_MB}"
+
+PREV_IN=0
+PREV_OUT=0
+
+PREV_FILE="/tmp/.bandwidth"
+
+if [[ -f "${PREV_FILE}" ]]; then
+  PREV_CONT=$(cat "${PREV_FILE}")
+  PREV_IN=$(echo "${PREV_CONT}" | head -n 1)
+  PREV_OUT=$(echo "${PREV_CONT}" | tail -n 1)
+fi
+
+BANDWIDTH=$(grep "${INSTANCE}" /proc/net/dev | awk -F: '{print  $2}' | awk '{print $1" "$9}')
+
+if [[ "${BANDWIDTH}" = "" ]]; then
+  exit
+fi
+
+BYTES_IN=$(echo "${BANDWIDTH}" | awk -F ' ' '{print $1}')
+BYTES_OUT=$(echo "${BANDWIDTH}" | awk -F ' ' '{print $2}')
+
+function FormatNumber() {
+  if [[ "${1}" -ge "${OHD_MB}" ]]; then
+    echo $(echo "scale=0;${1}/${ONE_MB}" | bc -l)"mb"
+  elif [[ "${1}" -ge "${TEN_MB}" ]]; then
+    echo $(echo "scale=1;${1}/${ONE_MB}" | bc -l)"mb"
+  elif [[ "${1}" -ge "${ONE_MB}" ]]; then
+    echo $(echo "scale=2;${1}/${ONE_MB}" | bc -l)"mb"
+  elif [[ "${1}" -ge "${ONE_KB}" ]]; then
+    echo $(echo "scale=0;${1}/${ONE_KB}" | bc -l)"kb"
+  else
+    echo "${1}""b"
+  fi
+}
+
+if [[ "${PREV_IN}" != "" ]] && [[ "${PREV_OUT}" != "" ]]; then
+  # Calculate the CPU usage since we last checked.
+  DIFF_IN=$(echo "scale=0;${BYTES_IN} - ${PREV_IN}" | bc -l)
+  DIFF_OUT=$(echo "scale=0;${BYTES_OUT} - ${PREV_OUT}" | bc -l)
+  DIFF_TOTAL=0
+
+  USAGE_IN=$(FormatNumber "${DIFF_IN}")
+  USAGE_OUT=$(FormatNumber "${DIFF_OUT}")
+
+  if [[ "${DISPLAY}" = "both" ]]; then
+    echo "${USAGE_IN} : ${USAGE_OUT}"
+    echo "${USAGE_IN} : ${USAGE_OUT}"
+    echo ""
+    DIFF_TOTAL=$((DIFF_TOTAL+DIFF_IN))
+    DIFF_TOTAL=$((DIFF_TOTAL+DIFF_OUT))
+  elif [[ "${DISPLAY}" = "in" ]]; then
+    echo "${USAGE_IN}"
+    echo "${USAGE_IN}"
+    echo ""
+    DIFF_TOTAL=$((DIFF_TOTAL+DIFF_IN))
+  elif [[ "${DISPLAY}" = "out" ]]; then
+    echo "${USAGE_OUT}"
+    echo "${USAGE_OUT}"
+    echo ""
+    DIFF_TOTAL=$((DIFF_TOTAL+DIFF_OUT))
+  fi
 else
-  INTERFACE=$(ip route | awk '/^default/ { print $5 ; exit }')
+  echo "?"
+  echo "?"
+  echo ""
 fi
 
-# Issue #36 compliant.
-if ! [ -e "/sys/class/net/${INTERFACE}/operstate" ] || ! [ "`cat /sys/class/net/${INTERFACE}/operstate`" = "up" ]
-then
-    echo "$INTERFACE down"
-    echo "$INTERFACE down"
-    echo "#F44336"
-    exit 0
-fi
+# Remember the total and idle CPU times for the next check.
+echo "${BYTES_IN}" > "${PREV_FILE}"
+echo "${BYTES_OUT}" >> "${PREV_FILE}"
 
-# path to store the old results in
-path="/dev/shm/$(basename $0)-${INTERFACE}"
-
-# grabbing data for each adapter.
-read rx < "/sys/class/net/${INTERFACE}/statistics/rx_bytes"
-read tx < "/sys/class/net/${INTERFACE}/statistics/tx_bytes"
-
-# get time
-time=$(date +%s)
-
-# write current data if file does not exist. Do not exit, this will cause
-# problems if this file is sourced instead of executed as another process.
-if ! [[ -f "${path}" ]]; then
-  echo "${time} ${rx} ${tx}" > "${path}"
-  chmod 0666 "${path}"
-fi
-
-# read previous state and update data storage
-read old < "${path}"
-echo "${time} ${rx} ${tx}" > "${path}"
-
-# parse old data and calc time passed
-old=(${old//;/ })
-time_diff=$(( $time - ${old[0]} ))
-
-# sanity check: has a positive amount of time passed
-[[ "${time_diff}" -gt 0 ]] || exit
-
-# calc bytes transferred, and their rate in byte/s
-rx_diff=$(( $rx - ${old[1]} ))
-tx_diff=$(( $tx - ${old[2]} ))
-rx_rate=$(( $rx_diff / $time_diff ))
-tx_rate=$(( $tx_diff / $time_diff ))
-
-# shift by 10 bytes to get KiB/s. If the value is larger than
-# 1024^2 = 1048576, then display MiB/s instead
-
-# incoming
-echo -n " "
-rx_kib=$(( $rx_rate >> 10 ))
-if [[ "$rx_rate" -gt 1048576 ]]; then
-  printf '%sM' "`echo "scale=1; $rx_kib / 1024" | bc`"
-else
-  echo -n "${rx_kib}K"
-fi
-
-echo -n " "
-
-# outgoing
-echo -n " "
-tx_kib=$(( $tx_rate >> 10 ))
-if [[ "$tx_rate" -gt 1048576 ]]; then
-  printf '%sM' "`echo "scale=1; $tx_kib / 1024" | bc`"
-else
-  echo -n "${tx_kib}K"
+if [[ "${DIFF_TOTAL}" -ge "${URGENT_VALUE}" ]]; then
+  exit 33
 fi

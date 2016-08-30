@@ -1,11 +1,23 @@
-#colors
-#set $border-color #000000
-#set $bg-color #2B2B2C
-#set $inac-bg-color #2B2B2C
+# colors
+# Material Design colors
+#set $border-color #LALALA
+#set $bg-color #212121
 #set $text-color #FFFFFF
-#set $inac-text-color #AFAFB1
-#set $urgent-bg-color #5d6464
-#set $indi-color #4080FB
+#set $inac-text-color #808080
+#set $urgent-bg-color #3E50B4
+#set $indi-color #FF3F80
+#set $urgent-text-color #FFFFFF
+
+# Vertex Maia colors
+set $border-color #000000
+set $bg-color #2B2B2C
+set $inac-bg-color #2B2B2C
+set $text-color #FFFFFF
+set $inac-text-color #AFAFB1
+set $urgent-bg-color #DC322F
+set $indi-color #4080FB
+set $urgent-text-color #000000
+
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------

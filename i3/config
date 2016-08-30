@@ -7,7 +7,7 @@
 set $mod Mod4
 set $alt Mod1
 
-# Use Mouse+$mod to drag floating windows to their wanted position
+# use mouse+$mod to drag floating windows to their wanted position
 floating_modifier $alt
 
 # kill focused window
@@ -18,8 +18,7 @@ bindsym $alt+h focus left
 bindsym $alt+j focus down
 bindsym $alt+k focus up
 bindsym $alt+l right
-
-# alternatively, you can use the cursor keys:
+# alternatively, you can use the cursor keys
 bindsym $alt+Left focus left
 bindsym $alt+Down focus down
 bindsym $alt+Up focus up
@@ -30,8 +29,7 @@ bindsym $alt+Shift+h move left
 bindsym $alt+Shift+j move down
 bindsym $alt+Shift+k move up
 bindsym $alt+Shift+l right
-
-# alternatively, you can use the cursor keys:
+# alternatively, you can use the cursor keys
 bindsym $alt+Shift+Left move left
 bindsym $alt+Shift+Down move down
 bindsym $alt+Shift+Up move up
@@ -92,23 +90,15 @@ bindsym $alt+Shift+0 move container to workspace $ws10
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
-
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
-
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -117,8 +107,10 @@ bindsym $alt+Shift+r mode "resize"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -126,31 +118,35 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 set $Locker i3lock && sleep 1
 set $mode_system System (l) lock, (e) logout, (r) reboot, (s) shutdown
 mode "$mode_system" {
-  bindsym l exec --no-startup-id $Locker, mode "default"
-  bindsym e exec --no-startup-id i3-msg exit, mode "default"
-  bindsym r exec --no-startup-id systemctl reboot, mode "default"
-  bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"
-  # back to normal: Enter or Escape
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
+        bindsym l exec --no-startup-id $Locker, mode "default"
+        bindsym e exec --no-startup-id i3-msg exit, mode "default"
+        bindsym r exec --no-startup-id systemctl reboot, mode "default"
+        bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
 }
 bindsym Control+$alt+Delete mode "$mode_system"
 
 # }}}
 
 ## APPLICATION SHORTCUTS {{{ 
+# most used application shortcuts
 bindsym $mod+t exec gnome-terminal                        # Terminal
 bindsym $mod+w exec chromium                              # Web Browser
 bindsym $mod+s exec steam                                 # Steam
 bindsym $mod+f exec thunar                                # File Manager
 bindsym $mod+m exec thunderbird                           # Email Browser
+bindsym $mod+b exec obs                                   # Open Broadcaster Software
+bindsym $mod+g exec gimp                                  # Gimp
+bindsym $
 
 # take a screenshot with scrot, put it in Desktop folder
 set $mode_screenshot Screenshot (Enter) Fullscree Shot, (S) Select Region, (D) 5 secs Delayed Screenshot 
 mode "$mode_screenshot" {
-  bindsym Return exec --no-startup-id scrot 'screenshot-%Y-%m-%d_%H-%M.png' -e 'mv $f ~/Desktop/' && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
-  bindsym --release s exec --no-startup-id scrot 'screenshot-%Y-%m-%d_%H-%M.png' -s -e 'mv $f ~/Desktop/' && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
-  bindsym Escape mode "default"
+        bindsym Return exec --no-startup-id scrot 'screenshot-%Y-%m-%d_%H-%M.png' -e 'mv $f ~/Desktop/' && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
+        bindsym --release s exec --no-startup-id scrot 'screenshot-%Y-%m-%d_%H-%M.png' -s -e 'mv $f ~/Desktop/' && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
+        bindsym Escape mode "default"
 }
 bindsym Print mode "$mode_screenshot"
 
@@ -166,12 +162,16 @@ set $ws1 1:Youtube
 set $ws2 2:Home
 set $ws3 3:Media
 set $ws4 4:Steam
-set $ws5 5:File
-set $ws6 6:Browser
+set $ws5 5:File
+set $ws6 6:Web
 set $ws7 7:Gimp
-set $ws8 8
-set $ws9 9
-set $ws10 10
+set $ws8 8:Vim
+set $ws9 9:Record
+set $ws10 10:BBox
+
+# monitor naming
+set $monleft HDMI-0
+set $monright DVI-I-0
 
 # workspace placement
 workspace $ws1 output $monleft
@@ -191,14 +191,14 @@ workspace $ws10 output $monright
 # daemons and applets
 exec --no-startup-id cadence-session-start --maybe-system-start                 # JackAudio server
 exec --no-startup-id pamac-tray                                                 # pamac
-exec --no-startup-id nitrogen --restore; sleep 1; compton                       # Wallpaper and Compositor
+exec_always --no-startup-id nitrogen --restore; sleep 1; compton                # Wallpaper and Compositor
 exec --no-startup-id nm-applet                                                  # Network Manager applet
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1  # Gnome polkit
 exec --no-startup-id xfce4-power-manager                                        # For screen timeout handling
 exec --no-startup-id dropbox start                                              # Dropbox
 exec --no-startup-id volumeicon                                                 # Volume applet
 exec --no-startup-id /usr/local/bin/numlock                                     # Numlock on startup
-exec --no-startup-id xfce4-panel --disable-wm-check                             # Start xfce4-panel on startup
+exec_always --no-startup-id xfce4-panel --disable-wm-check                      # Xfce4-panel with Dockbarx
 exec --no-startup-id $HOME/.conkyrc/.conkyrci3/start_conky_i3.sh                # Start Conky
 
 # applications
@@ -207,9 +207,10 @@ exec --no-startup-id exec chromium --new-window www.youtube.com
 # }}}
 
 ## WINDOW RULES {{{
-floating_maximum_size 1676 x 948          # maximum size so that the window will not overlap monitor
+# maximum size so that the window will not overlap monitor
+floating_maximum_size 1676 x 948
 
-# window floating by default
+# window floating and placement by default
 for_window [window_type="dialog,utility,toolbar,splash,menu,dropdown_menu,popup_menu,tooltip,notification,dock"] floating enable border pixel 1
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="prefwindow"] floating enable
@@ -223,7 +224,7 @@ for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
-for_window [class="(?VirtualBox"] floating enable
+for_window [class="(?VirtualBox"] floating enable, move to workspace $ws10, urgent_workspace
 for_window [class="Skype"] floating enable
 for_window [class="Steam"] floating enable, move to workspace $ws4, urgent_workspace
 for_window [class="(?i)nvidia-settings"] floating enable
@@ -232,10 +233,22 @@ for_window [class="Eog"] floating enable
 for_window [title="(?i)YouTube - Chromium" window_role="browser" class="chromium"] move to workspace $ws1, urgent_workspace
 for_window [class="Gimp"] move to workspace $ws7, urgent_workspace
 for_window [class="Rhythmbox"] floating enable resize set 1000 640, move to workspace $ws3, urgent_workspace
+for_window [class="obs"] floating enable, move to workspace $ws9, urgent_workspace
+
 # }}}
 
 ## APPEARANCE {{{
-#colors
+# colors
+# Material Design colors
+#set $border-color #LALALA
+#set $bg-color #212121
+#set $text-color #FFFFFF
+#set $inac-text-color #808080
+#set $urgent-bg-color #3E50B4
+#set $indi-color #FF3F80
+#set $urgent-text-color #FFFFFF
+
+# Vertex Maia colors
 set $border-color #000000
 set $bg-color #2B2B2C
 set $inac-bg-color #2B2B2C
@@ -245,37 +258,36 @@ set $urgent-bg-color #DC322F
 set $indi-color #4080FB
 set $urgent-text-color #000000
 
+# font
+font pango:Ubuntu, Awesome 11
+
+# window title formatting
+for_window [class=".*"] title_format "<b> %title</b>"
+
+
 # title bar colors
 #                         border            background        text                indicator
 client.focused            $bg-color         $bg-color         $text-color         $indi-color
 client.unfocused          $bg-color         $inac-bg-color    $inac-text-color    $indi-color
 client.focused_inactive   $bg-color         $inac-bg-color    $inac-text-color    $indi-color
-client.urgent             $urgent-bg-color  $urgent-bg-color  $text-color  $indi-color
+client.urgent             $urgent-bg-color  $urgent-bg-color  $text-color         $indi-color
 
 # bar
-set $monleft HDMI-0
-set $monright DVI-I-0
-
 bar {
-  tray_output $monright
-  status_command i3blocks -c ~/.i3/i3blocks.conf
-  font pango:Ubuntu, Awesome 12
-  position top
-  strip_workspace_numbers yes 
-  colors {
-    background #000000
-    statusline #ffffff
-    separator #666666
-    #                  border            background        text
-    focused_workspace  $border-color     $bg-color         $text-color
-    inactive_workspace $border-color     $inac-bg-color    $inac-text-color
-    urgent_workspace   $urgent-bg-color  $urgent-bg-color  $text-color
-  }
+        tray_output $monright
+        status_command i3blocks -c ~/.i3/i3blocks.conf
+        font pango:Ubuntu, Awesome 12
+        position top
+        strip_workspace_numbers yes
+        colors {
+            background $bg-color
+            statusline $indi-color
+            separator $urgent-bg-color
+            #                  border            background        text
+            focused_workspace  $border-color     $bg-color         $text-color
+            inactive_workspace $border-color     $inac-bg-color    $inac-text-color
+            urgent_workspace   $urgent-bg-color  $urgent-bg-color  $text-color
+            }
 }
 
-# font
-font pango:Ubuntu, Awesome 11
-
-# window title
-for_window [class=".*"] title_format "<b> %title</b>"
 # }}}
