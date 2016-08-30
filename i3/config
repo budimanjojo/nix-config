@@ -139,10 +139,9 @@ bindsym $mod+f exec thunar                                # File Manager
 bindsym $mod+m exec thunderbird                           # Email Browser
 bindsym $mod+b exec obs                                   # Open Broadcaster Software
 bindsym $mod+g exec gimp                                  # Gimp
-bindsym $
 
 # take a screenshot with scrot, put it in Desktop folder
-set $mode_screenshot Screenshot (Enter) Fullscree Shot, (S) Select Region, (D) 5 secs Delayed Screenshot 
+set $mode_screenshot Screenshot (Enter) Fullscree Shot, (S) Select Region
 mode "$mode_screenshot" {
         bindsym Return exec --no-startup-id scrot 'screenshot-%Y-%m-%d_%H-%M.png' -e 'mv $f ~/Desktop/' && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
         bindsym --release s exec --no-startup-id scrot 'screenshot-%Y-%m-%d_%H-%M.png' -s -e 'mv $f ~/Desktop/' && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
@@ -167,7 +166,7 @@ set $ws6 6:Web
 set $ws7 7:Gimp
 set $ws8 8:Vim
 set $ws9 9:Record
-set $ws10 10:BBox
+set $ws10 10:VBox
 
 # monitor naming
 set $monleft HDMI-0
@@ -191,14 +190,15 @@ workspace $ws10 output $monright
 # daemons and applets
 exec --no-startup-id cadence-session-start --maybe-system-start                 # JackAudio server
 exec --no-startup-id pamac-tray                                                 # pamac
-exec_always --no-startup-id nitrogen --restore; sleep 1; compton                # Wallpaper and Compositor
+exec --no-startup-id xfce4-panel --disable-wm-check                             # Xfce4-panel with Dockbarx
+exec_always --no-startup-id nitrogen --restore                                  # Wallpaper and Compositor
+exec --no-startup-id compton -b --config ~/.i3/compton.conf                     # Start compton
 exec --no-startup-id nm-applet                                                  # Network Manager applet
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1  # Gnome polkit
 exec --no-startup-id xfce4-power-manager                                        # For screen timeout handling
 exec --no-startup-id dropbox start                                              # Dropbox
 exec --no-startup-id volumeicon                                                 # Volume applet
 exec --no-startup-id /usr/local/bin/numlock                                     # Numlock on startup
-exec_always --no-startup-id xfce4-panel --disable-wm-check                      # Xfce4-panel with Dockbarx
 exec --no-startup-id $HOME/.conkyrc/.conkyrci3/start_conky_i3.sh                # Start Conky
 
 # applications
@@ -224,7 +224,7 @@ for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
-for_window [class="(?VirtualBox"] floating enable, move to workspace $ws10, urgent_workspace
+for_window [class="VirtualBox"] floating enable, move to workspace $ws10, urgent_workspace
 for_window [class="Skype"] floating enable
 for_window [class="Steam"] floating enable, move to workspace $ws4, urgent_workspace
 for_window [class="(?i)nvidia-settings"] floating enable
@@ -234,6 +234,7 @@ for_window [title="(?i)YouTube - Chromium" window_role="browser" class="chromium
 for_window [class="Gimp"] move to workspace $ws7, urgent_workspace
 for_window [class="Rhythmbox"] floating enable resize set 1000 640, move to workspace $ws3, urgent_workspace
 for_window [class="obs"] floating enable, move to workspace $ws9, urgent_workspace
+for_window [class="Gnome-terminal" title="(?i)VIM"] move to workspace $ws8
 
 # }}}
 
@@ -254,7 +255,7 @@ set $bg-color #2B2B2C
 set $inac-bg-color #2B2B2C
 set $text-color #FFFFFF
 set $inac-text-color #AFAFB1
-set $urgent-bg-color #DC322F
+set $urgent-bg-color #4CAF50
 set $indi-color #4080FB
 set $urgent-text-color #000000
 
@@ -281,8 +282,7 @@ bar {
         strip_workspace_numbers yes
         colors {
             background $bg-color
-            statusline $indi-color
-            separator $urgent-bg-color
+            separator $inac-text-color
             #                  border            background        text
             focused_workspace  $border-color     $bg-color         $text-color
             inactive_workspace $border-color     $inac-bg-color    $inac-text-color

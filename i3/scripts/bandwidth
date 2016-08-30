@@ -19,7 +19,7 @@ ONE_MB=$(echo "${ONE_KB}*1024" | bc -l)
 TEN_MB=$(echo "${ONE_MB}*10" | bc -l)
 OHD_MB=$(echo "${TEN_MB}*10" | bc -l)
 
-URGENT_VALUE="${ONE_MB}"
+URGENT_VALUE="${TEN_MB}"
 
 PREV_IN=0
 PREV_OUT=0
