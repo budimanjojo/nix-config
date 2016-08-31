@@ -141,7 +141,7 @@ bindsym $mod+b exec obs                                   # Open Broadcaster Sof
 bindsym $mod+g exec gimp                                  # Gimp
 
 # take a screenshot with scrot, put it in Desktop folder
-set $mode_screenshot Screenshot (Enter) Fullscree Shot, (S) Select Region
+set $mode_screenshot Screenshot (Enter) Full Screenshot, (S) Select Region
 mode "$mode_screenshot" {
         bindsym Return exec --no-startup-id scrot 'screenshot-%Y-%m-%d_%H-%M.png' -e 'mv $f ~/Desktop/' && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
         bindsym --release s exec --no-startup-id scrot 'screenshot-%Y-%m-%d_%H-%M.png' -s -e 'mv $f ~/Desktop/' && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
@@ -210,6 +210,10 @@ exec --no-startup-id exec chromium --new-window www.youtube.com
 # maximum size so that the window will not overlap monitor
 floating_maximum_size 1676 x 948
 
+# new window rules
+new_float pixel 1
+new_window none
+
 # window floating and placement by default
 for_window [window_type="dialog,utility,toolbar,splash,menu,dropdown_menu,popup_menu,tooltip,notification,dock"] floating enable border pixel 1
 for_window [window_role="pop-up"] floating enable
@@ -226,7 +230,7 @@ for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="VirtualBox"] floating enable, move to workspace $ws10, urgent_workspace
 for_window [class="Skype"] floating enable
-for_window [class="Steam"] floating enable, move to workspace $ws4, urgent_workspace
+for_window [class="Steam"] move to workspace $ws4, layout tabbed, urgent_workspace
 for_window [class="(?i)nvidia-settings"] floating enable
 for_window [class="smplayer"] floating enable, move to workspace $ws3, urgent_workspace
 for_window [class="Eog"] floating enable
@@ -289,5 +293,11 @@ bar {
             urgent_workspace   $urgent-bg-color  $urgent-bg-color  $text-color
             }
 }
+
+# i3-gaps
+gaps inner 10
+gaps outer 0
+smart_borders on
+smart_gaps on
 
 # }}}
