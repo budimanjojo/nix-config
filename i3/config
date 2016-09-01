@@ -36,9 +36,9 @@ bindsym $alt+Shift+Up move up
 bindsym $alt+Shift+Right move right
 
 # split in orientation
-bindsym $mod+h split h; exec notify-send 'tile horizontally'
-bindsym $mod+v split v; exec notify-send 'tile vertically'
-bindsym $mod+q split toggle
+bindsym $alt+Control+h split h; exec notify-send 'tile horizontally'
+bindsym $alt+Control+v split v; exec notify-send 'tile vertically'
+bindsym $alt+Control+q split toggle
 
 # next/previous workspace
 bindsym $mod+Tab workspace next
@@ -114,7 +114,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# Press Ctrl+Alt+Tab will show log out menu
+# Press Ctrl+Alt+Delete will show log out menu
 set $Locker i3lock && sleep 1
 set $mode_system System (l) lock, (e) logout, (r) reboot, (s) shutdown
 mode "$mode_system" {
@@ -127,6 +127,8 @@ mode "$mode_system" {
         bindsym Escape mode "default"
 }
 bindsym Control+$alt+Delete mode "$mode_system"
+# Alternatively, press Ctrl+Alt+End to use oblogout instead
+bindsym Control+$alt+End exec --no-startup-id oblogout
 
 # }}}
 
@@ -134,7 +136,7 @@ bindsym Control+$alt+Delete mode "$mode_system"
 # most used application shortcuts
 bindsym $mod+t exec gnome-terminal                        # Terminal
 bindsym $mod+w exec chromium                              # Web Browser
-bindsym $mod+s exec steam                                 # Steam
+bindsym $mod+s exec --no-startup-id steam                 # Steam
 bindsym $mod+f exec thunar                                # File Manager
 bindsym $mod+m exec thunderbird                           # Email Browser
 bindsym $mod+b exec obs                                   # Open Broadcaster Software
@@ -238,7 +240,7 @@ for_window [title="(?i)YouTube - Chromium" window_role="browser" class="chromium
 for_window [class="Gimp"] move to workspace $ws7, urgent_workspace
 for_window [class="Rhythmbox"] floating enable resize set 1000 640, move to workspace $ws3, urgent_workspace
 for_window [class="obs"] floating enable, move to workspace $ws9, urgent_workspace
-for_window [class="Gnome-terminal" title="(?i)VIM"] move to workspace $ws8
+for_window [class="Gnome-terminal" title="(?i)VIM"] move to workspace $ws8, focus
 
 # }}}
 

@@ -36,8 +36,8 @@ alias po='popd'
 # }}}
 
 ## SUDO ALIASES {{{
-alias _='sudo'
-alias please='sudo'
+alias _='sudo '
+alias please='sudo '
 alias visudo='sudo EDITOR="$EDITOR" visudo'
 # }}}
 
@@ -50,7 +50,7 @@ alias man='nocorrect man'
 alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv'
 alias mysql='nocorrect mysql'
-alias sudo='nocorrect sudo '
+alias sudo='nocorrect sudo'
 alias git='nocorrect git'
 alias vim='nocorrect vim'
 alias ssh='nocorrect ssh'
