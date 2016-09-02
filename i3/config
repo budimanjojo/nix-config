@@ -220,7 +220,7 @@ new_window none
 for_window [window_type="dialog,utility,toolbar,splash,menu,dropdown_menu,popup_menu,tooltip,notification,dock"] floating enable border pixel 1
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="prefwindow"] floating enable
-for_window [window_role="browser"] floating enable resize set 1000 640
+for_window [window_role="browser"] floating enable
 for_window [class="notify"] floating enable border pixel 1
 for_window [title="File Transfer*"] floating enable
 for_window [class="Galculator"] floating enable
