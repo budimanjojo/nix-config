@@ -143,7 +143,7 @@ bindsym $mod+b exec obs                                   # Open Broadcaster Sof
 bindsym $mod+g exec gimp                                  # Gimp
 
 # take a screenshot with scrot, put it in Desktop folder
-set $mode_screenshot Screenshot (Enter) Full Screenshot, (S) Select Region
+set $mode_screenshot Screenshot (Enter), Full Screenshot, (S) Select Region
 mode "$mode_screenshot" {
         bindsym Return exec --no-startup-id scrot 'screenshot-%Y-%m-%d_%H-%M.png' -e 'mv $f ~/Desktop/' && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
         bindsym --release s exec --no-startup-id scrot 'screenshot-%Y-%m-%d_%H-%M.png' -s -e 'mv $f ~/Desktop/' && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
@@ -194,7 +194,7 @@ exec --no-startup-id cadence-session-start --maybe-system-start                 
 exec --no-startup-id pamac-tray                                                 # pamac
 exec --no-startup-id xfce4-panel --disable-wm-check                             # Xfce4-panel with Dockbarx
 exec_always --no-startup-id nitrogen --restore                                  # Wallpaper and Compositor
-exec --no-startup-id compton -b --config ~/.i3/compton.conf                     # Start compton
+exec --no-startup-id compton -b                                                 # Start compton
 exec --no-startup-id nm-applet                                                  # Network Manager applet
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1  # Gnome polkit
 exec --no-startup-id xfce4-power-manager                                        # For screen timeout handling
