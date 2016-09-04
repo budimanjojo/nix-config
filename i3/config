@@ -17,7 +17,7 @@ bindsym $alt+F4 kill
 bindsym $alt+h focus left
 bindsym $alt+j focus down
 bindsym $alt+k focus up
-bindsym $alt+l right
+bindsym $alt+l focus right
 # alternatively, you can use the cursor keys
 bindsym $alt+Left focus left
 bindsym $alt+Down focus down
@@ -28,7 +28,7 @@ bindsym $alt+Right focus right
 bindsym $alt+Shift+h move left
 bindsym $alt+Shift+j move down
 bindsym $alt+Shift+k move up
-bindsym $alt+Shift+l right
+bindsym $alt+Shift+l move right
 # alternatively, you can use the cursor keys
 bindsym $alt+Shift+Left move left
 bindsym $alt+Shift+Down move down
@@ -48,9 +48,9 @@ bindsym $mod+Shift+Tab workspace previous
 bindsym $alt+Control+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $alt+Shift+s layout stacking
-bindsym $alt+Shift+w layout tabbed
-bindsym $alt+Shift+e layout toggle split
+bindsym $alt+Control+s layout stacking
+bindsym $alt+Control+w layout tabbed
+bindsym $alt+Control+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -143,10 +143,11 @@ bindsym $mod+b exec obs                                   # Open Broadcaster Sof
 bindsym $mod+g exec gimp                                  # Gimp
 
 # take a screenshot with scrot, put it in Desktop folder
+set $scrot_capture scrot 'screenshot-%Y-%m-%d_%H-%M.png' -e 'mv $f ~/Desktop/'
 set $mode_screenshot Screenshot (Enter), Full Screenshot, (S) Select Region
 mode "$mode_screenshot" {
-        bindsym Return exec --no-startup-id scrot 'screenshot-%Y-%m-%d_%H-%M.png' -e 'mv $f ~/Desktop/' && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
-        bindsym --release s exec --no-startup-id scrot 'screenshot-%Y-%m-%d_%H-%M.png' -s -e 'mv $f ~/Desktop/' && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
+        bindsym Return exec --no-startup-id $scrot_capture && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
+        bindsym --release s exec --no-startup-id $scrot_capture && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
         bindsym Escape mode "default"
 }
 bindsym Print mode "$mode_screenshot"
