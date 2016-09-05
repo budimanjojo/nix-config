@@ -49,7 +49,7 @@ set wildignorecase          " ignore case in directory autocompletion
 set ignorecase smartcase    " ignore case in searches, unless they contain upper-case letters
 set background=dark
 set t_Co=256
-colorscheme maui
+colorscheme badwolf
 let mapleader = ","         " leader key is ','
 
 " PLUGIN OPTIONS GO HERE

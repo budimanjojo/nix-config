@@ -153,8 +153,8 @@ mode "$mode_screenshot" {
 bindsym Print mode "$mode_screenshot"
 
 # rofi as dmenu replacement
-bindsym $mod+grave exec rofi -show run -config ~/.i3/rofi_config
-bindsym $alt+Tab exec rofi -show window -config ~/.i3/rofi_config
+bindsym $mod+grave exec rofi -show run 
+bindsym $alt+Tab exec rofi -show window
 
 # }}}
 
