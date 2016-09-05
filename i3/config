@@ -42,7 +42,7 @@ bindsym $alt+Control+q split toggle
 
 # next/previous workspace
 bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace previous
+bindsym $mod+Shift+Tab workspace prev
 
 # enter fullscreen mode for the focused container
 bindsym $alt+Control+f fullscreen toggle
@@ -204,14 +204,11 @@ exec --no-startup-id volumeicon                                                 
 exec --no-startup-id /usr/local/bin/numlock                                     # Numlock on startup
 exec --no-startup-id $HOME/.conkyrc/.conkyrci3/start_conky_i3.sh                # Start Conky
 
-# applications
-exec --no-startup-id exec chromium --new-window www.youtube.com
-
 # }}}
 
 ## WINDOW RULES {{{
 # maximum size so that the window will not overlap monitor
-floating_maximum_size 1676 x 948
+floating_maximum_size 1676 x 976
 
 # new window rules
 new_float pixel 1
@@ -231,17 +228,24 @@ for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
-for_window [class="VirtualBox"] floating enable, move to workspace $ws10, urgent_workspace
+for_window [class="VirtualBox"] floating enable, move to workspace $ws10
 for_window [class="Skype"] floating enable
-for_window [class="Steam"] move to workspace $ws4, layout tabbed, urgent_workspace
+for_window [class="Steam"] move to workspace $ws4, layout tabbed
 for_window [class="(?i)nvidia-settings"] floating enable
-for_window [class="smplayer"] floating enable, move to workspace $ws3, urgent_workspace
+for_window [class="smplayer"] floating enable, move to workspace $ws3
 for_window [class="Eog"] floating enable
-for_window [title="(?i)YouTube - Chromium" window_role="browser" class="chromium"] move to workspace $ws1, urgent_workspace
-for_window [class="Gimp"] move to workspace $ws7, urgent_workspace
-for_window [class="Rhythmbox"] floating enable resize set 1000 640, move to workspace $ws3, urgent_workspace
-for_window [class="obs"] floating enable, move to workspace $ws9, urgent_workspace
+for_window [title="(?i)YouTube - Chromium" window_role="browser" class="chromium"] move to workspace $ws1
+for_window [class="Gimp"] move to workspace $ws7
+for_window [class="Rhythmbox"] floating enable resize set 1000 640, move to workspace $ws3
+for_window [class="obs"] floating enable, move to workspace $ws9
 for_window [class="Gnome-terminal" title="(?i)VIM"] move to workspace $ws8, focus
+
+# focus wrapping
+force_focus_wrapping yes
+
+# default focus settings
+focus_follows_mouse yes
+focus_on_window_activation urgent
 
 # }}}
 
