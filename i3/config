@@ -44,6 +44,9 @@ bindsym $alt+Control+q split toggle
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
+# change borders
+bindsym Control+$alt+t border toggle
+
 # enter fullscreen mode for the focused container
 bindsym $alt+Control+f fullscreen toggle
 
@@ -141,6 +144,7 @@ bindsym $mod+f exec thunar                                # File Manager
 bindsym $mod+m exec thunderbird                           # Email Browser
 bindsym $mod+b exec obs                                   # Open Broadcaster Software
 bindsym $mod+g exec gimp                                  # Gimp
+bindsym $mod+k exec kdenlive                              # Kdenlive
 
 # take a screenshot with scrot, put it in Desktop folder
 set $scrot_capture scrot 'screenshot-%Y-%m-%d_%H-%M.png' -e 'mv $f ~/Desktop/'
