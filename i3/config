@@ -215,8 +215,8 @@ exec --no-startup-id $HOME/.conkyrc/.conkyrci3/start_conky_i3.sh                
 floating_maximum_size 1676 x 976
 
 # new window rules
-new_float pixel 1
-new_window none
+new_float none
+new_window pixel 1
 
 # window floating and placement by default
 for_window [window_type="dialog,utility,toolbar,splash,menu,dropdown_menu,popup_menu,tooltip,notification,dock"] floating enable border pixel 1
@@ -279,14 +279,14 @@ font pango:Ubuntu, Awesome 11
 
 # window title formatting
 for_window [class=".*"] title_format "<b> %title</b>"
-
+for_window [class="^.*"] border pixel 1
 
 # title bar colors
-#                         border            background        text                indicator
-client.focused            $bg-color         $bg-color         $text-color         $indi-color
-client.unfocused          $bg-color         $inac-bg-color    $inac-text-color    $indi-color
-client.focused_inactive   $bg-color         $inac-bg-color    $inac-text-color    $indi-color
-client.urgent             $urgent-bg-color  $urgent-bg-color  $text-color         $indi-color
+#                         border            background        text                indicator     decoration_border
+client.focused            $bg-color         $bg-color         $text-color         $indi-color   $border-color
+client.unfocused          $bg-color         $inac-bg-color    $inac-text-color    $indi-color   $border-color
+client.focused_inactive   $bg-color         $inac-bg-color    $inac-text-color    $indi-color   $border-color
+client.urgent             $urgent-bg-color  $urgent-bg-color  $text-color         $indi-color   $border-color
 
 # bar
 bar {
@@ -306,9 +306,9 @@ bar {
 }
 
 # i3-gaps
-gaps inner 10
-gaps outer 0
-smart_borders on
-smart_gaps on
+#gaps inner 10
+#gaps outer 0
+#smart_borders on
+#smart_gaps on
 
 # }}}
