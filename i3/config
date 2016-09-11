@@ -45,7 +45,7 @@ bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
 # change borders
-bindsym Control+$alt+t border toggle
+bindsym $alt+Control+t border toggle
 
 # enter fullscreen mode for the focused container
 bindsym $alt+Control+f fullscreen toggle
@@ -129,22 +129,22 @@ mode "$mode_system" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym Control+$alt+Delete mode "$mode_system"
+bindsym $alt+Control+Delete mode "$mode_system"
 # Alternatively, press Ctrl+Alt+End to use oblogout instead
-bindsym Control+$alt+End exec --no-startup-id oblogout
+bindsym $alt+Control+End exec --no-startup-id oblogout
 
 # }}}
 
 ## APPLICATION SHORTCUTS {{{ 
 # most used application shortcuts
-bindsym $mod+t exec gnome-terminal                        # Terminal
-bindsym $mod+w exec chromium                              # Web Browser
+bindsym $mod+t exec --no-startup-id gnome-terminal        # Terminal
+bindsym $mod+w exec --no-startup-id chromium              # Web Browser
 bindsym $mod+s exec --no-startup-id steam                 # Steam
-bindsym $mod+f exec thunar                                # File Manager
-bindsym $mod+m exec thunderbird                           # Email Browser
-bindsym $mod+b exec obs                                   # Open Broadcaster Software
-bindsym $mod+g exec gimp                                  # Gimp
-bindsym $mod+k exec kdenlive                              # Kdenlive
+bindsym $mod+f exec --no-startup-id thunar                # File Manager
+bindsym $mod+m exec --no-startup-id thunderbird           # Email Browser
+bindsym $mod+b exec --no-startup-id obs                   # Open Broadcaster Software
+bindsym $mod+g exec --no-startup-id gimp                  # Gimp
+bindsym $mod+k exec --no-startup-id kdenlive              # Kdenlive
 
 # take a screenshot with scrot, put it in Desktop folder
 set $scrot_capture scrot 'screenshot-%Y-%m-%d_%H-%M.png' -e 'mv $f ~/Desktop/'
@@ -218,7 +218,7 @@ floating_maximum_size 1676 x 976
 new_float none
 new_window pixel 1
 
-# window floating and placement by default
+# window floating and layout
 for_window [window_type="dialog,utility,toolbar,splash,menu,dropdown_menu,popup_menu,tooltip,notification,dock"] floating enable border pixel 1
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="prefwindow"] floating enable
@@ -232,17 +232,24 @@ for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
-for_window [class="VirtualBox"] floating enable, move to workspace $ws10
+for_window [class="VirtualBox"] floating enable
 for_window [class="Skype"] floating enable
-for_window [class="Steam"] move to workspace $ws4, layout tabbed
+for_window [class="Steam"] layout tabbed
 for_window [class="(?i)nvidia-settings"] floating enable
-for_window [class="smplayer"] floating enable, move to workspace $ws3
+for_window [class="smplayer"] floating enable
 for_window [class="Eog"] floating enable
-for_window [title="(?i)YouTube - Chromium" window_role="browser" class="chromium"] move to workspace $ws1
-for_window [class="Gimp"] move to workspace $ws7
-for_window [class="Rhythmbox"] floating enable resize set 1000 640, move to workspace $ws3
-for_window [class="obs"] floating enable, move to workspace $ws9
-for_window [class="Gnome-terminal" title="(?i)VIM"] move to workspace $ws8, focus
+for_window [class="Rhythmbox"] floating enable resize set 1000 640
+for_window [class="obs"] floating enable
+
+# window placement
+for_window [title="(?i)YouTube - Chromium" window_role="browser" class="chromium"] move container to workspace $ws1
+assign [class="smplayer"]                                                           → $ws3
+assign [class="Rhythmbox"]                                                          → $ws3
+assign [class="Steam"]                                                              → $ws4
+assign [class="Gimp"]                                                               → $ws7
+for_window [class="Gnome-terminal" title="(?i)VIM"] move container to workspace $ws8; workspace $ws8
+assign [class="obs"]                                                                → $ws9
+assign [class="VirtualBox"]                                                         → $ws10
 
 # focus wrapping
 force_focus_wrapping yes
@@ -279,7 +286,6 @@ font pango:Ubuntu, Awesome 11
 
 # window title formatting
 for_window [class=".*"] title_format "<b> %title</b>"
-for_window [class="^.*"] border pixel 1
 
 # title bar colors
 #                         border            background        text                indicator     decoration_border
@@ -304,11 +310,5 @@ bar {
             urgent_workspace   $urgent-bg-color  $urgent-bg-color  $text-color
             }
 }
-
-# i3-gaps
-#gaps inner 10
-#gaps outer 0
-#smart_borders on
-#smart_gaps on
 
 # }}}
