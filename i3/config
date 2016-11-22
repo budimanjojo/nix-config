@@ -148,10 +148,11 @@ bindsym $mod+k exec --no-startup-id kdenlive              # Kdenlive
 
 # take a screenshot with scrot, put it in Desktop folder
 set $scrot_capture scrot 'screenshot-%Y-%m-%d_%H-%M.png' -e 'mv $f ~/Desktop/'
+set $scrot_region scrot -s 'screenshot-%Y-%m-%d_%H-%M.png' -e 'mv $f ~/Desktop/'
 set $mode_screenshot Screenshot (Enter), Full Screenshot, (S) Select Region
 mode "$mode_screenshot" {
         bindsym Return exec --no-startup-id $scrot_capture && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
-        bindsym --release s exec --no-startup-id $scrot_capture && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
+        bindsym --release s exec --no-startup-id $scrot_region && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
         bindsym Escape mode "default"
 }
 bindsym Print mode "$mode_screenshot"
