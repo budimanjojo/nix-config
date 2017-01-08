@@ -405,4 +405,6 @@ alias vim-dunst='$EDITOR ~/.config/dunst'
 # Basic functions
 alias cpr='cp -R'
 alias rmr='rm -R'
+# Convertions
+alias cwtp='find ./ -name "*.webp" -exec dwebp {} -o {}.png \; && rm -R *.webp' # convert webp to png
 # }}}
