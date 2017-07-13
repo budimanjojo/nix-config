@@ -137,14 +137,14 @@ bindsym $alt+Control+End exec --no-startup-id oblogout
 
 ## APPLICATION SHORTCUTS {{{ 
 # most used application shortcuts
-bindsym $mod+t exec --no-startup-id gnome-terminal        # Terminal
-bindsym $mod+w exec --no-startup-id chromium              # Web Browser
-bindsym $mod+s exec --no-startup-id steam                 # Steam
-bindsym $mod+f exec --no-startup-id thunar                # File Manager
-bindsym $mod+m exec --no-startup-id thunderbird           # Email Browser
-bindsym $mod+b exec --no-startup-id obs                   # Open Broadcaster Software
-bindsym $mod+g exec --no-startup-id gimp                  # Gimp
-bindsym $mod+k exec --no-startup-id kdenlive              # Kdenlive
+bindsym $mod+t exec --no-startup-id gnome-terminal                                    # Terminal
+bindsym $mod+w exec --no-startup-id chromium --no-default-browser-check               # Web Browser
+bindsym $mod+s exec --no-startup-id steam                                             # Steam
+bindsym $mod+f exec --no-startup-id thunar                                            # File Manager
+bindsym $mod+m exec --no-startup-id thunderbird                                       # Email Browser
+bindsym $mod+b exec --no-startup-id obs                                               # Open Broadcaster Software
+bindsym $mod+g exec --no-startup-id gimp                                              # Gimp
+bindsym $mod+k exec --no-startup-id kdenlive                                          # Kdenlive
 
 # take a screenshot with scrot, put it in Desktop folder
 set $scrot_capture scrot 'screenshot-%Y-%m-%d_%H-%M.png' -e 'mv $f ~/Desktop/'
@@ -196,7 +196,7 @@ workspace $ws10 output $monright
 
 ## AUTOSTART APPLICATIONS {{{
 # daemons and applets
-exec --no-startup-id cadence-session-start --maybe-system-start                 # JackAudio server
+#exec --no-startup-id cadence-session-start --maybe-system-start                 # JackAudio server
 exec --no-startup-id pamac-tray                                                 # pamac
 exec --no-startup-id xfce4-panel --disable-wm-check                             # Xfce4-panel with Dockbarx
 exec_always --no-startup-id nitrogen --restore                                  # Wallpaper and Compositor
@@ -208,6 +208,7 @@ exec --no-startup-id dropbox start                                              
 exec --no-startup-id sleep 2 && volumeicon                                      # Volume applet
 exec --no-startup-id /usr/local/bin/numlock                                     # Numlock on startup
 exec --no-startup-id $HOME/.conkyrc/.conkyrci3/start_conky_i3.sh                # Start Conky
+exec --no-startup-id /usr/bin/owncloud                                          # Start Owncloud
 
 # }}}
 

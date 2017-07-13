@@ -28,7 +28,7 @@ export VISUAL=/usr/bin/vim
 _JOJO_ZSH_HOME=/home/budiman
 
 # Modify this to the themes you want to use inside the /themes folder, the theme name without the .zsh, default is jojo theme
-_JOJO_ZSH_THEME=""
+_JOJO_ZSH_THEME="simpleasy"
 
 # Source JoJo ZSH Prompt Themes
 if [[ -s "${_JOJO_ZSH_HOME}/.jojo-zsh-prompt/base.zsh" ]]; then

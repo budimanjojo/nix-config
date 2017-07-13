@@ -407,4 +407,5 @@ alias cpr='cp -R'
 alias rmr='rm -R'
 # Convertions
 alias cwtp='find ./ -name "*.webp" -exec dwebp {} -o {}.png \; && rm -R *.webp' # convert webp to png
+alias cjtp='find ./ -name "*.jpg" -exec convert {} {}.png \; && rm -R *.jpg' # convert jpg to png
 # }}}
