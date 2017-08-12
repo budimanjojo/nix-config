@@ -407,9 +407,6 @@ alias cpr='cp -R'
 alias rmr='rm -R'
 # Convertions
 alias cwtp='find ./ -name "*.webp" -exec dwebp {} -o {}.png \; && rm -R *.webp' # convert webp to png
-<<<<<<< HEAD
-alias cptj='mogrify -flatten -format jpg *.png && rm -R *.png'
-=======
+alias cptj='mogrify -flatten -format jpg *.png && rm -R *.png' # convert png to jpg
 alias cjtp='find ./ -name "*.jpg" -exec convert {} {}.png \; && rm -R *.jpg' # convert jpg to png
->>>>>>> 62a4604f3d01c5c0840a40dfd4c1b9172cbb3851
 # }}}
