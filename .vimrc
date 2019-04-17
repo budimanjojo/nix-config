@@ -52,6 +52,15 @@ set t_Co=256
 colorscheme badwolf
 let mapleader = ","         " leader key is ','
 
+" NEOVIM SPECIFIC OPTIONS
+if !has('nvim')
+  set ttymouse=xterm2
+endif
+
+if has('nvim')
+  set clipboard=unnamedplus
+endif
+
 " PLUGIN OPTIONS GO HERE
 
 " open up nerdtree file browser if no file is selected to be edited {{{
