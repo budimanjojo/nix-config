@@ -1,5 +1,5 @@
 #########################################################################################################
-#                                       MY I3WM CUSTOM CONFIG FILE                                      #                    
+#                                       MY I3WM CUSTOM CONFIG FILE                                      #
 #########################################################################################################
 
 ## KEYBINDING {{{
@@ -135,7 +135,7 @@ bindsym $alt+Control+End exec --no-startup-id oblogout
 
 # }}}
 
-## APPLICATION SHORTCUTS {{{ 
+## APPLICATION SHORTCUTS {{{
 # most used application shortcuts
 bindsym $mod+t exec --no-startup-id gnome-terminal                                    # Terminal
 bindsym $mod+w exec --no-startup-id chromium --no-default-browser-check               # Web Browser
@@ -147,8 +147,8 @@ bindsym $mod+g exec --no-startup-id gimp                                        
 bindsym $mod+k exec --no-startup-id kdenlive                                          # Kdenlive
 
 # take a screenshot with scrot, put it in Desktop folder
-set $scrot_capture scrot 'screenshot-%Y-%m-%d_%H-%M.png' -e 'mv $f ~/Desktop/'
-set $scrot_region scrot -s 'screenshot-%Y-%m-%d_%H-%M.png' -e 'mv $f ~/Desktop/'
+set $scrot_capture scrot 'screenshot-%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Desktop/'
+set $scrot_region scrot -s 'screenshot-%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Desktop/'
 set $mode_screenshot Screenshot (Enter), Full Screenshot, (S) Select Region
 mode "$mode_screenshot" {
         bindsym Return exec --no-startup-id $scrot_capture && paplay ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
@@ -158,7 +158,7 @@ mode "$mode_screenshot" {
 bindsym Print mode "$mode_screenshot"
 
 # rofi as dmenu replacement
-bindsym $mod+grave exec rofi -show run 
+bindsym $mod+grave exec rofi -show run
 bindsym $alt+Tab exec rofi -show window
 
 # }}}
@@ -204,11 +204,11 @@ exec --no-startup-id compton -b                                                 
 exec --no-startup-id nm-applet                                                  # Network Manager applet
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1  # Gnome polkit
 exec --no-startup-id xfce4-power-manager                                        # For screen timeout handling
-exec --no-startup-id dropbox start                                              # Dropbox
+# exec --no-startup-id dropbox start                                            # Dropbox
 exec --no-startup-id sleep 2 && volumeicon                                      # Volume applet
 exec --no-startup-id /usr/local/bin/numlock                                     # Numlock on startup
 exec --no-startup-id $HOME/.conkyrc/.conkyrci3/start_conky_i3.sh                # Start Conky
-exec --no-startup-id /usr/bin/owncloud                                          # Start Owncloud
+exec --no-startup-id /usr/bin/nextcloud                                         # Start Nextcloud
 
 # }}}
 
@@ -249,7 +249,6 @@ assign [class="smplayer"]                                                       
 assign [class="Rhythmbox"]                                                          → $ws3
 assign [class="Steam"]                                                              → $ws4
 assign [class="Gimp"]                                                               → $ws7
-for_window [class="Gnome-terminal" title="(?i)VIM"] move container to workspace $ws8; workspace $ws8
 assign [class="obs"]                                                                → $ws9
 assign [class="VirtualBox"]                                                         → $ws10
 
@@ -274,14 +273,24 @@ focus_on_window_activation urgent
 #set $urgent-text-color #FFFFFF
 
 # Vertex Maia colors
-set $border-color #000000
-set $bg-color #2B2B2C
-set $inac-bg-color #2B2B2C
+#set $border-color #000000
+#set $bg-color #2B2B2C
+#set $inac-bg-color #2B2B2C
+#set $text-color #FFFFFF
+#set $inac-text-color #AFAFB1
+#set $urgent-bg-color #4CAF50
+#set $indi-color #4080FB
+#set $urgent-text-color #000000
+
+# Base16-Google colors
+set $border-color #1D1F21
+set $bg-color #1D1F21
+set $inac-bg-color #1D1F21
 set $text-color #FFFFFF
-set $inac-text-color #AFAFB1
-set $urgent-bg-color #4CAF50
-set $indi-color #4080FB
-set $urgent-text-color #000000
+set $inac-text-color #C5C8C6
+set $urgent-bg-color #198844
+set $indi-color #3971ED
+set $urgent-text-color #1D1F21
 
 # font
 font pango:Ubuntu, Awesome 11
