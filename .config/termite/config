@@ -6,7 +6,7 @@
 #cell_width_scale = 1.0
 #clickable_url = true
 #dynamic_title = true
-font = UbuntuMono Nerd Font 14
+font = UbuntuMono Nerd Font 12
 #fullscreen = true
 #icon_name = terminal
 #mouse_autohide = false
