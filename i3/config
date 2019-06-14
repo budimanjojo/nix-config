@@ -286,11 +286,11 @@ focus_on_window_activation urgent
 set $border-color #1D1F21
 set $bg-color #1D1F21
 set $inac-bg-color #1D1F21
-set $text-color #FFFFFF
+set $text-color #CC342B
 set $inac-text-color #C5C8C6
-set $urgent-bg-color #198844
+set $urgent-bg-color #CC342B
 set $indi-color #3971ED
-set $urgent-text-color #1D1F21
+set $urgent-text-color #FFFFFF
 
 # font
 font pango:Ubuntu, Awesome 11
@@ -303,7 +303,7 @@ for_window [class=".*"] title_format "<b> %title</b>"
 client.focused            $bg-color         $bg-color         $text-color         $indi-color   $border-color
 client.unfocused          $bg-color         $inac-bg-color    $inac-text-color    $indi-color   $border-color
 client.focused_inactive   $bg-color         $inac-bg-color    $inac-text-color    $indi-color   $border-color
-client.urgent             $urgent-bg-color  $urgent-bg-color  $text-color         $indi-color   $border-color
+client.urgent             $urgent-bg-color  $urgent-bg-color  $urgent-text-color  $indi-color   $border-color
 
 # bar
 bar {
@@ -318,7 +318,7 @@ bar {
             #                  border            background        text
             focused_workspace  $border-color     $bg-color         $text-color
             inactive_workspace $border-color     $inac-bg-color    $inac-text-color
-            urgent_workspace   $urgent-bg-color  $urgent-bg-color  $text-color
+            urgent_workspace   $urgent-bg-color  $urgent-bg-color  $urgent-text-color
             }
 }
 
