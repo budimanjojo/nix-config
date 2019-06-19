@@ -316,6 +316,7 @@ bar {
             background $bg-color
             separator $inac-text-color
             #                  border            background        text
+            active_workspace   $border-color     $bg-color         $text-color
             focused_workspace  $border-color     $bg-color         $text-color
             inactive_workspace $border-color     $inac-bg-color    $inac-text-color
             urgent_workspace   $urgent-bg-color  $urgent-bg-color  $urgent-text-color
