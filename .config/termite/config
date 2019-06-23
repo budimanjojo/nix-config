@@ -7,6 +7,7 @@
 #clickable_url = true
 #dynamic_title = true
 font = UbuntuMono Nerd Font 12
+# font = Hack Nerd Font Mono 12
 #fullscreen = true
 #icon_name = terminal
 #mouse_autohide = false

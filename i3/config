@@ -293,7 +293,7 @@ set $indi-color #3971ED
 set $urgent-text-color #FFFFFF
 
 # font
-font pango:Ubuntu, Awesome 11
+font pango:Ubuntu Nerd Font 11
 
 # window title formatting
 for_window [class=".*"] title_format "<b> %title</b>"
@@ -309,7 +309,7 @@ client.urgent             $urgent-bg-color  $urgent-bg-color  $urgent-text-color
 bar {
         tray_output $monright
         status_command i3blocks -c ~/.i3/i3blocks.conf
-        font pango:Ubuntu, Awesome 12
+        font pango:Ubuntu Nerd Font 12
         position top
         strip_workspace_numbers yes
         colors {
