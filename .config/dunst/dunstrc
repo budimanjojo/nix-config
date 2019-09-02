@@ -196,7 +196,7 @@
     # Print a notification on startup.
     # This is mainly for error detection, since dbus (re-)starts dunst
     # automatically after a crash.
-    startup_notification = true
+    startup_notification = false
 
     # Manage dunst's desire for talking
     # Can be one of the following values:
@@ -212,7 +212,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 20
+    corner_radius = 5
 
     ### Legacy
 
@@ -274,23 +274,22 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#2B2B2C"
-    foreground = "#FFFFFF"
+    background = "#212121"
+    foreground = "#3971ED"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#2B2B2C"
-    foreground = "#FFFFFF"
+    background = "#212121"
+    foreground = "#198844"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#900000"
-    foreground = "#FFFFFF"
-    frame_color = "#ff0000"
+    background = "#212121"
+    foreground = "#CC342B"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
