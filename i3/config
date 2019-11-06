@@ -370,7 +370,7 @@ client.urgent             $urgent-bg-color  $urgent-bg-color  $urgent-text-color
 # bar
 bar {
         tray_output $monright
-        status_command i3blocks -c ~/.i3/i3blocks.conf
+        status_command py3status
         font pango:Ubuntu Nerd Font 12
         position top
         strip_workspace_numbers yes
