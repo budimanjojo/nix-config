@@ -258,7 +258,7 @@ exec --no-startup-id blueman-applet                                             
 exec --no-startup-id pamac-tray                                                 # pamac
 exec --no-startup-id xfce4-panel --disable-wm-check                             # Xfce4-panel with Dockbarx
 exec_always --no-startup-id nitrogen --restore                                  # Wallpaper and Compositor
-exec --no-startup-id compton -b                                                 # Start compton
+exec --no-startup-id picom -b                                                   # Start compton
 exec --no-startup-id nm-applet                                                  # Network Manager applet
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1  # Gnome polkit
 exec --no-startup-id xfce4-power-manager                                        # For screen timeout handling
