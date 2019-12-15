@@ -194,7 +194,7 @@ bindsym $alt+Control+End exec --no-startup-id oblogout
 
 ## APPLICATION SHORTCUTS {{{
 # most used application shortcuts
-bindsym $mod+t exec --no-startup-id termite                                           # Terminal
+bindsym $mod+t exec --no-startup-id alacritty                                         # Terminal
 bindsym $mod+w exec --no-startup-id chromium --no-default-browser-check               # Web Browser
 bindsym $mod+s exec --no-startup-id steam                                             # Steam
 bindsym $mod+f exec --no-startup-id thunar                                            # File Manager
