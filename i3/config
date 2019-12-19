@@ -235,7 +235,7 @@ set $ws10 10:VBox
 
 # monitor naming
 set $monleft HDMI-0
-set $monright DVI-I-0
+set $monright DP-1
 
 # workspace placement
 workspace $ws1  output $monleft
@@ -272,7 +272,7 @@ exec --no-startup-id /usr/bin/nextcloud                                         
 
 ## WINDOW RULES {{{
 # maximum size so that the window will not overlap monitor
-floating_maximum_size 1676 x 976
+floating_maximum_size 1920 x 1006
 
 # new window rules
 new_float none
