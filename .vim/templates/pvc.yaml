@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: 
+  namespace: 
+  labels:
+    app.kubernetes.io/name: 
+spec:
+  accessModes:
+  - null
+  resources:
+    requests:
+      storage: 
+  storageClassName: 
