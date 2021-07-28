@@ -1,5 +1,4 @@
 " VIM PLUG SETTINGS START HERE
-set nocompatible                                               " Disable vi compability mode, must be on top
 
 " Automatic installation for vim-plug if not already installed
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -8,32 +7,28 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
-
-" Plugins are defined here
-Plug 'junegunn/vim-easy-align'                                  " Align text like this comment, use :EasyAlign# to align every #
-Plug 'flazz/vim-colorschemes'                                   " Colorschemes collections
-Plug 'chriskempson/base16-vim'                                  " Base16 colorshemes collections
-Plug 'vim-airline/vim-airline'                                  " Statusline
-Plug 'vim-airline/vim-airline-themes'                           " Themes for statusline
-Plug 'scrooloose/nerdtree'                                      " NERDTree file manager
-Plug 'Xuyuanp/nerdtree-git-plugin'                              " Git Integration for NERDTree
-Plug 'tomtom/tcomment_vim'                                      " Comment out line with gcc or gc to target a motion
-Plug 'tpope/vim-fugitive'                                       " Git wrapper for vim
-Plug 'w0rp/ale'                                                 " Linting (syntax checking and semantic errors)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}                 " Intellisense engine for vim8 & neovim
-Plug 'honza/vim-snippets'                                       " Snippets collections
-Plug 'junegunn/fzf.vim'                                         " Fuzzy finder for vim
+Plug 'junegunn/vim-easy-align'
+Plug 'flazz/vim-colorschemes'
+Plug 'chriskempson/base16-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-fugitive'
+Plug 'w0rp/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'honza/vim-snippets'
+Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/indentLine'
-
-" Initialize plugin system
 call plug#end()
+
+" VIM PLUG SETTINGS END HERE
 
 " Required
 filetype plugin indent on                                      " Enable support for autocmds and plugins to work
 syntax enable                                                  " Enable syntax highlighting
-" VIM PLUG SETTINGS END HERE
 
 " VIM BASIC SETTINGS START HERE
 " Neovim specific options
