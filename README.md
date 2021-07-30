@@ -41,6 +41,7 @@ This script will install [Vim-plug](https://github.com/junegunn/vim-plug) and ad
 - [Coc.nvim](https://github.com/neoclide/coc.nvim)
 - [Vim-snippets](https://github.com/honza/vim-snippets)
 - [Fzf.vim](https://github.com/junegunn/fzf.vim)
+- [indentLine](https://github.com/Yggdroot/indentLine)
 
 Coc.nvim will have these extensions inside:
 - [coc-json](https://github.com/neoclide/coc-json)
@@ -96,7 +97,7 @@ Install list of packages needed depending on what you want to setup, if you want
 
 After that, simply git clone this repository and run the install script. It will ask you what do you want to install. If you want to install everything without confirmation, pass the `--all` argument in the command like this:
 ```
-git clone https://github.com/budimanjojo/dotfiles-installer.git ~/.dotfiles-installer && ~/.dotfiles-installer/install.sh --all
+git clone https://github.com/budimanjojo/dotfiles.git ~/.dotfiles && ~/.dotfiles/install.sh --all
 ```
 ## Updating
 **Zsh**  
@@ -543,5 +544,3 @@ You can also add Tmux plugins into your .tmux.conf.local file normally.
 ## To do
 - [ ] Better way to use custom configs
 - [ ] Use separate files instead of one vimrc
-- [x] Better way to handle custom Powerlevel9k settings
-- [x] Include Tmux config
