@@ -1,19 +1,23 @@
-## dotfiles
+# dotfiles
 This repository contains all my dotfiles. Please note that this is just my own personal dotfiles. You can fork this repository and use your own zshrc and vimrc by replacing yours with mine and run the install script.
 In the future, maybe I will make this customizable for custom changes, but that's when I'm free and not guaranteed. I may not even look at this README again after setting up all my machines.
 
 ## Screenshots
-Tmux
+**Tmux**
+
 ![render1561745632013](https://user-images.githubusercontent.com/13085918/60362720-d7f53580-9a0b-11e9-9876-79d6d18c998b.gif)
 
-Zsh prompt
+**Zsh prompt**
+
 ![screenshot-2019-06-12_01-05-09](https://user-images.githubusercontent.com/13085918/59295937-0acec800-8caf-11e9-94ed-c88c5703e963.png)
 
-Vim
+**Vim**
+
 ![screenshot-2019-06-12_01-07-25](https://user-images.githubusercontent.com/13085918/59295949-0dc9b880-8caf-11e9-8617-e4310db78f84.png)
 
 ## What Are Included
-**Zsh**  
+**Zsh**
+
 The [script](./install.sh) will install [zinit](https://github.com/zdharma/zinit) and add these plugins:
 - [Oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) as the default framework
 - [Powerlevel10K](https://github.com/romkatv/powerlevel10k) as the theme
@@ -26,7 +30,8 @@ The [script](./install.sh) will install [zinit](https://github.com/zdharma/zinit
 
 This script will also set up your shell colorschemes to `base16-google-dark` using [base16-shell](https://github.com/chriskempson/base16-shell)
 
-**Vim**  
+**Vim**
+
 This script will install [Vim-plug](https://github.com/junegunn/vim-plug) and add these plugins:
 - [Vim-easy-align](https://github.com/junegunn/vim-easy-align)
 - [Vim-colorschemes](https://github.com/flazz/vim-colorschemes)
@@ -58,14 +63,17 @@ Coc.nvim will have these extensions inside:
 - [coc-yaml](https://github.com/neoclide/coc-yaml)
 - [coc-emmet](https://github.com/neoclide/coc-emmet)
 
-**Note:** You need Vim version >=8.0 or Neovim version >=0.3.1 in order to use Coc.nvim
+**Note**: You need Vim version >=8.0 or Neovim version >=0.3.1 in order to use Coc.nvim
 
-**Tmux**  
+**Tmux**
+
 This script will add a Tmux config for you. The main feature of our Tmux config is the unified colorscheme with our Zsh and Vim. Also, our preferred prefix key is `Alt+a` instead of the default `Ctrl+b` (Of cource you can change it, read more in [Customization](#customization))
 
 ## Dependencies
 You need to have these packages installed in your system if you want to set up:
+
 **For Zsh:**
+
 ```
 zsh
 git
@@ -75,13 +83,15 @@ svn
 curl/wget
 ```
 **For Vim:**
+
 ```
 vim/nvim
 git
 curl
 nodejs
 ```
-**For Tmux:**  
+**For Tmux:**
+
 `tmux`
 
 ## Fonts
@@ -89,10 +99,12 @@ Powerlevel10K and Vim-airline requires powerline fonts to work. We suggest [Nerd
 ## Installation
 Install list of packages needed depending on what you want to setup, if you want to install everything, then this is the command you need:
 
-**Arch Linux and Derivatives**  
+**Arch Linux and Derivatives**
+
 `sudo pacman -S zsh neovim git nodejs the_silver_searcher curl tmux subversion`
 
-**Ubuntu and Derivatives**  
+**Ubuntu and Derivatives**
+
 `sudo apt install zsh neovim git nodejs silversearcher-ag curl tmux subversion`
 
 After that, simply git clone this repository and run the install script. It will ask you what do you want to install. If you want to install everything without confirmation, pass the `--all` argument in the command like this:
@@ -100,10 +112,12 @@ After that, simply git clone this repository and run the install script. It will
 git clone https://github.com/budimanjojo/dotfiles.git ~/.dotfiles && ~/.dotfiles/install.sh --all
 ```
 ## Updating
-**Zsh**  
+**Zsh**
+
 To update Zsh plugins, simply type in `zinit update` in terminal. To update zinit, type in `zinit self-update` in terminal.
 
-**Vim**  
+**Vim**
+
 To update Vim plugins, simply do `:PlugUpdate` in your vim. For Coc extensions, you don't have to do anything. It will update by itself everyday.
 
 ## Cheatsheet
