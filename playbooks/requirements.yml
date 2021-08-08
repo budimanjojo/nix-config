@@ -1,0 +1,8 @@
+---
+roles:
+- name: budimanjojo.dotfiles
+- name: budimanjojo.packages
+- name: budimanjojo.vimplug
+- name: budimanjojo.nodejs
+- name: budimanjojo.zinit
+- name: budimanjojo.users

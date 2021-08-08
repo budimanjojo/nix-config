@@ -1,0 +1,50 @@
+---
+- hosts: all
+  become: yes
+
+  vars:
+    packages_install:
+      all:
+      - neovim
+      - git
+      archlinux:
+      - npm
+      - python-pynvim
+      debian:
+      - python3-neovim
+      redhat:
+      - python3-neovim
+    dotfiles_repo_url: https://github.com/budimanjojo/dotfiles.git
+    dotfiles_repo_local_path: ~/.dotfiles
+    dotfiles_become: no
+    dotfiles_files:
+    - .vimrc
+    - .config/nvim
+    - .vim/templates
+    dotfiles_create_dir:
+    - .config/nvim
+    - .vim/templates
+    vimplug_vim_cmd: nvim
+    vimplug_plugins:
+    - name: junegunn/vim-easy-align
+    - name: flazz/vim-colorschemes
+    - name: chriskempson/base16-vim
+    - name: vim-airline/vim-airline
+    - name: vim-airline/vim-airline-themes
+    - name: scrooloose/nerdtree
+    - name: Xuyuanp/nerdtree-git-plugin
+    - name: tomtom/tcomment_vim
+    - name: tpope/vim-fugitive
+    - name: w0rp/ale
+    - name: neoclide/coc.nvim
+      options:
+        branch: release
+    - name: honza/vim-snippets
+    - name: junegunn/fzf.vim
+    - name: Yggdroot/indentLine
+
+  roles:
+  - budimanjojo.packages
+  - budimanjojo.nodejs
+  - budimanjojo.dotfiles
+  - budimanjojo.vimplug

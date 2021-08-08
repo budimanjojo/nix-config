@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+
+  vars:
+    packages_install:
+      all: [tmux]
+    dotfiles_repo_url: https://github.com/budimanjojo/dotfiles.git
+    dotfiles_repo_local_path: ~/.dotfiles
+    dotfiles_become: no
+    dotfiles_files: [.tmux.conf]
+
+  roles:
+  - budimanjojo.packages
+  - budimanjojo.dotfiles

@@ -1,0 +1,33 @@
+---
+- hosts: all
+  become: yes
+
+  vars:
+    users_add:
+    - username: "{{ lookup('env', 'USER') }}"
+      shell: /usr/bin/zsh
+      append: yes
+    packages_install:
+      all:
+      - subversion
+      archlinux:
+      - the_silver_searcher
+      debian:
+      - silversearcher-ag
+      redhat:
+      - the_silver_searcher
+    dotfiles_repo_url: https://github.com/budimanjojo/dotfiles.git
+    dotfiles_repo_local_path: ~/.dotfiles
+    dotfiles_become: no
+    dotfiles_files:
+    - .zshrc
+    - .zsh
+    dotfiles_create_dir:
+    - .zsh
+    zinit_become: no
+
+  roles:
+  - budimanjojo.users
+  - budimanjojo.packages
+  - budimanjojo.dotfiles
+  - budimanjojo.zinit
