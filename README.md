@@ -97,6 +97,15 @@ nodejs
 ## Fonts
 Powerlevel10K and Vim-airline requires powerline fonts to work. We suggest [Nerd-fonts](https://github.com/ryanoasis/nerd-fonts) because that is what we are using. The font in the screenshot above is using UbuntuMono Nerd Font Regular.
 ## Installation
+### Using Ansible (new preferred way)
+Git clone this repository into your host machine:
+`git clone https://github.com/budimanjojo/dotfiles.git`
+Get inside the `playbooks` directory:
+`cd dotfiles/playbooks`
+Edit the [inventory hosts](./playbooks/inventory/hosts.yml) to the machines you want to install dotfiles, then run the playbook:
+`ansible-playbook install-all.yml`
+There are playbooks for specific program you want to configure too, for example if you only want to configure zsh, you can just run the `install-zsh.yml` playbook.
+### Using the installer
 Install list of packages needed depending on what you want to setup, if you want to install everything, then this is the command you need:
 
 **Arch Linux and Derivatives**
