@@ -145,13 +145,13 @@
     typeset -g POWERLEVEL9K_DIR_SHOW_WRITABLE=v2
     typeset -g POWERLEVEL9K_LOCK_ICON=''
     typeset -g POWERLEVEL9K_DIR_CLASSES=(
-        '~(|/*)'       HOME     ''
-        '/etc(|/*)'    ETC      ''
+        '~(|/*)'    HOME    ''
+        '*'         DEFAULT ''
     )
     typeset -g POWERLEVEL9K_DIR_HOME_BACKGROUND=4
     typeset -g POWERLEVEL9K_DIR_HOME_FOREGROUND=0
-    typeset -g POWERLEVEL9K_DIR_ETC_BACKGROUND=1
-    typeset -g POWERLEVEL9K_DIR_ETC_FOREGROUND=0
+    typeset -g POWERLEVEL9K_DIR_DEFAULT_NOT_WRITABLE_BACKGROUND=1
+    typeset -g POWERLEVEL9K_DIR_DEFAULT_NOT_WRITABLE_FOREGROUND=0
 
     # Vcs
     function my_git_formatter() {
