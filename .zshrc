@@ -32,11 +32,15 @@ zinit snippet OMZ::plugins/history-substring-search
 zinit ice wait atload"_zsh_autosuggest_start" lucid
 zinit light zsh-users/zsh-autosuggestions
 
-zinit ice svn
-zinit snippet OMZ::plugins/tmux
+if [ type tmux &> /dev/null ]; then
+    zinit ice svn
+    zinit snippet OMZ::plugins/tmux
+fi
 
-zinit ice svn
-zinit snippet OMZ::plugins/kubectl
+if [ type kubectl &> /dev/null ]; then
+    zinit ice svn
+    zinit snippet OMZ::plugins/kubectl
+fi
 
 # Theme
 zinit light romkatv/powerlevel10k
