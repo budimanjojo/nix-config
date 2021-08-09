@@ -102,6 +102,8 @@ Git clone this repository into your host machine:
 `git clone https://github.com/budimanjojo/dotfiles.git`
 Get inside the `playbooks` directory:
 `cd dotfiles/playbooks`
+Install the required roles:
+`ansible-galaxy install -r requirements.yml`
 Edit the [inventory hosts](./playbooks/inventory/hosts.yml) to the machines you want to install dotfiles, then run the playbook:
 `ansible-playbook install-all.yml`
 There are playbooks for specific program you want to configure too, for example if you only want to configure zsh, you can just run the `install-zsh.yml` playbook.
