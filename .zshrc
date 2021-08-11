@@ -32,12 +32,12 @@ zinit snippet OMZ::plugins/history-substring-search
 zinit ice wait atload"_zsh_autosuggest_start" lucid
 zinit light zsh-users/zsh-autosuggestions
 
-if [ type tmux &> /dev/null ]; then
+if type tmux &> /dev/null; then
     zinit ice svn
     zinit snippet OMZ::plugins/tmux
 fi
 
-if [ type kubectl &> /dev/null ]; then
+if type kubectl &> /dev/null; then
     zinit ice svn
     zinit snippet OMZ::plugins/kubectl
 fi
