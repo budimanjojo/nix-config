@@ -350,7 +350,7 @@ set $indi-color #3971ED
 set $urgent-text-color #FFFFFF
 
 # font
-font pango:Ubuntu Nerd Font 11
+font pango:UbuntuMono Nerd Font 12
 
 # window title formatting
 for_window [class=".*"] title_format "<b> %title</b>"
