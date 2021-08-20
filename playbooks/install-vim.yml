@@ -5,7 +5,6 @@
   vars:
     packages_install:
       all:
-      - neovim
       - git
       archlinux:
       - npm
@@ -47,4 +46,5 @@
   - budimanjojo.packages
   - budimanjojo.nodejs
   - budimanjojo.dotfiles
+  - budimanjojo.neovim
   - budimanjojo.vimplug

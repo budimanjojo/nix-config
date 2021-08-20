@@ -11,7 +11,6 @@
       all:
       - subversion
       - tmux
-      - neovim
       - git
       archlinux:
       - the_silver_searcher
@@ -63,4 +62,5 @@
   - budimanjojo.dotfiles
   - budimanjojo.zinit
   - budimanjojo.nodejs
+  - budimanjojo.neovim
   - budimanjojo.vimplug
