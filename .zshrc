@@ -4,6 +4,9 @@
 # We have provided you general.zsh, alias,zsh, looks.zsh, plugs.zsh in that folder for you to customize
 # To add your your own zplugin plugins, edit the file $HOME/.zshrc.bundles instead
 
+autoload -Uz compinit
+compinit
+
 # Load $HOME/.zshrc.before if exists
 if [ -e "$HOME/.zshrc.before" ]; then
     source $HOME/.zshrc.before
@@ -40,6 +43,10 @@ fi
 if type kubectl &> /dev/null; then
     zinit ice svn
     zinit snippet OMZ::plugins/kubectl
+fi
+
+if type flux &> /dev/null; then
+    source <(flux completion zsh)
 fi
 
 # Theme

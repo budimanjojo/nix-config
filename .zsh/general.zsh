@@ -58,6 +58,3 @@ export VISUAL="$EDITOR"
 if [[ "$TERM" == "xterm-termite" ]]; then
     export TERM=xterm-256color
 fi
-
-# Flux completion
-command -v flux >/dev/null && . <(flux completion zsh)
