@@ -1,6 +1,33 @@
-# Template file for chezmoi config file
+{{/* # Template file for chezmoi config file */}}
+{{/* boolean feature tags */}}
+{{- $headless := false -}}{{/* true if this machine does not have a screen and keyboard */}}
+{{- $kubernetes := false -}}{{/* true if this machine is used for Kubernetes work */}}
+{{- $i3wm := false -}}{{/* true if this machine is using i3wm }}
+{{ - "" -}}
+
+{{- $hostname := .chezmoi.hostname -}}
+{{- if eq $hostname "budimanjojo-main" -}}
+{{-   $headless = false -}}
+{{-   $kubernetes = true -}}
+{{-   $i3wm = true -}}
+{{- end -}}
+{{- if hasKey . "headless" -}}
+{{-   $headless = .headless -}}
+{{- else -}}
+{{-   $headless = promptBool "headless" -}}
+{{- end -}}
+{{- if hasKey . "kubernetes" -}}
+{{-   $kubernetes = .kubernetes -}}
+{{- else -}}
+{{-   $kubernetes = promptBool "kubernetes" -}}
+{{- end -}}
+
 encryption: age
 format: yaml
+data:
+  headless = {{ $headless }}
+  kubernetes = {{ $kubernetes }}
+  i3wm = {{ $i3wm }}
 age:
   identity: /home/budiman/.config/sops/age/keys.txt
   recepient: age1zeqkpfz7e3s207ynea0z0auc0mrct0pc7w4sh6j3d0c4qac3dahqj9ufdg

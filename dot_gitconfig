@@ -1,5 +1,7 @@
 [user]
-	email = budimanjojo@gmail.com
-	name = budimanjojo
+    email = budimanjojo@gmail.com
+    name = budimanjojo
+{{- if (eq .chezmoi.hostname "ansible-server") }}
 [status]
-	submodulesummary = true
+    submodulesummary = true
+{{- end }}
