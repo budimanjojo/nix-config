@@ -1,0 +1,33 @@
+{
+    "diagnostic.checkCurrentLine": true,
+    "yaml.schemas": {
+        "kubernetes": [
+            "01-namespace.yaml",
+            "deployment.yaml",
+            "daemonset.yaml",
+            "statefulset.yaml",
+            "service.yaml",
+            "pv.yaml",
+            "pvc.yaml",
+            "configmap.yaml",
+            "secret.yaml",
+            "rbac.yaml",
+            "crd.yaml",
+            "storageclass.yaml",
+            "cronjob.yaml"
+        ],
+        "https://raw.githubusercontent.com/docker/compose/master/compose/config/compose_spec.json": ["docker-compose.yml"],
+        "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-meta.json": ["roles/*/meta/main.yml"],
+        "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-playbook.json": ["playbooks/*.yml"],
+        "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-tasks.json": ["tasks/*.yml", "handlers/*.yml"],
+        "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-vars.json": ["vars/*.yml", "defaults/*.yml", "host_vars/*.yml", "group_vars/*.yml"]
+    },
+    "yaml.customTags": [
+        "!include_dir_list",
+        "!include_dir_named",
+        "!include_dir_merge_list",
+        "!include_dir_merge_named",
+        "!secret",
+        "!env_var"
+    ]
+}
