@@ -1,0 +1,8 @@
+{{ if (and (eq .chezmoi.os "linux" ) (not .headless)) -}}
+#!/bin/bash
+
+set -eufo pipefail
+
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/UbuntuMono/Regular/complete/Ubuntu%20Mono%20Nerd%20Font%20Complete.ttf
+{{ end -}}
