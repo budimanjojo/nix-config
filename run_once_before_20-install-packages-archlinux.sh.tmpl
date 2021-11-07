@@ -1,0 +1,40 @@
+{{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "arch")) -}}
+#!/bin/bash
+
+set -eufo pipefail
+
+packages=(
+    zsh
+    neovim
+    tmux
+    curl
+    python-pynvim
+    subversion
+    npm
+    silversearcher-ag
+    git
+)
+
+{{ if (not .headless) -}}
+packages+=(
+    alacritty
+)
+{{ end -}}
+
+{{ if .i3wm -}}
+packages+=(
+    i3-gaps
+    i3lock
+    py3status
+    rofi
+    dunst
+    conky
+    xfce4-panel
+)
+{{ end -}}
+
+sudo pacman -Syu
+
+sudo pacman -S --noconfirm ${packages[@]}
+
+{{ end -}}

@@ -1,0 +1,16 @@
+{{ if (eq .chezmoi.osRelease.id "arch") -}}
+#!/bin/bash
+
+set -eufo pipefail
+
+command_exists() {
+    command -v "$@" | grep -qv alias
+}
+
+if ! command_exists yay; then
+    pacman -S --needed --noconfirm git base-devel
+    git clone https://aur.archlinux.org/yay.git /tmp/yay
+    cd /tmp/yay
+    makepkg -si --noconfirm
+fi
+{{ end -}}

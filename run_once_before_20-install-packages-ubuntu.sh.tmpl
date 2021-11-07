@@ -1,0 +1,40 @@
+{{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "debian" "ubuntu")) -}}
+#!/bin/bash
+
+set -eufo pipefail
+
+repositories=()
+packages=(
+    zsh
+    neovim
+    tmux
+    curl
+    python3-neovim
+    subversion
+    npm
+    silversearcher-ag
+    git
+)
+snaps=()
+
+{{ if (not .headless) -}}
+packages+=(
+    alacritty
+)
+{{ end -}}
+
+for repository in ${repositories[@]}; do
+    sudo add-apt-repository -y $repository
+done
+
+sudo apt update
+
+sudo apt install -y ${packages[@]}
+
+{{ if (eq .chezmoi.osRelease.id "ubuntu") -}}
+for snap in ${snaps[@]}; do
+    sudo snap install $snap
+done
+{{ end -}}
+
+{{ end -}}
