@@ -1,4 +1,4 @@
-{{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "arch")) -}}
+{{ if (eq .chezmoi.osRelease.id "arch") -}}
 #!/bin/bash
 
 set -eufo pipefail
@@ -11,7 +11,7 @@ packages=(
     python-pynvim
     subversion
     npm
-    silversearcher-ag
+    the_silversearcher
     git
 )
 
