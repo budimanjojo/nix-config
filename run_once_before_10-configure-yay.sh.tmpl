@@ -8,9 +8,11 @@ command_exists() {
 }
 
 if ! command_exists yay; then
-    pacman -S --needed --noconfirm git base-devel
+    sudo pacman -Syu
+    sudo pacman -S --needed --noconfirm git base-devel
     git clone https://aur.archlinux.org/yay.git /tmp/yay
     cd /tmp/yay
     makepkg -si --noconfirm
+    rm -rf /tmp/yay
 fi
 {{ end -}}
