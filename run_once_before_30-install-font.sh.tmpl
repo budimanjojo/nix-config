@@ -3,6 +3,14 @@
 
 set -eufo pipefail
 
-mkdir -p ~/.local/share/fonts
-cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/UbuntuMono/Regular/complete/Ubuntu%20Mono%20Nerd%20Font%20Complete.ttf
+font_dir=~/.local/share/fonts
+
+mkdir -p $font_dir
+cd $font_dir && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/UbuntuMono/Regular/complete/Ubuntu%20Mono%20Nerd%20Font%20Complete.ttf
+
+# reset font cache
+if [[ -n $(command -v fc-cache) ]]; then
+    fc-cache -vf "$font_dir"
+fi
+
 {{ end -}}
