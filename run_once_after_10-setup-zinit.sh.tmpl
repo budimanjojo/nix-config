@@ -1,0 +1,7 @@
+{{ if (eq .chezmoi.os "linux") -}}
+#!/bin/bash
+
+set -eufo pipefail
+
+/bin/zsh -c 'source ~/.zshrc; zinit update'
+{{ end -}}
