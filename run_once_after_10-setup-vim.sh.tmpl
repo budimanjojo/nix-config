@@ -1,0 +1,8 @@
+{{ if (eq .chezmoi.os "linux") -}}
+#!/bin/bash
+
+set -eufo pipefail
+
+nvim +PlugInstall +qall
+nvim -c ":silent :CocInstall -sync" -c ":qall"
+{{ end -}}
