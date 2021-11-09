@@ -1,3 +1,6 @@
 README.md
 LICENSE
 install.sh
+{{- if (and (eq .chezmoi.os "linux") (not .kubernetes)) }}
+.kube/config
+{{- end }}
