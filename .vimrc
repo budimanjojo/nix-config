@@ -22,6 +22,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 " VIM PLUG SETTINGS END HERE
@@ -313,7 +314,6 @@ augroup END
 
 augroup FileTypeSettings
   autocmd!
-  autocmd FileType java,php,css,html,xml, setlocal noexpandtab
   autocmd FileType vim,yaml setlocal shiftwidth=2
   autocmd FileType vim,yaml setlocal tabstop=2
   autocmd FileType json syntax match Comment +\/\/.\+$+
