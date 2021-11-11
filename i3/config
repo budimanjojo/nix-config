@@ -268,6 +268,7 @@ exec --no-startup-id sleep 2 && volumeicon                                      
 exec --no-startup-id /usr/local/bin/numlock                                     # Numlock on startup
 exec --no-startup-id $HOME/.conkyrc/.conkyrci3/start_conky_i3.sh                # Start Conky
 exec --no-startup-id /usr/bin/nextcloud                                         # Start Nextcloud
+exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --output DP-1 --mode 1920x1080 --right-of HDMI-1
 
 # }}}
 
