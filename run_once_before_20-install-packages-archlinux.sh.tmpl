@@ -42,7 +42,7 @@ packages+=(
 )
 
 {{ end -}}
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 
 sudo pacman -S --noconfirm ${packages[@]}
 
