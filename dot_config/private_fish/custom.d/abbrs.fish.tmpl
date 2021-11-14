@@ -1,0 +1,93 @@
+# kubectl
+if type -q kubectl
+    abbr k 'kubectl'
+    abbr kgp 'kubectl get pods'
+    abbr kl 'kubectl logs'
+    abbr kdp 'kubectl describe pod'
+    abbr kgn 'kubectl get nodes'
+    abbr wkgp 'watch kubectl get pod'
+end
+
+# git
+if type -q git
+    abbr g 'git'
+    abbr ga 'git add .'
+    abbr gaa 'git add --all'
+    abbr gc 'git commit -m'
+    abbr gs 'git status'
+    abbr gp 'git push'
+    abbr gpl 'git pull'
+    abbr gl 'git log'
+end
+
+# apt
+if type -q apt
+    abbr apti 'sudo apt install'
+    abbr aptr 'sudo apt remove'
+    abbr aptu 'sudo apt update'
+    abbr aptug 'sudo apt update && sudo apt upgrade'
+end
+
+# pacman
+if type -q pacman
+    abbr pacup 'sudo pacman -Syu'
+    abbr pacin 'sudo pacman -S'
+    abbr pacr 'sudo pacman -R'
+end
+
+# nvim
+if type -q nvim
+    abbr vi 'nvim'
+    abbr vim 'nvim'
+end
+
+# chezmoi
+if type -q chezmoi
+    abbr c 'chezmoi'
+end
+
+# flux
+if type -q flux
+    abbr f 'flux'
+    abbr fga 'flux get all'
+    abbr fsa 'flux suspend kustomization --all'
+    abbr fra 'flux resume kustomization --all'
+    abbr wfga 'watch flux get all'
+end
+
+# docker-compose
+if type -q docker-compose
+    abbr dcupd 'docker-compose up -d'
+    abbr dcdn 'docker-compose down'
+    abbr dcl 'docker-compose logs'
+    abbr dclf 'docker-compose logs -f'
+    abbr dcpull 'docker-compose pull'
+end
+
+# image conversions
+abbr cwtp 'find ./ -name "*.webp" -exec dwebp {} -o {}.png \; && rm -r *.webp'
+abbr cptj 'mogrify -flatten -format jpg *.png && rm -r *.png'
+abbr cjtp 'find ./ -name "*.jpg" -exec convert {} {}.png \; && rm -r *.jpg'
+
+# edit config files
+abbr evim '$EDITOR $HOME/.vimrc'
+abbr envim '$EDITOR $HOME/.config/nvim/init.vim'
+abbr ezsh '$EDITOR $HOME/.zshrc'
+abbr ebash '$EDITOR $HOME/.bashrc'
+abbr efish '$EDITOR $__fish_config_dir/custom.d'
+abbr etmux '$EDITOR $HOME/.tmux.conf'
+abbr eala '$EDIOTR $HOME/.config/alacritty/alacritty.yml'
+abbr ei3 '$EDITOR $HOME/.i3/config'
+abbr edunst '$EDITOR $HOME/.config/dunst'
+abbr esway '$EDITOR $HOME/.config/sway/config'
+abbr ewaybar '$EDITOR $HOME/.config/waybar/config'
+
+# basic abbreviations
+abbr cpr 'cp -rf'
+abbr rmr 'rm -rf'
+abbr md 'mkdir -p'
+abbr rd 'rmdir'
+abbr lsa 'ls -lah'
+abbr l 'ls -lah'
+abbr ll 'ls -lh'
+abbr la 'ls -lAh'

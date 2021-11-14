@@ -1,0 +1,5 @@
+if type -q tmux; and test -e $HOME/.tmux.conf
+    if status is-interactive; and not set -q TMUX; and not fish_is_root_user
+        exec tmux
+    end
+end
