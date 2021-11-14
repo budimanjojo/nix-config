@@ -22,17 +22,30 @@ end
 
 # apt
 if type -q apt
+{{- if ne .chezmoi.username "root" }}
     abbr apti 'sudo apt install'
     abbr aptr 'sudo apt remove'
     abbr aptu 'sudo apt update'
     abbr aptug 'sudo apt update && sudo apt upgrade'
+{{- else }}
+    abbr apti 'apt install'
+    abbr aptr 'apt remove'
+    abbr aptu 'apt update'
+    abbr aptug 'apt update && sudo apt upgrade'
+{{- end }}
 end
 
 # pacman
 if type -q pacman
+{{- if ne .chezmoi.username "root" }}
     abbr pacup 'sudo pacman -Syu'
     abbr pacin 'sudo pacman -S'
     abbr pacr 'sudo pacman -R'
+{{- else }}
+    abbr pacup 'pacman -Syu'
+    abbr pacin 'pacman -S'
+    abbr pacr 'pacman -R'
+{{- end }}
 end
 
 # nvim

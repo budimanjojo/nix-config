@@ -1,0 +1,9 @@
+## Source custom configs
+for file in $__fish_config_dir/custom.d/*.fish
+    source $file
+end
+
+## Launch Starship prompt
+if type -q starship
+    starship init fish | source
+end
