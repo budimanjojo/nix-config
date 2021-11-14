@@ -1,0 +1,11 @@
+#!/usr/bin/env fish
+
+if not type -q fisher
+    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+end
+
+fisher install patrickf3139/fzf.fish
+fisher install nickeb96/puffer-fish
+{{ if .kubernetes -}}
+fisher install evanlucas/fish-kubectl-completions
+{{ end -}}
