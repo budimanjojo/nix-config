@@ -3,17 +3,18 @@
 
 set -eufo pipefail
 
-repositories=()
+repositories=(
+    ppa:fish-shell/release-3
+)
 packages=(
-    zsh
+    fish
     neovim
     tmux
     curl
     python3-neovim
-    subversion
     npm
-    silversearcher-ag
     git
+    fd
 )
 snaps=()
 
