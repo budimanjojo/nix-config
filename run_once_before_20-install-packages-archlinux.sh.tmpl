@@ -4,15 +4,15 @@
 set -eufo pipefail
 
 packages=(
-    zsh
+    fish
     neovim
     tmux
     curl
     python-pynvim
-    subversion
     npm
-    the_silver_searcher
     git
+    fd
+    bat
 )
 
 {{ if (not .headless) -}}
@@ -33,6 +33,15 @@ packages+=(
 )
 {{ end -}}
 
+{{ if .swaywm -}}
+packages+=(
+    sway
+    rofi
+    waybar
+    dunst
+)
+
+{{ end -}}
 sudo pacman -Syu
 
 sudo pacman -S --noconfirm ${packages[@]}
