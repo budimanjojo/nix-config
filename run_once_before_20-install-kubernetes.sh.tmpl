@@ -16,7 +16,10 @@ sudo apt-get update && sudo apt-get install -y kubectl
 {{   else if (eq .chezmoi.osRelease.id "arch") -}}
 sudo pacman -S --noconfirm kubectl
 # remove flux if installed from AUR
-sudo pacman -Rscn --noconfirm flux-bin flux-go flux-git
+flux_installed=$(pacman -Qs flux | grep 'flux-bin\|flux-go\|flux-git' | sed -n -e 's/^.*local.//p' | cut -d ' ' -f1)
+for flux in $flux_installed; do
+    sudo pacman -Rsc --noconfirm $flux
+done
 {{   end -}}
 
 curl -s https://fluxcd.io/install.sh | sudo bash
