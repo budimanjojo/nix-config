@@ -1,0 +1,5 @@
+{{- if .kubernetes }}
+function update_flux
+    curl -s https://fluxcd.io/install.sh | sudo bash
+end
+{{- end }}
