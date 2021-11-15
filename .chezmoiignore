@@ -17,3 +17,6 @@ install.sh
 .config/rofi/
 .config/dunst/
 {{- end }}
+{{- if .headless }}
+.config/alacritty/
+{{- end }}
