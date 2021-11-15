@@ -3,10 +3,13 @@
 
 set -eufo pipefail
 
+# Check if font exists
+fc-list | grep -i "UbuntuMono Nerd Font" &> /dev/null && exit 0
+
 font_dir=~/.local/share/fonts
 
 mkdir -p $font_dir
-cd $font_dir && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/UbuntuMono/Regular/complete/Ubuntu%20Mono%20Nerd%20Font%20Complete.ttf
+cd $font_dir && curl -fLo "Ubuntu Mono Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/UbuntuMono/Regular/complete/Ubuntu%20Mono%20Nerd%20Font%20Complete.ttf
 
 # reset font cache
 if [[ -n $(command -v fc-cache) ]]; then
