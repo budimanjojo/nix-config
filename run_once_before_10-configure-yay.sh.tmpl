@@ -4,7 +4,7 @@
 set -eufo pipefail
 
 command_exists() {
-    command -v "$@" | grep -qv alias
+    command -v "$@" &> /dev/null
 }
 
 if ! command_exists yay; then
