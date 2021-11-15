@@ -6,11 +6,14 @@ install.sh
 {{- end }}
 {{- if (and (eq .chezmoi.os "linux") (not .i3wm)) }}
 .i3/
+.config/picom.conf
 .config/rofi/
+.config/dunst/
 .conky/
 {{- end }}
 {{- if (and (eq .chezmoi.os "linux") (not .swaywm)) }}
 .config/sway/
 .config/waybar/
 .config/rofi/
+.config/dunst/
 {{- end }}
