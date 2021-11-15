@@ -1,0 +1,139 @@
+/*  ------------------------------------------------------------------------------ */
+/* ! ROFI Color theme */
+/* ! ------------------------------------------------------------------------------ */
+/* rofi.color-enabled: true */
+/* rofi.color-window: #1D1F21, #1D1F21, #198844 */
+/* rofi.color-normal: #1D1F21, #C5C8C6, #1D1F21, #CC342B, #C5C8C6 */
+/* rofi.color-active: #1D1F21, #C5C8C6, #1D1F21, #CC342B, #C5C8C6 */
+/* rofi.color-urgent: #3971ED, #C5C8C6, #3971ED, #CC342B, #C5C8C6 */
+
+* {
+    selected-normal-foreground:  #1D1F21;
+    foreground:                  #C5C8C6;
+    normal-foreground:           @foreground;
+    alternate-normal-background: @background;
+    selected-urgent-foreground:  @selected-normal-foreground;
+    urgent-foreground:           @selected-normal-foreground;
+    alternate-urgent-background: @selected-normal-background;
+    active-foreground:           #CC342B;
+    selected-active-foreground:  @active-foreground;
+    alternate-active-background: #3971ED;
+    background:                  #1D1F21;
+    alternate-normal-foreground: @foreground;
+    normal-background:           @background;
+    selected-normal-background:  #198844;
+    spacing:                     2px;
+    separatorcolor:              @foreground;
+    urgent-background:           #3971ED;
+    selected-urgent-background:  @selected-normal-background;
+    alternate-urgent-foreground: @urgent-foreground;
+    background-color:            @background;
+    alternate-active-foreground: @active-foreground;
+    active-background:           @background;
+    selected-active-background:  @selected-normal-background;
+}
+#window {
+    background-color: @background;
+    border:           1;
+    padding:          5;
+}
+#mainbox {
+    border:  0;
+    padding: 0;
+}
+#message {
+    border:       2px 0px 0px ;
+    border-color: @separatorcolor;
+    padding:      1px ;
+}
+#textbox {
+    text-color: @foreground;
+}
+#listview {
+    fixed-height: 0;
+    border:       2px 0px 0px ;
+    border-color: @separatorcolor;
+    spacing:      2px ;
+    scrollbar:    true;
+    padding:      2px 0px 0px ;
+}
+#element {
+    border:  0;
+    padding: 1px ;
+}
+#element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+#element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+#element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+#element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+#element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+#element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+#element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+#element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+#element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+#scrollbar {
+    width:        4px ;
+    border:       0;
+    handle-width: 8px ;
+    padding:      0;
+}
+#mode-switcher {
+    border:       2px 0px 0px ;
+    border-color: @separatorcolor;
+}
+#button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+#inputbar {
+    spacing:    0;
+    text-color: @normal-foreground;
+    padding:    1px ;
+}
+#case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+#entry {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+#prompt {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+#textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @normal-foreground;
+}

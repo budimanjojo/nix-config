@@ -4,3 +4,12 @@ install.sh
 {{- if (and (eq .chezmoi.os "linux") (not .kubernetes)) }}
 .kube/config
 {{- end }}
+{{- if (and (eq .chezmoi.os "linux") (not .i3wm)) }}
+.i3/
+.config/rofi/
+.conky/
+{{- end }}
+{{- if (and (eq .chezmoi.os "linux") (not .swaywm)) }}
+.config/sway/
+.config/waybar/
+{{- end }}
