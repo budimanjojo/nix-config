@@ -12,4 +12,5 @@ install.sh
 {{- if (and (eq .chezmoi.os "linux") (not .swaywm)) }}
 .config/sway/
 .config/waybar/
+.config/rofi/
 {{- end }}

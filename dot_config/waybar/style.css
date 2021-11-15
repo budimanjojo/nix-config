@@ -1,0 +1,117 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "UbuntuMono Nerd Font";
+    font-size: 17px;
+    font-weight: bold;
+    min-height: 22px;
+}
+
+window#waybar {
+    background-color: #1D1F21;
+    color: #C5C8C6;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #FFFFFF;
+    box-shadow: inset 0 -1.5px transparent;
+}
+
+#workspaces button:hover {
+    color: #C5C8C6;
+    box-shadow: inset 0 -1.5px #C5C8C6;
+}
+
+#workspaces button.focused {
+    color: #CC342B;
+    box-shadow: inset 0 -1.5px #CC342B;
+}
+
+#workspaces button.urgent {
+    color: #FFFFFF;
+    background-color: #CC342B;
+    box-shadow: inset 0 -1.5px #FFFFFF;
+}
+
+#mode {
+    color: #FFFFFF;
+    box-shadow: inset 0 -1.5px;
+    margin-left: 15px;
+}
+
+#network {
+    color: #1D1F21;
+    background-color: #3971ED;
+}
+
+#disk.home {
+    color: #1D1F21;
+    background-color: #198844;
+}
+
+#disk.root {
+    color: #1D1F21;
+    background-color: #198844;
+}
+
+#custom-uname {
+    color: #1D1F21;
+    background-color: #FBA922;
+}
+
+#clock {
+    color: #1D1F21;
+    background-color: #A36AC7;
+}
+
+#custom-whoami {
+    color: #1D1F21;
+    background-color: #3971ED;
+}
+
+#custom-update.needsupdate {
+    color: #CC342B;
+}
+
+#custom-sep_blue {
+    color: #3971ED;
+    font-size: 21px;
+}
+
+#custom-sep_blue_green {
+    color: #198844;
+    background-color: #3971ED;
+    font-size: 21px;
+}
+
+#custom-sep_green_yellow {
+    color: #FBA922;
+    background-color: #198844;
+    font-size: 21px;
+}
+
+#custom-sep_yellow_purple {
+    color: #A36AC7;
+    background-color: #FBA922;
+    font-size: 21px;
+}
+
+#custom-sep_purple_blue {
+    color: #3971ED;
+    background-color: #A36AC7;
+    font-size: 21px;
+}
+
+#custom-sep_blue_black {
+    color: #1D1F21;
+    background-color: #3971ED;
+    font-size: 21px;
+}
