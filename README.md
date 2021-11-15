@@ -7,7 +7,7 @@ In the future, maybe I will make this customizable for custom changes, but that'
 
 ![render1561745632013](https://user-images.githubusercontent.com/13085918/60362720-d7f53580-9a0b-11e9-9876-79d6d18c998b.gif)
 
-**Zsh prompt**
+**Fish prompt** (to be updated)
 
 ![screenshot-2019-06-12_01-05-09](https://user-images.githubusercontent.com/13085918/59295937-0acec800-8caf-11e9-94ed-c88c5703e963.png)
 
@@ -16,17 +16,13 @@ In the future, maybe I will make this customizable for custom changes, but that'
 ![screenshot-2019-06-12_01-07-25](https://user-images.githubusercontent.com/13085918/59295949-0dc9b880-8caf-11e9-8617-e4310db78f84.png)
 
 ## What Are Included
-**Zsh**
+**Fish**
 
-I use [zinit](https://github.com/zdharma/zinit) as my plugin manager and use these plugins:
-- [Oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) as the default framework
-- [Powerlevel10K](https://github.com/romkatv/powerlevel10k) as the theme
-- [Vi-mode](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/vi-mode) for vi like mode in zsh
-- [Zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) for the fish like autosuggestions
-- [Fast-syntax-highlighting](https://github.com/zdharma/fast-syntax-highlighting) for the fish like syntax highlighting
-- [Zsh-history-substring-search](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/history-substring-search) to fix history up down issue with vi-mode
-- [Tmux](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/tmux) for tmux autostart
-- [FZF](https://github.com/junegunn/fzf) as the fuzzy file finder
+I use [fisher](https://github.com/jorgebucaran/fisher) as my plugin manager and use these plugins:
+- [Starship](https://starship.rs/) as the prompt theme
+- [FZF Fish](https://github.com/patrickF1/fzf.fish) as [fzf](https://github.com/junegunn/fzf) for fish
+- [Puffer Fish](https://github.com/nickeb96/puffer-fish) as text expansion for fish
+- [kubectl](https://github.com/evanlucas/fish-kubectl-completions) as kubectl completions for fish
 
 My shell colorscheme is set to `base16-google-dark` using [base16-shell](https://github.com/chriskempson/base16-shell)
 
@@ -67,19 +63,19 @@ Coc.nvim will have these extensions inside:
 
 **Tmux**
 
-The main feature of my Tmux config is the unified colorscheme with my Zsh and Vim. Also, my preferred prefix key is set to `Alt+a` instead of the default `Ctrf+b`.
+My preferred prefix key is set to `Alt+a` instead of the default `Ctrl+b`.
 
 ## Dependencies
 You need to have these packages installed in your system if you want to set up:
 
-**For Zsh:**
+**For Fish:**
 
 ```
 zsh
 git
-silversearcher/ag
+fd
+bat
 chsh
-svn
 curl/wget
 ```
 **For Vim:**
@@ -95,42 +91,23 @@ nodejs
 `tmux`
 
 ## Fonts
-Powerlevel10K and Vim-airline requires powerline fonts to work. I suggest [Nerd-fonts](https://github.com/ryanoasis/nerd-fonts) because that is what I'm using. The font in the screenshot above is using UbuntuMono Nerd Font Regular.
+Starship and Vim-airline requires powerline fonts to work. I suggest [Nerd-fonts](https://github.com/ryanoasis/nerd-fonts) because that is what I'm using. The font in the screenshot above is using UbuntuMono Nerd Font Regular. Chezmoi to install will do this automatically for you.
 
 ## Installation
-### Using Ansible (new preferred way)
 Git clone this repository into your host machine:
 `git clone https://github.com/budimanjojo/dotfiles.git`
-Get inside the `playbooks` directory:
-`cd dotfiles/playbooks`
-Install the required roles:
-`ansible-galaxy install -r requirements.yml`
-Edit the [inventory hosts](./playbooks/inventory/hosts.yml) to the machines you want to install dotfiles, then run the playbook:
-`ansible-playbook install-all.yml`
-There are playbooks for specific program you want to configure too, for example if you only want to configure zsh, you can just run the `install-zsh.yml` playbook.
-### Using the installer
-Install list of packages needed depending on what you want to setup, if you want to install everything, then this is the command you need:
+Run install.sh:
+`./install.sh`
 
-**Arch Linux and Derivatives**
-
-`sudo pacman -S zsh neovim git nodejs the_silver_searcher curl tmux subversion`
-
-**Ubuntu and Derivatives**
-
-`sudo apt install zsh neovim git nodejs silversearcher-ag curl tmux subversion`
-
-After that, simply git clone this repository and run the install script. It will ask you what do you want to install. If you want to install everything without confirmation, pass the `--all` argument in the command like this:
-```
-git clone https://github.com/budimanjojo/dotfiles.git ~/.dotfiles && ~/.dotfiles/install.sh --all
-```
 ## Updating
-**Zsh**
 
-To update Zsh plugins, simply type in `zinit update` in terminal. To update zinit, type in `zinit self-update` in terminal.
+Fish**
+
+To update fish plugins, simply type in `fisher update` in terminal.
 
 **Vim**
 
-To update Vim plugins, simply do `:PlugUpdate` in your vim. For Coc extensions, you don't have to do anything. It will update by itself everyday.
+To update Vim plugins, simply do `:PlugUpdate` in your vim. For Coc extensions, you don't have to do anything. It will update by itself when you launch vim.
 
 ## Cheatsheet
 **Vim**
@@ -540,19 +517,9 @@ I override the default keybindings for Tmux to be more reasonable. Prefix key is
 </table>
 
 ## Customization
-**ZSH**
+**Fish**
 
-To customize your zsh, you can create these files in your `$HOME` directory:
-- `.zshrc.before` to add stuffs you want to load before your plugins. For example, to autostart tmux you can add `ZSH-TMUX_AUTOSTART=true` in this file
-- `.zshrc.local` to add in your own custom stuffs
-- `.zshrc.bundles` to add your own zinit compatible plugins
-This script will also add in these files in `$HOME/.zsh` folder:
-
-I split Zsh in 4 files for you to customize:
-- `general.zsh` contains your own general settings for oh-my-zsh
-- `alias.zsh` contains your own aliases
-- `looks.zsh` contains the customization options for Powerlevel10k theme
-- `plugs.zsh` contains settings for plugins
+To install or remove fish plugins, you can just run `fisher` command. 
 
 To change the included `base16-google-dark` colorscheme, you can type `base16` followed by a tab to perform tab completion.
 
@@ -570,3 +537,4 @@ You can also add Tmux plugins into your .tmux.conf.local file normally.
 ## To do
 - [ ] Better way to use custom configs
 - [ ] Use separate files instead of one vimrc
+- [ ] Create ansible role to automate everything
