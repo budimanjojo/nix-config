@@ -1,0 +1,123 @@
+{
+    "layer": "top",
+    "position": "top",
+
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode"
+    ],
+
+    "modules-right": [
+        "custom/sep_blue",
+        "network",
+        "custom/sep_blue_green",
+        "disk#home",
+        "disk#root",
+        "custom/sep_green_yellow",
+        "custom/uname",
+        "custom/sep_yellow_purple",
+        "clock",
+        "custom/sep_purple_blue",
+        "custom/whoami",
+        "custom/sep_blue_black",
+        "pulseaudio",
+        "custom/update",
+        "tray"
+    ],
+
+    "sway/workspaces": {
+        "format": "{index}:{name} "
+    },
+
+    "sway/mode": {
+        "format": " {}",
+        "max-length": 70
+    },
+
+    "network": {
+        "format": " {bandwidthDownBits}  {bandwidthUpBits}",
+        "tooltip-format": "{ifname} {ipaddr}",
+        "interval": 1
+    },
+
+    "disk#home": {
+        "format": " {used} ",
+        "interval": 30,
+        "path": "/home/budiman"
+    },
+
+    "disk#root": {
+        "format": " {used}",
+        "interval": 30,
+        "path": "/"
+    },
+
+    "custom/uname": {
+        "format": " {}",
+        "exec": "uname -r",
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{: %a,%d%b  %I:%M:%S%p}",
+        "interval": 1,
+        "timezone": "Asia/Jakarta",
+        "tooltip": false
+    },
+
+    "custom/whoami": {
+        "format": " {}",
+        "exec": "whoami",
+        "tooltip": false
+    },
+
+    "tray": {
+        "icon-size": 18,
+    },
+
+    "custom/update": {
+        "format": " ",
+        "interval": 3600,
+        "exec": "$HOME/.config/waybar/scripts/update.sh",
+        "return-type": "json",
+        "on-click": "alacritty -e pamac update --aur; pkill -SIGRTMIN+8 waybar",
+        "signal": 8
+    },
+
+    "pulseaudio": {
+        "format": "{icon} ",
+        "format-bluetooth": "{icon} ",
+        "format-icons": {
+            "default": ["", "", ""],
+        },
+        "tooltip-format": "{desc}{volume}%",
+        "scroll-step": 1,
+        "on-click": "pavucontrol"
+    },
+
+    // Separators
+    "custom/sep_blue": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/sep_blue_green": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/sep_green_yellow": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/sep_yellow_purple": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/sep_purple_blue": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/sep_blue_black": {
+        "format": "",
+        "tooltip": false
+    }
+}
