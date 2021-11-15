@@ -1,0 +1,19 @@
+extends: default
+rules:
+  empty-lines:
+    max: 1
+  indentation:
+    spaces: 2
+    indent-sequences: consistent
+  line-length:
+    max: 200
+    trailing-spaces: {}
+  new-line-at-end-of-file: disable
+  truthy:
+    allowed-values:
+    - 'true'
+    - 'false'
+    - 'yes'
+    - 'no'
+    - 'on'
+    - 'off'
