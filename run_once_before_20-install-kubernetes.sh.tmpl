@@ -1,8 +1,6 @@
 {{ if (and ( eq .chezmoi.os "linux") .kubernetes) -}}
 #!/bin/bash
 
-set -eufo pipefail
-
 {{   if (eq .chezmoi.osRelease.id "debian" "ubuntu") -}}
 # install prerequisite packages
 sudo apt-get update && sudo apt-get install -y apt-transport-https ca-certificates curl
