@@ -17,4 +17,4 @@ else
   chezmoi=chezmoi
 fi
 
-exec "$chezmoi" init --apply budimanjojo
+exec "$chezmoi" init --ssh --apply budimanjojo
