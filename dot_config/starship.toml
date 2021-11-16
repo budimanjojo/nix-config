@@ -1,0 +1,117 @@
+format = """
+╭─ \
+$username\
+$hostname\
+$directory\
+$git_status\
+$git_branch\
+$fill\
+$status\
+$cmd_duration\
+$go\
+$helm\
+$nodejs\
+$python\
+$vagrant\
+$kubernetes\
+$time\
+$line_break\
+╰─\
+$character
+"""
+
+add_newline = false
+
+[username]
+style_user = "yellow"
+style_root = "red"
+format = "[ $user ]($style) "
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[  $hostname ]($style) "
+style = "green"
+
+[directory]
+truncation_length = 3
+format = "[  $path ]($style)[$read_only]($read_only_style) "
+style = "blue"
+read_only = " "
+truncation_symbol = "../"
+truncate_to_repo = true
+
+[git_branch]
+format = "[$symbol$branch ]($style) "
+style = "purple"
+symbol = " "
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style = "purple"
+conflicted = "≭ "
+ahead = " "
+behind = " "
+diverged = "⇕ "
+up_to_date = "✔ "
+untracked = " "
+stashed = " "
+modified = " "
+staged = " "
+renamed = "⏩"
+deleted = "🗑 "
+
+[fill]
+symbol = " "
+
+[status]
+disabled = false
+format = '[ $symbol]($style) '
+symbol = "✘ "
+success_symbol = "✔ "
+style = "red"
+
+[cmd_duration]
+min_time = "2_000"
+format = " took [$duration]($style) "
+style = "yellow"
+
+[golang]
+style = "yellow bold"
+format = "[ $symbol($version)]($style) "
+
+[helm]
+style = "yellow bold"
+format = "[ $symbol($version)]($style) "
+
+[nodejs]
+style = "yellow bold"
+not_capable_style = "red bold"
+format = "[ $symbol($version)]($style) "
+
+[python]
+style = "yellow bold"
+format = "[ $symbol($version)]($style) "
+
+[vagrant]
+style = "yellow bold"
+format = "[ $symbol($version)]($style) "
+
+[kubernetes]
+disabled = false
+format = '[ $symbol$context( \($namespace\))]($style) '
+style = "blue bold"
+symbol = "⛵"
+[kubernetes.context_aliases]
+"kubernetes-admin@cluster.local" = "kubernetes-admin@cluster"
+
+[time]
+disabled = false
+style = "purple bold"
+format = "[ $time]($style) "
+time_format = "  %a, %d %b |   %I:%M %p "
+
+[character]
+success_symbol = "[⮞](green)"
+error_symbol = "[⮞](green)"
+vicmd_symbol = "[⮟](purple)"
