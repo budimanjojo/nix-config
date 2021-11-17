@@ -1,0 +1,13 @@
+{{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "debian" "ubuntu")) -}}
+#!/bin/bash
+
+if ! command -v fzf > /dev/null; then
+    set -eufo pipefail
+
+    current_fzf_version=0.28.0
+
+    curl -fL https://github.com/junegunn/fzf/releases/download/0.28.0/fzf-$current_fzf_version-linux_{{ .chezmoi.arch }}.tar.gz | sudo tar -xzf - -C /usr/local/bin/
+    sudo chmod +x /usr/local/bin/fzf
+fi
+
+{{ end -}}
