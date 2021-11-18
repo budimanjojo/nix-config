@@ -2,7 +2,7 @@
 #                                       MY I3WM CUSTOM CONFIG FILE                                      #
 #########################################################################################################
 
-## KEYBINDING {{{
+## KEYBINDING
 # default Modifier to Super key. Alternatively, still enable Alt for floating window dragging and resizing
 set $mod Mod4
 set $alt Mod1
@@ -191,9 +191,7 @@ bindsym $alt+Control+Delete mode "$mode_system"
 # Alternatively, press Ctrl+Alt+End to use oblogout instead
 bindsym $alt+Control+End exec --no-startup-id oblogout
 
-# }}}
-
-## APPLICATION SHORTCUTS {{{
+## APPLICATION SHORTCUTS
 # most used application shortcuts
 bindsym $mod+t exec --no-startup-id alacritty                                         # Terminal
 bindsym $mod+w exec --no-startup-id chromium --no-default-browser-check               # Web Browser
@@ -219,9 +217,7 @@ bindsym Print mode "$mode_screenshot"
 bindsym $mod+grave exec rofi -show run
 bindsym $alt+Tab   exec rofi -show window
 
-# }}}
-
-## WORKSPACE NAMING AND PLACEMENT {{{
+## WORKSPACE NAMING AND PLACEMENT
 # workspace naming
 set $ws1 1:Youtube
 set $ws2 2:Home
@@ -250,9 +246,7 @@ workspace $ws8  output $monright
 workspace $ws9  output $monleft
 workspace $ws10 output $monright
 
-# }}}
-
-## AUTOSTART APPLICATIONS {{{
+## AUTOSTART APPLICATIONS
 # daemons and applets
 #exec --no-startup-id cadence-session-start --maybe-system-start                 # JackAudio server
 exec --no-startup-id blueman-applet                                             # Bluetooth applet
@@ -270,9 +264,7 @@ exec --no-startup-id $HOME/.conkyrc/.conkyrci3/start_conky_i3.sh                
 exec --no-startup-id /usr/bin/nextcloud                                         # Start Nextcloud
 exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --output DP-1 --mode 1920x1080 --right-of HDMI-1
 
-# }}}
-
-## WINDOW RULES {{{
+## WINDOW RULES
 # maximum size so that the window will not overlap monitor
 floating_maximum_size 1920 x 1006
 
@@ -318,9 +310,7 @@ force_focus_wrapping yes
 focus_follows_mouse yes
 focus_on_window_activation urgent
 
-# }}}
-
-## APPEARANCE {{{
+## APPEARANCE
 # colors
 # Material Design colors
 #set $border-color #LALALA
@@ -386,4 +376,3 @@ bar {
             urgent_workspace   $urgent-bg-color  $urgent-bg-color  $urgent-text-color
             }
 }
-# }}}
