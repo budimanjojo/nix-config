@@ -43,8 +43,15 @@ packages+=(
 )
 
 {{ end -}}
+
+{{ if not .chezmoi.username "root" -}}
 sudo pacman -Syu --noconfirm
 
 sudo pacman -S --noconfirm ${packages[@]}
+{{ else -}}
+pacman -Syu --noconfirm
 
+pacman -S --noconfirm ${packages[@]}
+
+{{ end -}}
 {{ end -}}

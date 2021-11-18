@@ -1,4 +1,5 @@
 {{ if (and ( eq .chezmoi.os "linux") .kubernetes) -}}
+{{   if not .chezmoi.username "root" -}}
 #!/bin/bash
 
 {{   if (eq .chezmoi.osRelease.id "debian" "ubuntu") -}}
@@ -21,4 +22,5 @@ done
 {{   end -}}
 
 curl -s https://fluxcd.io/install.sh | sudo bash
+{{   end -}}
 {{ end -}}
