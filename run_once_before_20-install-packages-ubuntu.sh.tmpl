@@ -27,14 +27,14 @@ packages+=(
 {{ end -}}
 
 for repository in ${repositories[@]}; do
-{{ if not .chezmoi.username "root" -}}
+{{ if ne .chezmoi.username "root" -}}
     sudo add-apt-repository -y $repository
 {{ else -}}
     add-apt-repository -y $repository
 {{ end -}}
 done
 
-{{ if not .chezmoi.username "root" -}}
+{{ if ne .chezmoi.username "root" -}}
 sudo apt update
 
 sudo apt install -y ${packages[@]}
@@ -44,10 +44,9 @@ apt update
 apt install -y ${packages[@]}
 {{ end -}}
 
-
 {{ if (eq .chezmoi.osRelease.id "ubuntu") -}}
 for snap in ${snaps[@]}; do
-{{   if not .chezmoi.username "root" -}}
+{{   if ne .chezmoi.username "root" -}}
     sudo snap install $snap
 {{   else -}}
     snap install $snap

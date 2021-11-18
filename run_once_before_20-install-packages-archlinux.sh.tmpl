@@ -44,7 +44,7 @@ packages+=(
 
 {{ end -}}
 
-{{ if not .chezmoi.username "root" -}}
+{{ if ne .chezmoi.username "root" -}}
 sudo pacman -Syu --noconfirm
 
 sudo pacman -S --noconfirm ${packages[@]}
