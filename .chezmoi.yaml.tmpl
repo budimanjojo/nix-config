@@ -3,6 +3,7 @@
 {{- $kubernetes := false -}}{{/* true if this machine is used for Kubernetes work */}}
 {{- $i3wm := false -}}{{/* true if this machine is using i3wm */}}
 {{- $swaywm := false -}}{{/* true if this machine is using swaywm */}}
+{{- $agekey := false -}}{{/* true if this machine has agekey to decrypt secret */}}
 
 {{- $hostname := .chezmoi.hostname -}}
 {{- if eq $hostname "budimanjojo-main" -}}
@@ -10,6 +11,7 @@
 {{-   $kubernetes = true -}}
 {{-   $i3wm = true -}}
 {{-   $swaywm = true -}}
+{{-   $agekey = true -}}
 {{- end -}}
 {{- if hasKey . "headless" -}}
 {{-   $headless = .headless -}}
@@ -21,15 +23,22 @@
 {{- else -}}
 {{-   $kubernetes = promptBool "kubernetes" -}}
 {{- end -}}
-encryption: age
-format: yaml
+{{- if hasKey . "agekey" -}}
+{{-   $agekey = .agekey -}}
+{{- else -}}
+{{-   $agekey = promptBool "agekey" -}}
+{{- end -}}
 data:
   headless: {{ $headless }}
   kubernetes: {{ $kubernetes }}
   i3wm: {{ $i3wm }}
   swaywm: {{ $swaywm }}
+format: yaml
+{{- if $agekey }}
+encryption: age
 age:
   identity: /home/budiman/.config/sops/age/keys.txt
   recipient: age1zeqkpfz7e3s207ynea0z0auc0mrct0pc7w4sh6j3d0c4qac3dahqj9ufdg
+{{- end }}
 git:
   autoAdd: true
