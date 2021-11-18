@@ -1,5 +1,9 @@
 if type -q tmux; and test -e $HOME/.tmux.conf
     if status is-interactive; and not set -q TMUX; and not fish_is_root_user
-        tmux attach || tmux new
+        if tmux has-session
+            tmux attach
+        else
+            tmux new
+        end
     end
 end
