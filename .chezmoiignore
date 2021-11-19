@@ -16,6 +16,8 @@ install.sh
 .config/waybar/
 .config/rofi/
 .config/dunst/
+.config/nwg-dock/
+.cache/executable_nwg-dock-pinned
 {{- end }}
 {{- if .headless }}
 .config/alacritty/

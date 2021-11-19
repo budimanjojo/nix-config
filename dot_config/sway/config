@@ -243,21 +243,21 @@ output $monleft pos 0 0
 output $monright pos 1920 0
 
 # Workspace placement
-workspace $ws1  output $monleft
-workspace $ws2  output $monright
-workspace $ws3  output $monleft
-workspace $ws4  output $monright
-workspace $ws5  output $monleft
-workspace $ws6  output $monright
-workspace $ws7  output $monlef
-workspace $ws8  output $monright
-workspace $ws9  output $monleft
+workspace $ws1 output $monleft
+workspace $ws2 output $monright
+workspace $ws3 output $monleft
+workspace $ws4 output $monright
+workspace $ws5 output $monleft
+workspace $ws6 output $monright
+workspace $ws7 output $monlef
+workspace $ws8 output $monright
+workspace $ws9 output $monleft
 workspace $ws0 output $monright
 
 ## AUTOSTART APPLICATIONS
 exec pamac-tray
 exec blueman-applet
-# exec xfce4-panel --disable-wm-check
+exec_always nwg-dock -d -i 32 -o $monright
 exec nm-applet --indicator
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec xfce4-power-manager

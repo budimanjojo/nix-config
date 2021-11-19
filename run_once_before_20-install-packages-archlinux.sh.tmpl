@@ -16,6 +16,8 @@ packages=(
     bat
 )
 
+aur_packages=()
+
 {{ if (not .headless) -}}
 packages+=(
     alacritty
@@ -42,6 +44,10 @@ packages+=(
     dunst
 )
 
+aur_packages+=(
+    nwg-dock
+)
+
 {{ end -}}
 
 {{ if ne .chezmoi.username "root" -}}
@@ -52,6 +58,10 @@ sudo pacman -S --noconfirm ${packages[@]}
 pacman -Syu --noconfirm
 
 pacman -S --noconfirm ${packages[@]}
+
+for aur_package in ${aur_packages[@]}; do
+    yay -S --noconfirm $aur_package
+done
 
 {{ end -}}
 {{ end -}}
