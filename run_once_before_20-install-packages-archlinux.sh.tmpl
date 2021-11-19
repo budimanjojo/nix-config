@@ -59,9 +59,10 @@ pacman -Syu --noconfirm
 
 pacman -S --noconfirm ${packages[@]}
 
+{{ end -}}
+
 for aur_package in ${aur_packages[@]}; do
     yay -S --noconfirm $aur_package
 done
 
-{{ end -}}
 {{ end -}}
