@@ -23,6 +23,7 @@ Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'mattn/emmet-vim'
+Plug 'khaveesh/vim-fish-syntax'
 call plug#end()
 
 " VIM PLUG SETTINGS END HERE
