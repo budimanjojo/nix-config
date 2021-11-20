@@ -79,6 +79,11 @@ if type -q docker-compose
     abbr dcpull 'docker-compose pull'
 end
 
+# the fuck
+if type -q thefuck
+    abbr fu 'fuck'
+end
+
 # image conversions
 abbr cwtp 'find ./ -name "*.webp" -exec dwebp {} -o {}.png \; && rm -r *.webp'
 abbr cptj 'mogrify -flatten -format jpg *.png && rm -r *.png'
