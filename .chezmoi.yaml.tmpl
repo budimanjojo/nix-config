@@ -1,4 +1,7 @@
-{{/* Template file for chezmoi config file */}}
+{{- /* Checks if running interactively */ -}}
+{{- $interactive := stdinIsATTY -}}
+
+{{- /* Template file for chezmoi config file */ -}}
 {{- $headless := false -}}{{/* true if this machine does not have a screen and keyboard */}}
 {{- $kubernetes := false -}}{{/* true if this machine is used for Kubernetes work */}}
 {{- $i3wm := false -}}{{/* true if this machine is using i3wm */}}
@@ -15,19 +18,24 @@
 {{- end -}}
 {{- if hasKey . "headless" -}}
 {{-   $headless = .headless -}}
-{{- else -}}
+{{- else if $interactive -}}
 {{-   $headless = promptBool "headless" -}}
 {{- end -}}
 {{- if hasKey . "kubernetes" -}}
 {{-   $kubernetes = .kubernetes -}}
-{{- else -}}
+{{- else if $interactive -}}
 {{-   $kubernetes = promptBool "kubernetes" -}}
 {{- end -}}
 {{- if hasKey . "agekey" -}}
 {{-   $agekey = .agekey -}}
-{{- else -}}
+{{- else if $interactive -}}
 {{-   $agekey = promptBool "agekey" -}}
 {{- end -}}
+
+{{- if $interactive -}}
+{{-   writeToStdout "💡 Tip: you can re-enter your data with `chezmoi init --data=false`.\n" -}}
+{{- end -}}
+
 data:
   headless: {{ $headless }}
   kubernetes: {{ $kubernetes }}
