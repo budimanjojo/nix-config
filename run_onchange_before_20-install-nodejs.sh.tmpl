@@ -3,7 +3,5 @@
 
 set -eufo pipefail
 
-current_node_version=17
-
-curl -fsSL https://deb.nodesource.com/setup_$current_node_version.x | sudo -E bash -
+curl -fsSL install-node.vercel.app | sudo bash -s -- --yes
 {{ end -}}
