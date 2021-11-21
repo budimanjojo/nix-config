@@ -6,7 +6,7 @@ if ! command -v fzf > /dev/null; then
 
     current_fzf_version=0.28.0
 
-    curl -fL https://github.com/junegunn/fzf/releases/download/0.28.0/fzf-$current_fzf_version-linux_{{ .chezmoi.arch }}.tar.gz | sudo tar -xzf - -C /usr/local/bin/
+    curl -fL https://github.com/junegunn/fzf/releases/download/0.28.0/fzf-$current_fzf_version-linux_{{ .chezmoi.arch }}.tar.gz | sudo tar -xzf - -oC /usr/local/bin/
     sudo chmod +x /usr/local/bin/fzf
 fi
 
