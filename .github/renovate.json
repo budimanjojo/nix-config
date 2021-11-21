@@ -1,0 +1,17 @@
+{
+    "enabled": true,
+    "semanticCommits": "enabled",
+    "labels": ["renovatebot"],
+    "commitBody": "Signed-Off-by: Budiman JOJO <budimanjojo@gmail.com>",
+    "suppressNotifications": ["prIgnoreNotification"],
+    "rebaseWhen": "conflicted",
+    "automerge": true,
+    "regexManagers": [
+        {
+            "fileMatch": [".+\\.fish.tmpl$"],
+            "matchStrings": [
+                "# renovate: depName=(?<depName>.*) datasource=(?<datasource>.*)\\n\\s+current_\\w+_version=(?<currentValue>.+)\\b"
+            ]
+        }
+    ]
+}
