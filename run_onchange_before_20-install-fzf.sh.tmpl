@@ -4,6 +4,7 @@
 if ! command -v fzf > /dev/null; then
     set -eufo pipefail
 
+    # renovate: depName=junegunn/fzf datasource=github-releases
     current_fzf_version=0.28.0
 
     curl -fL https://github.com/junegunn/fzf/releases/download/$current_fzf_version/fzf-$current_fzf_version-linux_{{ .chezmoi.arch }}.tar.gz | sudo tar -xzf - -oC /usr/local/bin/
