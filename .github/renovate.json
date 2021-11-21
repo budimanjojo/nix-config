@@ -3,6 +3,8 @@
     "semanticCommits": "enabled",
     "labels": ["renovatebot"],
     "commitBody": "Signed-Off-by: Budiman JOJO <budimanjojo@gmail.com>",
+    "dependencyDashboard": true,
+    "dependencyDashboardTitle": "Renovate Dashboard",
     "suppressNotifications": ["prIgnoreNotification"],
     "rebaseWhen": "conflicted",
     "automerge": true,
