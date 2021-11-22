@@ -58,18 +58,19 @@ pacman -Syu --noconfirm
 {{ end -}}
 
 for package in ${packages[@]}; do
-    if [ ! $(pacman -Qi $package 2> /dev/null) ]; then
-{{ if ne .chezmoi.username "root" -}}
+    if [ $(pacman -Qq $package 2> /dev/null) != $package ]; then
+{{- if ne .chezmoi.username "root" }}
         sudo pacman -S --noconfirm $package
-{{ else -}}
+{{- else }}
         pacman -S --noconfirm $package
-{{ end -}}
+{{- end }}
     fi
 done
 
 for aur_package in ${aur_packages[@]}; do
-    if [ ! $(pacman -Qi $aur_package 2> /dev/null) ]; then
+    if [ $(pacman -Qq $aur_package 2> /dev/null) != $aur_package ]; then
     yay -S --noconfirm $aur_package
+    fi
 done
 
 {{ end -}}
