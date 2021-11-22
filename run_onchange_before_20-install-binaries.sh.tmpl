@@ -1,0 +1,22 @@
+{{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "debian" "ubuntu")) -}}
+#!/bin/bash
+
+set -eufo pipefail
+
+##--NodeJS--##
+# renovate: depName=node datasource=node
+current_nodejs_version=v17.1.0
+
+if [ ! $(command -v node) ] || [ $(node -v) != "$current_nodejs_version" ]; then
+    curl -fsSL install-node.vercel.app | sudo bash -s -- --yes --version $current_nodejs_version
+fi
+
+##--FZF--##
+# renovate: depName=junegunn/fzf datasource=github-releases
+current_fzf_version=0.28.0
+
+if [ ! $(command -v fzf) ] || [ $(fzf --version | cut -d " " -f1) != "$current_fzf_version" ]; then
+    curl -fL https://github.com/junegunn/fzf/releases/download/$current_fzf_version/fzf-$current_fzf_version-linux_{{ .chezmoi.arch }}.tar.gz | sudo tar -xzf - -oC /usr/local/bin/
+    sudo chmod +x /usr/local/bin/fzf
+fi
+{{ end -}}

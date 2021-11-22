@@ -1,7 +1,0 @@
-{{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "debian" "ubuntu")) -}}
-#!/bin/bash
-
-set -eufo pipefail
-
-curl -fsSL install-node.vercel.app | sudo bash -s -- --yes
-{{ end -}}
