@@ -1,5 +1,5 @@
-{{- if (and ( eq .chezmoi.os "linux") .kubernetes) }}
-{{-   if ne .chezmoi.username "root" }}
+{{ if (and ( eq .chezmoi.os "linux") .kubernetes) -}}
+{{   if ne .chezmoi.username "root" -}}
 #!/bin/bash
 
 set -eufo pipefail
@@ -31,7 +31,7 @@ if [ ! $(command -v kustomize) ] || [ $(kustomize version --short | cut -d"/" -f
     sudo chmod +x /usr/local/bin/kustomize
 fi
 
-{{-    if .agekey }}
+{{     if .agekey -}}
 ##--age--##
 # renovate: depName=FiloSottile/age datasource=github-tags
 current_age_version=v1.0.0
@@ -40,7 +40,8 @@ if [ ! $(command -v age) ] || [ $(age --version) != "$current_age_version" ]; th
     curl -fL https://github.com/FiloSottile/age/releases/download/$current_age_version/age-$current_age_version-linux-{{ .chezmoi.arch }}.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ --wildcards --no-anchored 'age/age*' --strip-components 1
     find /usr/local/bin -name 'age*' -exec sudo chmod +x {} +
 fi
-{{-    end }}
+
+{{     end -}}
 
 ##--SOPS--##
 # renovate: depName=mozilla/sops datasource=github-releases
@@ -50,5 +51,5 @@ if [ ! $(command -v sops) ] || [ $(sops -v | cut -d " " -f2 | sed "s/^/v/" | hea
     sudo curl -fL https://github.com/mozilla/sops/releases/download/$current_sops_version/sops-$current_sops_version.linux -o /usr/local/bin/sops
     sudo chmod +x /usr/local/bin/sops
 fi
-{{-   end }}
-{{- end }}
+{{   end -}}
+{{ end -}}
