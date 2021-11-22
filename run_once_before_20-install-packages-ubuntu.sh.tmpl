@@ -33,15 +33,15 @@ for repository in ${repositories[@]}; do
 {{ end -}}
 done
 
+for package in ${packages[@]}; do
+    if [ ! $(dpkg-query -W -f='installed' $package 2> /dev/null) ]; then
 {{ if ne .chezmoi.username "root" -}}
-sudo apt update
-
-sudo apt install -y ${packages[@]}
+        sudo apt install -y $package
 {{ else -}}
-apt update
-
-apt install -y ${packages[@]}
+        apt install -y ${packages[@]}
 {{ end -}}
+    fi
+done
 
 {{ if (eq .chezmoi.osRelease.id "ubuntu") -}}
 for snap in ${snaps[@]}; do
