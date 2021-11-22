@@ -3,11 +3,7 @@
 
 set -eufo pipefail
 
-command_exists() {
-    command -v "$@" &> /dev/null
-}
-
-if ! command_exists yay; then
+if [ ! $(command -v yay) ]; then
     sudo pacman -Syu
     sudo pacman -S --needed --noconfirm git base-devel
     git clone https://aur.archlinux.org/yay.git /tmp/yay
