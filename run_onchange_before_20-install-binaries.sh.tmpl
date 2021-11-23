@@ -15,7 +15,7 @@ fi
 # renovate: depName=junegunn/fzf datasource=github-releases
 current_fzf_version=0.28.0
 
-if [ ! $(command -v fzf) ] || [ $(fzf --version | cut -d " " -f1) != "$current_fzf_version" ]; then
+if [ ! $(command -v fzf) ] || [ $(fzf --version | head -n1 | cut -d" " -f1) != "$current_fzf_version" ]; then
     curl -fL https://github.com/junegunn/fzf/releases/download/$current_fzf_version/fzf-$current_fzf_version-linux_{{ .chezmoi.arch }}.tar.gz | sudo tar -xzf - -oC /usr/local/bin/
     sudo chmod +x /usr/local/bin/fzf
 fi
@@ -29,5 +29,6 @@ if [ ! $(command -v age) ] || [ $(age --version) != "$current_age_version"] ]; t
     curl -fL https://github.com/FiloSottile/age/releases/download/$current_age_version/age-$current_age_version-linux-{{ .chezmoi.arch }}.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ --wildcards --no-anchored 'age/age*' --strip-components 1
     find /usr/local/bin -name age* -exec sudo chmod +x {} +
 fi
+
 {{   end -}}
 {{ end -}}
