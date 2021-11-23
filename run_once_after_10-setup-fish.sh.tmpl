@@ -1,0 +1,43 @@
+#!/usr/bin/fish
+
+## Install Starship
+if not type -q starship
+    curl -fsSL https://starship.rs/install.sh | bash -s --yes
+end
+
+## Install zoxide
+if not type -q zoxide
+    curl -sS https://webinstall.dev/zoxide | bash
+end
+
+## Install fisher
+if not type -q fisher
+    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+end
+
+## Install fish plugins
+fisher install patrickF1/fzf.fish
+fisher install nickeb96/puffer-fish
+fisher install budimanjojo/tmux.fish
+fisher install jorgebucaran/autopair.fish
+fisher install gazorby/fish-abbreviation-tips
+{{ if .kubernetes -}}
+fisher install evanlucas/fish-kubectl-completions
+{{ end -}}
+
+## Setup completions
+if not test -d $__fish_config_dir/completions
+    mkdir -p $__fish_config_dir/completions
+end
+
+if type -q chezmoi
+    chezmoi completion fish --output=$__fish_config_dir/completions/chezmoi.fish
+end
+
+if type -q flux
+    flux completion fish > $__fish_config_dir/completions/flux.fish
+end
+
+if type -q kustomize
+    kustomize completion fish > $__fish_config_dir/completions/kustomize.fish
+end
