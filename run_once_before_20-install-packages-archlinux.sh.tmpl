@@ -19,13 +19,13 @@ packages=(
 
 aur_packages=()
 
-{{ if (not .headless) -}}
+{{   if (not .headless) -}}
 packages+=(
     alacritty
 )
-{{ end -}}
+{{   end -}}
 
-{{ if .i3wm -}}
+{{   if .i3wm -}}
 packages+=(
     i3-gaps
     i3lock
@@ -35,9 +35,9 @@ packages+=(
     conky
     xfce4-panel
 )
-{{ end -}}
+{{   end -}}
 
-{{ if .swaywm -}}
+{{   if .swaywm -}}
 packages+=(
     sway
     rofi
@@ -49,28 +49,31 @@ aur_packages+=(
     nwg-dock
 )
 
-{{ end -}}
+{{   end -}}
 
-{{ if ne .chezmoi.username "root" -}}
+{{   if ne .chezmoi.username "root" -}}
 sudo pacman -Syu --noconfirm
-{{ else -}}
+{{   else -}}
 pacman -Syu --noconfirm
-{{ end -}}
+{{   end -}}
 
 for package in ${packages[@]}; do
     if [ $(pacman -Qq $package 2> /dev/null) != $package ]; then
-{{- if ne .chezmoi.username "root" }}
+{{-   if ne .chezmoi.username "root" }}
         sudo pacman -S --noconfirm $package
-{{- else }}
+{{-   else }}
         pacman -S --noconfirm $package
-{{- end }}
+{{-   end }}
     fi
 done
 
 ## Install yay
 if [ ! $(command -v yay) ]; then
-    sudo pacman -Syu
+{{-   if ne .chezmoi.username "root" }}
     sudo pacman -S --needed --noconfirm git base-devel
+{{-   else}}
+    pacman -S --needed --noconfirm git base-devel
+{{-   end }}
     git clone https://aur.archlinux.org/yay.git /tmp/yay
     cd /tmp/yay
     makepkg -si --noconfirm
