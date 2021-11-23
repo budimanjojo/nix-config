@@ -22,6 +22,9 @@ I use [fisher](https://github.com/jorgebucaran/fisher) as my plugin manager and 
 - [Starship](https://starship.rs/) as the prompt theme
 - [FZF Fish](https://github.com/patrickF1/fzf.fish) as [fzf](https://github.com/junegunn/fzf) for fish
 - [Puffer Fish](https://github.com/nickeb96/puffer-fish) as text expansion for fish
+- [tmux.fish](https://github.budimanjojo/tmux.fish) as tmux plugin for fish
+- [autopair.fish](https://github.com/jorgebucaran/autopair.fish) as auto matching pair for fish
+- [fish-abbreviation-tips](https://github.com/gazorby/fish-abbreviation-tips) as tips to help remember abbrs and aliases
 - [kubectl](https://github.com/evanlucas/fish-kubectl-completions) as kubectl completions for fish
 
 My shell colorscheme is set to `base16-google-dark` using [base16-shell](https://github.com/chriskempson/base16-shell)
