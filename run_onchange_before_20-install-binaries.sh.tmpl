@@ -28,7 +28,7 @@ if [ ! $(command -v starship) ] || [ $(starship --version | head -n1 | cut -d" "
     curl -fsSL https://starship.rs/install.sh | bash -s --yes
 fi
 
-{{   if .chezmoi.arch "amd64" -}}
+{{   if eq .chezmoi.arch "amd64" -}}
 ##--zoxide--##
 # renovate: depName=ajeetdsouza/zoxide datasource=github-releases
 current_zoxide_version=v0.7.9
