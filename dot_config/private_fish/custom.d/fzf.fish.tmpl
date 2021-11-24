@@ -23,7 +23,7 @@ if type -q exa
 end
 
 # Show hidden files except some directories
-set fzf_fd_opts --hidden --exclude=.git --exclude=.github
+set fzf_fd_opts --hidden --exclude=.git --exclude=.github --exclude=.cache
 
 # FZF keybindings
 fzf_configure_bindings --git_log=\cg --git_status=\cs --variables=\cv --directory=\cf --history=\cr
