@@ -1,4 +1,4 @@
-{{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "debian" "ubuntu") (ne .chezmoi.username "root")) -}}
+{{ if (and (eq .chezmoi.os "linux") (ne .chezmoi.username "root")) -}}
 #!/bin/bash
 
 set -eufo pipefail
@@ -19,6 +19,26 @@ if [ ! $(command -v fzf) ] || [ $(fzf --version | head -n1 | cut -d" " -f1) != "
     curl -fL https://github.com/junegunn/fzf/releases/download/$current_fzf_version/fzf-$current_fzf_version-linux_{{ .chezmoi.arch }}.tar.gz | sudo tar -xzf - -oC /usr/local/bin/
     sudo chmod +x /usr/local/bin/fzf
 fi
+
+##--Starship--##
+# renovate: depName=starship/starship datasource=github-releases
+current_starship_version=v1.0.0
+
+if [ ! $(command -v starship) ] || [ $(starship --version | head -n1 | cut -d" " -f2 | sed "s/^/v/") != "$current_starship_version" ]; then
+    curl -fsSL https://starship.rs/install.sh | bash -s --yes
+fi
+
+{{   if .chezmoi.arch "amd64" -}}
+##--zoxide--##
+# renovate: depName=ajeetdsouza/zoxide datasource=github-releases
+current_zoxide_version=v0.7.9
+
+if [ ! $(command -v zoxide) ] || [ $(zoxide --version | head -n1 | cut -d" " -f2) != "$current_zoxide_version" ]; then
+    curl -fL https://github.com/ajeetdsouza/zoxide/releases/download/$current_zoxide_version/zoxide-$current_zoxide_version-x86_64-unknown-linux-musl.tar.gz | sudo tar -xzf - -oC /usr/local/bin/
+    sudo chmod +x /usr/local/bin/zoxide
+fi
+
+{{   end -}}
 
 {{   if .agekey -}}
 ##--age--##

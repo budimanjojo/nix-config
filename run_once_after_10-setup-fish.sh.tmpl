@@ -1,15 +1,5 @@
 #!/usr/bin/fish
 
-## Install Starship
-if not type -q starship
-    curl -fsSL https://starship.rs/install.sh | bash -s --yes
-end
-
-## Install zoxide
-if not type -q zoxide
-    curl -sS https://webinstall.dev/zoxide | bash
-end
-
 ## Install fisher
 if not type -q fisher
     curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
