@@ -1,0 +1,49 @@
+{{ if eq .chezmoi.hostname "budimanjojo-main" -}}
+<fontconfig>
+<alias>
+    <family>serif</family>
+    <prefer>
+        <family>Hack Nerd Font Mono</family>
+        <family>Ubuntu Nerd Font</family>
+    </prefer>
+</alias>
+<alias>
+    <family>sans-serif</family>
+    <prefer>
+        <family>Hack Nerd Font Mono</family>
+        <family>Ubuntu Nerd Font</family>
+    </prefer>
+</alias>
+<alias>
+    <family>sans</family>
+    <prefer>
+        <family>Hack Nerd Font Mono</family>
+        <family>Ubuntu Nerd Font</family>
+    </prefer>
+</alias>
+<alias>
+    <family>monospace</family>
+    <prefer>
+        <family>Hack Nerd Font Mono</family>
+        <family>Ubuntu Nerd Font</family>
+    </prefer>
+</alias>
+<match target="font">
+    <edit name="hinting" mode="assign">
+        <bool>true</bool>
+    </edit>
+    <edit name="hintstyle" mode="assign">
+        <const>hintslight</const>
+    </edit>
+    <edit name="antialias" mode="assign">
+        <bool>true</bool>
+    </edit>
+    <edit name="autohint" mode="assign">
+        <bool>true</bool>
+    </edit>
+    <edit name="embeddedbitmap" mode="assign">
+        <bool>false</bool>
+    </edit>
+</match>
+</fontconfig>
+{{ end -}}
