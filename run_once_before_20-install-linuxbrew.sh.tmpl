@@ -1,0 +1,10 @@
+{{ if (and (eq .chezmoi.hostname "budiman-desktop") (ne .chezmoi.username "root") (eq .chezmoi.osRelease.id "debian" "ubuntu")) -}}
+#!/bin/bash
+
+set -eufo pipefail
+
+if [ ! -d /home/linuxbrew/.linuxbrew ]; then
+    sudo apt install build-essential procps curl file git
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+fi
+{{ end -}}
