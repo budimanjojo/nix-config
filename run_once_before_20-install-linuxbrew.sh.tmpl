@@ -1,4 +1,4 @@
-{{ if (and (.homebrew) (ne .chezmoi.username "root") -}}
+{{ if (and (.homebrew) (ne .chezmoi.username "root")) -}}
 #!/bin/bash
 
 set -eufo pipefail
