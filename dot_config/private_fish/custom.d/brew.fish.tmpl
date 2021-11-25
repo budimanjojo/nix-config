@@ -1,4 +1,4 @@
-{{ if eq .homebrew -}}
+{{ if .homebrew -}}
 if status is-interactive
     if test -d /home/linuxbrew/.linuxbrew
         eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
