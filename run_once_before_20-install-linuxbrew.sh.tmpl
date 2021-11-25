@@ -1,4 +1,4 @@
-{{ if (and (eq .chezmoi.hostname "budiman-desktop") (ne .chezmoi.username "root") (eq .chezmoi.osRelease.id "debian" "ubuntu")) -}}
+{{ if (and (.homebrew) (ne .chezmoi.username "root") -}}
 #!/bin/bash
 
 set -eufo pipefail
