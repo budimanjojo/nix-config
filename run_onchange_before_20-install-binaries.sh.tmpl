@@ -1,8 +1,9 @@
-{{ if (and (eq .chezmoi.os "linux") (ne .chezmoi.username "root")) -}}
+{{ if (and (eq .chezmoi.os "linux") (ne .chezmoi.username "root") ( eq .chezmoi.osRelease.id "ubuntu" "debian")) -}}
 #!/bin/bash
 
 set -eufo pipefail
 
+{{   if not .homebrew -}}
 ##--NodeJS--##
 # renovate: depName=node datasource=node
 current_nodejs_version=v17.1.0
@@ -28,7 +29,7 @@ if [ ! $(command -v starship) ] || [ $(starship --version | head -n1 | cut -d" "
     curl -fsSL https://starship.rs/install.sh | bash -s --yes
 fi
 
-{{   if eq .chezmoi.arch "amd64" -}}
+{{     if eq .chezmoi.arch "amd64" -}}
 ##--zoxide--##
 # renovate: depName=ajeetdsouza/zoxide datasource=github-releases
 current_zoxide_version=v0.7.9
@@ -37,9 +38,9 @@ if [ ! $(command -v zoxide) ] || [ $(zoxide --version | head -n1 | cut -d" " -f2
     curl -fL https://github.com/ajeetdsouza/zoxide/releases/download/$current_zoxide_version/zoxide-$current_zoxide_version-x86_64-unknown-linux-musl.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ zoxide
     sudo chmod +x /usr/local/bin/zoxide
 fi
-{{   end -}}
+{{     end -}}
 
-{{   if .agekey -}}
+{{     if .agekey -}}
 ##--age--##
 # renovate: depName=FiloSottile/age datasource=github-tags
 current_age_version=v1.0.0
@@ -48,6 +49,24 @@ if [ ! $(command -v age) ] || [ $(age --version) != "$current_age_version"] ]; t
     curl -fL https://github.com/FiloSottile/age/releases/download/$current_age_version/age-$current_age_version-linux-{{ .chezmoi.arch }}.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ --wildcards --no-anchored 'age/age*' --strip-components 1
     find /usr/local/bin -name age* -exec sudo chmod +x {} +
 fi
+{{     end -}}
+
+{{   else -}}
+function install_or_upgrade {
+    if brew ls --version "$1" >/dev/null; then
+        HOMEBREW_NO_AUTO_UPDATE=1 brew upgrade "$1"
+    else
+        HOMEBREW_NO_AUTO_UPDATE=1 brew install "$1"
+    fi
+}
+
+install_or_upgrade node
+install_or_upgrade fzf
+install_or_upgrade starship
+install_or_upgrade zoxide
+{{     if .agekey -}}
+install_or_upgrade age
+{{     end -}}
 {{   end -}}
 
 {{ end -}}

@@ -7,6 +7,7 @@
 {{- $i3wm := false -}}{{/* true if this machine is using i3wm */}}
 {{- $swaywm := false -}}{{/* true if this machine is using swaywm */}}
 {{- $agekey := false -}}{{/* true if this machine has agekey to decrypt secret */}}
+{{- $homebrew := false -}}{{/* true if this machine has agekey to decrypt secret */}}
 
 {{- $hostname := .chezmoi.hostname -}}
 {{- if eq $hostname "budimanjojo-main" -}}
@@ -15,6 +16,15 @@
 {{-   $i3wm = true -}}
 {{-   $swaywm = true -}}
 {{-   $agekey = true -}}
+{{-   $homebrew = false -}}
+{{- end -}}
+{{- if eq $hostname "budiman-desktop" -}}
+{{-   $headless = false -}}
+{{-   $kubernetes = true -}}
+{{-   $i3wm = false -}}
+{{-   $swaywm = false -}}
+{{-   $agekey = true -}}
+{{-   $homebrew = true -}}
 {{- end -}}
 {{- if hasKey . "headless" -}}
 {{-   $headless = .headless -}}
@@ -42,6 +52,7 @@ data:
   i3wm: {{ $i3wm }}
   swaywm: {{ $swaywm }}
   agekey: {{ $agekey }}
+  homebrew: {{ $homebrew }}
 format: yaml
 encryption: age
 {{- if $agekey }}
