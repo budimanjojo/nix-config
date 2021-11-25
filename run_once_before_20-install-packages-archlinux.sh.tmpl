@@ -13,7 +13,7 @@ packages=(
     fd
     bat
     thefuck
-    node
+    nodejs
     fzf
     starship
     zoxide
@@ -61,7 +61,7 @@ pacman -Syu --noconfirm
 {{   end -}}
 
 for package in ${packages[@]}; do
-    if [ $(pacman -Qq $package 2> /dev/null) != $package ]; then
+    if [ "$(pacman -Qq $package 2> /dev/null)" != $package ]; then
 {{-   if ne .chezmoi.username "root" }}
         sudo pacman -S --noconfirm $package
 {{-   else }}
