@@ -1,0 +1,5 @@
+require('configs.lspservers._bashls')
+require('configs.lspservers._dockerls')
+require('configs.lspservers._jsonls')
+require('configs.lspservers._sumneko_lua')
+require('configs.lspservers._yamlls')
