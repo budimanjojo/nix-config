@@ -1,7 +1,7 @@
 local yamlls_root_path = vim.fn.stdpath('data') .. '/lsp_servers'
 local yamlls_binary = yamlls_root_path .. '/yaml/node_modules/.bin/yaml-language-server'
 require('lspconfig').yamlls.setup {
-  cmd = { yamlls_binary, '--stio' },
+  cmd = { yamlls_binary, '--stdio' },
   filetypes = { 'yaml' },
   settings = {
     yaml = {
