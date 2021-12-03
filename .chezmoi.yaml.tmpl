@@ -64,8 +64,8 @@ merge:
   command: nvim
   args:
     - -d
-    - "{{ .Destination }}"
-    - "{{ .Source }}"
-    - "{{ .Target }}"
+    - "{{ "{{ .Source }}" }}"
+    - "{{ "{{ .Destination }}" }}"
+    - "{{ "{{ .Target }}" }}"
 git:
   autoAdd: true
