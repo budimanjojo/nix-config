@@ -50,10 +50,10 @@ mapnoremap('n', '<Leader>s', ':new<CR>')
 mapnoremap('n', '<Leader>v', ':vnew<CR>')
 
 -- Move cursors in Insert mode
-mapnoremap('n', '<C-k>', '<Up>')
-mapnoremap('n', '<C-j>', '<Down>')
-mapnoremap('n', '<C-h>', '<Left>')
-mapnoremap('n', '<C-l>', '<Right>')
+mapnoremap('i', '<C-k>', '<Up>')
+mapnoremap('i', '<C-j>', '<Down>')
+mapnoremap('i', '<C-h>', '<Left>')
+mapnoremap('i', '<C-l>', '<Right>')
 
 -- Tab navigation
 mapnoremap('n', '<Leader>tn', ':tabnew<CR>')
