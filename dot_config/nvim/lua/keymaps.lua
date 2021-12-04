@@ -71,14 +71,15 @@ mapnoremap('v', '<Tab>', '>qv')
 mapnoremap('v', '<S-Tab>', '<qv')
 
 -- Telescope
-mapnoremap('n', '<Leader>ff', ':Telescope find_files<CR>')
-mapnoremap('n', '<Leader>fg', ':Telescope live_grep theme=get_cursor<CR>')
-mapnoremap('n', '<Leader>fb', ':Telescope buffers theme=get_cursor<CR>')
-mapnoremap('n', '<Leader>fh', ':Telescope help_tags<CR>')
-mapnoremap('n', '<Leader>fk', ':Telescope keymaps<CR>')
-mapnoremap('n', '<Leader>fe', ':Telescope document_diagnostics<CR>')
-mapnoremap('n', '<Leader>fr', ':Telescope lsp_references<CR>')
-mapnoremap('n', '<Leader>fd', ':Telescope lsp_type_definitions<CR>')
+mapnoremap('n', '<Leader>fz', ':FzfLua<CR>')
+mapnoremap('n', '<Leader>ff', ':FzfLua files<CR>')
+mapnoremap('n', '<Leader>fg', ':FzfLua live_grep<CR>')
+mapnoremap('n', '<Leader>fb', ':FzfLua buffers<CR>')
+mapnoremap('n', '<Leader>fh', ':FzfLua help_tags<CR>')
+mapnoremap('n', '<Leader>fk', ':FzfLua keymaps<CR>')
+mapnoremap('n', '<Leader>fe', ':FzfLua lsp_document_diagnostics<CR>')
+mapnoremap('n', '<Leader>fr', ':FzfLua lsp_references<CR>')
+mapnoremap('n', '<Leader>fd', ':FzfLua lsp_typedefs<CR>')
 
 -- Trouble
 mapnoremap('n', '<Leader>xx', ':TroubleToggle<CR>')

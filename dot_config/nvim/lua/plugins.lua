@@ -72,10 +72,10 @@ require('packer').startup({
       end
     }
     use {
-      'nvim-telescope/telescope.nvim',
-      requires = { 'nvim-lua/plenary.nvim' },
+      'ibhagwan/fzf-lua',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
       config = function()
-        require('configs/_telescope')
+        require('configs/_fzf-lua')
       end
     }
     use {
