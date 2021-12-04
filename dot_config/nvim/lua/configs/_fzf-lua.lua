@@ -15,6 +15,11 @@ require('fzf-lua').setup {
     prompt = 'Grep ⮞ ',
     input_prompt = 'Grep for ⮞ '
   },
+  git = {
+    commits = {
+      prompt = 'Commits ⮞ ',
+    }
+  },
   buffers = {
     prompt = 'Buffers ⮞ ',
   },

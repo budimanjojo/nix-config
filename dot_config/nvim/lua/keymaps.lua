@@ -70,10 +70,11 @@ mapnoremap('n', '<S-Tab>', '<<')
 mapnoremap('v', '<Tab>', '>qv')
 mapnoremap('v', '<S-Tab>', '<qv')
 
--- Telescope
+-- FzfLua
 mapnoremap('n', '<Leader>fz', ':FzfLua<CR>')
 mapnoremap('n', '<Leader>ff', ':FzfLua files<CR>')
 mapnoremap('n', '<Leader>fg', ':FzfLua live_grep<CR>')
+mapnoremap('n', '<Leader>fc', ':FzfLua git_commits<CR>')
 mapnoremap('n', '<Leader>fb', ':FzfLua buffers<CR>')
 mapnoremap('n', '<Leader>fh', ':FzfLua help_tags<CR>')
 mapnoremap('n', '<Leader>fk', ':FzfLua keymaps<CR>')
