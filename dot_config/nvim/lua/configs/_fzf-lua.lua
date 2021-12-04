@@ -9,7 +9,7 @@ require('fzf-lua').setup {
   },
   files = {
     prompt = 'Files ⮞ ',
-    fd_opts = [[--color never --type f --hidden --exclude .git --exclude node_modules --exclude .npm --exclude .cache]]
+    fd_opts = [[--color always --type f --hidden --exclude .git --exclude node_modules --exclude .npm --exclude .cache]]
   },
   grep = {
     prompt = 'Grep ⮞ ',
