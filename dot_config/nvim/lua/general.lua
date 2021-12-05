@@ -34,16 +34,16 @@ vim.o.expandtab = true -- Tabs are spaces
 vim.o.smarttab = true -- Smarter tabs
 vim.o.shiftwidth = 2 -- 1 tab is 2 spaces
 vim.o.tabstop = 2 -- 1 tab is 2 spaces
-vim.bo.autoindent = true -- Copy indentation from previous line when starting new line
-vim.bo.smartindent = true -- Copy indentation from file being edited
-vim.go.clipboard = 'unnamedplus' -- Use unnamedplus register
-vim.wo.spell = true -- Enable spelling
-vim.bo.spelllang = 'en_us' -- Spelling language
+vim.o.autoindent = true -- Copy indentation from previous line when starting new line
+vim.o.smartindent = true -- Copy indentation from file being edited
+vim.o.clipboard = 'unnamedplus' -- Use unnamedplus register
+vim.o.spell = true -- Enable spelling
+vim.o.spelllang = 'en_us' -- Spelling language
 
 -- Temporary undodir
 local undodir = '/tmp/.vim-undodir-' .. vim.env.USER
 if vim.fn.isdirectory(undodir) ~= 1 then
   vim.fn.mkdir(undodir, 'p', '0700')
 end
-vim.go.undodir = undodir
-vim.bo.undofile = true
+vim.o.undodir = undodir
+vim.o.undofile = true
