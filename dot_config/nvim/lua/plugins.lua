@@ -108,7 +108,7 @@ require('packer').startup({
         'rafamadriz/friendly-snippets'
       },
       config = function()
-	require('configs._nvim-cmp')
+        require('configs._nvim-cmp')
       end
     }
 
