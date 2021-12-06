@@ -4,4 +4,22 @@
 set -eufo pipefail
 
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+
+# install null-ls sources
+npm install @fsouza/prettierd
+npm install markdownlint
+npm install write-good
+
+{{   if (eq .chezmoi.osRelease.id "arch") -}}
+{{     if ne .chezmoi.username "root" -}}
+sudo pacman -S shfmt ansible-lint shellcheck yamllint
+{{     else -}}
+pacman -S shfmt ansible-lint shellcheck yamllint
+{{     end -}}
+{{   else if (and (eq .chezmoi.osRelease.id "ubuntu" "debian") (eq .homebrew)) -}}
+brew install shfmt
+brew install ansible-lint
+brew install shellcheck
+brew install yamllint
+{{   end -}}
 {{ end -}}
