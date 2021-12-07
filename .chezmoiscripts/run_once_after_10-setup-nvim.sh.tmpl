@@ -16,7 +16,7 @@ sudo pacman -S shfmt ansible-lint shellcheck yamllint
 {{     else -}}
 pacman -S shfmt ansible-lint shellcheck yamllint
 {{     end -}}
-{{   else if (and (eq .chezmoi.osRelease.id "ubuntu" "debian") (eq .homebrew)) -}}
+{{   else if (and (eq .chezmoi.osRelease.id "ubuntu" "debian") (.homebrew)) -}}
 brew install shfmt
 brew install ansible-lint
 brew install shellcheck
