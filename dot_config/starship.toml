@@ -10,7 +10,6 @@ $status\
 $cmd_duration\
 $go\
 $helm\
-$nodejs\
 $python\
 $vagrant\
 $kubernetes\
@@ -82,11 +81,6 @@ format = "[ $symbol($version)]($style) "
 
 [helm]
 style = "yellow bold"
-format = "[ $symbol($version)]($style) "
-
-[nodejs]
-style = "yellow bold"
-not_capable_style = "red bold"
 format = "[ $symbol($version)]($style) "
 
 [python]
