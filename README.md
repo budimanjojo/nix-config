@@ -1,24 +1,25 @@
 # dotfiles
-This repository contains all my dotfiles managed by [chezmoi](https://github.com/twpayne/chezmoi). Please note that this is just my own personal dotfiles. You can fork this repository and use your own zshrc and vimrc by replacing yours with mine and run the install script.
-In the future, maybe I will make this customizable for custom changes, but that's when I'm free and not guaranteed. I may not even look at this README again after setting up all my machines.
+
+This repository contains all my dotfiles managed by [chezmoi](https://github.com/twpayne/chezmoi). Please note that this is my own personal dotfiles. You can fork this repository and use your own zshrc and vimrc by replacing yours with mine and run the install script.
+In the future, I will make this customizable for custom changes, but that's when I'm free and not guaranteed. I may not even look at this README again after setting up all my machines.
 
 ## Screenshots
-**Tmux**
 
+**Tmux**
 ![render1561745632013](https://user-images.githubusercontent.com/13085918/60362720-d7f53580-9a0b-11e9-9876-79d6d18c998b.gif)
 
-**Fish prompt** (to be updated)
-
+**Fish prompt (to be updated)**
 ![screenshot-2019-06-12_01-05-09](https://user-images.githubusercontent.com/13085918/59295937-0acec800-8caf-11e9-94ed-c88c5703e963.png)
 
-**Vim**
-
+**Neovim (to be updated)**
 ![screenshot-2019-06-12_01-07-25](https://user-images.githubusercontent.com/13085918/59295949-0dc9b880-8caf-11e9-8617-e4310db78f84.png)
 
 ## What Are Included
-**Fish**
+
+### Fish
 
 I use [fisher](https://github.com/jorgebucaran/fisher) as my plugin manager and use these plugins:
+
 - [Starship](https://starship.rs/) as the prompt theme
 - [FZF Fish](https://github.com/patrickF1/fzf.fish) as [fzf](https://github.com/junegunn/fzf) for fish
 - [Puffer Fish](https://github.com/nickeb96/puffer-fish) as text expansion for fish
@@ -29,74 +30,71 @@ I use [fisher](https://github.com/jorgebucaran/fisher) as my plugin manager and 
 
 My shell colorscheme is set to `base16-google-dark` using [base16-shell](https://github.com/chriskempson/base16-shell)
 
-**Vim**
+### Neovim
 
-I use [Vim-plug](https://github.com/junegunn/vim-plug) as my plugin manager and add these plugins:
-- [Vim-easy-align](https://github.com/junegunn/vim-easy-align)
-- [Vim-colorschemes](https://github.com/flazz/vim-colorschemes)
-- [Base16-vim](https://github.com/chriskempson/base16-vim)
-- [Vim-airline](https://github.com/vim-airline/vim-airline)
-- [Vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
-- [Nerdtree](https://github.com/scrooloose/nerdtree)
-- [Nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
-- [Tcomment](https://github.com/tomtom/tcomment_vim)
-- [Vim-fugitive](https://github.com/tpope/vim-fugitive)
-- [Ale](https://github.com/w0rp/ale)
-- [Coc.nvim](https://github.com/neoclide/coc.nvim)
-- [Vim-snippets](https://github.com/honza/vim-snippets)
-- [Fzf.vim](https://github.com/junegunn/fzf.vim)
-- [indentLine](https://github.com/Yggdroot/indentLine)
+I use [packer.nvim](https://github.com/wbthomason/packer.nvim) as my plugin manager and add these plugins:
 
-Coc.nvim will have these extensions inside:
-- [coc-json](https://github.com/neoclide/coc-json)
-- [coc-snippets](https://github.com/neoclide/coc-snippets)
-- [coc-pairs](https://github.com/neoclide/coc-pairs)
-- [coc-highlight](https://github.com/neoclide/coc-highlight)
-- [coc-tsserver](https://github.com/neoclide/coc-tsserver)
-- [coc-tslint](https://github.com/neoclide/coc-tslint)
-- [coc-html](https://github.com/neoclide/coc-html)
-- [coc-css](https://github.com/neoclide/coc-css)
-- [coc-phpls](https://github.com/marlonfan/coc-phpls)
-- [coc-stylelint](https://github.com/neoclide/coc-stylelint)
-- [coc-vimlsp](https://github.com/iamcco/coc-vimlsp)
-- [coc-yaml](https://github.com/neoclide/coc-yaml)
-- [coc-emmet](https://github.com/neoclide/coc-emmet)
+- [nvim-base16](https://github.com/RRethy/nvim-base16) for colorscheme theme
+- [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua) for color highlighter
+- [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) for autoclosing html tags
+- [surround.nvim](blackCauldron7/surround.nvim) to manage surrounding characters
+- [Trouble](https://github.com/folke/trouble.nvim) to show LSP trouble in pretty list
+- [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim) to add indentation guides
+- [Comment.nvim](https://github.com/numToStr/Comment.nvim) to comment codes
+- [better-escape.nvim](https://github.com/max397574/better-escape.nvim) the better escape insert mode for nvim
+- [nvim-autopairs](https://github.com/windwp/nvim-autopairs) to automatically insert pairs
+- [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) as statusline
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlighting
+- [fzf-lua](https://github.com/ibhagwan/fzf-lua) as fzf wrapper for nvim
+- [lspconfig](https://github.com/neovim/nvim-lspconfig) as LSP client
+- [nvim-tree](https://github.com/kyazdani42/nvim-tree.lua) as file explorer for nvim
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) as completion plugin
+- [LuaSnip](https://github.com/L3MON4D3/LuaSnip) as snippet engine
+- [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim) as linter and formatter for nvim
 
-**Note**: You need Vim version >=8.0 or Neovim version >=0.3.1 in order to use Coc.nvim
+**Note**: You need Neovim version >=0.5.0
 
-**Tmux**
+### Tmux
 
-My preferred prefix key is set to `Alt+a` instead of the default `Ctrl+b`.
+I set my prefix key to `Alt+a` instead of the default `Ctrl+b`.
 
 ## Dependencies
+
 You need to have these packages installed in your system if you want to set up:
 
 **For Fish:**
 
 ```
-zsh
+fish
 git
 fd
 bat
 chsh
+fzf
+zoxide
 curl/wget
 ```
-**For Vim:**
+
+**For Neovim:**
 
 ```
-vim/nvim
+nvim
 git
 curl
-nodejs
+npm
+fzf
 ```
+
 **For Tmux:**
 
 `tmux`
 
 ## Fonts
+
 Starship and Vim-airline requires powerline fonts to work. I suggest [Nerd-fonts](https://github.com/ryanoasis/nerd-fonts) because that is what I'm using. The font in the screenshot above is using UbuntuMono Nerd Font Regular. Chezmoi to install will do this automatically for you.
 
 ## Installation
+
 Git clone this repository into your host machine:
 `git clone https://github.com/budimanjojo/dotfiles.git`
 Run install.sh:
@@ -104,17 +102,15 @@ Run install.sh:
 
 ## Updating
 
-Fish**
+**Fish**
+To update fish plugins, type in `fisher update` in terminal.
 
-To update fish plugins, simply type in `fisher update` in terminal.
-
-**Vim**
-
-To update Vim plugins, simply do `:PlugUpdate` in your vim. For Coc extensions, you don't have to do anything. It will update by itself when you launch vim.
+**Neovim**
+To update Neovim plugins, do `:PackerSync` in your nvim.
 
 ## Cheatsheet
-**Vim**
 
+**Vim**
 The prefix key is `Space`. You can override this using your custom `.vimrc.local` file. `<Leader>` means you need to press prefix key first. If they are not in the table, that means it is using the default Vim keybindings.
 
 <table>
@@ -386,8 +382,7 @@ The prefix key is `Space`. You can override this using your custom `.vimrc.local
 </table>
 
 **Tmux**
-
-I override the default keybindings for Tmux to be more reasonable. Prefix key is `Alt+a` for local session and `Alt+z` for nested session. You can of course override this using your custom `.tmux.conf.local` file. `<prefix>` means you need to press prefix key first, `<repeat>` means you don't need to press prefix key again after triggering it within `repeat-time` set (default set to 1 second), `<copy-mode>` means you must be in copy-mode first. The table below lists all the keybindings set. If they are not in the table, that means it is using the default Tmux keybindings.
+I override the default keybindings for Tmux to be more reasonable. Prefix key is `Alt+a` for local session and `Alt+z` for nested session. You can of course override this. `<prefix>` means you need to press prefix key first, `<repeat>` means you don't need to press prefix key again after triggering it within `repeat-time` set (default set to 1 second), `<copy-mode>` means you must be in copy-mode first. The table below lists all the keybindings set. If they are not in the table, that means it's using the default Tmux keybindings.
 
 <table>
     <tr>
@@ -520,24 +515,23 @@ I override the default keybindings for Tmux to be more reasonable. Prefix key is
 </table>
 
 ## Customization
-**Fish**
 
-To install or remove fish plugins, you can just run `fisher` command. 
+**Fish**
+To install or remove fish plugins, you can run `fisher` command.
 
 To change the included `base16-google-dark` colorscheme, you can type `base16` followed by a tab to perform tab completion.
 
 **Vim**
-
 You can create a new file in your `$HOME` folder call `.vimrc.local` and put in what you want to override in that file.
 
 **Tmux**
+You can create a new file in your `$HOME` folder call `.tmux.conf.local` and put in what you want to override in that file. After that, source that file in tmux and you are done. You can do it with this keybindings:
 
-You can simply create a new file in your `$HOME` folder call `.tmux.conf.local` and put in what you want to override in that file. After that, source that file in tmux and you are done. You can do it with this keybindings:
 - `Alt+a,Alt+e` to edit tmux.conf.local file
 - `Alt+a,Alt+r` to re source your tmux
-You can also add Tmux plugins into your .tmux.conf.local file normally.
+
+You can also add Tmux plugins into your .tmux.conf.local file.
 
 ## To do
+
 - [ ] Better way to use custom configs
-- [ ] Use separate files instead of one vimrc
-- [ ] Create ansible role to automate everything
