@@ -7,4 +7,13 @@ vim.cmd([[
     autocmd BufNewFile configmap.yaml 0r ~/.config/nvim/templates/configmap.yaml
     autocmd BufNewFile secret.yaml 0r ~/.config/nvim/templates/secret.yaml
     autocmd BufNewFile ingress-traefikCRD.yaml 0r ~/.config/nvim/templates/ingress-traefikCRD.yaml
+  augroup END
+]])
+
+-- Disable autocomment on enter
+vim.cmd([[
+  augroup disableautocomment
+    autocmd!
+    autocmd BufEnter,CmdLineLeave * set fo-=c fo-=r fo-=o
+  augroup END
 ]])
