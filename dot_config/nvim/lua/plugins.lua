@@ -79,16 +79,6 @@ require('packer').startup({
       end
     }
     use {
-      'neovim/nvim-lspconfig',
-      requires = {
-        'b0o/schemastore.nvim',
-        'williamboman/nvim-lsp-installer'
-      },
-      config = function()
-        require('configs/_lspconfig')
-      end
-    }
-    use {
       'kyazdani42/nvim-tree.lua',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true },
       config = function()
@@ -105,10 +95,21 @@ require('packer').startup({
         'L3MON4D3/LuaSnip',
         'saadparwaiz1/cmp_luasnip',
         'onsails/lspkind-nvim',
-        'rafamadriz/friendly-snippets'
+        'rafamadriz/friendly-snippets',
+        'neovim/nvim-lspconfig'
       },
       config = function()
         require('configs._nvim-cmp')
+      end
+    }
+    use {
+      'neovim/nvim-lspconfig',
+      requires = {
+        'b0o/schemastore.nvim',
+        'williamboman/nvim-lsp-installer'
+      },
+      config = function()
+        require('configs/_lspconfig')
       end
     }
     use {

@@ -18,8 +18,131 @@ for _, i in ipairs(requested_servers) do
   end
 end
 
-require('configs.lspservers._bashls')
-require('configs.lspservers._dockerls')
-require('configs.lspservers._jsonls')
-require('configs.lspservers._sumneko_lua')
-require('configs.lspservers._yamlls')
+--[[ LSP Server Setup Goes Below ]]
+
+local lspconfig = require('lspconfig')
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+-- bashls
+local bashls_root_path = vim.fn.stdpath('data') .. '/lsp_servers'
+local bashls_binary = bashls_root_path .. '/bash/node_modules/.bin/bash-language-server'
+
+lspconfig.bashls.setup {
+  cmd = { bashls_binary, 'start' },
+  capabilities = capabilities
+}
+
+-- dockerls
+local dockerls_root_path = vim.fn.stdpath('data') .. '/lsp_servers'
+local dockerls_binary = dockerls_root_path .. '/dockerfile/node_modules/.bin/docker-langserver'
+
+require('lspconfig').dockerls.setup {
+  cmd = { dockerls_binary, '--stio' },
+  capabilities = capabilities
+}
+
+-- jsonls
+local jsonls_root_path = vim.fn.stdpath('data') .. '/lsp_servers'
+local jsonls_binary = jsonls_root_path .. '/jsonls/node_modules/.bin/vscode-json-language-server'
+
+require('lspconfig').jsonls.setup {
+  cmd = { jsonls_binary, '--stdio' },
+  capabilities = capabilities,
+  settings = {
+    json = {
+      schemas = require('schemastore').json.schemas(),
+    }
+  }
+}
+
+-- sumnoko_lua
+local system_name
+if vim.fn.has('mac') == 1 then
+  system_name = 'MacOS'
+elseif vim.fn.has('unix') == 1 then
+  system_name = 'Linux'
+elseif vim.fn.has('win32') == 1 then
+  system_name = 'Windows'
+else
+  print('Unsupported system for sumneko')
+end
+
+local sumneko_root_path = vim.fn.stdpath('data') .. '/lsp_servers'
+local sumneko_binary = sumneko_root_path .. '/sumneko_lua/extension/server/bin/' .. system_name .. '/lua-language-server'
+
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, 'lua/?.lua')
+table.insert(runtime_path, 'lua/?./init.lua')
+
+require('lspconfig').sumneko_lua.setup {
+  cmd = { sumneko_binary, '-E', sumneko_root_path .. '/sumneko_lua/extension/server/main.lua' },
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+        path = runtime_path,
+      },
+      diagnostics = {
+        globals = { 'vim' },
+      },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file('', true),
+      },
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
+
+-- yamlls
+local yamlls_root_path = vim.fn.stdpath('data') .. '/lsp_servers'
+local yamlls_binary = yamlls_root_path .. '/yaml/node_modules/.bin/yaml-language-server'
+require('lspconfig').yamlls.setup {
+  cmd = { yamlls_binary, '--stdio' },
+  capabilities = capabilities,
+  filetypes = { 'yaml' },
+  settings = {
+    yaml = {
+      schemas = {
+        kubernetes = {
+          '01-namespace.yaml',
+          'deployment.yaml',
+          'daemonset.yaml',
+          'statefulset.yaml',
+          'service.yaml',
+          'pv.yaml',
+          'pvc.yaml',
+          'configmap.yaml',
+          'secret.yaml',
+          'rbac.yaml',
+          'crd.yaml',
+          'storageclass.yaml',
+          'cronjob.yaml'
+        },
+        ['https://raw.githubusercontent.com/docker/compose/master/compose/config/compose_spec.json'] = {
+          'docker-compose.yml',
+          'docker-compose.yaml'
+        },
+        ['https://json.schemastore.org/github-workflow'] = {
+          '.github/workflows/**.yml',
+          '.github/workflows/**.yaml'
+        },
+        ['https://json.schemastore.org/github-actions'] = {
+          'action.yml',
+          'action.yaml'
+        },
+        ['https://json.schemastore.org/gitlab-ci'] = '.gitlab-ci.yml',
+        ['https://json.schemastore.org/kustomization'] = {
+          'kustomization.yml',
+          'kustomization.yaml'
+        },
+        ['https://json.schemastore.org/pre-commit-config'] = {
+          '.pre-commit-config.yml',
+          '.pre-commit-config.yaml',
+        }
+      }
+    }
+  }
+}
