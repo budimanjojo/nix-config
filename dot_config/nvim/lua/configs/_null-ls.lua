@@ -14,7 +14,8 @@ null_ls.config {
     null_ls.builtins.diagnostics.write_good,
     null_ls.builtins.diagnostics.yamllint,
     null_ls.builtins.code_actions.shellcheck,
-  }
+  },
+  diagnostics_format = '[#{c}] #{m} (#{s})'
 }
 
 require('lspconfig')['null-ls'].setup{}

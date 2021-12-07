@@ -88,3 +88,7 @@ mapnoremap('n', '<Leader>xr', ':TroubleToggle lsp_references<CR>')
 
 -- nvim-tree
 mapnoremap('n', '<C-f>', ':NvimTreeToggle<CR>')
+
+-- null-ls
+mapnoremap('n', '<Leader>pp', ':lua vim.lsp.buf.formatting()<CR>')
+mapnoremap('v', '<Leader>pp', ':lua vim.lsp.buf.range_formatting()<CR>')
