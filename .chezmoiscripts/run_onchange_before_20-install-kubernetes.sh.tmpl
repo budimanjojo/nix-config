@@ -5,7 +5,7 @@ set -eufo pipefail
 
 ##--kubectl--##
 # renovate: depName=kubernetes/kubernetes datasource=github-tags
-current_kubectl_version=v1.22.4
+current_kubectl_version=v1.23.0
 
 if [ ! $(command -v kubectl) ] || [ $(kubectl version --short --client | head -n1 | cut -d" " -f3) != "$current_kubectl_version" ]; then
     sudo curl -fL https://dl.k8s.io/release/$current_kubectl_version/bin/linux/{{ .chezmoi.arch }}/kubectl -o /usr/local/bin/kubectl
