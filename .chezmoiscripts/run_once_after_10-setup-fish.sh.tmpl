@@ -11,9 +11,6 @@ fisher install nickeb96/puffer-fish
 fisher install budimanjojo/tmux.fish
 fisher install jorgebucaran/autopair.fish
 fisher install gazorby/fish-abbreviation-tips
-{{ if .kubernetes -}}
-fisher install evanlucas/fish-kubectl-completions
-{{ end -}}
 
 ## Setup completions
 if not test -d $__fish_config_dir/completions
@@ -30,4 +27,8 @@ end
 
 if type -q kustomize
     kustomize completion fish > $__fish_config_dir/completions/kustomize.fish
+end
+
+if type -q kubectl
+    kubectl completion fish > $__fish_config_dir/completions/kubectl.fish
 end
