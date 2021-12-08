@@ -22,6 +22,17 @@ end
 
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local on_attach = function(client, bufnr)
+  local function buf_map(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local opts = { noremap=true, silent=true }
+
+  buf_map('n', 'rn', ':lua vim.lsp.buf.rename()<CR>', opts)
+  buf_map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', opts)
+  buf_map('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_map('n', 'gh', ':lua vim.lsp.buf.hover()<CR>', opts)
+  buf_map('n', 'gr', ':lua vim.lsp.buf.references()<CR>', opts)
+  buf_map('n', 'gi', ':lua vim.lsp.buf.implementation()<CR>', opts)
+end
 
 -- bashls
 local bashls_root_path = vim.fn.stdpath('data') .. '/lsp_servers'
@@ -29,6 +40,7 @@ local bashls_binary = bashls_root_path .. '/bash/node_modules/.bin/bash-language
 
 lspconfig.bashls.setup {
   cmd = { bashls_binary, 'start' },
+  on_attach = on_attach,
   capabilities = capabilities
 }
 
@@ -38,6 +50,7 @@ local dockerls_binary = dockerls_root_path .. '/dockerfile/node_modules/.bin/doc
 
 require('lspconfig').dockerls.setup {
   cmd = { dockerls_binary, '--stio' },
+  on_attach = on_attach,
   capabilities = capabilities
 }
 
@@ -47,6 +60,7 @@ local jsonls_binary = jsonls_root_path .. '/jsonls/node_modules/.bin/vscode-json
 
 require('lspconfig').jsonls.setup {
   cmd = { jsonls_binary, '--stdio' },
+  on_attach = on_attach,
   capabilities = capabilities,
   settings = {
     json = {
@@ -76,6 +90,7 @@ table.insert(runtime_path, 'lua/?./init.lua')
 
 require('lspconfig').sumneko_lua.setup {
   cmd = { sumneko_binary, '-E', sumneko_root_path .. '/sumneko_lua/extension/server/main.lua' },
+  on_attach = on_attach,
   capabilities = capabilities,
   settings = {
     Lua = {
@@ -101,6 +116,7 @@ local yamlls_root_path = vim.fn.stdpath('data') .. '/lsp_servers'
 local yamlls_binary = yamlls_root_path .. '/yaml/node_modules/.bin/yaml-language-server'
 require('lspconfig').yamlls.setup {
   cmd = { yamlls_binary, '--stdio' },
+  on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { 'yaml' },
   settings = {
