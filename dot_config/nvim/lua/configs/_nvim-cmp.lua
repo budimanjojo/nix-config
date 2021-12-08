@@ -10,6 +10,9 @@ end
 vssnip.lazy_load()
 
 cmp.setup {
+  completion = {
+    completeopt = 'menu,menuone,noinsert'
+  },
   formatting = {
     format = lspkind.cmp_format({
       with_text = true,
@@ -19,6 +22,7 @@ cmp.setup {
         nvim_lua = '[Lua]',
         buffer = '[Buffer]',
         latex_symbols = '[Latex]',
+        path = '[Path]',
         spell = '[Spell]'
       })
     }),
