@@ -8,6 +8,7 @@
     "suppressNotifications": ["prIgnoreNotification"],
     "rebaseWhen": "conflicted",
     "automerge": true,
+    "ignoreTests": true,
     "regexManagers": [
         {
             "fileMatch": [".+\\.sh.tmpl$"],
