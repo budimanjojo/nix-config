@@ -106,7 +106,8 @@ require('packer').startup({
       'neovim/nvim-lspconfig',
       requires = {
         'b0o/schemastore.nvim',
-        'williamboman/nvim-lsp-installer'
+        'williamboman/nvim-lsp-installer',
+        'ray-x/lsp_signature.nvim'
       },
       config = function()
         require('configs/_lspconfig')
