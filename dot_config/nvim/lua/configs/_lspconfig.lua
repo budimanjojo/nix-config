@@ -18,8 +18,27 @@ for _, i in ipairs(requested_servers) do
   end
 end
 
--- LSP Server Setup Goes Below
+-- Diagnostic looks
+vim.diagnostic.config {
+  virtual_text = false,
+  update_in_insert = true,
+  float = {
+    source = 'if_many'
+  }
+}
 
+-- Signcolumn symbols
+local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
+for type, icon in pairs(signs) do
+  local hl = 'DiagnosticSign' .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+-- Show diagnostics on hover
+vim.o.updatetime = 150
+vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focus = false })]])
+
+-- LSP Server Setup Goes Below
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local on_attach = function(client, bufnr)
