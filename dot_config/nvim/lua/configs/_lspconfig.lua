@@ -18,7 +18,7 @@ for _, i in ipairs(requested_servers) do
   end
 end
 
---[[ LSP Server Setup Goes Below ]]
+-- LSP Server Setup Goes Below
 
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
