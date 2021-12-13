@@ -99,6 +99,7 @@ Git clone this repository into your host machine:
 `git clone https://github.com/budimanjojo/dotfiles.git`
 Run install.sh:
 `./install.sh`
+Then do `chezmoi init --apply budimanjojo`
 
 ## Updating
 
