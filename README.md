@@ -40,8 +40,6 @@ These are the plugins I'm using:
 
 To update fish plugins, type in `fisher update` in terminal.
 To install or remove fish plugins, you can run `fisher` command.
-I'm using `base16-google-dark` colorscheme with [base16-shell](https://github.com/chriskempson/base16-shell)
-To change the colorscheme, type `base16` followed by a tab to perform tab completion.
 
 ### :memo:&nbsp; Neovim
 
