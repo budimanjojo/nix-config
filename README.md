@@ -96,10 +96,6 @@ npm
 fzf
 ```
 
-**For Tmux:**
-
-`tmux`
-
 ## :abcd:&nbsp; Fonts
 
 Starship and Vim-airline requires powerline fonts to work.
@@ -115,7 +111,7 @@ Run install.sh:
 `./install.sh`
 Then do `chezmoi init --apply budimanjojo`
 
-## Cheatsheet
+## :scroll:&nbsp; Cheatsheet
 
 ### Neovim keybindings
 
@@ -174,6 +170,7 @@ The prefix key is `Space`. You can override this using your custom `.vimrc.local
 | Normal        | `gi`          | Do LSP buffer get implementation |
 
 ### Tmux keybindings
+
 I override the default keybindings for Tmux to be more reasonable. Prefix key is `Alt+a` for local session and `Alt+z` for nested session. You can of course override this. `<prefix>` means you need to press prefix key first, `<repeat>` means you don't need to press prefix key again after triggering it within `repeat-time` set (default set to 1 second), `<copy-mode>` means you must be in copy-mode first. The table below lists all the keybindings set. If they are not in the table, that means it's using the default Tmux keybindings.
 
 | Tmux Keypress           | Description |
