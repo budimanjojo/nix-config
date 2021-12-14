@@ -1,5 +1,5 @@
 local function mapnoremap(mode, lhs, rhs, opts)
-  local options = {noremap = true}
+  local options = { noremap = true }
   if opts then
     options = vim.tbl_extend('force', options, opts)
   end
@@ -7,7 +7,9 @@ local function mapnoremap(mode, lhs, rhs, opts)
 end
 
 -- Spacebar is <Leader>
+mapnoremap('', '<Space>', '<Nop>', { silent = true })
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Fast save, save quit, force exit
 mapnoremap('n', '<Leader>w', ':w!<CR>')
