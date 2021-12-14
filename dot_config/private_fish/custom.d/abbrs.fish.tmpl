@@ -115,7 +115,14 @@ abbr cpr 'cp -rf'
 abbr rmr 'rm -rf'
 abbr md 'mkdir -p'
 abbr rd 'rmdir'
-abbr lsa 'exa -lag --git --icons --sort=type'
-abbr l 'exa -lag --git --icons --sort=type'
-abbr ll 'exa -l --icons --git --sort=type'
-abbr la 'exa -lag --git --icons --sort=type'
+if type -q exa
+  abbr lsa 'exa -lag --git --icons --sort=type'
+  abbr l 'exa -lag --git --icons --sort=type'
+  abbr ll 'exa -l --icons --git --sort=type'
+  abbr la 'exa -lag --git --icons --sort=type'
+else
+  abbr lsa 'ls -lah'
+  abbr l 'ls -lah'
+  abbr ll 'ls -lh'
+  abbr la 'ls-lAh'
+end
