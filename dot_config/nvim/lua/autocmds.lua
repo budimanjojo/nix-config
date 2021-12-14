@@ -17,3 +17,14 @@ vim.cmd([[
     autocmd BufEnter,CmdLineLeave * set fo-=c fo-=r fo-=o
   augroup END
 ]])
+
+-- Filetype detection
+vim.cmd([[
+  augroup ansbilefiletype
+    autocmd!
+    autocmd BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
+    autocmd BufRead,BufNewFile */playbooks/*.yaml set filetype=yaml.ansible
+    autocmd BufRead,BufNewFile */inventory/hosts.yml set filetype=yaml.ansible
+    autocmd BufRead,BufNewFile */inventory/hosts.yaml set filetype=yaml.ansible
+  augroup END
+]])

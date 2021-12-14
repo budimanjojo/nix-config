@@ -63,6 +63,10 @@ lsp_installer.on_server_ready(function(server)
   }
 
   local server_opts = {
+    -- ansiblels
+    ['ansiblels'] = function()
+      default_opts.filetypes = { 'yaml.ansible' }
+    end,
     -- jsonls
     ['jsonls'] = function()
       default_opts.settings = {

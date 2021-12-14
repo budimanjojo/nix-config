@@ -8,7 +8,9 @@ null_ls.setup {
     },
     null_ls.builtins.formatting.trim_newlines,
     null_ls.builtins.formatting.trim_whitespace,
-    null_ls.builtins.diagnostics.ansiblelint,
+    null_ls.builtins.diagnostics.ansiblelint.with {
+      filetypes = { 'yaml.ansible' }
+    },
     null_ls.builtins.diagnostics.markdownlint,
     null_ls.builtins.diagnostics.shellcheck,
     null_ls.builtins.diagnostics.write_good,
