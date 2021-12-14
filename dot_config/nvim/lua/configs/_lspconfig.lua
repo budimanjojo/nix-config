@@ -1,4 +1,4 @@
-local lsp_installer_servers = require('nvim-lsp-installer.servers')
+local lsp_installer = require('nvim-lsp-installer')
 -- List of LSP I want to be installed
 local requested_servers = {
   'bashls',
@@ -9,10 +9,11 @@ local requested_servers = {
 }
 
 -- Auto install requested LSP
-for _, i in ipairs(requested_servers) do
-  local server_available, requested_server = lsp_installer_servers.get_server(i)
+for _, name in ipairs(requested_servers) do
+  local server_available, requested_server = lsp_installer.get_server(name)
   if server_available then
     if not requested_server:is_installed() then
+      print("Installing " .. name)
       requested_server:install()
     end
   end
