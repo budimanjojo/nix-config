@@ -3,6 +3,7 @@ local luasnip = require('luasnip')
 local lspkind = require('lspkind')
 local vssnip = require('luasnip.loaders.from_vscode')
 
+vim.o.completeopt = 'menuone,noselect'
 vssnip.lazy_load()
 
 cmp.setup {
