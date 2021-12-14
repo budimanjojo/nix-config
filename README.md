@@ -82,6 +82,7 @@ chsh
 fzf
 zoxide
 curl/wget
+exa
 ```
 
 **For Neovim:**
