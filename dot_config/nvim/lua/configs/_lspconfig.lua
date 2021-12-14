@@ -1,6 +1,7 @@
 local lsp_installer = require('nvim-lsp-installer')
 -- List of LSP I want to be installed
 local requested_servers = {
+  'ansiblels',
   'bashls',
   'dockerls',
   'jsonls',
