@@ -8,6 +8,15 @@ local packer_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/'
 if vim.fn.isdirectory(packer_path .. theme_name) == 1 then
   vim.cmd('colorscheme base16-google-dark')
 end
+
+-- Highlight on yank
+vim.cmd([[
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+  augroup END
+]])
+
 -- nvim-cmp kind highlight
 vim.cmd([[
   highlight! CmpItemAbbrDeprecated gui=strikethrough guifg=#C5C8C6
