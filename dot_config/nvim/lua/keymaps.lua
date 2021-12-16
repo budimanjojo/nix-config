@@ -1,7 +1,7 @@
-local function mapnoremap(mode, lhs, rhs, opts)
-  local options = { noremap = true }
-  if opts then
-    options = vim.tbl_extend('force', options, opts)
+      local function mapnoremap(mode, lhs, rhs, opts)
+        local options = { noremap = true }
+        if opts then
+          options = vim.tbl_extend('force', options, opts)
   end
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
@@ -69,8 +69,8 @@ mapnoremap('n', '<Leader>te', ':tabedit <C-r>=expand("%:p:h")<CR>/')
 -- Indent or de-indent
 mapnoremap('n', '<Tab>', '>>')
 mapnoremap('n', '<S-Tab>', '<<')
-mapnoremap('v', '<Tab>', '>qv')
-mapnoremap('v', '<S-Tab>', '<qv')
+mapnoremap('v', '<Tab>', '>gv')
+mapnoremap('v', '<S-Tab>', '<gv')
 
 -- FzfLua
 mapnoremap('n', '<Leader>fz', ':FzfLua<CR>')
