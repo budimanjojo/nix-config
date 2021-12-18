@@ -222,7 +222,7 @@ bindsym Print mode "$screenshot"
 # Rofi as dmenu replacement
 bindsym $mod+grave exec rofi -show run
 bindsym $alt+Tab exec rofi -show window
-#
+
 ## WORKSPACE NAMING AND PLACEMENT
 # Workspace naming
 set $ws0 0:
@@ -296,13 +296,13 @@ for_window [class="Rhythmbox"] floating enable resize set 1000 640
 for_window [class="obs"] floating enable
 
 # window placement
-for_window [title="(?i)YouTube - Chromium" window_role="browser" class="chromium"] move container to workspace $ws1
-assign [class="smplayer"]                                                           → $ws3
-assign [class="Rhythmbox"]                                                          → $ws3
-assign [class="Steam"]                                                              → $ws4
-assign [class="Gimp"]                                                               → $ws7
-assign [class="obs"]                                                                → $ws9
-assign [class="VirtualBox"]                                                         → $ws0
+for_window [title="(?i)YouTube - " app_id="chromium"] move container to workspace $ws1
+assign [app_id="smplayer"]                                                        → $ws3
+assign [app_id="rhythmbox"]                                                       → $ws3
+assign [class="Steam"]                                                            → $ws4
+assign [class="Gimp"]                                                             → $ws7
+assign [app_id="obs"]                                                             → $ws9
+assign [class="VirtualBox"]                                                       → $ws0
 
 # Focus wrapping
 focus_wrapping yes
@@ -347,20 +347,6 @@ client.urgent             $urgent-bg-color  $urgent-bg-color  $urgent-text-color
 # Bar
 bar {
     swaybar_command waybar
-    # status_command py3status
-    # font pango:Ubuntu Nerd Font 12
-    # position top
-    # strip_workspace_numbers yes
-    # colors {
-    #     background $bg-color
-    #     separator $inac-text-color
-    #     #                  border            background        text
-    #     active_workspace   $border-color     $bg-color         $text-color
-    #     focused_workspace  $border-color     $bg-color         $text-color
-    #     inactive_workspace $border-color     $inac-bg-color    $inac-text-color
-    #     urgent_workspace   $urgent-bg-color  $urgent-bg-color  $urgent-text-color
-    #     }
-    # }
 }
 
 ## OTHER CONFIGURATIONS
