@@ -70,6 +70,7 @@ These are the plugins I'm using:
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 - [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
+- [FTerm.nvim](https://github.com/numToStr/FTerm.nvim)
 
 To update Neovim plugins, do `:PackerSync` in your nvim.
 **Note**: You need Neovim version >=0.6.0
@@ -166,6 +167,7 @@ The prefix key is `Space`. You can override this using your custom `.vimrc.local
 | Normal        | `<Leader>xx`  | Toggle Trouble |
 | Normal        | `<Leader>xr`  | Toggle Trouble to find lsp references |
 | Normal        | `Control+f`   | Toggle nvim-tree file manager |
+| Normal/Term   | `Control+t`   | Toggle floating terminal |
 | Normal        | `<Leader>pp`  | Format buffer with null-ls |
 | Visual        | `<Leader>pp`  | Range format buffer with null-ls |
 | Normal        | `rn`          | Do LSP buffer rename |

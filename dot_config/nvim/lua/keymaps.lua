@@ -96,3 +96,7 @@ mapnoremap('n', '<C-f>', ':NvimTreeToggle<CR>')
 -- null-ls
 mapnoremap('n', '<Leader>pp', ':lua vim.lsp.buf.formatting()<CR>')
 mapnoremap('v', '<Leader>pp', ':lua vim.lsp.buf.range_formatting()<CR>')
+
+-- FTerm
+mapnoremap('n', '<C-t>', ':lua require("FTerm").toggle()<CR>')
+mapnoremap('t', '<C-t>', '<C-\\><C-n>:lua require("FTerm").toggle()<CR>')

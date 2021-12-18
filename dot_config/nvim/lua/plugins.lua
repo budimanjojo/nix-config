@@ -17,6 +17,7 @@ require('packer').startup({
         require('colorizer').setup()
       end
     }
+    use 'numToStr/FTerm.nvim'
     use {
       'windwp/nvim-ts-autotag',
       config = function()
