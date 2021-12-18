@@ -1,4 +1,6 @@
 local fn = vim.fn
+local cmd = vim.cmd
+
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
   _G.packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
@@ -138,9 +140,9 @@ require('packer').startup({
   }
 })
 
-vim.cmd([[
+cmd [[
   augroup PackerSync
     autocmd!
     autocmd BufWritePost plugins.lua source <afile> | PackerSync
   augroup END
-]])
+]]

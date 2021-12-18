@@ -1,24 +1,28 @@
-vim.go.background = 'dark'   -- Dark background
-vim.go.termguicolors = true  -- Enable 256 colors
-vim.go.signcolumn = 'yes'    -- Always show signcolumn
+local o = vim.o
+local cmd = vim.cmd
+local fn = vim.fn
+
+o.background = 'dark'   -- Dark background
+o.termguicolors = true  -- Enable 256 colors
+o.signcolumn = 'yes'    -- Always show signcolumn
 
 -- Colorscheme
 local theme_name = 'nvim-base16'
 local packer_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/'
-if vim.fn.isdirectory(packer_path .. theme_name) == 1 then
-  vim.cmd('colorscheme base16-google-dark')
+if fn.isdirectory(packer_path .. theme_name) == 1 then
+  cmd('colorscheme base16-google-dark')
 end
 
 -- Highlight on yank
-vim.cmd([[
+cmd [[
   augroup YankHighlight
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup END
-]])
+]]
 
 -- nvim-cmp kind highlight
-vim.cmd([[
+cmd [[
   highlight! CmpItemAbbrDeprecated gui=strikethrough guifg=#C5C8C6
   highlight! CmpItemAbbrMatch guifg=#3971ED
   highlight! CmpItemAbbrMatchFuzzy guifg=#3971ED
@@ -32,4 +36,4 @@ vim.cmd([[
   highlight! CmpItemKindKeyword guifg=#FFFFFF
   highlight! CmpItemKindProperty guifg=#FFFFFF
   highlight! CmpItemKindUnit guifg=#FFFFFF
-]])
+]]

@@ -1,4 +1,6 @@
-vim.cmd([[
+local cmd = vim.cmd
+
+cmd [[
   augroup k8stemplates
     autocmd!
     autocmd BufNewFile deployment.yaml 0r ~/.config/nvim/templates/deployment.yaml
@@ -8,18 +10,18 @@ vim.cmd([[
     autocmd BufNewFile secret.yaml 0r ~/.config/nvim/templates/secret.yaml
     autocmd BufNewFile ingress-traefikCRD.yaml 0r ~/.config/nvim/templates/ingress-traefikCRD.yaml
   augroup END
-]])
+]]
 
 -- Disable autocomment on enter
-vim.cmd([[
+cmd [[
   augroup disableautocomment
     autocmd!
     autocmd BufEnter,CmdLineLeave * set fo-=c fo-=r fo-=o
   augroup END
-]])
+]]
 
 -- Filetype detection
-vim.cmd([[
+cmd [[
   augroup ansbilefiletype
     autocmd!
     autocmd BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
@@ -27,4 +29,4 @@ vim.cmd([[
     autocmd BufRead,BufNewFile */inventory/hosts.yml set filetype=yaml.ansible
     autocmd BufRead,BufNewFile */inventory/hosts.yaml set filetype=yaml.ansible
   augroup END
-]])
+]]
