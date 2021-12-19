@@ -14,7 +14,7 @@ Stuffs may change without further notice and this README can get outdated.
 
 ## :camera:&nbsp; Screenshots
 
-**SwayWM**
+**Sway**
 ![01-sway](https://user-images.githubusercontent.com/13085918/146237534-4ba6d4be-f859-44fe-8388-a52be9f19de5.png)
 
 **Tmux**
@@ -89,7 +89,7 @@ rofi (optional)
 nwg-dock (optional)
 ```
 
-**For i3wm**
+**For i3**
 
 ```
 py3status
@@ -141,9 +141,9 @@ Then do `chezmoi init --apply budimanjojo`
 
 ## :scroll:&nbsp; Cheatsheet
 
-### Sway/i3wm keybindings
+### Sway/i3 keybindings
 
-I use `Super` and `Alt` key for Sway.
+I use `Super` and `Alt` key for Sway/i3.
 `hjkl` keys are mapped to `left`, `down`, `up`, `right` arrow keys.
 `S` means Super key, [0-9] means number key 0 to 9.
 
