@@ -29,7 +29,6 @@ Stuffs may change without further notice and this README can get outdated.
 ![03-nvim](https://user-images.githubusercontent.com/13085918/146237491-8a15249c-9f55-4330-971d-0cf7ed0aa9bd.png)
 ![04-nvim](https://user-images.githubusercontent.com/13085918/146237497-0c421f71-2ab7-4449-810c-e846ec912aa8.png)
 
-
 ## :file_folder:&nbsp; Included Plugins
 
 ### :fish:&nbsp; Fish
@@ -79,6 +78,28 @@ To update Neovim plugins, do `:PackerSync` in your nvim.
 
 You need to have these packages installed in your system if you want to set up:
 
+**For Sway:**
+
+```
+waybar
+grim
+slurp
+swayidle
+rofi (optional)
+nwg-dock (optional)
+```
+
+**For i3wm**
+
+```
+py3status
+scrot
+i3lock
+picom (optional)
+rofi (optional)
+xfce4-panel (optional)
+```
+
 **For Fish:**
 
 ```
@@ -120,12 +141,61 @@ Then do `chezmoi init --apply budimanjojo`
 
 ## :scroll:&nbsp; Cheatsheet
 
+### Sway/i3wm keybindings
+
+I use `Super` and `Alt` key for Sway.
+`hjkl` keys are mapped to `left`, `down`, `up`, `right` arrow keys.
+`S` means Super key, [0-9] means number key 0 to 9.
+
+| Keypress        | Description |
+| :-------------: | :---------- |
+| `S+t`           | Open terminal app |
+| `S+w`           | Open browser |
+| `S+f`           | Open file manager |
+| `S+g`           | Open GIMP |
+| `S+b`           | Open OBS |
+| `S+s`           | Open Steam |
+| `S+grave`       | Open rofi apps menu|
+| `S+Tab`         | Open rofi opened apps menu |
+| `Alt+F4`        | Close window |
+| `Alt+k`         | Change focus to window above |
+| `Alt+j`         | Change focus to window below |
+| `Alt+h`         | Change focus to left side window |
+| `Alt+l`         | Change focus to right side window |
+| `Alt+Shift+k`   | Move focused window up |
+| `Alt+Shift+j`   | Move focused window down |
+| `Alt+Shift+h`   | Move focused window left |
+| `Alt+Shift+l`   | Move focused window right |
+| `Alt+Ctrl+h`    | Split opened windows horizontally |
+| `Alt+Ctrl+v`    | Split opened windows vertically |
+| `Alt+Ctrl+q`    | Toggle opened windows split |
+| `S+Tab`         | Go to next workspace |
+| `S+Shift+Tab`   | Go to previous workspace |
+| `Alt+Ctrl+t`    | Toggle window border on/off |
+| `Alt+Ctrl+g`    | Toggle gaps on/off |
+| `Alt+Ctrl+f`    | Toggle fullscreen mode on/off |
+| `Alt+Ctrl+s`    | Change container layout to stacking |
+| `Alt+Ctrl+w`    | Change container layout to tabbed |
+| `Alt+Ctrl+e`    | Toggle split layout to horizontal/vertical |
+| `S+Shift+Space` | Toggle window floating on/off |
+| `S+Space`       | Swap focus between tiling/floating window |
+| `S+Shift+-`     | Move current focused window to scratchpad |
+| `S+-`           | Show/hide scratchpad window |
+| `S+[0-9]`       | Go to workspace #[0-9] |
+| `S+Shift+[0-9]` | Move focused window to workspace #[0-9] |
+| `Alt+Shift+r`   | Go to resize container mode |
+| `Alt+Shift+g`   | Go to resize gaps mode |
+| `Alt+Ctrl+Del`  | Go to logout mode |
+| `Printscreen`   | Go to screenshot mode |
+| `S+Shift+c`     | Reload Sway configuration |
+| `S+Shift+e`     | Exit Sway |
+
 ### Neovim keybindings
 
 The prefix key is `Space`. You can override this using your custom `.vimrc.local` file. `<Leader>` means you need to press prefix key first. If they are not in the table, that means it's using the default Vim keybindings.
 
-| Mode          | Vim Keypress  | Description |
-| :-----------: | :-----------: | :---------: |
+| Mode          | Keypress      | Description |
+| :-----------: | :-----------: | :---------- |
 | Normal        | `<Leader>w`   | Save file |
 | Normal        | `<Leader>x`   | Save file and quit |
 | Normal        | `<Leader>qq`  | Quit |
@@ -181,8 +251,8 @@ The prefix key is `Space`. You can override this using your custom `.vimrc.local
 
 I override the default keybindings for Tmux to be more reasonable. Prefix key is `Alt+a` for local session and `Alt+z` for nested session. You can of course override this. `<prefix>` means you need to press prefix key first, `<repeat>` means you don't need to press prefix key again after triggering it within `repeat-time` set (default set to 1 second), `<copy-mode>` means you must be in copy-mode first. The table below lists all the keybindings set. If they are not in the table, that means it's using the default Tmux keybindings.
 
-| Tmux Keypress           | Description |
-| :---------------------: | :---------: |
+| Keypress                | Description |
+| :---------------------: | :---------- |
 | `<prefix>Alt+e`         | Edit tmux.conf.local file and reload configuration after saving |
 | `<prefix>Alt+r`         | Reload tmux configuration |
 | `<prefix>f`             | Find session, window, pane from list |
