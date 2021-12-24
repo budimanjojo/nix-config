@@ -22,11 +22,19 @@ cmd [[
 
 -- Filetype detection
 cmd [[
-  augroup ansbilefiletype
+  augroup ansiblefiletype
     autocmd!
     autocmd BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
     autocmd BufRead,BufNewFile */playbooks/*.yaml set filetype=yaml.ansible
     autocmd BufRead,BufNewFile */inventory/hosts.yml set filetype=yaml.ansible
     autocmd BufRead,BufNewFile */inventory/hosts.yaml set filetype=yaml.ansible
+  augroup END
+]]
+
+-- Filetype configuration
+cmd [[
+  augroup filetypesettings
+    autocmd!
+    autocmd FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab
   augroup END
 ]]
