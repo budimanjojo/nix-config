@@ -42,7 +42,6 @@ These are the plugins I'm using:
 - [tmux.fish](https://github.com/budimanjojo/tmux.fish)
 - [autopair.fish](https://github.com/jorgebucaran/autopair.fish)
 - [fish-abbreviation-tips](https://github.com/gazorby/fish-abbreviation-tips)
-- [kubectl](https://github.com/evanlucas/fish-kubectl-completions)
 
 To update fish plugins, type in `fisher update` in terminal.
 To install or remove fish plugins, you can run `fisher` command.
