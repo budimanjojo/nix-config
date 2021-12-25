@@ -4,6 +4,7 @@ local requested_servers = {
   'ansiblels',
   'bashls',
   'dockerls',
+  'gopls',
   'jsonls',
   'sumneko_lua',
   'yamlls'
