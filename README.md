@@ -15,13 +15,13 @@ Stuffs may change without further notice and this README can get outdated.
 ## :camera:&nbsp; Screenshots
 
 **Sway**
-![01-sway](https://user-images.githubusercontent.com/13085918/146237534-4ba6d4be-f859-44fe-8388-a52be9f19de5.png)
+![sway](https://user-images.githubusercontent.com/13085918/147413320-eb27e1b5-f0ad-4354-ab5f-1507a8205c05.png)
 
 **Tmux**
-![01-tmux](https://user-images.githubusercontent.com/13085918/146237350-1e4a2f65-55ee-4f66-9502-9f3a5cc0857f.png)
+![tmux](https://user-images.githubusercontent.com/13085918/147413325-7e4dfe7a-85e2-495b-8c9a-26ff0be1b1e7.png)
 
 **Fish prompt**
-![01-fish](https://user-images.githubusercontent.com/13085918/146237396-dfd0b94e-80fe-4b1a-8a01-6ae0219f0b40.png)
+![fish](https://user-images.githubusercontent.com/13085918/147413332-0e2ce4c6-0dcc-47fa-9415-20e5774eeba5.png)
 
 **Neovim**
 ![01-nvim](https://user-images.githubusercontent.com/13085918/146237456-12244c88-9651-466b-ba48-e2a1991e59ec.png)
