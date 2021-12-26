@@ -13,7 +13,6 @@ $helm\
 $python\
 $vagrant\
 $kubernetes\
-$time\
 $line_break\
 ╰─\
 $character
@@ -99,12 +98,6 @@ style = "blue bold"
 symbol = "⛵"
 [kubernetes.context_aliases]
 "kubernetes-admin@cluster.local" = "kubernetes-admin@cluster"
-
-[time]
-disabled = false
-style = "purple bold"
-format = "[ $time]($style) "
-time_format = "  %a, %d %b |   %I:%M %p "
 
 [character]
 success_symbol = "[⮞](green)"
