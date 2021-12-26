@@ -73,7 +73,7 @@ fi
 # renovate: depName=FiloSottile/age datasource=github-tags
 current_age_version=v1.0.0
 
-if [ ! $(command -v age) ] || [ $(age --version) != "$current_age_version"] ]; then
+if [ ! $(command -v age) ] || [ $(age --version) != "$current_age_version" ]; then
     curl -fL https://github.com/FiloSottile/age/releases/download/$current_age_version/age-$current_age_version-linux-{{ .chezmoi.arch }}.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ --wildcards --no-anchored 'age/age*' --strip-components 1
     find /usr/local/bin -name age* -exec sudo chmod +x {} +
 fi
@@ -97,6 +97,9 @@ install_or_upgrade fd
 install_or_upgrade bat
 {{     if .agekey -}}
 install_or_upgrade age
+{{     end -}}
+{{     if not .headless -}}
+install_or_upgrade go
 {{     end -}}
 {{   end -}}
 
