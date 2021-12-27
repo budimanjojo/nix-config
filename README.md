@@ -121,6 +121,7 @@ git
 curl
 npm
 fzf
+unzip
 ```
 
 ## :abcd:&nbsp; Fonts
