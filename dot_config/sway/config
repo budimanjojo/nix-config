@@ -121,7 +121,7 @@ bindsym $mod+Shift+0 move container to workspace $ws0
 
 # Resize  window
 set $resize Resize (h/Left) shrink width, (j/Down) shrink height, (k/Up) grow height, (l/Right) grow width
-mode "resize" {
+mode "$resize" {
     bindsym $left       resize shrink width
     bindsym $down       resize grow height
     bindsym $up         resize shrink height
