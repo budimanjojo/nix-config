@@ -34,28 +34,29 @@ cmp.setup {
     { name = 'spell' }
   },
   mapping = {
-    ['<C-k>'] = cmp.mapping.select_prev_item(),
-    ['<C-j>'] = cmp.mapping.select_next_item(),
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-    },
-    ['<Tab>'] = function(fallback)
+    ['<C-k>'] = function(fallback)
       if cmp.visible() then
-        cmp.select_next_item()
+        cmp.select_prev_item()
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
       else
         fallback()
       end
     end,
-    ['<S-Tab>'] = function(fallback)
+    ['<C-j>'] = function(fallback)
       if cmp.visible() then
-        cmp.select_prev_item()
+        cmp.select_next_item()
       elseif luasnip.jumpable(-1) then
         luasnip.jump(-1)
       else
         fallback()
       end
-    end
+    end,
+    ['<C-Space>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+    },
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+    },
   },
 }
