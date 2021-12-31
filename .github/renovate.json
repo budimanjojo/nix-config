@@ -11,7 +11,7 @@
     "ignoreTests": true,
     "regexManagers": [
         {
-            "fileMatch": [".+\\.sh.tmpl$"],
+            "fileMatch": ["./.chezmoiscripts/+\\.sh.tmpl$"],
             "matchStrings": [
                 "# renovate: depName=(?<depName>.*) datasource=(?<datasource>.*)\\n\\s*current_\\w+_version=(?<currentValue>.+)\\b"
             ]
