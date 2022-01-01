@@ -7,15 +7,15 @@ install.sh
 {{- if (and (eq .chezmoi.os "linux") (not .i3wm)) }}
 .i3/
 .config/picom.conf
+.conky/
+{{-   if not .swaywm }}
 .config/rofi/
 .config/dunst/
-.conky/
+{{-   end }}
 {{- end }}
 {{- if (and (eq .chezmoi.os "linux") (not .swaywm)) }}
 .config/sway/
 .config/waybar/
-.config/rofi/
-.config/dunst/
 .config/nwg-dock/
 .cache/executable_nwg-dock-pinned
 {{- end }}
