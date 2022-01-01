@@ -4,7 +4,7 @@
 
 # Default applications
 set $term alacritty
-set $browser chromium
+set $browser firefox
 set $filemanager thunar
 set $launcher rofi
 
