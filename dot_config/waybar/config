@@ -26,12 +26,12 @@
     ],
 
     "sway/workspaces": {
-        "format": "{index}:{name} "
+        "format": "{value} "
     },
 
     "sway/mode": {
         "format": " {}",
-        "max-length": 70
+        "max-length": 100
     },
 
     "network": {
@@ -53,7 +53,7 @@
     },
 
     "custom/uname": {
-        "format": " {}",
+        "format": " {}",
         "exec": "uname -r",
         "tooltip": false
     },
@@ -79,7 +79,7 @@
         "interval": 3600,
         "exec": "$HOME/.config/waybar/scripts/update.sh",
         "return-type": "json",
-        "on-click": "alacritty -e pamac update --aur; pkill -SIGRTMIN+8 waybar",
+        "on-click": "alacritty -t updater -e pamac update --aur --no-confirm; pkill -SIGRTMIN+8 waybar",
         "signal": 8
     },
 

@@ -120,7 +120,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws0
 
 # Resize  window
-set $resize Resize (h/Left) shrink width, (j/Down) shrink height, (k/Up) grow height, (l/Right) grow width
+set $resize Resize: (h/Left) shrink width, (j/Down) shrink height, (k/Up) grow height, (l/Right) grow width
 mode "$resize" {
     bindsym $left       resize shrink width
     bindsym $down       resize grow height
@@ -186,7 +186,7 @@ bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. 
 
 # Show log out menu
 set $Locker swaylock && sleep 1
-set $system (l) lock, (e) logout, (r) reboot, (s) shutdown (f) uefi
+set $system System: (l) lock, (e) logout, (r) reboot, (s) shutdown (f) uefi
 mode "$system" {
     bindsym l           exec $Locker, mode "default"
     bindsym e           exec swaymsg exit, mode "default"
@@ -211,7 +211,7 @@ bindsym $mod+s exec steam
 # Take a screenshot with grim, put it in Desktop folder
 set $grim_capture GRIM_DEFAULT_DIR=~/Desktop grim
 set $grim_region GRIM_DEFAULT_DIR=~/Desktop grim -g "$(slurp)"
-set $screenshot Screenshot (Enter), Full Screenshot, (S) Select Region
+set $screenshot Screenshot: (Enter) Full Screenshot, (S) Select Region
 mode "$screenshot" {
         bindsym Return      exec $grim_capture && pw-cat -p ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
         bindsym --release s exec $grim_region && pw-cat -p ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder", mode "default"
@@ -225,16 +225,16 @@ bindsym $alt+Tab exec rofi -show window
 
 ## WORKSPACE NAMING AND PLACEMENT
 # Workspace naming
-set $ws0 0:
-set $ws1 1:
-set $ws2 2: 
-set $ws3 3: 
-set $ws4 4: 
-set $ws5 5: 
-set $ws6 6: 
-set $ws7 7: 
-set $ws8 8: 
-set $ws9 9: 
+set $ws0 0:力
+set $ws1 1:
+set $ws2 2:
+set $ws3 3:
+set $ws4 4:
+set $ws5 5:金
+set $ws6 6:
+set $ws7 7:
+set $ws8 8:
+set $ws9 9:辶
 
 # Monitor placement
 set $monleft HDMI-A-1
@@ -249,7 +249,7 @@ workspace $ws3 output $monleft
 workspace $ws4 output $monright
 workspace $ws5 output $monleft
 workspace $ws6 output $monright
-workspace $ws7 output $monlef
+workspace $ws7 output $monleft
 workspace $ws8 output $monright
 workspace $ws9 output $monleft
 workspace $ws0 output $monright
@@ -277,32 +277,28 @@ default_border pixel 1
 # for_window [window_type="(dialog)|(menu)"] floating enable border pixel 1
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="prefwindow"] floating enable
-for_window [class="notify"] floating enable border pixel 1
+for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="thunar"] floating enable
+for_window [app_id="obs"] floating enable
+for_window [app_id="gnome-calculator"] floating enable
+for_window [app_id="pamac-manager"] floating enable
+for_window [app_id="eog"] floating enable
+for_window [app_id="blueman-manager"] floating enable
+for_window [app_id="nm-connection-editor"] floating enable
+for_window [app_id="rhythmbox"] floating enable, resize set 1000 640
 for_window [title="File Transfer*"] floating enable
-for_window [class="Galculator"] floating enable
-for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [class="Nitrogen"] floating enable sticky enable border normal
-for_window [class="Oblogout"] fullscreen enable
-for_window [class="octopi"] floating enable
-for_window [class="Pamac-manager"] floating enable
-for_window [class="Pavucontrol"] floating enable
+for_window [class="Lxappearance"] floating enable, sticky enable
 for_window [class="VirtualBox"] floating enable
-for_window [class="Skype"] floating enable
 for_window [class="Steam"] layout tabbed
-for_window [class="(?i)nvidia-settings"] floating enable
-for_window [class="smplayer"] floating enable
-for_window [class="Eog"] floating enable
-for_window [class="Rhythmbox"] floating enable resize set 1000 640
-for_window [class="obs"] floating enable
 
 # window placement
-for_window [title="(?i)YouTube - " app_id="chromium"] move container to workspace $ws1
-assign [app_id="smplayer"]                                                        → $ws3
-assign [app_id="rhythmbox"]                                                       → $ws3
-assign [class="Steam"]                                                            → $ws4
-assign [class="Gimp"]                                                             → $ws7
-assign [app_id="obs"]                                                             → $ws9
-assign [class="VirtualBox"]                                                       → $ws0
+for_window [title="updater" app_id="Alacritty"] move container to workspace $ws0
+for_window [app_id="retroarch"] move container to workspace $ws6, focus
+for_window [class="Gimp"] move container to workspace $ws7, focus
+for_window [app_id="obs"] move container to workspace $ws9, focus
+for_window [app_id="smplayer"] move container to workspace $ws5, focus
+for_window [app_id="rhythmbox"] move container to workspace $ws5, focus
+for_window [class="VirtualBox"] move container to workspace $ws0, focus
 
 # Focus wrapping
 focus_wrapping yes
