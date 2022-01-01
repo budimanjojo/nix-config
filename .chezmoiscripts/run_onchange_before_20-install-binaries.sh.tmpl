@@ -14,7 +14,7 @@ fi
 
 ##--FZF--##
 # renovate: depName=junegunn/fzf datasource=github-releases
-current_fzf_version=0.28.0
+current_fzf_version=0.29.0
 
 if [ ! $(command -v fzf) ] || [ $(fzf --version | head -n1 | cut -d" " -f1) != "$current_fzf_version" ]; then
     curl -fL https://github.com/junegunn/fzf/releases/download/$current_fzf_version/fzf-$current_fzf_version-linux_{{ .chezmoi.arch }}.tar.gz | sudo tar -xzf - -oC /usr/local/bin/
