@@ -72,11 +72,10 @@
     },
 
     "tray": {
-        "icon-size": 18,
     },
 
     "custom/update": {
-        "format": " ",
+        "format": "<span font='11'> </span>",
         "interval": 3600,
         "exec": "$HOME/.config/waybar/scripts/update.sh",
         "return-type": "json",
@@ -85,8 +84,8 @@
     },
 
     "pulseaudio": {
-        "format": "{icon} ",
-        "format-bluetooth": "{icon} ",
+        "format": "<span font='11'>{icon} </span>",
+        "format-bluetooth": "<span font='11'>{icon} </span>",
         "format-icons": {
             "default": ["", "", ""],
         },
