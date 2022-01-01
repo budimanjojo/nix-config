@@ -7,6 +7,7 @@ require('nvim-treesitter.configs').setup {
     'go',
     'html',
     'lua',
+    'python',
     'regex',
     'typescript',
     'vim',
