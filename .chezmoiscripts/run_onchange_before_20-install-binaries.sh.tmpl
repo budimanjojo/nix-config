@@ -23,7 +23,7 @@ fi
 
 ##--Starship--##
 # renovate: depName=starship/starship datasource=github-releases
-current_starship_version=v1.0.0
+current_starship_version=v1.1.1
 
 if [ ! $(command -v starship) ] || [ $(starship --version | head -n1 | cut -d" " -f2 | sed "s/^/v/") != "$current_starship_version" ]; then
     curl -fsSL https://starship.rs/install.sh | bash -s --yes
