@@ -21,10 +21,10 @@
     background:                  #1D1F21;
     alternate-normal-foreground: @foreground;
     normal-background:           @background;
-    selected-normal-background:  #198844;
+    selected-normal-background:  #3971ED;
     spacing:                     2px;
     separatorcolor:              @foreground;
-    urgent-background:           #3971ED;
+    urgent-background:           #CC342B;
     selected-urgent-background:  @selected-normal-background;
     alternate-urgent-foreground: @urgent-foreground;
     background-color:            @background;

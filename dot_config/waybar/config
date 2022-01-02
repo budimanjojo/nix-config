@@ -1,122 +1,185 @@
-{
+[
+  {
+    "output": "DP-1",
     "layer": "top",
     "position": "top",
-
+    "margin-top": 2,
     "modules-left": [
-        "sway/workspaces",
-        "sway/mode"
+      "sway/workspaces",
+      "sway/mode"
+    ],
+    "modules-center": [
+      "clock"
     ],
 
     "modules-right": [
-        "custom/sep_blue",
-        "network",
-        "custom/sep_blue_green",
-        "disk#home",
-        "disk#root",
-        "custom/sep_green_yellow",
-        "custom/uname",
-        "custom/sep_yellow_purple",
-        "clock",
-        "custom/sep_purple_blue",
-        "custom/whoami",
-        "custom/sep_blue_black",
-        "pulseaudio",
-        "custom/update",
-        "tray"
+      "network#down",
+      "network#up",
+      "disk#home",
+      "disk#root",
+      "custom/uname",
+      "pulseaudio",
+      "custom/update",
+      "tray"
     ],
 
     "sway/workspaces": {
-        "format": "{value} "
+      "format": "{value} "
     },
 
     "sway/mode": {
-        "format": " {}",
-        "max-length": 100
+      "format": " {}",
+      "max-length": 100
     },
 
-    "network": {
-        "format": " {bandwidthDownBits}  {bandwidthUpBits}",
-        "tooltip-format": "{ifname} {ipaddr}",
-        "interval": 1
+    "network#down": {
+      "format": " {bandwidthDownBits}",
+      "tooltip-format": "{ifname} {ipaddr}",
+      "interval": 1
+    },
+
+    "network#up": {
+      "format": " {bandwidthUpBits}",
+      "tooltip-format": "{ifname} {ipaddr}",
+      "interval": 1
     },
 
     "disk#home": {
-        "format": " {used} ",
-        "interval": 30,
-        "path": "/home/budiman"
+      "format": " {used}",
+      "interval": 30,
+      "path": "/home/budiman"
     },
 
     "disk#root": {
-        "format": " {used}",
-        "interval": 30,
-        "path": "/"
+      "format": " {used}",
+      "interval": 30,
+      "path": "/"
     },
 
     "custom/uname": {
-        "format": " {}",
-        "exec": "uname -r",
-        "tooltip": false
+      "format": " {}",
+      "exec": "uname -r",
+      "tooltip": false
     },
 
     "clock": {
-        "format": "{: %a,%d%b  %I:%M:%S%p}",
-        "interval": 1,
-        "timezone": "Asia/Jakarta",
-        "tooltip": false
-    },
-
-    "custom/whoami": {
-        "format": " {}",
-        "exec": "whoami",
-        "tooltip": false
+      "format": "{: %a,%d%b  %I:%M%p}",
+      "interval": 1,
+      "timezone": "Asia/Jakarta",
+      "tooltip": false
     },
 
     "tray": {
     },
 
     "custom/update": {
-        "format": "<span font='11'> </span>",
-        "interval": 3600,
-        "exec": "$HOME/.config/waybar/scripts/update.sh",
-        "return-type": "json",
-        "on-click": "alacritty -t updater -e pamac update --aur --no-confirm; pkill -SIGRTMIN+8 waybar",
-        "signal": 8
+      "format": "<span font='11'> </span>",
+      "interval": 3600,
+      "exec": "$HOME/.config/waybar/scripts/update.sh",
+      "return-type": "json",
+      "on-click": "alacritty -t updater -e pamac update --aur --no-confirm; pkill -SIGRTMIN+8 waybar",
+      "signal": 8
     },
 
     "pulseaudio": {
-        "format": "<span font='11'>{icon} </span>",
-        "format-bluetooth": "<span font='11'>{icon} </span>",
-        "format-icons": {
-            "default": ["", "", ""],
-        },
-        "tooltip-format": "{desc}{volume}%",
-        "scroll-step": 1,
-        "on-click": "pavucontrol"
+      "format": "<span font='11'>{icon} </span>",
+      "format-bluetooth": "<span font='11'>{icon} </span>",
+      "format-icons": {
+        "default": ["", "", ""],
+      },
+      "tooltip-format": "{desc}{volume}%",
+      "scroll-step": 1,
+      "on-click": "pavucontrol"
+    },
+  },
+
+  {
+    "output": "HDMI-A-1",
+    "layer": "top",
+    "position": "top",
+    "margin-top": 2,
+
+    "modules-left": [
+      "sway/workspaces",
+      "sway/mode"
+    ],
+
+    "modules-center": [
+      "clock"
+    ],
+
+    "modules-right": [
+      "network#down",
+      "network#up",
+      "disk#home",
+      "disk#root",
+      "custom/uname",
+    ],
+
+    "sway/workspaces": {
+      "format": "{value} "
     },
 
-    // Separators
-    "custom/sep_blue": {
-        "format": "",
-        "tooltip": false
+    "sway/mode": {
+      "format": " {}",
+      "max-length": 100
     },
-    "custom/sep_blue_green": {
-        "format": "",
-        "tooltip": false
+
+    "network#down": {
+      "format": " {bandwidthDownBits}",
+      "tooltip-format": "{ifname} {ipaddr}",
+      "interval": 1
     },
-    "custom/sep_green_yellow": {
-        "format": "",
-        "tooltip": false
+
+    "network#up": {
+      "format": " {bandwidthUpBits}",
+      "tooltip-format": "{ifname} {ipaddr}",
+      "interval": 1
     },
-    "custom/sep_yellow_purple": {
-        "format": "",
-        "tooltip": false
+
+    "disk#home": {
+      "format": " {used}",
+      "interval": 30,
+      "path": "/home/budiman"
     },
-    "custom/sep_purple_blue": {
-        "format": "",
-        "tooltip": false
+
+    "disk#root": {
+      "format": " {used}",
+      "interval": 30,
+      "path": "/"
     },
-    "custom/sep_blue_black": {
-        "format": "",
-        "tooltip": false
-    }
-}
+
+    "custom/uname": {
+      "format": " {}",
+      "exec": "uname -r",
+      "tooltip": false
+    },
+
+    "clock": {
+      "format": "{: %a,%d%b  %I:%M%p}",
+      "interval": 1,
+      "timezone": "Asia/Jakarta",
+      "tooltip": false
+    },
+
+    "custom/update": {
+      "format": "<span font='11'> </span>",
+      "interval": 3600,
+      "exec": "$HOME/.config/waybar/scripts/update.sh",
+      "return-type": "json",
+      "on-click": "alacritty -t updater -e pamac update --aur --no-confirm; pkill -SIGRTMIN+8 waybar",
+      "signal": 8
+    },
+
+    "pulseaudio": {
+      "format": "<span font='11'>{icon} </span>",
+      "format-bluetooth": "<span font='11'>{icon} </span>",
+      "format-icons": {
+        "default": ["", "", ""],
+      },
+      "tooltip-format": "{desc}{volume}%",
+      "scroll-step": 1,
+      "on-click": "pavucontrol"
+    },
+  },
+]
