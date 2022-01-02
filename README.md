@@ -53,6 +53,7 @@ These are the plugins I'm using:
 
 - [ansible-vim](https://github.com/pearofducks/ansible-vim)
 - [better-escape.nvim](https://github.com/max397574/better-escape.nvim)
+- [chezmoi.vim](https://github.com/alker0/chezmoi.vim)
 - [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim)
 - [FTerm.nvim](https://github.com/numToStr/FTerm.nvim)

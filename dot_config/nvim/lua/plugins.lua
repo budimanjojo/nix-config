@@ -10,6 +10,7 @@ require('packer').startup({
   function(use)
     use 'wbthomason/packer.nvim'
     use 'pearofducks/ansible-vim'
+    use 'alker0/chezmoi.vim'
     use 'RRethy/nvim-base16'
     use {
       'norcalli/nvim-colorizer.lua',
