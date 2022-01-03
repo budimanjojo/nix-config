@@ -221,7 +221,7 @@ bindsym Print mode "$screenshot"
 
 # Rofi as dmenu replacement
 bindsym $mod+grave exec rofi -show run
-bindsym $alt+Tab exec rofi -show window
+# bindsym $alt+Tab exec rofi -show window
 
 ## WORKSPACE NAMING AND PLACEMENT
 # Workspace naming
