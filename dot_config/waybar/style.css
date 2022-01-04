@@ -5,6 +5,7 @@
     font-size: 16px;
     font-weight: bold;
     min-height: 20px;
+    padding-top: 1px;
 }
 
 window#waybar {
@@ -26,10 +27,6 @@ window#waybar.hidden {
     margin: 0 1px;
 }
 
-#workspaces button:hover {
-    box-shadow: inset 0 -1.5px #FFFFF;
-}
-
 #workspaces button.focused {
     color: #1D1F21;
     background-color: #3971ED;
@@ -42,12 +39,14 @@ window#waybar.hidden {
 
 #mode {
     color: #C5C8C6;
+    padding-left: 2px;
+    color: #C5C8C6;
     box-shadow: inset 0 -1.5px;
 }
 
 #clock {
     color: #1D1F21;
-    background-color: #A36AC7;
+    background-color: #C5C8C6;
     padding: 0 10px;
     border-radius: 8px;
 }
@@ -86,7 +85,7 @@ window#waybar.hidden {
 
 #custom-uname {
     color: #1D1F21;
-    background-color: #C5C8C6;
+    background-color: #A36AC7;
     padding: 0 10px;
     border-radius: 8px;
     margin: 0 3px;
