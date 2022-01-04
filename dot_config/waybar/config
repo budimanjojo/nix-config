@@ -33,37 +33,37 @@
     },
 
     "network#down": {
-      "format": " {bandwidthDownBits}",
+      "format": "  {bandwidthDownBits}",
       "tooltip-format": "{ifname} {ipaddr}",
       "interval": 1
     },
 
     "network#up": {
-      "format": " {bandwidthUpBits}",
+      "format": "  {bandwidthUpBits}",
       "tooltip-format": "{ifname} {ipaddr}",
       "interval": 1
     },
 
     "disk#home": {
-      "format": " {used}",
+      "format": "  {used}",
       "interval": 30,
       "path": "/home/budiman"
     },
 
     "disk#root": {
-      "format": " {used}",
+      "format": "  {used}",
       "interval": 30,
       "path": "/"
     },
 
     "custom/uname": {
-      "format": " {}",
+      "format": "  {}",
       "exec": "uname -r",
       "tooltip": false
     },
 
     "clock": {
-      "format": "{: %a,%d%b  %I:%M%p}",
+      "format": "{:  %a,%d%b   %I:%M%p}",
       "interval": 1,
       "timezone": "Asia/Jakarta",
       "tooltip": false
@@ -126,37 +126,37 @@
     },
 
     "network#down": {
-      "format": " {bandwidthDownBits}",
+      "format": "  {bandwidthDownBits}",
       "tooltip-format": "{ifname} {ipaddr}",
       "interval": 1
     },
 
     "network#up": {
-      "format": " {bandwidthUpBits}",
+      "format": "  {bandwidthUpBits}",
       "tooltip-format": "{ifname} {ipaddr}",
       "interval": 1
     },
 
     "disk#home": {
-      "format": " {used}",
+      "format": "  {used}",
       "interval": 30,
       "path": "/home/budiman"
     },
 
     "disk#root": {
-      "format": " {used}",
+      "format": "  {used}",
       "interval": 30,
       "path": "/"
     },
 
     "custom/uname": {
-      "format": " {}",
+      "format": "  {}",
       "exec": "uname -r",
       "tooltip": false
     },
 
     "clock": {
-      "format": "{: %a,%d%b  %I:%M%p}",
+      "format": "{:  %a,%d%b   %I:%M%p}",
       "interval": 1,
       "timezone": "Asia/Jakarta",
       "tooltip": false
