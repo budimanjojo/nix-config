@@ -220,8 +220,8 @@ mode "$screenshot" {
 bindsym Print mode "$screenshot"
 
 # Rofi as dmenu replacement
-bindsym $mod+grave exec rofi -show run
-bindsym $alt+Tab exec rofi -show window
+bindsym $mod+grave exec rofi -show drun
+# bindsym $alt+Tab exec rofi -show window
 
 ## WORKSPACE NAMING AND PLACEMENT
 # Workspace naming
@@ -322,7 +322,7 @@ output $monleft bg /usr/share/backgrounds/portal-3-left.jpg fill
 output $monright bg /usr/share/backgrounds/portal-3-right.jpg fill
 
 # Base16-Google colors
-set $border-color #C5C8C6
+set $border-color #3971ED
 set $bg-color #1D1F21
 set $inac-bg-color #1D1F21
 set $text-color #CC342B
