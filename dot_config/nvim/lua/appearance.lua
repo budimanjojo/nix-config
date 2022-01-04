@@ -21,6 +21,11 @@ cmd [[
   augroup END
 ]]
 
+-- Floating window border color
+cmd [[
+  highlight! FloatBorder guifg=#3971ED
+]]
+
 -- nvim-cmp kind highlight
 cmd [[
   highlight! CmpItemAbbrDeprecated gui=strikethrough guifg=#C5C8C6
