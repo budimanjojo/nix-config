@@ -93,7 +93,7 @@ window#waybar.hidden {
 
 #tray {
     color: #C5C8C6;
-    background-color: #566573;
+    background-color: #656565;
     padding-right: 10px;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -102,7 +102,7 @@ window#waybar.hidden {
 
 #pulseaudio {
     color: #C5C8C6;
-    background-color: #566573;
+    background-color: #656565;
     padding-left: 10px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -111,7 +111,7 @@ window#waybar.hidden {
 
 #custom-update {
     color: #C5C8C6;
-    background-color: #566573;
+    background-color: #656565;
 }
 
 #custom-update.needsupdate {
