@@ -50,7 +50,7 @@ fi
 
 ##--fd--##
 # renovate: depName=sharkdp/fd datasource=github-releases
-current_fd_version=v8.3.0
+current_fd_version=v8.3.1
 
 if [ ! $(command -v fd) ] || [ $(fd --version | head -n1 | cut -d" " -f2 | sed "s/^/v/") != "$current_fd_version" ]; then
     curl -fL https://github.com/sharkdp/fd/releases/download/$current_fd_version/fd-$current_fd_version-x86_64-unknown-linux-musl.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ --wildcards --no-anchored '*/fd' --strip-components 1
