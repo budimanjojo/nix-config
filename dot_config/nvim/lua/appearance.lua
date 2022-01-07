@@ -26,6 +26,14 @@ cmd [[
   highlight! FloatBorder guifg=#3971ED
 ]]
 
+-- Don't underline bad spelling
+cmd [[
+  highlight! SpellBad gui=none
+  highlight! SpellCap gui=none
+  highlight! SpellLocal gui=none
+  highlight! SpellRare gui=none
+]]
+
 -- nvim-cmp kind highlight
 cmd [[
   highlight! CmpItemAbbrDeprecated gui=strikethrough guifg=#C5C8C6
