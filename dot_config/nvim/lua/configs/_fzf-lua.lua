@@ -2,7 +2,13 @@ require('fzf-lua').setup {
   fzf_opts = {
     ['--layout'] = 'reverse-list',
     ['--prompt'] = '⮞ ',
-    ['--info'] = 'default'
+    ['--info'] = 'default',
+    ['--color'] = 'fg:white,bg:black,hl:red,fg+:white,hl+:red,info:yellow,prompt:blue,pointer:magenta,marker:magenta,spinner:green,header:blue',
+  },
+  winopts = {
+    hl = {
+      border = 'FloatBorder',
+    }
   },
   builtin = {
     prompt = 'FzfLua ⮞ '
