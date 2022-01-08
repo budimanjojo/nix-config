@@ -85,6 +85,7 @@ waybar
 grim
 slurp
 swayidle
+python-i3ipc
 rofi (optional)
 nwg-dock (optional)
 ```
