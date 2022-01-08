@@ -59,7 +59,7 @@ fi
 
 ##--bat--##
 # renovate: depName=sharkdp/bat datasource=github-releases
-current_bat_version=v0.18.3
+current_bat_version=v0.19.0
 
 if [ ! $(command -v bat) ] || [ $(bat --version | head -n1 | cut -d" " -f | sed "s/^/v/") != "$current_bat_version" ]; then
     curl -fL https://github.com/sharkdp/bat/releases/download/$current_bat_version/bat-$current_bat_version-x86_64-unknown-linux-musl.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ --wildcards --no-anchored '*/bat' --strip-components 1
