@@ -28,10 +28,10 @@ cmd [[
 
 -- Don't underline bad spelling
 cmd [[
-  highlight! SpellBad gui=none
-  highlight! SpellCap gui=none
-  highlight! SpellLocal gui=none
-  highlight! SpellRare gui=none
+  highlight! SpellBad gui=italic
+  highlight! SpellCap gui=italic
+  highlight! SpellLocal gui=italic
+  highlight! SpellRare gui=italic
 ]]
 
 -- nvim-cmp kind highlight
