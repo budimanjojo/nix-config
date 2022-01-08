@@ -195,7 +195,10 @@ I use `Super` and `Alt` key for Sway/i3.
 
 ### Neovim keybindings
 
-The prefix key is `Space`. You can override this using your custom `.vimrc.local` file. `<Leader>` means you need to press prefix key first. If they are not in the table, that means it's using the default Vim keybindings.
+The prefix key is `Space`.
+You can override this using your custom `.vimrc.local` file.
+`<Leader>` means you need to press prefix key first.
+If they are not in the table, that means it's using the default Vim keybindings.
 
 | Mode          | Keypress      | Description |
 | :-----------: | :-----------: | :---------- |
@@ -252,7 +255,12 @@ The prefix key is `Space`. You can override this using your custom `.vimrc.local
 
 ### Tmux keybindings
 
-I override the default keybindings for Tmux to be more reasonable. Prefix key is `Alt+a` for local session and `Alt+z` for nested session. You can of course override this. `<prefix>` means you need to press prefix key first, `<repeat>` means you don't need to press prefix key again after triggering it within `repeat-time` set (default set to 1 second), `<copy-mode>` means you must be in copy-mode first. The table below lists all the keybindings set. If they are not in the table, that means it's using the default Tmux keybindings.
+I override the default keybindings for Tmux to be more reasonable.
+Prefix key is `Alt+a` for local session and `Alt+z` for nested session.
+You can of course override this.
+`<prefix>` means you need to press prefix key first, `<repeat>` means you don't need to press prefix key again after triggering it within `repeat-time` set (default set to 1 second), `<copy-mode>` means you must be in copy-mode first.
+The table below lists all the keybindings set.
+If they are not in the table, that means it's using the default Tmux keybindings.
 
 | Keypress                | Description |
 | :---------------------: | :---------- |
