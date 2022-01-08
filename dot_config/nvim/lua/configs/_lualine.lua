@@ -12,34 +12,34 @@ local colors = {
 
 local custom_material =  {
     normal = {
-      a = { fg = colors.black, bg = colors.blue },
-      b = { fg = colors.black, bg = colors.yellow },
-      c = { fg = colors.black, bg = colors.white },
+      a = { fg = colors.black, bg = colors.blue, gui = 'bold' },
+      b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
+      c = { fg = colors.black, bg = colors.white, gui = 'bold' },
     },
     insert = {
-      a = { fg = colors.black, bg = colors.green },
-      b = { fg = colors.black, bg = colors.yellow },
-      c = { fg = colors.black, bg = colors.white },
+      a = { fg = colors.black, bg = colors.green, gui = 'bold' },
+      b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
+      c = { fg = colors.black, bg = colors.white, gui = 'bold' },
     },
     visual = {
-      a = { fg = colors.black, bg = colors.magenta },
-      b = { fg = colors.black, bg = colors.yellow },
-      c = { fg = colors.black, bg = colors.white },
+      a = { fg = colors.black, bg = colors.magenta, gui = 'bold' },
+      b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
+      c = { fg = colors.black, bg = colors.white, gui = 'bold' },
     },
     replace = {
-      a = { fg = colors.black, bg = colors.red },
-      b = { fg = colors.black, bg = colors.yellow },
-      c = { fg = colors.black, bg = colors.white },
+      a = { fg = colors.black, bg = colors.red, gui = 'bold' },
+      b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
+      c = { fg = colors.black, bg = colors.white, gui = 'bold' },
     },
     command = {
-      a = { fg = colors.black, bg = colors.green },
-      b = { fg = colors.black, bg = colors.yellow },
-      c = { fg = colors.black, bg = colors.white },
+      a = { fg = colors.black, bg = colors.green, gui = 'bold' },
+      b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
+      c = { fg = colors.black, bg = colors.white, gui = 'bold' },
     },
     inactive = {
-      a = { fg = colors.white, bg = colors.green },
-      b = { fg = colors.black, bg = colors.yellow },
-      c = { fg = colors.black, bg = colors.white },
+      a = { fg = colors.white, bg = colors.green, gui = 'bold' },
+      b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
+      c = { fg = colors.black, bg = colors.white, gui = 'bold' },
     },
   }
 
