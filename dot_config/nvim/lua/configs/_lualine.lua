@@ -11,46 +11,59 @@ local colors = {
 }
 
 local custom_material =  {
-    normal = {
-      a = { fg = colors.black, bg = colors.blue, gui = 'bold' },
-      b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
-      c = { fg = colors.black, bg = colors.white, gui = 'bold' },
-    },
-    insert = {
-      a = { fg = colors.black, bg = colors.green, gui = 'bold' },
-      b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
-      c = { fg = colors.black, bg = colors.white, gui = 'bold' },
-    },
-    visual = {
-      a = { fg = colors.black, bg = colors.magenta, gui = 'bold' },
-      b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
-      c = { fg = colors.black, bg = colors.white, gui = 'bold' },
-    },
-    replace = {
-      a = { fg = colors.black, bg = colors.red, gui = 'bold' },
-      b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
-      c = { fg = colors.black, bg = colors.white, gui = 'bold' },
-    },
-    command = {
-      a = { fg = colors.black, bg = colors.green, gui = 'bold' },
-      b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
-      c = { fg = colors.black, bg = colors.white, gui = 'bold' },
-    },
-    inactive = {
-      a = { fg = colors.white, bg = colors.green, gui = 'bold' },
-      b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
-      c = { fg = colors.black, bg = colors.white, gui = 'bold' },
-    },
-  }
+  normal = {
+    a = { fg = colors.black, bg = colors.blue, gui = 'bold' },
+    b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
+    c = { fg = colors.black, bg = colors.white, gui = 'bold' },
+  },
+  insert = {
+    a = { fg = colors.black, bg = colors.green, gui = 'bold' },
+    b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
+    c = { fg = colors.black, bg = colors.white, gui = 'bold' },
+  },
+  visual = {
+    a = { fg = colors.black, bg = colors.magenta, gui = 'bold' },
+    b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
+    c = { fg = colors.black, bg = colors.white, gui = 'bold' },
+  },
+  replace = {
+    a = { fg = colors.black, bg = colors.red, gui = 'bold' },
+    b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
+    c = { fg = colors.black, bg = colors.white, gui = 'bold' },
+  },
+  command = {
+    a = { fg = colors.black, bg = colors.green, gui = 'bold' },
+    b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
+    c = { fg = colors.black, bg = colors.white, gui = 'bold' },
+  },
+  inactive = {
+    a = { fg = colors.white, bg = colors.green, gui = 'bold' },
+    b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
+    c = { fg = colors.black, bg = colors.white, gui = 'bold' },
+  },
+}
 
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = custom_material
+    theme = custom_material,
+    section_separators = { left = '', right = '' },
+    component_separators = '',
+    disabled_filetypes = { 'NvimTree' },
   },
   sections = {
-    lualine_a = { 'mode' },
-    lualine_b = { 'branch' },
+    lualine_a = {
+      {
+        'mode',
+        separator = { left = '', right = '' },
+      }
+    },
+    lualine_b = {
+      {
+        'branch',
+        separator = { left = '', right = '' },
+      }
+    },
     lualine_c = {
       {
         'diff',
@@ -79,13 +92,18 @@ require('lualine').setup {
     },
     lualine_x = { 'filetype' },
     lualine_y = { 'progress' },
-    lualine_z = { 'location' }
+    lualine_z = {
+      {
+        'location',
+        separator = { left = '', right = '' },
+      }
+    }
   },
   tabline = {
-    lualine_a = { 'tabs' },
     lualine_b = {
       {
         'buffers',
+        separator = { left = '', right = '' },
         show_modified_status = false,
         buffers_color = {
           active = 'lualine_b_normal',
@@ -93,9 +111,11 @@ require('lualine').setup {
         },
       }
     },
-    lualine_z = { 'hostname' }
+    lualine_z = {
+      {
+      'hostname',
+        separator = { left = '', right = '' },
+      }
+    }
   },
-  extensions = {
-    'nvim-tree',
-  }
 }
