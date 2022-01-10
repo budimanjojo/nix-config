@@ -3,17 +3,27 @@
 
 set -eufo pipefail
 
-# Check if font exists
-fc-list | grep -i "UbuntuMono Nerd Font\|Hack Nerd Font Mono" &> /dev/null && exit 0
-
+# List of Nerd Fonts font to install
+nerdfonts_fonts=(UbuntuMono Hack)
 font_dir=~/.local/share/fonts
 
-mkdir -p $font_dir
-curl -fLo "$font_dir/Ubuntu Mono Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/UbuntuMono/Regular/complete/Ubuntu%20Mono%20Nerd%20Font%20Complete.ttf
-curl -fLo "$font_dir/Hack Regular Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
+# renovate: depName=ryanoasis/nerd-fonts
+current_nerdfonts_version=v2.1.0
+
+updated_counter=0
+for font in ${nerdfonts_fonts[@]}; do
+  if $(fc-list | grep -i "$font Nerd Font" &> /dev/null); then
+    echo "$font already installed"
+  else
+    echo "installing $font"
+    mkdir -p $font_dir/$font
+    curl -fLo $font_dir/$font.zip https://github.com/ryanoasis/nerd-fonts/releases/download/$current_nerdfonts_version/$font.zip && unzip -o "$font_dir/$font.zip" -d $font_dir && rm $font_dir/$font.zip
+    updated_counter=$((updated_counter + 1))
+  fi
+done
 
 # reset font cache
-if [ $(command -v fc-cache) ]; then
-    fc-cache -vf "$font_dir"
+if [ $updated_counter -gt 0 ]; then
+  fc-cache -vf "$font_dir"
 fi
 {{ end -}}
