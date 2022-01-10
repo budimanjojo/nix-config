@@ -17,7 +17,7 @@ for font in ${nerdfonts_fonts[@]}; do
   else
     echo "installing $font"
     mkdir -p $font_dir/$font
-    curl -fLo $font_dir/$font.zip https://github.com/ryanoasis/nerd-fonts/releases/download/$current_nerdfonts_version/$font.zip && unzip -o "$font_dir/$font.zip" -d $font_dir && rm $font_dir/$font.zip
+    curl -fLo $font_dir/$font.zip https://github.com/ryanoasis/nerd-fonts/releases/download/$current_nerdfonts_version/$font.zip && unzip -o "$font_dir/$font.zip" -d $font_dir/$font && rm $font_dir/$font.zip
     updated_counter=$((updated_counter + 1))
   fi
 done
