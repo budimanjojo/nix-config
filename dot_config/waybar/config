@@ -77,7 +77,7 @@
       "interval": 3600,
       "exec": "$HOME/.config/waybar/scripts/update.sh",
       "return-type": "json",
-      "on-click": "alacritty -t updater -e pamac update --aur --no-confirm; pkill -SIGRTMIN+8 waybar",
+      "on-click": "kitty -T=updater pamac update --aur --no-confirm; pkill -SIGRTMIN+8 waybar",
       "signal": 8
     },
 
