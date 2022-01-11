@@ -3,7 +3,7 @@
 ########################################################################################################
 
 # Default applications
-set $term alacritty
+set $term kitty
 set $browser firefox
 set $filemanager thunar
 set $launcher rofi
