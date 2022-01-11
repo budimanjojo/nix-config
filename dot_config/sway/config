@@ -293,7 +293,7 @@ for_window [class="VirtualBox"] floating enable
 for_window [class="Steam"] layout tabbed
 
 # window placement
-for_window [title="updater" app_id="Alacritty"] move container to workspace $ws0
+for_window [title="updater" app_id="kitty"] move container to workspace $ws0
 for_window [app_id="retroarch"] move container to workspace $ws6, focus
 for_window [class="Gimp"] move container to workspace $ws7, focus
 for_window [app_id="obs"] move container to workspace $ws9, focus
