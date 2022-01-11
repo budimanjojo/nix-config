@@ -21,4 +21,5 @@ install.sh
 {{- end }}
 {{- if .headless }}
 .config/alacritty/
+.config/kitty/
 {{- end }}
