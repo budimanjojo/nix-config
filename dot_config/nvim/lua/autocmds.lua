@@ -28,6 +28,8 @@ cmd [[
     autocmd BufRead,BufNewFile */playbooks/*.yaml set filetype=yaml.ansible
     autocmd BufRead,BufNewFile */inventory/hosts.yml set filetype=yaml.ansible
     autocmd BufRead,BufNewFile */inventory/hosts.yaml set filetype=yaml.ansible
+    autocmd BufRead,BufNewFile */.chezmoiscripts/*.sh.tmpl set filetype=sh.tmpl
+    autocmd BufRead,BufNewFile */.chezmoiscripts/*.fish.tmpl set filetype=fish.tmpl
   augroup END
 ]]
 
