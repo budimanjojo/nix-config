@@ -1,34 +1,53 @@
 #!/usr/bin/fish
 
+echo -e "\033[0;32m>>>>> Begin Setting Up Fish shell <<<<<\033[0m"
+
 ## Install fisher
 if not type -q fisher
-    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+  echo "installing fisher"
+  curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+end
+
+function install_fisher_plugin
+  set check_installed_fisher (fisher list | grep $argv)
+  if test $check_installed_fisher = $argv
+    echo "$argv is already installed"
+  else
+    echo "installing $argv"
+    fisher install $argv
+  end
 end
 
 ## Install fish plugins
-fisher install patrickF1/fzf.fish
-fisher install nickeb96/puffer-fish
-fisher install budimanjojo/tmux.fish
-fisher install jorgebucaran/autopair.fish
-fisher install gazorby/fish-abbreviation-tips
+install_fisher_plugin patrickF1/fzf.fish
+install_fisher_plugin nickeb96/puffer-fish
+install_fisher_plugin budimanjojo/tmux.fish
+install_fisher_plugin jorgebucaran/autopair.fish
+install_fisher_plugin gazorby/fish-abbreviation-tips
 
 ## Setup completions
 if not test -d $__fish_config_dir/completions
-    mkdir -p $__fish_config_dir/completions
+  mkdir -p $__fish_config_dir/completions
 end
 
 if type -q chezmoi
-    chezmoi completion fish --output=$__fish_config_dir/completions/chezmoi.fish
+  echo "setting up chezmoi completion"
+  chezmoi completion fish --output=$__fish_config_dir/completions/chezmoi.fish
 end
 
 if type -q flux
-    flux completion fish > $__fish_config_dir/completions/flux.fish
+  echo "setting up flux completion"
+  flux completion fish > $__fish_config_dir/completions/flux.fish
 end
 
 if type -q kustomize
-    kustomize completion fish > $__fish_config_dir/completions/kustomize.fish
+  echo "setting up kustomize completion"
+  kustomize completion fish > $__fish_config_dir/completions/kustomize.fish
 end
 
 if type -q kubectl
-    kubectl completion fish > $__fish_config_dir/completions/kubectl.fish
+  echo "setting up kubectl completion"
+  kubectl completion fish > $__fish_config_dir/completions/kubectl.fish
 end
+
+echo -e "\033[0;32m>>>>> Finish Setting Up Fish shell <<<<<\033[0m"
