@@ -3,63 +3,66 @@
 
 set -eufo pipefail
 
+echo -e "\033[0;32m>>>>> Begin Setting Up Arch Linux Packages <<<<<\033[0m"
+
 packages=(
-    fish
-    neovim
-    tmux
-    curl
-    python-pynvim
-    git
-    fd
-    bat
-    ripgrep
-    thefuck
-    npm
-    fzf
-    starship
-    zoxide
-    age
-    exa
-    unzip
+  fish
+  neovim
+  tmux
+  curl
+  python-pynvim
+  git
+  fd
+  bat
+  ripgrep
+  thefuck
+  npm
+  fzf
+  starship
+  zoxide
+  age
+  exa
+  unzip
 )
 
 aur_packages=()
 
 {{   if (not .headless) -}}
 packages+=(
-    go
-    kitty
+  go
+  kitty
 )
 {{   end -}}
 
 {{   if .i3wm -}}
 packages+=(
-    i3-gaps
-    i3lock
-    py3status
-    rofi
-    dunst
-    conky
-    xfce4-panel
+  i3-gaps
+  i3lock
+  py3status
+  rofi
+  dunst
+  conky
+  xfce4-panel
 )
 {{   end -}}
 
 {{   if .swaywm -}}
 packages+=(
-    sway
-    swayidle
-    waybar
-    dunst
-    python-i3ipc
+  sway
+  swayidle
+  waybar
+  dunst
+  python-i3ipc
 )
 
 aur_packages+=(
-    nwg-dock
-    rofi-lbonn-wayland-git
+  nwg-dock
+  rofi-lbonn-wayland-git
 )
 
 {{   end -}}
 
+echo "updating packages"
 {{   if ne .chezmoi.username "root" -}}
 sudo pacman -Syu --noconfirm
 {{   else -}}
@@ -67,32 +70,36 @@ pacman -Syu --noconfirm
 {{   end -}}
 
 for package in ${packages[@]}; do
-    if [ "$(pacman -Qq $package 2> /dev/null)" != $package ]; then
+  if [ "$(pacman -Qq $package 2> /dev/null)" != $package ]; then
+    echo "installing $package"
 {{-   if ne .chezmoi.username "root" }}
-        sudo pacman -S --noconfirm $package
+    sudo pacman -S --noconfirm $package
 {{-   else }}
-        pacman -S --noconfirm $package
+    pacman -S --noconfirm $package
 {{-   end }}
-    fi
+  fi
 done
 
 ## Install yay
 if [ ! $(command -v yay) ]; then
+  echo "installing yay"
 {{-   if ne .chezmoi.username "root" }}
-    sudo pacman -S --needed --noconfirm git base-devel
+  sudo pacman -S --needed --noconfirm git base-devel
 {{-   else}}
-    pacman -S --needed --noconfirm git base-devel
+  pacman -S --needed --noconfirm git base-devel
 {{-   end }}
-    git clone https://aur.archlinux.org/yay.git /tmp/yay
-    cd /tmp/yay
-    makepkg -si --noconfirm
-    rm -rf /tmp/yay
+  git clone https://aur.archlinux.org/yay.git /tmp/yay
+  cd /tmp/yay
+  makepkg -si --noconfirm
+  rm -rf /tmp/yay
 fi
 
 for aur_package in ${aur_packages[@]}; do
-    if [ $(pacman -Qq $aur_package 2> /dev/null) != $aur_package ]; then
+  if [ $(pacman -Qq $aur_package 2> /dev/null) != $aur_package ]; then
+    echo "installing $aur_package from AUR"
     yay -S --noconfirm $aur_package
-    fi
+  fi
 done
 
+echo -e "\033[0;32m>>>>> Finish Setting Up Arch Linux Packages <<<<<\033[0m"
 {{ end -}}

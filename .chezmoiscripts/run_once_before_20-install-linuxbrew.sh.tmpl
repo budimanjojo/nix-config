@@ -4,7 +4,8 @@
 set -eufo pipefail
 
 if [ ! -d /home/linuxbrew/.linuxbrew ]; then
-    sudo apt install build-essential procps curl file git
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  echo "installing Linuxbrew"
+  sudo apt install build-essential procps curl file git
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 {{ end -}}

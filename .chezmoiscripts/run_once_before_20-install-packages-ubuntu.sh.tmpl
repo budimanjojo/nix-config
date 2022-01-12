@@ -3,19 +3,21 @@
 
 set -eufo pipefail
 
+echo -e "\033[0;32m>>>>> Begin Setting Up Ubuntu Packages <<<<<\033[0m"
+
 repositories=(
-    ppa:fish-shell/release-3
-    ppa:neovim-ppa/stable
+  ppa:fish-shell/release-3
+  ppa:neovim-ppa/stable
 )
 packages=(
-    fish
-    neovim
-    tmux
-    curl
-    python3-neovim
-    git
-    thefuck
-    unzip
+  fish
+  neovim
+  tmux
+  curl
+  python3-neovim
+  git
+  thefuck
+  unzip
 )
 snaps=()
 
@@ -25,31 +27,35 @@ packages+=(
 {{ end -}}
 
 for repository in ${repositories[@]}; do
+  echo "adding $repository repository to apt"
 {{ if ne .chezmoi.username "root" -}}
-    sudo add-apt-repository -y $repository
+  sudo add-apt-repository -y $repository
 {{ else -}}
-    add-apt-repository -y $repository
+  add-apt-repository -y $repository
 {{ end -}}
 done
 
 for package in ${packages[@]}; do
-    if [ ! $(dpkg-query -W -f='installed' $package 2> /dev/null) ]; then
+  if [ ! $(dpkg-query -W -f='installed' $package 2> /dev/null) ]; then
+    echo "installing $package"
 {{ if ne .chezmoi.username "root" -}}
-        sudo apt install -y $package
+    sudo apt install -y $package
 {{ else -}}
-        apt install -y ${packages[@]}
+    apt install -y ${packages[@]}
 {{ end -}}
-    fi
+  fi
 done
 
 {{ if (eq .chezmoi.osRelease.id "ubuntu") -}}
 for snap in ${snaps[@]}; do
+  echo "installing $snap using snap"
 {{   if ne .chezmoi.username "root" -}}
-    sudo snap install $snap
+  sudo snap install $snap
 {{   else -}}
-    snap install $snap
+  snap install $snap
 {{   end -}}
 done
 {{ end -}}
 
+echo -e "\033[0;32m>>>>> Finish Setting Up Ubuntu Packages <<<<<\033[0m"
 {{ end -}}

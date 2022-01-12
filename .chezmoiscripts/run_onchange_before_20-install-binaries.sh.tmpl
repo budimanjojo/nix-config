@@ -3,13 +3,17 @@
 
 set -eufo pipefail
 
+echo -e "\033[0;32m>>>>> Begin Setting Up Binaries <<<<<\033[0m"
+
 {{   if not .homebrew -}}
+
 ##--NodeJS--##
 # renovate: depName=node datasource=node
 current_nodejs_version=v17.1.0
 
 if [ ! $(command -v node) ] || [ $(node -v) != "$current_nodejs_version" ]; then
-    curl -fsSL install-node.vercel.app | sudo bash -s -- --yes --version $current_nodejs_version
+  echo "installing / upgrading NodeJS"
+  curl -fsSL install-node.vercel.app | sudo bash -s -- --yes --version $current_nodejs_version
 fi
 
 ##--FZF--##
@@ -17,8 +21,9 @@ fi
 current_fzf_version=0.29.0
 
 if [ ! $(command -v fzf) ] || [ $(fzf --version | head -n1 | cut -d" " -f1) != "$current_fzf_version" ]; then
-    curl -fL https://github.com/junegunn/fzf/releases/download/$current_fzf_version/fzf-$current_fzf_version-linux_{{ .chezmoi.arch }}.tar.gz | sudo tar -xzf - -oC /usr/local/bin/
-    sudo chmod +x /usr/local/bin/fzf
+  echo "installing / upgrading FZF"
+  curl -fL https://github.com/junegunn/fzf/releases/download/$current_fzf_version/fzf-$current_fzf_version-linux_{{ .chezmoi.arch }}.tar.gz | sudo tar -xzf - -oC /usr/local/bin/
+  sudo chmod +x /usr/local/bin/fzf
 fi
 
 ##--Starship--##
@@ -26,7 +31,8 @@ fi
 current_starship_version=v1.1.1
 
 if [ ! $(command -v starship) ] || [ $(starship --version | head -n1 | cut -d" " -f2 | sed "s/^/v/") != "$current_starship_version" ]; then
-    curl -fsSL https://starship.rs/install.sh | bash -s --yes
+  echo "installing / upgrading Starship"
+  curl -fsSL https://starship.rs/install.sh | bash -s --yes
 fi
 
 {{     if eq .chezmoi.arch "amd64" -}}
@@ -35,8 +41,9 @@ fi
 current_zoxide_version=v0.8.0
 
 if [ ! $(command -v zoxide) ] || [ $(zoxide --version | head -n1 | cut -d" " -f2) != "$current_zoxide_version" ]; then
-    curl -fL https://github.com/ajeetdsouza/zoxide/releases/download/$current_zoxide_version/zoxide-$current_zoxide_version-x86_64-unknown-linux-musl.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ zoxide
-    sudo chmod +x /usr/local/bin/zoxide
+  echo "installing / upgrading zoxide"
+  curl -fL https://github.com/ajeetdsouza/zoxide/releases/download/$current_zoxide_version/zoxide-$current_zoxide_version-x86_64-unknown-linux-musl.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ zoxide
+  sudo chmod +x /usr/local/bin/zoxide
 fi
 
 ##--ripgrep--##
@@ -44,8 +51,9 @@ fi
 current_ripgrep_version=13.0.0
 
 if [ ! $(command -v rg ) ] || [ $(rg --version | head -n1 | cut -d" " -f2) != "$current_ripgrep_version" ]; then
-    curl -fL https://github.com/BurntSushi/ripgrep/releases/download/$current_ripgrep_version/ripgrep-$current_ripgrep_version-x86_64-unknown-linux-musl.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ --wildcards --no-anchored '*/rg' --strip-components 1
-    sudo chmod +x /usr/local/bin/rg
+  echo "installing / upgrading ripgrep"
+  curl -fL https://github.com/BurntSushi/ripgrep/releases/download/$current_ripgrep_version/ripgrep-$current_ripgrep_version-x86_64-unknown-linux-musl.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ --wildcards --no-anchored '*/rg' --strip-components 1
+  sudo chmod +x /usr/local/bin/rg
 fi
 
 ##--fd--##
@@ -53,8 +61,9 @@ fi
 current_fd_version=v8.3.1
 
 if [ ! $(command -v fd) ] || [ $(fd --version | head -n1 | cut -d" " -f2 | sed "s/^/v/") != "$current_fd_version" ]; then
-    curl -fL https://github.com/sharkdp/fd/releases/download/$current_fd_version/fd-$current_fd_version-x86_64-unknown-linux-musl.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ --wildcards --no-anchored '*/fd' --strip-components 1
-    sudo chmod +x /usr/local/bin/fd
+  echo "installing / upgrading fd"
+  curl -fL https://github.com/sharkdp/fd/releases/download/$current_fd_version/fd-$current_fd_version-x86_64-unknown-linux-musl.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ --wildcards --no-anchored '*/fd' --strip-components 1
+  sudo chmod +x /usr/local/bin/fd
 fi
 
 ##--bat--##
@@ -62,8 +71,9 @@ fi
 current_bat_version=v0.19.0
 
 if [ ! $(command -v bat) ] || [ $(bat --version | head -n1 | cut -d" " -f | sed "s/^/v/") != "$current_bat_version" ]; then
-    curl -fL https://github.com/sharkdp/bat/releases/download/$current_bat_version/bat-$current_bat_version-x86_64-unknown-linux-musl.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ --wildcards --no-anchored '*/bat' --strip-components 1
-    sudo chmod +x /usr/local/bin/bat
+  echo "installing / upgrading bat"
+  curl -fL https://github.com/sharkdp/bat/releases/download/$current_bat_version/bat-$current_bat_version-x86_64-unknown-linux-musl.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ --wildcards --no-anchored '*/bat' --strip-components 1
+  sudo chmod +x /usr/local/bin/bat
 fi
 
 {{     end -}}
@@ -74,18 +84,21 @@ fi
 current_age_version=v1.0.0
 
 if [ ! $(command -v age) ] || [ $(age --version) != "$current_age_version" ]; then
-    curl -fL https://github.com/FiloSottile/age/releases/download/$current_age_version/age-$current_age_version-linux-{{ .chezmoi.arch }}.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ --wildcards --no-anchored 'age/age*' --strip-components 1
-    find /usr/local/bin -name age* -exec sudo chmod +x {} +
+  echo "installing / upgrading age"
+  curl -fL https://github.com/FiloSottile/age/releases/download/$current_age_version/age-$current_age_version-linux-{{ .chezmoi.arch }}.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ --wildcards --no-anchored 'age/age*' --strip-components 1
+  find /usr/local/bin -name age* -exec sudo chmod +x {} +
 fi
 {{     end -}}
 
 {{   else -}}
 function install_or_upgrade {
-    if brew ls --version "$1" >/dev/null; then
-        HOMEBREW_NO_AUTO_UPDATE=1 brew upgrade "$1"
-    else
-        HOMEBREW_NO_AUTO_UPDATE=1 brew install "$1"
-    fi
+  if brew ls --version "$1" >/dev/null; then
+    echo "upgrading $1 using brew"
+    HOMEBREW_NO_AUTO_UPDATE=1 brew upgrade "$1"
+  else
+    echo "installing $1 using brew"
+    HOMEBREW_NO_AUTO_UPDATE=1 brew install "$1"
+  fi
 }
 
 install_or_upgrade node
@@ -103,4 +116,5 @@ install_or_upgrade go
 {{     end -}}
 {{   end -}}
 
+echo -e "\033[0;32m>>>>> Finish Setting Up Binaries <<<<<\033[0m"
 {{ end -}}
