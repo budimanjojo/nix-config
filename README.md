@@ -128,9 +128,10 @@ unzip
 
 ## :abcd:&nbsp; Fonts
 
-Starship and Vim-airline requires powerline fonts to work.
+Starship and Lualine requires powerline fonts to work.
 I suggest [Nerd-fonts](https://github.com/ryanoasis/nerd-fonts).
 The font in the screenshot above is using UbuntuMono Nerd Font Regular.
+I also need Unifont installed in the system for some glyphs to work.
 Chezmoi will do this automatically for you.
 
 ## :inbox_tray:&nbsp; Installation
