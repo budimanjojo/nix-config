@@ -5,10 +5,13 @@ set -eufo pipefail
 
 echo -e "\033[0;32m>>>>> Begin Setting Up Ubuntu Packages <<<<<\033[0m"
 
+# List of ppa repositories to add
 repositories=(
   ppa:fish-shell/release-3
   ppa:neovim-ppa/stable
 )
+
+# List of packages to install
 packages=(
   fish
   neovim
@@ -19,6 +22,8 @@ packages=(
   thefuck
   unzip
 )
+
+# List of snap packages to install
 snaps=()
 
 {{ if (not .headless) -}}
@@ -27,12 +32,18 @@ packages+=(
 {{ end -}}
 
 for repository in ${repositories[@]}; do
-  echo "adding $repository repository to apt"
+  ppa_repo_source=${repository#ppa:}
+  if $(apt-cache policy | grep http | awk '{print $2}' | sort -u | grep $ppa_repo_source &> /dev/null); then
+    echo "$repository is already in system"
+  else
+    echo "adding $repository repository to apt"
 {{ if ne .chezmoi.username "root" -}}
-  sudo add-apt-repository -y $repository
+    sudo add-apt-repository -y $repository
 {{ else -}}
-  add-apt-repository -y $repository
+    add-apt-repository -y $repository
 {{ end -}}
+    echo "false"
+  fi
 done
 
 for package in ${packages[@]}; do
