@@ -17,7 +17,7 @@ fi
 
 ##--flux--##
 # renovate: depName=fluxcd/flux2 datasource=github-releases
-current_flux_version=v0.25.1
+current_flux_version=v0.25.2
 
 if [ ! $(command -v flux) ] || [ $(flux version --client | head -n1 | cut -d" " -f2) != "$current_flux_version" ]; then
   echo "installing / upgrading flux"
