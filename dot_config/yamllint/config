@@ -13,8 +13,7 @@ rules:
   comments-indentation:
     level: warning
   document-end: disable
-  document-start:
-    level: warning
+  document-start: disable
   empty-lines:
     max: 1
   empty-values: enable
