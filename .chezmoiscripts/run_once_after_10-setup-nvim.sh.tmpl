@@ -3,6 +3,7 @@
 
 set -eufo pipefail
 
+echo -e "\033[0;32m>>>>> Begin Setting Up Neovim <<<<<\033[0m"
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 # install null-ls sources
@@ -16,10 +17,21 @@ sudo pacman -S shfmt ansible-lint shellcheck yamllint
 {{     else -}}
 pacman -S shfmt ansible-lint shellcheck yamllint
 {{     end -}}
-{{   else if (and (eq .chezmoi.osRelease.id "ubuntu" "debian") (.homebrew)) -}}
-brew install shfmt
-brew install ansible-lint
-brew install shellcheck
-brew install yamllint
+{{   else if .homebrew -}}
+function install_or_upgrade {
+  if brew ls --version "$1" > /dev/null; then
+    echo "upgrading $1 using brew"
+    HOMEBREW_NO_AUTO_UPDATE=1 brew upgrade "$1"
+  else
+    echo "installing $1 using brew"
+    HOMEBREW_NO_AUTO_UPDATE=1 brew install "$1"
+  fi
+}
+
+install_or_upgrade shfmt
+install_or_upgrade ansible-lint
+install_or_upgrade shellcheck
+install_or_upgrade yamllint
 {{   end -}}
+echo -e "\033[0;32m>>>>> Finish Setting Up Neovim <<<<<\033[0m"
 {{ end -}}
