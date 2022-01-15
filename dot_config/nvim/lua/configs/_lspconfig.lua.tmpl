@@ -43,7 +43,7 @@ end
 
 -- Show diagnostics on hover
 vim.o.updatetime = 150
-vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focus = false })]])
+vim.cmd([[autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })]])
 
 -- LSP Server Setup Goes Below
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -55,7 +55,7 @@ local on_attach = function(_, bufnr)
   buf_map('n', 'rn', ':lua vim.lsp.buf.rename()<CR>', opts)
   buf_map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', opts)
   buf_map('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_map('n', 'gh', ':lua vim.lsp.buf.hover()<CR>', opts)
+  buf_map('n', 'gh', ':lua FixBufHover()<CR>', opts)
   buf_map('n', 'gr', ':lua vim.lsp.buf.references()<CR>', opts)
   buf_map('n', 'gi', ':lua vim.lsp.buf.implementation()<CR>', opts)
 end

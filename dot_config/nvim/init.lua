@@ -1,3 +1,4 @@
+require('utils')
 require('plugins')
 require('general')
 require('appearance')
