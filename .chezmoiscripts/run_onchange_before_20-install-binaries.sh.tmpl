@@ -32,7 +32,7 @@ current_starship_version=v1.2.1
 
 if [ ! $(command -v starship) ] || [ $(starship --version | head -n1 | cut -d" " -f2 | sed "s/^/v/") != "$current_starship_version" ]; then
   echo "installing / upgrading Starship"
-  curl -fsSL https://starship.rs/install.sh | bash -s --yes
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 fi
 
 {{     if eq .chezmoi.arch "amd64" -}}
