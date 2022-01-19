@@ -7,7 +7,7 @@ echo -e "\033[0;32m>>>>> Begin Setting Up Kubernetes tools <<<<<\033[0m"
 
 ##--kubectl--##
 # renovate: depName=kubernetes/kubernetes datasource=github-tags
-current_kubectl_version=v1.23.1
+current_kubectl_version=v1.23.2
 
 if [ ! $(command -v kubectl) ] || [ $(kubectl version --short --client | head -n1 | cut -d" " -f3) != "$current_kubectl_version" ]; then
   echo "installing / upgrading kubectl"
