@@ -95,6 +95,7 @@ lsp_installer.on_server_ready(function(server)
           },
           workspace = {
             library = vim.api.nvim_get_runtime_file('', true),
+            preloadFileSize = 200,
           },
           telemetry = {
             enable = false,
