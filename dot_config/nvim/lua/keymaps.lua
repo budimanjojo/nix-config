@@ -90,8 +90,8 @@ mapnoremap('n', '<Leader>fd', ':FzfLua lsp_typedefs<CR>')
 mapnoremap('n', '<Leader>xx', ':TroubleToggle<CR>')
 mapnoremap('n', '<Leader>xr', ':TroubleToggle lsp_references<CR>')
 
--- nvim-tree
-mapnoremap('n', '<C-f>', ':NvimTreeToggle<CR>')
+-- lir.nvim
+mapnoremap('n', '<C-f>', ':lua require("lir.float").toggle()<CR>')
 
 -- null-ls
 mapnoremap('n', '<Leader>pp', ':lua vim.lsp.buf.formatting()<CR>')

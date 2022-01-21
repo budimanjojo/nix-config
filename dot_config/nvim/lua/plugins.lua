@@ -84,10 +84,13 @@ require('packer').startup({
       end
     }
     use {
-      'kyazdani42/nvim-tree.lua',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-      config = function()
-        require('configs._nvim-tree')
+      'tamago324/lir.nvim',
+      requires = {
+        'nvim-lua/plenary.nvim',
+        { 'kyazdani42/nvim-web-devicons', opt = true }
+      },
+      config = function ()
+        require('configs/_lir')
       end
     }
     use {
