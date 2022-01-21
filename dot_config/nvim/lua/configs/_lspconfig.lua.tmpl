@@ -107,6 +107,14 @@ lsp_installer.on_server_ready(function(server)
     ['yamlls'] = function()
       default_opts.settings = {
         yaml = {
+          customTags = {
+            '!include_dir_list',
+            '!include_dir_named',
+            '!include_dir_merge_list',
+            '!include_dir_merge_named',
+            '!secret',
+            '!env_var',
+          },
           schemas = {
             kubernetes = {
               '01-namespace.yaml',
