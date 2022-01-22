@@ -19,6 +19,7 @@ require('packer').startup({
       end
     }
     use 'numToStr/FTerm.nvim'
+    use 'stevearc/dressing.nvim'
     use {
       'windwp/nvim-ts-autotag',
       config = function()
