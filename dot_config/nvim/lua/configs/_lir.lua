@@ -117,3 +117,7 @@ lir.setup {
     vim.api.nvim_echo({ { vim.fn.expand("%:p"), "Normal" } }, false, {})
   end,
 }
+
+require ('lir.git_status').setup {
+  show_ignored = false
+}

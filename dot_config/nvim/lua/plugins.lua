@@ -87,6 +87,7 @@ require('packer').startup({
       'tamago324/lir.nvim',
       requires = {
         'nvim-lua/plenary.nvim',
+        'tamago324/lir-git-status.nvim',
         { 'kyazdani42/nvim-web-devicons', opt = true }
       },
       config = function ()
