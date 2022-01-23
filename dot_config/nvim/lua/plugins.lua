@@ -12,6 +12,7 @@ require('packer').startup({
     use 'pearofducks/ansible-vim'
     use 'alker0/chezmoi.vim'
     use 'RRethy/nvim-base16'
+    use 'lewis6991/impatient.nvim'
     use {
       'norcalli/nvim-colorizer.lua',
       config = function()
@@ -139,6 +140,7 @@ require('packer').startup({
     end
   end,
   config = {
+    compile_path = vim.fn.stdpath('config')..'/lua/packer_compiled.lua',
     display = {
       open_fn = function()
         return require('packer.util').float({ border = 'single' })
