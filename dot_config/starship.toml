@@ -8,11 +8,6 @@ $git_branch\
 $fill\
 $status\
 $cmd_duration\
-$go\
-$helm\
-$python\
-$vagrant\
-$kubernetes\
 $line_break\
 ╰─\
 $character
@@ -74,30 +69,6 @@ style = "red"
 min_time = "2_000"
 format = " took [$duration]($style) "
 style = "yellow"
-
-[golang]
-style = "yellow bold"
-format = "[ $symbol($version)]($style) "
-
-[helm]
-style = "yellow bold"
-format = "[ $symbol($version)]($style) "
-
-[python]
-style = "yellow bold"
-format = "[ $symbol($version)]($style) "
-
-[vagrant]
-style = "yellow bold"
-format = "[ $symbol($version)]($style) "
-
-[kubernetes]
-disabled = false
-format = '[ $symbol $context( \($namespace\))]($style) '
-style = "blue bold"
-symbol = "⛵"
-[kubernetes.context_aliases]
-"kubernetes-admin@cluster.local" = "kubernetes-admin@cluster"
 
 [character]
 success_symbol = "[⮞](green)"
