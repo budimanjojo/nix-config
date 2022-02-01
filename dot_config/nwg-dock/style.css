@@ -1,5 +1,5 @@
 window {
-    background: #1D1F21;
+    background: #202124;
     opacity: 0.9;
     border-radius: 10px;
     border-style: none;
@@ -14,7 +14,7 @@ button, image {
     background: none;
     border-style: none;
     box-shadow: none;
-    color: #1D1F21;
+    color: #202124;
 }
 
 button {
@@ -26,7 +26,7 @@ button {
 }
 
 button:hover {
-    background: #CC342B;
+    background: #FBBC04;
     border-radius: 10px;
 }
 

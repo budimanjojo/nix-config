@@ -1,13 +1,13 @@
 local colors = {
-  black = '#1D1F21',
-  red = '#CC342B',
-  green = '#198844',
-  yellow = '#FBA922',
-  blue = '#3971ED',
-  magenta = '#A36AC7',
-  cyan = '#3971ED',
-  white = '#C5C8C6',
-  gray = '#656565',
+  black = '#202124',
+  red = '#EA4335',
+  green = '#34A853',
+  yellow = '#FBBC04',
+  blue = '#4285F4',
+  magenta = '#A142F4',
+  cyan = '#24C1E0',
+  white = '#FFFFFF',
+  gray = '#E8EAED',
 }
 
 local custom_material =  {

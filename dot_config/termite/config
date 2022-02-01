@@ -58,21 +58,21 @@ background = rgba(29, 31, 33, 0.9)
 # highlight = #2f2f2f
 
 # Colors from color0 to color254 can be set
-color0 = #1D1F21
-color1 = #CC342B
-color2 = #198844
-color3 = #FBA922
-color4 = #3971ED
-color5 = #A36AC7
-color6 = #3971ED
-color7 = #C5C8C6
-color8 = #969896
-color9 = #CC342B
-color10 = #198844
-color11 = #FBA922
-color12 = #3971ED
-color13 = #A36AC7
-color14 = #3971ED
+color0 = #202124
+color1 = #EA4335
+color2 = #34A853
+color3 = #FBBC04
+color4 = #4285F4
+color5 = #A142F4
+color6 = #24C1E0
+color7 = #E8EAED
+color8 = #5F6368
+color9 = #EA4335
+color10 = #34A853
+color11 = #FBBC04
+color12 = #4285F4
+color13 = #A142F4
+color14 = #24C1E0
 color15 = #FFFFFF
 
 [hints]

@@ -23,21 +23,21 @@ cmd [[
 
 -- Floating window border color
 cmd [[
-  highlight! FloatBorder guifg=#3971ED
+  highlight! FloatBorder guifg=#4285F4
 ]]
 
 -- nvim-cmp kind highlight
 cmd [[
   highlight! CmpItemAbbrDeprecated gui=strikethrough guifg=#C5C8C6
-  highlight! CmpItemAbbrMatch guifg=#3971ED
-  highlight! CmpItemAbbrMatchFuzzy guifg=#3971ED
-  highlight! CmpItemKindVariable guifg=#198844
-  highlight! CmpItemKindInterface guifg=#198844
-  highlight! CmpItemKindText guifg=#198844
+  highlight! CmpItemAbbrMatch guifg=#4285F4
+  highlight! CmpItemAbbrMatchFuzzy guifg=#4285F4
+  highlight! CmpItemKindVariable guifg=#34A853
+  highlight! CmpItemKindInterface guifg=#34A853
+  highlight! CmpItemKindText guifg=#34A853
   highlight! CmpItemKindFunction guifg=#CC342B
   highlight! CmpItemKindMethod guifg=#CC342B
-  highlight! CmpItemKindSnippet guifg=#FBA922
-  highlight! CmpItemKindFile guifg=#FBA922
+  highlight! CmpItemKindSnippet guifg=#FBBC05
+  highlight! CmpItemKindFile guifg=#FBBC05
   highlight! CmpItemKindKeyword guifg=#FFFFFF
   highlight! CmpItemKindProperty guifg=#FFFFFF
   highlight! CmpItemKindUnit guifg=#FFFFFF

@@ -322,14 +322,14 @@ exec_always {
 output $monleft bg /usr/share/backgrounds/portal-3-left.jpg fill
 output $monright bg /usr/share/backgrounds/portal-3-right.jpg fill
 
-# Base16-Google colors
-set $border-color #3971ED
-set $bg-color #1D1F21
-set $inac-bg-color #1D1F21
-set $text-color #CC342B
-set $inac-text-color #C5C8C6
-set $urgent-bg-color #CC342B
-set $indi-color #3971ED
+# Google Dark colors
+set $border-color #4285F4
+set $bg-color #202124
+set $inac-bg-color #202124
+set $text-color #EA4335
+set $inac-text-color #E8EAED
+set $urgent-bg-color #EA4335
+set $indi-color #4285F4
 set $urgent-text-color #FFFFFF
 
 # Font
