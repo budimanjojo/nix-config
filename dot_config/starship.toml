@@ -1,15 +1,13 @@
 format = """
-╭─ \
 $username\
 $hostname\
 $directory\
-$git_status\
 $git_branch\
+$git_status\
 $fill\
 $status\
 $cmd_duration\
 $line_break\
-╰─\
 $character
 """
 
@@ -19,41 +17,42 @@ command_timeout = 1000
 [username]
 style_user = "yellow"
 style_root = "red"
-format = "[ $user ]($style) "
-show_always = true
+format = "[$user]($style)"
+show_always = false
 
 [hostname]
-ssh_only = false
-format = "[  $hostname ]($style) "
+ssh_only = true
+format = "[@$hostname]($style) in "
 style = "green"
 
 [directory]
 truncation_length = 3
-format = "[  $path ]($style)[$read_only]($read_only_style) "
+format = "[$path]($style)[$read_only]($read_only_style) "
 style = "blue"
 read_only = " "
 truncation_symbol = "../"
 truncate_to_repo = true
+fish_style_pwd_dir_length = 1
 
 [git_branch]
-format = "[$symbol$branch ]($style) "
+format = "on [$symbol$branch]($style) "
 style = "purple"
 symbol = " "
 
 [git_status]
 format = '([$all_status$ahead_behind]($style) )'
 style = "purple"
-conflicted = "≭ "
+conflicted = " "
 ahead = " "
 behind = " "
-diverged = "⇕ "
-up_to_date = "✔ "
+diverged = " "
+up_to_date = " "
 untracked = " "
 stashed = " "
 modified = " "
 staged = " "
-renamed = "⏩"
-deleted = "🗑 "
+renamed = " "
+deleted = " "
 
 [fill]
 symbol = " "
@@ -67,10 +66,10 @@ style = "red"
 
 [cmd_duration]
 min_time = "2_000"
-format = " took [$duration]($style) "
+format = "took [$duration]($style) "
 style = "yellow"
 
 [character]
-success_symbol = "[⮞](green)"
-error_symbol = "[⮞](green)"
-vicmd_symbol = "[⮟](purple)"
+success_symbol = "[˲](green)"
+error_symbol = "[˲](green)"
+vicmd_symbol = "[ˬ](purple)"
