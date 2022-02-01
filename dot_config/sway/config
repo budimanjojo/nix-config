@@ -225,16 +225,16 @@ bindsym $mod+grave exec rofi -show drun
 
 ## WORKSPACE NAMING AND PLACEMENT
 # Workspace naming
-set $ws0 0:力
-set $ws1 1:
-set $ws2 2:
-set $ws3 3:
-set $ws4 4:
-set $ws5 5:金
-set $ws6 6:
-set $ws7 7:
-set $ws8 8:
-set $ws9 9:辶
+set $ws0 0
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
 
 # Monitor placement
 set $monleft HDMI-A-1

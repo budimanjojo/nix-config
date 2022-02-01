@@ -4,7 +4,6 @@
     font-family: "UbuntuMono Nerd Font";
     font-size: 16px;
     font-weight: bold;
-    min-height: 20px;
     padding-top: 1px;
 }
 
@@ -21,99 +20,67 @@ window#waybar.hidden {
 
 #workspaces button {
     color: #C5C8C6;
-    background-color: transparent;
-    padding: 0 5px;
+    padding: 0 3px;
     border-radius: 5px;
-    margin: 0 1px;
 }
 
 #workspaces button.focused {
-    color: #1D1F21;
-    background-color: #3971ED;
+    color: #3971ED;
 }
 
 #workspaces button.urgent {
-    color: #1D1F21;
-    background-color: #CC342B;
+    color: #CC342B;
 }
 
 #mode {
     color: #C5C8C6;
     padding-left: 2px;
-    color: #C5C8C6;
     box-shadow: inset 0 -1.5px;
 }
 
 #clock {
-    color: #1D1F21;
-    background-color: #C5C8C6;
-    padding: 0 10px;
-    border-radius: 8px;
-}
-
-#network.up {
-    color: #1D1F21;
-    background-color: #3971ED;
-    padding: 0 10px;
-    border-radius: 8px;
-    margin: 0 3px;
+    color: #C5C8C6;
 }
 
 #network.down {
-    color: #1D1F21;
-    background-color: #198844;
-    padding: 0 10px;
-    border-radius: 8px;
-    margin: 0 3px;
+    color: #198844;
+    padding-right: 8px;
+}
+
+#network.up {
+    color: #3971ED;
+    padding-right: 8px;
 }
 
 #disk.home {
-    color: #1D1F21;
-    background-color: #FBA922;
-    padding: 0 10px;
-    border-radius: 8px;
-    margin: 0 3px;
+    color: #FBA922;
+    padding-right: 8px;
 }
 
 #disk.root {
-    color: #1D1F21;
-    background-color: #CC342B;
-    padding: 0 10px;
-    border-radius: 8px;
-    margin: 0 3px;
+    color: #CC342B;
+    padding-right: 8px;
 }
 
 #custom-uname {
-    color: #1D1F21;
-    background-color: #A36AC7;
-    padding: 0 10px;
-    border-radius: 8px;
-    margin: 0 3px;
-}
-
-#tray {
-    color: #C5C8C6;
-    background-color: #656565;
-    padding-right: 10px;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    margin-right: 3px;
+    color: #A36AC7;
+    padding-right: 8px;
 }
 
 #pulseaudio {
     color: #C5C8C6;
-    background-color: #656565;
-    padding-left: 10px;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    margin-left: 3px;
 }
 
 #custom-update {
     color: #C5C8C6;
-    background-color: #656565;
 }
 
 #custom-update.needsupdate {
     color: #CC342B;
+}
+
+#tray {
+    color: #C5C8C6;
+    padding-right: 8px;
+    font-weight: normal;
 }
