@@ -3,7 +3,6 @@
     "output": "DP-1",
     "layer": "top",
     "position": "top",
-    "margin-top": 2,
     "modules-left": [
       "sway/workspaces",
       "sway/mode"
@@ -97,8 +96,6 @@
     "output": "HDMI-A-1",
     "layer": "top",
     "position": "top",
-    "margin-top": 2,
-
     "modules-left": [
       "sway/workspaces",
       "sway/mode"
