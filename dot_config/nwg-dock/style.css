@@ -1,5 +1,5 @@
 window {
-    background: #202124;
+    background: #1A1B26;
     opacity: 0.9;
     border-radius: 10px;
     border-style: none;
@@ -21,12 +21,12 @@ button {
     padding: 4px;
     margin-left: 4px;
     margin-right: 4px;
-    color: #FFFFFF;
+    color: #C0CAF5;
     font-size: 12px;
 }
 
 button:hover {
-    background: #FBBC04;
+    background: #E0AF68;
     border-radius: 10px;
 }
 

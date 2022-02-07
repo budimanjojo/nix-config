@@ -9,7 +9,7 @@
 
 window#waybar {
     background-color: transparent;
-    color: #E8EAED;
+    color: #C0CAF5;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -19,71 +19,71 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-    color: #E8EAED;
+    color: #C0CAF5;
     padding: 0 3px;
     border-radius: 5px;
 }
 
 #workspaces button.focused {
-    color: #4285F4;
+    color: #7AA2F7;
 }
 
 #workspaces button.urgent {
-    color: #EA4335;
+    color: #F7768E;
 }
 
 #mode {
-    color: #E8EAED;
+    color: #C0CAF5;
     padding-left: 2px;
     box-shadow: inset 0 -1.5px;
 }
 
 #clock {
-    color: #E8EAED;
+    color: #C0CAF5;
 }
 
 #network.down {
-    color: #34A853;
+    color: #9ECE6A;
     padding-right: 8px;
 }
 
 #network.up {
-    color: #4285F4;
+    color: #7AA2F7;
     padding-right: 8px;
 }
 
 #disk.home {
-    color: #FBBC05;
+    color: #E0AF68;
     padding-right: 8px;
 }
 
 #disk.root {
-    color: #EA4335;
+    color: #F7768E;
     padding-right: 8px;
 }
 
 #custom-uname {
-    color: #A142F4;
+    color: #BB9AF7;
     padding-right: 8px;
 }
 
 #pulseaudio {
-    color: #E8EAED;
+    color: #C0CAF5;
     padding-right: 2px;
 }
 
 #custom-update {
-    color: #E8EAED;
+    color: #C0CAF5;
     padding-right: 2px;
 }
 
 #custom-update.needsupdate {
-    color: #EA4335;
+    color: #F7768E;
     padding-right: 2px;
 }
 
 #tray {
-    color: #E8EAED;
+    color: #C0CAF5;
     padding-right: 8px;
     font-weight: normal;
 }

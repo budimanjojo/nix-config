@@ -1,52 +1,7 @@
-local colors = {
-  black = '#202124',
-  red = '#EA4335',
-  green = '#34A853',
-  yellow = '#FBBC04',
-  blue = '#4285F4',
-  magenta = '#A142F4',
-  cyan = '#24C1E0',
-  white = '#FFFFFF',
-  gray = '#E8EAED',
-}
-
-local custom_material =  {
-  normal = {
-    a = { fg = colors.black, bg = colors.blue, gui = 'bold' },
-    b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
-    c = { fg = colors.black, bg = colors.white, gui = 'bold' },
-  },
-  insert = {
-    a = { fg = colors.black, bg = colors.green, gui = 'bold' },
-    b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
-    c = { fg = colors.black, bg = colors.white, gui = 'bold' },
-  },
-  visual = {
-    a = { fg = colors.black, bg = colors.magenta, gui = 'bold' },
-    b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
-    c = { fg = colors.black, bg = colors.white, gui = 'bold' },
-  },
-  replace = {
-    a = { fg = colors.black, bg = colors.red, gui = 'bold' },
-    b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
-    c = { fg = colors.black, bg = colors.white, gui = 'bold' },
-  },
-  command = {
-    a = { fg = colors.black, bg = colors.green, gui = 'bold' },
-    b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
-    c = { fg = colors.black, bg = colors.white, gui = 'bold' },
-  },
-  inactive = {
-    a = { fg = colors.white, bg = colors.green, gui = 'bold' },
-    b = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
-    c = { fg = colors.black, bg = colors.white, gui = 'bold' },
-  },
-}
-
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = custom_material,
+    theme = 'tokyonight',
     section_separators = { left = '', right = '' },
     component_separators = '',
     disabled_filetypes = { 'lir' },

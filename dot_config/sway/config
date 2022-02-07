@@ -322,15 +322,15 @@ exec_always {
 output $monleft bg /usr/share/backgrounds/portal-3-left.jpg fill
 output $monright bg /usr/share/backgrounds/portal-3-right.jpg fill
 
-# Google Dark colors
-set $border-color #4285F4
-set $bg-color #202124
-set $inac-bg-color #202124
-set $text-color #EA4335
-set $inac-text-color #E8EAED
-set $urgent-bg-color #EA4335
-set $indi-color #4285F4
-set $urgent-text-color #FFFFFF
+# Tokyonight Night colors
+set $border-color #A9B1D6
+set $bg-color #1A1B26
+set $inac-bg-color #1A1B26
+set $text-color #F7768E
+set $inac-text-color #A9B1D6
+set $urgent-bg-color #F7768E
+set $indi-color #7AA2F7
+set $urgent-text-color #A9B1D6
 
 # Font
 font pango:UbuntuMono Nerd Font 12

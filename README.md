@@ -61,7 +61,7 @@ These are the plugins I'm using:
 - [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 - [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
-- [nvim-base16](https://github.com/RRethy/nvim-base16)
+- [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)
