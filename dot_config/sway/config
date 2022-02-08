@@ -319,8 +319,8 @@ exec_always {
 }
 
 # Wallpaper
-output $monleft bg /usr/share/backgrounds/portal-3-left.jpg fill
-output $monright bg /usr/share/backgrounds/portal-3-right.jpg fill
+output $monleft bg /usr/share/backgrounds/tokyo-night01-left.png fill
+output $monright bg /usr/share/backgrounds/tokyo-night01-right.png fill
 
 # Tokyonight Night colors
 set $border-color #A9B1D6
