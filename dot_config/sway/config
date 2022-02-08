@@ -311,8 +311,8 @@ focus_on_window_activation smart
 ## APPEARANCE
 # GTK looks
 exec_always {
-    gsettings set org.gnome.desktop.interface gtk-theme 'vimix-dark-compact-doder'
-    gsettings set org.gnome.desktop.interface icon-theme 'Vimix-Doder-dark'
+    gsettings set org.gnome.desktop.interface gtk-theme 'tokyonight_dark'
+    gsettings set org.gnome.desktop.interface icon-theme 'tokyonight_dark'
     gsettings set org.gnome.desktop.interface cursor-theme 'Vimix-Doder'
     gsettings set org.gnome.desktop.interface font-name 'UbuntuMono Nerd Font 12'
     gsettings set org.gnome.desktop.wm.preferences button-layout ':appmenu'

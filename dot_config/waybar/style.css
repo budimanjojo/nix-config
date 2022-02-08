@@ -7,6 +7,11 @@
     padding-top: 1px;
 }
 
+button {
+  min-height: 24px;
+  min-width: 16px;
+}
+
 window#waybar {
     background-color: transparent;
     color: #C0CAF5;
