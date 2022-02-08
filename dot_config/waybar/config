@@ -32,12 +32,14 @@
     },
 
     "network#down": {
+      "interface": "*",
       "format": " {bandwidthDownBits}",
       "tooltip-format": "{ifname} {ipaddr}",
       "interval": 1
     },
 
     "network#up": {
+      "interface": "*",
       "format": " {bandwidthUpBits}",
       "tooltip-format": "{ifname} {ipaddr}",
       "interval": 1
@@ -123,12 +125,14 @@
     },
 
     "network#down": {
+      "interface": "*",
       "format": " {bandwidthDownBits}",
       "tooltip-format": "{ifname} {ipaddr}",
       "interval": 1
     },
 
     "network#up": {
+      "interface": "*",
       "format": " {bandwidthUpBits}",
       "tooltip-format": "{ifname} {ipaddr}",
       "interval": 1
