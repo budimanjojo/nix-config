@@ -70,6 +70,6 @@ format = "took [$duration]($style) "
 style = "yellow"
 
 [character]
-success_symbol = "[](green)"
-error_symbol = "[](green)"
-vicmd_symbol = "[](purple)"
+success_symbol = "[](green)"
+error_symbol = "[](green)"
+vicmd_symbol = "[](purple)"
