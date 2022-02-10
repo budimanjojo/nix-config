@@ -26,7 +26,7 @@ fi
 
 ##--kustomize--##
 # renovate: depName=kubernetes-sigs/kustomize datasource=github-releases
-current_kustomize_version=kustomize/v4.5.1
+current_kustomize_version=kustomize/v4.5.2
 current_kustomize_version_short=$(echo $current_kustomize_version | cut -d"/" -f2)
 
 if [ ! $(command -v kustomize) ] || [ $(kustomize version --short | head -n1 | cut -d"/" -f2 | cut -d" " -f1) != "$current_kustomize_version_short" ]; then
