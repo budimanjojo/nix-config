@@ -1,8 +1,0 @@
-#!/bin/bash
-
-set -eufo pipefail
-
-if [ $SHELL != $(which fish) ]; then
-  echo "Changing default shell to fish"
-  chsh -s $(which fish)
-fi
