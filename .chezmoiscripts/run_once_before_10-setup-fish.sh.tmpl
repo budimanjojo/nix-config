@@ -5,9 +5,9 @@ set -eufo pipefail
 echo -e "\0033[0;32m>>>>> Begin Setting Up Fish Shell <<<<<\033[0m"
 
 # Installing fish
-{{   if (eq .chezmoiosRelease.id "debian" "ubuntu") -}}
+{{   if (eq .chezmoi.osRelease.id "debian" "ubuntu") -}}
 ppa_repo_source=fish-shell/release-3
-if [ ! $(apt-cache policy | grep http | awk '{print $2}' | sort -u | grep $ppa_repo_source &> /dev/null) ]; then
+if ! $(apt-cache policy | grep http | awk '{print $2}' | sort -u | grep $ppa_repo_source &> /dev/null); then
   echo "adding ppa:$ppa_repo_source repository to apt"
 {{     if ne .chezmoi.username "root" -}}
   sudo add-apt-repository -y ppa:$ppa_repo_source
@@ -15,7 +15,7 @@ if [ ! $(apt-cache policy | grep http | awk '{print $2}' | sort -u | grep $ppa_r
   add-apt-repository -y ppa:$ppa_repo_source
 {{     end -}}
 fi
-if [ ! $(dpkg-query -W -f='installed' $package 2> /dev/null) ]; then
+if ! $(dpkg-query -W -f='installed' fish &> /dev/null); then
   echo "installing fish"
 {{     if ne .chezmoi.username "root" -}}
   sudo apt install -y fish
@@ -24,7 +24,7 @@ if [ ! $(dpkg-query -W -f='installed' $package 2> /dev/null) ]; then
 {{     end -}}
 fi
 
-{{   else if .chezmoiosRelease.id "arch" -}}
+{{   else if .chezmoios.Release.id "arch" -}}
 if [ "$(pacman -Qq fish 2> /dev/null)" != fish ]; then
   echo "installing fish"
 {{     if ne .chezmoi.username "root" -}}

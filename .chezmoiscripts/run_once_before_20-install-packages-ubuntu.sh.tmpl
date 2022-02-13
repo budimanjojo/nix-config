@@ -31,9 +31,7 @@ packages+=(
 
 for repository in ${repositories[@]}; do
   ppa_repo_source=${repository#ppa:}
-  if $(apt-cache policy | grep http | awk '{print $2}' | sort -u | grep $ppa_repo_source &> /dev/null); then
-    echo "$repository is already in system"
-  else
+  if ! $(apt-cache policy | grep http | awk '{print $2}' | sort -u | grep $ppa_repo_source &> /dev/null); then
     echo "adding $repository repository to apt"
 {{ if ne .chezmoi.username "root" -}}
     sudo add-apt-repository -y $repository
@@ -45,7 +43,7 @@ for repository in ${repositories[@]}; do
 done
 
 for package in ${packages[@]}; do
-  if [ ! $(dpkg-query -W -f='installed' $package 2> /dev/null) ]; then
+  if ! $(dpkg-query -W -f='installed' $package &> /dev/null); then
     echo "installing $package"
 {{ if ne .chezmoi.username "root" -}}
     sudo apt install -y $package
