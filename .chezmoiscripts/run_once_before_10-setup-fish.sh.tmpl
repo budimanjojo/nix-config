@@ -24,7 +24,7 @@ if ! $(dpkg-query -W -f='installed' fish &> /dev/null); then
 {{     end -}}
 fi
 
-{{   else if .chezmoi.osRelease.id "arch" -}}
+{{   else if eq .chezmoi.osRelease.id "arch" -}}
 if [ "$(pacman -Qq fish 2> /dev/null)" != fish ]; then
   echo "installing fish"
 {{     if ne .chezmoi.username "root" -}}
