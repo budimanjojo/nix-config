@@ -70,7 +70,7 @@ fi
 # renovate: depName=sharkdp/bat datasource=github-releases
 current_bat_version=v0.19.0
 
-if [ ! $(command -v bat) ] || [ $(bat --version | head -n1 | cut -d" " -f | sed "s/^/v/") != "$current_bat_version" ]; then
+if [ ! $(command -v bat) ] || [ $(bat --version | head -n1 | cut -d" " -f2 | sed "s/^/v/") != "$current_bat_version" ]; then
   echo "installing / upgrading bat"
   curl -fL https://github.com/sharkdp/bat/releases/download/$current_bat_version/bat-$current_bat_version-x86_64-unknown-linux-musl.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ --wildcards --no-anchored '*/bat' --strip-components 1
   sudo chmod +x /usr/local/bin/bat
@@ -87,6 +87,18 @@ if [ ! $(command -v age) ] || [ $(age --version) != "$current_age_version" ]; th
   echo "installing / upgrading age"
   curl -fL https://github.com/FiloSottile/age/releases/download/$current_age_version/age-$current_age_version-linux-{{ .chezmoi.arch }}.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ --wildcards --no-anchored 'age/age*' --strip-components 1
   find /usr/local/bin -name age* -exec sudo chmod +x {} +
+fi
+{{     end -}}
+
+{{     if ne .headless -}}
+##--gh--##
+# renovate: depName=cli/cli datasource=github-tags
+current_gh_version=v2.5.0
+
+if [ ! $(command -v gh) ] || [ $(gh --version | head -n1 | cut -d" " -f3 | sed "s/^/v") != "$current_age_version" ]; then
+  echo "installing / upgrading gh"
+  curl -fL https://github.com/cli/cli/releases/download/$current_gh_version/gh_${current_gh_version#v}_linux_{{ .chezmoi.arch }}.tar.gz | sudo tar -xzf - -oC /usr/local/bin/ --wildcards --no-anchored 'gh*/bin' --strip-components 2
+  sudo chmod +x /usr/local/bin/gh
 fi
 {{     end -}}
 
@@ -113,6 +125,7 @@ install_or_upgrade age
 {{     end -}}
 {{     if not .headless -}}
 install_or_upgrade go
+install_or_upgrade gh
 {{     end -}}
 {{   end -}}
 
