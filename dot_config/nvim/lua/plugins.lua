@@ -60,7 +60,7 @@ require('packer').startup({
     use {
       'windwp/nvim-autopairs',
       config = function()
-        require('configs/_autopairs')
+        require('configs._autopairs')
       end
     }
 
@@ -82,7 +82,7 @@ require('packer').startup({
       'ibhagwan/fzf-lua',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true },
       config = function()
-        require('configs/_fzf-lua')
+        require('configs._fzf-lua')
       end
     }
     use {
@@ -93,7 +93,7 @@ require('packer').startup({
         { 'kyazdani42/nvim-web-devicons', opt = true }
       },
       config = function ()
-        require('configs/_lir')
+        require('configs._lir')
       end
     }
     use {
@@ -121,7 +121,7 @@ require('packer').startup({
         'ray-x/lsp_signature.nvim'
       },
       config = function()
-        require('configs/_lspconfig')
+        require('configs._lspconfig')
       end
     }
     use {
