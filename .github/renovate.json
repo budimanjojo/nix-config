@@ -9,6 +9,10 @@
     "rebaseWhen": "conflicted",
     "automerge": true,
     "ignoreTests": true,
+    "extends": [
+        "github>aquaproj/aqua-renovate-config:installer-script#0.1.8(.chezmoiscripts/.*install-aqua\\.sh\\.tmpl)",
+        "github>aquaproj/aqua-renovate-config:file#0.1.8(dot_config/aqua\\.yaml\\.tmpl)"
+    ],
     "regexManagers": [
         {
             "fileMatch": ["\\.chezmoiscripts\\/.+\\.sh\\.tmpl$"],
