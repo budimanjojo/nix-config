@@ -1,3 +1,4 @@
+{{ if (eq .chezmoi.os "linux") -}}
 registries:
   - type: standard
     ref: v1.1.4    # renovate: depName=aquaproj/aqua-registry
@@ -10,10 +11,17 @@ packages:
   - name: sharkdp/fd@v8.3.2
   - name: sharkdp/bat@v0.19.0
   - name: ogham/exa@v0.10.1
-{{- if .agekey }}
+{{-   if .agekey }}
   - name: FiloSottile/age@v1.0.0
-{{- end }}
-{{- if not .headless }}
+{{-   end }}
+{{-   if not .headless }}
   - name: golang/go@1.17.7
   - name: cli/cli@v2.5.1
+{{-   end }}
+{{-   if .kubernetes }}
+  - name: kubernetes/kubectl@v1.23.3
+  - name: fluxcd/flux2@v0.26.3
+  - name: kubernetes-sigs/kustomize@kustomize/v4.5.2
+  - name: mozilla/sops@3.7.1
+{{-   end }}
 {{- end }}
