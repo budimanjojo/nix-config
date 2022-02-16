@@ -25,29 +25,4 @@ install_fisher_plugin budimanjojo/tmux.fish
 install_fisher_plugin jorgebucaran/autopair.fish
 install_fisher_plugin gazorby/fish-abbreviation-tips
 
-## Setup completions
-if not test -d $__fish_config_dir/completions
-  mkdir -p $__fish_config_dir/completions
-end
-
-if type -q chezmoi
-  echo "setting up chezmoi completion"
-  chezmoi completion fish --output=$__fish_config_dir/completions/chezmoi.fish
-end
-
-if type -q flux
-  echo "setting up flux completion"
-  flux completion fish > $__fish_config_dir/completions/flux.fish
-end
-
-if type -q kustomize
-  echo "setting up kustomize completion"
-  kustomize completion fish > $__fish_config_dir/completions/kustomize.fish
-end
-
-if type -q kubectl
-  echo "setting up kubectl completion"
-  kubectl completion fish > $__fish_config_dir/completions/kubectl.fish
-end
-
 echo -e "\033[0;32m>>>>> Finish Setting Up Fish shell <<<<<\033[0m"
