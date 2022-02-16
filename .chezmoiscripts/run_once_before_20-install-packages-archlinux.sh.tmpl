@@ -11,25 +11,15 @@ packages=(
   curl
   python-pynvim
   git
-  fd
-  bat
-  ripgrep
   thefuck
   npm
-  fzf
-  starship
-  zoxide
-  age
-  exa
   unzip
-  github-cli
 )
 
 aur_packages=()
 
 {{   if (not .headless) -}}
 packages+=(
-  go
   kitty
 )
 {{   end -}}
