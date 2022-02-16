@@ -13,17 +13,17 @@ npm install write-good
 
 {{   if (eq .chezmoi.osRelease.id "arch") -}}
 {{     if ne .chezmoi.username "root" -}}
-sudo pacman -S shfmt ansible-lint shellcheck yamllint
+sudo pacman -S --noconfirm shfmt ansible-lint shellcheck yamllint
 {{     else -}}
-pacman -S shfmt ansible-lint shellcheck yamllint
+pacman -S --noconfirm shfmt ansible-lint shellcheck yamllint
 {{     end -}}
 {{   else if (eq .chezmoi.osRelease.id "ubuntu" "debian") -}}
 {{     if ne .chezmoi.username "root" -}}
 sudo snap install shfmt
-sudo apt install ansible-lint shellcheck yamllint
+sudo apt install -y ansible-lint shellcheck yamllint
 {{     else -}}
 snap install shfmt
-apt install ansible-lint shellcheck yamllint
+apt install -y ansible-lint shellcheck yamllint
 {{     end -}}
 {{   end -}}
 
