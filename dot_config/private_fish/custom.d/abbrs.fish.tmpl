@@ -6,7 +6,7 @@ if type -q kubectl
     abbr kdp 'kubectl describe pod'
     abbr kdn 'kubectl describe node'
     abbr kgn 'kubectl get nodes'
-    abbr wkgp 'watch kubectl get pod'
+    abbr wkgp 'hwatch kubectl get pod'
     abbr kx 'kubectl exec -it'
 end
 
@@ -77,7 +77,7 @@ if type -q flux
     abbr fga 'flux get all'
     abbr fsa 'flux suspend kustomization --all'
     abbr fra 'flux resume kustomization --all'
-    abbr wfga 'watch flux get all'
+    abbr wfga 'hwatch flux get all'
     abbr upf 'update_flux'
 end
 
@@ -93,6 +93,11 @@ end
 # the fuck
 if type -q thefuck
     abbr fu 'fuck'
+end
+
+# hwatch
+if type -q hwatch
+    abbr watch 'hwatch'
 end
 
 # image conversions
