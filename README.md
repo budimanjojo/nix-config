@@ -18,7 +18,7 @@ Stuffs may change without further notice and this README can get outdated.
 ![sway](https://user-images.githubusercontent.com/13085918/155890643-aa0adb3c-695f-497d-9d5d-d4bb61907cd0.png)
 
 **Tmux**
-![tmux](https://user-images.githubusercontent.com/13085918/155890650-4ce814ef-330e-40cc-896c-e7a18fd8b95b.png)
+![tmux](https://user-images.githubusercontent.com/13085918/155890745-5fc83821-8008-4f91-8ebc-5852badeca22.png)
 
 **Fish prompt**
 ![fish](https://user-images.githubusercontent.com/13085918/155890660-57039ad8-d769-4044-ad38-a4b821c634e9.png)
