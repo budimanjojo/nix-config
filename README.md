@@ -15,17 +15,17 @@ Stuffs may change without further notice and this README can get outdated.
 ## :camera:&nbsp; Screenshots
 
 **Sway**
-![sway](https://user-images.githubusercontent.com/13085918/148652282-9c90e899-9883-4e39-8404-5858daad7a63.png)
+![sway](https://user-images.githubusercontent.com/13085918/155890643-aa0adb3c-695f-497d-9d5d-d4bb61907cd0.png)
 
 **Tmux**
-![tmux](https://user-images.githubusercontent.com/13085918/148652287-279efd94-4781-46fb-a658-2b286f056410.png)
+![tmux](https://user-images.githubusercontent.com/13085918/155890650-4ce814ef-330e-40cc-896c-e7a18fd8b95b.png)
 
 **Fish prompt**
-![fish](https://user-images.githubusercontent.com/13085918/148652293-8941d1c7-aa36-4902-ae0c-26ad38f7022f.png)
+![fish](https://user-images.githubusercontent.com/13085918/155890660-57039ad8-d769-4044-ad38-a4b821c634e9.png)
 
 **Neovim**
-![01-nvim](https://user-images.githubusercontent.com/13085918/148652297-4446e0d8-08c2-4199-bc9b-44831691dd26.png)
-![02-nvim](https://user-images.githubusercontent.com/13085918/148652302-522d26f9-73be-47f0-ae91-2652f905f797.png)
+![nvim1](https://user-images.githubusercontent.com/13085918/155890675-a3b8b3f8-479c-4fd0-9ed6-c74e0fc4de0a.png)
+![nvim2](https://user-images.githubusercontent.com/13085918/155890676-38b95046-c35d-4db5-aa01-b9d8ee44f9d0.png)
 
 ## :file_folder:&nbsp; Included Plugins
 
