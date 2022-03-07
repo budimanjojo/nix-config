@@ -8,21 +8,8 @@ if not type -q fisher
   curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 end
 
-function install_fisher_plugin
-  set check_installed_fisher (fisher list | grep $argv)
-  if test $check_installed_fisher = $argv
-    echo "$argv is already installed"
-  else
-    echo "installing $argv"
-    fisher install $argv
-  end
-end
-
-## Install fish plugins
-install_fisher_plugin patrickF1/fzf.fish
-install_fisher_plugin nickeb96/puffer-fish
-install_fisher_plugin budimanjojo/tmux.fish
-install_fisher_plugin jorgebucaran/autopair.fish
-install_fisher_plugin gazorby/fish-abbreviation-tips
+# This script will run whenever I added something to .config/fish/fish_plugins
+# .config/fish/fish_plugins hash: {{ include "dot_config/private_fish/fish_plugins.tmpl" | sha256sum }}
+fisher update
 
 echo -e "\033[0;32m>>>>> Finish Setting Up Fish shell <<<<<\033[0m"
