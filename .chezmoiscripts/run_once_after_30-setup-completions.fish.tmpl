@@ -29,4 +29,9 @@ if type -q kubectl
   kubectl completion fish > $__fish_config_dir/completions/kubectl.fish
 end
 
+if type -q helm
+  echo "setting up helm completion"
+  helm completion fish > $__fish_config_dir/completions/helm.fish
+end
+
 echo -e "\033[0;32m>>>>> Finish Setting Fish Completions <<<<<\033[0m"
