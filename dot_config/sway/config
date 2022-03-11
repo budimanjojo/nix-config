@@ -18,6 +18,7 @@ floating_modifier $alt
 
 # Kill focused window
 bindsym $alt+F4 kill
+bindsym $mod+F4 kill
 
 # Vim navigation
 set $left h

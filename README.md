@@ -162,6 +162,7 @@ I use `Super` and `Alt` key for Sway/i3.
 | `S+grave`       | Open rofi apps menu|
 | `S+Tab`         | Open rofi opened apps menu |
 | `Alt+F4`        | Close window |
+| `S+F4`          | Close window |
 | `Alt+k`         | Change focus to window above |
 | `Alt+j`         | Change focus to window below |
 | `Alt+h`         | Change focus to left side window |
