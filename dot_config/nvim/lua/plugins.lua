@@ -27,7 +27,7 @@ require('packer').startup({
       end
     }
     use {
-      'blackCauldron7/surround.nvim',
+      'ur4ltz/surround.nvim',
       config = function()
         require('surround').setup { mapping_style = 'sandwich' }
       end
