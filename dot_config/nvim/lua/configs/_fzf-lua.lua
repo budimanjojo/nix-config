@@ -40,6 +40,8 @@ require('fzf-lua').setup {
       ['Information'] = { icon = '', color = 'blue' },
       ['Hint']        = { icon = '', color = 'magenta' },
     },
+    -- make lsp requests synchronous so the work with null-ls
+    async_or_timeout = 3000,
   },
   nvim = {
     keymaps = {
