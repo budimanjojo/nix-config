@@ -38,5 +38,6 @@ cmd [[
   augroup filetypesettings
     autocmd!
     autocmd FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab
+    autocmd FileType gitcommit setlocal colorcolumn=51,73
   augroup END
 ]]
