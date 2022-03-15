@@ -1,7 +1,9 @@
 [user]
-    email = budimanjojo@gmail.com
-    name = budimanjojo
+  email = budimanjojo@gmail.com
+  name = budimanjojo
+[commit]
+  template = {{ .chezmoi.homeDir }}/.gitcommit-message
 {{- if (eq .chezmoi.hostname "ansible-server") }}
 [status]
-    submodulesummary = true
+  submodulesummary = true
 {{- end }}
