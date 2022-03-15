@@ -60,105 +60,109 @@ local on_attach = function(_, bufnr)
   buf_map('n', 'gi', ':lua vim.lsp.buf.implementation()<CR>', opts)
 end
 
+local server_opts = {
+  -- ansiblels
+  ['ansiblels'] = function(opts)
+    opts.filetypes = { 'yaml.ansible' }
+  end,
+
+  -- jsonls
+  ['jsonls'] = function(opts)
+    opts.settings = {
+      json = {
+        schemas = require('schemastore').json.schemas(),
+      }
+    }
+  end,
+
+  -- sumneko_lua
+  ['sumneko_lua'] = function(opts)
+    local runtime_path = vim.split(package.path, ';')
+    opts.settings = {
+      Lua = {
+        runtime = {
+          version = 'LuaJIT',
+          path = runtime_path,
+        },
+        diagnostics = {
+          globals = { 'vim' },
+        },
+        workspace = {
+          library = vim.api.nvim_get_runtime_file('', true),
+          preloadFileSize = 200,
+        },
+        telemetry = {
+          enable = false,
+        },
+      }
+    }
+  end,
+
+  -- yamlls
+  ['yamlls'] = function(opts)
+    opts.settings = {
+      yaml = {
+        customTags = {
+          '!include_dir_list',
+          '!include_dir_named',
+          '!include_dir_merge_list',
+          '!include_dir_merge_named',
+          '!secret',
+          '!env_var',
+        },
+        schemas = {
+          kubernetes = {
+            '01-namespace.yaml',
+            'deployment.yaml',
+            'daemonset.yaml',
+            'statefulset.yaml',
+            'service.yaml',
+            'pv.yaml',
+            'pvc.yaml',
+            'configmap.yaml',
+            'secret.yaml',
+            'rbac.yaml',
+            'crd.yaml',
+            'storageclass.yaml',
+            'cronjob.yaml'
+          },
+          ['https://raw.githubusercontent.com/docker/compose/master/compose/config/compose_spec.json'] = {
+            'docker-compose.yml',
+            'docker-compose.yaml'
+          },
+          ['https://json.schemastore.org/github-workflow'] = {
+            '.github/workflows/**.yml',
+            '.github/workflows/**.yaml'
+          },
+          ['https://json.schemastore.org/github-actions'] = {
+            'action.yml',
+            'action.yaml'
+          },
+          ['https://json.schemastore.org/gitlab-ci'] = '.gitlab-ci.yml',
+          ['https://json.schemastore.org/kustomization'] = {
+            'kustomization.yml',
+            'kustomization.yaml'
+          },
+          ['https://json.schemastore.org/pre-commit-config'] = {
+            '.pre-commit-config.yml',
+            '.pre-commit-config.yaml',
+          }
+        }
+      }
+    }
+  end,
+}
+
 lsp_installer.on_server_ready(function(server)
   -- default options
-  local default_opts = {
+  local opts = {
     on_attach = on_attach,
     capabilities = capabilities,
   }
 
-  local server_opts = {
-    -- ansiblels
-    ['ansiblels'] = function()
-      default_opts.filetypes = { 'yaml.ansible' }
-    end,
-    -- jsonls
-    ['jsonls'] = function()
-      default_opts.settings = {
-        json = {
-          schemas = require('schemastore').json.schemas(),
-        }
-      }
-    end,
+  if server_opts[server.name] then
+    server_opts[server.name](opts)
+  end
 
-    -- sumneko_lua
-    ['sumneko_lua'] = function()
-      local runtime_path = vim.split(package.path, ';')
-      default_opts.settings = {
-        Lua = {
-          runtime = {
-            version = 'LuaJIT',
-            path = runtime_path,
-          },
-          diagnostics = {
-            globals = { 'vim' },
-          },
-          workspace = {
-            library = vim.api.nvim_get_runtime_file('', true),
-            preloadFileSize = 200,
-          },
-          telemetry = {
-            enable = false,
-          },
-        }
-      }
-    end,
-
-    -- yamlls
-    ['yamlls'] = function()
-      default_opts.settings = {
-        yaml = {
-          customTags = {
-            '!include_dir_list',
-            '!include_dir_named',
-            '!include_dir_merge_list',
-            '!include_dir_merge_named',
-            '!secret',
-            '!env_var',
-          },
-          schemas = {
-            kubernetes = {
-              '01-namespace.yaml',
-              'deployment.yaml',
-              'daemonset.yaml',
-              'statefulset.yaml',
-              'service.yaml',
-              'pv.yaml',
-              'pvc.yaml',
-              'configmap.yaml',
-              'secret.yaml',
-              'rbac.yaml',
-              'crd.yaml',
-              'storageclass.yaml',
-              'cronjob.yaml'
-            },
-            ['https://raw.githubusercontent.com/docker/compose/master/compose/config/compose_spec.json'] = {
-              'docker-compose.yml',
-              'docker-compose.yaml'
-            },
-            ['https://json.schemastore.org/github-workflow'] = {
-              '.github/workflows/**.yml',
-              '.github/workflows/**.yaml'
-            },
-            ['https://json.schemastore.org/github-actions'] = {
-              'action.yml',
-              'action.yaml'
-            },
-            ['https://json.schemastore.org/gitlab-ci'] = '.gitlab-ci.yml',
-            ['https://json.schemastore.org/kustomization'] = {
-              'kustomization.yml',
-              'kustomization.yaml'
-            },
-            ['https://json.schemastore.org/pre-commit-config'] = {
-              '.pre-commit-config.yml',
-              '.pre-commit-config.yaml',
-            }
-          }
-        }
-      }
-    end,
-  }
-
-  local server_options = server_opts[server.name] and server_opts[server.name]() or default_opts
-  server:setup(server_options)
+  server:setup(opts)
 end)
