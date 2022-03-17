@@ -41,3 +41,13 @@ cmd [[
     autocmd FileType gitcommit setlocal colorcolumn=51,73
   augroup END
 ]]
+
+-- ChoiceNode popup in snippet
+cmd([[
+  augroup choicepopup
+    autocmd!
+    autocmd User LuasnipChoiceNodeEnter lua choice_popup(require("luasnip").session.event_node)
+    autocmd User LuasnipChoiceNodeLeave lua choice_popup_close()
+    autocmd User LuasnipChangeChoice lua update_choice_popup(require("luasnip").session.event_node)
+  augroup END
+]])
