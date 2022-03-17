@@ -80,3 +80,22 @@ cmp.setup {
     },
   },
 }
+
+-- Hint snippet node-type with virtual text
+-- https://github.com/L3MON4D3/LuaSnip/wiki/Nice-Configs#hint-node-type-with-virtual-text
+local types = require('luasnip.util.types')
+
+luasnip.config.setup {
+  ext_opts = {
+    [types.choiceNode] = {
+      active = {
+        virt_text = {{ "●", "DiagnosticVirtualTextWarn" }}
+      }
+    },
+    [types.insertNode] = {
+      active = {
+        virt_text = {{ "●", "DiagnosticVirtualTextInfo" }}
+      }
+    }
+  }
+}
