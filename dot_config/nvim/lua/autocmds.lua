@@ -46,8 +46,8 @@ cmd [[
 cmd([[
   augroup choicepopup
     autocmd!
-    autocmd User LuasnipChoiceNodeEnter lua choice_popup(require("luasnip").session.event_node)
-    autocmd User LuasnipChoiceNodeLeave lua choice_popup_close()
-    autocmd User LuasnipChangeChoice lua update_choice_popup(require("luasnip").session.event_node)
+    autocmd User LuasnipChoiceNodeEnter lua require('utils').choice_popup(require('luasnip').session.event_node)
+    autocmd User LuasnipChoiceNodeLeave lua require('utils').choice_popup_close()
+    autocmd User LuasnipChangeChoice lua require('utils').update_choice_popup(require("luasnip").session.event_node)
   augroup END
 ]])
