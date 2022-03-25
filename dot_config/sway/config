@@ -264,7 +264,7 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec xfce4-power-manager
 # exec $HOME/.conkyrc/.conkyrci3/start_conky_i3.sh
 exec /usr/bin/nextcloud --background
-exec sleep 5; /usr/bin/syncthingtray
+exec "sleep 5; /usr/bin/syncthingtray"
 exec_always python ~/.config/sway/inactive-windows-transparency.py -o 0.9
 
 ## WINDOW RULES
