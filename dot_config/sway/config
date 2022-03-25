@@ -289,6 +289,7 @@ for_window [app_id="eog"] floating enable
 for_window [app_id="blueman-manager"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
 for_window [app_id="rhythmbox"] floating enable, resize set 1000 640
+for_window [app_id="syncthingtray"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="Lxappearance"] floating enable, sticky enable
 for_window [class="VirtualBox"] floating enable
@@ -302,6 +303,7 @@ for_window [app_id="obs"] move container to workspace $ws9, focus
 for_window [app_id="smplayer"] move container to workspace $ws5, focus
 for_window [app_id="rhythmbox"] move container to workspace $ws5, focus
 for_window [class="VirtualBox"] move container to workspace $ws0, focus
+for_window [title="^Syncthing Tray( \(.*\))?$"] floating enable, border none, resize set 550 400, move position 1350 0
 
 # Focus wrapping
 focus_wrapping yes
