@@ -65,7 +65,7 @@ success_symbol = "✔ "
 style = "red"
 
 [cmd_duration]
-min_time = "2_000"
+min_time = 2_000
 format = "took [$duration]($style) "
 style = "yellow"
 
