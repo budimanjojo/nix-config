@@ -1,24 +1,31 @@
 local cmd = vim.cmd
+local api = vim.api
 
-cmd [[
-  augroup k8stemplates
-    autocmd!
-    autocmd BufNewFile deployment.yaml 0r ~/.config/nvim/templates/deployment.yaml
-    autocmd BufNewFile service.yaml 0r ~/.config/nvim/templates/service.yaml
-    autocmd BufNewFile pvc.yaml 0r ~/.config/nvim/templates/pvc.yaml
-    autocmd BufNewFile configmap.yaml 0r ~/.config/nvim/templates/configmap.yaml
-    autocmd BufNewFile secret.yaml 0r ~/.config/nvim/templates/secret.yaml
-    autocmd BufNewFile ingress-traefikCRD.yaml 0r ~/.config/nvim/templates/ingress-traefikCRD.yaml
-  augroup END
-]]
+-- Load template file from stdpath("config")/templates directory
+local loadtemplate = api.nvim_create_augroup('loadtemplate', { clear = true })
+api.nvim_create_autocmd('BufNewFile', {
+  pattern = '*',
+  callback = function()
+    LoadTemplates(vim.fn.expand '%:p:t')
+  end,
+  group = loadtemplate
+})
+
+function LoadTemplates(fname)
+  local tfile = api.nvim_eval('stdpath("config")') .. '/templates/' .. fname
+  if vim.fn.filereadable(vim.fn.expand(tfile)) == 1 then
+    vim.g.tfile = tfile
+    cmd([[execute ':0r' g:tfile | normal Gddgg]])
+  end
+end
 
 -- Disable autocomment on enter
-cmd [[
-  augroup disableautocomment
-    autocmd!
-    autocmd BufEnter,CmdLineLeave * set fo-=c fo-=r fo-=o
-  augroup END
-]]
+local disableautocomment = api.nvim_create_augroup('disableautocomment', { clear = true })
+api.nvim_create_autocmd( { 'BufEnter', 'CmdLineLeave' }, {
+  pattern = '*',
+  command = 'set fo-=c fo-=r fo-=o',
+  group = disableautocomment
+})
 
 -- Filetype detection
 cmd [[
