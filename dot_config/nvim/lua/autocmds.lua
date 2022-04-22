@@ -2,22 +2,21 @@ local cmd = vim.cmd
 local api = vim.api
 
 -- Load template file from stdpath("config")/templates directory
+local loadTemplate = function()
+  local fname = vim.fn.expand '%:p:t'
+  local tfile = api.nvim_eval('stdpath("config")') .. '/templates/' .. fname
+  if vim.fn.filereadable(vim.fn.expand(tfile)) == 1 then
+    vim.b.tfile = tfile
+    cmd([[execute ':0r' b:tfile | normal Gddgg]])
+  end
+end
+
 local loadtemplate = api.nvim_create_augroup('loadtemplate', { clear = true })
 api.nvim_create_autocmd('BufNewFile', {
   pattern = '*',
-  callback = function()
-    LoadTemplates(vim.fn.expand '%:p:t')
-  end,
+  callback = loadTemplate,
   group = loadtemplate
 })
-
-function LoadTemplates(fname)
-  local tfile = api.nvim_eval('stdpath("config")') .. '/templates/' .. fname
-  if vim.fn.filereadable(vim.fn.expand(tfile)) == 1 then
-    vim.g.tfile = tfile
-    cmd([[execute ':0r' g:tfile | normal Gddgg]])
-  end
-end
 
 -- Disable autocomment on enter
 local disableautocomment = api.nvim_create_augroup('disableautocomment', { clear = true })
