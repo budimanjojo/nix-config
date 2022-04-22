@@ -2,9 +2,9 @@ local g = vim.g
 
 local function mapnoremap(mode, lhs, rhs, opts)
   local options = { noremap = true }
-    if opts then
-      options = vim.tbl_extend('force', options, opts)
-    end
+  if opts then
+    options = vim.tbl_extend('force', options, opts)
+  end
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
@@ -91,12 +91,12 @@ mapnoremap('n', '<Leader>xx', ':TroubleToggle<CR>')
 mapnoremap('n', '<Leader>xr', ':TroubleToggle lsp_references<CR>')
 
 -- lir.nvim
-mapnoremap('n', '<C-f>', ':lua require("lir.float").toggle()<CR>')
+mapnoremap('n', '<C-f>', '', { callback = require("lir.float").toggle })
 
 -- null-ls
-mapnoremap('n', '<Leader>pp', ':lua vim.lsp.buf.formatting()<CR>')
-mapnoremap('v', '<Leader>pp', ':lua vim.lsp.buf.range_formatting()<CR>')
+mapnoremap('n', '<Leader>pp', '', { callback = vim.lsp.buf.formatting })
+mapnoremap('v', '<Leader>pp', '', { callback = vim.lsp.buf.range_formatting })
 
--- FTerm
-mapnoremap('n', '<C-t>', ':lua require("FTerm").toggle()<CR>')
-mapnoremap('t', '<C-t>', '<C-\\><C-n>:lua require("FTerm").toggle()<CR>')
+-- FTermo
+mapnoremap('n', '<C-t>', '', { callback = require("FTerm").toggle })
+mapnoremap('t', '<C-t>', '', { callback = require("FTerm").toggle })
