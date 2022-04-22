@@ -14,7 +14,9 @@ end
 local loadtemplate = api.nvim_create_augroup('loadtemplate', { clear = true })
 api.nvim_create_autocmd('BufNewFile', {
   pattern = '*',
-  callback = loadTemplate,
+  callback = function()
+    vim.schedule(loadTemplate)
+  end,
   group = loadtemplate
 })
 
