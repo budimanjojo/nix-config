@@ -21,7 +21,7 @@
     "prefix": "feat!",
     "description": "feat conventional commit with breaking change(s)",
     "body": [
-      "feat(${1:scope}): ${2:title}",
+      "feat!(${1:scope}): ${2:title}",
       "",
       "BREAKING CHANGE: ${0}"
     ]
@@ -30,7 +30,7 @@
     "prefix": "fix!",
     "description": "fix conventional commit with breaking change(s)",
     "body": [
-      "fix(${1:scope}): ${2:title}",
+      "fix!(${1:scope}): ${2:title}",
       "",
       "BREAKING CHANGE: ${0}"
     ]
