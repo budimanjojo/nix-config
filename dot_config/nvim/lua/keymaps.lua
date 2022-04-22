@@ -1,102 +1,94 @@
+local keymap = vim.keymap
 local g = vim.g
 
-local function mapnoremap(mode, lhs, rhs, opts)
-  local options = { noremap = true }
-  if opts then
-    options = vim.tbl_extend('force', options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
-
 -- Spacebar is <Leader>
-mapnoremap('', '<Space>', '<Nop>', { silent = true })
+keymap.set('', '<Space>', '<Nop>', { silent = true })
 g.mapleader = ' '
 g.maplocalleader = ' '
 
 -- Fast save, save quit, force exit
-mapnoremap('n', '<Leader>w', ':w!<CR>')
-mapnoremap('n', '<Leader>x', ':x<CR>')
-mapnoremap('n', '<Leader>qq', ':q<CR>')
-mapnoremap('n', '<Leader>qa', ':qa!<CR>')
-mapnoremap('n', '<Leader>wq', ':wq!<CR>')
+keymap.set('n', '<Leader>w', ':w!<CR>')
+keymap.set('n', '<Leader>x', ':x<CR>')
+keymap.set('n', '<Leader>qq', ':q<CR>')
+keymap.set('n', '<Leader>qa', ':qa!<CR>')
+keymap.set('n', '<Leader>wq', ':wq!<CR>')
 
 -- Better cursor movement on wrapped line
-mapnoremap('n', 'k', 'gk')
-mapnoremap('n', 'j', 'gj')
-mapnoremap('v', 'k', 'gk')
-mapnoremap('v', 'j', 'gj')
-mapnoremap('n', '<Up>', 'gk')
-mapnoremap('n', '<Down>', 'gj')
-mapnoremap('v', '<Up>', 'gk')
-mapnoremap('v', '<Down>', 'gj')
-mapnoremap('i', '<Up>', '<C-o>gk')
-mapnoremap('i', '<Down>', '<C-o>gj')
+keymap.set('n', 'k', 'gk')
+keymap.set('n', 'j', 'gj')
+keymap.set('v', 'k', 'gk')
+keymap.set('v', 'j', 'gj')
+keymap.set('n', '<Up>', 'gk')
+keymap.set('n', '<Down>', 'gj')
+keymap.set('v', '<Up>', 'gk')
+keymap.set('v', '<Down>', 'gj')
+keymap.set('i', '<Up>', '<C-o>gk')
+keymap.set('i', '<Down>', '<C-o>gj')
 
 -- Y to yank from cursor to end of line
-mapnoremap('n', 'Y', 'y$')
+keymap.set('n', 'Y', 'y$')
 
 -- Move paragraph
-mapnoremap('', 'K', '{')
-mapnoremap('', 'J', '}')
+keymap.set('', 'K', '{')
+keymap.set('', 'J', '}')
 
 -- Move to first and last char
-mapnoremap('', 'H', '^')
-mapnoremap('', 'L', '$')
+keymap.set('', 'H', '^')
+keymap.set('', 'L', '$')
 
 -- Move between splits
-mapnoremap('n', '<C-k>', '<C-w><C-k>')
-mapnoremap('n', '<C-j>', '<C-w><C-j>')
-mapnoremap('n', '<C-h>', '<C-w><C-h>')
-mapnoremap('n', '<C-l>', '<C-w><C-l>')
+keymap.set('n', '<C-k>', '<C-w><C-k>')
+keymap.set('n', '<C-j>', '<C-w><C-j>')
+keymap.set('n', '<C-h>', '<C-w><C-h>')
+keymap.set('n', '<C-l>', '<C-w><C-l>')
 
 -- Open new split
-mapnoremap('n', '<Leader>s', ':new<CR>')
-mapnoremap('n', '<Leader>v', ':vnew<CR>')
+keymap.set('n', '<Leader>s', ':new<CR>')
+keymap.set('n', '<Leader>v', ':vnew<CR>')
 
 -- Move cursors in Insert mode
-mapnoremap('i', '<C-k>', '<Up>')
-mapnoremap('i', '<C-j>', '<Down>')
-mapnoremap('i', '<C-h>', '<Left>')
-mapnoremap('i', '<C-l>', '<Right>')
+keymap.set('i', '<C-k>', '<Up>')
+keymap.set('i', '<C-j>', '<Down>')
+keymap.set('i', '<C-h>', '<Left>')
+keymap.set('i', '<C-l>', '<Right>')
 
 -- Tab navigation
-mapnoremap('n', '<Leader>tn', ':tabnew<CR>')
-mapnoremap('n', '<Leader>tq', ':tabclose<CR>')
-mapnoremap('n', '<Leader>th', ':tabprev<CR>')
-mapnoremap('n', '<Leader>tl', ':tabnext<CR>')
+keymap.set('n', '<Leader>tn', ':tabnew<CR>')
+keymap.set('n', '<Leader>tq', ':tabclose<CR>')
+keymap.set('n', '<Leader>th', ':tabprev<CR>')
+keymap.set('n', '<Leader>tl', ':tabnext<CR>')
 
 -- Open new tab with current buffer's path
-mapnoremap('n', '<Leader>te', ':tabedit <C-r>=expand("%:p:h")<CR>/')
+keymap.set('n', '<Leader>te', ':tabedit <C-r>=expand("%:p:h")<CR>/')
 
 -- Indent or de-indent
-mapnoremap('n', '<Tab>', '>>')
-mapnoremap('n', '<S-Tab>', '<<')
-mapnoremap('v', '<Tab>', '>gv')
-mapnoremap('v', '<S-Tab>', '<gv')
+keymap.set('n', '<Tab>', '>>')
+keymap.set('n', '<S-Tab>', '<<')
+keymap.set('v', '<Tab>', '>gv')
+keymap.set('v', '<S-Tab>', '<gv')
 
 -- FzfLua
-mapnoremap('n', '<Leader>fz', ':FzfLua<CR>')
-mapnoremap('n', '<Leader>ff', ':FzfLua files<CR>')
-mapnoremap('n', '<Leader>fg', ':FzfLua live_grep<CR>')
-mapnoremap('n', '<Leader>fc', ':FzfLua git_commits<CR>')
-mapnoremap('n', '<Leader>fb', ':FzfLua buffers<CR>')
-mapnoremap('n', '<Leader>fh', ':FzfLua help_tags<CR>')
-mapnoremap('n', '<Leader>fk', ':FzfLua keymaps<CR>')
-mapnoremap('n', '<Leader>fe', ':FzfLua lsp_document_diagnostics<CR>')
-mapnoremap('n', '<Leader>fr', ':FzfLua lsp_references<CR>')
-mapnoremap('n', '<Leader>fd', ':FzfLua lsp_typedefs<CR>')
+keymap.set('n', '<Leader>fz', ':FzfLua<CR>')
+keymap.set('n', '<Leader>ff', ':FzfLua files<CR>')
+keymap.set('n', '<Leader>fg', ':FzfLua live_grep<CR>')
+keymap.set('n', '<Leader>fc', ':FzfLua git_commits<CR>')
+keymap.set('n', '<Leader>fb', ':FzfLua buffers<CR>')
+keymap.set('n', '<Leader>fh', ':FzfLua help_tags<CR>')
+keymap.set('n', '<Leader>fk', ':FzfLua keymaps<CR>')
+keymap.set('n', '<Leader>fe', ':FzfLua lsp_document_diagnostics<CR>')
+keymap.set('n', '<Leader>fr', ':FzfLua lsp_references<CR>')
+keymap.set('n', '<Leader>fd', ':FzfLua lsp_typedefs<CR>')
 
 -- Trouble
-mapnoremap('n', '<Leader>xx', ':TroubleToggle<CR>')
-mapnoremap('n', '<Leader>xr', ':TroubleToggle lsp_references<CR>')
+keymap.set('n', '<Leader>xx', ':TroubleToggle<CR>')
+keymap.set('n', '<Leader>xr', ':TroubleToggle lsp_references<CR>')
 
 -- lir.nvim
-mapnoremap('n', '<C-f>', '', { callback = require("lir.float").toggle })
+keymap.set('n', '<C-f>', function() return require("lir.float").toggle() end)
 
 -- null-ls
-mapnoremap('n', '<Leader>pp', '', { callback = vim.lsp.buf.formatting })
-mapnoremap('v', '<Leader>pp', '', { callback = vim.lsp.buf.range_formatting })
+keymap.set('n', '<Leader>pp', vim.lsp.buf.formatting)
+keymap.set('v', '<Leader>pp', vim.lsp.buf.range_formatting)
 
 -- FTermo
-mapnoremap('n', '<C-t>', '', { callback = require("FTerm").toggle })
-mapnoremap('t', '<C-t>', '', { callback = require("FTerm").toggle })
+keymap.set({ 'n', 't' }, '<C-t>', function() return require("FTerm").toggle() end)

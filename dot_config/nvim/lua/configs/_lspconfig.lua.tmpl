@@ -50,15 +50,15 @@ vim.cmd([[autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local on_attach = function(_, bufnr)
   require 'lsp_signature'.on_attach()
-  local function buf_map(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local opts = { noremap=true, silent=true }
+  local keymap = vim.keymap
+  local opts = { buffer = bufnr }
 
-  buf_map('n', 'rn', ':lua vim.lsp.buf.rename()<CR>', opts)
-  buf_map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', opts)
-  buf_map('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_map('n', 'gh', ':lua require("utils").fix_buf_hover()<CR>', opts)
-  buf_map('n', 'gr', ':lua vim.lsp.buf.references()<CR>', opts)
-  buf_map('n', 'gi', ':lua vim.lsp.buf.implementation()<CR>', opts)
+  keymap.set('n', 'rn', vim.lsp.buf.rename, opts)
+  keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+  keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+  keymap.set('n', 'gh', function() return require('utils').fix_buf_hover() end, opts)
+  keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+  keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
 end
 
 local server_opts = {
