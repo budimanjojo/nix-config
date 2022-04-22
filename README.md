@@ -73,7 +73,7 @@ These are the plugins I'm using:
 - [impatient.nvim](https://github.com/lewis6991/impatient.nvim)
 
 To update Neovim plugins, do `:PackerSync` in your nvim.
-**Note**: You need Neovim version >=0.6.0
+**Note**: You need Neovim version >=0.7.0
 
 ## :package:&nbsp; Dependencies
 

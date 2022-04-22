@@ -1,5 +1,6 @@
 require('lualine').setup {
   options = {
+    globalstatus = true,
     icons_enabled = true,
     theme = 'tokyonight',
     section_separators = { left = '', right = '' },
