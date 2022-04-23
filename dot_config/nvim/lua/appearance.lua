@@ -1,6 +1,7 @@
 local o = vim.o
 local cmd = vim.cmd
 local fn = vim.fn
+local api = vim.api
 
 o.background = 'dark'   -- Dark background
 o.termguicolors = true  -- Enable 256 colors
@@ -15,12 +16,14 @@ if fn.isdirectory(packer_path .. theme_name) == 1 then
 end
 
 -- Highlight on yank
-cmd [[
-  augroup YankHighlight
-    autocmd!
-    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
-  augroup END
-]]
+local yankhighlight = api.nvim_create_augroup('yankhighlight', { clear = true })
+api.nvim_create_autocmd('TextYankPost', {
+  pattern = '*',
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = yankhighlight
+})
 
 -- Floating window border color
 cmd [[
