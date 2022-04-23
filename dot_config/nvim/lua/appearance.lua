@@ -26,23 +26,19 @@ api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Floating window border color
-cmd [[
-  highlight! FloatBorder guifg=#C0CAF5
-]]
+api.nvim_set_hl(0, 'FloatBorder', { fg = '#C0CAF5' })
 
 -- nvim-cmp kind highlight
-cmd [[
-  highlight! CmpItemAbbrDeprecated gui=strikethrough guifg=#C0CAF5
-  highlight! CmpItemAbbrMatch guifg=#7AA2F2
-  highlight! CmpItemAbbrMatchFuzzy guifg=#7AA2F2
-  highlight! CmpItemKindVariable guifg=#9ECE6A
-  highlight! CmpItemKindInterface guifg=#9ECE6A
-  highlight! CmpItemKindText guifg=#9ECE6A
-  highlight! CmpItemKindFunction guifg=#F7768E
-  highlight! CmpItemKindMethod guifg=#F7768E
-  highlight! CmpItemKindSnippet guifg=#E0AF68
-  highlight! CmpItemKindFile guifg=#E0AF68
-  highlight! CmpItemKindKeyword guifg=#C0CAF5
-  highlight! CmpItemKindProperty guifg=#C0CAF5
-  highlight! CmpItemKindUnit guifg=#C0CAF5
-]]
+api.nvim_set_hl(0, 'CmpItemAbbrDeprecated', { strikethrough = true, fg = '#C0CAF5' })
+api.nvim_set_hl(0, 'CmpItemAbbrMatch', { fg = '#7AA2F2' })
+api.nvim_set_hl(0, 'CmpItemAbbrMatchFuzzy', { fg = '#7AA2F2' })
+api.nvim_set_hl(0, 'CmpItemKindVariable', { fg = '#9ECE6A' })
+api.nvim_set_hl(0, 'CmpItemKindInterface', { fg = '#9ECE6A' })
+api.nvim_set_hl(0, 'CmpItemKindText', { fg = '#9ECE6A' })
+api.nvim_set_hl(0, 'CmpItemKindFunction', { fg = '#F7768E' })
+api.nvim_set_hl(0, 'CmpItemKindMethod', { fg = '#F7768E' })
+api.nvim_set_hl(0, 'CmpItemKindSnippet', { fg = '#E0AF68' })
+api.nvim_set_hl(0, 'CmpItemKindFile', { fg = '#E0AF68' })
+api.nvim_set_hl(0, 'CmpItemKindKeyword', { fg = '#C0CAF5' })
+api.nvim_set_hl(0, 'CmpItemKindProperty', { fg = '#C0CAF5' })
+api.nvim_set_hl(0, 'CmpItemKindUnit', { fg = '#C0CAF5' })
