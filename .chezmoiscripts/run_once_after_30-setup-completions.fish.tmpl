@@ -34,4 +34,9 @@ if type -q helm
   helm completion fish > $__fish_config_dir/completions/helm.fish
 end
 
+if type -q talosctl
+  echo "setting up talosctl completion"
+  talosctl completion fish > $__fish_config_dir/completions/talosctl.fish
+end
+
 echo -e "\033[0;32m>>>>> Finish Setting Fish Completions <<<<<\033[0m"
