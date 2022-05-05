@@ -1,103 +1,103 @@
 # kubectl
 if type -q kubectl
-    abbr k 'kubectl'
-    abbr kgp 'kubectl get pods'
-    abbr kl 'kubectl logs'
-    abbr kdp 'kubectl describe pod'
-    abbr kdn 'kubectl describe node'
-    abbr kgn 'kubectl get nodes'
-    abbr wkgp 'hwatch -- kubectl get pod'
-    abbr kx 'kubectl exec -it'
+  abbr k 'kubectl'
+  abbr kgp 'kubectl get pods'
+  abbr kl 'kubectl logs'
+  abbr kdp 'kubectl describe pod'
+  abbr kdn 'kubectl describe node'
+  abbr kgn 'kubectl get nodes'
+  abbr wkgp 'hwatch -- kubectl get pod'
+  abbr kx 'kubectl exec -it'
 end
 
 # git
 if type -q git
-    abbr g 'git'
-    abbr ga 'git add .'
-    abbr gaa 'git add --all'
-    abbr gc 'git commit'
-    abbr gcm 'git commit -m'
-    abbr gs 'git status'
-    abbr gp 'git push'
-    abbr gpl 'git pull'
-    abbr gl 'git log'
-    abbr gd 'git diff'
-    abbr gr 'git restore .'
+  abbr g 'git'
+  abbr ga 'git add .'
+  abbr gaa 'git add --all'
+  abbr gc 'git commit'
+  abbr gcm 'git commit -m'
+  abbr gs 'git status'
+  abbr gp 'git push'
+  abbr gpl 'git pull'
+  abbr gl 'git log'
+  abbr gd 'git diff'
+  abbr gr 'git restore .'
 end
 
 # apt
 if type -q apt
 {{- if ne .chezmoi.username "root" }}
-    abbr apti 'sudo apt install'
-    abbr aptr 'sudo apt remove'
-    abbr aptu 'sudo apt update'
-    abbr aptug 'sudo apt update && sudo apt upgrade'
+  abbr apti 'sudo apt install'
+  abbr aptr 'sudo apt remove'
+  abbr aptu 'sudo apt update'
+  abbr aptug 'sudo apt update && sudo apt upgrade'
 {{- else }}
-    abbr apti 'apt install'
-    abbr aptr 'apt remove'
-    abbr aptu 'apt update'
-    abbr aptug 'apt update && sudo apt upgrade'
+  abbr apti 'apt install'
+  abbr aptr 'apt remove'
+  abbr aptu 'apt update'
+  abbr aptug 'apt update && sudo apt upgrade'
 {{- end }}
 end
 
 # pacman
 if type -q pacman
 {{- if ne .chezmoi.username "root" }}
-    abbr pacup 'sudo pacman -Syu'
-    abbr pacin 'sudo pacman -S'
-    abbr pacr 'sudo pacman -R'
+  abbr pacup 'sudo pacman -Syu'
+  abbr pacin 'sudo pacman -S'
+  abbr pacr 'sudo pacman -R'
 {{- else }}
-    abbr pacup 'pacman -Syu'
-    abbr pacin 'pacman -S'
-    abbr pacr 'pacman -R'
+  abbr pacup 'pacman -Syu'
+  abbr pacin 'pacman -S'
+  abbr pacr 'pacman -R'
 {{- end }}
 end
 
 # nvim
 if type -q nvim
-    abbr vi 'nvim'
-    abbr vim 'nvim'
-    abbr svi 'sudo nvim'
-    abbr svim 'sudo nvim'
+  abbr vi 'nvim'
+  abbr vim 'nvim'
+  abbr svi 'sudo nvim'
+  abbr svim 'sudo nvim'
 end
 
 # chezmoi
 if type -q chezmoi
-    abbr c 'chezmoi'
-    abbr ca 'chezmoi apply'
-    abbr cu 'chezmoi update'
-    abbr ce 'chezmoi edit'
-    abbr cs 'chezmoi status'
-    abbr cc 'chezmoi cd'
+  abbr c 'chezmoi'
+  abbr ca 'chezmoi apply'
+  abbr cu 'chezmoi update'
+  abbr ce 'chezmoi edit'
+  abbr cs 'chezmoi status'
+  abbr cc 'chezmoi cd'
 end
 
 # flux
 if type -q flux
-    abbr f 'flux'
-    abbr fga 'flux get all'
-    abbr fsa 'flux suspend kustomization --all'
-    abbr fra 'flux resume kustomization --all'
-    abbr wfga 'hwatch -- flux get all'
-    abbr upf 'update_flux'
+  abbr f 'flux'
+  abbr fga 'flux get all'
+  abbr fsa 'flux suspend kustomization --all'
+  abbr fra 'flux resume kustomization --all'
+  abbr wfga 'hwatch -- flux get all'
+  abbr upf 'update_flux'
 end
 
 # docker-compose
 if type -q docker-compose
-    abbr dcupd 'docker-compose up -d'
-    abbr dcdn 'docker-compose down'
-    abbr dcl 'docker-compose logs'
-    abbr dclf 'docker-compose logs -f'
-    abbr dcpull 'docker-compose pull'
+  abbr dcupd 'docker-compose up -d'
+  abbr dcdn 'docker-compose down'
+  abbr dcl 'docker-compose logs'
+  abbr dclf 'docker-compose logs -f'
+  abbr dcpull 'docker-compose pull'
 end
 
 # the fuck
 if type -q thefuck
-    abbr fu 'fuck'
+  abbr fu 'fuck'
 end
 
 # hwatch
 if type -q hwatch
-    abbr watch 'hwatch --'
+  abbr watch 'hwatch --'
 end
 
 # image conversions

@@ -1,25 +1,25 @@
 # Workaround for fdfind
 if type -q fdfind
-    function fd --wraps=fdfind --description 'fdfind should be fd'
-        fdfind $argv
-    end
+  function fd --wraps=fdfind --description 'fdfind should be fd'
+    fdfind $argv
+  end
 end
 
 # Workaround for batcat
 if type -q batcat
-    function bat --wraps=batcat --description 'batcat should be bat'
-        batcat
-    end
+  function bat --wraps=batcat --description 'batcat should be bat'
+    batcat
+  end
 end
 
 # Use cat if bat is not installed
 if not type -q bat
-    set fzf_preview_file_cmd cat
+  set fzf_preview_file_cmd cat
 end
 
 # Use exa if possible
 if type -q exa
-    set fzf_preview_dir_cmd exa --all --color=always
+  set fzf_preview_dir_cmd exa --all --color=always
 end
 
 # FZF options

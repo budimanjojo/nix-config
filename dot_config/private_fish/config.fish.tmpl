@@ -1,19 +1,19 @@
 ## Source custom configs
 for file in $__fish_config_dir/custom.d/*.fish
-    source $file
+  source $file
 end
 
 ## Launch Starship prompt
 if type -q starship
-    starship init fish | source
+  starship init fish | source
 end
 
 ## Launch The Fuck
 if type -q thefuck
-    thefuck --alias | source
+  thefuck --alias | source
 end
 
 ## Launch zoxide
 if type -q zoxide
-    zoxide init fish | source
+  zoxide init fish | source
 end
