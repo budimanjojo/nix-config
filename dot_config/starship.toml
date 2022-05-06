@@ -5,6 +5,7 @@ $directory\
 $git_branch\
 $git_status\
 $fill\
+$python \
 $status\
 $cmd_duration\
 $line_break\
@@ -57,9 +58,13 @@ deleted = " "
 [fill]
 symbol = " "
 
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = "🐍 "
+
 [status]
 disabled = false
-format = '[ $symbol]($style) '
+format = '[$symbol]($style) '
 symbol = "✘ "
 success_symbol = "✔ "
 style = "red"
