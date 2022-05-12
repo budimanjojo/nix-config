@@ -87,7 +87,7 @@ keymap.set('n', '<Leader>xr', ':TroubleToggle lsp_references<CR>')
 keymap.set('n', '<C-f>', function() return require("lir.float").toggle() end)
 
 -- null-ls
-keymap.set('n', '<Leader>pp', vim.lsp.buf.formatting)
+keymap.set('n', '<Leader>pp', vim.lsp.buf.format)
 keymap.set('v', '<Leader>pp', vim.lsp.buf.range_formatting)
 
 -- FTermo
