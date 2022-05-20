@@ -1,10 +1,10 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: 
+  name: &name 
   namespace: 
   labels:
-    app.kubernetes.io/name: 
+    app.kubernetes.io/name: *name
 spec:
   entryPoints:
   - https
@@ -14,7 +14,7 @@ spec:
     middlewares:
     - name:
     services:
-    - name: 
+    - name: *name
       port: 
       namespace: 
   tls:
