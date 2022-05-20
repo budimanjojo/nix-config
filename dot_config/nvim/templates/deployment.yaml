@@ -3,19 +3,17 @@ kind: Deployment
 metadata:
   name: &name 
   namespace: 
-  labels:
+  labels: &labels
     app.kubernetes.io/name: *name
 spec:
   replicas: 1
   strategy:
     type: Recreate
   selector:
-    matchLabels:
-      app.kubernetes.io/name: *name
+    matchLabels: *labels
   template:
     metadata:
-      labels:
-        app.kubernetes.io/name: *name
+      labels: *labels
     spec:
       containers:
       - name: *name
@@ -33,7 +31,7 @@ spec:
         args:
         - null
         ports:
-        - name: 
+        - name: &port 
           protocol: TCP
           containerPort: 
         volumeMounts:
@@ -41,7 +39,7 @@ spec:
           mountPath: 
         startupProbe:
           tcpSocket:
-            port: 
+            port: *port
           initialDelaySeconds: 
           timeoutSeconds: 
           periodSeconds: 
@@ -49,7 +47,7 @@ spec:
           failureThreshold: 
         livenessProbe:
           tcpSocket:
-            port: 
+            port: *port
           initialDelaySeconds: 
           timeoutSeconds: 
           periodSeconds: 
@@ -57,7 +55,7 @@ spec:
           failureThreshold: 
         readinessProbe:
           tcpSocket:
-            port: 
+            port: *port
           initialDelaySeconds: 
           timeoutSeconds: 
           periodSeconds: 
