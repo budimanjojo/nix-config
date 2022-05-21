@@ -39,6 +39,11 @@ if type -q talosctl
   talosctl completion fish > $__fish_config_dir/completions/talosctl.fish
 end
 
+if type -q k9s
+  echo "setting up k9s completion"
+  k9s completion fish > $__fish_config_dir/completions/k9s.fish
+end
+
 if type -q task
   echo "setting up task completion"
   curl --silent --show-error https://raw.githubusercontent.com/go-task/task/master/completion/fish/task.fish > $__fish_config_dir/completions/task.fish
