@@ -3,6 +3,7 @@ LICENSE
 install.sh
 {{- if (and (eq .chezmoi.os "linux") (not .kubernetes)) }}
 .kube/config
+.config/k9s/
 {{- end }}
 {{- if (and (eq .chezmoi.os "linux") (not .i3wm)) }}
 .i3/
