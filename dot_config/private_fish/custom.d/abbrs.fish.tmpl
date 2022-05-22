@@ -100,6 +100,11 @@ if type -q hwatch
   abbr watch 'hwatch --'
 end
 
+# k9s
+if type -q k9s
+  abbr ks 'k9s'
+end
+
 # image conversions
 abbr cwtp 'find ./ -name "*.webp" -exec dwebp {} -o {}.png \; && rm -r *.webp'
 abbr cptj 'mogrify -flatten -format jpg *.png && rm -r *.png'
