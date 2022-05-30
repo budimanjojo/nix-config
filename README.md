@@ -232,6 +232,7 @@ If they are not in the table, that means it's using the default Vim keybindings.
 | Normal        | `<Leader>te`  | Open new tab with current buffer's path |
 | Normal/Visual | `Tab`         | Indent current line or selection |
 | Normal/Visual | `Shift+Tab`   | De-indent current line or selection |
+| Normal        | `<Leader>lr>` | Restart LSP client |
 | Normal        | `<Leader>fz`  | Open FzfLua |
 | Normal        | `<Leader>ff`  | Open FzfLua to find files |
 | Normal        | `<Leader>fg`  | Open FzfLua to live grep |

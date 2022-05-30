@@ -67,6 +67,9 @@ keymap.set('n', '<S-Tab>', '<<')
 keymap.set('v', '<Tab>', '>gv')
 keymap.set('v', '<S-Tab>', '<gv')
 
+-- lspconfig
+keymap.set('n', '<Leader>lr', ':LspRestart<CR>')
+
 -- FzfLua
 keymap.set('n', '<Leader>fz', ':FzfLua<CR>')
 keymap.set('n', '<Leader>ff', ':FzfLua files<CR>')
