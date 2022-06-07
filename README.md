@@ -230,6 +230,8 @@ If they are not in the table, that means it's using the default Vim keybindings.
 | Normal        | `<Leader>th`  | Go to previous tab |
 | Normal        | `<Leader>tl`  | Go to next tab |
 | Normal        | `<Leader>te`  | Open new tab with current buffer's path |
+| Normal        | `<Leader>hh`  | Jump back to older cursor position |
+| Normal        | `<Leader>ll`  | Jump forward to newer cursor position |
 | Normal/Visual | `Tab`         | Indent current line or selection |
 | Normal/Visual | `Shift+Tab`   | De-indent current line or selection |
 | Normal        | `<Leader>lr>` | Restart LSP client |

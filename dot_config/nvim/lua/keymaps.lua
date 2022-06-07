@@ -67,6 +67,10 @@ keymap.set('n', '<S-Tab>', '<<')
 keymap.set('v', '<Tab>', '>gv')
 keymap.set('v', '<S-Tab>', '<gv')
 
+-- Jumping
+keymap.set('n', '<Leader>hh', '<C-o>')
+keymap.set('n', '<Leader>ll', '<C-i>')
+
 -- lspconfig
 keymap.set('n', '<Leader>lr', ':LspRestart<CR>')
 
