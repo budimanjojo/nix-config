@@ -65,7 +65,7 @@ api.nvim_create_autocmd({ 'FileType' }, {
       vim.opt_local.softtabstop = 4
       vim.opt_local.expandtab = false
     elseif ft == 'gitcommit' then
-      vim.opt_local.colorcolumn = {57, 73}
+      vim.opt_local.colorcolumn = {73}
     end
   end,
   group = ftconfiguration
