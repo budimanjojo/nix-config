@@ -39,6 +39,11 @@ if type -q talosctl
   talosctl completion fish > $__fish_config_dir/completions/talosctl.fish
 end
 
+if type -q talhelper
+  echo "setting up talhelper completion"
+  talhelper completion fish > $__fish_config_dir/completions/talhelper.fish
+end
+
 if type -q k9s
   echo "setting up k9s completion"
   k9s completion fish > $__fish_config_dir/completions/k9s.fish

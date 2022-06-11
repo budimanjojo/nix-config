@@ -1,7 +1,7 @@
 {{ if (eq .chezmoi.os "linux") -}}
 registries:
   - type: standard
-    ref: v2.21.0    # renovate: depName=aquaproj/aqua-registry
+    ref: v2.22.0    # renovate: depName=aquaproj/aqua-registry
 
 packages:
   - name: twpayne/chezmoi@v2.17.1
@@ -31,5 +31,6 @@ packages:
   - name: helm/helm@v3.9.0
   - name: siderolabs/talos@v1.0.6
   - name: derailed/k9s@v0.25.18
+  - name: budimanjojo/talhelper@v1.1.11
 {{-   end }}
 {{- end }}
