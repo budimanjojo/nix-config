@@ -6,6 +6,7 @@ local api = vim.api
 o.background = 'dark'   -- Dark background
 o.termguicolors = true  -- Enable 256 colors
 o.signcolumn = 'yes'    -- Always show signcolumn
+o.cursorcolumn = true   -- Cursor column
 
 -- Colorscheme
 local theme_name = 'tokyonight.nvim'
