@@ -12,6 +12,7 @@ require('packer').startup({
     use 'pearofducks/ansible-vim'
     use 'alker0/chezmoi.vim'
     use 'folke/tokyonight.nvim'
+    use 'andweeb/presence.nvim'
     use {
       'norcalli/nvim-colorizer.lua',
       config = function()
