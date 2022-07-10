@@ -1,0 +1,58 @@
+local wezterm = require 'wezterm';
+
+return {
+  -- Fonts
+  font = wezterm.font_with_fallback({
+    "UbuntuMono Nerd Font",
+    "Iosevka",
+    "Unifont",
+  }),
+  font_size = 12.0,
+
+  -- Appearance
+  enable_tab_bar = false,
+  enable_scroll_bar = false,
+
+  -- Window layout
+  window_padding = {
+    left = "1cell",
+    right = 0,
+    top = "1cell",
+    bottom = "0.5cell"
+  },
+  window_close_confirmation = "NeverPrompt",
+
+  -- Color scheme
+  colors = {
+    background = "#1A1B26",
+    foreground = "#C0CAF5",
+    cursor_bg = "#C0CAF5",
+    cursor_fg = "#202124",
+    cursor_border = "C0CAF5",
+    ansi = {
+      "#15161E",
+      "#F7768E",
+      "#9ECE6A",
+      "#E0AF68",
+      "#7AA2F7",
+      "#BB9AF7",
+      "#7DCFFF",
+      "#A9B1D6"
+    },
+    brights = {
+      "#414868",
+      "#F7768E",
+      "#9ECE6A",
+      "#E0AF68",
+      "#7AA2F7",
+      "#BB9AF7",
+      "#7DCFFF",
+      "#C0CAF5"
+    },
+    indexed = {
+      [16] = "#FF9E64",
+      [17] = "#DB4B4B"
+    },
+
+  }
+}
