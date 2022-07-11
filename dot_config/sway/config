@@ -3,7 +3,7 @@
 ########################################################################################################
 
 # Default applications
-set $term kitty
+set $term wezterm
 set $browser firefox
 set $filemanager thunar
 set $launcher rofi
