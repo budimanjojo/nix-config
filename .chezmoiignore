@@ -24,4 +24,5 @@ install.sh
 {{- if .headless }}
 .config/alacritty/
 .config/kitty/
+.config/wezterm/
 {{- end }}
