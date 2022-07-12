@@ -58,6 +58,12 @@ require('packer').startup({
       end
     }
     use {
+      'folke/which-key.nvim',
+      config = function()
+        require('which-key').setup()
+      end
+    }
+    use {
       'max397574/better-escape.nvim',
       config = function()
         require('better_escape').setup { mapping = { 'ii' }}
