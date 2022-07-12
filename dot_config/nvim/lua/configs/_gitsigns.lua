@@ -1,10 +1,10 @@
 require('gitsigns').setup {
   signs = {
-    add          = {hl = 'GitSignsAdd'   , text = '樂', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
-    change       = {hl = 'GitSignsChange', text = '樂', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
-    delete       = {hl = 'GitSignsDelete', text = '_',  numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-    topdelete    = {hl = 'GitSignsDelete', text = '‾',  numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-    changedelete = {hl = 'GitSignsChange', text = '~',  numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+    add          = { hl = 'GitSignsAdd', text = '樂', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn' },
+    change       = { hl = 'GitSignsChange', text = '樂', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
+    delete       = { hl = 'GitSignsDelete', text = '_', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
+    topdelete    = { hl = 'GitSignsDelete', text = '‾', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
+    changedelete = { hl = 'GitSignsChange', text = '~', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
   },
   linehl = true,
   current_line_blame = true,
@@ -29,22 +29,22 @@ require('gitsigns').setup {
       if vim.wo.diff then return '<C-j>' end
       vim.schedule(function() gs.next_hunk() end)
       return '<Ignore>'
-    end, {expr=true})
+    end, { expr = true })
 
     map('n', '<C-k>', function()
       if vim.wo.diff then return '<C-k>' end
       vim.schedule(function() gs.prev_hunk() end)
       return '<Ignore>'
-    end, {expr=true})
+    end, { expr = true })
 
     -- Actions
-    map({'n', 'v'}, '<leader>ga', ':Gitsigns stage_hunk<CR>')
-    map({'n', 'v'}, '<leader>gr', ':Gitsigns reset_hunk<CR>')
-    map('n', '<leader>gaa', gs.stage_buffer)
-    map('n', '<leader>gu', gs.undo_stage_hunk)
-    map('n', '<leader>gra', gs.reset_buffer)
-    map('n', '<leader>gh', gs.preview_hunk)
-    map('n', '<leader>gd', gs.diffthis)
-    map('n', '<leader>gD', function() gs.diffthis('~') end)
+    map({ 'n', 'v' }, '<leader>ga', ':Gitsigns stage_hunk<CR>', { desc = "Git stage hunk" })
+    map({ 'n', 'v' }, '<leader>gr', ':Gitsigns reset_hunk<CR>', { desc = "Git reset hunk" })
+    map('n', '<leader>gaa', gs.stage_buffer, { desc = "Git stage buffer" })
+    map('n', '<leader>gu', gs.undo_stage_hunk, { desc = "Undo git stage" })
+    map('n', '<leader>gra', gs.reset_buffer, { desc = "Reset git actions in buffer" })
+    map('n', '<leader>gh', gs.preview_hunk, { desc = "Preview git actions in hunk" })
+    map('n', '<leader>gd', gs.diffthis, { desc = "Git diff this hunk" })
+    map('n', '<leader>gD', function() gs.diffthis('~') end, { desc = "Git diff this commit" })
   end
 }

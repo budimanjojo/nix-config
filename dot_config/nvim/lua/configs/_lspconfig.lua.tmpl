@@ -53,12 +53,12 @@ local on_attach = function(_, bufnr)
   local keymap = vim.keymap
   local opts = { buffer = bufnr }
 
-  keymap.set('n', 'rn', vim.lsp.buf.rename, opts)
-  keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-  keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-  keymap.set('n', 'gh', function() return require('utils').fix_buf_hover() end, opts)
-  keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-  keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+  keymap.set('n', 'rn', vim.lsp.buf.rename, { unpack(opts), desc = "Do LSP rename action" })
+  keymap.set('n', 'gd', vim.lsp.buf.definition, { unpack(opts), desc = "Do LSP get definition action" })
+  keymap.set('n', 'gD', vim.lsp.buf.declaration, { unpack(opts), desc = "Do LSP get declaration action" })
+  keymap.set('n', 'gh', function() return require('utils').fix_buf_hover() end, { unpack(opts), desc = "Do LSP hover action" })
+  keymap.set('n', 'gr', vim.lsp.buf.references, { unpack(opts), desc = "Do LSP get references action" })
+  keymap.set('n', 'gi', vim.lsp.buf.implementation, { unpack(opts), desc = "Do LSP get implementation action"})
 end
 
 local server_opts = {
