@@ -70,8 +70,8 @@ These are the plugins I'm using:
 - [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
 - [surround.nvim](blackCauldron7/surround.nvim)
 - [Trouble](https://github.com/folke/trouble.nvim)
-- [impatient.nvim](https://github.com/lewis6991/impatient.nvim)
 - [presence.nvim](https://github.com/andweeb/presence.nvim)
+- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 
 To update Neovim plugins, do `:PackerSync` in your nvim.
 **Note**: You need Neovim version >=0.7.0

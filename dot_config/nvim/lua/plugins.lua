@@ -52,6 +52,12 @@ require('packer').startup({
       end
     }
     use {
+      'lewis6991/gitsigns.nvim',
+      config = function()
+        require('configs._gitsigns')
+      end
+    }
+    use {
       'max397574/better-escape.nvim',
       config = function()
         require('better_escape').setup { mapping = { 'ii' }}
@@ -63,7 +69,6 @@ require('packer').startup({
         require('configs._autopairs')
       end
     }
-
     use {
       'nvim-lualine/lualine.nvim',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -118,7 +123,8 @@ require('packer').startup({
       requires = {
         'b0o/schemastore.nvim',
         'williamboman/nvim-lsp-installer',
-        'ray-x/lsp_signature.nvim'
+        'ray-x/lsp_signature.nvim',
+        'lewis6991/gitsigns.nvim'
       },
       config = function()
         require('configs._lspconfig')
