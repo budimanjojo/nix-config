@@ -25,14 +25,14 @@ require('gitsigns').setup {
     end
 
     -- Navigation
-    map('n', '<C-j>', function()
-      if vim.wo.diff then return '<C-j>' end
+    map('n', '<C-n>', function()
+      if vim.wo.diff then return '<C-n>' end
       vim.schedule(function() gs.next_hunk() end)
       return '<Ignore>'
     end, { expr = true })
 
-    map('n', '<C-k>', function()
-      if vim.wo.diff then return '<C-k>' end
+    map('n', '<C-p>', function()
+      if vim.wo.diff then return '<C-p>' end
       vim.schedule(function() gs.prev_hunk() end)
       return '<Ignore>'
     end, { expr = true })
