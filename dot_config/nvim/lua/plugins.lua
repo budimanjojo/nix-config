@@ -9,72 +9,20 @@ end
 require('packer').startup({
   function(use)
     use 'wbthomason/packer.nvim'
+
+    -- Syntax highlighting
     use 'pearofducks/ansible-vim'
     use 'alker0/chezmoi.vim'
-    use 'folke/tokyonight.nvim'
-    use 'andweeb/presence.nvim'
     use {
       'norcalli/nvim-colorizer.lua',
       config = function()
         require('colorizer').setup()
       end
     }
-    use 'numToStr/FTerm.nvim'
+
+    -- Appearance
+    use 'folke/tokyonight.nvim'
     use 'stevearc/dressing.nvim'
-    use {
-      'windwp/nvim-ts-autotag',
-      config = function()
-        require('nvim-ts-autotag').setup()
-      end
-    }
-    use {
-      'ur4ltz/surround.nvim',
-      config = function()
-        require('surround').setup { mapping_style = 'sandwich' }
-      end
-    }
-    use {
-      'folke/trouble.nvim',
-      config = function()
-        require('trouble').setup()
-      end
-    }
-    use {
-      'lukas-reineke/indent-blankline.nvim',
-      config = function()
-        require('indent_blankline').setup()
-      end
-    }
-    use {
-      'numToStr/Comment.nvim',
-      config = function()
-        require('Comment').setup()
-      end
-    }
-    use {
-      'lewis6991/gitsigns.nvim',
-      config = function()
-        require('configs._gitsigns')
-      end
-    }
-    use {
-      'folke/which-key.nvim',
-      config = function()
-        require('which-key').setup()
-      end
-    }
-    use {
-      'max397574/better-escape.nvim',
-      config = function()
-        require('better_escape').setup { mapping = { 'ii' }}
-      end
-    }
-    use {
-      'windwp/nvim-autopairs',
-      config = function()
-        require('configs._autopairs')
-      end
-    }
     use {
       'nvim-lualine/lualine.nvim',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -83,28 +31,30 @@ require('packer').startup({
       end
     }
     use {
+      'lukas-reineke/indent-blankline.nvim',
+      config = function()
+        require('indent_blankline').setup()
+      end
+    }
+
+    -- LSP
+    use {
+      'neovim/nvim-lspconfig',
+      requires = {
+        'b0o/schemastore.nvim',
+        'williamboman/nvim-lsp-installer',
+        'ray-x/lsp_signature.nvim',
+        'lewis6991/gitsigns.nvim'
+      },
+      config = function()
+        require('configs._lspconfig')
+      end
+    }
+    use {
       'nvim-treesitter/nvim-treesitter',
       run = ':TSUpdate',
       config = function()
         require('configs._treesitter')
-      end
-    }
-    use {
-      'ibhagwan/fzf-lua',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-      config = function()
-        require('configs._fzf-lua')
-      end
-    }
-    use {
-      'tamago324/lir.nvim',
-      requires = {
-        'nvim-lua/plenary.nvim',
-        'tamago324/lir-git-status.nvim',
-        { 'kyazdani42/nvim-web-devicons', opt = true }
-      },
-      config = function ()
-        require('configs._lir')
       end
     }
     use {
@@ -125,18 +75,6 @@ require('packer').startup({
       end
     }
     use {
-      'neovim/nvim-lspconfig',
-      requires = {
-        'b0o/schemastore.nvim',
-        'williamboman/nvim-lsp-installer',
-        'ray-x/lsp_signature.nvim',
-        'lewis6991/gitsigns.nvim'
-      },
-      config = function()
-        require('configs._lspconfig')
-      end
-    }
-    use {
       'jose-elias-alvarez/null-ls.nvim',
       requires = {
         'nvim-lua/plenary.nvim',
@@ -146,6 +84,86 @@ require('packer').startup({
         require('configs._null-ls')
       end
     }
+    use {
+      'folke/trouble.nvim',
+      config = function()
+        require('trouble').setup()
+      end
+    }
+    use {
+      'windwp/nvim-ts-autotag',
+      config = function()
+        require('nvim-ts-autotag').setup()
+      end
+    }
+
+    -- Fuzzy finder
+    use {
+      'ibhagwan/fzf-lua',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+      config = function()
+        require('configs._fzf-lua')
+      end
+    }
+
+    -- Enhancement
+    use {
+      'max397574/better-escape.nvim',
+      config = function()
+        require('better_escape').setup { mapping = { 'ii' }}
+      end
+    }
+
+    -- System utility
+    use 'numToStr/FTerm.nvim'
+    use {
+      'tamago324/lir.nvim',
+      requires = {
+        'nvim-lua/plenary.nvim',
+        'tamago324/lir-git-status.nvim',
+        { 'kyazdani42/nvim-web-devicons', opt = true }
+      },
+      config = function ()
+        require('configs._lir')
+      end
+    }
+    use {
+      'lewis6991/gitsigns.nvim',
+      config = function()
+        require('configs._gitsigns')
+      end
+    }
+
+    -- Editing support
+    use {
+      'numToStr/Comment.nvim',
+      config = function()
+        require('Comment').setup()
+      end
+    }
+    use {
+      'windwp/nvim-autopairs',
+      config = function()
+        require('configs._autopairs')
+      end
+    }
+    use {
+      'ur4ltz/surround.nvim',
+      config = function()
+        require('surround').setup { mapping_style = 'sandwich' }
+      end
+    }
+
+    -- Braindead doctor
+    use {
+      'folke/which-key.nvim',
+      config = function()
+        require('which-key').setup()
+      end
+    }
+
+    -- Other
+    use 'andweeb/presence.nvim'
 
     if packer_bootstrap then
       require('packer').sync()
