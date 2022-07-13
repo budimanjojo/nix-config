@@ -1,7 +1,7 @@
 require('fzf-lua').setup {
   fzf_opts = {
     ['--layout'] = 'reverse-list',
-    ['--prompt'] = '⮞  ',
+    ['--prompt'] = ' ',
     ['--info'] = 'default',
     ['--color'] = 'fg:white,bg:black,hl:red,fg+:white,hl+:red,info:yellow,prompt:blue,pointer:magenta,marker:magenta,spinner:green,header:blue',
   },
@@ -11,29 +11,29 @@ require('fzf-lua').setup {
     }
   },
   builtin = {
-    prompt = 'FzfLua ⮞  '
+    prompt = 'FzfLua  '
   },
   files = {
-    prompt = 'Files ⮞  ',
+    prompt = 'Files  ',
     fd_opts = [[--color always --type f --hidden --exclude .git --exclude node_modules --exclude .npm --exclude .cache]]
   },
   grep = {
-    prompt = 'Grep ⮞  ',
-    input_prompt = 'Grep for ⮞  '
+    prompt = 'Grep  ',
+    input_prompt = 'Grep for  '
   },
   git = {
     commits = {
-      prompt = 'Commits ⮞  ',
+      prompt = 'Commits  ',
     }
   },
   buffers = {
-    prompt = 'Buffers ⮞  ',
+    prompt = 'Buffers  ',
   },
   helptags = {
-    prompt = 'Help ⮞  ',
+    prompt = 'Help  ',
   },
   lsp = {
-    prompt = ' ⮞  ',
+    prompt = '  ',
     icons = {
       ['Error']       = { icon = '', color = 'red' },
       ['Warning']     = { icon = '', color = 'yellow' },
@@ -45,7 +45,7 @@ require('fzf-lua').setup {
   },
   nvim = {
     keymaps = {
-      prompt = 'Keymaps ⮞  ',
+      prompt = 'Keymaps  ',
     }
   }
 }
