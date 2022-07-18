@@ -148,9 +148,9 @@ require('packer').startup({
       end
     }
     use {
-      'ur4ltz/surround.nvim',
+      'kylechui/nvim-surround',
       config = function()
-        require('surround').setup { mapping_style = 'sandwich' }
+        require('nvim-surround').setup()
       end
     }
 
