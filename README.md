@@ -68,7 +68,7 @@ These are the plugins I'm using:
 - [lir.nvim](https://github.com/tamago324/lir.nvim)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
-- [surround.nvim](blackCauldron7/surround.nvim)
+- [nvim-surround](https://github.com/kylechui/nvim-surround)
 - [Trouble](https://github.com/folke/trouble.nvim)
 - [presence.nvim](https://github.com/andweeb/presence.nvim)
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
