@@ -65,8 +65,8 @@ symbol = "🐍 "
 [status]
 disabled = false
 format = '[$symbol]($style) '
-symbol = " "
-success_symbol = " "
+symbol = " "
+success_symbol = " "
 style = "red"
 
 [cmd_duration]
