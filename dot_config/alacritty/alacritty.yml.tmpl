@@ -1,9 +1,13 @@
 env:
   TERM: xterm-256color
 window:
+  dimensions:
+    columns: 0
+    lines: 0
   padding:
     x: 10
     y: 10
+  dynamic_padding: true
 scrolling:
   history: 10000
 font:
@@ -43,7 +47,6 @@ colors:
     - { index: 17, color: '#DB4B4B' }
 bell:
   duration: 0
-background_opacity: 0.9
 live_config_reload: true
 key_bindings:
   - { key: V,               mods: Control|Shift, action: Paste                            }
