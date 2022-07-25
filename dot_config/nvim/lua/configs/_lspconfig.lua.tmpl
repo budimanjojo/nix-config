@@ -73,6 +73,12 @@ lspconfig.gopls.setup {
 }
 {{ end -}}
 
+-- javascript
+lspconfig.tsserver.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+
 -- jsonls
 lspconfig.jsonls.setup {
   capabilities = capabilities,
