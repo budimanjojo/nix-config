@@ -54,6 +54,11 @@ if type -q wezterm
   wezterm shell-completion --shell fish > $__fish_config_dir/completions/wezterm.fish
 end
 
+if type -q zellij
+  echo "setting up zellij completion"
+  zellij setup --generate-completion fish > $__fish_config_dir/completions/zellij.fish
+end
+
 if type -q task
   echo "setting up task completion"
   curl --silent --show-error https://raw.githubusercontent.com/go-task/task/master/completion/fish/task.fish > $__fish_config_dir/completions/task.fish

@@ -1,0 +1,125 @@
+default_mode: locked
+keybinds:
+  unbind: true
+  locked:
+    - action: [SwitchToMode: Normal]
+      key: [Alt: 'a']
+
+  normal:
+    - action: [NewPane: Right, SwitchToMode: Locked]
+      key: [Alt: 's']
+    - action: [NewPane: Down, SwitchToMode: Locked]
+      key: [Alt: 'v']
+
+    - action: [SwitchToMode: RenameTab]
+      key: [Char: 'r']
+
+    - action: [MoveFocus: Left, SwitchToMode: Pane]
+      key: [Char: 'h']
+    - action: [MoveFocus: Down, SwitchToMode: Pane]
+      key: [Char: 'j']
+    - action: [MoveFocus: Up, SwitchToMode: Pane]
+      key: [Char: 'k']
+    - action: [MoveFocus: Right, SwitchToMode: Pane]
+      key: [Char: 'l']
+    - action: [MovePane:, SwitchToMode: Pane]
+      key: [Char: '>']
+
+    - action: [Resize: Left, SwitchToMode: Pane]
+      key: [Char: 'H']
+    - action: [Resize: Down, SwitchToMode: Pane]
+      key: [Char: 'J']
+    - action: [Resize: Up, SwitchToMode: Pane]
+      key: [Char: 'K']
+    - action: [Resize: Right, SwitchToMode: Pane]
+      key: [Char: 'L']
+
+    - action: [GoToNextTab, SwitchToMode: Locked]
+      key: [Alt: 'n']
+    - action: [GoToPreviousTab, SwitchToMode: Locked]
+      key: [Alt: 'p']
+
+    - action: [NewTab: , SwitchToMode: Locked]
+      key: [Char: 'c']
+    - action: [CloseFocus, SwitchToMode: Locked]
+      key: [Char: 'x']
+    - action: [EditScrollback, SwitchToMode: Locked]
+      key: [Char: 'a']
+
+  pane:
+    - action: [SwitchToMode: Normal]
+      key: [Alt: 'a']
+    - action: [SwitchToMode: Locked]
+      key: [Esc, Char: ' ', Char: "\n"]
+    - action: [MoveFocus: Left]
+      key: [Char: 'h']
+    - action: [MoveFocus: Down]
+      key: [Char: 'j']
+    - action: [MoveFocus: Up]
+      key: [Char: 'k']
+    - action: [MoveFocus: Right]
+      key: [Char: 'l']
+    - action: [Resize: Left]
+      key: [Char: 'H']
+    - action: [Resize: Down]
+      key: [Char: 'J']
+    - action: [Resize: Up]
+      key: [Char: 'K']
+    - action: [Resize: Right]
+      key: [Char: 'L']
+    - action: [NewPane: Right]
+      key: [Alt: 's']
+    - action: [NewPane: Down]
+      key: [Alt: 'v']
+    - action: [CloseFocus]
+      key: [Char: 'x']
+    - action: [MovePane:]
+      key: [Char: '>']
+
+  renametab:
+    - action: [SwitchToMode: Normal]
+      key: [Alt: 'a']
+    - action: [SwitchToMode: Locked]
+      key: [Char: "\n"]
+    - action: [TabNameInput: [27], SwitchToMode: Locked]
+      key: [Esc]
+themes:
+  default:
+    fg: [192,202,245] #C0CAF5
+    bg: [26,27,38] #1A1B26
+    black: [21,22,30] #15161E
+    red: [247,118,142] #F7768E
+    green: [158,206,106] #9ECE6A
+    yellow: [224,175,104] #E0AF68
+    blue: [122,162,247] #7AA2F7
+    magenta: [187,154,247] #BB9AF7
+    cyan: [125,207,255] #7DCFFF
+    white: [192,202,245] #C0CAF5
+    orange: [255,158,100] #FF9E64
+
+plugins:
+  - path: tab-bar
+    tag: tab-bar
+  - path: status-bar
+    tag: status-bar
+  - path: strider
+    tag: strider
+  - path: compact-bar
+    tag: compact-bar
+
+ui:
+  pane_frames:
+    rounded_corners: true
+
+template:
+  direction: Horizontal
+  parts:
+    - direction: Vertical
+      borderless: true
+      split_size:
+        Fixed: 1
+      run:
+        plugin:
+          location: "zellij:tab-bar"
+    - direction: Vertical
+      body: true
