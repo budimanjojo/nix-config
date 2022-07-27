@@ -42,9 +42,10 @@ require('packer').startup({
       'neovim/nvim-lspconfig',
       requires = {
         'b0o/schemastore.nvim',
-        'williamboman/nvim-lsp-installer',
         'ray-x/lsp_signature.nvim',
-        'lewis6991/gitsigns.nvim'
+        'lewis6991/gitsigns.nvim',
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig'
       },
       config = function()
         require('configs._lspconfig')

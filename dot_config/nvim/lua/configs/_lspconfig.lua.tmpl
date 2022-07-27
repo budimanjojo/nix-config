@@ -19,11 +19,12 @@ vim.o.updatetime = 150
 vim.cmd([[autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })]])
 
 -- LSP Server Setup Goes Below
-require('nvim-lsp-installer').setup {
+require('mason').setup()
+require('mason-lspconfig').setup {
   automatic_installation = true,
-  ui = {
-    check_outdated_servers_on_open = true
-  }
+  -- ui = {
+  --   check_outdated_servers_on_open = true
+  -- }
 }
 
 local lspconfig = require('lspconfig')
