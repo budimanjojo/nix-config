@@ -110,16 +110,3 @@ plugins:
 ui:
   pane_frames:
     rounded_corners: true
-
-template:
-  direction: Horizontal
-  parts:
-    - direction: Vertical
-      borderless: true
-      split_size:
-        Fixed: 1
-      run:
-        plugin:
-          location: "zellij:tab-bar"
-    - direction: Vertical
-      body: true
