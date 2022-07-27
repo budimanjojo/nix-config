@@ -65,6 +65,7 @@ These are the plugins I'm using:
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - [mason.nvim](https://github.com/williamboman/mason.nvim)
+- [mason-tool-installer.nvim](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim)
 - [lir.nvim](https://github.com/tamago324/lir.nvim)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)

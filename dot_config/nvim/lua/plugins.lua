@@ -45,7 +45,10 @@ require('packer').startup({
         'ray-x/lsp_signature.nvim',
         'lewis6991/gitsigns.nvim',
         'williamboman/mason.nvim',
-        'williamboman/mason-lspconfig'
+        'williamboman/mason-lspconfig',
+        'jose-elias-alvarez/null-ls.nvim',
+        'nvim-lua/plenary.nvim',
+        'WhoIsSethDaniel/mason-tool-installer.nvim',
       },
       config = function()
         require('configs._lspconfig')
@@ -73,16 +76,6 @@ require('packer').startup({
       },
       config = function()
         require('configs._nvim-cmp')
-      end
-    }
-    use {
-      'jose-elias-alvarez/null-ls.nvim',
-      requires = {
-        'nvim-lua/plenary.nvim',
-        'neovim/nvim-lspconfig'
-      },
-      config = function()
-        require('configs._null-ls')
       end
     }
     use {
