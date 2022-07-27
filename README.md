@@ -64,7 +64,7 @@ These are the plugins I'm using:
 - [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
-- [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)
+- [mason.nvim](https://github.com/williamboman/mason.nvim)
 - [lir.nvim](https://github.com/tamago324/lir.nvim)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
