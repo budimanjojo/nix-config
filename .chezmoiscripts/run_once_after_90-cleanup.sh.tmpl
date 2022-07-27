@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "\033[0;32m>>>>> Begin Setting Up Fish Completions <<<<<\033[0m"
+echo -e "\033[0;32m>>>>> Begin Executing Cleanup Job <<<<<\033[0m"
 
 # This script will ensure that I fixes changes I have made in the past
 # For example, I used to install stuffs in /usr/local/bin but now I'm not anymore
@@ -25,6 +25,19 @@ function not_needed_executable () {
   fi
 }
 
+function not_needed_directory () {
+  local dir=$1
+  if [ -d "$dir" ]; then
+    if [ "$EUID" -ne 0 ]; then
+      sudo rm -rf "$dir"
+      echo "deleted $dir directory, not needed anymore"
+    else
+      rm -rf "$dir"
+      echo "deleted $dir directory, not needed anymore"
+    fi
+  fi
+}
+
 not_needed_executable "kubectl" "{{ .chezmoi.homeDir }}/.local/bin"
 not_needed_executable "flux" "{{ .chezmoi.homeDir }}/.local/bin"
 not_needed_executable "kustomize" "/usr/local/bin"
@@ -39,9 +52,11 @@ not_needed_executable "age" "/usr/local/bin"
 not_needed_executable "age-keygen" "/usr/local/bin"
 not_needed_executable "chezmoi" "{{ .chezmoi.homeDir }}/.local/bin"
 
+not_needed_directory "{{ .chezmoi.homeDir }}/.local/share/nvim/lsp_servers"
+
 if [ "$(command -v brew)" ]; then
   echo "uninstalling brew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 fi
 
-echo -e "\033[0;32m>>>>> Finish Setting Fish Completions <<<<<\033[0m"
+echo -e "\033[0;32m>>>>> Finish Executing Cleanup Job<<<<<\033[0m"
