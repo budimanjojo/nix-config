@@ -302,3 +302,49 @@ If they are not in the table, that means it's using the default Tmux keybindings
 | `<copy-mode>y`          | Copy selected text |
 | `<copy-mode>Y`          | Copy the whole line of selected text |
 | `<copy-mode>D`          | Copy till the end of line from selected text |
+
+### Zellij keybindings
+
+I'm migrating my tmux to [Zellij](https://zellij.dev/).
+I mimicked my tmux configuration to work in zellij but not everything works the same.
+Prefix key is `Alt+a`, I use the "swith to normal mode" in zellij to achieve this.
+`<normal>` means you need to be in normal mode, `<pane>` means pane mode, and so on.
+The table below lists all the keybindings set.
+
+| Keypress            | Description |
+| :-----------------: | :---------- |
+| `<locked>Alt+a`     | Swith to normal mode (act like prefix key in tmux) |
+| `<normal>Alt+s`     | Create new horizontal split window and back to locked mode |
+| `<normal>Alt+v`     | Create new vertical split window and back to locked mode |
+| `<normal>r`         | Switch to renametab mode |
+| `<normal>h`         | Move selection to left pane and go to pane mode |
+| `<normal>j`         | Move selection to pane below and go to pane mode |
+| `<normal>k`         | Move selection to pane above and go to pane mode |
+| `<normal>l`         | Move selection to right pane and go to pane mode |
+| `<normal>>`         | Move pane around and go to pane mode |
+| `<normal>H`         | Resize current pane upwards and go to pane mode |
+| `<normal>J`         | Resize current pane downwards and go to pane mode |
+| `<normal>H`         | Resize current pane to the left and go to pane mode |
+| `<normal>L`         | Resize current pane to the right and go to pane mode |
+| `<normal>Alt+n`     | Go to next window and back to locked mode |
+| `<normal>Alt+p`     | Go to previous window and back to locked mode |
+| `<normal>c`         | Open new tab and back to locked mode |
+| `<normal>x`         | Close current pane and back to locked mode |
+| `<normal>a`         | Open pane with $EDITOR and back to locked mode |
+| `<pane>Alt+a`       | Switch to normal mode |
+| `<pane>Esc/' '/"\n"`| Switch to locked mode |
+| `<pane>h`           | Move selection to left pane |
+| `<pane>j`           | Move selection to pane below |
+| `<pane>k`           | Move selection to pane above |
+| `<pane>l`           | Move selection to right pane |
+| `<pane>H`           | Resize current pane upwards |
+| `<pane>J`           | Resize current pane downwards |
+| `<pane>H`           | Resize current pane to the left |
+| `<pane>L`           | Resize current pane to the right |
+| `<pane>Alt+s`       | Create new horizontal split window |
+| `<pane>Alt+v`       | Create new vertical split window |
+| `<pane>x`           | Close current pane |
+| `<pane>>`           | Move pane around |
+| `<renametab>Alt+a`  | Switch to normal mode |
+| `<renametab>"\n"`   | Switch to locked mode |
+| `<renametab>Esc`    | Confirm tab name and back to locked mode |
