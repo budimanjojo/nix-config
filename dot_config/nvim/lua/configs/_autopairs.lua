@@ -8,7 +8,7 @@ npairs.setup {
 }
 
 npairs.add_rule(
-  rule('<', '>')
+  rule('<', '>', 'html')
     :with_pair(cond.not_after_regex(ignored_next_char))
     :with_move(function(opts)
       return opts.char == '>'
