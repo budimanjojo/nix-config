@@ -112,3 +112,8 @@ end, { desc = "Fix document formatting" })
 keymap.set({ "n", "t" }, "<C-t>", function()
   return require("FTerm").toggle()
 end, { desc = "Toggle floating terminal" })
+
+-- hop
+keymap.set("n", "<C-g>", function()
+  return require("hop").hint_char2({ uppercase_labels = true })
+end, { desc = "Hop with 2 characters" })

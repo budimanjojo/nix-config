@@ -99,6 +99,13 @@ require('packer').startup({
         require('configs._fzf-lua')
       end
     }
+    use {
+      'phaazon/hop.nvim',
+      branch = 'v2',
+      config = function()
+        require('hop').setup()
+      end
+    }
 
     -- Enhancement
     use {
