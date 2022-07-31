@@ -236,7 +236,7 @@ If they are not in the table, that means it's using the default Vim keybindings.
 | Normal        | `<Leader>ll`  | Jump forward to newer cursor position |
 | Normal/Visual | `Tab`         | Indent current line or selection |
 | Normal/Visual | `Shift+Tab`   | De-indent current line or selection |
-| Normal        | `<Leader>lr>` | Restart LSP client |
+| Normal        | `<Leader>lr`  | Restart LSP client |
 | Normal        | `<Leader>fz`  | Open FzfLua |
 | Normal        | `<Leader>ff`  | Open FzfLua to find files |
 | Normal        | `<Leader>fg`  | Open FzfLua to live grep |
