@@ -1,14 +1,18 @@
-default_mode: locked
+default_mode: normal
 keybinds:
   unbind: true
+  normal:
+    - action: [SwitchToMode: Tmux]
+      key: [Alt: 'a']
+    - action: [SwitchToMode: Locked]
+      key: [Alt: 'z']
   locked:
     - action: [SwitchToMode: Normal]
       key: [Alt: 'a']
-
-  normal:
-    - action: [NewPane: Right, SwitchToMode: Locked]
+  tmux:
+    - action: [NewPane: Right, SwitchToMode: Normal]
       key: [Alt: 's']
-    - action: [NewPane: Down, SwitchToMode: Locked]
+    - action: [NewPane: Down, SwitchToMode: Normal]
       key: [Alt: 'v']
 
     - action: [SwitchToMode: RenameTab]
@@ -39,22 +43,22 @@ keybinds:
     - action: [GoToPreviousTab]
       key: [Alt: 'p']
 
-    - action: [NewTab: , SwitchToMode: Locked]
+    - action: [NewTab: , SwitchToMode: Normal]
       key: [Char: 'c']
-    - action: [CloseFocus, SwitchToMode: Locked]
+    - action: [CloseFocus, SwitchToMode: Normal]
       key: [Char: 'x']
-    - action: [EditScrollback, SwitchToMode: Locked]
+    - action: [EditScrollback, SwitchToMode: Normal]
       key: [Char: 'a']
 
-    - action: [SwitchToMode: Locked]
+    - action: [SwitchToMode: Normal]
       key: [Esc, Char: ' ', Char: "\n"]
 
   renametab:
-    - action: [SwitchToMode: Normal]
+    - action: [SwitchToMode: Tmux]
       key: [Alt: 'a']
-    - action: [SwitchToMode: Locked]
+    - action: [SwitchToMode: Normal]
       key: [Char: "\n"]
-    - action: [UndoRenameTab, SwitchToMode: Locked]
+    - action: [UndoRenameTab, SwitchToMode: Normal]
       key: [Esc]
 
 themes:
