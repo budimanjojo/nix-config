@@ -75,23 +75,31 @@ packer.startup({
         require('configs._treesitter')
       end
     }
+
+    -- Autocompletion
     use {
       'hrsh7th/nvim-cmp',
-      requires = {
-        'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/cmp-buffer',
-        'hrsh7th/cmp-path',
-        'f3fora/cmp-spell',
-        'L3MON4D3/LuaSnip',
-        'saadparwaiz1/cmp_luasnip',
-        'onsails/lspkind-nvim',
-        'rafamadriz/friendly-snippets',
-        'neovim/nvim-lspconfig'
-      },
+      event = 'BufRead',
       config = function()
         require('configs._nvim-cmp')
       end
     }
+    -- nvim-cmp dependencies but can't be listed as requires
+    -- because of lazyloading
+    use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' }
+    use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' }
+    use { 'hrsh7th/cmp-path', after = 'nvim-cmp' }
+    use { 'f3fora/cmp-spell', after = 'nvim-cmp' }
+    use { 'saadparwaiz1/cmp_luasnip', after = { 'nvim-cmp', 'LuaSnip' }}
+    use { 'onsails/lspkind-nvim', module = 'lspkind' }
+    use {
+      'L3MON4D3/LuaSnip',
+      requires = {
+        'rafamadriz/friendly-snippets'
+      },
+      module = 'luasnip',
+    }
+
     use {
       'folke/trouble.nvim',
       opt = true,
