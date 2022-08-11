@@ -142,6 +142,7 @@ packer.startup({
         'tamago324/lir-git-status.nvim',
         { 'kyazdani42/nvim-web-devicons', opt = true }
       },
+      module = 'lir',
       config = function ()
         require('configs._lir')
       end
