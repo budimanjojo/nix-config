@@ -94,6 +94,8 @@ packer.startup({
     }
     use {
       'folke/trouble.nvim',
+      opt = true,
+      event = 'BufReadPost',
       config = function()
         require('trouble').setup()
       end
