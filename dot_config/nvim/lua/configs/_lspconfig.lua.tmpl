@@ -42,8 +42,30 @@ require('mason-tool-installer').setup {
   run_on_start = true
 }
 
+local function get_client_capabilities()
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+  capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
+  capabilities.textDocument.completion.completionItem.snippetSupport = true
+  capabilities.textDocument.completion.completionItem.preselectSupport = true
+  capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
+  capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
+  capabilities.textDocument.completion.completionItem.deprecatedSupport = true
+  capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+  capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
+  capabilities.textDocument.completion.completionItem.resolveSupport = {
+    properties = {
+      'documentation',
+      'detail',
+      'additionalTextEdits',
+    },
+  }
+
+  return capabilities
+end
+
 local lspconfig = require('lspconfig')
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = get_client_capabilities()
 local on_attach = function(_, bufnr)
   require 'lsp_signature'.on_attach()
   local keymap = vim.keymap
