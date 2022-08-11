@@ -109,6 +109,8 @@ packer.startup({
     use {
       'ibhagwan/fzf-lua',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+      opt = true,
+      event = 'VimEnter',
       config = function()
         require('configs._fzf-lua')
       end
