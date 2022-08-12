@@ -10,11 +10,8 @@ unbind <Space>i
 " My own keybindings
 bind J scrollpage 1
 bind K scrollpage -1
-bind H tabprev
-bind L tabnext
-
-bind <C-h> back
-bind <C-l> forward
+bind H back
+bind L forward
 
 bind <Space>ii hint -i
 bind <Space>yy hint -y
