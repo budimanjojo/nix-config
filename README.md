@@ -73,6 +73,7 @@ These are the plugins I'm using:
 - [Trouble](https://github.com/folke/trouble.nvim)
 - [presence.nvim](https://github.com/andweeb/presence.nvim)
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+- [b64.nvim](https://github.com/taybart/b64.nvim)
 
 To update Neovim plugins, do `:PackerSync` in your nvim.
 **Note**: You need Neovim version >=0.7.0

@@ -117,3 +117,7 @@ end, { desc = "Toggle floating terminal" })
 keymap.set("n", "<C-g>", function()
   return require("hop").hint_char2({ uppercase_labels = true })
 end, { desc = "Hop with 2 characters" })
+
+-- b64.nvim
+keymap.set("v", "<leader>be", ":<C-u>lua require('b64').encode()<CR>", { desc = "Encode text with base64" })
+keymap.set("v", "<leader>bd", ":<C-u>lua require('b64').decode()<CR>", { desc = "Decode base64 encoded text" })

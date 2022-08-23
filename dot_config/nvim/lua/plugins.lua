@@ -181,6 +181,7 @@ packer.startup({
         require('nvim-surround').setup()
       end
     }
+    use 'taybart/b64.nvim'
 
     -- Braindead doctor
     use {
