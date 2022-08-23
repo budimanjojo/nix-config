@@ -79,7 +79,6 @@ packer.startup({
     -- Autocompletion
     use {
       'hrsh7th/nvim-cmp',
-      event = 'BufRead',
       config = function()
         require('configs._nvim-cmp')
       end
@@ -119,8 +118,6 @@ packer.startup({
     use {
       'ibhagwan/fzf-lua',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-      opt = true,
-      event = 'VimEnter',
       config = function()
         require('configs._fzf-lua')
       end
