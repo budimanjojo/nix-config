@@ -6,6 +6,8 @@ require('nvim-treesitter.configs').setup {
     'fish',
     'go',
     'html',
+    'json',
+    'jsonc',
     'lua',
     'python',
     'regex',

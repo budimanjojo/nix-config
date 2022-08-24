@@ -41,6 +41,8 @@ local detectFt = function()
     vim.o.filetype = 'sh.chezmoitmpl'
   elseif string.match(fpath, '.*/%.chezmoiscripts/.*%.fish.tmpl') then
     vim.o.filetype = 'fish.chezmoitmpl'
+  elseif string.match(fpath, '.*%.json5') then
+    vim.o.filetype = 'jsonc'
   end
 end
 
