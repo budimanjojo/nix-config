@@ -10,7 +10,7 @@ set $launcher rofi
 
 ## KEYBINDING
 # Modifier default to Super key. Alt key for window navigating
-set $mod Mod4
+set $super Mod4
 set $alt Mod1
 
 # Alt+mouse to drag/resize floating windows
@@ -18,7 +18,7 @@ floating_modifier $alt
 
 # Kill focused window
 bindsym $alt+F4 kill
-bindsym $mod+F4 kill
+bindsym $super+F4 kill
 
 # Vim navigation
 set $left h
@@ -54,8 +54,8 @@ bindsym $alt+Control+v splitv; exec notify-send 'tile vertically'
 bindsym $alt+Control+q split toggle
 
 # Next/previous workspace
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
+bindsym $super+Tab workspace next
+bindsym $super+Shift+Tab workspace prev
 
 # Toggle window border
 bindsym $alt+Control+t border toggle
@@ -79,46 +79,46 @@ bindsym $alt+Control+w layout tabbed
 bindsym $alt+Control+e layout toggle split
 
 # Toggle floating mode
-bindsym $mod+Shift+space floating toggle
+bindsym $super+Shift+space floating toggle
 
 # Swap focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $super+space focus mode_toggle
 
 # Focus the parent container
-#bindsym $mod+a focus parent
+#bindsym $super+a focus parent
 
 # Focus the child container
-#bindsym $mod+d focus child
+#bindsym $super+d focus child
 
 # Move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $super+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
-bindsym $mod+minus scratchpad show
+bindsym $super+minus scratchpad show
 
 # Switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws0
+bindsym $super+1 workspace $ws1
+bindsym $super+2 workspace $ws2
+bindsym $super+3 workspace $ws3
+bindsym $super+4 workspace $ws4
+bindsym $super+5 workspace $ws5
+bindsym $super+6 workspace $ws6
+bindsym $super+7 workspace $ws7
+bindsym $super+8 workspace $ws8
+bindsym $super+9 workspace $ws9
+bindsym $super+0 workspace $ws0
 
 # Move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws0
+bindsym $super+Shift+1 move container to workspace $ws1
+bindsym $super+Shift+2 move container to workspace $ws2
+bindsym $super+Shift+3 move container to workspace $ws3
+bindsym $super+Shift+4 move container to workspace $ws4
+bindsym $super+Shift+5 move container to workspace $ws5
+bindsym $super+Shift+6 move container to workspace $ws6
+bindsym $super+Shift+7 move container to workspace $ws7
+bindsym $super+Shift+8 move container to workspace $ws8
+bindsym $super+Shift+9 move container to workspace $ws9
+bindsym $super+Shift+0 move container to workspace $ws0
 
 # Resize  window
 set $resize Resize: (h/Left) width-, (j/Down) height-, (k/Up) height+, (l/Right) width+
@@ -180,10 +180,10 @@ mode "$gaps_inner" {
 bindsym $alt+Shift+g mode "$gaps"
 
 # Reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $super+Shift+c reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+bindsym $super+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
 # Show log out menu
 set $Locker swaylock && sleep 1
@@ -202,12 +202,12 @@ bindsym $alt+Control+Delete mode "$system"
 
 ## APPLICATION SHORTCUTS
 # Most used applications
-bindsym $mod+t exec $term
-bindsym $mod+w exec $browser --no-default-browser-check
-bindsym $mod+f exec $filemanager
-bindsym $mod+g exec gimp
-bindsym $mod+b exec obs
-bindsym $mod+s exec steam
+bindsym $super+t exec $term
+bindsym $super+w exec $browser --no-default-browser-check
+bindsym $super+f exec $filemanager
+bindsym $super+g exec gimp
+bindsym $super+b exec obs
+bindsym $super+s exec steam
 
 # Take a screenshot with grim, put it in Desktop folder
 set $grim_capture GRIM_DEFAULT_DIR=~/Desktop grim
@@ -221,7 +221,7 @@ mode "$screenshot" {
 bindsym Print mode "$screenshot"
 
 # Rofi as dmenu replacement
-bindsym $mod+grave exec rofi -show drun
+bindsym $super+grave exec rofi -show drun
 # bindsym $alt+Tab exec rofi -show window
 
 ## WORKSPACE NAMING AND PLACEMENT

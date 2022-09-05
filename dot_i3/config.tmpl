@@ -4,10 +4,10 @@
 
 ## KEYBINDING
 # default Modifier to Super key. Alternatively, still enable Alt for floating window dragging and resizing
-set $mod Mod4
+set $super Mod4
 set $alt Mod1
 
-# use mouse+$mod to drag floating windows to their wanted position
+# use mouse+$super to drag floating windows to their wanted position
 floating_modifier $alt
 
 # kill focused window
@@ -41,8 +41,8 @@ bindsym $alt+Control+v split v; exec notify-send 'tile vertically'
 bindsym $alt+Control+q split toggle
 
 # next/previous workspace
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
+bindsym $super+Tab workspace next
+bindsym $super+Shift+Tab workspace prev
 
 # toggle window border
 bindsym $alt+Control+t border toggle
@@ -66,16 +66,16 @@ bindsym $alt+Control+w layout tabbed
 bindsym $alt+Control+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $super+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $super+space focus mode_toggle
 
 # focus the parent container
-#bindsym $mod+a focus parent
+#bindsym $super+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+#bindsym $super+d focus child
 
 # switch to workspace
 bindsym $alt+1 workspace $ws1
@@ -163,16 +163,16 @@ mode "$mode_gaps_inner" {
         bindsym Return     mode "$mode_gaps"
         bindsym Escape     mode "default"
 }
-bindsym $mod+Shift+g mode "$mode_gaps"
+bindsym $super+Shift+g mode "$mode_gaps"
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $super+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $super+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $super+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Press Ctrl+Alt+Delete will show log out menu
 set $Locker i3lock && sleep 1
@@ -193,14 +193,14 @@ bindsym $alt+Control+End exec --no-startup-id oblogout
 
 ## APPLICATION SHORTCUTS
 # most used application shortcuts
-bindsym $mod+t exec --no-startup-id alacritty                                         # Terminal
-bindsym $mod+w exec --no-startup-id chromium --no-default-browser-check               # Web Browser
-bindsym $mod+s exec --no-startup-id steam                                             # Steam
-bindsym $mod+f exec --no-startup-id thunar                                            # File Manager
-bindsym $mod+m exec --no-startup-id thunderbird                                       # Email Browser
-bindsym $mod+b exec --no-startup-id obs                                               # Open Broadcaster Software
-bindsym $mod+g exec --no-startup-id gimp                                              # Gimp
-bindsym $mod+k exec --no-startup-id kdenlive                                          # Kdenlive
+bindsym $super+t exec --no-startup-id alacritty                                         # Terminal
+bindsym $super+w exec --no-startup-id chromium --no-default-browser-check               # Web Browser
+bindsym $super+s exec --no-startup-id steam                                             # Steam
+bindsym $super+f exec --no-startup-id thunar                                            # File Manager
+bindsym $super+m exec --no-startup-id thunderbird                                       # Email Browser
+bindsym $super+b exec --no-startup-id obs                                               # Open Broadcaster Software
+bindsym $super+g exec --no-startup-id gimp                                              # Gimp
+bindsym $super+k exec --no-startup-id kdenlive                                          # Kdenlive
 
 # take a screenshot with scrot, put it in Desktop folder
 set $scrot_capture scrot 'screenshot-%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Desktop/'
@@ -214,7 +214,7 @@ mode "$mode_screenshot" {
 bindsym Print mode "$mode_screenshot"
 
 # rofi as dmenu replacement
-bindsym $mod+grave exec rofi -show run
+bindsym $super+grave exec rofi -show run
 bindsym $alt+Tab   exec rofi -show window
 
 ## WORKSPACE NAMING AND PLACEMENT
