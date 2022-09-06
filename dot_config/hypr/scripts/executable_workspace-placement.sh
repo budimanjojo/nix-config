@@ -15,4 +15,4 @@ handle() {
   fi
 }
 
-socat - UNIX-CONNECT:/tmp/hypr/.socket2.sock | while read -r line; do handle "$line"; done
+socat - UNIX-CONNECT:/tmp/hypr/"$(echo $HYPRLAND_INSTANCE_SIGNATURE)"/.socket2.sock | while read -r line; do handle "$line"; done
