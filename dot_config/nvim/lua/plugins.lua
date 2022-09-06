@@ -39,7 +39,7 @@ packer.startup({
     use 'stevearc/dressing.nvim'
     use {
       'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+      requires = { 'kyazdani42/nvim-web-devicons' },
       config = function()
         require('configs._lualine')
       end
@@ -117,7 +117,7 @@ packer.startup({
     -- Fuzzy finder
     use {
       'ibhagwan/fzf-lua',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+      requires = { 'kyazdani42/nvim-web-devicons' },
       config = function()
         require('configs._fzf-lua')
       end
@@ -145,9 +145,8 @@ packer.startup({
       requires = {
         'nvim-lua/plenary.nvim',
         'tamago324/lir-git-status.nvim',
-        { 'kyazdani42/nvim-web-devicons', opt = true }
+        'kyazdani42/nvim-web-devicons',
       },
-      module = 'lir',
       config = function ()
         require('configs._lir')
       end
