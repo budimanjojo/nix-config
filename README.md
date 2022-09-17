@@ -37,7 +37,6 @@ These are the plugins I'm using:
 - [Starship](https://starship.rs/)
 - [FZF Fish](https://github.com/patrickF1/fzf.fish)
 - [Puffer Fish](https://github.com/nickeb96/puffer-fish)
-- [tmux.fish](https://github.com/budimanjojo/tmux.fish)
 - [autopair.fish](https://github.com/jorgebucaran/autopair.fish)
 - [fish-abbreviation-tips](https://github.com/gazorby/fish-abbreviation-tips)
 
@@ -70,7 +69,7 @@ These are the plugins I'm using:
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
 - [nvim-surround](https://github.com/kylechui/nvim-surround)
-- [Trouble](https://github.com/folke/trouble.nvim)
+- [trouble](https://github.com/folke/trouble.nvim)
 - [presence.nvim](https://github.com/andweeb/presence.nvim)
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [b64.nvim](https://github.com/taybart/b64.nvim)
