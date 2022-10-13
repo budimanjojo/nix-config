@@ -9,12 +9,10 @@ o.signcolumn = 'yes'    -- Always show signcolumn
 o.cursorcolumn = true   -- Cursor column
 
 -- Colorscheme
-local theme_name = 'tokyonight.nvim'
-local packer_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/'
-if fn.isdirectory(packer_path .. theme_name) == 1 then
-  vim.g.tokyonight_style = 'night'
-  cmd('colorscheme tokyonight')
-end
+require('tokyonight').setup {
+  style = 'night',
+}
+cmd('colorscheme tokyonight')
 
 -- Highlight on yank
 local yankhighlight = api.nvim_create_augroup('yankhighlight', { clear = true })
