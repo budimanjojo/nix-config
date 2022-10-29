@@ -89,22 +89,4 @@ function M.choice_popup_close()
   end
 end
 
--- Make sure indenting `#` works even if `smartindent` and `cindent` is on
-function M.always_working_indent_line()
-  -- get the current settings
-  local smartindent = vim.o.smartindent
-  local cindent = vim.o.cindent
-
-  -- set smartindent and cindent off
-  vim.o.smartindent = false
-  vim.o.cindent = false
-
-  -- indent the line
-  vim.api.nvim_feedkeys('>>', 'x', true)
-
-  -- reset it back to previous settings
-  vim.o.smartindent = smartindent
-  vim.o.cindent = cindent
-end
-
 return M

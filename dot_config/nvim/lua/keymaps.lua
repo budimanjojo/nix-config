@@ -62,7 +62,7 @@ keymap.set("n", "<Leader>tl", ":tabnext<CR>", { desc = "Go to the next tab" })
 keymap.set("n", "<Leader>te", ':tabedit <C-r>=expand("%:p:h")<CR>/', { desc = "Open new tab with current buffer's path" })
 
 -- Indent or de-indent
-keymap.set("n", "<Tab>", function() return require('utils').always_working_indent_line() end, { desc = "Add indentation" })
+keymap.set("n", "<Tab>", ">>", { desc = "Add indentation" })
 keymap.set("n", "<S-Tab>", "<<", { desc = "De-indentation" })
 keymap.set("v", "<Tab>", ">gv", { desc = "Add indentation" })
 keymap.set("v", "<S-Tab>", "<gv", { desc = "De-indentation" })
