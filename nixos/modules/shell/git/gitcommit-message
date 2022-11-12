@@ -1,0 +1,15 @@
+
+# <type>[optional scope]: <description>                                  (not more than 72 chars)
+# <BLANK NEWLINE>
+# [optional body]                                                        (not more than 72 chars)
+# <BLANK NEWLINE>
+# [optional footer(s)]                                                   (not more than 72 chars)
+#-------------------------------EXAMPLE----------------------------------
+# feat!(frontend): new button added in dashboard
+#
+# A new "Follow Us" button is added in your Account dashboard.
+# If you don't see it, please delete your browser cache and reload the
+# webpage.
+#
+# BREAKING CHANGE: this button replaces the custom button you have,
+# you need to reconfigure your custom button.

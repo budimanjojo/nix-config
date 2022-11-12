@@ -1,0 +1,38 @@
+{
+  "conventional commit": {
+    "prefix": "cc",
+    "description": "Conventional commit",
+    "body": [
+      "${1|feat,fix,doc,chore|}(${2:scope}): ${3:title}",
+      "",
+      "$0"
+    ]
+  },
+  "conventional commit breaking": {
+    "prefix": ["cc!", "ccb"],
+    "description": "Conventional commit with breaking change(s)",
+    "body": [
+      "${1|feat!,fix!|}(${2:scope}): ${3:title}",
+      "",
+      "BREAKING CHANGE: ${0}"
+    ]
+  },
+  "feat conventional commit breaking": {
+    "prefix": "feat!",
+    "description": "feat conventional commit with breaking change(s)",
+    "body": [
+      "feat!(${1:scope}): ${2:title}",
+      "",
+      "BREAKING CHANGE: ${0}"
+    ]
+  },
+  "fix conventional commit breaking": {
+    "prefix": "fix!",
+    "description": "fix conventional commit with breaking change(s)",
+    "body": [
+      "fix!(${1:scope}): ${2:title}",
+      "",
+      "BREAKING CHANGE: ${0}"
+    ]
+  }
+}

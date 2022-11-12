@@ -1,0 +1,90 @@
+default_mode: normal
+keybinds:
+  unbind: true
+  normal:
+    - action: [SwitchToMode: Tmux]
+      key: [Alt: 'a']
+    - action: [SwitchToMode: Locked]
+      key: [Alt: 'z']
+  locked:
+    - action: [SwitchToMode: Tmux]
+      key: [Alt: 'z']
+  tmux:
+    - action: [NewPane: Right, SwitchToMode: Normal]
+      key: [Alt: 's']
+    - action: [NewPane: Down, SwitchToMode: Normal]
+      key: [Alt: 'v']
+
+    - action: [SwitchToMode: RenameTab]
+      key: [Char: 'r']
+
+    - action: [MoveFocus: Left]
+      key: [Char: 'h']
+    - action: [MoveFocus: Down]
+      key: [Char: 'j']
+    - action: [MoveFocus: Up]
+      key: [Char: 'k']
+    - action: [MoveFocus: Right]
+      key: [Char: 'l']
+    - action: [MovePane:]
+      key: [Char: '>']
+
+    - action: [Resize: Left]
+      key: [Char: 'H']
+    - action: [Resize: Down]
+      key: [Char: 'J']
+    - action: [Resize: Up]
+      key: [Char: 'K']
+    - action: [Resize: Right]
+      key: [Char: 'L']
+
+    - action: [GoToNextTab]
+      key: [Alt: 'n']
+    - action: [GoToPreviousTab]
+      key: [Alt: 'p']
+
+    - action: [NewTab: , SwitchToMode: Normal]
+      key: [Char: 'c']
+    - action: [CloseFocus, SwitchToMode: Normal]
+      key: [Char: 'x']
+    - action: [EditScrollback, SwitchToMode: Normal]
+      key: [Char: 'a']
+
+    - action: [SwitchToMode: Normal]
+      key: [Esc, Char: ' ', Char: "\n"]
+
+  renametab:
+    - action: [SwitchToMode: Tmux]
+      key: [Alt: 'a']
+    - action: [SwitchToMode: Normal]
+      key: [Char: "\n"]
+    - action: [UndoRenameTab, SwitchToMode: Normal]
+      key: [Esc]
+
+themes:
+  default:
+    fg: "#C0CAF5"
+    bg: "#1A1B26"
+    black: "#15161E"
+    red: "#F7768E"
+    green: "#9ECE6A"
+    yellow: "#E0AF68"
+    blue: "#7AA2F7"
+    magenta: "#BB9AF7"
+    cyan: "#7DCFFF"
+    white: "#C0CAF5"
+    orange: "#FF9E64"
+
+plugins:
+  - path: tab-bar
+    tag: tab-bar
+  - path: status-bar
+    tag: status-bar
+  - path: strider
+    tag: strider
+  - path: compact-bar
+    tag: compact-bar
+
+ui:
+  pane_frames:
+    rounded_corners: true

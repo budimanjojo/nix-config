@@ -1,0 +1,21 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: &name 
+  namespace: 
+  labels:
+    app.kubernetes.io/name: *name
+spec:
+  entryPoints:
+  - https
+  routes:
+  - kind: Rule
+    match: Host(``)
+    middlewares:
+    - name:
+    services:
+    - name: *name
+      port: 
+      namespace: 
+  tls:
+    secretName: 

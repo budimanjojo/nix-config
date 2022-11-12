@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: &app 
+  namespace: 
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: 
+      version: 
+      sourceRef:
+        kind: HelmRepository
+        name: 
+        namespace: flux-system
+      interval: 15m
+  install:
+    createNamespace: true
+    remediation:
+      retries: 5
+  upgrade:
+    remediation:
+      retries: 5
+  values:

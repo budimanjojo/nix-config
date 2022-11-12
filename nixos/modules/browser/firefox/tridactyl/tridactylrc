@@ -1,0 +1,31 @@
+" Unbind default keybindings
+unbind <C-f>
+unbind <C-b>
+unbind J
+unbind K
+unbind H
+unbind L
+unbind <Space>i
+
+" My own keybindings
+bind J scrollpage 1
+bind K scrollpage -1
+bind H back
+bind L forward
+
+bind <Space>ii hint -i
+bind <Space>yy hint -y
+bind <Space>yt hint -p
+bind <Space>vv hint -h
+bind <Space>zz hint -z
+
+bind --mode=ex <C-j> ex.next_completion
+bind --mode=ex <C-k> ex.prev_completion
+
+" Make t open the selection with tabopen
+bind --mode=visual t composite js document.getSelection().toString() | fillcmdline tabopen
+
+" Git{Hub,Lab} git clone via SSH yank
+bind yg composite js "git clone " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
+
+colors tokyonight_storm

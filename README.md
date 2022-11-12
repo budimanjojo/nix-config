@@ -3,6 +3,7 @@
 ### ~/. my dotfiles ~/. :house:&nbsp;
 
 #### \> Managed with chezmoi :robot:&nbsp;
+#### \> Now also with NixOS :snowflake:&nbsp;
 
 </div>
 
@@ -11,6 +12,7 @@
 This repository contains all my dotfiles managed by [chezmoi](https://github.com/twpayne/chezmoi).
 Please note that this is my own personal dotfiles.
 Stuffs may change without further notice and this README can get outdated.
+For [NixOS](https://nixos.org), head over [here](./nixos/README.md)
 
 ## :camera:&nbsp; Screenshots
 

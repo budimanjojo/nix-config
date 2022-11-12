@@ -1,0 +1,81 @@
+{ pkgs, lib, config, ... }:
+with lib;
+let 
+  cfg = config.modules.terminal-emulator.wezterm;
+in {
+  options.modules.terminal-emulator.wezterm = { enable = mkEnableOption "wezterm"; };
+
+  config = mkIf cfg.enable {
+    home.manager.programs.wezterm = {
+      enable = true;
+      extraConfig = ''
+        local wezterm = require 'wezterm'
+        local act = wezterm.action
+
+        return {
+          -- Fonts
+          font = wezterm.font("UbuntuMono Nerd Font"),
+          font_size = 12.0,
+
+          -- Appearance
+          enable_tab_bar = false,
+          enable_scroll_bar = false,
+          warn_about_missing_glyphs = false,
+
+          -- Window layout
+          window_padding = {
+            left = "1cell",
+            right = "1cell",
+            top = "1cell",
+            bottom = "0.5cell",
+          },
+          window_close_confirmation = "NeverPrompt",
+
+          -- Color scheme
+          colors = {
+            background = "#1A1B26",
+            foreground = "#C0CAF5",
+            cursor_bg = "#C0CAF5",
+            cursor_fg = "#202124",
+            cursor_border = "#C0CAF5",
+            ansi = {
+              "#15161E",
+              "#F7768E",
+              "#9ECE6A",
+              "#E0AF68",
+              "#7AA2F7",
+              "#BB9AF7",
+              "#7DCFFF",
+              "#A9B1D6",
+            },
+            brights = {
+              "#414868",
+              "#F7768E",
+              "#9ECE6A",
+              "#E0AF68",
+              "#7AA2F7",
+              "#BB9AF7",
+              "#7DCFFF",
+              "#C0CAF5",
+            },
+            indexed = {
+              [16] = "#FF9E64",
+              [17] = "#DB4B4B",
+            },
+          },
+
+          -- Keyboard shortcuts
+          disable_default_key_bindings = true,
+          keys = {
+            { key = "C", mods = "CTRL|SHIFT", action = act.CopyTo("ClipboardAndPrimarySelection") },
+            { key = "V", mods = "CTRL|SHIFT", action = act.PasteFrom("Clipboard") },
+            { key = "+", mods = "CTRL|SHIFT", action = "IncreaseFontSize" },
+            { key = "_", mods = "CTRL|SHIFT", action = "DecreaseFontSize" },
+            { key = "Backspace", mods = "CTRL|SHIFT", action = "ResetFontSize" },
+            { key = "F5", action = "ReloadConfiguration" },
+          },
+        }
+      '';
+    };
+  };
+}

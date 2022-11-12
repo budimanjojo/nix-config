@@ -1,0 +1,184 @@
+:root {
+  /* Colors from https://github.com/folke/tokyonight.nvim */
+  --tridactyl-phonon-colors-bg_dark: #16161E;
+  --tridactyl-phonon-colors-bg: #1A1B26;
+  --tridactyl-phonon-colors-bg_highlight: #292E42;
+  --tridactyl-phonon-colors-terminal_black: #414868;
+  --tridactyl-phonon-colors-fg: #C0CAF5;
+  --tridactyl-phonon-colors-fg_dark: #A9B1D6;
+  --tridactyl-phonon-colors-fg_gutter: #3B4261;
+  --tridactyl-phonon-colors-dark3: #545C7E;
+  --tridactyl-phonon-colors-comment: #565F89;
+  --tridactyl-phonon-colors-dark5: #737AA2;
+  --tridactyl-phonon-colors-blue0: #3D59A1;
+  --tridactyl-phonon-colors-blue: #7AA2F7;
+  --tridactyl-phonon-colors-cyan: #7DCFFF;
+  --tridactyl-phonon-colors-blue1: #2AC3DE;
+  --tridactyl-phonon-colors-blue2: #0DB9D7;
+  --tridactyl-phonon-colors-blue5: #89DDFF;
+  --tridactyl-phonon-colors-blue6: #B4F9F8;
+  --tridactyl-phonon-colors-blue7: #394B70;
+  --tridactyl-phonon-colors-magenta: #BB9AF7;
+  --tridactyl-phonon-colors-magenta2: #FF007C;
+  --tridactyl-phonon-colors-purple: #9D7CD8;
+  --tridactyl-phonon-colors-orange: #FF9E64;
+  --tridactyl-phonon-colors-yellow: #E0AF68;
+  --tridactyl-phonon-colors-green: #9ECE6A;
+  --tridactyl-phonon-colors-green1: #73DACA;
+  --tridactyl-phonon-colors-green2: #41A6B5;
+  --tridactyl-phonon-colors-teal: #1ABC9C;
+  --tridactyl-phonon-colors-red: #F7768E;
+  --tridactyl-phonon-colors-red1: #DB4B4B;
+
+  /* General */
+  --tridactyl-bg: var(--tridactyl-phonon-colors-bg);
+  --tridactyl-fg: var(--tridactyl-phonon-colors-fg);
+  --tridactyl-scrollbar-color: auto;
+
+  /* Mode indicator */
+  --tridactyl-status-font-size: 16px;
+  --tridactyl-status-bg: var(--tridactyl-phonon-colors-bg_dark);
+  --tridactyl-status-fg: var(--tridactyl-phonon-colors-blue);
+  --tridactyl-status-border: 2px var(--tridactyl-phonon-colors-blue) solid;
+
+  /* Hinting */
+
+  /* Hint character tags */
+  --tridactyl-hintspan-font-size: 14px;
+  --tridactyl-hintspan-font-weight: bold;
+  --tridactyl-hintspan-fg: var(--tridactyl-dark3);
+  --tridactyl-hintspan-bg: var(--tridactyl-phonon-colors-green);
+  --tridactyl-hintspan-border-width: 0;
+  --tridactyl-hintspan-js-background: hsla(0, 0%, 65%);
+
+  /* Element highlighting */
+  --tridactyl-hint-active-fg: none;
+  --tridactyl-hint-active-bg: none;
+  --tridactyl-hint-active-outline: none;
+  --tridactyl-hint-bg: none;
+  --tridactyl-hint-outline: 1px solid var(--tridactyl-phonon-colors-fg_dark);
+
+  /* Viewsource */
+  --tridactyl-vs-bg: var(--tridactyl-bg);
+  --tridactyl-vs-fg: var(--tridactyl-fg);
+
+  /* Commandline */
+  --tridactyl-cmd1-bg: var(--tridactyl-phonon-colors-bg);
+  --tridactyl-cmd1-fg: var(--tridactyl-phonon-colors-fg);
+  --tridactyl-cmdl-line-height: 1.5;
+  --tridactyl-cmdl-font-size: 12px;
+
+  /* Completion */
+  --tridactyl-cmplt-option-height: 1.8em;
+  --tridactyl-cmplt-fg: var(--tridactyl-phonon-colors-fg);
+  --tridactyl-cmplt-bg: var(--tridactyl-phonon-colors-bg);
+  --tridactyl-cmplt-font-size: 12px;
+
+  /* Section header */
+  --tridactyl-header-font-size: 16px;
+  --tridactyl-header-font-weight: bold;
+
+  /* URL style */
+  --tridactyl-url-text-decoration: underline;
+  --tridactyl-url-fg: var(--tridactyl-phonon-colors-cyan);
+  --tridactyl-url-bg: var(--tridactyl-phonon-colors-bg);
+  --tridactyl-url-cursor: pointer;
+}
+
+:root #command-line-holder {
+  border-bottom: 2px solid var(--tridactyl-phonon-colors-blue7);
+  border-top: 2px solid var(--tridactyl-phonon-colors-blue7);
+  color: var(--tridactyl-phonon-colors-cyan);
+  background-color: var(--tridactyl-phonon-colors-bg);
+  padding: 0 5px;
+}
+
+:root #tridactyl-input {
+  color: var(--tridactyl-phonon-colors-cyan);
+  background: var(--tridactyl-phonon-colors-bg);
+  padding: 3px;
+  font-size: 14px;
+}
+
+:root #completions table {
+  font-size: 12px;
+  font-weight: 500;
+  table-layout: fixed;
+  padding: 3px;
+}
+
+/* COMPLETION */
+:root #completions {
+  max-height: calc(20 * var(--tridactyl-cmplt-option-height));
+  min-height: calc(20 * var(--tridactyl-cmplt-option-height));
+  font-weight: 500;
+}
+
+:root #completions .HistoryCompletionSource {
+  max-height: unset;
+  min-height: unset;
+}
+
+:root #completions .HistoryCompletionSource table {
+  width: 100%;
+  font-size: 12px;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+:root #completions .BmarkCompletionSource {
+  max-height: unset;
+  min-height: unset;
+}
+
+:root #completions .BufferCompletionSource table {
+  width: unset;
+  font-size: unset;
+  border-spacing: unset;
+  table-layout: unset;
+}
+
+:root #completions table tr .title {
+  width: 50%;
+}
+
+:root #completions table tr {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+:root #completions .sectionHeader {
+  color: var(--tridactyl-phonon-colors-blue);
+  background: var(--tridactyl-phonon-colors-bg_highlight);
+  padding-left: 8px;
+  border-top: 2px solid var(--tridactyl-phonon-colors-blue7);
+}
+
+:root #cmdline_iframe {
+  position: fixed !important;
+  top: 25% !important;
+  left: 10% !important;
+  width: 80% !important;
+  box-shadow: none !important;
+  border-left: 2px solid var(--tridactyl-phonon-colors-blue7) !important;
+  border-right: 2px solid var(--tridactyl-phonon-colors-blue7) !important;
+  border-radius: 8px !important;
+}
+
+:root #completions .focused {
+  color: var(--tridactyl-phonon-colors-blue6);
+  background: var(--tridactyl-phonon-colors-fg_gutter);
+}
+
+:root #completions .focused .url {
+  color: var(--tridactyl-phonon-colors-yellow);
+  background: var(--tridactyl-phonon-colors-fg_gutter);
+}
+
+:root .TridactylStatusIndicator {
+  padding: 1px 5px !important;
+  margin-bottom: 2px !important;
+  margin-right: 2px !important;
+  border-radius: 5px !important;
+}
