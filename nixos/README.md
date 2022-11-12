@@ -29,8 +29,8 @@ I shamelessly took the pieces I believe is the best from people and modified it.
 - [./modules/device.nix](./modules/device.nix) is where you can look at the available options for each machine.
 - [./modules/home-manager.nix](./modules/home-manager.nix) is defining `config.home.manager` as alias for `config.home-manager.users.<user>`.
 - [./hosts/configuration.nix](./hosts/configuration.nix) contains default configuration for all machines.
-- [./hosts/<hostname>/configuration.nix](./hosts/budimanjojo-vm/configuration.nix) contains machine specific configuration.
-- [./hosts/<hostname>/hardware-configuration.nix](./hosts/budimanjojo-vm/hardware-configuration.nix) contains machine specific hardware configuration.
+- [./hosts/\<hostname\>/configuration.nix](./hosts/budimanjojo-vm/configuration.nix) contains machine specific configuration.
+- [./hosts/\<hostname\>/hardware-configuration.nix](./hosts/budimanjojo-vm/hardware-configuration.nix) contains machine specific hardware configuration.
 
 ## :inbox_tray:&nbsp; How to use
 
