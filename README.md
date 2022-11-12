@@ -2,8 +2,7 @@
 
 ### ~/. my dotfiles ~/. :house:&nbsp;
 
-#### \> Managed with chezmoi :robot:&nbsp;
-#### \> Now also with NixOS :snowflake:&nbsp;
+#### \> Managed with chezmoi :robot:&nbsp; and NixOS :snowflake:&nbsp;
 
 </div>
 
