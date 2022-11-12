@@ -1,6 +1,9 @@
 README.md
 LICENSE
 install.sh
+flake.nix
+flake.lock
+nixos
 {{- if (and (eq .chezmoi.os "linux") (not .kubernetes)) }}
 .kube/config
 .talos/config
