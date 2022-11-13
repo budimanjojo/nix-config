@@ -14,7 +14,7 @@
   "automerge": true,
   "ignoreTests": true,
   "lockFileMaintenance": {
-    "enabled": true,
+    "enabled": true
   },
   "nix": {
     "enabled": true
