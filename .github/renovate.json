@@ -16,7 +16,7 @@
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": [
-      "before 1am"
+      "after 1am and before 3am"
     ]
   },
   "nix": {
