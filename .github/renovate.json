@@ -14,7 +14,10 @@
   "automerge": true,
   "ignoreTests": true,
   "lockFileMaintenance": {
-    "enabled": true
+    "enabled": true,
+    "schedule": [
+      "before 1am"
+    ]
   },
   "nix": {
     "enabled": true
