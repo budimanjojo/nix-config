@@ -26,6 +26,8 @@ Screenshots, plugins list, and keybindings are identical whether you go with `fl
 The structure of this repository is highly opinionated.
 I shamelessly took the pieces I believe is the best from people and modified it.
 
+- [../flake.nix](../flake.nix) is the entrypoint for `nix-rebuild` command.
+- [../flake.lock](../flake.lock) is the lock file, updated daily by `budimanjojo-bot` powered by [Renovate](https://github.com/renovatebot/renovate).
 - [./modules/device.nix](./modules/device.nix) is where you can look at the available options for each machine.
 - [./modules/home-manager.nix](./modules/home-manager.nix) is defining `config.home.manager` as alias for `config.home-manager.users.<user>`.
 - [./hosts/configuration.nix](./hosts/configuration.nix) contains default configuration for all machines.
