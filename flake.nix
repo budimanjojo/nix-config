@@ -43,6 +43,7 @@
     {
       nixosConfigurations = {
         budimanjojo-vm = mkNixosSystem inputs.nixpkgs "budimanjojo-vm" "budiman";
+        budimanjojo-main = mkNixosSystem inputs.nixpkgs "budimanjojo-main" "budiman";
       };
     };
 }
