@@ -50,7 +50,6 @@ I shamelessly took the pieces I believe is the best from people and modified it.
 I'm using `agenix` to manage secrets. My custom modules are hardcoded to find `identity` file at `~/.config/sops/age/keys.txt`.
 The reason is because that's where `sops` (which I use for my secret management on my other projects) wants it by default.
 Feel free to modify it to your liking.
-Currently the only module using this is my [homelab.kubernetes](./modules/homelab/kubernetes/default.nix) module.
 
 ## :coffee:&nbsp; Acknowledgements
 
