@@ -12,7 +12,7 @@ in {
         userEmail = "budimanjojo@gmail.com";
         extraConfig = {
           commit = {
-            template = "${builtins.toPath ./gitcommit-message}";
+            template = "${./gitcommit-message}";
           };
         };
       };
