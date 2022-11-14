@@ -6,12 +6,21 @@ in {
   options.modules.program.syncthing = { enable = mkEnableOption "syncthing"; };
 
   config = mkIf cfg.enable {
-    home.manager = {
-      services.syncthing = {
-        enable = true;
-        tray.enable = true;
+    age = {
+      identityPaths = [ "${config.home.manager.home.homeDirectory}/.config/sops/age/keys.txt" ];
+      secrets = {
+        syncthingtray = {
+          file = ./syncthingtray.ini.age;
+          path = "${config.home.manager.home.homeDirectory}/.config/syncthingtray.ini";
+          mode = "700";
+          owner = "${config.modules.device.username}";
+          group = "users";
+        };
       };
-      xdg.configFile."syncthingtray.ini".source = ./syncthingtray.ini;
+    };
+    home.manager.services.syncthing = {
+      enable = true;
+      tray.enable = true;
     };
   };
 }
