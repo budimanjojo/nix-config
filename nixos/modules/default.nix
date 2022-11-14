@@ -23,6 +23,7 @@
     ./program/discord
     ./program/nextcloud
     ./program/obs-studio
+    ./program/syncthing
 
     ./shell/fish
     ./shell/git
