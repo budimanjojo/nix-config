@@ -154,12 +154,12 @@ in {
             "9494:26:CM_Storm_Keyboard_--_QuickFire_XT" = { xkb_numlock = "enable"; };
           };
           gaps.inner = 10;
+          bars = [];
           keybindings = import ./configs/keybindings.nix;
           modes = import ./configs/modes.nix { inherit config; };
           workspaceOutputAssign = import ./configs/ws-outputs.nix;
           output = import ./configs/outputs.nix;
           window.commands = import ./configs/commands.nix;
-          bars = import ./configs/bars.nix { inherit pkgs; };
           startup = import ./configs/startups.nix { inherit pkgs; };
         };
       };

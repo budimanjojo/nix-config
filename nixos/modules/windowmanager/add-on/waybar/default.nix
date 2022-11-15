@@ -9,6 +9,7 @@ in {
   config = mkIf cfg.enable {
     home.manager.programs.waybar = {
       enable = true;
+      systemd.enable = true;
       settings = [
         {
           "output" = elemAt device.monitors 0;
