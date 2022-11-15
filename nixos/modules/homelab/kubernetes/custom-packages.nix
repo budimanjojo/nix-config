@@ -3,7 +3,7 @@
 {
   talhelper = buildGoModule rec {
     pname = "talhelper";
-    version = "1.5.3";
+    version = "1.5.4";
 
     src = fetchFromGitHub {
       owner = "budimanjojo";
