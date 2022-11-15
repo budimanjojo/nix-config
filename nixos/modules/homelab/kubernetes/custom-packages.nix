@@ -9,10 +9,10 @@
       owner = "budimanjojo";
       repo = pname;
       rev = "v${version}";
-      sha256 = "sha256-rjY2WXNUrd8iAPCkbnKgu0zDb5lrPoq8dHVEqudrxgM=";
+      sha256 = "sha256-p0xoK700C9cmjpw2eLMfU4ctH1YQaQiZn2OJIPxkPeg=";
     };
 
-    vendorSha256 = "sha256-TENT/fR3HPLRvPF00QemxygDNgCmjQ4RZ4xjgAI15zs=";
+    vendorSha256 = "sha256-cmESl8/V81RPB2MdRBpSG2mIStB8Wj/GQmI8IPSlOIU=";
 
     ldflags = [ "-s -w -X github.com/budimanjojo/talhelper/cmd.version=v${version}" ];
 
