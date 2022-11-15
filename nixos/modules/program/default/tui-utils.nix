@@ -12,8 +12,10 @@ in {
       hwatch
       lm_sensors
       nfs-utils
+      pciutils
       rsync
       tree
+      usbutils
       vim
     ];
   };
