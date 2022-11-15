@@ -2,6 +2,7 @@
 with lib;
 let 
   cfg = config.modules.windowmanager.i3;
+  device = config.modules.device;
 in {
   options.modules.windowmanager.i3 = { enable = mkEnableOption "i3"; };
 
