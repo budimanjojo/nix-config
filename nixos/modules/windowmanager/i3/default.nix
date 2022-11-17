@@ -22,6 +22,8 @@ in {
     modules.system.sound.enable = true;
     modules.system.video.enable = true;
 
+    modules.terminal-emulator.alacritty.enable = true;
+
     assertions = [
       {
         assertion = length device.monitors > 0;
