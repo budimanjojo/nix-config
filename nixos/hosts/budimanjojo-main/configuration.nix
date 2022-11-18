@@ -7,6 +7,7 @@
         cpu = "amd";
         gpu = "nvidia";
         monitors = [ "HDMI-A-1" "DP-1" ];
+        firefoxProfiles = [ "budiman" "lina" ];
         hasBluetooth = true;
       };
 
