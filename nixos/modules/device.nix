@@ -13,6 +13,10 @@ with lib;
       type = types.listOf types.str;
       default = [];
     };
+    firefoxProfiles = mkOption {
+      type = types.listOf types.str;
+      default = [myConfig.username];
+    };
     hasBluetooth = mkOption {
       type = types.bool;
     };
