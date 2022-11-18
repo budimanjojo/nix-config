@@ -19,7 +19,10 @@ vim.o.updatetime = 150
 vim.cmd([[autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })]])
 
 -- LSP Server Setup Goes Below
-require('mason').setup()
+require('mason').setup {
+  -- Prioritize nix native pkgs
+  PATH = "append",
+}
 require('mason-lspconfig').setup {
   automatic_installation = true,
   -- ui = {

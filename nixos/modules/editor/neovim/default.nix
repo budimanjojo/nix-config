@@ -21,6 +21,7 @@ in {
         git
         go
         gzip
+        sumneko-lua-language-server
         unzip
         wget
       ];
