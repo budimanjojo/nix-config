@@ -24,7 +24,6 @@ in {
       programs.firefox = {
         enable = true;
         package = pkgs.firefox.override {
-          forceWayland = config.modules.device.isWayland;
           cfg = {
             enableTridactylNative = true;
           };
