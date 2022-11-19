@@ -67,7 +67,7 @@ in {
 
           "custom/uname" = {
             "format" = " {}";
-            "exec" = "uname -r";
+            "exec" = "${pkgs.coreutils-full}/bin/uname -r";
             "tooltip" = false;
           };
 
