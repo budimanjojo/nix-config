@@ -8,6 +8,7 @@
         gpu = "vm";
         monitors = [ "Virtual-1" ];
         hasBluetooth = false;
+        hasSound = false;
       };
 
       # All of the available modules are listed below

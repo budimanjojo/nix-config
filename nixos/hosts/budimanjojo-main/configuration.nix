@@ -9,6 +9,7 @@
         monitors = [ "HDMI-A-1" "DP-1" ];
         firefoxProfiles = [ "budiman" "lina" ];
         hasBluetooth = true;
+        hasSound = true;
       };
 
       # All of the available modules are listed below

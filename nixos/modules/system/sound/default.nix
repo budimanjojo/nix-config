@@ -6,7 +6,7 @@ let
 in {
   options.modules.system.sound = { enable = mkEnableOption "sound"; };
 
-  config = mkIf cfg.enable {
+  config = mkIf (cfg.enable && device.hasSound) {
     # security.rtkit.enable = true;
     services.pipewire = {
       enable = true;

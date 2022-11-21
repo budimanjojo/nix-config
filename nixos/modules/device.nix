@@ -20,6 +20,9 @@ with lib;
     hasBluetooth = mkOption {
       type = types.bool;
     };
+    hasSound = mkOption {
+      type = types.bool;
+    };
 
     # Options below DON't NEED to be set, will be set by automatically
     hostname = mkOption {
