@@ -20,6 +20,16 @@ api.nvim_create_autocmd('BufNewFile', {
   group = loadtemplate
 })
 
+-- Disable removing indentation on files when first letter is # except some filetypes
+local disabledeindenthastag = api.nvim_create_augroup('disabledeindenthastag', { clear = true })
+api.nvim_create_autocmd('FileType', {
+  pattern = '*\\(^c$\\|^cpp$\\)\\@<!',
+  callback = function()
+    vim.opt.cinkeys:remove({ '0#' })
+  end,
+  group = disabledeindenthastag
+})
+
 -- Disable autocomment on enter
 local disableautocomment = api.nvim_create_augroup('disableautocomment', { clear = true })
 api.nvim_create_autocmd( { 'BufEnter', 'CmdLineLeave' }, {
