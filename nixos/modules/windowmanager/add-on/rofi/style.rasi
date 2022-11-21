@@ -62,6 +62,8 @@
 #element {
   border: 0;
   padding: 3px;
+  cursor: pointer;
+  spacing: 5px;
 }
 
 #element.normal.normal {
@@ -101,16 +103,42 @@
   text-color: @alternate-active-foreground;
 }
 
+#element-text {
+  background-color: transparent;
+  cursor: inherit;
+  highlight: inherit;
+  text-color: inherit;
+}
+
+#element-icon {
+  background-color: transparent;
+  size: 1em;
+  cursor: inherit;
+  text-color: inherit;
+}
+
 #scrollbar {
   width: 4px ;
   border: 0;
   handle-width: 8px ;
   padding: 0;
+  handle-color: var(normal-foreground);
+}
+
+#sidebar {
+  border-color: @separatorcolor;
+  border: 2px dash 0 0;
 }
 
 #mode-switcher {
   border: 2px 0px 0px ;
   border-color: @separatorcolor;
+}
+
+#button {
+  cursor: pointer;
+  spacing: 0;
+  text-color: @normal-foreground;
 }
 
 #button.selected {
