@@ -13,13 +13,6 @@ in {
   options.modules.browser.firefox = { enable = mkEnableOption "firefox"; };
 
   config = mkIf cfg.enable {
-    warnings = optional (cfg.enable) ''
-      To use the extensions on your profile, launch Firefox Profile Manager
-      and create a New Profile, then choose the directory named as your
-      Firefox profile (your username by default). This is due to a behavior
-      of Firefox that prevent Home Manager to manage profiles for you.
-    '';
-
     home.manager = {
       programs.firefox = {
         enable = true;
@@ -28,6 +21,10 @@ in {
             enableTridactylNative = true;
           };
         };
+        /* To use the extensions on your profile, launch Firefox Profile Manager
+        and create a New Profile, then choose the directory named as your
+        Firefox profile (your username by default). This is due to a behavior
+        of Firefox that prevent Home Manager to manage profiles for you. */
         extensions = extensionsList;
       };
       
