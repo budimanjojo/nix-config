@@ -2,7 +2,6 @@
 with lib;
 let
   cfg = config.modules.windowmanager.add-on.rofi;
-  inherit (config.lib.formats.rasi) mkLiteral;
 in {
   options.modules.windowmanager.add-on.rofi = {
     enable = mkEnableOption "rofi";
