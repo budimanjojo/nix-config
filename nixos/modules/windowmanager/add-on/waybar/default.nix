@@ -10,9 +10,9 @@ in {
     home.manager.programs.waybar = {
       enable = true;
       systemd.enable = true;
-      settings = [
+      settings = forEach device.monitors (monitor: mapAttrs (n: v: v)
         {
-          "output" = elemAt device.monitors 0;
+          "output" = monitor;
           "layer" = "top";
           "position" = "top";
           "modules-left" = [
@@ -22,14 +22,6 @@ in {
 
           "modules-center" = [
             "clock"
-          ];
-
-          "modules-right" = [
-            "network#down"
-            "network#up"
-            "disk#home"
-            "disk#root"
-            "custom/uname"
           ];
 
           "sway/workspaces" = {
@@ -77,80 +69,19 @@ in {
             "timezone" = "Asia/Jakarta";
             "tooltip" = false;
           };
-        }
-
-        (mkIf (length device.monitors > 1)
+        } //
         {
-          "output" = elemAt device.monitors 1;
-          "layer" = "top";
-          "position" = "top";
-          "modules-left" = [
-            "sway/workspaces"
-            "sway/mode"
-          ];
-          "modules-center" = [
-            "clock"
-          ];
-
           "modules-right" = [
             "network#down"
             "network#up"
             "disk#home"
             "disk#root"
+          ] ++ (if monitor == last device.monitors then [
             "custom/uname"
             "tray"
-          ];
-
-          "sway/workspaces" = {
-            format = "{value}";
-          };
-
-          "sway/mode" = {
-            format = " {}";
-            max-length = 100;
-          };
-
-          "network#down" = {
-            format = " {bandwidthDownBits}";
-            tooltip-format = "{ifname} {ipaddr}";
-            interval = 1;
-          };
-
-          "network#up" = {
-            format = " {bandwidthUpBits}";
-            tooltip-format = "{ifname} {ipaddr}";
-            interval = 1;
-          };
-
-          "disk#home" = {
-            format = " {used}";
-            interval = 30;
-            path = "/home/budiman";
-          };
-
-          "disk#root" = {
-            format = " {used}";
-            interval = 30;
-            path = "/";
-          };
-
-          "custom/uname" = {
-            format = " {}";
-            exec = "${pkgs.coreutils-full}/bin/uname -r";
-            tooltip = false;
-          };
-
-          "clock" = {
-            format = "{: %a,%d%b  %I:%M%p}";
-            interval = 1;
-            timezone = "Asia/Jakarta";
-            tooltip = false;
-          };
-
-          "tray" = {
-          };
-        })
-      ];
+          ] else [ ]);
+        }
+      );
 
       style = ''
         * {
