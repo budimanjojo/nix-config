@@ -22,5 +22,7 @@ in {
       enable = true;
       tray.enable = true;
     };
+
+    home.manager.systemd.user.services.syncthingtray.Service.ExecStart = mkForce "${pkgs.bash}/bin/bash -c '${pkgs.coreutils}/bin/sleep 5; ${pkgs.syncthingtray-minimal}/bin/syncthingtray'";
   };
 }
