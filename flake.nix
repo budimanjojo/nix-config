@@ -15,7 +15,6 @@
   outputs = { nixpkgs, agenix, home-manager, homeage, nur, ... }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
       lib = nixpkgs.lib;
 
       mkNixosSystem = pkgs: hostname: username:
