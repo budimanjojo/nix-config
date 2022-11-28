@@ -27,7 +27,7 @@ in {
         of Firefox that prevent Home Manager to manage profiles for you. */
         extensions = extensionsList;
       };
-      
+
       # Manually manage Firefox profiles until https://github.com/nix-community/home-manager/issues/3117 is fixed
       home.file = let
         extensionsEnvPkg = pkgs.buildEnv {
