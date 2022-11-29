@@ -3,7 +3,6 @@
 with lib;
 let
   cfg = config.modules.homelab.kubernetes;
-  talhelper = (pkgs.callPackage ./custom-packages.nix {}).talhelper;
   packages = pkgs // pkgs.callPackage ./custom-packages.nix {};
 in {
   options.modules.homelab.kubernetes = { enable = mkEnableOption "kubernetes"; };
