@@ -12,9 +12,9 @@
     nur.url = "github:nix-community/NUR";
   };
 
-  outputs = { nixpkgs, agenix, home-manager, homeage, nur, ... }@inputs:
+  outputs = { self, ... }@inputs:
     let
-      lib = nixpkgs.lib;
+      lib = inputs.nixpkgs.lib;
 
       mkNixosSystem = system: hostname: username:
         lib.nixosSystem {
@@ -24,9 +24,9 @@
             myConfig = { hostname = hostname; username = username; };
           };
           modules = [
-            home-manager.nixosModules.home-manager
-            nur.nixosModules.nur
-            agenix.nixosModule
+            inputs.home-manager.nixosModules.home-manager
+            inputs.nur.nixosModules.nur
+            inputs.agenix.nixosModule
             # Load the modules
             ./nixos/modules
             # Default configuration
