@@ -65,7 +65,6 @@ in {
       };
     };
     networking.networkmanager.enable = true;
-    services.blueman.enable = true;
     programs.dconf.enable = true;
 
     home.manager = {
