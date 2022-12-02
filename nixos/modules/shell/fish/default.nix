@@ -92,7 +92,9 @@ in {
           gpl = "git pull";
           gl = "git log";
           gd = "git diff";
+          gds = "git diff --staged";
           gr = "git restore .";
+          grs = "git restore --staged .";
 
           # nvim
           vi = "nvim";
