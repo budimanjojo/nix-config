@@ -49,7 +49,7 @@
         pkgs,
         ...
       }: {
-        legacyPackages = import ./nixos/packages { inherit inputs' pkgs self; };
+        legacyPackages = import ./nixos/packages { inherit pkgs; };
       };
 
       flake.nixosConfigurations = {

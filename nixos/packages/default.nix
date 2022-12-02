@@ -1,4 +1,4 @@
-{ inputs', pkgs, ... }: {
+{ pkgs, ... }: {
   talhelper = pkgs.callPackage ./talhelper/default.nix {};
   configure-gtk = pkgs.callPackage ./configure-gtk/default.nix {};
   tokyonight-gtk-theme = pkgs.callPackage ./tokyonight-gtk-theme/default.nix {};
