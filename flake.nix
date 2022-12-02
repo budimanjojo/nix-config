@@ -5,6 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
+    flake-parts.url = "github:hercules-ci/flake-parts";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     homeage.url = "github:jordanisaacs/homeage";
@@ -20,7 +21,7 @@
         lib.nixosSystem {
           inherit system;
           specialArgs = {
-            inherit inputs;
+            inherit inputs self;
             myConfig = { hostname = hostname; username = username; };
           };
           modules = [
@@ -38,8 +39,17 @@
           ];
         };
     in
-    {
-      nixosConfigurations = {
+    inputs.flake-parts.lib.mkFlake { inherit self; } {
+      systems = [ "x86_64-linux" ];
+      perSystem = {
+        inputs',
+        pkgs,
+        ...
+      }: {
+        packages = import ./nixos/packages { inherit inputs' pkgs self; };
+      };
+
+      flake.nixosConfigurations = {
         budimanjojo-vm = mkNixosSystem "x86_64-linux" "budimanjojo-vm" "budiman";
         budimanjojo-main = mkNixosSystem "x86_64-linux" "budimanjojo-main" "budiman";
       };
