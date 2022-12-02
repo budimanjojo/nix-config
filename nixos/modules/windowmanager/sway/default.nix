@@ -37,7 +37,7 @@ in {
 
     services.greetd = {
       enable = true;
-      settings = rec {
+      settings = {
         initial_session = {
           command = "${pkgs.sway}/bin/sway";
         };
