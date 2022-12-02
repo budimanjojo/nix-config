@@ -1,9 +1,8 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, myPkgs, ... }:
 
 with lib;
 let
   cfg = config.modules.homelab.kubernetes;
-  packages = pkgs // pkgs.callPackage ./custom-packages.nix {};
 in {
   options.modules.homelab.kubernetes = { enable = mkEnableOption "kubernetes"; };
   config = mkIf cfg.enable {
@@ -58,7 +57,7 @@ in {
 
       programs.direnv.enable = true;
 
-      home.packages = with packages; [
+      home.packages = with pkgs; [
         age
         fluxcd
         go-task
@@ -69,8 +68,7 @@ in {
         nodePackages.zx
         sops
         talosctl
-        talhelper
-      ];
+      ] ++ [ myPkgs.talhelper ];
     };
   };
 }

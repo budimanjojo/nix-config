@@ -1,8 +1,7 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, config, myPkgs, ... }:
 with lib;
 let
   cfg = config.modules.windowmanager.add-on.gtk-theme;
-  packages = pkgs // config.nur.repos.ambroisie // pkgs.callPackage ./custom-packages.nix {};
 in {
   options.modules.windowmanager.add-on.gtk-theme = { enable = mkEnableOption "gtk-theme"; };
 
@@ -12,7 +11,7 @@ in {
         enable = true;
         cursorTheme = {
           name = "Vimix Cursors";
-          package = packages.vimix-cursors;
+          package = config.nur.repos.ambroisie.vimix-cursors;
         };
         font = {
           name = "UbuntuMono Nerd Font";
@@ -21,16 +20,16 @@ in {
         };
         theme = {
           name = "Tokyonight-Dark-B";
-          package = packages.tokyonight-gtk-theme;
+          package = myPkgs.tokyonight-gtk-theme;
         };
         iconTheme = {
           name = "Tokyonight-Dark";
-          package = packages.tokyonight-icon-theme;
+          package = myPkgs.tokyonight-icon-theme;
         };
       };
 
       # TODO: This is needed for Gnome42 apps
-      xdg.configFile."gtk-4.0/gtk.css".source = "${packages.tokyonight-gtk-theme}/share/themes/Gnome42/Tokyonight-Dark-B.css";
+      xdg.configFile."gtk-4.0/gtk.css".source = "${myPkgs.tokyonight-gtk-theme}/share/themes/Gnome42/Tokyonight-Dark-B.css";
     };
   };
 }

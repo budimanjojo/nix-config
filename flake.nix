@@ -20,11 +20,14 @@
       mkNixosSystem = system: hostname: username:
         lib.nixosSystem {
           inherit system;
-          specialArgs = {
-            inherit inputs self;
-            myConfig = { hostname = hostname; username = username; };
-          };
           modules = [
+            {
+              _module.args = {
+                inherit self inputs system;
+                myConfig = { hostname = hostname; username = username; };
+                myPkgs = self.legacyPackages.${system};
+              };
+            }
             inputs.home-manager.nixosModules.home-manager
             inputs.nur.nixosModules.nur
             inputs.agenix.nixosModule
@@ -46,7 +49,7 @@
         pkgs,
         ...
       }: {
-        packages = import ./nixos/packages { inherit inputs' pkgs self; };
+        legacyPackages = import ./nixos/packages { inherit inputs' pkgs self; };
       };
 
       flake.nixosConfigurations = {

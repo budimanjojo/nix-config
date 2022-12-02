@@ -1,9 +1,8 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, config, myPkgs, ... }:
 with lib;
 let 
   cfg = config.modules.windowmanager.sway;
   device = config.modules.device;
-  packages = pkgs // pkgs.callPackage ./custom-packages.nix {};
 in {
   options.modules.windowmanager.sway = { enable = mkEnableOption "sway"; };
 
@@ -48,15 +47,14 @@ in {
       };
     };
 
-    environment.systemPackages = with packages; [
+    environment.systemPackages = with pkgs; [
       at-spi2-core
-      configure-gtk
       libappindicator-gtk3
       libappindicator-gtk2
       libappindicator
       polkit_gnome
       wl-clipboard
-    ];
+    ] ++ [ myPkgs.configure-gtk ];
 
     programs.sway.enable = true;
     programs.sway.wrapperFeatures.gtk = true;
