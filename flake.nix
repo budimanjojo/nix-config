@@ -15,32 +15,7 @@
 
   outputs = { self, ... }@inputs:
     let
-      lib = inputs.nixpkgs.lib;
-
-      mkNixosSystem = system: hostname: username:
-        lib.nixosSystem {
-          inherit system;
-          modules = [
-            {
-              _module.args = {
-                inherit self inputs system;
-                myConfig = { hostname = hostname; username = username; };
-                myPkgs = self.legacyPackages.${system};
-              };
-            }
-            inputs.home-manager.nixosModules.home-manager
-            inputs.nur.nixosModules.nur
-            inputs.agenix.nixosModule
-            # Load the modules
-            ./nixos/modules
-            # Default configuration
-            ./nixos/hosts/configuration.nix
-            # Host specific configuration
-            ./nixos/hosts/${hostname}/configuration.nix
-            # Host specific hardware configuration
-            ./nixos/hosts/${hostname}/hardware-configuration.nix
-          ];
-        };
+      myLib = import ./nixos/lib/default.nix { inherit self inputs; };
     in
     inputs.flake-parts.lib.mkFlake { inherit self; } {
       systems = [ "x86_64-linux" ];
@@ -53,8 +28,8 @@
       };
 
       flake.nixosConfigurations = {
-        budimanjojo-vm = mkNixosSystem "x86_64-linux" "budimanjojo-vm" "budiman";
-        budimanjojo-main = mkNixosSystem "x86_64-linux" "budimanjojo-main" "budiman";
+        budimanjojo-vm = myLib.mkNixosSystem "x86_64-linux" "budimanjojo-vm" "budiman";
+        budimanjojo-main = myLib.mkNixosSystem "x86_64-linux" "budimanjojo-main" "budiman";
       };
     };
 }
