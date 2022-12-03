@@ -18,6 +18,7 @@ Screenshots, plugins list, and keybindings are identical whether you go with `fl
 ## :package:&nbsp; Modules
 
 - [agenix](https://github.com/ryantm/agenix) is used to encrypt/decrypt my secrets safely.
+- [Flake Parts](https://github.com/hercules-ci/flake-parts) to manage `flakes`.
 - [home-manager](https://github.com/nix-community/home-manager) to manage my home directory and dotfiles.
 - [NUR](https://github.com/nix-community/NUR) for packages not available in the official NixOS repository.
 
@@ -28,8 +29,10 @@ I shamelessly took the pieces I believe is the best from people and modified it.
 
 - [../flake.nix](../flake.nix) is the entrypoint for `nix-rebuild` command.
 - [../flake.lock](../flake.lock) is the lock file, updated daily by `budimanjojo-bot` powered by [Renovate](https://github.com/renovatebot/renovate).
+- [./lib](./lib) is where I put my own helper functions.
 - [./modules/device.nix](./modules/device.nix) is where you can look at the available options for each machine.
 - [./modules/home-manager.nix](./modules/home-manager.nix) is defining `config.home.manager` as alias for `config.home-manager.users.<user>`.
+- [./packages](./packages) is where I put extra packages not available in the official repo and `NUR`.
 - [./hosts/configuration.nix](./hosts/configuration.nix) contains default configuration for all machines.
 - [./hosts/\<hostname\>/configuration.nix](./hosts/budimanjojo-vm/configuration.nix) contains machine specific configuration.
 - [./hosts/\<hostname\>/hardware-configuration.nix](./hosts/budimanjojo-vm/hardware-configuration.nix) contains machine specific hardware configuration.
