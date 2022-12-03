@@ -1,5 +1,4 @@
 { self, inputs, ... }: let
-  # lib = inputs.nixpkgs.lib;
   inherit (inputs.nixpkgs) lib;
 in {
   mkNixosSystem = system: hostname: username:
