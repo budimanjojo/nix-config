@@ -60,6 +60,7 @@ in {
           (python3Packages.py3status.overrideAttrs (oldAttrs: {
             propagatedBuildInputs = with python3Packages; [ pytz tzlocal ] ++ oldAttrs.propagatedBuildInputs;
           }))
+          xdg-utils
           xfce.xfce4-power-manager
         ];
       };

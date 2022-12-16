@@ -54,6 +54,7 @@ in {
       libappindicator
       polkit_gnome
       wl-clipboard
+      xdg-utils
     ] ++ [ myPkgs.configure-gtk ];
 
     programs.sway.enable = true;
