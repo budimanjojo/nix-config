@@ -1,4 +1,4 @@
-{ self, inputs, ... }: let
+{ inputs, ... }: let
   inherit (inputs.nixpkgs) lib;
 in {
   mkNixosSystem = system: hostname: username:
@@ -7,9 +7,9 @@ in {
       modules = [
         {
           _module.args = {
-            inherit self inputs system;
+            inherit inputs system;
             myConfig = { hostname = hostname; username = username; };
-            myPkgs = self.legacyPackages.${system};
+            myPkgs = inputs.self.legacyPackages.${system};
           };
         }
         inputs.home-manager.nixosModules.home-manager

@@ -13,11 +13,11 @@
     nur.url = "github:nix-community/NUR";
   };
 
-  outputs = { self, ... }@inputs:
+  outputs = { flake-parts, ... }@inputs:
     let
-      myLib = import ./nixos/lib/default.nix { inherit self inputs; };
+      myLib = import ./nixos/lib/default.nix { inherit inputs; };
     in
-    inputs.flake-parts.lib.mkFlake { inherit self; } {
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" ];
       perSystem = {
         inputs',
