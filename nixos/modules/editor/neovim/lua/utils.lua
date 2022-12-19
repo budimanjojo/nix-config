@@ -1,5 +1,14 @@
 local M = {}
 
+-- Returns `cwd` or path of current buffer depending on whether the current window is terminal or nothing
+function M.current_path()
+  local current_win_info = vim.fn["getwininfo"](vim.api.nvim_get_current_win())
+  if current_win_info == nil or #current_win_info == 0 then
+    return vim.fn["getcwd"]()
+  end
+  return vim.fn.expand("%:p:h")
+end
+
 -- Workaround for hover not working when there is diagnostic float
 -- https://www.reddit.com/r/neovim/comments/pg1o6k/neovim_lsp_hover_window_is_hidden_behind_line
 function M.fix_buf_hover()

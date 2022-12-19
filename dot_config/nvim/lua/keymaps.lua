@@ -1,4 +1,5 @@
 local keymap = vim.keymap
+local utils = require('utils')
 local g = vim.g
 
 -- keymap.set("i", "#", "X<C-v><C-h>#", { desc = "Don't remove indentation on line starting with #" })
@@ -92,7 +93,7 @@ keymap.set("n", "<Leader>xr", ":TroubleToggle lsp_references<CR>")
 
 -- lir.nvim
 keymap.set("n", "<C-f>", function()
-  return require("lir.float").toggle(vim.fn["getcwd"]())
+  return require("lir.float").toggle(utils.current_path())
 end, { desc = "Toggle Lir filemanager" })
 
 -- null-ls
