@@ -1,5 +1,5 @@
 local keymap = vim.keymap
-local utils = require('utils')
+local utils = require("utils")
 local g = vim.g
 
 -- Spacebar is <Leader>
@@ -30,8 +30,8 @@ keymap.set("i", "<Down>", "<C-o>gj")
 keymap.set("n", "Y", "y$", { desc = "Yank to end of line" })
 
 -- Move paragraph
-keymap.set("", "K", "{", { desc = "Go up a paragraph" })
-keymap.set("", "J", "}", { desc = "Go down a paragraph" })
+keymap.set("", "K", "{zz", { desc = "Go up a paragraph" })
+keymap.set("", "J", "}zz", { desc = "Go down a paragraph" })
 
 -- Move to first and last char
 keymap.set("", "H", "^", { desc = "Move cursor to first char" })
