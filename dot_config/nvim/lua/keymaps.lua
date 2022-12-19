@@ -92,7 +92,7 @@ keymap.set("n", "<Leader>xr", ":TroubleToggle lsp_references<CR>")
 
 -- lir.nvim
 keymap.set("n", "<C-f>", function()
-  return require("lir.float").toggle()
+  return require("lir.float").toggle(vim.fn["getcwd"]())
 end, { desc = "Toggle Lir filemanager" })
 
 -- null-ls
