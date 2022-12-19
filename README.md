@@ -218,6 +218,8 @@ If they are not in the table, that means it's using the default Vim keybindings.
 | Normal        | `J`           | Move Down one paragraph |
 | Normal        | `H`           | Move to the first character in line |
 | Normal        | `L`           | Move to the last character in line |
+| Visual        | `J`           | Move selected line up and down |
+| Visual        | `K`           | Move selected line up and down |
 | Normal        | `Control+k`   | Move to the split window above |
 | Normal        | `Control+j`   | Move to the split window below |
 | Normal        | `Control+h`   | Move to the left split window |

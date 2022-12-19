@@ -37,6 +37,10 @@ keymap.set("", "J", "}zz", { desc = "Go down a paragraph" })
 keymap.set("", "H", "^", { desc = "Move cursor to first char" })
 keymap.set("", "L", "$", { desc = "Move cursor to last char" })
 
+-- Move selected lines up and down with updated indentation
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 -- Better search movement
 keymap.set("n", "n", "nzzzv", { desc = "Go to the next search result and center" })
 keymap.set("n", "N", "Nzzzv", { desc = "Go to the previous search result and center" })
