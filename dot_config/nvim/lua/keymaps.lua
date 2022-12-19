@@ -39,6 +39,10 @@ keymap.set("", "J", "}zz", { desc = "Go down a paragraph" })
 keymap.set("", "H", "^", { desc = "Move cursor to first char" })
 keymap.set("", "L", "$", { desc = "Move cursor to last char" })
 
+-- Better search movement
+keymap.set("n", "n", "nzzzv", { desc = "Go to the next search result and center" })
+keymap.set("n", "N", "Nzzzv", { desc = "Go to the previous search result and center" })
+
 -- Move between splits
 keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to split above" })
 keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to split below" })
