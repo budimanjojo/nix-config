@@ -1,0 +1,110 @@
+{
+    "chezmoi-vim": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "chezmoi-vim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "df01e4108be9f2e4092cd753ebfb46d04e6e47ce",
+            "sha256": "sha256-NjgyC9hRnyq0wP7nYVvKIV+vOperCOLvYWKpam56TUA=",
+            "type": "git",
+            "url": "https://github.com/alker0/chezmoi.vim"
+        },
+        "version": "df01e4108be9f2e4092cd753ebfb46d04e6e47ce"
+    },
+    "lir-git-status-nvim": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "lir-git-status-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "6e15a3ade508522ecc027f059a814ca75a364db7",
+            "sha256": "sha256-+ei/mMBbjKtUWVKW0p+pY5q/99+whSxekfJrtgr5ji4=",
+            "type": "git",
+            "url": "https://github.com/tamago324/lir-git-status.nvim"
+        },
+        "version": "6e15a3ade508522ecc027f059a814ca75a364db7"
+    },
+    "mason-lspconfig-nvim": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "mason-lspconfig-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "5bea0e851b8f48479d2cb927cd26733b4058b2b3",
+            "sha256": "sha256-ABEjjmrqgTWN3nDIUSb4o10bZZPJaWWTu9jxF/RI4ak=",
+            "type": "git",
+            "url": "https://github.com/williamboman/mason-lspconfig.nvim"
+        },
+        "version": "5bea0e851b8f48479d2cb927cd26733b4058b2b3"
+    },
+    "mason-tool-installer-nvim": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "mason-tool-installer-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "27f61f75a71bb3c2504a17e02b571f79cae43676",
+            "sha256": "sha256-3m44aUe54+R+hd3Qp0kW5TeS/6rqyGT6kthpjaVzFX4=",
+            "type": "git",
+            "url": "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
+        },
+        "version": "27f61f75a71bb3c2504a17e02b571f79cae43676"
+    },
+    "tokyonight-gtk-theme": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "tokyonight-gtk-theme",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "d17eec24180b890bc4a9aa64162074b1bfc7258a",
+            "sha256": "sha256-b35J6NsFkUNM/yxMe7bi0kpyuI/pGLnCywCEDLHLf5A=",
+            "type": "git",
+            "url": "https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme"
+        },
+        "version": "d17eec24180b890bc4a9aa64162074b1bfc7258a"
+    },
+    "tokyonight-icon-theme": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "tokyonight-icon-theme",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "d17eec24180b890bc4a9aa64162074b1bfc7258a",
+            "sha256": "sha256-b35J6NsFkUNM/yxMe7bi0kpyuI/pGLnCywCEDLHLf5A=",
+            "type": "git",
+            "url": "https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme"
+        },
+        "version": "d17eec24180b890bc4a9aa64162074b1bfc7258a"
+    }
+}

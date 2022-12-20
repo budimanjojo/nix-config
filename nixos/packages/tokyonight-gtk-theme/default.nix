@@ -1,15 +1,10 @@
-{ stdenvNoCC, fetchFromGitHub, lib }:
+{ stdenvNoCC, fetchFromGitHub, lib, callPackage }:
 
+let
+  sourceData = callPackage ../_sources/generated.nix {};
+in
 stdenvNoCC.mkDerivation {
-  pname = "tokyonight-gtk-theme";
-  version = "2022-10-21";
-
-  src = fetchFromGitHub {
-    owner = "Fausto-Korpsvart";
-    repo = "Tokyo-Night-GTK-Theme";
-    rev = "6247aafad59a9231d8638de2a09174779761ffeb";
-    sha256 = "sha256-vxSu5FW4XSvOyHK/Zl4Wh2Tik6cKBSE22C3AE9cRkoE=";
-  };
+  inherit (sourceData.tokyonight-gtk-theme) pname version src;
 
   installPhase = ''
     runHook preInstall

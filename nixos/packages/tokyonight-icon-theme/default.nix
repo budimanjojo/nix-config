@@ -1,15 +1,11 @@
-{ stdenvNoCC, fetchFromGitHub, hicolor-icon-theme, gtk3, lib }:
+{ stdenvNoCC, fetchFromGitHub, hicolor-icon-theme, gtk3, lib, callPackage }:
+
+let
+  sourceData = callPackage ../_sources/generated.nix {};
+in
 
 stdenvNoCC.mkDerivation {
-  pname = "tokyonight-icon-theme";
-  version = "2022-10-21";
-
-  src = fetchFromGitHub {
-    owner = "Fausto-Korpsvart";
-    repo = "Tokyo-Night-GTK-Theme";
-    rev = "6247aafad59a9231d8638de2a09174779761ffeb";
-    sha256 = "sha256-vxSu5FW4XSvOyHK/Zl4Wh2Tik6cKBSE22C3AE9cRkoE=";
-  };
+  inherit (sourceData.tokyonight-icon-theme) pname version src;
 
   nativeBuildInputs = [ gtk3 ];
 
