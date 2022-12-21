@@ -6,7 +6,7 @@ on:
     - cron: 0 * * * *
   push:
     paths:
-      - ./nixos/packages/nvfetcher.toml
+      - nixos/packages/nvfetcher.toml
 
 jobs:
   update-nvfetcher:
