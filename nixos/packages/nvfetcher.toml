@@ -16,3 +16,6 @@ fetch.git = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
 [lir-git-status-nvim]
 src.git = "https://github.com/tamago324/lir-git-status.nvim"
 fetch.git = "https://github.com/tamago324/lir-git-status.nvim"
+[budimanjojo/talhelper]
+src.github = "budimanjojo/talhelper"
+fetch.github = "budimanjojo/talhelper"
