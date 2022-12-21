@@ -31,6 +31,7 @@
       program.nextcloud.enable = true;
       # program.obs-studio.enable = true;
       # program.syncthing.enable = true;
+      program.yamllint.enable = true;
 
       shell.fish.enable = true;
       shell.git.enable = true;

@@ -24,6 +24,7 @@
     ./program/nextcloud
     ./program/obs-studio
     ./program/syncthing
+    ./program/yamllint
 
     ./shell/fish
     ./shell/git
