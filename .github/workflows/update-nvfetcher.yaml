@@ -1,0 +1,42 @@
+name: Update nvfetcher
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 * * * *
+  push:
+    paths:
+      - ./nixos/packages/nvfetcher.toml
+
+jobs:
+  update-nvfetcher:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v15
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - uses: workflows/nix-shell-action@v3
+        id: update_nvfetcher
+        with:
+          packages: nvfetcher
+          script: |
+            cd nixos/packages
+            echo "OUTPUT=$(nvfetcher | sed -n -e '\Changes\,$p')"" >> GITHUB_OUTPUT
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "chore(deps): update packages managed by nvfetcher"
+          committer: budimanjojo-bot <111944664+budimanjojo-bot[bot]@users.noreply.github.com>
+          author: budimanjojo-bot <111944664+budimanjojo-bot[bot]@users.noreply.github.com>
+          body: |
+            ${{ steps.update_nvfetcher.outputs.OUTPUT }}
+      - name: Automerge
+        if: steps.cpr.outputs.pull-request-operation == 'created'
+        uses: peter-evans/enable-pull-request-automerge@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: squash
