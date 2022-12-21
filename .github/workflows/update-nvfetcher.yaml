@@ -22,7 +22,7 @@ jobs:
           packages: nvfetcher
           script: |
             cd nixos/packages
-            echo "OUTPUT=$(nvfetcher | sed -n -e '\Changes\,$p')" >> $GITHUB_OUTPUT
+            echo "OUTPUT=$(nvfetcher | sed -n '/Changes/,/$!d/p')" >> $GITHUB_OUTPUT
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v4
