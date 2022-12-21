@@ -29,6 +29,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: "chore(deps): update packages managed by nvfetcher"
+          delete-branch: true
           committer: budimanjojo-bot <111944664+budimanjojo-bot[bot]@users.noreply.github.com>
           author: budimanjojo-bot <111944664+budimanjojo-bot[bot]@users.noreply.github.com>
           body: |
