@@ -49,17 +49,6 @@
       sha256 = "sha256-3m44aUe54+R+hd3Qp0kW5TeS/6rqyGT6kthpjaVzFX4=";
     };
   };
-  talhelper = {
-    pname = "talhelper";
-    version = "v1.5.5";
-    src = fetchFromGitHub ({
-      owner = "budimanjojo";
-      repo = "talhelper";
-      rev = "v1.5.5";
-      fetchSubmodules = false;
-      sha256 = "sha256-W16gTO3eoDIOhIWbNcnv3tJ8nUzhLEkCYGEE0A5HCps=";
-    });
-  };
   tokyonight-gtk-theme = {
     pname = "tokyonight-gtk-theme";
     version = "d17eec24180b890bc4a9aa64162074b1bfc7258a";
