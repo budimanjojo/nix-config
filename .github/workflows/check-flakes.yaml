@@ -2,6 +2,8 @@ name: Check Flakes
 
 on:
   pull_request:
+    types:
+      - auto_merge_enabled
   push:
     paths:
       - nixos/**
