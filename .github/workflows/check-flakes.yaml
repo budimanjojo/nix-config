@@ -3,7 +3,7 @@ name: Check Flakes
 on:
   push:
     paths:
-      - nixos
+      - nixos/**
       - flake.nix
       - flake.lock
 
