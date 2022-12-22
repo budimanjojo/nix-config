@@ -1,7 +1,6 @@
 name: Update nvfetcher
 
 on:
-  workflow_dispatch:
   schedule:
     - cron: 0 * * * *
   push:
