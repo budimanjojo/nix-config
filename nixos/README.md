@@ -54,6 +54,12 @@ I'm using `agenix` to manage secrets. My custom modules are hardcoded to find `i
 The reason is because that's where `sops` (which I use for my secret management on my other projects) wants it by default.
 Feel free to modify it to your liking.
 
+## :robot:&nbsp; Package updates
+
+I use [renovatebot](https://github.com/renovatebot/renovate) to update [flake.nix](../flake.nix) file.
+I also use [nvfetcher](https://github.com/berberman/nvfetcher) to update my [custom packages](./packages/_sources/generated.nix).
+There are GitHub workflows to do this automatically everyday.
+
 ## :coffee:&nbsp; Acknowledgements
 
 I wrote most of the codes by myself, but there are a lot of stuffs inspired by these repositories.
