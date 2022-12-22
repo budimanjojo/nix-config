@@ -71,6 +71,25 @@
         },
         "version": "27f61f75a71bb3c2504a17e02b571f79cae43676"
     },
+    "talhelper": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "talhelper",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "budimanjojo",
+            "repo": "talhelper",
+            "rev": "v1.5.5",
+            "sha256": "sha256-W16gTO3eoDIOhIWbNcnv3tJ8nUzhLEkCYGEE0A5HCps=",
+            "type": "github"
+        },
+        "version": "v1.5.5"
+    },
     "tokyonight-gtk-theme": {
         "cargoLocks": null,
         "extract": null,
