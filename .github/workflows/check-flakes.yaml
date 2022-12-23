@@ -1,8 +1,9 @@
 name: Check Flakes
 
 on:
-  pull_request:
+  pull_request_target:
     types:
+      - opened
       - auto_merge_enabled
   push:
     paths:
