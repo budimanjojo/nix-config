@@ -3,16 +3,17 @@ local api = vim.api
 
 -- Load template file from stdpath("config")/templates directory
 local loadTemplate = function()
+  local fpath = vim.fn.expand '%:p'
   local fname = vim.fn.expand '%:p:t'
   local tfile = api.nvim_eval('stdpath("config")') .. '/templates/' .. fname
-  if vim.fn.filereadable(vim.fn.expand(tfile)) == 1 then
+  if vim.fn.filereadable(vim.fn.expand(tfile)) == 1 and vim.fn.getfsize(fpath) < 1 then
     vim.b.tfile = tfile
     cmd([[execute ':0r' b:tfile | normal Gddgg]])
   end
 end
 
 local loadtemplate = api.nvim_create_augroup('loadtemplate', { clear = true })
-api.nvim_create_autocmd('BufNewFile', {
+api.nvim_create_autocmd({ 'BufCreate', 'BufNewFile' }, {
   pattern = '*',
   callback = function()
     vim.schedule(loadTemplate)
@@ -32,7 +33,7 @@ api.nvim_create_autocmd('FileType', {
 
 -- Disable autocomment on enter
 local disableautocomment = api.nvim_create_augroup('disableautocomment', { clear = true })
-api.nvim_create_autocmd( { 'BufEnter', 'CmdLineLeave' }, {
+api.nvim_create_autocmd({ 'BufEnter', 'CmdLineLeave' }, {
   pattern = '*',
   callback = function()
     vim.opt.formatoptions:remove({ 'c', 'r', 'o' })
@@ -77,7 +78,7 @@ api.nvim_create_autocmd({ 'FileType' }, {
       vim.opt_local.softtabstop = 4
       vim.opt_local.expandtab = false
     elseif ft == 'gitcommit' then
-      vim.opt_local.colorcolumn = {73}
+      vim.opt_local.colorcolumn = { 73 }
     end
   end,
   group = ftconfiguration
