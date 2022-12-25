@@ -180,7 +180,7 @@ lspconfig.yamlls.setup {
       },
       schemas = {
         kubernetes = {
-          '01-namespace.yaml',
+          'namespace.yaml',
           'deployment.yaml',
           'daemonset.yaml',
           'statefulset.yaml',
