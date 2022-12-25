@@ -65,6 +65,7 @@ in {
         k9s
         kubectl
         kubernetes-helm
+        kustomize
         nodePackages.zx
         sops
         talosctl
