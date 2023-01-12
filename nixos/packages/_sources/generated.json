@@ -1,7 +1,6 @@
 {
     "chezmoi-vim": {
         "cargoLocks": null,
-        "date": "2022-11-14",
         "extract": null,
         "name": "chezmoi-vim",
         "passthru": null,
@@ -20,7 +19,6 @@
     },
     "mason-lspconfig-nvim": {
         "cargoLocks": null,
-        "date": "2023-01-09",
         "extract": null,
         "name": "mason-lspconfig-nvim",
         "passthru": null,
@@ -39,7 +37,6 @@
     },
     "mason-tool-installer-nvim": {
         "cargoLocks": null,
-        "date": "2022-10-28",
         "extract": null,
         "name": "mason-tool-installer-nvim",
         "passthru": null,
@@ -58,7 +55,6 @@
     },
     "oil-nvim": {
         "cargoLocks": null,
-        "date": "2023-01-11",
         "extract": null,
         "name": "oil-nvim",
         "passthru": null,
@@ -68,16 +64,15 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "c553b5435a78892c2c8f85ddd2cef5d3deb8cab6",
-            "sha256": "sha256-5oIWbdzPUTstW5FIIZTvuwIX6IRTPPdfGDxJ3ultSKo=",
+            "rev": "f8ca5648021ac6a59e016d81be594fa98f0705c2",
+            "sha256": "sha256-kMYYgrRTShd5CplZBBd1/zNNfQYwAFnJe5hwA7/VUcI=",
             "type": "git",
             "url": "https://github.com/stevearc/oil.nvim"
         },
-        "version": "c553b5435a78892c2c8f85ddd2cef5d3deb8cab6"
+        "version": "f8ca5648021ac6a59e016d81be594fa98f0705c2"
     },
     "tokyonight-gtk-theme": {
         "cargoLocks": null,
-        "date": "2023-01-11",
         "extract": null,
         "name": "tokyonight-gtk-theme",
         "passthru": null,
@@ -96,7 +91,6 @@
     },
     "tokyonight-icon-theme": {
         "cargoLocks": null,
-        "date": "2023-01-11",
         "extract": null,
         "name": "tokyonight-icon-theme",
         "passthru": null,

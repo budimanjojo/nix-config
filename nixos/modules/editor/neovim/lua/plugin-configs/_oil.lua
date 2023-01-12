@@ -36,6 +36,8 @@ oil.setup {
   float = {
     padding = 2,
     border = 'rounded',
+    max_width = 50,
+    max_height = 40,
     win_options = {
       winblend = 10,
     },
