@@ -58,7 +58,7 @@
     },
     "oil-nvim": {
         "cargoLocks": null,
-        "date": "2023-01-11",
+        "date": "2023-01-12",
         "extract": null,
         "name": "oil-nvim",
         "passthru": null,
@@ -68,12 +68,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "bcb99ae95a349d33dac9ea54dff0f8915e567eec",
-            "sha256": "sha256-vh2MRAlvHCBBgGjCDNdbiLG2vut7ijvkwYlRA37JiCI=",
+            "rev": "f8ca5648021ac6a59e016d81be594fa98f0705c2",
+            "sha256": "sha256-kMYYgrRTShd5CplZBBd1/zNNfQYwAFnJe5hwA7/VUcI=",
             "type": "git",
             "url": "https://github.com/stevearc/oil.nvim"
         },
-        "version": "bcb99ae95a349d33dac9ea54dff0f8915e567eec"
+        "version": "f8ca5648021ac6a59e016d81be594fa98f0705c2"
     },
     "tokyonight-gtk-theme": {
         "cargoLocks": null,
