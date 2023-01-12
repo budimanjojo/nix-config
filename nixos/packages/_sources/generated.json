@@ -1,6 +1,7 @@
 {
     "chezmoi-vim": {
         "cargoLocks": null,
+        "date": "2022-11-14",
         "extract": null,
         "name": "chezmoi-vim",
         "passthru": null,
@@ -19,6 +20,7 @@
     },
     "mason-lspconfig-nvim": {
         "cargoLocks": null,
+        "date": "2023-01-09",
         "extract": null,
         "name": "mason-lspconfig-nvim",
         "passthru": null,
@@ -37,6 +39,7 @@
     },
     "mason-tool-installer-nvim": {
         "cargoLocks": null,
+        "date": "2022-10-28",
         "extract": null,
         "name": "mason-tool-installer-nvim",
         "passthru": null,
@@ -55,6 +58,7 @@
     },
     "oil-nvim": {
         "cargoLocks": null,
+        "date": "2023-01-11",
         "extract": null,
         "name": "oil-nvim",
         "passthru": null,
@@ -73,6 +77,7 @@
     },
     "tokyonight-gtk-theme": {
         "cargoLocks": null,
+        "date": "2023-01-11",
         "extract": null,
         "name": "tokyonight-gtk-theme",
         "passthru": null,
@@ -91,6 +96,7 @@
     },
     "tokyonight-icon-theme": {
         "cargoLocks": null,
+        "date": "2023-01-11",
         "extract": null,
         "name": "tokyonight-icon-theme",
         "passthru": null,
