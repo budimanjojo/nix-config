@@ -14,7 +14,7 @@ in
   mason-tool-installer-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
     inherit (sourceData.mason-tool-installer-nvim) pname version src;
   };
-  lir-git-status-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-    inherit (sourceData.lir-git-status-nvim) pname version src;
+  oil-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    inherit (sourceData.oil-nvim) pname version src;
   };
 }

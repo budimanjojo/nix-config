@@ -13,6 +13,6 @@ fetch.git = "https://github.com/williamboman/mason-lspconfig.nvim"
 [mason-tool-installer-nvim]
 src.git = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
 fetch.git = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
-[lir-git-status-nvim]
-src.git = "https://github.com/tamago324/lir-git-status.nvim"
-fetch.git = "https://github.com/tamago324/lir-git-status.nvim"
+[oil-nvim]
+src.git = "https://github.com/stevearc/oil.nvim"
+fetch.git = "https://github.com/stevearc/oil.nvim"

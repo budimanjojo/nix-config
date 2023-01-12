@@ -125,10 +125,9 @@ in {
           }
           # System utility
           FTerm-nvim
-          lir-git-status-nvim
           {
-           plugin = vimPlugins.lir-nvim;
-           config = "lua require('plugin-configs._lir')";
+           plugin = vimPlugins.oil-nvim;
+           config = "lua require('plugin-configs._oil')";
           }
           {
             plugin = gitsigns-nvim;

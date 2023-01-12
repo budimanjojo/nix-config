@@ -1,7 +1,6 @@
 {
     "chezmoi-vim": {
         "cargoLocks": null,
-        "date": "2022-11-14",
         "extract": null,
         "name": "chezmoi-vim",
         "passthru": null,
@@ -18,28 +17,8 @@
         },
         "version": "df01e4108be9f2e4092cd753ebfb46d04e6e47ce"
     },
-    "lir-git-status-nvim": {
-        "cargoLocks": null,
-        "date": "2022-08-06",
-        "extract": null,
-        "name": "lir-git-status-nvim",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "rev": "6e15a3ade508522ecc027f059a814ca75a364db7",
-            "sha256": "sha256-+ei/mMBbjKtUWVKW0p+pY5q/99+whSxekfJrtgr5ji4=",
-            "type": "git",
-            "url": "https://github.com/tamago324/lir-git-status.nvim"
-        },
-        "version": "6e15a3ade508522ecc027f059a814ca75a364db7"
-    },
     "mason-lspconfig-nvim": {
         "cargoLocks": null,
-        "date": "2023-01-09",
         "extract": null,
         "name": "mason-lspconfig-nvim",
         "passthru": null,
@@ -58,7 +37,6 @@
     },
     "mason-tool-installer-nvim": {
         "cargoLocks": null,
-        "date": "2022-10-28",
         "extract": null,
         "name": "mason-tool-installer-nvim",
         "passthru": null,
@@ -75,9 +53,26 @@
         },
         "version": "27f61f75a71bb3c2504a17e02b571f79cae43676"
     },
+    "oil-nvim": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "oil-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "c553b5435a78892c2c8f85ddd2cef5d3deb8cab6",
+            "sha256": "sha256-5oIWbdzPUTstW5FIIZTvuwIX6IRTPPdfGDxJ3ultSKo=",
+            "type": "git",
+            "url": "https://github.com/stevearc/oil.nvim"
+        },
+        "version": "c553b5435a78892c2c8f85ddd2cef5d3deb8cab6"
+    },
     "tokyonight-gtk-theme": {
         "cargoLocks": null,
-        "date": "2023-01-11",
         "extract": null,
         "name": "tokyonight-gtk-theme",
         "passthru": null,
@@ -96,7 +91,6 @@
     },
     "tokyonight-icon-theme": {
         "cargoLocks": null,
-        "date": "2023-01-11",
         "extract": null,
         "name": "tokyonight-icon-theme",
         "passthru": null,

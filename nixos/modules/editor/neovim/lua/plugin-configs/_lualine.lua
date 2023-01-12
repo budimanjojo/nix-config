@@ -5,7 +5,7 @@ require('lualine').setup {
     theme = 'tokyonight',
     section_separators = { left = '', right = '' },
     component_separators = '',
-    disabled_filetypes = { 'lir' },
+    disabled_filetypes = { 'oil' },
   },
   sections = {
     lualine_a = {

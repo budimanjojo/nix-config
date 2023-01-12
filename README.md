@@ -66,7 +66,7 @@ These are the plugins I'm using:
 - [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - [mason.nvim](https://github.com/williamboman/mason.nvim)
 - [mason-tool-installer.nvim](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim)
-- [lir.nvim](https://github.com/tamago324/lir.nvim)
+- [oil.nvim](https://github.com/stevearc/oil.nvim)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
 - [nvim-surround](https://github.com/kylechui/nvim-surround)
@@ -252,7 +252,7 @@ If they are not in the table, that means it's using the default Vim keybindings.
 | Normal        | `<Leader>fd`  | Open FzfLua to find lsp typedefs |
 | Normal        | `<Leader>xx`  | Toggle Trouble |
 | Normal        | `<Leader>xr`  | Toggle Trouble to find lsp references |
-| Normal        | `Control+f`   | Toggle lir.nvim file manager |
+| Normal        | `Control+f`   | Toggle oil.nvim file manager |
 | Normal/Term   | `Control+t`   | Toggle floating terminal |
 | Normal        | `<Leader>pp`  | Format buffer with null-ls |
 | Visual        | `<Leader>pp`  | Range format buffer with null-ls |

@@ -141,14 +141,9 @@ packer.startup({
     -- System utility
     use 'numToStr/FTerm.nvim'
     use {
-      'tamago324/lir.nvim',
-      requires = {
-        'nvim-lua/plenary.nvim',
-        'tamago324/lir-git-status.nvim',
-        'kyazdani42/nvim-web-devicons',
-      },
+      'stevearc/oil.nvim',
       config = function ()
-        require('configs._lir')
+        require('configs._oil')
       end
     }
     use {

@@ -97,10 +97,14 @@ keymap.set("n", "<Leader>fd", ":FzfLua lsp_typedefs<CR>")
 keymap.set("n", "<Leader>xx", ":TroubleToggle<CR>")
 keymap.set("n", "<Leader>xr", ":TroubleToggle lsp_references<CR>")
 
--- lir.nvim
+-- oil.nvim
 keymap.set("n", "<C-f>", function()
-  return require("lir.float").toggle(utils.current_path())
-end, { desc = "Toggle Lir filemanager" })
+  if vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(0), "filetype") == "oil" then
+    return require("oil").close()
+  else
+    return require("oil").open_float(utils.current_path())
+  end
+end, { desc = "Toggle Oil filemanager" })
 
 -- null-ls
 if vim.fn.has("nvim-0.8") == 1 then
