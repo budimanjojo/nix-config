@@ -55,10 +55,6 @@
     },
     "oil-nvim": {
         "cargoLocks": null,
-<<<<<<< HEAD
-=======
-        "date": "2023-01-12",
->>>>>>> 536a329a382eff2ff521a643da99b962608bd25e
         "extract": null,
         "name": "oil-nvim",
         "passthru": null,
