@@ -48,6 +48,10 @@
       leaveDotGit = false;
       sha256 = "sha256-kMYYgrRTShd5CplZBBd1/zNNfQYwAFnJe5hwA7/VUcI=";
     };
+<<<<<<< HEAD
+=======
+    date = "2023-01-12";
+>>>>>>> 536a329a382eff2ff521a643da99b962608bd25e
   };
   tokyonight-gtk-theme = {
     pname = "tokyonight-gtk-theme";
