@@ -42,16 +42,16 @@
   };
   oil-nvim = {
     pname = "oil-nvim";
-    version = "e5d6b999baab7772bd2a90542661114acc51d4f9";
+    version = "abfc455f62dac385b0fc816f37c64dffead0bcf3";
     src = fetchgit {
       url = "https://github.com/stevearc/oil.nvim";
-      rev = "e5d6b999baab7772bd2a90542661114acc51d4f9";
+      rev = "abfc455f62dac385b0fc816f37c64dffead0bcf3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-AUwQgn6nWBWF96nPs5LJtzAKn060bVhLtDyxzHNRicc=";
+      sha256 = "sha256-X8GwP57DAQeok3bQBSKkfYkzx0W9WereCCnONodcHQY=";
     };
-    date = "2023-01-12";
+    date = "2023-01-13";
   };
   tokyonight-gtk-theme = {
     pname = "tokyonight-gtk-theme";
