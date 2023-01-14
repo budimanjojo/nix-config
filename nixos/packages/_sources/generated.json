@@ -69,7 +69,7 @@
             "leaveDotGit": false,
             "name": null,
             "rev": "abfc455f62dac385b0fc816f37c64dffead0bcf3",
-            "sha256": " sha256-X8GwP57DAQeok3bQBSKkfYkzx0W9WereCCnONodcHQY=",
+            "sha256": "sha256-X8GwP57DAQeok3bQBSKkfYkzx0W9WereCCnONodcHQY=",
             "type": "git",
             "url": "https://github.com/stevearc/oil.nvim"
         },
