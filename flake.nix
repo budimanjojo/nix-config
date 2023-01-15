@@ -25,6 +25,7 @@
         ...
       }: {
         legacyPackages = import ./nixos/packages { inherit pkgs; };
+        devShells.default = import ./nixos/packages/shell.nix { inherit pkgs; };
       };
 
       flake.nixosConfigurations = {
