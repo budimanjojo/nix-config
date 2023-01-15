@@ -4,6 +4,10 @@ in {
   mkNixosSystem = system: hostname: username:
     lib.nixosSystem {
       inherit system;
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
       modules = [
         {
           _module.args = {
