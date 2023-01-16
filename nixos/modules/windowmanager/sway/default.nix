@@ -143,7 +143,7 @@ in {
             size = 12.0;
           };
           focus = {
-            forceWrapping = true;
+            wrapping = "yes";
             followMouse = true;
             newWindow = "smart";
           };
