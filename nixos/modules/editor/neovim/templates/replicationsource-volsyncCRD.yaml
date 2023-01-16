@@ -6,12 +6,12 @@ spec:
   sourcePVC: 
   trigger:
     schedule: 0 0 * * *
-restic:
-  copyMethod: Snapshot
-  pruneIntervalDays: 10
-  repository: 
-  volumeSnapshotClassName: rook-ceph-block
-  storageClassName: rook-ceph-block
-  retain:
-    daily: 10
-    within: 3d
+  restic:
+    copyMethod: Snapshot
+    pruneIntervalDays: 10
+    repository: 
+    volumeSnapshotClassName: rook-ceph-block
+    storageClassName: rook-ceph-block
+    retain:
+      daily: 10
+      within: 3d
