@@ -59,6 +59,7 @@ in {
 
       home.packages = with pkgs; [
         age
+        envsubst
         fluxcd
         go-task
         jq
