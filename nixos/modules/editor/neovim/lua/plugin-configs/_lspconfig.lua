@@ -221,6 +221,9 @@ lspconfig.yamlls.setup {
         },
         ['https://schemas.budimanjojo.com/kustomization_v1beta2.json'] = {
           'kustomization-fluxCRD.yaml',
+        },
+        ['https://schemas.budimanjojo.com/replicationsource_v1alpha1'] = {
+          'replicationsource-volsyncCRD.yaml'
         }
       }
     }
