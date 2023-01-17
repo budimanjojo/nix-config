@@ -205,63 +205,63 @@ You can override this using your custom `.vimrc.local` file.
 `<Leader>` means you need to press prefix key first.
 If they are not in the table, that means it's using the default Vim keybindings.
 
-| Mode          | Keypress      | Description |
-| :-----------: | :-----------: | :---------- |
-| Normal        | `<Leader>w`   | Save file |
-| Normal        | `<Leader>x`   | Save file and quit |
-| Normal        | `<Leader>qq`  | Quit |
-| Normal        | `<Leader>qa`  | Force quit without saving |
-| Normal        | `<Leader>wq`  | Save file and quit |
-| Normal        | `Y`           | Yank from cursor to end of file |
-| Insert        | `ii`          | Exit Insert mode |
-| Normal        | `K`           | Move Up one paragraph |
-| Normal        | `J`           | Move Down one paragraph |
-| Normal        | `H`           | Move to the first character in line |
-| Normal        | `L`           | Move to the last character in line |
-| Visual        | `J`           | Move selected line up and down |
-| Visual        | `K`           | Move selected line up and down |
-| Normal        | `Control+k`   | Move to the split window above |
-| Normal        | `Control+j`   | Move to the split window below |
-| Normal        | `Control+h`   | Move to the left split window |
-| Normal        | `Control+l`   | Move to the right split window |
-| Normal        | `<Leader>s`   | Open new horizontal split window |
-| Normal        | `<Leader>v`   | Open new vertical split window |
-| Insert        | `Control+k`   | Move cursor Up |
-| Insert        | `Control+j`   | Move cursor Down |
-| Insert        | `Control+h`   | Move cursor Left |
-| Insert        | `Control+l`   | Move cursor Right |
-| Normal        | `<Leader>tn`  | Open new tab |
-| Normal        | `<Leader>td`  | Close tab |
-| Normal        | `<Leader>th`  | Go to previous tab |
-| Normal        | `<Leader>tl`  | Go to next tab |
-| Normal        | `<Leader>te`  | Open new tab with current buffer's path |
-| Normal        | `<Leader>hh`  | Jump back to older cursor position |
-| Normal        | `<Leader>ll`  | Jump forward to newer cursor position |
-| Normal/Visual | `Tab`         | Indent current line or selection |
-| Normal/Visual | `Shift+Tab`   | De-indent current line or selection |
-| Normal        | `<Leader>lr`  | Restart LSP client |
-| Normal        | `<Leader>fz`  | Open FzfLua |
-| Normal        | `<Leader>ff`  | Open FzfLua to find files |
-| Normal        | `<Leader>fg`  | Open FzfLua to live grep |
-| Normal        | `<Leader>fc`  | Open FzfLua to see git commits |
-| Normal        | `<Leader>fb`  | Open FzfLua to see opened buffers |
-| Normal        | `<Leader>fh`  | Open FzfLua to find help |
-| Normal        | `<Leader>fk`  | Open FzfLua to see keymappings |
-| Normal        | `<Leader>fe`  | Open FzfLua to find lsp diagnostics |
-| Normal        | `<Leader>fr`  | Open FzfLua to find lsp references |
-| Normal        | `<Leader>fd`  | Open FzfLua to find lsp typedefs |
-| Normal        | `<Leader>xx`  | Toggle Trouble |
-| Normal        | `<Leader>xr`  | Toggle Trouble to find lsp references |
-| Normal        | `Control+f`   | Toggle oil.nvim file manager |
-| Normal/Term   | `Control+t`   | Toggle floating terminal |
-| Normal        | `<Leader>pp`  | Format buffer with null-ls |
-| Visual        | `<Leader>pp`  | Range format buffer with null-ls |
-| Normal        | `rn`          | Do LSP buffer rename |
-| Normal        | `gd`          | Do LSP buffer get definition |
-| Normal        | `gD`          | Do LSP buffer get declaration |
-| Normal        | `gh`          | Do LSP buffer get hover |
-| Normal        | `gr`          | Do LSP buffer get references |
-| Normal        | `gi`          | Do LSP buffer get implementation |
+| Mode            | Keypress      | Description |
+| :-------------: | :-----------: | :---------- |
+| `Normal`        | `<Leader>w`   | Save file |
+| `Normal`        | `<Leader>x`   | Save file and quit |
+| `Normal`        | `<Leader>qq`  | Quit |
+| `Normal`        | `<Leader>qa`  | Force quit without saving |
+| `Normal`        | `<Leader>wq`  | Save file and quit |
+| `Normal`        | `Y`           | Yank from cursor to end of file |
+| `Insert`        | `ii`          | Exit Insert mode |
+| `Normal`        | `K`           | Move Up one paragraph |
+| `Normal`        | `J`           | Move Down one paragraph |
+| `Normal`        | `H`           | Move to the first character in line |
+| `Normal`        | `L`           | Move to the last character in line |
+| `Visual`        | `J`           | Move selected line up and down |
+| `Visual`        | `K`           | Move selected line up and down |
+| `Normal`        | `Control+k`   | Move to the split window above |
+| `Normal`        | `Control+j`   | Move to the split window below |
+| `Normal`        | `Control+h`   | Move to the left split window |
+| `Normal`        | `Control+l`   | Move to the right split window |
+| `Normal`        | `<Leader>s`   | Open new horizontal split window |
+| `Normal`        | `<Leader>v`   | Open new vertical split window |
+| `Insert`        | `Control+k`   | Move cursor Up |
+| `Insert`        | `Control+j`   | Move cursor Down |
+| `Insert`        | `Control+h`   | Move cursor Left |
+| `Insert`        | `Control+l`   | Move cursor Right |
+| `Normal`        | `<Leader>tn`  | Open new tab |
+| `Normal`        | `<Leader>td`  | Close tab |
+| `Normal`        | `<Leader>th`  | Go to previous tab |
+| `Normal`        | `<Leader>tl`  | Go to next tab |
+| `Normal`        | `<Leader>te`  | Open new tab with current buffer's path |
+| `Normal`        | `<Leader>hh`  | Jump back to older cursor position |
+| `Normal`        | `<Leader>ll`  | Jump forward to newer cursor position |
+| `Normal/Visual` | `Tab`         | Indent current line or selection |
+| `Normal/Visual` | `Shift+Tab`   | De-indent current line or selection |
+| `Normal`        | `<Leader>lr`  | Restart LSP client |
+| `Normal`        | `<Leader>fz`  | Open FzfLua |
+| `Normal`        | `<Leader>ff`  | Open FzfLua to find files |
+| `Normal`        | `<Leader>fg`  | Open FzfLua to live grep |
+| `Normal`        | `<Leader>fc`  | Open FzfLua to see git commits |
+| `Normal`        | `<Leader>fb`  | Open FzfLua to see opened buffers |
+| `Normal`        | `<Leader>fh`  | Open FzfLua to find help |
+| `Normal`        | `<Leader>fk`  | Open FzfLua to see keymappings |
+| `Normal`        | `<Leader>fe`  | Open FzfLua to find lsp diagnostics |
+| `Normal`        | `<Leader>fr`  | Open FzfLua to find lsp references |
+| `Normal`        | `<Leader>fd`  | Open FzfLua to find lsp typedefs |
+| `Normal`        | `<Leader>xx`  | Toggle Trouble |
+| `Normal`        | `<Leader>xr`  | Toggle Trouble to find lsp references |
+| `Normal`        | `Control+f`   | Toggle oil.nvim file manager |
+| `Normal/Term`   | `Control+t`   | Toggle floating terminal |
+| `Normal`        | `<Leader>pp`  | Format buffer with null-ls |
+| `Visual`        | `<Leader>pp`  | Range format buffer with null-ls |
+| `Normal`        | `rn`          | Do LSP buffer rename |
+| `Normal`        | `gd`          | Do LSP buffer get definition |
+| `Normal`        | `gD`          | Do LSP buffer get declaration |
+| `Normal`        | `gh`          | Do LSP buffer get hover |
+| `Normal`        | `gr`          | Do LSP buffer get references |
+| `Normal`        | `gi`          | Do LSP buffer get implementation |
 
 ### Tmux keybindings
 
