@@ -30,12 +30,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e11264c3d198aef24b019e67ac04ac0cf21465ed",
-            "sha256": "sha256-gk3uLEME3pz4jzRgFQpbZsetCke+eUspg1csBd3hing=",
+            "rev": "5b388c0de30f1605671ebfb9a20a620cda50ffce",
+            "sha256": "sha256-261QcSPpGCkRFWfsqhviNJGoDLkbCo5aF9qk25mSAbA=",
             "type": "git",
             "url": "https://github.com/williamboman/mason-lspconfig.nvim"
         },
-        "version": "e11264c3d198aef24b019e67ac04ac0cf21465ed"
+        "version": "5b388c0de30f1605671ebfb9a20a620cda50ffce"
     },
     "mason-tool-installer-nvim": {
         "cargoLocks": null,
