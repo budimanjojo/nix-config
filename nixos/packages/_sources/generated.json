@@ -68,12 +68,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "f5961e731f641206727eaded197e5879694c35f7",
-            "sha256": "sha256-YrfnXPy30YwvqxS4zDE2AWsl8GoUEmw9iVr0u1plnOA=",
+            "rev": "a6884431b0d7adccf9f4756ca543bf175052f742",
+            "sha256": "sha256-KluagDz7RPX4yyhmFhAA0LNIvmMv+a0RDLWhbswwoh8=",
             "type": "git",
             "url": "https://github.com/stevearc/oil.nvim"
         },
-        "version": "f5961e731f641206727eaded197e5879694c35f7"
+        "version": "a6884431b0d7adccf9f4756ca543bf175052f742"
     },
     "tokyonight-gtk-theme": {
         "cargoLocks": null,
