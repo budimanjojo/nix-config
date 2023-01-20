@@ -67,6 +67,7 @@ in {
         kubectl
         kubernetes-helm
         kustomize
+        minio-client
         nodePackages.zx
         sops
         talosctl
