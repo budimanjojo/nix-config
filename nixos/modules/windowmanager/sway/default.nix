@@ -16,6 +16,7 @@ in {
     modules.windowmanager.add-on.nm-applet.enable = true;
     modules.windowmanager.add-on.pasystray.enable = true;
     modules.windowmanager.add-on.rofi.enable = true;
+    modules.windowmanager.add-on.swayidle.enable = true;
     modules.windowmanager.add-on.thunar.enable = true;
     modules.windowmanager.add-on.waybar.enable = true;
     modules.windowmanager.add-on.xdg.enable = true;

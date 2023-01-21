@@ -50,6 +50,7 @@
     ./windowmanager/add-on/picom
     ./windowmanager/add-on/py3status
     ./windowmanager/add-on/rofi
+    ./windowmanager/add-on/swayidle
     ./windowmanager/add-on/thunar
     ./windowmanager/add-on/waybar
     ./windowmanager/add-on/xdg
