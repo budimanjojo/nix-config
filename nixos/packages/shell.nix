@@ -4,5 +4,6 @@ mkShell {
   buildInputs = [
     nvfetcher
     nix-prefetch
+    hydra-check
   ];
 }
