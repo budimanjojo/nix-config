@@ -11,10 +11,11 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
+            "owner": "alker0",
+            "repo": "chezmoi.vim",
             "rev": "df01e4108be9f2e4092cd753ebfb46d04e6e47ce",
             "sha256": "sha256-NjgyC9hRnyq0wP7nYVvKIV+vOperCOLvYWKpam56TUA=",
-            "type": "git",
-            "url": "https://github.com/alker0/chezmoi.vim"
+            "type": "github"
         },
         "version": "df01e4108be9f2e4092cd753ebfb46d04e6e47ce"
     },
@@ -30,10 +31,11 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
+            "owner": "williamboman",
+            "repo": "mason-lspconfig.nvim",
             "rev": "5b388c0de30f1605671ebfb9a20a620cda50ffce",
             "sha256": "sha256-261QcSPpGCkRFWfsqhviNJGoDLkbCo5aF9qk25mSAbA=",
-            "type": "git",
-            "url": "https://github.com/williamboman/mason-lspconfig.nvim"
+            "type": "github"
         },
         "version": "5b388c0de30f1605671ebfb9a20a620cda50ffce"
     },
@@ -49,10 +51,11 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
+            "owner": "WhoIsSethDaniel",
+            "repo": "mason-tool-installer.nvim",
             "rev": "27f61f75a71bb3c2504a17e02b571f79cae43676",
             "sha256": "sha256-3m44aUe54+R+hd3Qp0kW5TeS/6rqyGT6kthpjaVzFX4=",
-            "type": "git",
-            "url": "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
+            "type": "github"
         },
         "version": "27f61f75a71bb3c2504a17e02b571f79cae43676"
     },
@@ -88,10 +91,11 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
+            "owner": "Fausto-Korpsvart",
+            "repo": "Tokyo-Night-GTK-Theme",
             "rev": "f7ae3421ac0d415ca57fb6224e093e12b8a980bb",
             "sha256": "sha256-90V55pRfgiaP1huhD+3456ziJ2EU24iNQHt5Ro+g+M0=",
-            "type": "git",
-            "url": "https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme"
+            "type": "github"
         },
         "version": "f7ae3421ac0d415ca57fb6224e093e12b8a980bb"
     },
@@ -107,10 +111,11 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
+            "owner": "Fausto-Korpsvart",
+            "repo": "Tokyo-Night-GTK-Theme",
             "rev": "f7ae3421ac0d415ca57fb6224e093e12b8a980bb",
             "sha256": "sha256-90V55pRfgiaP1huhD+3456ziJ2EU24iNQHt5Ro+g+M0=",
-            "type": "git",
-            "url": "https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme"
+            "type": "github"
         },
         "version": "f7ae3421ac0d415ca57fb6224e093e12b8a980bb"
     }
