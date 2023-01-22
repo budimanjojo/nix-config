@@ -1,18 +1,18 @@
 [tokyonight-gtk-theme]
 src.git = "https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme"
-fetch.git = "https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme"
+fetch.github = "Fausto-Korpsvart/Tokyo-Night-GTK-Theme"
 [tokyonight-icon-theme]
 src.git = "https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme"
-fetch.git = "https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme"
+fetch.github = "Fausto-Korpsvart/Tokyo-Night-GTK-Theme"
 [chezmoi-vim]
 src.git = "https://github.com/alker0/chezmoi.vim"
-fetch.git = "https://github.com/alker0/chezmoi.vim"
+fetch.github = "alker0/chezmoi.vim"
 [mason-lspconfig-nvim]
 src.git = "https://github.com/williamboman/mason-lspconfig.nvim"
-fetch.git = "https://github.com/williamboman/mason-lspconfig.nvim"
+fetch.github = "williamboman/mason-lspconfig.nvim"
 [mason-tool-installer-nvim]
 src.git = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
-fetch.git = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
+fetch.github = "WhoIsSethDaniel/mason-tool-installer.nvim"
 [oil-nvim]
 src.git = "https://github.com/stevearc/oil.nvim"
-fetch.git = "https://github.com/stevearc/oil.nvim"
+fetch.github = "stevearc/oil.nvim"
