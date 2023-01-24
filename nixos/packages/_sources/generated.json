@@ -73,11 +73,11 @@
             "name": null,
             "owner": "stevearc",
             "repo": "oil.nvim",
-            "rev": "1d548190cf4a032d0354c0bf84d042a618152769",
-            "sha256": "sha256-GCxeLE/pmnk7V96awsdJTvQXrNwfX48Zk6MAVbhXnTk=",
+            "rev": "47a909700d859acda48701913fd02553d1ad9e66",
+            "sha256": "sha256-5OVDLEOb7mp7OK7CRv0LxBh9Ah9i5KV6t3M6EKKIp3Y=",
             "type": "github"
         },
-        "version": "1d548190cf4a032d0354c0bf84d042a618152769"
+        "version": "47a909700d859acda48701913fd02553d1ad9e66"
     },
     "tokyonight-gtk-theme": {
         "cargoLocks": null,
