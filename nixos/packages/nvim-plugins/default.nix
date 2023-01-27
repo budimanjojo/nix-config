@@ -19,6 +19,9 @@ in
   };
   oil-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
     inherit (sourceData.oil-nvim) pname src;
-    version = sourceData.mason-tool-installer-nvim.date;
+    version = sourceData.oil-nvim.date;
+  };
+  luasnip = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    inherit (sourceData.luasnip) pname src version;
   };
 }

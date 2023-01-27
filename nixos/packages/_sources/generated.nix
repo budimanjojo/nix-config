@@ -13,6 +13,17 @@
     });
     date = "2022-11-14";
   };
+  luasnip = {
+    pname = "luasnip";
+    version = "v1.2.1";
+    src = fetchFromGitHub ({
+      owner = "L3MON4D3";
+      repo = "LuaSnip";
+      rev = "v1.2.1";
+      fetchSubmodules = false;
+      sha256 = "sha256-6NJPOu5f5ycu9l53CZB7prVNj61UaVz706tOrk5c860=";
+    });
+  };
   mason-lspconfig-nvim = {
     pname = "mason-lspconfig-nvim";
     version = "422b9745143150e16cd3fe331c74f6737de75e72";

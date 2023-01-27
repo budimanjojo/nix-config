@@ -19,6 +19,26 @@
         },
         "version": "df01e4108be9f2e4092cd753ebfb46d04e6e47ce"
     },
+    "luasnip": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "luasnip",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "L3MON4D3",
+            "repo": "LuaSnip",
+            "rev": "v1.2.1",
+            "sha256": "sha256-6NJPOu5f5ycu9l53CZB7prVNj61UaVz706tOrk5c860=",
+            "type": "github"
+        },
+        "version": "v1.2.1"
+    },
     "mason-lspconfig-nvim": {
         "cargoLocks": null,
         "date": "2023-01-26",

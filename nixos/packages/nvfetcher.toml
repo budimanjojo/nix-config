@@ -16,3 +16,6 @@ fetch.github = "WhoIsSethDaniel/mason-tool-installer.nvim"
 [oil-nvim]
 src.git = "https://github.com/stevearc/oil.nvim"
 fetch.github = "stevearc/oil.nvim"
+[luasnip]
+src.github = "L3MON4D3/LuaSnip"
+fetch.github = "L3MON4D3/LuaSnip"
