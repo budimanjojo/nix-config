@@ -21,7 +21,7 @@
     },
     "mason-lspconfig-nvim": {
         "cargoLocks": null,
-        "date": "2023-01-24",
+        "date": "2023-01-26",
         "extract": null,
         "name": "mason-lspconfig-nvim",
         "passthru": null,
@@ -33,15 +33,15 @@
             "name": null,
             "owner": "williamboman",
             "repo": "mason-lspconfig.nvim",
-            "rev": "c29f9a9f9b01528ca6a44cd14814f5af20778f7a",
-            "sha256": "sha256-TBFtDneamcq9WAlsQCJy22RYrYeXTB81K54GFi6f4/o=",
+            "rev": "422b9745143150e16cd3fe331c74f6737de75e72",
+            "sha256": "sha256-XvnH86yS4yOzKtevEf89XDpna3Tb0be6VamA8j/oukY=",
             "type": "github"
         },
-        "version": "c29f9a9f9b01528ca6a44cd14814f5af20778f7a"
+        "version": "422b9745143150e16cd3fe331c74f6737de75e72"
     },
     "mason-tool-installer-nvim": {
         "cargoLocks": null,
-        "date": "2022-10-28",
+        "date": "2023-01-26",
         "extract": null,
         "name": "mason-tool-installer-nvim",
         "passthru": null,
@@ -53,11 +53,11 @@
             "name": null,
             "owner": "WhoIsSethDaniel",
             "repo": "mason-tool-installer.nvim",
-            "rev": "27f61f75a71bb3c2504a17e02b571f79cae43676",
-            "sha256": "sha256-3m44aUe54+R+hd3Qp0kW5TeS/6rqyGT6kthpjaVzFX4=",
+            "rev": "6ca38efeb0406dea8da6c97f61d6f6ef30ab0576",
+            "sha256": "sha256-4PErcgZHuHPq3BHkXYFqpwRJlj/XZYdt8wqPUis8kCg=",
             "type": "github"
         },
-        "version": "27f61f75a71bb3c2504a17e02b571f79cae43676"
+        "version": "6ca38efeb0406dea8da6c97f61d6f6ef30ab0576"
     },
     "oil-nvim": {
         "cargoLocks": null,

@@ -15,27 +15,27 @@
   };
   mason-lspconfig-nvim = {
     pname = "mason-lspconfig-nvim";
-    version = "c29f9a9f9b01528ca6a44cd14814f5af20778f7a";
+    version = "422b9745143150e16cd3fe331c74f6737de75e72";
     src = fetchFromGitHub ({
       owner = "williamboman";
       repo = "mason-lspconfig.nvim";
-      rev = "c29f9a9f9b01528ca6a44cd14814f5af20778f7a";
+      rev = "422b9745143150e16cd3fe331c74f6737de75e72";
       fetchSubmodules = false;
-      sha256 = "sha256-TBFtDneamcq9WAlsQCJy22RYrYeXTB81K54GFi6f4/o=";
+      sha256 = "sha256-XvnH86yS4yOzKtevEf89XDpna3Tb0be6VamA8j/oukY=";
     });
-    date = "2023-01-24";
+    date = "2023-01-26";
   };
   mason-tool-installer-nvim = {
     pname = "mason-tool-installer-nvim";
-    version = "27f61f75a71bb3c2504a17e02b571f79cae43676";
+    version = "6ca38efeb0406dea8da6c97f61d6f6ef30ab0576";
     src = fetchFromGitHub ({
       owner = "WhoIsSethDaniel";
       repo = "mason-tool-installer.nvim";
-      rev = "27f61f75a71bb3c2504a17e02b571f79cae43676";
+      rev = "6ca38efeb0406dea8da6c97f61d6f6ef30ab0576";
       fetchSubmodules = false;
-      sha256 = "sha256-3m44aUe54+R+hd3Qp0kW5TeS/6rqyGT6kthpjaVzFX4=";
+      sha256 = "sha256-4PErcgZHuHPq3BHkXYFqpwRJlj/XZYdt8wqPUis8kCg=";
     });
-    date = "2022-10-28";
+    date = "2023-01-26";
   };
   oil-nvim = {
     pname = "oil-nvim";
