@@ -1,25 +1,4 @@
-local cmd = vim.cmd
 local api = vim.api
-
--- Load template file from stdpath("config")/templates directory
-local loadTemplate = function()
-  local fpath = vim.fn.expand '%:p'
-  local fname = vim.fn.expand '%:p:t'
-  local tfile = api.nvim_eval('stdpath("config")') .. '/templates/' .. fname
-  if vim.fn.filereadable(vim.fn.expand(tfile)) == 1 and vim.fn.getfsize(fpath) < 1 then
-    vim.b.tfile = tfile
-    cmd([[execute ':0r' b:tfile | normal Gddgg]])
-  end
-end
-
-local loadtemplate = api.nvim_create_augroup('loadtemplate', { clear = true })
-api.nvim_create_autocmd({ 'BufCreate', 'BufNewFile' }, {
-  pattern = '*',
-  callback = function()
-    vim.schedule(loadTemplate)
-  end,
-  group = loadtemplate
-})
 
 -- Disable removing indentation on files when first letter is # except some filetypes
 local disabledeindenthastag = api.nvim_create_augroup('disabledeindenthastag', { clear = true })

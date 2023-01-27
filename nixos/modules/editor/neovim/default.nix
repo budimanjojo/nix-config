@@ -10,7 +10,6 @@ in {
     home.manager = {
       xdg = {
         configFile."nvim/lua".source = ./lua;
-        configFile."nvim/templates".source = ./templates;
         configFile."nvim/snippets".source = ./snippets;
         configFile."nvim/package.json".source = ./package.json;
       };
@@ -30,6 +29,7 @@ in {
         enable = true;
         vimdiffAlias = true;
         withNodeJs = true;
+        extraLuaPackages = luaPkgs: with luaPkgs; [jsregexp];
         extraPackages = [
         ];
         extraConfig = ''
