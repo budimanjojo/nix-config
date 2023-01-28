@@ -126,7 +126,7 @@ in {
           # System utility
           FTerm-nvim
           {
-           plugin = vimPlugins.oil-nvim;
+           plugin = oil-nvim;
            config = "lua require('plugin-configs._oil')";
           }
           {
