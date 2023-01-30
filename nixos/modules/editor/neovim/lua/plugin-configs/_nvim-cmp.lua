@@ -45,7 +45,14 @@ cmp.setup {
         fallback()
       end
     end, { "i", "s" }),
-    ['<C-h>'] = cmp.mapping.confirm {
+    ['<C-h>'] = cmp.mapping(function(fallback)
+      if luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+    ['<C-Space>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
     },
     ['<CR>'] = cmp.mapping.confirm {
