@@ -19,7 +19,7 @@ in {
         }
         inputs.home-manager.nixosModules.home-manager
         inputs.nur.nixosModules.nur
-        inputs.agenix.nixosModule
+        inputs.agenix.nixosModules.default
         # Load the modules
         ../modules
         # Default configuration
