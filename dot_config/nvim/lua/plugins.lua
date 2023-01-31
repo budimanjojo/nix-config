@@ -129,6 +129,13 @@ packer.startup({
         require('hop').setup()
       end
     }
+    use {
+      'ray-x/sad.nvim',
+      requires = { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+      config = function()
+        require('configs.sad-nvim')
+      end
+    }
 
     -- Enhancement
     use {

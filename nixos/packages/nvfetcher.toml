@@ -19,3 +19,6 @@ fetch.github = "stevearc/oil.nvim"
 [luasnip]
 src.github = "L3MON4D3/LuaSnip"
 fetch.github = "L3MON4D3/LuaSnip"
+[sad-nvim]
+src.git = "https://github.com/ray-x/sad.nvim"
+fetch.github = "ray-x/sad.nvim"

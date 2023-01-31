@@ -15,12 +15,15 @@ in {
       };
       home.packages = with pkgs; [
         curl
+        delta
         gnutar
+        fd
         fzf
         git
         go
         gzip
         nil
+        sad
         sumneko-lua-language-server
         unzip
         wget
@@ -45,6 +48,7 @@ in {
           # Appearance
           tokyonight-nvim
           dressing-nvim
+          guihua-lua
           nvim-web-devicons
           {
             plugin = lualine-nvim;
@@ -117,6 +121,10 @@ in {
           {
             plugin = hop-nvim;
             config = "lua require('hop').setup()";
+          }
+          {
+            plugin = sad-nvim;
+            config = "lua require('plugin-configs._sad-nvim')";
           }
           # Enhancement
           {

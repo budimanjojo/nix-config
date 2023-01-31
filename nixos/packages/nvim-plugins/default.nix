@@ -24,4 +24,8 @@ in
   luasnip = pkgs.vimUtils.buildVimPluginFrom2Nix {
     inherit (sourceData.luasnip) pname src version;
   };
+  sad-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    inherit (sourceData.sad-nvim) pname src;
+    version = sourceData.sad-nvim.date;
+  };
 }
