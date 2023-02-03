@@ -3,15 +3,15 @@
 {
   chezmoi-vim = {
     pname = "chezmoi-vim";
-    version = "df01e4108be9f2e4092cd753ebfb46d04e6e47ce";
+    version = "78e6c65620763e10dd41cd642496a726a133f028";
     src = fetchFromGitHub ({
       owner = "alker0";
       repo = "chezmoi.vim";
-      rev = "df01e4108be9f2e4092cd753ebfb46d04e6e47ce";
+      rev = "78e6c65620763e10dd41cd642496a726a133f028";
       fetchSubmodules = false;
-      sha256 = "sha256-NjgyC9hRnyq0wP7nYVvKIV+vOperCOLvYWKpam56TUA=";
+      sha256 = "sha256-6TBvwzjSt+Opff5xi+6Kojb43MC30jf/xGrJuPJ6Fw0=";
     });
-    date = "2022-11-14";
+    date = "2023-02-03";
   };
   luasnip = {
     pname = "luasnip";
