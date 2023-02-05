@@ -11,6 +11,8 @@
     homeage.url = "github:jordanisaacs/homeage";
     homeage.inputs.nixpkgs.follows = "nixpkgs";
     nur.url = "github:nix-community/NUR";
+    talhelper.url = "github:budimanjojo/talhelper";
+    talhelper.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { flake-parts, ... }@inputs:
@@ -24,7 +26,7 @@
         pkgs,
         ...
       }: {
-        legacyPackages = import ./nixos/packages { inherit pkgs; };
+        legacyPackages = import ./nixos/packages { inherit inputs' pkgs; };
         devShells.default = import ./nixos/packages/shell.nix { inherit pkgs; };
       };
 
