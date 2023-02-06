@@ -105,7 +105,7 @@
       "        namespace: flux-system",
       "      interval: 15m",
       "  install:",
-      "    createNameSpace: true",
+      "    createNamespace: true",
       "    remediation:",
       "      retries: 5",
       "  upgrade:",
