@@ -129,18 +129,18 @@
       "    app.kubernetes.io/name: ${1:name}",
       "spec:",
       "  entryPoints:",
-      "    - https",
+      "    - ${2:websecure}",
       "  routes:",
       "    - kind: Rule",
-      "      match: Host(`${2:mydomain.com}`)",
+      "      match: Host(`${3:mydomain.com}`)",
       "      middlewares:",
-      "        - name: ${3:secure-headers}",
+      "        - name: ${4:secure-headers}",
       "      services:",
       "        - name: ${1:name}",
-      "          port: ${4:80}",
-      "          namespace: ${5:default}",
+      "          port: ${5:80}",
+      "          namespace: ${6:default}",
       "      tls:",
-      "        secretName: ${2/[\\.]/-/g}$0"
+      "        secretName: ${3/[\\.]/-/g}$0"
     ]
   },
 
