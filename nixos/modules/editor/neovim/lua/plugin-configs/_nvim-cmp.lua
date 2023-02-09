@@ -45,31 +45,12 @@ cmp.setup {
         fallback()
       end
     end, { "i", "s" }),
-    ['<C-h>'] = cmp.mapping(function(fallback)
-      if luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
-    ['<C-Space>'] = cmp.mapping(function()
-      if luasnip.choice_active() then
-        luasnip.jump(1)
-      else
-        cmp.confirm {
-          behavior = cmp.ConfirmBehavior.Replace
-        }
-      end
-    end),
-    ['<CR>'] = cmp.mapping(function()
-      if luasnip.choice_active() then
-        luasnip.jump(1)
-      else
-        cmp.confirm {
-          behavior = cmp.ConfirmBehavior.Replace
-        }
-      end
-    end),
+    ['<C-h>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+    },
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+    },
   },
   sources = {
     { name = 'nvim_lsp' },
