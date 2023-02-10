@@ -28,4 +28,8 @@ in
     inherit (sourceData.sad-nvim) pname src;
     version = sourceData.sad-nvim.date;
   };
+  k8s-snippets = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    inherit (sourceData.k8s-snippets) pname src;
+    version = sourceData.k8s-snippets.date;
+  };
 }

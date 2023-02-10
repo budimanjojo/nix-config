@@ -94,7 +94,8 @@ packer.startup({
     use {
       'L3MON4D3/LuaSnip',
       requires = {
-        'rafamadriz/friendly-snippets'
+        'rafamadriz/friendly-snippets',
+        'budimanjojo/k8s-snippets'
       },
       module = 'luasnip',
     }

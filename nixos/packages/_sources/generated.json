@@ -19,6 +19,26 @@
         },
         "version": "9b9f0479856f5ce61daa1d5889ff379b18a109a5"
     },
+    "k8s-snippets": {
+        "cargoLocks": null,
+        "date": "2023-02-10",
+        "extract": null,
+        "name": "k8s-snippets",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "budimanjojo",
+            "repo": "k8s-snippets",
+            "rev": "5953e9dbb459081c42cd18fc2aa323be98ae0600",
+            "sha256": "sha256-baQo0aU+ClyVrMDC6jmQO6E3qWohKfqr1DoZNfd/uIg=",
+            "type": "github"
+        },
+        "version": "5953e9dbb459081c42cd18fc2aa323be98ae0600"
+    },
     "luasnip": {
         "cargoLocks": null,
         "date": null,

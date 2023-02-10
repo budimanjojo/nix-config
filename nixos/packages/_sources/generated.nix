@@ -13,6 +13,18 @@
     });
     date = "2023-02-10";
   };
+  k8s-snippets = {
+    pname = "k8s-snippets";
+    version = "5953e9dbb459081c42cd18fc2aa323be98ae0600";
+    src = fetchFromGitHub ({
+      owner = "budimanjojo";
+      repo = "k8s-snippets";
+      rev = "5953e9dbb459081c42cd18fc2aa323be98ae0600";
+      fetchSubmodules = false;
+      sha256 = "sha256-baQo0aU+ClyVrMDC6jmQO6E3qWohKfqr1DoZNfd/uIg=";
+    });
+    date = "2023-02-10";
+  };
   luasnip = {
     pname = "luasnip";
     version = "v1.2.1";

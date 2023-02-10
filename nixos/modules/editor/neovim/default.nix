@@ -103,6 +103,7 @@ in {
           lspkind-nvim
           luasnip
           friendly-snippets
+          k8s-snippets
           {
             plugin = nvim-cmp;
             config = "lua require('plugin-configs._nvim-cmp')";
