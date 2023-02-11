@@ -7,7 +7,27 @@
         cpu = "amd";
         gpu = "nvidia";
         monitors = [ "HDMI-A-1" "DP-1" ];
-        firefoxProfiles = [ "budiman" "lina" ];
+        firefoxProfiles = {
+          "budiman" = {
+            id = 0;
+            name = "budiman";
+            isDefault = true;
+            extensions = with config.nur.repos.rycee.firefox-addons; [
+              bitwarden
+              tridactyl
+              tokyo-night-v2
+            ];
+          };
+          "lina" = {
+            id = 1;
+            name = "lina";
+            isDefault = false;
+            extensions = with config.nur.repos.rycee.firefox-addons; [
+              bitwarden
+              tokyo-night-v2
+            ];
+          };
+        };
         hasBluetooth = true;
         hasSound = true;
       };

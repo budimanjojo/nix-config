@@ -14,8 +14,14 @@ with lib;
       default = [];
     };
     firefoxProfiles = mkOption {
-      type = types.listOf types.str;
-      default = [myConfig.username];
+      type = types.attrs;
+      default = {
+        "" = {
+          id = 0;
+          name = myConfig.username;
+          isDefault = true;
+        };
+      };
     };
     hasBluetooth = mkOption {
       type = types.bool;

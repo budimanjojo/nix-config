@@ -4,7 +4,7 @@
 
 # Default applications
 set $term wezterm
-set $browser firefox
+set $browser ~/.config/sway/rofi-firefox-wrapper.sh
 set $filemanager thunar
 set $launcher rofi
 
