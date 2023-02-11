@@ -56,7 +56,10 @@ in {
       polkit_gnome
       wl-clipboard
       xdg-utils
-    ] ++ [ myPkgs.configure-gtk ];
+    ] ++ [
+      myPkgs.configure-gtk
+      myPkgs.rofi-firefox-wrapper
+    ];
 
     programs.sway.enable = true;
     programs.sway.wrapperFeatures.gtk = true;
@@ -88,7 +91,7 @@ in {
             set $alt Mod1
             # Default applications
             set $terminal wezterm
-            set $browser firefox -P
+            set $browser rofi-firefox-wrapper
             set $filemanager thunar
             # Mode string to show on bar
             set $resize Resize: (h/Left) width-, (j/Down) height-, (k/Up) height+, (l/Right) width+

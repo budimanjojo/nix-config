@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, config, myPkgs, ... }:
 with lib;
 let 
   cfg = config.modules.windowmanager.i3;
@@ -62,6 +62,8 @@ in {
           }))
           xdg-utils
           xfce.xfce4-power-manager
+        ] ++ [
+          myPkgs.rofi-firefox-wrapper
         ];
       };
     };
@@ -82,7 +84,7 @@ in {
           set $super Mod4
           set $alt Mod1
           # default applications
-          set $browser firefox -P
+          set $browser rofi-firefox-wrapper
           set $filemanager thunar
           set $terminal alacritty
           # mode string to show on bar
