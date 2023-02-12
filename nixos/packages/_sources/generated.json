@@ -33,11 +33,11 @@
             "name": null,
             "owner": "budimanjojo",
             "repo": "k8s-snippets",
-            "rev": "f35c615d3bc10d4339d41c6e69bbcb7d9c2a906d",
-            "sha256": "sha256-VVazsAf6MGoevncnsH9AiqOHBMyZRS1LgXWDAWb1QCA=",
+            "rev": "fb8cafc75cee1b4182f2078802d309bb0882d7cf",
+            "sha256": "sha256-VmVya0OpX9mWyBE1+KfqDMkFuVUb4hWmdkoZwNH4T2Y=",
             "type": "github"
         },
-        "version": "f35c615d3bc10d4339d41c6e69bbcb7d9c2a906d"
+        "version": "fb8cafc75cee1b4182f2078802d309bb0882d7cf"
     },
     "luasnip": {
         "cargoLocks": null,
