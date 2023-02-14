@@ -11,10 +11,6 @@
           "NeogitCommitMessage"
         ],
         "path": "./snippets/gitcommit.json"
-      },
-      {
-        "language": "yaml",
-        "path": "./snippets/kubernetes.json"
       }
     ]
   }
