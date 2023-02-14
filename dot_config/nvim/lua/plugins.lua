@@ -93,6 +93,7 @@ packer.startup({
     use { 'onsails/lspkind-nvim', module = 'lspkind' }
     use {
       'L3MON4D3/LuaSnip',
+      run = 'make install_jsregexp',
       requires = {
         'rafamadriz/friendly-snippets',
         'budimanjojo/k8s-snippets'
