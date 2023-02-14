@@ -13,6 +13,13 @@ in {
         extraConfig = {
           commit = {
             template = "${./gitcommit-message}";
+            gpgSign = true;
+          };
+          user = {
+            signingKey = "/home/${config.modules.device.username}/.ssh/id_rsa.pub";
+          };
+          gpg = {
+            format = "ssh";
           };
         };
       };

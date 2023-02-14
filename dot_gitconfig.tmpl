@@ -1,8 +1,12 @@
 [user]
   email = budimanjojo@gmail.com
   name = budimanjojo
+  signingKey = {{ .chezmoi.homeDir }}/.gitcommit-message
 [commit]
   template = {{ .chezmoi.homeDir }}/.gitcommit-message
+  gpgSign = true
+[gpg]
+  format = ssh
 {{- if (eq .chezmoi.hostname "ansible-server") }}
 [status]
   submodulesummary = true
