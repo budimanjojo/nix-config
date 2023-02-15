@@ -15,6 +15,11 @@ in {
             inherit inputs system;
             myConfig = { hostname = hostname; username = username; };
             myPkgs = inputs.self.legacyPackages.${system};
+            pkgs-stable = import inputs.nixpkgs-stable {
+              inherit system;
+              config.allowUnfree = true;
+              overlays = [ (import ../packages/overlay.nix {inherit inputs system;}) ];
+            };
           };
         }
         inputs.home-manager.nixosModules.home-manager
