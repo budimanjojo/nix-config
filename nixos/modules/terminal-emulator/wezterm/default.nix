@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, config, pkgs-stable, ... }:
 with lib;
 let 
   cfg = config.modules.terminal-emulator.wezterm;
@@ -8,6 +8,7 @@ in {
   config = mkIf cfg.enable {
     home.manager.programs.wezterm = {
       enable = true;
+      package = pkgs-stable.wezterm;
       extraConfig = ''
         local wezterm = require 'wezterm'
         local act = wezterm.action
