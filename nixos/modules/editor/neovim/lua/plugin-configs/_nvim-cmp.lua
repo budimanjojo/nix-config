@@ -58,6 +58,14 @@ cmp.setup {
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
     },
+    ['<BS>'] = cmp.mapping(function(fallback)
+      if luasnip.in_snippet() then
+        fallback()
+        vim.api.nvim_input('i')
+      else
+        fallback()
+      end
+    end, { "s" }),
   },
   sources = {
     { name = 'nvim_lsp' },
