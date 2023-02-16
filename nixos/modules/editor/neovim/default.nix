@@ -11,7 +11,6 @@ in {
       xdg = {
         configFile."nvim/lua".source = ./lua;
         configFile."nvim/snippets".source = ./snippets;
-        configFile."nvim/package.json".source = ./package.json;
       };
       home.packages = with pkgs; [
         curl
