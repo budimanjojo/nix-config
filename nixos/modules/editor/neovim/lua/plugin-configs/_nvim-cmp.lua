@@ -3,7 +3,7 @@ local luasnip = require('luasnip')
 local lspkind = require('lspkind')
 
 vim.o.completeopt = 'menu,menuone,noselect'
-require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load({exclude = {'gitcommit'}})
 require("luasnip.loaders.from_lua").lazy_load({paths = "./snippets"})
 
 local has_words_before = function()
