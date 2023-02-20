@@ -156,6 +156,7 @@ lspconfig.lua_ls.setup {
       workspace = {
         library = vim.api.nvim_get_runtime_file('', true),
         preloadFileSize = 200,
+        checkThirdParty = false,
       },
       telemetry = {
         enable = false,
