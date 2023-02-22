@@ -46,6 +46,7 @@
 
       program.adb.enable = true;
       program.discord.enable = true;
+      program.hugo.enable = true;
       program.gaming.enable = true;
       program.gui-utils.enable = true;
       program.media.enable = true;

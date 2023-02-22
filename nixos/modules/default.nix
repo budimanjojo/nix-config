@@ -21,6 +21,7 @@
     ./program/adb
     ./program/default
     ./program/discord
+    ./program/hugo
     ./program/nextcloud
     ./program/obs-studio
     ./program/syncthing
