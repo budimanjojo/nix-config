@@ -7,6 +7,7 @@ in {
   options.modules.homelab.kubernetes = { enable = mkEnableOption "kubernetes"; };
   config = mkIf cfg.enable {
     modules.shell.git.enable = true;
+    modules.shell.nix-direnv.enable = true;
 
     age = {
       identityPaths = [ "${config.home.manager.home.homeDirectory}/.config/sops/age/keys.txt" ];

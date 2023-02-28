@@ -29,6 +29,7 @@
 
     ./shell/fish
     ./shell/git
+    ./shell/nix-direnv
     ./shell/starship
 
     ./system/cpu
