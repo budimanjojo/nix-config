@@ -3,15 +3,15 @@
 {
   chezmoi-vim = {
     pname = "chezmoi-vim";
-    version = "9b9f0479856f5ce61daa1d5889ff379b18a109a5";
+    version = "062717b6d67331856ecf75fd36eb0a7db4fbea0b";
     src = fetchFromGitHub ({
       owner = "alker0";
       repo = "chezmoi.vim";
-      rev = "9b9f0479856f5ce61daa1d5889ff379b18a109a5";
+      rev = "062717b6d67331856ecf75fd36eb0a7db4fbea0b";
       fetchSubmodules = false;
-      sha256 = "sha256-Cti0Clg/rPbO+tEWfdY+q3cCAwnB3l7MFRteSmrfigQ=";
+      sha256 = "sha256-tFoqnwPzwsIgun/fQHPGLQ7hdd2t8p68GcMpLwsBamc=";
     });
-    date = "2023-02-10";
+    date = "2023-03-01";
   };
   k8s-snippets = {
     pname = "k8s-snippets";
