@@ -56,8 +56,6 @@ in {
         };
       };
 
-      programs.direnv.enable = true;
-
       home.packages = with pkgs; [
         age
         envsubst
