@@ -17,6 +17,7 @@ in {
             "$directory"
             "$git_branch"
             "$git_status"
+            "$\{custom.direnv\}"
             "$fill"
             "$python"
             "$status"
@@ -97,6 +98,13 @@ in {
             success_symbol = "[](green)";
             error_symbol = "[](green)";
             vicmd_symbol = "[](purple)";
+          };
+
+          custom.direnv = {
+            format = "[$symbol]($style)";
+            symbol = "  ";
+            style = "blue";
+            when = "env | grep -E '^DIRENV_FILE='";
           };
         };
       };
