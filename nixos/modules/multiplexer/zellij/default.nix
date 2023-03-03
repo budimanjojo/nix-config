@@ -7,7 +7,6 @@ in {
   config = mkIf cfg.enable {
     home.manager = {
       programs.zellij.enable = true;
-      programs.zellij.package = pkgs-stable.zellij;
       xdg.configFile."zellij".source = ./configs;
       programs.fish.interactiveShellInit = ''
         if status is-interactive; and type -q zellij
