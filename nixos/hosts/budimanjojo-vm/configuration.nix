@@ -38,6 +38,7 @@
       shell.git.enable = true;
 
       # windowmanager.i3.enable = true;
+      # windowmanager.hyprland.enable = true;
       windowmanager.sway.enable = true;
     };
 

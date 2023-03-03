@@ -25,6 +25,7 @@ in {
         inputs.home-manager.nixosModules.home-manager
         inputs.nur.nixosModules.nur
         inputs.agenix.nixosModules.default
+        inputs.hyprland.nixosModules.default
         # Load the modules
         ../modules
         # Default configuration

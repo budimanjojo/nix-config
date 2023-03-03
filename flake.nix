@@ -14,6 +14,7 @@
     nur.url = "github:nix-community/NUR";
     talhelper.url = "github:budimanjojo/talhelper";
     talhelper.inputs.nixpkgs.follows = "nixpkgs";
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = { flake-parts, ... }@inputs:

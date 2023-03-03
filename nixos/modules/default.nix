@@ -41,6 +41,7 @@
     ./terminal-emulator/kitty
     ./terminal-emulator/wezterm
 
+    ./windowmanager/hyprland
     ./windowmanager/i3
     ./windowmanager/sway
     ./windowmanager/add-on/blueman-applet
