@@ -13,6 +13,7 @@
     ./editor/geany
     ./editor/neovim
 
+    ./homelab/diy-keyboard
     ./homelab/kubernetes
 
     ./multiplexer/tmux

@@ -18,6 +18,7 @@
       editor.neovim.enable = true;
       editor.geany.enable = true;
 
+      # homelab.diy-keyboard.enable = true;
       homelab.kubernetes.enable = true;
 
       # multiplexer.tmux.enable = true;
