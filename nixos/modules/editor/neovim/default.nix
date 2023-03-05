@@ -13,6 +13,7 @@ in {
         configFile."nvim/snippets".source = ./snippets;
       };
       home.packages = with pkgs; [
+        clang-tools
         curl
         delta
         gnutar

@@ -42,7 +42,7 @@ require('mason-tool-installer').setup {
   run_on_start = true
 }
 
-local function get_client_capabilities()
+local function get_client_capabilities(isClangd)
   local capabilities = vim.lsp.protocol.make_client_capabilities()
 
   capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
@@ -61,11 +61,16 @@ local function get_client_capabilities()
     },
   }
 
+  if isClangd then
+    capabilities.offsetEncoding = "utf-8"
+  end
+
   return capabilities
 end
 
 local lspconfig = require('lspconfig')
-local capabilities = get_client_capabilities()
+local capabilities = get_client_capabilities(false)
+local clangd_capabilities = get_client_capabilities(true)
 local on_attach = function(_, bufnr)
   require 'lsp_signature'.on_attach()
   local keymap = vim.keymap
@@ -88,6 +93,12 @@ lspconfig.ansiblels.setup {
 -- bashls
 lspconfig.bashls.setup {
   capabilities = capabilities,
+  on_attach = on_attach,
+}
+
+-- clangd
+lspconfig.clangd.setup {
+  capabilities = clangd_capabilities,
   on_attach = on_attach,
 }
 
