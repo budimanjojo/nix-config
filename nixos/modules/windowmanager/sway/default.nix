@@ -155,6 +155,7 @@ in {
             # Enable numlock on boot
             # Temporary fix for Firefox crashing on reload (https://bugzilla.mozilla.org/show_bug.cgi?id=1652820)
             "9494:26:CM_Storm_Keyboard_--_QuickFire_XT" = { xkb_numlock = "enable"; };
+            "64562:647:JosefAdamcik_Sofle_Consumer_Control" = { xkb_numlock = "enable"; };
           };
           gaps.inner = 10;
           bars = [];
