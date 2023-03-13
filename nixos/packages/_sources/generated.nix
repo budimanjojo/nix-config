@@ -74,15 +74,15 @@
   };
   sad-nvim = {
     pname = "sad-nvim";
-    version = "4cd87acbe4d9106ff2a42c4cd850dc5313bdc696";
+    version = "869c7f3ca3dcd28fd78023db6a7e1bf8af0f4714";
     src = fetchFromGitHub ({
       owner = "ray-x";
       repo = "sad.nvim";
-      rev = "4cd87acbe4d9106ff2a42c4cd850dc5313bdc696";
+      rev = "869c7f3ca3dcd28fd78023db6a7e1bf8af0f4714";
       fetchSubmodules = false;
-      sha256 = "sha256-HijZK6xRx8pTvWlmtXHC50GAH8AHbsAn0yThYRT6cOQ=";
+      sha256 = "sha256-uwXldYA7JdZHqoB4qfCnZcQW9YBjlRWmiz8mKb9jHuI=";
     });
-    date = "2023-02-21";
+    date = "2023-03-13";
   };
   tokyonight-gtk-theme = {
     pname = "tokyonight-gtk-theme";
