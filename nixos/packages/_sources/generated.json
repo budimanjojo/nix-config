@@ -121,7 +121,7 @@
     },
     "sad-nvim": {
         "cargoLocks": null,
-        "date": "2023-02-21",
+        "date": "2023-03-13",
         "extract": null,
         "name": "sad-nvim",
         "passthru": null,
@@ -133,11 +133,11 @@
             "name": null,
             "owner": "ray-x",
             "repo": "sad.nvim",
-            "rev": "4cd87acbe4d9106ff2a42c4cd850dc5313bdc696",
-            "sha256": "sha256-HijZK6xRx8pTvWlmtXHC50GAH8AHbsAn0yThYRT6cOQ=",
+            "rev": "869c7f3ca3dcd28fd78023db6a7e1bf8af0f4714",
+            "sha256": "sha256-uwXldYA7JdZHqoB4qfCnZcQW9YBjlRWmiz8mKb9jHuI=",
             "type": "github"
         },
-        "version": "4cd87acbe4d9106ff2a42c4cd850dc5313bdc696"
+        "version": "869c7f3ca3dcd28fd78023db6a7e1bf8af0f4714"
     },
     "tokyonight-gtk-theme": {
         "cargoLocks": null,
