@@ -23,6 +23,7 @@
     ./program/default
     ./program/discord
     ./program/hugo
+    ./program/libreoffice
     ./program/nextcloud
     ./program/obs-studio
     ./program/syncthing

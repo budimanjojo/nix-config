@@ -29,6 +29,7 @@
       # program.hugo.enable = true;
       # program.gaming.enable = true;
       program.gui-utils.enable = true;
+      # program.libreoffice.enable = true;
       # program.media.enable = true;
       program.nextcloud.enable = true;
       # program.obs-studio.enable = true;
