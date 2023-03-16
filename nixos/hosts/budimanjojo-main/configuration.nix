@@ -6,7 +6,10 @@
       device = {
         cpu = "amd";
         gpu = "nvidia";
-        monitors = [ "HDMI-A-1" "DP-1" ];
+        monitors = [
+          { name = "HDMI-A-1"; width = "1920"; height = "1080"; }
+          { name = "DP-1"; width = "1920"; height = "1080"; }
+        ];
         firefoxProfiles = {
           "budiman" = {
             id = 0;

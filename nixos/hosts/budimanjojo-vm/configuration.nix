@@ -6,7 +6,9 @@
       device = {
         cpu = "vm";
         gpu = "vm";
-        monitors = [ "Virtual-1" ];
+        monitors = [
+          { name = "Virtual-1"; width = "1280"; height = "800"; }
+        ];
         hasBluetooth = false;
         hasSound = false;
       };

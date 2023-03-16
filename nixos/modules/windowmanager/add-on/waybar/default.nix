@@ -13,7 +13,7 @@ in {
       package = mkIf config.modules.windowmanager.hyprland.enable inputs.hyprland.packages.${system}.waybar-hyprland;
       settings = forEach device.monitors (monitor: mapAttrs (n: v: v)
         {
-          "output" = monitor;
+          "output" = monitor.name;
           "layer" = "top";
           "position" = "top";
           "modules-center" = [

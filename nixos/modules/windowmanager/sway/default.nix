@@ -82,8 +82,10 @@ in {
         package = null;
         extraConfigEarly =
           let
-            mon1 = elemAt device.monitors 0;
-            mon2 = if length device.monitors >= 2 then elemAt device.monitors 1 else elemAt device.monitors 0;
+            mon1 = getAttr "name" (elemAt device.monitors 0);
+            mon1width = getAttr "width" (elemAt device.monitors 0);
+            mon2 = if length device.monitors >= 2 then getAttr "name" (elemAt device.monitors 1) else getAttr "name" (elemAt device.monitors 0);
+            mon2width = if length device.monitors >= 2 then getAttr "width" (elemAt device.monitors 1) else getAttr "width" (elemAt device.monitors 0);
           in ''
             # VARIABLES ARE SET HERE
             # Modifier default to Super key. Alt key for window navigating
@@ -119,6 +121,9 @@ in {
             # Monitor placement
             set $monleft ${mon1}
             set $monright ${mon2}
+            # Monitor width
+            set $monleftwidth ${mon1width}
+            set $monrightwidth ${mon2width}
             # Tokyonight Night colors
             set $border-color #A9B1D6
             set $bg-color #1A1B26

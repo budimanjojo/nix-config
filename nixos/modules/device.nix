@@ -10,7 +10,7 @@ with lib;
       type = types.enum ["amd" "intel" "nvidia" "vm"];
     };
     monitors = mkOption {
-      type = types.listOf types.str;
+      type = with types; listOf (attrsOf (either str bool));
       default = [];
     };
     firefoxProfiles = mkOption {
