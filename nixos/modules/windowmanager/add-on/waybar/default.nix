@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, config, inputs, system, ... }:
 with lib;
 let
   cfg = config.modules.windowmanager.add-on.waybar;
@@ -10,28 +10,15 @@ in {
     home.manager.programs.waybar = {
       enable = true;
       systemd.enable = true;
+      package = mkIf config.modules.windowmanager.hyprland.enable inputs.hyprland.packages.${system}.waybar-hyprland;
       settings = forEach device.monitors (monitor: mapAttrs (n: v: v)
         {
           "output" = monitor;
           "layer" = "top";
           "position" = "top";
-          "modules-left" = [
-            "sway/workspaces"
-            "sway/mode"
-          ];
-
           "modules-center" = [
             "clock"
           ];
-
-          "sway/workspaces" = {
-            "format" = "{value}";
-          };
-
-          "sway/mode" = {
-            "format" = " {}";
-            "max-length" = 100;
-          };
 
           "network#down" = {
             "format" = " {bandwidthDownBits}";
@@ -80,7 +67,36 @@ in {
             "custom/uname"
             "tray"
           ] else [ ]);
-        }
+        } //
+        (if config.modules.windowmanager.sway.enable then {
+          "modules-left" = [
+            "sway/workspaces"
+            "sway/mode"
+          ];
+          "sway/workspaces" = {
+            "format" = "{value}";
+          };
+          "sway/mode" = {
+            "format" = " {}";
+            "max-length" = 100;
+          };
+        } else if config.modules.windowmanager.hyprland.enable then {
+          "modules-left" = [
+            "wlr/workspaces"
+            "hyprland/submap"
+          ];
+          "wlr/workspaces" = {
+            "format" = "{name}";
+            "on-click" = "activate";
+            "on-scroll-up" = "hyprctl dispatch workspace e+1";
+            "on-scroll-down" = "hyprctl dispatch workspace e-1";
+          };
+          "hyprland/submap" = {
+            "format" = " {}";
+            "max-length" = 100;
+          };
+        } else {
+        })
       );
 
       style = ''
