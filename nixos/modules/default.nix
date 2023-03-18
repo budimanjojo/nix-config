@@ -53,6 +53,7 @@
     ./windowmanager/add-on/nm-applet
     ./windowmanager/add-on/pasystray
     ./windowmanager/add-on/picom
+    ./windowmanager/add-on/polkit-gnome
     ./windowmanager/add-on/py3status
     ./windowmanager/add-on/rofi
     ./windowmanager/add-on/swayidle
