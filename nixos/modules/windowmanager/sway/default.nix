@@ -15,6 +15,7 @@ in {
     modules.windowmanager.add-on.gtk-theme.enable = true;
     modules.windowmanager.add-on.nm-applet.enable = true;
     modules.windowmanager.add-on.pasystray.enable = true;
+    modules.windowmanager.add-on.polkit-gnome.enable = true;
     modules.windowmanager.add-on.rofi.enable = true;
     modules.windowmanager.add-on.swayidle.enable = true;
     modules.windowmanager.add-on.thunar.enable = true;
@@ -53,7 +54,6 @@ in {
       libappindicator-gtk3
       libappindicator-gtk2
       libappindicator
-      polkit_gnome
       wl-clipboard
       xdg-utils
     ] ++ [
@@ -71,7 +71,6 @@ in {
       extraPortals = [ pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk ];
     };
 
-    security.polkit.enable = true;
     networking.networkmanager.enable = true;
     programs.dconf.enable = true;
     programs.xwayland.enable = true;

@@ -13,6 +13,7 @@ in {
     modules.windowmanager.add-on.nm-applet.enable = true;
     modules.windowmanager.add-on.rofi.enable = true;
     modules.windowmanager.add-on.pasystray.enable = true;
+    modules.windowmanager.add-on.polkit-gnome.enable = true;
     modules.windowmanager.add-on.picom.enable = true;
     modules.windowmanager.add-on.py3status.enable = true;
     modules.windowmanager.add-on.thunar.enable = true;
@@ -54,7 +55,6 @@ in {
           feh
           numlockx
           picom
-          polkit_gnome
           rofi
           scrot
           (python3Packages.py3status.overrideAttrs (oldAttrs: {
@@ -69,7 +69,6 @@ in {
     };
     networking.networkmanager.enable = true;
     programs.dconf.enable = true;
-    security.polkit.enable = true;
 
     home.manager = {
       xsession.windowManager.i3 = {
