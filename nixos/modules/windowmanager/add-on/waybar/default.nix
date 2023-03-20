@@ -135,6 +135,10 @@ in {
             color: #7AA2F7;
         }
 
+        #workspaces button.active {
+            color: #7AA2F7;
+        }
+
         #workspaces button.urgent {
             color: #F7768E;
         }
