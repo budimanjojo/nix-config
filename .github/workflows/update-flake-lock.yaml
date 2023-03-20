@@ -38,5 +38,5 @@ jobs:
         uses: peter-evans/enable-pull-request-automerge@v2
         with:
           token: ${{ steps.generate-token.outputs.token }}
-          pull-request-number: ${{ steps.update-flake-lock.outputs.create-pr.pull-request-number }}
+          pull-request-number: ${{ steps.update-flake-lock.outputs.pull-request-number }}
           merge-method: squash
