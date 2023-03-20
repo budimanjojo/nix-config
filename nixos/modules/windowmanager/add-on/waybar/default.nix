@@ -88,8 +88,8 @@ in {
           "wlr/workspaces" = {
             "format" = "{name}";
             "on-click" = "activate";
-            "on-scroll-up" = "hyprctl dispatch workspace e+1";
-            "on-scroll-down" = "hyprctl dispatch workspace e-1";
+            "on-scroll-up" = "${inputs.hyprland.packages.${system}.hyprland}/bin/hyprctl dispatch workspace e+1";
+            "on-scroll-down" = "${inputs.hyprland.packages.${system}.hyprland}/bin/hyprctl dispatch workspace e-1";
           };
           "hyprland/submap" = {
             "format" = " {}";
