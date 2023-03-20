@@ -25,6 +25,7 @@ jobs:
           app_id: ${{ secrets.BOT_APP_ID }}
           private_key: ${{ secrets.BOT_APP_PRIVATE_KEY }}
       - uses: DeterminateSystems/update-flake-lock@v17
+        id: update-flake-lock
         with:
           token: ${{ steps.generate-token.outputs.token }}
           pr-title: "chore(deps): lock file maintenance"
@@ -37,5 +38,5 @@ jobs:
         uses: peter-evans/enable-pull-request-automerge@v2
         with:
           token: ${{ steps.generate-token.outputs.token }}
-          pull-request-number: ${{ steps.create-pr.outputs.pull-request-number }}
+          pull-request-number: ${{ steps.update-flake-lock.outputs.create-pr.pull-request-number }}
           merge-method: squash
