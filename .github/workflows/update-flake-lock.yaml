@@ -1,0 +1,41 @@
+name: Update flake.lock
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: 0 2 * * *
+  push:
+    paths:
+      - flake.nix
+
+jobs:
+  update-flake-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v20
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+          extra_nix_config: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+      - name: Generate token
+        uses: tibdex/github-app-token@v1
+        id: generate-token
+        with:
+          app_id: ${{ secrets.BOT_APP_ID }}
+          private_key: ${{ secrets.BOT_APP_PRIVATE_KEY }}
+      - uses: DeterminateSystems/update-flake-lock@v17
+        id: update-flake-lock
+        with:
+          token: ${{ steps.generate-token.outputs.token }}
+          pr-title: "chore(deps): lock file maintenance"
+          git-author-name: budimanjojo-bot
+          git-author-email: 111944664+budimanjojo-bot[bot]@users.noreply.github.com
+          git-committer-name: budimanjojo-bot
+          git-committer-email: 111944664+budimanjojo-bot[bot]@users.noreply.github.com
+      - name: Automerge
+        uses: peter-evans/enable-pull-request-automerge@v2
+        with:
+          token: ${{ steps.generate-token.outputs.token }}
+          pull-request-number: ${{ steps.update-flake-lock.outputs.pull-request-number }}
+          merge-method: squash
