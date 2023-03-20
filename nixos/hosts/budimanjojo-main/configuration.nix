@@ -63,8 +63,9 @@
       shell.fish.enable = true;
       shell.git.enable = true;
 
+      windowmanager.hyprland.enable = true;
       # windowmanager.i3.enable = true;
-      windowmanager.sway.enable = true;
+      # windowmanager.sway.enable = true;
     };
 
     boot = {
