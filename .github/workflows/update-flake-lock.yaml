@@ -34,7 +34,6 @@ jobs:
           git-committer-name: budimanjojo-bot
           git-committer-email: 111944664+budimanjojo-bot[bot]@users.noreply.github.com
       - name: Automerge
-        if: steps.update-flake-lock.create-pr.outputs.pull-request-operation == 'created'
         uses: peter-evans/enable-pull-request-automerge@v2
         with:
           token: ${{ steps.generate-token.outputs.token }}
