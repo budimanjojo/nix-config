@@ -28,7 +28,8 @@ jobs:
         id: update-flake-lock
         with:
           token: ${{ steps.generate-token.outputs.token }}
-          pr-title: "chore(deps): lock file maintenance"
+          pr-title: "chore(deps): flake.lock update"
+          commit-msg: "chore(deps): flake lock update"
           git-author-name: budimanjojo-bot
           git-author-email: 111944664+budimanjojo-bot[bot]@users.noreply.github.com
           git-committer-name: budimanjojo-bot
