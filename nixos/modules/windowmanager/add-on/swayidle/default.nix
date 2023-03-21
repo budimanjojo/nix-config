@@ -17,6 +17,7 @@ in {
           resumeCommand = "${pkgs.sway}/bin/swaymsg \"output * dpms on\"";
         }
       ];
+      systemdTarget = mkIf config.modules.windowmanager.hyprland.enable "hyprland-session.target";
     };
   };
 }
