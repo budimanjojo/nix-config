@@ -1,4 +1,4 @@
-{ pkgs, lib, config, myPkgs, inputs, ... }:
+{ pkgs, lib, config, myPkgs, inputs, system, ... }:
 with lib;
 let 
   cfg = config.modules.windowmanager.hyprland;
@@ -36,13 +36,14 @@ in {
       }
     ];
 
-    services.xserver = {
+    services.greetd = {
       enable = true;
-      displayManager = {
-        autoLogin.enable = true;
-        defaultSession = "hyprland";
-        sddm = {
-          enable = true;
+      settings = {
+        initial_session = {
+          command = "${inputs.hyprland.packages.${system}.hyprland}/bin/Hyprland";
+        };
+        default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd ${inputs.hyprland.packages.${system}.hyprland}/bin/Hyprland";
         };
       };
     };
