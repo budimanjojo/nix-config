@@ -7,193 +7,198 @@ in {
   options.modules.windowmanager.add-on.waybar = { enable = mkEnableOption "waybar"; };
 
   config = mkIf cfg.enable {
-    home.manager.programs.waybar = {
-      enable = true;
-      systemd.enable = true;
-      package = mkIf config.modules.windowmanager.hyprland.enable inputs.hyprland.packages.${system}.waybar-hyprland;
-      settings = forEach device.monitors (monitor: mapAttrs (n: v: v)
-        {
-          "output" = monitor.name;
-          "layer" = "top";
-          "position" = "top";
-          "modules-center" = [
-            "clock"
-          ];
+    home.manager = {
+      systemd.user.services.waybar.Service.Environment = mkIf config.modules.windowmanager.hyprland.enable
+        "PATH=/run/wrappers/bin:${inputs.hyprland.packages.${system}.hyprland}/bin";
 
-          "network#down" = {
-            "format" = " {bandwidthDownBits}";
-            "tooltip-format" = "{ifname} {ipaddr}";
-            "interval" = 1;
-          };
+      programs.waybar = {
+        enable = true;
+        systemd.enable = true;
+        package = mkIf config.modules.windowmanager.hyprland.enable inputs.hyprland.packages.${system}.waybar-hyprland;
+        settings = forEach device.monitors (monitor: mapAttrs (n: v: v)
+          {
+            "output" = monitor.name;
+            "layer" = "top";
+            "position" = "top";
+            "modules-center" = [
+              "clock"
+            ];
 
-          "network#up" = {
-            "format" = " {bandwidthUpBits}";
-            "tooltip-format" = "{ifname} {ipaddr}";
-            "interval" = 1;
-          };
+            "network#down" = {
+              "format" = " {bandwidthDownBits}";
+              "tooltip-format" = "{ifname} {ipaddr}";
+              "interval" = 1;
+            };
 
-          "disk#home" = {
-            "format" = " {used}";
-            "interval" = 30;
-            "path" = "/home/budiman";
-          };
+            "network#up" = {
+              "format" = " {bandwidthUpBits}";
+              "tooltip-format" = "{ifname} {ipaddr}";
+              "interval" = 1;
+            };
 
-          "disk#root" = {
-            "format" = " {used}";
-            "interval" = 30;
-            "path" = "/";
-          };
+            "disk#home" = {
+              "format" = " {used}";
+              "interval" = 30;
+              "path" = "/home/budiman";
+            };
 
-          "custom/uname" = {
-            "format" = " {}";
-            "exec" = "${pkgs.coreutils-full}/bin/uname -r";
-            "tooltip" = false;
-          };
+            "disk#root" = {
+              "format" = " {used}";
+              "interval" = 30;
+              "path" = "/";
+            };
 
-          "clock" = {
-            "format" = "{: %a,%d%b  %I:%M%p}";
-            "interval" = 1;
-            "timezone" = "Asia/Jakarta";
-            "tooltip" = false;
-          };
-        } //
-        {
-          "modules-right" = [
-            "network#down"
-            "network#up"
-            "disk#home"
-            "disk#root"
-          ] ++ (if monitor == last device.monitors then [
-            "custom/uname"
-            "tray"
-          ] else [ ]);
-        } //
-        (if config.modules.windowmanager.sway.enable then {
-          "modules-left" = [
-            "sway/workspaces"
-            "sway/mode"
-          ];
-          "sway/workspaces" = {
-            "format" = "{value}";
-          };
-          "sway/mode" = {
-            "format" = " {}";
-            "max-length" = 100;
-          };
-        } else if config.modules.windowmanager.hyprland.enable then {
-          "modules-left" = [
-            "wlr/workspaces"
-            "hyprland/submap"
-          ];
-          "wlr/workspaces" = {
-            "format" = "{name}";
-            "on-click" = "activate";
-            "on-scroll-up" = "${inputs.hyprland.packages.${system}.hyprland}/bin/hyprctl dispatch workspace e+1";
-            "on-scroll-down" = "${inputs.hyprland.packages.${system}.hyprland}/bin/hyprctl dispatch workspace e-1";
-          };
-          "hyprland/submap" = {
-            "format" = " {}";
-            "max-length" = 100;
-          };
-        } else {
-        })
-      );
+            "custom/uname" = {
+              "format" = " {}";
+              "exec" = "${pkgs.coreutils-full}/bin/uname -r";
+              "tooltip" = false;
+            };
 
-      style = ''
-        * {
-            border: none;
-            border-radius: 0;
-            font-family: "UbuntuMono Nerd Font";
-            font-size: 16px;
-            font-weight: bold;
-            padding-top: 1px;
-        }
+            "clock" = {
+              "format" = "{: %a,%d%b  %I:%M%p}";
+              "interval" = 1;
+              "timezone" = "Asia/Jakarta";
+              "tooltip" = false;
+            };
+          } //
+          {
+            "modules-right" = [
+              "network#down"
+              "network#up"
+              "disk#home"
+              "disk#root"
+            ] ++ (if monitor == last device.monitors then [
+              "custom/uname"
+              "tray"
+            ] else [ ]);
+          } //
+          (if config.modules.windowmanager.sway.enable then {
+            "modules-left" = [
+              "sway/workspaces"
+              "sway/mode"
+            ];
+            "sway/workspaces" = {
+              "format" = "{value}";
+            };
+            "sway/mode" = {
+              "format" = " {}";
+              "max-length" = 100;
+            };
+          } else if config.modules.windowmanager.hyprland.enable then {
+            "modules-left" = [
+              "wlr/workspaces"
+              "hyprland/submap"
+            ];
+            "wlr/workspaces" = {
+              "format" = "{name}";
+              "on-click" = "activate";
+              "on-scroll-up" = "${inputs.hyprland.packages.${system}.hyprland}/bin/hyprctl dispatch workspace e+1";
+              "on-scroll-down" = "${inputs.hyprland.packages.${system}.hyprland}/bin/hyprctl dispatch workspace e-1";
+            };
+            "hyprland/submap" = {
+              "format" = " {}";
+              "max-length" = 100;
+            };
+          } else {
+          })
+        );
 
-        button {
-          min-height: 24px;
-          min-width: 16px;
-        }
+        style = ''
+          * {
+              border: none;
+              border-radius: 0;
+              font-family: "UbuntuMono Nerd Font";
+              font-size: 16px;
+              font-weight: bold;
+              padding-top: 1px;
+          }
 
-        window#waybar {
-            background-color: transparent;
-            color: #C0CAF5;
-            transition-property: background-color;
-            transition-duration: .5s;
-        }
+          button {
+            min-height: 24px;
+            min-width: 16px;
+          }
 
-        window#waybar.hidden {
-            opacity: 0.2;
-        }
+          window#waybar {
+              background-color: transparent;
+              color: #C0CAF5;
+              transition-property: background-color;
+              transition-duration: .5s;
+          }
 
-        #workspaces button {
-            color: #C0CAF5;
-            padding: 0 3px;
-            border-radius: 5px;
-        }
+          window#waybar.hidden {
+              opacity: 0.2;
+          }
 
-        #workspaces button.focused {
-            color: #7AA2F7;
-        }
+          #workspaces button {
+              color: #C0CAF5;
+              padding: 0 3px;
+              border-radius: 5px;
+          }
 
-        #workspaces button.active {
-            color: #7AA2F7;
-        }
+          #workspaces button.focused {
+              color: #7AA2F7;
+          }
 
-        #workspaces button.urgent {
-            color: #F7768E;
-        }
+          #workspaces button.active {
+              color: #7AA2F7;
+          }
 
-        #mode {
-            color: #C0CAF5;
-            padding-left: 2px;
-            box-shadow: inset 0 -1.5px;
-        }
+          #workspaces button.urgent {
+              color: #F7768E;
+          }
 
-        #clock {
-            color: #C0CAF5;
-        }
+          #mode {
+              color: #C0CAF5;
+              padding-left: 2px;
+              box-shadow: inset 0 -1.5px;
+          }
 
-        #network.down {
-            color: #9ECE6A;
-            padding-right: 8px;
-        }
+          #clock {
+              color: #C0CAF5;
+          }
 
-        #network.up {
-            color: #7AA2F7;
-            padding-right: 8px;
-        }
+          #network.down {
+              color: #9ECE6A;
+              padding-right: 8px;
+          }
 
-        #disk.home {
-            color: #E0AF68;
-            padding-right: 8px;
-        }
+          #network.up {
+              color: #7AA2F7;
+              padding-right: 8px;
+          }
 
-        #disk.root {
-            color: #F7768E;
-            padding-right: 8px;
-        }
+          #disk.home {
+              color: #E0AF68;
+              padding-right: 8px;
+          }
 
-        #custom-uname {
-            color: #BB9AF7;
-            padding-right: 8px;
-        }
+          #disk.root {
+              color: #F7768E;
+              padding-right: 8px;
+          }
 
-        #custom-update {
-            color: #C0CAF5;
-            padding-right: 2px;
-        }
+          #custom-uname {
+              color: #BB9AF7;
+              padding-right: 8px;
+          }
 
-        #custom-update.needsupdate {
-            color: #F7768E;
-            padding-right: 2px;
-        }
+          #custom-update {
+              color: #C0CAF5;
+              padding-right: 2px;
+          }
 
-        #tray {
-            color: #C0CAF5;
-            padding-right: 8px;
-            font-weight: normal;
-        }
-      '';
+          #custom-update.needsupdate {
+              color: #F7768E;
+              padding-right: 2px;
+          }
+
+          #tray {
+              color: #C0CAF5;
+              padding-right: 8px;
+              font-weight: normal;
+          }
+        '';
+      };
     };
   };
 }
