@@ -2,7 +2,7 @@
 with lib;
 let 
   cfg = config.modules.editor.neovim;
-  vimPlugins = pkgs.vimPlugins // config.nur.repos.m15a.vimExtraPlugins // myPkgs.nvim-plugins;
+  vimPlugins = pkgs.vimPlugins // myPkgs.nvim-plugins;
 in {
   options.modules.editor.neovim = { enable = mkEnableOption "neovim"; };
 

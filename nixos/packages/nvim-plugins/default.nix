@@ -32,4 +32,14 @@ in
     inherit (sourceData.k8s-snippets) pname src;
     version = sourceData.k8s-snippets.date;
   };
+  guihua-lua = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    inherit (sourceData.guihua-lua) pname src;
+    version = sourceData.guihua-lua.date;
+    buildPhase = ''
+      (
+        cd lua/fzy
+        make
+      )
+    '';
+  };
 }

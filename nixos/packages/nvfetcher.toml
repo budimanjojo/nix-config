@@ -25,3 +25,6 @@ fetch.github = "ray-x/sad.nvim"
 [k8s-snippets]
 src.git = "https://github.com/budimanjojo/k8s-snippets"
 fetch.github = "budimanjojo/k8s-snippets"
+[guihua-lua]
+src.git = "https://github.com/ray-x/guihua.lua"
+fetch.github = "ray-x/guihua.lua"
