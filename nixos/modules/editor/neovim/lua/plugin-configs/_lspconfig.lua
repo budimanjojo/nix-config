@@ -24,7 +24,9 @@ require('mason').setup {
   PATH = "append",
 }
 require('mason-lspconfig').setup {
-  automatic_installation = true,
+  automatic_installation = {
+    exclude = { "nil_ls" }
+  },
   -- ui = {
   --   check_outdated_servers_on_open = true
   -- }
