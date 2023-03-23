@@ -35,7 +35,7 @@ jobs:
           git-committer-name: budimanjojo-bot
           git-committer-email: 111944664+budimanjojo-bot[bot]@users.noreply.github.com
       - name: Automerge
-        uses: peter-evans/enable-pull-request-automerge@v2
+        uses: peter-evans/enable-pull-request-automerge@v3
         with:
           token: ${{ steps.generate-token.outputs.token }}
           pull-request-number: ${{ steps.update-flake-lock.outputs.pull-request-number }}
