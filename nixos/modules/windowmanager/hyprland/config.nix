@@ -41,8 +41,8 @@ in
   monitor = $monright, preferred, ${mon2width}x0, 1
 
   # Wallpaper
-  exec-once = ${pkgs.swaybg}/bin/swaybg -i ~/.config/hypr/wallpapers/tokyonight01-left.png -o $monleft
-  exec-once = ${pkgs.swaybg}/bin/swaybg -i ~/.config/hypr/wallpapers/tokyonight01-right.png -o $monright
+  exec-once = ${pkgs.swaybg}/bin/swaybg -o $monleft -i ~/.config/hypr/wallpapers/tokyonight01-left.png
+  exec-once = ${pkgs.swaybg}/bin/swaybg -o $monright -i ~/.config/hypr/wallpapers/tokyonight01-right.png
 
   # General settings
   general {
