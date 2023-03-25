@@ -9,24 +9,22 @@ in {
     modules.shell.git.enable = true;
     modules.shell.nix-direnv.enable = true;
 
-    age = {
-      identityPaths = [ "${config.home.manager.home.homeDirectory}/.config/sops/age/keys.txt" ];
+    sops = {
       secrets = {
         kubeconfig = {
-          file = ./kubeconfig.age;
           path = "${config.home.manager.home.homeDirectory}/.kube/config";
-          mode = "700";
           owner = "${config.modules.device.username}";
           group = "users";
+          mode = "700";
         };
         talosconfig = {
-          file = ./talosconfig.age;
           path = "${config.home.manager.home.homeDirectory}/.talos/config";
-          mode = "700";
           owner = "${config.modules.device.username}";
           group = "users";
+          mode = "700";
         };
       };
+
     };
 
     home.manager = {

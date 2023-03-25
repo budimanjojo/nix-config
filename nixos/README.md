@@ -18,7 +18,7 @@ Screenshots, plugins list, and keybindings are identical whether you go with `fl
 
 ## :package:&nbsp; Modules
 
-- [agenix](https://github.com/ryantm/agenix) is used to encrypt/decrypt my secrets safely.
+- [sops-nix](https://github.com/Mic92/sops-nix) is used to encrypt/decrypt my secrets safely.
 - [Flake Parts](https://github.com/hercules-ci/flake-parts) to manage `flakes`.
 - [home-manager](https://github.com/nix-community/home-manager) to manage my home directory and dotfiles.
 - [NUR](https://github.com/nix-community/NUR) for packages not available in the official NixOS repository.
@@ -51,8 +51,7 @@ I shamelessly took the pieces I believe is the best from people and modified it.
 
 ## :lock_with_ink_pen:&nbsp; Secret management
 
-I'm using `agenix` to manage secrets. My custom modules are hardcoded to find `identity` file at `~/.config/sops/age/keys.txt`.
-The reason is because that's where `sops` (which I use for my secret management on my other projects) wants it by default.
+I'm using `sops-nix` to manage secrets.
 Feel free to modify it to your liking.
 
 ## :robot:&nbsp; Package updates

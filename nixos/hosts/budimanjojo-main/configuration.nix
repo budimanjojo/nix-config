@@ -68,6 +68,11 @@
       # windowmanager.sway.enable = true;
     };
 
+    sops = {
+      defaultSopsFile = ./secret.sops.yaml;
+      age.keyFile = "${config.home.manager.home.homeDirectory}/.config/sops/age/keys.txt";
+    };
+
     boot = {
       initrd.verbose = false;
       consoleLogLevel = 0;
