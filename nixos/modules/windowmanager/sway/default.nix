@@ -32,7 +32,7 @@ in {
         assertion = length device.monitors > 0;
         message = ''
           At least one monitor in the `config.modules.device.monitors` is
-          needeed to use Sway module.
+          needed to use Sway module.
         '';
       }
     ];
