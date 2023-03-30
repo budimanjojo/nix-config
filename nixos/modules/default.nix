@@ -16,6 +16,8 @@
     ./homelab/diy-keyboard
     ./homelab/kubernetes
 
+    ./monitoring/prometheus
+
     ./multiplexer/tmux
     ./multiplexer/zellij
 

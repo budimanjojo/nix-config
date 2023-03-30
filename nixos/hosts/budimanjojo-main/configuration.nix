@@ -45,6 +45,8 @@
       homelab.diy-keyboard.enable = true;
       homelab.kubernetes.enable = true;
 
+      # monitoring.prometheus.enable = true;
+
       # multiplexer.tmux.enable = true;
       multiplexer.zellij.enable = true;
 
