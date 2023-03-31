@@ -53,7 +53,7 @@
       age.keyFile = "${config.home.manager.home.homeDirectory}/.config/sops/age/keys.txt";
     };
 
-    environment.variables.FLAKE = "${config.home.manager.home.homeDirectory}/Github/dotfiles";
+    environment.variables.FLAKE = "${config.home.manager.home.homeDirectory}/dotfiles";
 
     boot = {
       initrd.verbose = false;
