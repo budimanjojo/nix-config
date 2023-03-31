@@ -12,6 +12,7 @@ in {
       hwatch
       lm_sensors
       nfs-utils
+      nh
       pciutils
       rsync
       tree

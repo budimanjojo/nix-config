@@ -102,6 +102,9 @@ in {
           svi = "sudo nvim";
           svim = "sudo nvim";
 
+          # nh
+          nos = "nh os switch";
+
           # exa
           lsa = "exa -lag --git --icons --sort=type";
           l = "exa -lag --git -icons --sort=type";

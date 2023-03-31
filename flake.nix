@@ -15,6 +15,8 @@
     talhelper.url = "github:budimanjojo/talhelper";
     talhelper.inputs.nixpkgs.follows = "nixpkgs";
     hyprland.url = "github:hyprwm/Hyprland";
+    nh.url = "github:viperML/nh";
+    nh.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { flake-parts, ... }@inputs:
