@@ -103,7 +103,7 @@ in {
           svim = "sudo nvim";
 
           # nh
-          nos = "nh os switch";
+          nos = "git -C $FLAKE pull; nh os switch";
 
           # exa
           lsa = "exa -lag --git --icons --sort=type";
