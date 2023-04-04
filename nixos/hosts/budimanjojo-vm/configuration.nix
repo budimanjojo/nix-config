@@ -24,6 +24,7 @@
       homelab.kubernetes.enable = true;
 
       monitoring.prometheus.enable = true;
+      monitoring.smartd.enable = true;
 
       # multiplexer.tmux.enable = true;
       # multiplexer.zellij.enable = true;

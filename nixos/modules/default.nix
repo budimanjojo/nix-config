@@ -17,6 +17,7 @@
     ./homelab/kubernetes
 
     ./monitoring/prometheus
+    ./monitoring/smartd
 
     ./multiplexer/tmux
     ./multiplexer/zellij
@@ -26,6 +27,7 @@
     ./program/discord
     ./program/hugo
     ./program/libreoffice
+    ./program/msmtp
     ./program/nextcloud
     ./program/obs-studio
     ./program/syncthing
