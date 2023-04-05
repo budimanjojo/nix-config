@@ -15,13 +15,11 @@ in {
           path = "${config.home.manager.home.homeDirectory}/.kube/config";
           owner = "${config.modules.device.username}";
           group = "users";
-          mode = "700";
         };
         talosconfig = {
           path = "${config.home.manager.home.homeDirectory}/.talos/config";
           owner = "${config.modules.device.username}";
           group = "users";
-          mode = "700";
         };
       };
 
