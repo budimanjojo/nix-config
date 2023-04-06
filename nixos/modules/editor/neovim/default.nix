@@ -12,6 +12,7 @@ in {
         configFile."nvim/lua".source = ./lua;
         configFile."nvim/snippets".source = ./snippets;
       };
+      programs.go.enable = true;
       home.packages = with pkgs; [
         clang-tools
         curl
@@ -20,7 +21,6 @@ in {
         fd
         fzf
         git
-        go
         gzip
         nil
         sad
