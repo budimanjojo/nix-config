@@ -6,6 +6,8 @@ in {
   options.modules.program.gaming = { enable = mkEnableOption "default gaming"; };
 
   config = mkIf cfg.enable {
+    programs.gamemode.enable = true;
+
     home.manager.home.packages = with pkgs; [
       (retroarch.override {
         cores = [
