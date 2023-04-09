@@ -80,6 +80,7 @@ in {
         grim
         slurp
       ];
+      systemd.user.startServices = "sd-switch";
     };
   };
 }
