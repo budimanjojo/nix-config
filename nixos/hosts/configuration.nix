@@ -51,7 +51,7 @@ in {
 
   system = {
     autoUpgrade = {
-      enable = true;
+      enable = false;
       flake = builtins.toString ../../.;
     };
     stateVersion = "22.05";
