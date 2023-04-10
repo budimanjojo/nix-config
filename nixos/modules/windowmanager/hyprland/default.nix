@@ -60,7 +60,10 @@ in {
       myPkgs.rofi-firefox-wrapper
     ];
 
-    programs.hyprland.enable = true;
+    programs.hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${system}.hyprland;
+    };
 
     services.dbus.enable = true;
     networking.networkmanager.enable = true;
