@@ -4,6 +4,9 @@ let
   cfg = config.modules.windowmanager.hyprland;
   device = config.modules.device;
 in {
+  # disable the nixpkgs module and use the hyprland module for bleeding edge
+  disabledModules = [ "programs/hyprland.nix" ];
+
   options.modules.windowmanager.hyprland = { enable = mkEnableOption "hyprland"; };
 
   config = mkIf cfg.enable {
@@ -60,10 +63,7 @@ in {
       myPkgs.rofi-firefox-wrapper
     ];
 
-    programs.hyprland = {
-      enable = true;
-      package = inputs.hyprland.packages.${system}.hyprland;
-    };
+    programs.hyprland.enable = true;
 
     services.dbus.enable = true;
     networking.networkmanager.enable = true;
