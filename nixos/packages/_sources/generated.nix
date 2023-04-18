@@ -27,13 +27,13 @@
   };
   k8s-snippets = {
     pname = "k8s-snippets";
-    version = "cb90c4a1e0c53b546942d615f7ee738b2e1e1894";
+    version = "8626142673a4f34ee8b5af3460352359b7ac0514";
     src = fetchFromGitHub ({
       owner = "budimanjojo";
       repo = "k8s-snippets";
-      rev = "cb90c4a1e0c53b546942d615f7ee738b2e1e1894";
+      rev = "8626142673a4f34ee8b5af3460352359b7ac0514";
       fetchSubmodules = false;
-      sha256 = "sha256-iIlvPWQZRhm6b8Sma9iMit1x2dyd1E06NJnmu2CDgRA=";
+      sha256 = "sha256-fFiYWmKIEm06ryXWlpOpQF7c18iC6zxyperH0B2oSQM=";
     });
     date = "2023-04-18";
   };
