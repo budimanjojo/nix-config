@@ -1,6 +1,18 @@
 { inputs, system, ... }:
 final: prev:
 {
+  talosctl = prev.talosctl.override {
+    buildGoModule = args: prev.buildGoModule (args // {
+      version = "1.4.0";
+      src = prev.fetchFromGitHub {
+        owner = "siderolabs";
+        repo = "talos";
+        rev = "v1.4.0";
+        hash = "sha256-EJrzq6fChNA1N3TTkwD5/1TdLDso9jGuTgWUG4RwqGA=";
+      };
+      vendorHash = "sha256-Thkj8Zhj/HXAnRcFxuCEVd94CMrt8Bsq2FHx6siH6Ww=";
+    });
+  };
   # nil = prev.nil.overrideAttrs (old: rec {
   #   pname = "nil";
   #   version = "2023-03-01";
