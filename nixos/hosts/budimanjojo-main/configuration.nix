@@ -45,6 +45,7 @@
       homelab.diy-keyboard.enable = true;
       homelab.kubernetes.enable = true;
 
+      # monitoring.grafana.enable = true;
       # monitoring.prometheus.enable = true;
       monitoring.smartd.enable = true;
 

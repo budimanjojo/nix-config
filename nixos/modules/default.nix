@@ -16,6 +16,7 @@
     ./homelab/diy-keyboard
     ./homelab/kubernetes
 
+    ./monitoring/grafana
     ./monitoring/prometheus
     ./monitoring/smartd
 
