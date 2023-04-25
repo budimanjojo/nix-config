@@ -46,7 +46,7 @@ To install or remove fish plugins, you can run `fisher` command.
 
 ### :memo:&nbsp; Neovim
 
-I use [packer.nvim](https://github.com/wbthomason/packer.nvim) as my plugin manager.
+I use [lazy.nvim](https://github.com/folke/lazy.nvim) as my plugin manager.
 These are the plugins I'm using:
 
 - [ansible-vim](https://github.com/pearofducks/ansible-vim)
@@ -75,7 +75,8 @@ These are the plugins I'm using:
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [b64.nvim](https://github.com/taybart/b64.nvim)
 
-To update Neovim plugins, do `:PackerSync` in your nvim.
+To update Neovim plugins, do `:Lazy update` in your nvim.
+`lazy` should auto update plugins for you to.
 **Note**: You need Neovim version >=0.7.0
 
 ## :package:&nbsp; Dependencies
