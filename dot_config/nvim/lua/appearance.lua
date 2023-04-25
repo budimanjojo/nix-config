@@ -1,18 +1,10 @@
 local o = vim.o
-local cmd = vim.cmd
-local fn = vim.fn
 local api = vim.api
 
 o.background = 'dark'   -- Dark background
 o.termguicolors = true  -- Enable 256 colors
 o.signcolumn = 'yes'    -- Always show signcolumn
 o.cursorcolumn = true   -- Cursor column
-
--- Colorscheme
-require('tokyonight').setup {
-  style = 'night',
-}
-cmd('colorscheme tokyonight')
 
 -- Highlight on yank
 local yankhighlight = api.nvim_create_augroup('yankhighlight', { clear = true })

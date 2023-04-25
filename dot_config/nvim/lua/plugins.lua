@@ -1,60 +1,66 @@
 local fn = vim.fn
-local cmd = vim.cmd
 
-local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  _G.packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+vim.g.mapleader = ' '
+
+local lazypath = fn.stdpath('data') .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+  fn.system({
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable',
+    lazypath
+  })
 end
 
-local packer = require('packer')
+vim.opt.rtp:prepend(lazypath)
 
-packer.init({
-  display = {
-    open_fn = function()
-      return require('packer.util').float({ border = 'single' })
-    end
-  },
-  profile = {
-    enable = true,
-    threshold = 1,
-  }
-})
+local lazy = require('lazy')
 
-packer.startup({
-  function(use)
-    use 'wbthomason/packer.nvim'
-
+lazy.setup(
+-- Plugins
+  {
     -- Syntax highlighting
-    use 'pearofducks/ansible-vim'
-    use 'alker0/chezmoi.vim'
-    use {
+    'pearofducks/ansible-vim',
+    'alker0/chezmoi.vim',
+    {
       'norcalli/nvim-colorizer.lua',
       config = function()
         require('colorizer').setup()
       end
-    }
+    },
 
     -- Appearance
-    use 'folke/tokyonight.nvim'
-    use 'stevearc/dressing.nvim'
-    use {
+    {
+      'folke/tokyonight.nvim',
+      lazy = false,
+      priority = 1000,
+      config = function()
+        require('tokyonight').setup {
+          style = 'night',
+        }
+        vim.cmd('colorscheme tokyonight')
+      end
+    },
+    'stevearc/dressing.nvim',
+    {
       'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons' },
+      dependencies = { 'kyazdani42/nvim-web-devicons' },
       config = function()
         require('configs._lualine')
       end
-    }
-    use {
+    },
+    {
       'lukas-reineke/indent-blankline.nvim',
       config = function()
         require('indent_blankline').setup()
       end
-    }
-
+    },
     -- LSP
-    use {
+    {
       'neovim/nvim-lspconfig',
-      requires = {
+      dependencies = {
         'b0o/schemastore.nvim',
         'ray-x/lsp_signature.nvim',
         'lewis6991/gitsigns.nvim',
@@ -67,142 +73,139 @@ packer.startup({
       config = function()
         require('configs._lspconfig')
       end
-    }
-    use {
+    },
+    {
       'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate',
+      build = ':TSUpdate',
       config = function()
         require('configs._treesitter')
       end
-    }
+    },
 
     -- Autocompletion
-    use {
+    {
       'hrsh7th/nvim-cmp',
+      dependencies = {
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'f3fora/cmp-spell',
+        'saadparwaiz1/cmp_luasnip',
+        'onsails/lspkind-nvim',
+      },
       config = function()
         require('configs._nvim-cmp')
       end
-    }
-    -- nvim-cmp dependencies but can't be listed as requires
-    -- because of lazyloading
-    use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' }
-    use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' }
-    use { 'hrsh7th/cmp-path', after = 'nvim-cmp' }
-    use { 'f3fora/cmp-spell', after = 'nvim-cmp' }
-    use { 'saadparwaiz1/cmp_luasnip', after = { 'nvim-cmp', 'LuaSnip' }}
-    use { 'onsails/lspkind-nvim', module = 'lspkind' }
-    use {
+    },
+    {
       'L3MON4D3/LuaSnip',
-      run = 'make install_jsregexp',
-      requires = {
+      build = 'make install_jsregexp',
+      dependencies = {
         'rafamadriz/friendly-snippets',
         'budimanjojo/k8s-snippets'
       },
-      module = 'luasnip',
-    }
+    },
 
-    use {
+    {
       'folke/trouble.nvim',
-      opt = true,
+      lazy = true,
       event = 'BufReadPost',
       config = function()
         require('trouble').setup()
       end
-    }
-    use {
+    },
+    {
       'windwp/nvim-ts-autotag',
       config = function()
         require('nvim-ts-autotag').setup()
       end
-    }
+    },
 
     -- Fuzzy finder
-    use {
+    {
       'ibhagwan/fzf-lua',
-      requires = { 'kyazdani42/nvim-web-devicons' },
+      dependencies = { 'kyazdani42/nvim-web-devicons' },
       config = function()
         require('configs._fzf-lua')
       end
-    }
-    use {
+    },
+    {
       'phaazon/hop.nvim',
       branch = 'v2',
       config = function()
         require('hop').setup()
       end
-    }
-    use {
+    },
+    {
       'ray-x/sad.nvim',
-      requires = { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+      dependencies = { 'ray-x/guihua.lua', build = 'cd lua/fzy && make' },
       config = function()
         require('configs._sad-nvim')
       end
-    }
+    },
 
     -- Enhancement
-    use {
+    {
       'max397574/better-escape.nvim',
       config = function()
         require('better_escape').setup { mapping = { 'ii' }}
       end
-    }
+    },
 
     -- System utility
-    use 'numToStr/FTerm.nvim'
-    use {
+    'numToStr/FTerm.nvim',
+    {
       'stevearc/oil.nvim',
       config = function ()
         require('configs._oil')
       end
-    }
-    use {
+    },
+    {
       'lewis6991/gitsigns.nvim',
       config = function()
         require('configs._gitsigns')
       end
-    }
+    },
 
     -- Editing support
-    use {
+    {
       'numToStr/Comment.nvim',
       config = function()
         require('Comment').setup()
       end
-    }
-    use {
+    },
+    {
       'windwp/nvim-autopairs',
       config = function()
         require('configs._autopairs')
       end
-    }
-    use {
+    },
+    {
       'kylechui/nvim-surround',
       config = function()
         require('nvim-surround').setup()
       end
-    }
-    use 'taybart/b64.nvim'
+    },
+    'taybart/b64.nvim',
 
     -- Braindead doctor
-    use {
+    {
       'folke/which-key.nvim',
       config = function()
         require('which-key').setup()
       end
-    }
+    },
 
     -- Other
-    use 'andweeb/presence.nvim'
-
-    if packer_bootstrap then
-      require('packer').sync()
-    end
-  end
-})
-
-cmd [[
-  augroup PackerSync
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup END
-]]
+    'andweeb/presence.nvim',
+  },
+-- Configurations
+  {
+    ui = {
+      border = 'none'
+    },
+    checker = {
+      enabled = true,
+    }
+  }
+)
