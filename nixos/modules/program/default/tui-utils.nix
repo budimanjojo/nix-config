@@ -8,6 +8,7 @@ in {
   config = mkIf cfg.enable {
     home.manager.home.packages = with pkgs; [
       age
+      dig
       htop
       hwatch
       lm_sensors
