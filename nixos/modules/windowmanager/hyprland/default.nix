@@ -27,7 +27,7 @@ in {
     modules.system.font.enable = true;
     modules.system.sound.enable = true;
     modules.system.video.enable = true;
-    modules.terminal-emulator.wezterm.enable = true;
+    modules.terminal-emulator.alacritty.enable = true;
 
     assertions = [
       {
