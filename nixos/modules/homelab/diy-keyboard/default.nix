@@ -6,6 +6,8 @@ let
 in {
   options.modules.homelab.diy-keyboard = { enable = mkEnableOption "diy-keyboard"; };
   config = mkIf cfg.enable {
+    # needed for qmk udev rule
+    users.users.${config.modules.device.username}.extraGroups = [ "plugdev" ];
     hardware.keyboard.qmk.enable = true;
     services.udev.packages = with pkgs; [
       via
