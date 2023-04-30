@@ -83,7 +83,7 @@
     boot = {
       initrd.verbose = false;
       consoleLogLevel = 0;
-      kernelParams = [ "quiet" "rd.udev.log_level=3" ];
+      kernelParams = [ "quiet" ];
       plymouth.enable = true;
       loader = {
         systemd-boot = {
