@@ -27,15 +27,15 @@
   };
   k8s-snippets = {
     pname = "k8s-snippets";
-    version = "8626142673a4f34ee8b5af3460352359b7ac0514";
+    version = "0e76e9fed216895af08fd6888e7b78492e98e40d";
     src = fetchFromGitHub ({
       owner = "budimanjojo";
       repo = "k8s-snippets";
-      rev = "8626142673a4f34ee8b5af3460352359b7ac0514";
+      rev = "0e76e9fed216895af08fd6888e7b78492e98e40d";
       fetchSubmodules = false;
-      sha256 = "sha256-fFiYWmKIEm06ryXWlpOpQF7c18iC6zxyperH0B2oSQM=";
+      sha256 = "sha256-yHRlMdBUaRD98VJEYRplkd+JlaNw37q0w8v5yEAnEHE=";
     });
-    date = "2023-04-18";
+    date = "2023-05-02";
   };
   luasnip = {
     pname = "luasnip";
