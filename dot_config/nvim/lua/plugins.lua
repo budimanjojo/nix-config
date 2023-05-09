@@ -203,9 +203,6 @@ lazy.setup(
   {
     ui = {
       border = 'none'
-    },
-    checker = {
-      enabled = true,
     }
   }
 )
