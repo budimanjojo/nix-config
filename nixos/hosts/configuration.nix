@@ -2,10 +2,17 @@
 let
   deviceCfg = config.modules.device;
 in {
+  sops.secrets.budiman-password = {
+    sopsFile = ./secret.sops.yaml;
+    neededForUsers = true;
+  };
+
+  users.mutableUsers = false;
   users.users.${deviceCfg.username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" ];
     shell = pkgs.fish;
+    passwordFile = config.sops.secrets.budiman-password.path;
   };
 
   # Autologin
