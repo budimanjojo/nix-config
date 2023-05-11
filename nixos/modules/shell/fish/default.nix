@@ -68,8 +68,6 @@ in {
           my_vi_keybindings = {
             body = ''
               fish_vi_key_bindings
-              # Use ii to exit insert mode
-              bind -M insert -m default ii backward-char force-repaint
             '';
             description = "custom vi keybinding";
           };
