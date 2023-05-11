@@ -9,6 +9,7 @@ in {
     sops = {
       secrets = {
         "syncthingtray.ini" = {
+          sopsFile = ./secret.sops.yaml;
           path = "${config.home.manager.home.homeDirectory}/.config/syncthingtray.ini";
           mode = "700";
           owner = "${config.modules.device.username}";
