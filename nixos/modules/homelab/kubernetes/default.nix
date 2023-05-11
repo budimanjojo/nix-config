@@ -12,11 +12,13 @@ in {
     sops = {
       secrets = {
         kubeconfig = {
+          sopsFile = ./secret.sops.yaml;
           path = "${config.home.manager.home.homeDirectory}/.kube/config";
           owner = "${config.modules.device.username}";
           group = "users";
         };
         talosconfig = {
+          sopsFile = ./secret.sops.yaml;
           path = "${config.home.manager.home.homeDirectory}/.talos/config";
           owner = "${config.modules.device.username}";
           group = "users";

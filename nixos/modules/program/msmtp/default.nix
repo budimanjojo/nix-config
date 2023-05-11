@@ -7,6 +7,7 @@ in {
 
   config = mkIf cfg.enable {
     sops.secrets.gmail-password = {
+      sopsFile = ./secret.sops.yaml;
       owner = "${config.modules.device.username}";
       group = "users";
     };
