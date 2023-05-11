@@ -127,11 +127,6 @@ in {
             plugin = sad-nvim;
             config = "lua require('plugin-configs._sad-nvim')";
           }
-          # Enhancement
-          {
-            plugin = better-escape-nvim;
-            config = "lua require('better_escape').setup { mapping = { 'ii' }}";
-          }
           # System utility
           FTerm-nvim
           {

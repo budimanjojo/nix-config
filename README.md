@@ -50,7 +50,6 @@ I use [lazy.nvim](https://github.com/folke/lazy.nvim) as my plugin manager.
 These are the plugins I'm using:
 
 - [ansible-vim](https://github.com/pearofducks/ansible-vim)
-- [better-escape.nvim](https://github.com/max397574/better-escape.nvim)
 - [chezmoi.vim](https://github.com/alker0/chezmoi.vim)
 - [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim)
@@ -214,7 +213,6 @@ If they are not in the table, that means it's using the default Vim keybindings.
 | `Normal`        | `<Leader>qa`  | Force quit without saving |
 | `Normal`        | `<Leader>wq`  | Save file and quit |
 | `Normal`        | `Y`           | Yank from cursor to end of file |
-| `Insert`        | `ii`          | Exit Insert mode |
 | `Normal`        | `K`           | Move Up one paragraph |
 | `Normal`        | `J`           | Move Down one paragraph |
 | `Normal`        | `H`           | Move to the first character in line |
