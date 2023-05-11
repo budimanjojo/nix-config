@@ -17,7 +17,6 @@
             isDefault = true;
             extensions = with config.nur.repos.rycee.firefox-addons; [
               bitwarden
-              tridactyl
               tokyo-night-v2
             ];
           };
