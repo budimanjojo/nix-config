@@ -68,7 +68,10 @@ in {
         nodePackages.zx
         sops
         talosctl
-      ] ++ [ myPkgs.talhelper ];
+      ] ++ [
+        myPkgs.talhelper
+        myPkgs.krr
+      ];
     };
   };
 }

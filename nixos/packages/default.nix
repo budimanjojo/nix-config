@@ -5,4 +5,5 @@
   tokyonight-icon-theme = pkgs.callPackage ./tokyonight-icon-theme/default.nix {};
   nvim-plugins = pkgs.callPackage ./nvim-plugins/default.nix {};
   rofi-firefox-wrapper = pkgs.callPackage ./rofi-firefox-wrapper/default.nix {};
+  krr = pkgs.callPackage ./krr/default.nix {};
 }
