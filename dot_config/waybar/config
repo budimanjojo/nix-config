@@ -27,7 +27,7 @@
     },
 
     "sway/mode": {
-      "format": " {}",
+      "format": "󰃼 {}",
       "max-length": 100
     },
 
@@ -56,7 +56,7 @@
     },
 
     "custom/uname": {
-      "format": " {}",
+      "format": "󰌽 {}",
       "exec": "uname -r",
       "tooltip": false
     },
@@ -118,7 +118,7 @@
     },
 
     "sway/mode": {
-      "format": " {}",
+      "format": "󰃼 {}",
       "max-length": 100
     },
 
@@ -147,7 +147,7 @@
     },
 
     "custom/uname": {
-      "format": " {}",
+      "format": "󰌽 {}",
       "exec": "uname -r",
       "tooltip": false
     },

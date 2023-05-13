@@ -40,9 +40,9 @@ require('lualine').setup {
         path = 1,
         shorting_target = 30,
         symbols = {
-          modified = ' ',
-          readonly = ' ',
-          unnamed = ' ',
+          modified = ' 󰎜',
+          readonly = ' 󰈡',
+          unnamed = ' 󰎞',
         }
       }
     },

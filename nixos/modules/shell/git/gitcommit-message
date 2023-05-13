@@ -1,9 +1,9 @@
 
-# <type>[optional scope]: <description>                                  (not more than 72 chars)
+# <type>[optional scope]: <description>                                  (not more than 72 chars)
 # <BLANK NEWLINE>
-# [optional body]                                                        (not more than 72 chars)
+# [optional body]                                                        (not more than 72 chars)
 # <BLANK NEWLINE>
-# [optional footer(s)]                                                   (not more than 72 chars)
+# [optional footer(s)]                                                   (not more than 72 chars)
 #-------------------------------EXAMPLE----------------------------------
 # feat!(frontend): new button added in dashboard
 #

@@ -38,7 +38,7 @@ require('fzf-lua').setup {
       ['Error']       = { icon = '', color = 'red' },
       ['Warning']     = { icon = '', color = 'yellow' },
       ['Information'] = { icon = '', color = 'blue' },
-      ['Hint']        = { icon = '', color = 'magenta' },
+      ['Hint']        = { icon = '󰌵', color = 'magenta' },
     },
     -- make lsp requests synchronous so the work with null-ls
     async_or_timeout = 3000,

@@ -41,8 +41,8 @@ require('lualine').setup {
         shorting_target = 30,
         symbols = {
           modified = ' ',
-          readonly = ' ',
-          unnamed = ' ',
+          readonly = ' 󰈡',
+          unnamed = ' 󰎞',
         }
       }
     },

@@ -49,7 +49,7 @@ in {
             };
 
             "custom/uname" = {
-              "format" = " {}";
+              "format" = "󰌽 {}";
               "exec" = "${pkgs.coreutils-full}/bin/uname -r";
               "tooltip" = false;
             };
@@ -81,7 +81,7 @@ in {
               "format" = "{value}";
             };
             "sway/mode" = {
-              "format" = " {}";
+              "format" = "󰃼 {}";
               "max-length" = 100;
             };
           } else if config.modules.windowmanager.hyprland.enable then {
@@ -96,7 +96,7 @@ in {
               "on-scroll-down" = "${inputs.hyprland.packages.${system}.hyprland}/bin/hyprctl dispatch workspace e-1";
             };
             "hyprland/submap" = {
-              "format" = " {}";
+              "format" = "󰃼 {}";
               "max-length" = 100;
             };
           } else {

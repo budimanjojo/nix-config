@@ -61,7 +61,7 @@ in {
             conflicted = " ";
             ahead = " ";
             behind = " ";
-            diverged = " ";
+            diverged = "󰆗 ";
             up_to_date = " ";
             untracked = " ";
             stashed = " ";
