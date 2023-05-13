@@ -37,6 +37,7 @@
     ./shell/fish
     ./shell/git
     ./shell/nix-direnv
+    ./shell/openssh
     ./shell/starship
 
     ./system/cpu

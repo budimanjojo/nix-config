@@ -29,6 +29,10 @@ with lib;
     hasSound = mkOption {
       type = types.bool;
     };
+    authorizedKeys = mkOption {
+      type = types.listOf types.str;
+      default = [];
+    };
 
     # Options below DON't NEED to be set, will be set by automatically
     hostname = mkOption {

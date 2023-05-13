@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config,  ... }:
 {
   config = {
     modules = {
@@ -32,6 +32,9 @@
         };
         hasBluetooth = true;
         hasSound = true;
+        authorizedKeys = [
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDIgzLDHHRtLD9DLfNTX8Te9zBcDmEF33UPJ5HngP6aJAhdQln7ebSOzQoehxN0th644G9csnujxjNAStIEUjzeXO1NQQfEYGqDVxDL0jE4hXr1WVg+6GxQnV1nWP5Sd2i24+ElygCdw3KuteeNlfGZ7BKs91zySb03DICXPNcgXj6ZR9INalabFhbjeVG5MRH38KRR9cxZKbgW+eQZZwVtDRPzL7rAfaeeJPg7ZQ3Iu0SC3q5SskGQD5XfqCwPDx9n0GWva36jwNneifv5WFDh0U+xKaoVT4HJTWyV/vf3+fTji1yEsGMBbPexuD5aHvmun9SdgIlGw65GJB7Ibz47Bq/jVfnTV6o5BVDhEfwayHZgahODl5Uyc3VqkKoJh9IWivoBr/bLHXepiJGUReEw61nBc3JL9QC4J5ngterLXP/iapl185+JSvUzDjbtFDHLiXCqa8X17Cm9LSIKik/W7gM2tU63QcQd/p8H55he/Kgm94vWJlq98rjLCtBYTNQDSNAU6AFQqk2c3x23L09wSRIQJ1aUEq6aPx3yfbiRHyTslTyP4tg0I1U1o+jjh9tZV/+JpRcwg9xi9YLoGMAv9aUVGHodjehZw1wHnuql3ALiy/Nnm2LANDh4vhJ2fKsrBqhk8dyDdqFHFsLyTSXUAE4NKGG1AUV3fgMjvRRZZQ==" #work-pc
+        ];
       };
 
       # All of the available modules are listed below
@@ -66,6 +69,7 @@
 
       shell.fish.enable = true;
       shell.git.enable = true;
+      shell.openssh.enable = true;
 
       windowmanager.hyprland.enable = true;
       # windowmanager.i3.enable = true;
@@ -92,15 +96,6 @@
         };
         timeout = 1;
         efi.canTouchEfiVariables = true;
-      };
-    };
-
-    services = {
-      openssh = {
-        enable = true;
-        settings = {
-          permitRootLogin = "no";
-        };
       };
     };
 
