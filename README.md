@@ -75,7 +75,6 @@ These are the plugins I'm using:
 - [b64.nvim](https://github.com/taybart/b64.nvim)
 
 To update Neovim plugins, do `:Lazy update` in your nvim.
-`lazy` should auto update plugins for you to.
 **Note**: You need Neovim version >=0.7.0
 
 ## :package:&nbsp; Dependencies
