@@ -1,19 +1,16 @@
-{ lib
-, python3
-, fetchFromGitHub
-, pkgs
-, ...
-}:
+{ lib, python3, fetchPypi, pkgs, ... }:
+
 python3.pkgs.buildPythonPackage rec {
   pname = "prometheus-api-client";
   version = "0.5.3";
-  src = fetchFromGitHub {
-    owner = "4n4nd";
-    repo = "prometheus-api-client-python";
-    rev = "v${version}";
-    sha256 = "sha256-MouJPpiY3y/RgXc9orlT8GT8l+fIxozjUT7sphyedIM=";
+
+  src = fetchPypi {
+    inherit pname version;
+    sha256 = "sha256-mywpPCAgcuXPZxmanMQdXrMvAt2MwjxYR7YDzZzpm88=";
   };
+
   doCheck = false;
+
   propagatedBuildInputs = with pkgs.python3Packages; [ 
     matplotlib
     numpy
@@ -22,4 +19,10 @@ python3.pkgs.buildPythonPackage rec {
     dateparser
     httmock
   ];
+
+  meta = with lib; {
+    description = "A python wrapper for the prometheus http api";
+    homepage = "https://github.com/4n4nd/prometheus-api-client-python";
+    licence = licences.mit;
+  };
 }
