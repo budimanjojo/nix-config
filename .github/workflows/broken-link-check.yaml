@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          token: "{{ steps.generate-token.outputs.token }}"
+          token: "${{ steps.generate-token.outputs.token }}"
 
       - name: Scan for broken links
         uses: lycheeverse/lychee-action@v1
