@@ -139,6 +139,21 @@
         },
         "version": "d0efcc0c10cde11fd650a4ca399539e6f8f9f956"
     },
+    "prometheus-api-client": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "prometheus-api-client",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-mywpPCAgcuXPZxmanMQdXrMvAt2MwjxYR7YDzZzpm88=",
+            "type": "url",
+            "url": "https://pypi.io/packages/source/p/prometheus-api-client/prometheus-api-client-0.5.3.tar.gz"
+        },
+        "version": "0.5.3"
+    },
     "sad-nvim": {
         "cargoLocks": null,
         "date": "2023-03-13",

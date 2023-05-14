@@ -28,3 +28,6 @@ fetch.github = "budimanjojo/k8s-snippets"
 [guihua-lua]
 src.git = "https://github.com/ray-x/guihua.lua"
 fetch.github = "ray-x/guihua.lua"
+[prometheus-api-client]
+src.pypi = "prometheus-api-client"
+fetch.pypi = "prometheus-api-client"

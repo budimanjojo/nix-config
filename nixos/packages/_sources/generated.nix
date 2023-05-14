@@ -84,6 +84,14 @@
     });
     date = "2023-05-07";
   };
+  prometheus-api-client = {
+    pname = "prometheus-api-client";
+    version = "0.5.3";
+    src = fetchurl {
+      url = "https://pypi.io/packages/source/p/prometheus-api-client/prometheus-api-client-0.5.3.tar.gz";
+      sha256 = "sha256-mywpPCAgcuXPZxmanMQdXrMvAt2MwjxYR7YDzZzpm88=";
+    };
+  };
   sad-nvim = {
     pname = "sad-nvim";
     version = "869c7f3ca3dcd28fd78023db6a7e1bf8af0f4714";

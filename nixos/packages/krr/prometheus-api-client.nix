@@ -1,13 +1,11 @@
-{ lib, python3, fetchPypi, pkgs, ... }:
+{ lib, python3, pkgs, callPackage, ... }:
 
-python3.pkgs.buildPythonPackage rec {
-  pname = "prometheus-api-client";
-  version = "0.5.3";
+let
+  sourceData = callPackage ../_sources/generated.nix {};
+in
 
-  src = fetchPypi {
-    inherit pname version;
-    sha256 = "sha256-mywpPCAgcuXPZxmanMQdXrMvAt2MwjxYR7YDzZzpm88=";
-  };
+python3.pkgs.buildPythonPackage {
+  inherit (sourceData.prometheus-api-client) pname version src;
 
   doCheck = false;
 
