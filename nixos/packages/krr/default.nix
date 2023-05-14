@@ -1,17 +1,11 @@
-{ lib,  python3, fetchFromGitHub, pkgs }:
+{ lib, python3, callPackage, pkgs }:
 let
-  prometheus-api-client = pkgs.callPackage ./prometheus-api-client.nix { };
+  sourceData = callPackage ../_sources/generated.nix {};
+  prometheus-api-client = callPackage ./prometheus-api-client.nix {};
 in
 
-python3.pkgs.buildPythonPackage rec {
-  pname = "krr";
-  version = "1.0.0-rc0";
-  src = fetchFromGitHub {
-    owner = "robusta-dev";
-    repo = pname;
-    rev = "v${version}";
-    sha256 = "sha256-orfwzwaNPBWD4NYW4PGCcIepGAj1QKXDJzOFKQ46mcg=";
-  };
+python3.pkgs.buildPythonPackage {
+  inherit (sourceData.krr) pname version src;
 
   format = "pyproject";
 

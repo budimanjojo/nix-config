@@ -59,6 +59,26 @@
         },
         "version": "47456c4869a3bbc9d43653b17581511ef2e5fabb"
     },
+    "krr": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "krr",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "robusta-dev",
+            "repo": "krr",
+            "rev": "v1.0.0-rc0",
+            "sha256": "sha256-orfwzwaNPBWD4NYW4PGCcIepGAj1QKXDJzOFKQ46mcg=",
+            "type": "github"
+        },
+        "version": "v1.0.0-rc0"
+    },
     "luasnip": {
         "cargoLocks": null,
         "date": null,

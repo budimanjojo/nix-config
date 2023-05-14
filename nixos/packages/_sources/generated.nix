@@ -37,6 +37,17 @@
     });
     date = "2023-05-02";
   };
+  krr = {
+    pname = "krr";
+    version = "v1.0.0-rc0";
+    src = fetchFromGitHub ({
+      owner = "robusta-dev";
+      repo = "krr";
+      rev = "v1.0.0-rc0";
+      fetchSubmodules = false;
+      sha256 = "sha256-orfwzwaNPBWD4NYW4PGCcIepGAj1QKXDJzOFKQ46mcg=";
+    });
+  };
   luasnip = {
     pname = "luasnip";
     version = "v1.2.1";
