@@ -68,6 +68,7 @@ in {
           -- Keyboard shortcuts
           disable_default_key_bindings = true,
           keys = {
+            { key = "X", mods = "CTRL|SHIFT", action = "ActivateCopyMode" },
             { key = "C", mods = "CTRL|SHIFT", action = act.CopyTo("ClipboardAndPrimarySelection") },
             { key = "V", mods = "CTRL|SHIFT", action = act.PasteFrom("Clipboard") },
             { key = "+", mods = "CTRL|SHIFT", action = "IncreaseFontSize" },
