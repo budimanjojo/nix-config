@@ -53,6 +53,16 @@ for package in ${packages[@]}; do
   fi
 done
 
+# renovate: depName=wez/wezterm datasource=github-releases
+current_wezterm_version=20230408-112425-69ae8472
+
+if [ ! $(command -v wezterm) ] || [ $(wezterm -V | head -n1 | cut -d" " -f2) != "$current_wezterm_version" ]; then
+  echo "installing / upgrading wezterm"
+  curl -Lo /tmp/wezterm https://github.com/wez/wezterm/releases/download/"$current_wezterm_version"/WezTerm-"$current_wezterm_version"-Ubuntu20.04.AppImage
+  chmod +x /tmp/wezterm
+  mv /tmp/wezterm {{ .chezmoi.homeDir }}/.local/bin/wezterm
+fi
+
 {{ if (eq .chezmoi.osRelease.id "ubuntu") -}}
 for snap in ${snaps[@]}; do
   echo "installing $snap using snap"
