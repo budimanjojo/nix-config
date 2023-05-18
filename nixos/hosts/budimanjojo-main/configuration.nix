@@ -69,6 +69,7 @@
 
       shell.fish.enable = true;
       shell.git.enable = true;
+      shell.lf.enable = true;
       shell.openssh.enable = true;
 
       windowmanager.hyprland.enable = true;

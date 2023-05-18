@@ -48,6 +48,7 @@
 
       shell.fish.enable = true;
       shell.git.enable = true;
+      # shell.lf.enable = true;
 
       # windowmanager.i3.enable = true;
       # windowmanager.hyprland.enable = true;
