@@ -13,7 +13,7 @@ in {
       programs.lf = {
         enable = true;
         keybindings = {
-          "d" = "delete";
+          "D" = "delete";
           "n" = "";
           "nd" = "push :newdir<space>";
           "nf" = "push :newfile<space>";
