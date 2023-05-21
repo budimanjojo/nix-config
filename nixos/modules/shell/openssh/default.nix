@@ -12,6 +12,7 @@ in {
         enable = true;
         settings = {
           permitRootLogin = "no";
+          passwordAuthentication = false;
         };
       };
     };
