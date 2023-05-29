@@ -50,6 +50,7 @@
       shell.fish.enable = true;
       shell.git.enable = true;
       # shell.lf.enable = true;
+      shell.openssh.enable = true;
 
       # windowmanager.i3.enable = true;
       # windowmanager.hyprland.enable = true;
@@ -76,15 +77,6 @@
         };
         timeout = 1;
         efi.canTouchEfiVariables = true;
-      };
-    };
-
-    services = {
-      openssh = {
-        enable = true;
-        settings = {
-          permitRootLogin = "no";
-        };
       };
     };
 
