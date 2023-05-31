@@ -73,11 +73,11 @@
             "name": null,
             "owner": "robusta-dev",
             "repo": "krr",
-            "rev": "v1.0.0-rc0",
-            "sha256": "sha256-orfwzwaNPBWD4NYW4PGCcIepGAj1QKXDJzOFKQ46mcg=",
+            "rev": "v1.2.1-rc1",
+            "sha256": "sha256-7t/N8WBrZYflVg3Jo96522OWtjhJmHgPQL6y0AbrNBA=",
             "type": "github"
         },
-        "version": "v1.0.0-rc0"
+        "version": "v1.2.1-rc1"
     },
     "luasnip": {
         "cargoLocks": null,
@@ -101,7 +101,7 @@
     },
     "mason-lspconfig-nvim": {
         "cargoLocks": null,
-        "date": "2023-05-09",
+        "date": "2023-05-25",
         "extract": null,
         "name": "mason-lspconfig-nvim",
         "passthru": null,
@@ -113,11 +113,11 @@
             "name": null,
             "owner": "williamboman",
             "repo": "mason-lspconfig.nvim",
-            "rev": "90a8bbf106b85b76951a34c542058ffa807de2b1",
-            "sha256": "sha256-jUbk77uefolxJI9EaoAlxkq5tstStf4JCh0xCc9IlT8=",
+            "rev": "f0ce33f4794a2364eb08d09d09380e8b04ec5e6a",
+            "sha256": "sha256-7NCAX45eHvLyUb4r5IWpzGQTyPdsm96kVWM7ffwQnGU=",
             "type": "github"
         },
-        "version": "90a8bbf106b85b76951a34c542058ffa807de2b1"
+        "version": "f0ce33f4794a2364eb08d09d09380e8b04ec5e6a"
     },
     "mason-tool-installer-nvim": {
         "cargoLocks": null,
@@ -141,7 +141,7 @@
     },
     "oil-nvim": {
         "cargoLocks": null,
-        "date": "2023-05-07",
+        "date": "2023-05-24",
         "extract": null,
         "name": "oil-nvim",
         "passthru": null,
@@ -153,11 +153,11 @@
             "name": null,
             "owner": "stevearc",
             "repo": "oil.nvim",
-            "rev": "d0efcc0c10cde11fd650a4ca399539e6f8f9f956",
-            "sha256": "sha256-MOeV2jCOM6nrR+wyFTbdNDFkKdXY5FZ3dHNQ6M8bOcI=",
+            "rev": "64d2f305d30cec13938aa99f8f13bd84c502e020",
+            "sha256": "sha256-A2j1xwpj9mDV1+1LeTLVxZoMT8havpsQZulLtRZInOI=",
             "type": "github"
         },
-        "version": "d0efcc0c10cde11fd650a4ca399539e6f8f9f956"
+        "version": "64d2f305d30cec13938aa99f8f13bd84c502e020"
     },
     "prometheus-api-client": {
         "cargoLocks": null,
@@ -170,7 +170,7 @@
             "name": null,
             "sha256": "sha256-mywpPCAgcuXPZxmanMQdXrMvAt2MwjxYR7YDzZzpm88=",
             "type": "url",
-            "url": "https://pypi.io/packages/source/p/prometheus-api-client/prometheus-api-client-0.5.3.tar.gz"
+            "url": "https://pypi.org/packages/source/p/prometheus-api-client/prometheus-api-client-0.5.3.tar.gz"
         },
         "version": "0.5.3"
     },
@@ -196,7 +196,7 @@
     },
     "tokyonight-gtk-theme": {
         "cargoLocks": null,
-        "date": "2023-02-20",
+        "date": "2023-05-30",
         "extract": null,
         "name": "tokyonight-gtk-theme",
         "passthru": null,
@@ -208,15 +208,15 @@
             "name": null,
             "owner": "Fausto-Korpsvart",
             "repo": "Tokyo-Night-GTK-Theme",
-            "rev": "6e4ee110d8cbcd88b28b451595bf3a5a0ee194e1",
-            "sha256": "sha256-DjDrcirM7ksb3Yu07wwUZInUr87mGI6nN420kgR+AOE=",
+            "rev": "e9790345a6231cd6001f1356d578883fac52233a",
+            "sha256": "sha256-Q9UnvmX+GpvqSmTwdjU4hsEsYhA887wPqs5pyqbIhmc=",
             "type": "github"
         },
-        "version": "6e4ee110d8cbcd88b28b451595bf3a5a0ee194e1"
+        "version": "e9790345a6231cd6001f1356d578883fac52233a"
     },
     "tokyonight-icon-theme": {
         "cargoLocks": null,
-        "date": "2023-02-20",
+        "date": "2023-05-30",
         "extract": null,
         "name": "tokyonight-icon-theme",
         "passthru": null,
@@ -228,10 +228,10 @@
             "name": null,
             "owner": "Fausto-Korpsvart",
             "repo": "Tokyo-Night-GTK-Theme",
-            "rev": "6e4ee110d8cbcd88b28b451595bf3a5a0ee194e1",
-            "sha256": "sha256-DjDrcirM7ksb3Yu07wwUZInUr87mGI6nN420kgR+AOE=",
+            "rev": "e9790345a6231cd6001f1356d578883fac52233a",
+            "sha256": "sha256-Q9UnvmX+GpvqSmTwdjU4hsEsYhA887wPqs5pyqbIhmc=",
             "type": "github"
         },
-        "version": "6e4ee110d8cbcd88b28b451595bf3a5a0ee194e1"
+        "version": "e9790345a6231cd6001f1356d578883fac52233a"
     }
 }

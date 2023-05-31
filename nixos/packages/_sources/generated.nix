@@ -4,139 +4,139 @@
   chezmoi-vim = {
     pname = "chezmoi-vim";
     version = "062717b6d67331856ecf75fd36eb0a7db4fbea0b";
-    src = fetchFromGitHub ({
+    src = fetchFromGitHub {
       owner = "alker0";
       repo = "chezmoi.vim";
       rev = "062717b6d67331856ecf75fd36eb0a7db4fbea0b";
       fetchSubmodules = false;
       sha256 = "sha256-tFoqnwPzwsIgun/fQHPGLQ7hdd2t8p68GcMpLwsBamc=";
-    });
+    };
     date = "2023-03-01";
   };
   guihua-lua = {
     pname = "guihua-lua";
     version = "ab8b1f09603cc268770efd057115035dc6cfa83d";
-    src = fetchFromGitHub ({
+    src = fetchFromGitHub {
       owner = "ray-x";
       repo = "guihua.lua";
       rev = "ab8b1f09603cc268770efd057115035dc6cfa83d";
       fetchSubmodules = false;
       sha256 = "sha256-nsyIgpI2y3iVmU8SQmsSNLWHXxCAt4z1YpEhFy0Hvog=";
-    });
+    };
     date = "2023-04-27";
   };
   k8s-snippets = {
     pname = "k8s-snippets";
     version = "47456c4869a3bbc9d43653b17581511ef2e5fabb";
-    src = fetchFromGitHub ({
+    src = fetchFromGitHub {
       owner = "budimanjojo";
       repo = "k8s-snippets";
       rev = "47456c4869a3bbc9d43653b17581511ef2e5fabb";
       fetchSubmodules = false;
       sha256 = "sha256-kumdrVRIEe7Bmx7ZUx3PFL4obz8G9PKuuCqK6Omo4Uc=";
-    });
+    };
     date = "2023-05-02";
   };
   krr = {
     pname = "krr";
-    version = "v1.0.0-rc0";
-    src = fetchFromGitHub ({
+    version = "v1.2.1-rc1";
+    src = fetchFromGitHub {
       owner = "robusta-dev";
       repo = "krr";
-      rev = "v1.0.0-rc0";
+      rev = "v1.2.1-rc1";
       fetchSubmodules = false;
-      sha256 = "sha256-orfwzwaNPBWD4NYW4PGCcIepGAj1QKXDJzOFKQ46mcg=";
-    });
+      sha256 = "sha256-7t/N8WBrZYflVg3Jo96522OWtjhJmHgPQL6y0AbrNBA=";
+    };
   };
   luasnip = {
     pname = "luasnip";
     version = "v1.2.1";
-    src = fetchFromGitHub ({
+    src = fetchFromGitHub {
       owner = "L3MON4D3";
       repo = "LuaSnip";
       rev = "v1.2.1";
       fetchSubmodules = false;
       sha256 = "sha256-6NJPOu5f5ycu9l53CZB7prVNj61UaVz706tOrk5c860=";
-    });
+    };
   };
   mason-lspconfig-nvim = {
     pname = "mason-lspconfig-nvim";
-    version = "90a8bbf106b85b76951a34c542058ffa807de2b1";
-    src = fetchFromGitHub ({
+    version = "f0ce33f4794a2364eb08d09d09380e8b04ec5e6a";
+    src = fetchFromGitHub {
       owner = "williamboman";
       repo = "mason-lspconfig.nvim";
-      rev = "90a8bbf106b85b76951a34c542058ffa807de2b1";
+      rev = "f0ce33f4794a2364eb08d09d09380e8b04ec5e6a";
       fetchSubmodules = false;
-      sha256 = "sha256-jUbk77uefolxJI9EaoAlxkq5tstStf4JCh0xCc9IlT8=";
-    });
-    date = "2023-05-09";
+      sha256 = "sha256-7NCAX45eHvLyUb4r5IWpzGQTyPdsm96kVWM7ffwQnGU=";
+    };
+    date = "2023-05-25";
   };
   mason-tool-installer-nvim = {
     pname = "mason-tool-installer-nvim";
     version = "a6c4d7df448a78b0a05fd2065bef11ed52bee51c";
-    src = fetchFromGitHub ({
+    src = fetchFromGitHub {
       owner = "WhoIsSethDaniel";
       repo = "mason-tool-installer.nvim";
       rev = "a6c4d7df448a78b0a05fd2065bef11ed52bee51c";
       fetchSubmodules = false;
       sha256 = "sha256-bedQamYO2m0MXJYfMyCq5WcZZLGE7kPK8wpLo5qH/aA=";
-    });
+    };
     date = "2023-03-23";
   };
   oil-nvim = {
     pname = "oil-nvim";
-    version = "d0efcc0c10cde11fd650a4ca399539e6f8f9f956";
-    src = fetchFromGitHub ({
+    version = "64d2f305d30cec13938aa99f8f13bd84c502e020";
+    src = fetchFromGitHub {
       owner = "stevearc";
       repo = "oil.nvim";
-      rev = "d0efcc0c10cde11fd650a4ca399539e6f8f9f956";
+      rev = "64d2f305d30cec13938aa99f8f13bd84c502e020";
       fetchSubmodules = false;
-      sha256 = "sha256-MOeV2jCOM6nrR+wyFTbdNDFkKdXY5FZ3dHNQ6M8bOcI=";
-    });
-    date = "2023-05-07";
+      sha256 = "sha256-A2j1xwpj9mDV1+1LeTLVxZoMT8havpsQZulLtRZInOI=";
+    };
+    date = "2023-05-24";
   };
   prometheus-api-client = {
     pname = "prometheus-api-client";
     version = "0.5.3";
     src = fetchurl {
-      url = "https://pypi.io/packages/source/p/prometheus-api-client/prometheus-api-client-0.5.3.tar.gz";
+      url = "https://pypi.org/packages/source/p/prometheus-api-client/prometheus-api-client-0.5.3.tar.gz";
       sha256 = "sha256-mywpPCAgcuXPZxmanMQdXrMvAt2MwjxYR7YDzZzpm88=";
     };
   };
   sad-nvim = {
     pname = "sad-nvim";
     version = "869c7f3ca3dcd28fd78023db6a7e1bf8af0f4714";
-    src = fetchFromGitHub ({
+    src = fetchFromGitHub {
       owner = "ray-x";
       repo = "sad.nvim";
       rev = "869c7f3ca3dcd28fd78023db6a7e1bf8af0f4714";
       fetchSubmodules = false;
       sha256 = "sha256-uwXldYA7JdZHqoB4qfCnZcQW9YBjlRWmiz8mKb9jHuI=";
-    });
+    };
     date = "2023-03-13";
   };
   tokyonight-gtk-theme = {
     pname = "tokyonight-gtk-theme";
-    version = "6e4ee110d8cbcd88b28b451595bf3a5a0ee194e1";
-    src = fetchFromGitHub ({
+    version = "e9790345a6231cd6001f1356d578883fac52233a";
+    src = fetchFromGitHub {
       owner = "Fausto-Korpsvart";
       repo = "Tokyo-Night-GTK-Theme";
-      rev = "6e4ee110d8cbcd88b28b451595bf3a5a0ee194e1";
+      rev = "e9790345a6231cd6001f1356d578883fac52233a";
       fetchSubmodules = false;
-      sha256 = "sha256-DjDrcirM7ksb3Yu07wwUZInUr87mGI6nN420kgR+AOE=";
-    });
-    date = "2023-02-20";
+      sha256 = "sha256-Q9UnvmX+GpvqSmTwdjU4hsEsYhA887wPqs5pyqbIhmc=";
+    };
+    date = "2023-05-30";
   };
   tokyonight-icon-theme = {
     pname = "tokyonight-icon-theme";
-    version = "6e4ee110d8cbcd88b28b451595bf3a5a0ee194e1";
-    src = fetchFromGitHub ({
+    version = "e9790345a6231cd6001f1356d578883fac52233a";
+    src = fetchFromGitHub {
       owner = "Fausto-Korpsvart";
       repo = "Tokyo-Night-GTK-Theme";
-      rev = "6e4ee110d8cbcd88b28b451595bf3a5a0ee194e1";
+      rev = "e9790345a6231cd6001f1356d578883fac52233a";
       fetchSubmodules = false;
-      sha256 = "sha256-DjDrcirM7ksb3Yu07wwUZInUr87mGI6nN420kgR+AOE=";
-    });
-    date = "2023-02-20";
+      sha256 = "sha256-Q9UnvmX+GpvqSmTwdjU4hsEsYhA887wPqs5pyqbIhmc=";
+    };
+    date = "2023-05-30";
   };
 }
