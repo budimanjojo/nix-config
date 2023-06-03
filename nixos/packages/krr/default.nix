@@ -2,6 +2,7 @@
 let
   sourceData = callPackage ../_sources/generated.nix {};
   prometheus-api-client = callPackage ./prometheus-api-client.nix {};
+  alive-progress = callPackage ./alive-progress.nix {};
 in
 
 python3.pkgs.buildPythonPackage {
@@ -10,6 +11,7 @@ python3.pkgs.buildPythonPackage {
   format = "pyproject";
 
   propagatedBuildInputs = with pkgs.python3Packages; [ 
+    alive-progress
     cachetools
     certifi
     charset-normalizer

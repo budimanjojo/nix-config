@@ -1,4 +1,34 @@
 {
+    "about-time": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "about-time",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-alOIYtM85n2ZdCnRSZgxDh2/2my32bv795nEcJhH/s4=",
+            "type": "url",
+            "url": "https://pypi.org/packages/source/a/about-time/about-time-4.2.1.tar.gz"
+        },
+        "version": "4.2.1"
+    },
+    "alive-progress": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "alive-progress",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-dKldjQ1CvJnTo3JdvQbruFIkXxtk4wGnw3W5KyJmP3s=",
+            "type": "url",
+            "url": "https://pypi.org/packages/source/a/alive-progress/alive-progress-3.1.4.tar.gz"
+        },
+        "version": "3.1.4"
+    },
     "chezmoi-vim": {
         "cargoLocks": null,
         "date": "2023-03-01",

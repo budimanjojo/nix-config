@@ -31,6 +31,12 @@ fetch.github = "ray-x/guihua.lua"
 [prometheus-api-client]
 src.pypi = "prometheus-api-client"
 fetch.pypi = "prometheus-api-client"
+[alive-progress]
+src.pypi = "alive-progress"
+fetch.pypi = "alive-progress"
+[about-time]
+src.pypi = "about-time"
+fetch.pypi = "about-time"
 [krr]
 src.github_tag = "robusta-dev/krr"
 fetch.github = "robusta-dev/krr"
