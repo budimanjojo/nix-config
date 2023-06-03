@@ -44,7 +44,7 @@ in {
 
           # flux
           f = "flux";
-          fga = "flux get all";
+          fgk = "flux get ks";
           fsa = "flux suspend kustomization --all";
           fra = "flux resume kustomization --all";
           wfga = "hwatch -- flux get all";
