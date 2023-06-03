@@ -14,6 +14,7 @@ in {
       };
       programs.go.enable = true;
       home.packages = with pkgs; [
+        ansible-lint
         clang-tools
         curl
         delta
