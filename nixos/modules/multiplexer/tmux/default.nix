@@ -6,10 +6,9 @@ in {
 
   config = mkIf cfg.enable {
     home.manager = {
-      programs.tmux = {
-        enable = true;
-      };
-      home.file.".tmux.conf".source = ./.tmux.conf;
+      # TODO: use tmux home-manager module when it matures
+      home.packages = [ pkgs.tmux ];
+      xdg.configFile."tmux/tmux.conf".source = ./config/tmux.conf;
     };
   };
 }

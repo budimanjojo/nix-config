@@ -58,7 +58,17 @@ in {
               sha256 = "fveTvR+T6IiX8Zk5m6zToo1OtZc1VyrCHfOG63e9b64=";
             };
           }
-        ];
+        ] ++ (if config.modules.multiplexer.tmux.enable && !config.modules.multiplexer.zellij.enable then [
+          {
+            name = "tmux-fish";
+            src = pkgs.fetchFromGitHub {
+              owner = "budimanjojo";
+              repo = "tmux.fish";
+              rev = "87ef5c238b7fb133d7b49988c7c3fcb097953bd2";
+              sha256 = "sha256-ds1WN10Xlp6BYk1Wooq8NIkVyt5gJguKBH4JBrPo/Qo=";
+            };
+          }
+        ] else [ ]);
 
         functions = {
           mkcd = {
