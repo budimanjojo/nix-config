@@ -10,6 +10,11 @@ python3.pkgs.buildPythonPackage {
 
   format = "pyproject";
 
+  postPatch = ''
+    substituteInPlace pyproject.toml \
+      --replace "pydantic = \"1.10.7\"" "pydantic = \">=1.10.7\""
+  '';
+
   propagatedBuildInputs = with pkgs.python3Packages; [ 
     alive-progress
     cachetools
