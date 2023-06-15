@@ -301,6 +301,7 @@ for_window [app_id="retroarch"] move container to workspace $ws6, focus
 for_window [class="Gimp"] move container to workspace $ws7, focus
 for_window [app_id="obs"] move container to workspace $ws9, focus
 for_window [app_id="smplayer"] move container to workspace $ws5, focus
+for_window [app_id="totem"] move container to workspace $ws5, focus
 for_window [app_id="rhythmbox"] move container to workspace $ws5, focus
 for_window [class="VirtualBox"] move container to workspace $ws0, focus
 for_window [title="^Syncthing Tray( \(.*\))?$"] floating enable, border none, resize set 550 400, move position 1350 0

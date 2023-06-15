@@ -92,6 +92,10 @@
     command = "move container to workspace $ws5, focus";
   }
   {
+    criteria = { app_id = "totem"; };
+    command = "move container to workspace $ws5, focus";
+  }
+  {
     criteria = { app_id = "rhythmbox"; };
     command = "move container to workspace $ws5, focus";
   }
