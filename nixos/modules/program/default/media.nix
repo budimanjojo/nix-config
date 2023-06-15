@@ -8,8 +8,8 @@ in {
   config = mkIf cfg.enable {
     home.manager.home.packages = with pkgs; [
       gnome.eog
+      gnome.totem
       rhythmbox
-      smplayer
     ];
   };
 }
