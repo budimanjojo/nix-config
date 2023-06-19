@@ -12,7 +12,8 @@ python3.pkgs.buildPythonPackage {
 
   postPatch = ''
     substituteInPlace pyproject.toml \
-      --replace "pydantic = \"1.10.7\"" "pydantic = \">=1.10.7\""
+      --replace "pydantic = \"1.10.7\"" "pydantic = \">=1.10.7\"" \
+      --replace "typer = {extras = [\"all\"], version = \"^0.7.0\"}" "typer = {extras = [\"all\"], version = \">=0.7.0\"}"
   '';
 
   propagatedBuildInputs = with pkgs.python3Packages; [ 
