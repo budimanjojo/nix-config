@@ -103,11 +103,11 @@
             "name": null,
             "owner": "robusta-dev",
             "repo": "krr",
-            "rev": "v1.3.0-alpha1",
-            "sha256": "sha256-Gsl7S8n0bOxkK1dFOYTQ0/kzCThJdIk4wDj5OvgnvQY=",
+            "rev": "v1.3.1-alpha2",
+            "sha256": "sha256-yQzRejZpgbDV/FSZ+DyY3HQ3C6WGdyvdqD9iBIDp9H0=",
             "type": "github"
         },
-        "version": "v1.3.0-alpha1"
+        "version": "v1.3.1-alpha2"
     },
     "luasnip": {
         "cargoLocks": null,
