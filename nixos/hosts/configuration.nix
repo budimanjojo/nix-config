@@ -66,6 +66,8 @@ in {
     stateVersion = "22.05";
   };
 
+  documentation.nixos.enable = false;
+
   home.manager = {
     home = {
       username = deviceCfg.username;
