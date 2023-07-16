@@ -11,7 +11,7 @@ in
   $super = SUPER
   $alt = ALT
   # Default applications
-  $terminal = wezterm
+  $terminal = alacritty
   $browser = rofi-firefox-wrapper
   $filemanager = thunar
   # Mode string to show on bar
