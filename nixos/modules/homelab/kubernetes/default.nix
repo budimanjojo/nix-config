@@ -52,10 +52,6 @@ in {
           # k9s
           ks = "k9s";
         };
-        shellInit = ''
-          # Add krew binaries to $PATH
-          set -gx PATH $PATH $HOME/.krew/bin
-        '';
       };
 
       home.packages = with pkgs; [
@@ -65,7 +61,6 @@ in {
         go-task
         jq
         k9s
-        krew
         kubectl
         kubernetes-helm
         kustomize
@@ -74,8 +69,9 @@ in {
         sops
         talosctl
       ] ++ [
-        myPkgs.talhelper
         myPkgs.krr
+        myPkgs.kubectl-rook-ceph
+        myPkgs.talhelper
       ];
     };
   };
