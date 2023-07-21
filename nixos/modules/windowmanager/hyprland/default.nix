@@ -69,6 +69,9 @@ in {
     networking.networkmanager.enable = true;
 
     home.manager = {
+      # also disable the home-manager module and use the hyprland module for bleeding edge
+      disabledModules = [ "services/window-managers/hyprland.nix" ];
+
       imports = [ inputs.hyprland.homeManagerModules.default ];
       xdg.configFile."hypr/wallpapers".source = ./wallpapers;
       xdg.configFile."hypr/sounds".source = ./sounds;
