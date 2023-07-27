@@ -6,7 +6,7 @@ in {
   options.modules.system.font = { enable = mkEnableOption "font"; };
 
   config = mkIf cfg.enable {
-    fonts.fonts = with pkgs; [
+    fonts.packages = with pkgs; [
       (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
       unifont
     ];
