@@ -4,9 +4,6 @@ let
   cfg = config.modules.windowmanager.hyprland;
   device = config.modules.device;
 in {
-  # disable the nixpkgs module and use the hyprland module for bleeding edge
-  disabledModules = [ "programs/hyprland.nix" ];
-
   options.modules.windowmanager.hyprland = { enable = mkEnableOption "hyprland"; };
 
   config = mkIf cfg.enable {
@@ -69,9 +66,6 @@ in {
     networking.networkmanager.enable = true;
 
     home.manager = {
-      # also disable the home-manager module and use the hyprland module for bleeding edge
-      disabledModules = [ "services/window-managers/hyprland.nix" ];
-
       imports = [ inputs.hyprland.homeManagerModules.default ];
       xdg.configFile."hypr/wallpapers".source = ./wallpapers;
       xdg.configFile."hypr/sounds".source = ./sounds;
