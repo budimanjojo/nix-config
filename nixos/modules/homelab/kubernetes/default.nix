@@ -69,7 +69,7 @@ in {
         sops
         talosctl
       ] ++ [
-        myPkgs.krr
+        # myPkgs.krr
         myPkgs.kubectl-rook-ceph
         myPkgs.talhelper
       ];
