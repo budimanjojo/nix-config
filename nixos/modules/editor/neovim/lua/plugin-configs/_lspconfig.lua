@@ -135,6 +135,7 @@ lspconfig.tsserver.setup {
 lspconfig.jsonls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
+  filetypes = { 'json', 'jsonc', 'json5' },
   settings = {
     json = {
       schemas = require('schemastore').json.schemas(),
