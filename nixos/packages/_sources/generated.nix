@@ -55,13 +55,13 @@
   };
   krr = {
     pname = "krr";
-    version = "v1.5.1-pre";
+    version = "v1.5.2-pre";
     src = fetchFromGitHub {
       owner = "robusta-dev";
       repo = "krr";
-      rev = "v1.5.1-pre";
+      rev = "v1.5.2-pre";
       fetchSubmodules = false;
-      sha256 = "sha256-5sAWFiNodvmYvDZinSeulbOLqMPnrGo/JFx37EXA3Zw=";
+      sha256 = "sha256-ehGJ5cp2quN91aMnk181OxHzEqaKzxtVNg+0l7c45hw=";
     };
   };
   luasnip = {
@@ -101,13 +101,13 @@
   };
   oil-nvim = {
     pname = "oil-nvim";
-    version = "887bb4a8b6c9d73db9c34352d5363ee6289f733e";
+    version = "0e5fca35cdc743cf3a448cea1a6251cf25cebafa";
     src = fetchFromGitHub {
       owner = "stevearc";
       repo = "oil.nvim";
-      rev = "887bb4a8b6c9d73db9c34352d5363ee6289f733e";
+      rev = "0e5fca35cdc743cf3a448cea1a6251cf25cebafa";
       fetchSubmodules = false;
-      sha256 = "sha256-as8XxULlEjeEPGbwQ/JopPAJwzwCTSVh2nNNxe8xiJU=";
+      sha256 = "sha256-Jxumg6RLt+qUEb+RTXMiXBT8r2hbsvqFfrMWciCI1Dg=";
     };
     date = "2023-08-09";
   };
