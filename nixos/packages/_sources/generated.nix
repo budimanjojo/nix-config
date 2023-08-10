@@ -55,13 +55,13 @@
   };
   krr = {
     pname = "krr";
-    version = "v1.5.2-pre";
+    version = "v1.5.3";
     src = fetchFromGitHub {
       owner = "robusta-dev";
       repo = "krr";
-      rev = "v1.5.2-pre";
+      rev = "v1.5.3";
       fetchSubmodules = false;
-      sha256 = "sha256-ehGJ5cp2quN91aMnk181OxHzEqaKzxtVNg+0l7c45hw=";
+      sha256 = "sha256-kW3APvsJ1VTxKML+BWM8pdNfHI9bCZssounDPhQyPe4=";
     };
   };
   luasnip = {
