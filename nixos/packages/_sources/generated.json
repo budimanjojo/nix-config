@@ -198,11 +198,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-mywpPCAgcuXPZxmanMQdXrMvAt2MwjxYR7YDzZzpm88=",
+            "sha256": "sha256-OFaBB+GCqibyJZn3lCFeo93l7NPvFJRO72FO6qRsm2o=",
             "type": "url",
-            "url": "https://pypi.org/packages/source/p/prometheus-api-client/prometheus-api-client-0.5.3.tar.gz"
+            "url": "https://pypi.org/packages/source/p/prometheus-api-client/prometheus-api-client-0.5.4.tar.gz"
         },
-        "version": "0.5.3"
+        "version": "0.5.4"
     },
     "sad-nvim": {
         "cargoLocks": null,

@@ -113,10 +113,10 @@
   };
   prometheus-api-client = {
     pname = "prometheus-api-client";
-    version = "0.5.3";
+    version = "0.5.4";
     src = fetchurl {
-      url = "https://pypi.org/packages/source/p/prometheus-api-client/prometheus-api-client-0.5.3.tar.gz";
-      sha256 = "sha256-mywpPCAgcuXPZxmanMQdXrMvAt2MwjxYR7YDzZzpm88=";
+      url = "https://pypi.org/packages/source/p/prometheus-api-client/prometheus-api-client-0.5.4.tar.gz";
+      sha256 = "sha256-OFaBB+GCqibyJZn3lCFeo93l7NPvFJRO72FO6qRsm2o=";
     };
   };
   sad-nvim = {
