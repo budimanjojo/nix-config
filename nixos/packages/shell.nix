@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ inputs', pkgs, ... }:
 with pkgs;
 mkShell {
   buildInputs = [
-    nvfetcher
+    inputs'.nvfetcher.packages.default
     nix-prefetch
     hydra-check
   ];

@@ -17,6 +17,8 @@
     hyprland.url = "github:hyprwm/Hyprland";
     nh.url = "github:viperML/nh";
     nh.inputs.nixpkgs.follows = "nixpkgs";
+    nvfetcher.url = "github:berberman/nvfetcher";
+    nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { flake-parts, ... }@inputs:
@@ -31,7 +33,7 @@
         ...
       }: {
         legacyPackages = import ./nixos/packages { inherit inputs' pkgs; };
-        devShells.default = import ./nixos/packages/shell.nix { inherit pkgs; };
+        devShells.default = import ./nixos/packages/shell.nix { inherit inputs' pkgs; };
       };
 
       flake.nixosConfigurations = {
