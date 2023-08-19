@@ -66,6 +66,7 @@ in {
         kustomize
         minio-client
         nodePackages.zx
+        pulumi-bin
         sops
         talosctl
       ] ++ [
