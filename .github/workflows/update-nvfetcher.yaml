@@ -21,7 +21,7 @@ jobs:
       - uses: workflow/nix-shell-action@v3
         id: update_nvfetcher
         with:
-          packages: nvfetcher
+          flakes: github:berberman/nvfetcher
           script: |
             cd nixos/packages
             echo "OUTPUT<<EOF" >> $GITHUB_OUTPUT
