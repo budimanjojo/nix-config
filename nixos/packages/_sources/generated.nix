@@ -43,15 +43,15 @@
   };
   k8s-snippets = {
     pname = "k8s-snippets";
-    version = "47456c4869a3bbc9d43653b17581511ef2e5fabb";
+    version = "fc461b4f6a8d10af103299a4e175e7c5527e3e27";
     src = fetchFromGitHub {
       owner = "budimanjojo";
       repo = "k8s-snippets";
-      rev = "47456c4869a3bbc9d43653b17581511ef2e5fabb";
+      rev = "fc461b4f6a8d10af103299a4e175e7c5527e3e27";
       fetchSubmodules = false;
-      sha256 = "sha256-kumdrVRIEe7Bmx7ZUx3PFL4obz8G9PKuuCqK6Omo4Uc=";
+      sha256 = "sha256-zUknVsKSUekDKzHWMLUn2PnBvazUbcOaojD2O5/3F9U=";
     };
-    date = "2023-05-02";
+    date = "2023-08-23";
   };
   krr = {
     pname = "krr";
