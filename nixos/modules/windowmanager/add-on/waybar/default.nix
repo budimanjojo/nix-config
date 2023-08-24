@@ -14,7 +14,6 @@ in {
       programs.waybar = {
         enable = true;
         systemd.enable = true;
-        package = mkIf config.modules.windowmanager.hyprland.enable pkgs.waybar-hyprland;
         settings = forEach device.monitors (monitor: mapAttrs (n: v: v)
           {
             "output" = monitor.name;
