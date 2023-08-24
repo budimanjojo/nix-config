@@ -8,9 +8,6 @@ in {
 
   config = mkIf cfg.enable {
     home.manager = {
-      systemd.user.services.waybar.Service.Environment = mkIf config.modules.windowmanager.hyprland.enable
-        "PATH=/run/wrappers/bin:${inputs.hyprland.packages.${system}.hyprland}/bin";
-
       programs.waybar = {
         enable = true;
         systemd.enable = true;
@@ -85,10 +82,10 @@ in {
             };
           } else if config.modules.windowmanager.hyprland.enable then {
             "modules-left" = [
-              "wlr/workspaces"
+              "hyprland/workspaces"
               "hyprland/submap"
             ];
-            "wlr/workspaces" = {
+            "hyprland/workspaces" = {
               "format" = "{name}";
               "on-click" = "activate";
               "on-scroll-up" = "${inputs.hyprland.packages.${system}.hyprland}/bin/hyprctl dispatch workspace e+1";
