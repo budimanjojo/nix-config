@@ -1,16 +1,13 @@
 {
-  "enabled": true,
-  "platform": "github",
+  "extends": [
+    "github>budimanjojo/renovate-config:default.json5",
+    "github>aquaproj/aqua-renovate-config:installer-script#0.1.8(.chezmoiscripts/.*install-aqua\\.sh\\.tmpl)",
+    "github>aquaproj/aqua-renovate-config:file#0.1.8(dot_config/aqua\\.yaml\\.tmpl)",
+    "github>aquaproj/aqua-renovate-config:golang-go#0.1.8(dot_config/aqua\\.yaml\\.tmpl)"
+  ],
   "username": "budimanjojo-bot[bot]",
-  "repositories": ["budimanjojo/dotfiles"],
   "gitAuthor": "budimanjojo-bot <111944664+budimanjojo-bot[bot]@users.noreply.github.com>",
-  "semanticCommits": "enabled",
-  "labels": ["renovatebot"],
-  "commitBody": "Signed-Off-by: Budiman JOJO <budimanjojo@gmail.com>",
-  "dependencyDashboard": true,
-  "dependencyDashboardTitle": "Renovate Dashboard",
-  "suppressNotifications": ["prIgnoreNotification"],
-  "rebaseWhen": "conflicted",
+  "repositories": ["budimanjojo/dotfiles"],
   "automerge": true,
   "ignoreTests": true,
   "lockFileMaintenance": {
@@ -22,11 +19,6 @@
   "nix": {
     "enabled": true
   },
-  "extends": [
-    "github>aquaproj/aqua-renovate-config:installer-script#0.1.8(.chezmoiscripts/.*install-aqua\\.sh\\.tmpl)",
-    "github>aquaproj/aqua-renovate-config:file#0.1.8(dot_config/aqua\\.yaml\\.tmpl)",
-    "github>aquaproj/aqua-renovate-config:golang-go#0.1.8(dot_config/aqua\\.yaml\\.tmpl)"
-  ],
   "regexManagers": [
     {
       "fileMatch": ["\\.chezmoiscripts\\/.+\\.sh\\.tmpl$"],
