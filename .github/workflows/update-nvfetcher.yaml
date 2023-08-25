@@ -41,6 +41,7 @@ jobs:
           title: "chore(deps): update packages managed by nvfetcher"
           commit-message: "chore(deps): update packages managed by nvfetcher"
           delete-branch: true
+          labels: nvfetcher
           committer: budimanjojo-bot <111944664+budimanjojo-bot[bot]@users.noreply.github.com>
           author: budimanjojo-bot <111944664+budimanjojo-bot[bot]@users.noreply.github.com>
           body: |
