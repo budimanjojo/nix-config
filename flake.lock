@@ -95,11 +95,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1694338541,
-        "narHash": "sha256-+ZtaNbOwlO1QgYOEvWdhi5wkWjW5Csrboz4xy0WucDg=",
+        "lastModified": 1694375657,
+        "narHash": "sha256-32X8dcty4vPXx+D4yJPQZBo5hJ1NQikALhevGv6elO4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "f9041d12a90e8bc0c90e03be2ebe26a6c6e6fd70",
+        "rev": "f7848d3e5f15ed02e3f286029697e41ee31662d7",
         "type": "github"
       },
       "original": {
@@ -137,11 +137,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1694367174,
-        "narHash": "sha256-EX2cl7G5P0w/v9OC0zc31UiEU4/eOmde2cF+WnCTYog=",
+        "lastModified": 1694441683,
+        "narHash": "sha256-aP+N3ubkvgZ4htsVKJsv8u9co4CAlstzb3CJvBj3cLE=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "1e608029686e961cb64c7aeae24b14e0112f4860",
+        "rev": "df51c45d7f9e4e280b959f790f7cde6c88b9b451",
         "type": "github"
       },
       "original": {
@@ -332,11 +332,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1694365504,
-        "narHash": "sha256-dACSzzN58Y8hnt6QManX07bLVCqQm6uSe4ht7xRtKD4=",
+        "lastModified": 1694450801,
+        "narHash": "sha256-0mC/dwO+PpAPl0Bcy2Q9OW4rVR71ZTlfJlZHUWfiKLM=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "e797fc42a177a2434db295f662a4f5cd1e23f4bf",
+        "rev": "d63be112d5c923d4c8eb4e1f316552fd9bb428c0",
         "type": "github"
       },
       "original": {
@@ -441,11 +441,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1694313330,
-        "narHash": "sha256-bByoUN1qAlAnyg0cRjp99M7iW0q5FNhFa8FQD5K3Yxc=",
+        "lastModified": 1694425515,
+        "narHash": "sha256-9S1jqRlSad1NaOlNlceLlnmM9NmBiwURSxwEEJekWmo=",
         "owner": "budimanjojo",
         "repo": "talhelper",
-        "rev": "3230654692e6446e9d7ebcf5016cb9784bc7bd5a",
+        "rev": "d67aad237497f82e2f4a54960e12abb6dee86ad4",
         "type": "github"
       },
       "original": {
