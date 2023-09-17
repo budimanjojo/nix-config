@@ -13,7 +13,7 @@ in {
     home.manager = {
       home.packages = with pkgs; [
         bat
-        exa
+        eza
         fd
         fzf
         fish
@@ -113,11 +113,11 @@ in {
           # nh
           nos = "git -C $FLAKE pull; nh os switch";
 
-          # exa
-          lsa = "exa -lag --git --icons --sort=type";
-          l = "exa -lag --git -icons --sort=type";
-          ll = "exa -l --git --icons --sort=type";
-          la = "exa -lag --git --icons --sort=type";
+          # eza
+          lsa = "eza -lag --git --icons --sort=type";
+          l = "eza -lag --git -icons --sort=type";
+          ll = "eza -l --git --icons --sort=type";
+          la = "eza -lag --git --icons --sort=type";
 
           # the fuck
           fu = "fuck";
@@ -173,7 +173,7 @@ in {
           my_vi_keybindings
 
           # FZF
-          set fzf_preview_dir_cmd exa --all --color=always
+          set fzf_preview_dir_cmd eza --all --color=always
           set -x FZF_DEFAULT_OPTS '--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*" --color=fg:white,bg:black,hl:red,fg+:white,hl+:red,info:yellow,prompt:blue,pointer:magenta,marker:magenta,spinner:green,header:blue,border:white'
           set fzf_fd_opts --hidden --exclude=.git --exclude=.github --exclude=.cache
           fzf_configure_bindings --git_log=\cg --git_status=\cs --variables=\cv --directory=\cf --history=\cr

@@ -1,5 +1,5 @@
-if type -q exa
-  function ls --wraps exa --description 'alias ls=exa'
-    exa $argv
+if type -q eza
+  function ls --wraps eza --description 'alias ls=eza'
+    eza $argv
   end
 end
