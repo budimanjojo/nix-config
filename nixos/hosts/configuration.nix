@@ -12,7 +12,7 @@ in {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" ];
     shell = pkgs.fish;
-    passwordFile = config.sops.secrets.budiman-password.path;
+    hashedPasswordFile = config.sops.secrets.budiman-password.path;
   };
 
   # Autologin
