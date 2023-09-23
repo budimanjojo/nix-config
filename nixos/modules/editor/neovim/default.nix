@@ -45,6 +45,10 @@ in {
         plugins = with vimPlugins; [
           # Syntax highlighting
           ansible-vim
+          {
+            plugin = nvim-colorizer-lua;
+            config = "lua require('colorizer').setup()";
+          }
           chezmoi-vim
           # Appearance
           tokyonight-nvim
@@ -67,10 +71,6 @@ in {
           null-ls-nvim
           plenary-nvim
           mason-tool-installer-nvim
-          {
-            plugin = nvim-colorizer-lua;
-            config = "lua require('colorizer').setup()";
-          }
           {
            plugin = nvim-lspconfig;
            config = "lua require('plugin-configs._lspconfig')";
