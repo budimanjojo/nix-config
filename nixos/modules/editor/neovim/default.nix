@@ -152,11 +152,6 @@ in {
             config = "lua require('nvim-surround').setup()";
           }
           #nur.repos.m15a.vimExtraPlugins.b64-nvim
-          # Braindead doctor
-          {
-            plugin = which-key-nvim;
-            config = "lua require('which-key').setup()";
-          }
           # Other
           presence-nvim
         ];

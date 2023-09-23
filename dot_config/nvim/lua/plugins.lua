@@ -180,14 +180,6 @@ lazy.setup(
     },
     'taybart/b64.nvim',
 
-    -- Braindead doctor
-    {
-      'folke/which-key.nvim',
-      config = function()
-        require('which-key').setup()
-      end
-    },
-
     -- Other
     'andweeb/presence.nvim',
   },
