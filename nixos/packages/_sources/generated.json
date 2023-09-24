@@ -31,7 +31,7 @@
     },
     "chezmoi-vim": {
         "cargoLocks": null,
-        "date": "2023-09-04",
+        "date": "2023-09-24",
         "extract": null,
         "name": "chezmoi-vim",
         "passthru": null,
@@ -43,11 +43,11 @@
             "name": null,
             "owner": "alker0",
             "repo": "chezmoi.vim",
-            "rev": "0512b03d51f5af10f2c06cd484cf95a84d7695ec",
-            "sha256": "sha256-hbjemeLsKnIcbYgDlRiu6Py3kPb6JbyHUTze8bdNJNs=",
+            "rev": "29b79d59725b6be3852c837ce9683b5cdf963c12",
+            "sha256": "sha256-wEUsQDDbYc9AiU3P3ndyNTgoTGVtOtExWFRKqzJZ7ZY=",
             "type": "github"
         },
-        "version": "0512b03d51f5af10f2c06cd484cf95a84d7695ec"
+        "version": "29b79d59725b6be3852c837ce9683b5cdf963c12"
     },
     "guihua-lua": {
         "cargoLocks": null,
