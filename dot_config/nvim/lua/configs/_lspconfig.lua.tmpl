@@ -33,6 +33,9 @@ require('mason-tool-installer').setup {
     'shfmt',
 
     -- diagnostics
+{{ if not .headless -}}
+    'golangci-lint'
+{{ end -}}
     'markdownlint',
     'shellcheck',
     'write-good',
@@ -258,6 +261,9 @@ null_ls.setup {
     null_ls.builtins.diagnostics.ansiblelint.with {
       filetypes = { 'yaml.ansible' }
     },
+{{ if not .headless -}}
+    null_ls.builtins.diagnostics.golangci_lint,
+{{ end -}}
     null_ls.builtins.diagnostics.markdownlint,
     null_ls.builtins.diagnostics.shellcheck,
     null_ls.builtins.diagnostics.write_good,
