@@ -74,6 +74,7 @@ lazy.setup(
         require('configs._lspconfig')
       end
     },
+    'folke/neodev.nvim',
     {
       'nvim-treesitter/nvim-treesitter',
       build = ':TSUpdate',

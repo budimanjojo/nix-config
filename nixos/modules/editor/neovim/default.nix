@@ -68,6 +68,7 @@ in {
           lsp_signature-nvim
           mason-nvim
           mason-lspconfig-nvim
+          neodev-nvim
           null-ls-nvim
           plenary-nvim
           mason-tool-installer-nvim
