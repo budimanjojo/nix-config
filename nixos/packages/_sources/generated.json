@@ -143,11 +143,11 @@
             "name": null,
             "owner": "williamboman",
             "repo": "mason-lspconfig.nvim",
-            "rev": "80c4262a62dfc70526e4dbddc787a2185634f312",
-            "sha256": "sha256-6LDYsHsQdAbX+Kd1U8UPZLHrwgCV2Vcnenra9Ujtp8M=",
+            "rev": "d4870bb95b57b2716fc6d393fd2fd76c68dfe238",
+            "sha256": "sha256-/Q2gSc3Fq1vb2NJ55y2WoQaQnr6uG+pV2ARrLoQWDi4=",
             "type": "github"
         },
-        "version": "80c4262a62dfc70526e4dbddc787a2185634f312"
+        "version": "d4870bb95b57b2716fc6d393fd2fd76c68dfe238"
     },
     "mason-tool-installer-nvim": {
         "cargoLocks": null,
