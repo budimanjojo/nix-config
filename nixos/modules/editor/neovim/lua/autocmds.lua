@@ -61,6 +61,32 @@ api.nvim_create_autocmd({ 'FileType' }, {
   group = ftconfiguration
 })
 
+-- Close some filetypes with <q>
+local closewithq = api.nvim_create_augroup('closewithq', { clear = true })
+api.nvim_create_autocmd({ 'FileType' }, {
+  pattern = {
+    'PlenaryTestPopup',
+    'help',
+    'lspinfo',
+    'man',
+    'notify',
+    'qf',
+    'query',
+    'spectre_panel',
+    'startuptime',
+    'tsplayground',
+    'neotest-output',
+    'checkhealth',
+    'neotest-summary',
+    'neotest-output-panel',
+  },
+  callback = function(event)
+    vim.bo[event.buf].buflisted = false
+    vim.keymap.set('n', 'q', '<cmd>close<CR>', { buffer = event.buf, silent = true })
+  end,
+  group = closewithq
+})
+
 -- Auto imports and format on save for golang
 local autoimportformatgo = api.nvim_create_augroup('autoimportformatgo', { clear = true })
 api.nvim_create_autocmd({ 'BufWritePre' }, {
