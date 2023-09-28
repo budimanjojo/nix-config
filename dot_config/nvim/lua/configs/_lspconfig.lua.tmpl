@@ -79,7 +79,8 @@ local on_attach = function(_, bufnr)
   local keymap = vim.keymap
   local opts = { buffer = bufnr }
 
-  keymap.set('n', 'rn', vim.lsp.buf.rename, { unpack(opts), desc = "Do LSP rename action" })
+  keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { unpack(opts), desc = "Do LSP rename action" })
+  keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { unpack(opts), desc = "Do LSP code action" })
   keymap.set('n', 'gd', vim.lsp.buf.definition, { unpack(opts), desc = "Do LSP get definition action" })
   keymap.set('n', 'gD', vim.lsp.buf.declaration, { unpack(opts), desc = "Do LSP get declaration action" })
   keymap.set('n', 'gh', function() return require('utils').fix_buf_hover() end, { unpack(opts), desc = "Do LSP hover action" })
