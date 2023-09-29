@@ -95,11 +95,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1695738267,
-        "narHash": "sha256-LTNAbTQ96xSj17xBfsFrFS9i56U2BMLpD0BduhrsVkU=",
+        "lastModified": 1695984718,
+        "narHash": "sha256-LQwKgaaaFOkIcxarf0xQXeDJFwZ5BZWcgmPeo3xp2CM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "0f4e5b4999fd6a42ece5da8a3a2439a50e48e486",
+        "rev": "4f02e35f9d150573e1a710afa338846c2f6d850c",
         "type": "github"
       },
       "original": {
@@ -137,11 +137,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1695928221,
-        "narHash": "sha256-XTv79dSYHBAA/kK3eP9A+mIL6+GS59O4qcvQcfhAaFU=",
+        "lastModified": 1696006541,
+        "narHash": "sha256-9PlNMKgHgrTLhmCzD3+HwgkC1Zp4Fujx+MDzSp+SLLw=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "1e513e25d5645260a2ebdfbe8dbf3b8df487339c",
+        "rev": "e07e64458e4ee5c42365bb05260b85723276d1c9",
         "type": "github"
       },
       "original": {
@@ -332,11 +332,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1695927626,
-        "narHash": "sha256-jF2giXnaIrK/KM3V4xaYoBHkl+smfVTYB7lXT+VKWPk=",
+        "lastModified": 1696006074,
+        "narHash": "sha256-7HgQAtJepQdZeAhwoi4KQ5PoHIRCE3IkBQrBqwAHlP0=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "03e6bf899dc4ee1c9d79a997760e7b36ad59670b",
+        "rev": "11ede1668855bfdbdd5606e9d08642fc060b92b5",
         "type": "github"
       },
       "original": {
@@ -441,11 +441,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1695704487,
-        "narHash": "sha256-gEMvRUipmh0A+R5XCEUAyBLm/YrxlD8lNOS9aurHBlQ=",
+        "lastModified": 1695972511,
+        "narHash": "sha256-HiE5zZvtfobT8ODjxMMcv/1tScV8wUVZMFxlOMS08dc=",
         "owner": "budimanjojo",
         "repo": "talhelper",
-        "rev": "94dbdb50501b16b79128378e8c1f1c06c5f1301f",
+        "rev": "cc3d54dbc57bfa8097e2c291dc173c816affe3d3",
         "type": "github"
       },
       "original": {
