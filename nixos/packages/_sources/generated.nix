@@ -77,15 +77,15 @@
   };
   mason-lspconfig-nvim = {
     pname = "mason-lspconfig-nvim";
-    version = "d4870bb95b57b2716fc6d393fd2fd76c68dfe238";
+    version = "93eeef62973d13703b4f41eff43f1536b5fa6e17";
     src = fetchFromGitHub {
       owner = "williamboman";
       repo = "mason-lspconfig.nvim";
-      rev = "d4870bb95b57b2716fc6d393fd2fd76c68dfe238";
+      rev = "93eeef62973d13703b4f41eff43f1536b5fa6e17";
       fetchSubmodules = false;
-      sha256 = "sha256-/Q2gSc3Fq1vb2NJ55y2WoQaQnr6uG+pV2ARrLoQWDi4=";
+      sha256 = "sha256-5agsSxQuzL4oRAsvVhHOkER+dTlhspIgK5csLnJlMDU=";
     };
-    date = "2023-09-28";
+    date = "2023-09-29";
   };
   mason-tool-installer-nvim = {
     pname = "mason-tool-installer-nvim";
