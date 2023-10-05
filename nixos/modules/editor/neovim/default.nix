@@ -61,7 +61,7 @@ in {
           }
           {
             plugin = indent-blankline-nvim;
-            config = "lua require('indent_blankline').setup()";
+            config = "lua require('ibl').setup()";
           }
           # LSP
           SchemaStore-nvim
