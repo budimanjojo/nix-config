@@ -19,15 +19,15 @@
   };
   chezmoi-vim = {
     pname = "chezmoi-vim";
-    version = "29b79d59725b6be3852c837ce9683b5cdf963c12";
+    version = "50a3649ed91ba848f32d05961f35ae4fa7bdd9fc";
     src = fetchFromGitHub {
       owner = "alker0";
       repo = "chezmoi.vim";
-      rev = "29b79d59725b6be3852c837ce9683b5cdf963c12";
+      rev = "50a3649ed91ba848f32d05961f35ae4fa7bdd9fc";
       fetchSubmodules = false;
-      sha256 = "sha256-wEUsQDDbYc9AiU3P3ndyNTgoTGVtOtExWFRKqzJZ7ZY=";
+      sha256 = "sha256-T79zdPzkIdzpqc7mEhqeWuYE2C5fagR27aE5vOpg3xU=";
     };
-    date = "2023-09-24";
+    date = "2023-10-19";
   };
   guihua-lua = {
     pname = "guihua-lua";
