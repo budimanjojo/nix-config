@@ -17,6 +17,7 @@ in {
           _module.args = {
             inherit inputs system;
             myConfig = { hostname = hostname; username = username; };
+            nvfetcherPath = ../packages/_sources/generated.nix;
             myPkgs = inputs.self.legacyPackages.${system};
             pkgs-stable = import inputs.nixpkgs-stable {
               inherit system;

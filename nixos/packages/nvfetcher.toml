@@ -40,3 +40,18 @@ fetch.pypi = "about-time"
 [krr]
 src.github_tag = "robusta-dev/krr"
 fetch.github = "robusta-dev/krr"
+[autopair-fish]
+src.git = "https://github.com/jorgebucaran/autopair.fish"
+fetch.github = "jorgebucaran/autopair.fish"
+[fzf-fish]
+src.github_tag = "patrickF1/fzf.fish"
+fetch.github = "patrickF1/fzf.fish"
+[puffer-fish]
+src.git = "https://github.com/nickeb96/puffer-fish"
+fetch.github = "nickeb96/puffer-fish"
+[abbreviation-tips]
+src.github_tag = "gazorby/fish-abbreviation-tips"
+fetch.github = "gazorby/fish-abbreviation-tips"
+[tmux-fish]
+src.git = "https://github.com/budimanjojo/tmux.fish"
+fetch.github = "budimanjojo/tmux.fish"

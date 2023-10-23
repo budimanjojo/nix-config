@@ -1,6 +1,8 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, config, nvfetcherPath, ... }:
 with lib;
-let cfg = config.modules.shell.fish;
+let
+  cfg = config.modules.shell.fish;
+  nvfetcherData = pkgs.callPackage nvfetcherPath {};
 in {
   options.modules.shell.fish = { enable = mkEnableOption "fish"; };
 
@@ -23,50 +25,25 @@ in {
         enable = true;
         plugins = [
           {
-            name = "autopairs";
-            src = pkgs.fetchFromGitHub {
-              owner = "jorgebucaran";
-              repo = "autopair.fish";
-              rev = "4d1752ff5b39819ab58d7337c69220342e9de0e2";
-              sha256 = "qt3t1iKRRNuiLWiVoiAYOu+9E7jsyECyIqZJ/oRIT1A=";
-            };
+            name = "autopair";
+            src = nvfetcherData.autopair-fish.src;
           }
           {
             name = "fzf";
-            src = pkgs.fetchFromGitHub {
-              owner = "patrickF1";
-              repo = "fzf.fish";
-              rev = "v9.3";
-              sha256 = "1Rx17Y/NgPQR4ibMnsZ/1UCnNbkx6vZz43IKfESxcCA=";
-            };
+            src = nvfetcherData.fzf-fish.src;
           }
           {
             name = "puffer-fish";
-            src = pkgs.fetchFromGitHub {
-              owner = "nickeb96";
-              repo = "puffer-fish";
-              rev = "41721259f16b9695d582a8de8d656d4e429d7eea";
-              sha256 = "TdGyrAlL7aMxNtemxzOwTaOI+bbQ4zML2N2tV300FM8=";
-            };
+            src = nvfetcherData.puffer-fish.src;
           }
           {
             name = "abbreviation-tips";
-            src = pkgs.fetchFromGitHub {
-              owner = "gazorby";
-              repo = "fish-abbreviation-tips";
-              rev = "v0.6.0";
-              sha256 = "fveTvR+T6IiX8Zk5m6zToo1OtZc1VyrCHfOG63e9b64=";
-            };
+            src = nvfetcherData.abbreviation-tips.src;
           }
         ] ++ (if config.modules.multiplexer.tmux.enable && !config.modules.multiplexer.zellij.enable then [
           {
             name = "tmux-fish";
-            src = pkgs.fetchFromGitHub {
-              owner = "budimanjojo";
-              repo = "tmux.fish";
-              rev = "87ef5c238b7fb133d7b49988c7c3fcb097953bd2";
-              sha256 = "sha256-ds1WN10Xlp6BYk1Wooq8NIkVyt5gJguKBH4JBrPo/Qo=";
-            };
+            src = nvfetcherData.tmux-fish.src;
           }
         ] else [ ]);
 

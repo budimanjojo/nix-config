@@ -1,4 +1,24 @@
 {
+    "abbreviation-tips": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "abbreviation-tips",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "gazorby",
+            "repo": "fish-abbreviation-tips",
+            "rev": "v0.7.0",
+            "sha256": "sha256-F1t81VliD+v6WEWqj1c1ehFBXzqLyumx5vV46s/FZRU=",
+            "type": "github"
+        },
+        "version": "v0.7.0"
+    },
     "about-time": {
         "cargoLocks": null,
         "date": null,
@@ -29,6 +49,26 @@
         },
         "version": "3.1.4"
     },
+    "autopair-fish": {
+        "cargoLocks": null,
+        "date": "2022-07-04",
+        "extract": null,
+        "name": "autopair-fish",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "jorgebucaran",
+            "repo": "autopair.fish",
+            "rev": "4d1752ff5b39819ab58d7337c69220342e9de0e2",
+            "sha256": "sha256-qt3t1iKRRNuiLWiVoiAYOu+9E7jsyECyIqZJ/oRIT1A=",
+            "type": "github"
+        },
+        "version": "4d1752ff5b39819ab58d7337c69220342e9de0e2"
+    },
     "chezmoi-vim": {
         "cargoLocks": null,
         "date": "2023-10-19",
@@ -48,6 +88,26 @@
             "type": "github"
         },
         "version": "50a3649ed91ba848f32d05961f35ae4fa7bdd9fc"
+    },
+    "fzf-fish": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "fzf-fish",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "patrickF1",
+            "repo": "fzf.fish",
+            "rev": "v10.0",
+            "sha256": "sha256-CqRSkwNqI/vdxPKrShBykh+eHQq9QIiItD6jWdZ/DSM=",
+            "type": "github"
+        },
+        "version": "v10.0"
     },
     "guihua-lua": {
         "cargoLocks": null,
@@ -204,6 +264,26 @@
         },
         "version": "0.5.4"
     },
+    "puffer-fish": {
+        "cargoLocks": null,
+        "date": "2023-03-15",
+        "extract": null,
+        "name": "puffer-fish",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "nickeb96",
+            "repo": "puffer-fish",
+            "rev": "5d3cb25e0d63356c3342fb3101810799bb651b64",
+            "sha256": "sha256-aPxEHSXfiJJXosIm7b3Pd+yFnyz43W3GXyUB5BFAF54=",
+            "type": "github"
+        },
+        "version": "5d3cb25e0d63356c3342fb3101810799bb651b64"
+    },
     "sad-nvim": {
         "cargoLocks": null,
         "date": "2023-03-13",
@@ -223,6 +303,26 @@
             "type": "github"
         },
         "version": "869c7f3ca3dcd28fd78023db6a7e1bf8af0f4714"
+    },
+    "tmux-fish": {
+        "cargoLocks": null,
+        "date": "2023-08-30",
+        "extract": null,
+        "name": "tmux-fish",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "budimanjojo",
+            "repo": "tmux.fish",
+            "rev": "85fdf568a9e169f5cf7449b3220c8aea6a14ee76",
+            "sha256": "sha256-s7QQBA19iTv8gqO8yYUqa4oqO3cB8R1qBwWEptAsBag=",
+            "type": "github"
+        },
+        "version": "85fdf568a9e169f5cf7449b3220c8aea6a14ee76"
     },
     "tokyonight-gtk-theme": {
         "cargoLocks": null,
