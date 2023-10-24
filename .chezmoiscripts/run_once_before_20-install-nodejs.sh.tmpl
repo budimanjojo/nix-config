@@ -7,7 +7,7 @@ echo -e "\033[0;32m>>>>> Begin Setting Up Binaries <<<<<\033[0m"
 
 ##--NodeJS--##
 # renovate: depName=node datasource=node
-current_nodejs_version=18.18.2
+current_nodejs_version=20.9.0
 
 if [ ! $(command -v node) ] || [ $(node -v) != "$current_nodejs_version" ]; then
   echo "installing / upgrading NodeJS"
