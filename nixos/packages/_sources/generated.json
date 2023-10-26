@@ -123,11 +123,11 @@
             "name": null,
             "owner": "ray-x",
             "repo": "guihua.lua",
-            "rev": "0cf769798e824e9760ddbce6c1cb3254e422415b",
-            "sha256": "sha256-tB4ejiqyJKhetUAikVeAjlEVJp4KJh+TqaVRhfgSNG8=",
+            "rev": "9c3e3ba03ac65782e950bd21434bbbfe8dfb6f50",
+            "sha256": "sha256-NdAs/BjC8/lTZjRLJCXXjvo2WnoAGrZPsG4v/7JYNXw=",
             "type": "github"
         },
-        "version": "0cf769798e824e9760ddbce6c1cb3254e422415b"
+        "version": "9c3e3ba03ac65782e950bd21434bbbfe8dfb6f50"
     },
     "k8s-snippets": {
         "cargoLocks": null,
