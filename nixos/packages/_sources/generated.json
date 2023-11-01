@@ -111,7 +111,7 @@
     },
     "guihua-lua": {
         "cargoLocks": null,
-        "date": "2023-10-26",
+        "date": "2023-11-01",
         "extract": null,
         "name": "guihua-lua",
         "passthru": null,
@@ -123,11 +123,11 @@
             "name": null,
             "owner": "ray-x",
             "repo": "guihua.lua",
-            "rev": "9c3e3ba03ac65782e950bd21434bbbfe8dfb6f50",
-            "sha256": "sha256-NdAs/BjC8/lTZjRLJCXXjvo2WnoAGrZPsG4v/7JYNXw=",
+            "rev": "d96cd9ad28ee85c84d56cae50a6d8415755b36df",
+            "sha256": "sha256-Q7VMtJlsRDCwsRS8/S/C1LBM9dWD+1QbE++kOwYjxxs=",
             "type": "github"
         },
-        "version": "9c3e3ba03ac65782e950bd21434bbbfe8dfb6f50"
+        "version": "d96cd9ad28ee85c84d56cae50a6d8415755b36df"
     },
     "k8s-snippets": {
         "cargoLocks": null,
