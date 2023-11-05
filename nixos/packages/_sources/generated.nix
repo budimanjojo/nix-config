@@ -54,13 +54,13 @@
   };
   fzf-fish = {
     pname = "fzf-fish";
-    version = "v10.0";
+    version = "v10.1";
     src = fetchFromGitHub {
       owner = "patrickF1";
       repo = "fzf.fish";
-      rev = "v10.0";
+      rev = "v10.1";
       fetchSubmodules = false;
-      sha256 = "sha256-CqRSkwNqI/vdxPKrShBykh+eHQq9QIiItD6jWdZ/DSM=";
+      sha256 = "sha256-ivXa1S/HrXFzESsV0d9zIwQiuCOYNpa1tUrvA/b15yY=";
     };
   };
   guihua-lua = {
@@ -179,15 +179,15 @@
   };
   tmux-fish = {
     pname = "tmux-fish";
-    version = "85fdf568a9e169f5cf7449b3220c8aea6a14ee76";
+    version = "df5a050c81807cc72c45e87ec72bf6461c318c73";
     src = fetchFromGitHub {
       owner = "budimanjojo";
       repo = "tmux.fish";
-      rev = "85fdf568a9e169f5cf7449b3220c8aea6a14ee76";
+      rev = "df5a050c81807cc72c45e87ec72bf6461c318c73";
       fetchSubmodules = false;
-      sha256 = "sha256-s7QQBA19iTv8gqO8yYUqa4oqO3cB8R1qBwWEptAsBag=";
+      sha256 = "sha256-Z6fIPtYnyUEbVYHZtWNJ4W7l50P2xa3XYuENuz3zNiU=";
     };
-    date = "2023-08-30";
+    date = "2023-11-06";
   };
   tokyonight-gtk-theme = {
     pname = "tokyonight-gtk-theme";
