@@ -103,11 +103,11 @@
             "name": null,
             "owner": "patrickF1",
             "repo": "fzf.fish",
-            "rev": "v10.1",
-            "sha256": "sha256-ivXa1S/HrXFzESsV0d9zIwQiuCOYNpa1tUrvA/b15yY=",
+            "rev": "v10.2",
+            "sha256": "sha256-1/MLKkUHe4c9YLDrH+cnL+pLiSOSERbIZSM4FTG3wF0=",
             "type": "github"
         },
-        "version": "v10.1"
+        "version": "v10.2"
     },
     "guihua-lua": {
         "cargoLocks": null,
