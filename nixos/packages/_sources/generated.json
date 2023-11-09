@@ -43,11 +43,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-dKldjQ1CvJnTo3JdvQbruFIkXxtk4wGnw3W5KyJmP3s=",
+            "sha256": "sha256-QuOZpmyBUNxQdgLf97eVPxBe8R+vl92qbSexy/RcTJg=",
             "type": "url",
-            "url": "https://pypi.org/packages/source/a/alive-progress/alive-progress-3.1.4.tar.gz"
+            "url": "https://pypi.org/packages/source/a/alive-progress/alive-progress-3.1.5.tar.gz"
         },
-        "version": "3.1.4"
+        "version": "3.1.5"
     },
     "autopair-fish": {
         "cargoLocks": null,

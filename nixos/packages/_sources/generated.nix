@@ -22,10 +22,10 @@
   };
   alive-progress = {
     pname = "alive-progress";
-    version = "3.1.4";
+    version = "3.1.5";
     src = fetchurl {
-      url = "https://pypi.org/packages/source/a/alive-progress/alive-progress-3.1.4.tar.gz";
-      sha256 = "sha256-dKldjQ1CvJnTo3JdvQbruFIkXxtk4wGnw3W5KyJmP3s=";
+      url = "https://pypi.org/packages/source/a/alive-progress/alive-progress-3.1.5.tar.gz";
+      sha256 = "sha256-QuOZpmyBUNxQdgLf97eVPxBe8R+vl92qbSexy/RcTJg=";
     };
   };
   autopair-fish = {
