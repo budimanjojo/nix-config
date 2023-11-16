@@ -6,6 +6,7 @@ in {
   options.modules.program.tui-utils = { enable = mkEnableOption "default tui-utils"; };
 
   config = mkIf cfg.enable {
+    nh.enable = true;
     home.manager.home.packages = with pkgs; [
       age
       dig
@@ -13,7 +14,6 @@ in {
       hwatch
       lm_sensors
       nfs-utils
-      nh
       pciutils
       rsync
       tree

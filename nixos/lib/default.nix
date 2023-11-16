@@ -9,7 +9,6 @@ in {
         config.allowUnfree = true;
         overlays = [
           (import ../packages/overlay.nix {inherit inputs system;})
-          inputs.nh.overlays.default
         ];
       };
       modules = [
@@ -30,6 +29,7 @@ in {
         inputs.nur.nixosModules.nur
         inputs.sops-nix.nixosModules.sops
         inputs.hyprland.nixosModules.default
+        inputs.nh.nixosModules.default
         # Load the modules
         ../modules
         # Default configuration

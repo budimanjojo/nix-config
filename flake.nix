@@ -16,7 +16,6 @@
     talhelper.inputs.nixpkgs.follows = "nixpkgs";
     hyprland.url = "github:hyprwm/Hyprland";
     nh.url = "github:viperML/nh";
-    nh.inputs.nixpkgs.follows = "nixpkgs";
     nvfetcher.url = "github:berberman/nvfetcher";
     nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
   };
