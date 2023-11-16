@@ -6,7 +6,15 @@ in {
   options.modules.program.tui-utils = { enable = mkEnableOption "default tui-utils"; };
 
   config = mkIf cfg.enable {
-    nh.enable = true;
+    nh = {
+      enable = true;
+      clean = {
+        enable = true;
+        dates = "weekly";
+        extraArgs = "--keep 4 --keep-since 7d";
+      };
+    };
+
     home.manager.home.packages = with pkgs; [
       age
       dig
