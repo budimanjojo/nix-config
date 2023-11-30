@@ -33,21 +33,41 @@ in {
       programs.fish = {
         shellAbbrs = {
           # kubectl
-          k = "kubectl";
-          kgp = "kubectl get pods";
+          k = {
+            position = "anywhere";
+            expansion = "kubectl";
+          };
+          # kgp = "kubectl get pods";
+          kgp = {
+            position = "anywhere";
+            expansion = "kubectl get pods";
+          };
+          kgn = {
+            position = "anywhere";
+            expansion = "kubectl get nodes";
+          };
           kl = "kubectl logs";
           kdp = "kubectl describe pod";
           kdn = "kubectl describe node";
-          kgn = "kubectl get nodes";
-          wkgp = "hwatch -- kubectl get pod";
           kx = "kubectl exec -it";
 
           # flux
-          f = "flux";
-          fgk = "flux get ks";
+          f = {
+            position = "anywhere";
+            expansion = "flux";
+          };
+          fgk = {
+            position = "anywhere";
+            expansion = "flux get ks";
+          };
           fsa = "flux suspend kustomization --all";
           fra = "flux resume kustomization --all";
-          wfga = "hwatch -- flux get all";
+
+          # talosctl
+          t = "talosctl";
+
+          # talhelper
+          th = "talhelper";
 
           # k9s
           ks = "k9s";

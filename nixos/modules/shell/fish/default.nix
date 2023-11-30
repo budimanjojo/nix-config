@@ -100,7 +100,7 @@ in {
           fu = "fuck";
 
           # hwatch
-          watch = "hwatch --";
+          w = "hwatch";
 
           # edit config files
           evim  = "$EDITOR $HOME/.vimrc";

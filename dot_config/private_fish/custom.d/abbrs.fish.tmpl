@@ -1,12 +1,11 @@
 # kubectl
 if type -q kubectl
-  abbr k 'kubectl'
-  abbr kgp 'kubectl get pods'
+  abbr k --position anywhere 'kubectl'
+  abbr kgp --position anywhere 'kubectl get pods'
+  abbr kgn --position anywhere 'kubectl get nodes'
   abbr kl 'kubectl logs'
   abbr kdp 'kubectl describe pod'
   abbr kdn 'kubectl describe node'
-  abbr kgn 'kubectl get nodes'
-  abbr wkgp 'hwatch -- kubectl get pod'
   abbr kx 'kubectl exec -it'
 end
 
@@ -75,12 +74,21 @@ end
 
 # flux
 if type -q flux
-  abbr f 'flux'
-  abbr fgk 'flux get ks'
+  abbr f --position anywhere 'flux'
+  abbr fgk --position anywhere 'flux get ks'
   abbr fsa 'flux suspend kustomization --all'
   abbr fra 'flux resume kustomization --all'
-  abbr wfga 'hwatch -- flux get all'
   abbr upf 'update_flux'
+end
+
+# talosctl
+if type -q talosctl
+  abbr t 'talosctl'
+end
+
+# talhelper
+if type -q talhelper
+  abbr th 'talhelper'
 end
 
 # docker-compose
@@ -99,7 +107,7 @@ end
 
 # hwatch
 if type -q hwatch
-  abbr watch 'hwatch --'
+  abbr w 'hwatch --'
 end
 
 # k9s
