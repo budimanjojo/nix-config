@@ -107,11 +107,6 @@ if type -q k9s
   abbr ks 'k9s'
 end
 
-# image conversions
-abbr cwtp 'find ./ -name "*.webp" -exec dwebp {} -o {}.png \; && rm -r *.webp'
-abbr cptj 'mogrify -flatten -format jpg *.png && rm -r *.png'
-abbr cjtp 'find ./ -name "*.jpg" -exec convert {} {}.png \; && rm -r *.jpg'
-
 # edit config files
 abbr evim '$EDITOR $HOME/.vimrc'
 abbr envim '$EDITOR $HOME/.config/nvim/init.vim'

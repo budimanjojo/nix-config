@@ -102,11 +102,6 @@ in {
           # hwatch
           watch = "hwatch --";
 
-          # image conversions
-          cwtp = "find ./ -name \"*.webp\" -exec dwebp {} -o {}.png \; && rm -r *.webp";
-          cptj = "mogrify -flatten -format jpg *.png && rm -r *.png";
-          cjtp = "find ./ -name \"*.jpg\" -exec convert {} {}.png \; && rm -r *.jpg";
-
           # edit config files
           evim  = "$EDITOR $HOME/.vimrc";
           envim = "$EDITOR $HOME/.config/nvim/init.vim";
