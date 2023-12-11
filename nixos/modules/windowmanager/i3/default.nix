@@ -2,7 +2,7 @@
 with lib;
 let 
   cfg = config.modules.windowmanager.i3;
-  device = config.modules.device;
+  deviceCfg = config.deviceCfg;
 in {
   options.modules.windowmanager.i3 = { enable = mkEnableOption "i3"; };
 
@@ -27,9 +27,9 @@ in {
 
     assertions = [
       {
-        assertion = length device.monitors > 0;
+        assertion = length deviceCfg.monitors > 0;
         message = ''
-          At least one monitor in the `config.modules.device.monitors` is
+          At least one monitor in the `config.deviceCfg.monitors` is
           needed to use i3 module.
         '';
       }
@@ -75,8 +75,8 @@ in {
         enable = true;
         package = pkgs.i3-gaps;
         extraConfig = let
-          mon1 = elemAt device.monitors 0;
-          mon2 = if length device.monitors >= 2 then elemAt device.monitors 1 else elemAt device.monitors 0;
+          mon1 = elemAt deviceCfg.monitors 0;
+          mon2 = if length deviceCfg.monitors >= 2 then elemAt deviceCfg.monitors 1 else elemAt deviceCfg.monitors 0;
         in ''
           # VARIABLES ARE SET HERE
           # default Modifier to Super key. Alternatively, still enable Alt for floating window dragging and resizing

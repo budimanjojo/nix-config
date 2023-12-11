@@ -16,7 +16,7 @@ in {
             gpgSign = true;
           };
           user = {
-            signingKey = "/home/${config.modules.device.username}/.ssh/id_rsa.pub";
+            signingKey = "/home/${config.deviceCfg.username}/.ssh/id_rsa.pub";
           };
           gpg = {
             format = "ssh";

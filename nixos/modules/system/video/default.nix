@@ -2,7 +2,7 @@
 with lib;
 let 
   cfg = config.modules.system.video;
-  device = config.modules.device;
+  deviceCfg = config.deviceCfg;
 in {
   options.modules.system.video = { enable = mkEnableOption "video"; };
 
@@ -15,9 +15,9 @@ in {
           driSupport32Bit = true;
         };
       };
-      users.users.${device.username}.extraGroups = [ "video" ];
+      users.users.${deviceCfg.username}.extraGroups = [ "video" ];
     }
-    (mkIf (device.gpu == "amd") {
+    (mkIf (deviceCfg.gpu == "amd") {
       # enable amdgpu kernel module
       boot.initrd.kernelModules = [ "amdgpu" ];
       services.xserver.videoDrivers = [ "amdgpu" ];
@@ -34,7 +34,7 @@ in {
       environment.variables.AMD_VULKAN_ICD = "RADV";
     })
 
-    (lib.mkIf (device.gpu == "intel") {
+    (lib.mkIf (deviceCfg.gpu == "intel") {
       # enable the i915 kernel module
       boot.initrd.kernelModules = ["i915"];
       # better performance than the actual Intel driver

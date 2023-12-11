@@ -2,12 +2,12 @@
 with lib;
 let 
   cfg = config.modules.windowmanager.hyprland;
-  device = config.modules.device;
+  deviceCfg = config.deviceCfg;
 in {
   options.modules.windowmanager.hyprland = { enable = mkEnableOption "hyprland"; };
 
   config = mkIf cfg.enable {
-    modules.device.isWayland = true;
+    deviceCfg.isWayland = true;
 
     modules.windowmanager.add-on.blueman-applet.enable = true;
     modules.windowmanager.add-on.dunst.enable = true;
@@ -28,9 +28,9 @@ in {
 
     assertions = [
       {
-        assertion = length device.monitors > 0;
+        assertion = length deviceCfg.monitors > 0;
         message = ''
-          At least one monitor in the `config.modules.device.monitors` is
+          At least one monitor in the `config.deviceCfg.monitors` is
           needed to use Hyprland module.
         '';
       }
@@ -73,7 +73,7 @@ in {
 
       wayland.windowManager.hyprland = {
         enable = true;
-        extraConfig = import ./config.nix { inherit lib device pkgs; };
+        extraConfig = import ./config.nix { inherit lib  pkgs;deviceCfg = deviceCfg; };
       };
 
       home.packages = with pkgs; [

@@ -2,7 +2,7 @@
 with lib;
 let
   cfg = config.modules.windowmanager.add-on.waybar;
-  device = config.modules.device;
+  deviceCfg = config.deviceCfg;
 in {
   options.modules.windowmanager.add-on.waybar = { enable = mkEnableOption "waybar"; };
 
@@ -11,7 +11,7 @@ in {
       programs.waybar = {
         enable = true;
         systemd.enable = true;
-        settings = forEach device.monitors (monitor: mapAttrs (n: v: v)
+        settings = forEach deviceCfg.monitors (monitor: mapAttrs (n: v: v)
           {
             "output" = monitor.name;
             "layer" = "top";
@@ -63,7 +63,7 @@ in {
               "network#up"
               "disk#home"
               "disk#root"
-            ] ++ (if monitor == last device.monitors then [
+            ] ++ (if monitor == last deviceCfg.monitors then [
               "custom/uname"
               "tray"
             ] else [ ]);

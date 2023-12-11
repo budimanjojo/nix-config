@@ -2,12 +2,12 @@
 with lib;
 let 
   cfg = config.modules.windowmanager.sway;
-  device = config.modules.device;
+  deviceCfg = config.deviceCfg;
 in {
   options.modules.windowmanager.sway = { enable = mkEnableOption "sway"; };
 
   config = mkIf cfg.enable {
-    modules.device.isWayland = true;
+    deviceCfg.isWayland = true;
 
     modules.windowmanager.add-on.blueman-applet.enable = true;
     modules.windowmanager.add-on.dunst.enable = true;
@@ -29,9 +29,9 @@ in {
 
     assertions = [
       {
-        assertion = length device.monitors > 0;
+        assertion = length deviceCfg.monitors > 0;
         message = ''
-          At least one monitor in the `config.modules.device.monitors` is
+          At least one monitor in the `config.deviceCfg.monitors` is
           needed to use Sway module.
         '';
       }
@@ -81,10 +81,10 @@ in {
         package = null;
         extraConfigEarly =
           let
-            mon1 = getAttr "name" (elemAt device.monitors 0);
-            mon1width = getAttr "width" (elemAt device.monitors 0);
-            mon2 = if length device.monitors >= 2 then getAttr "name" (elemAt device.monitors 1) else getAttr "name" (elemAt device.monitors 0);
-            mon2width = if length device.monitors >= 2 then getAttr "width" (elemAt device.monitors 1) else getAttr "width" (elemAt device.monitors 0);
+            mon1 = getAttr "name" (elemAt deviceCfg.monitors 0);
+            mon1width = getAttr "width" (elemAt deviceCfg.monitors 0);
+            mon2 = if length deviceCfg.monitors >= 2 then getAttr "name" (elemAt deviceCfg.monitors 1) else getAttr "name" (elemAt deviceCfg.monitors 0);
+            mon2width = if length deviceCfg.monitors >= 2 then getAttr "width" (elemAt deviceCfg.monitors 1) else getAttr "width" (elemAt deviceCfg.monitors 0);
           in ''
             # VARIABLES ARE SET HERE
             # Modifier default to Super key. Alt key for window navigating

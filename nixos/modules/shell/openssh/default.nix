@@ -2,7 +2,7 @@
 with lib;
 let
   cfg = config.modules.shell.openssh;
-  device = config.modules.device;
+  deviceCfg = config.deviceCfg;
 in {
   options.modules.shell.openssh = { enable = mkEnableOption "openssh"; };
 
@@ -17,8 +17,8 @@ in {
       };
     };
 
-    users.users.${device.username}.openssh = {
-      authorizedKeys.keys = device.authorizedKeys;
+    users.users.${deviceCfg.username}.openssh = {
+      authorizedKeys.keys = deviceCfg.authorizedKeys;
     };
   };
 }

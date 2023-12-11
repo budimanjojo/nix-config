@@ -1,7 +1,7 @@
 { pkgs, config, lib, myConfig, ... }:
 with lib;
 {
-  options.modules.device = {
+  options.deviceCfg = {
     # Options below NEED to be set on each host
     cpu = mkOption {
       type = types.enum ["amd" "intel" "vm"];

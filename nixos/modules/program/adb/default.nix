@@ -7,6 +7,6 @@ in {
 
   config = mkIf cfg.enable {
     programs.adb.enable = true;
-    users.users.${config.modules.device.username}.extraGroups = [ "adbusers" ];
+    users.users.${config.deviceCfg.username}.extraGroups = [ "adbusers" ];
   };
 }

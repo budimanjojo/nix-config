@@ -2,11 +2,11 @@
 with lib;
 let
   cfg = config.modules.windowmanager.add-on.blueman-applet;
-  device = config.modules.device;
+  deviceCfg = config.deviceCfg;
 in {
   options.modules.windowmanager.add-on.blueman-applet = { enable = mkEnableOption "blueman-applet"; };
 
-  config = mkIf (cfg.enable && device.hasBluetooth) {
+  config = mkIf (cfg.enable && deviceCfg.hasBluetooth) {
     services.blueman.enable = true;
     home.manager = {
       services.blueman-applet.enable = true;

@@ -8,7 +8,7 @@ in {
   config = mkIf cfg.enable {
     home.manager.programs.obs-studio = {
       enable = true;
-      plugins = mkIf config.modules.device.isWayland [ pkgs.obs-studio-plugins.wlrobs ];
+      plugins = mkIf config.deviceCfg.isWayland [ pkgs.obs-studio-plugins.wlrobs ];
     };
   };
 }

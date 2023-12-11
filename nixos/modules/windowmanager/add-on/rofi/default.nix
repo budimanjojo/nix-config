@@ -14,7 +14,7 @@ in {
   config = mkIf cfg.enable {
     home.manager.programs.rofi = {
       enable = true;
-      package = mkIf config.modules.device.isWayland pkgs.rofi-wayland;
+      package = mkIf config.deviceCfg.isWayland pkgs.rofi-wayland;
       extraConfig = {
         font = "UbuntuMono Nerd Font 12";
         display-drun = " ";

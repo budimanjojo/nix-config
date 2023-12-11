@@ -2,7 +2,7 @@
 with lib;
 let 
   cfg = config.modules.browser.firefox;
-  device = config.modules.device;
+  deviceCfg = config.deviceCfg;
 in {
   options.modules.browser.firefox = { enable = mkEnableOption "firefox"; };
 
@@ -10,7 +10,7 @@ in {
     home.manager = {
       programs.firefox = {
         enable = true;
-        profiles = device.firefoxProfiles;
+        profiles = deviceCfg.firefoxProfiles;
       };
     };
   };

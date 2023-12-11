@@ -1,6 +1,6 @@
 { config, pkgs, inputs, ... }:
 let
-  deviceCfg = config.modules.device;
+  deviceCfg = config.deviceCfg;
 in {
   sops.secrets.budiman-password = {
     sopsFile = ./secret.sops.yaml;

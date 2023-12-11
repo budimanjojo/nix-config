@@ -15,7 +15,7 @@ with lib;
       useGlobalPkgs = true;
       useUserPackages = true;
       # home.manager is an alias for having to write home-manager.users.<user>
-      users.${config.modules.device.username} = mkAliasDefinitions options.home.manager;
+      users.${config.deviceCfg.username} = mkAliasDefinitions options.home.manager;
     };
   };
 }

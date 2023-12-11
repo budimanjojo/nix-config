@@ -1,18 +1,18 @@
 { pkgs, lib, config, ... }:
 with lib;
 let 
-  device = config.modules.device;
+  deviceCfg = config.deviceCfg;
 in {
   config = mkMerge [
-    (mkIf (device.cpu == "amd") {
+    (mkIf (deviceCfg.cpu == "amd") {
       hardware.cpu.amd.updateMicrocode = true;
       boot.kernelModules = [ "kvm-amd" ];
     })
-    (mkIf (device.cpu == "intel") {
+    (mkIf (deviceCfg.cpu == "intel") {
       hardware.cpu.intel.updateMicrocode = true;
       boot.kernelModules = [ "kvm-intel" ];
     })
-    (mkIf (device.cpu == "vm") {
+    (mkIf (deviceCfg.cpu == "vm") {
       hardware.cpu.amd.updateMicrocode = true;
       boot.kernelModules = [ "kvm-amd" ];
     })
