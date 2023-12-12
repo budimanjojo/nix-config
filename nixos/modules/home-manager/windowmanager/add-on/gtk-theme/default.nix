@@ -6,12 +6,15 @@ in {
   options.hm-modules.windowmanager.add-on.gtk-theme = { enable = mkEnableOption "gtk-theme"; };
 
   config = mkIf cfg.enable {
+    home.pointerCursor = {
+      package = pkgs.vimix-cursor-theme;
+      name = "Vimix-Cursors";
+      size = 24;
+      gtk.enable = true;
+      x11.enable = true;
+    };
     gtk = {
       enable = true;
-      cursorTheme = {
-        name = "Vimix Cursors";
-        package = config.nur.repos.ambroisie.vimix-cursors;
-      };
       font = {
         name = "UbuntuMono Nerd Font";
         package = pkgs.nerdfonts.override { fonts = [ "UbuntuMono" ]; };
