@@ -39,5 +39,9 @@
         budimanjojo-vm = myLib.mkNixosSystem "x86_64-linux" "budimanjojo-vm" "budiman";
         budimanjojo-main = myLib.mkNixosSystem "x86_64-linux" "budimanjojo-main" "budiman";
       };
+
+      flake.homeConfigurations = {
+        "budiman@budimanjojo-main" = myLib.mkHome "x86_64-linux" "budimanjojo-main" "budiman";
+      };
     };
 }

@@ -32,10 +32,14 @@ I shamelessly took the pieces I believe is the best from people and modified it.
 - [../flake.lock](../flake.lock) is the lock file, updated daily by `budimanjojo-bot` powered by [Renovate](https://github.com/renovatebot/renovate).
 - [./lib](./lib) is where I put my own helper functions.
 - [./modules/device.nix](./modules/device.nix) is where you can look at the available options for each machine.
-- [./modules/home-manager.nix](./modules/home-manager.nix) is defining `config.home.manager` as alias for `config.home-manager.users.<user>`.
+- [./modules/nixos/default.nix](./modules/nixos/default.nix) is where all my NixOS modules are defined.
+- [./modules/home-manager/default.nix](./modules/home-manager/default.nix) is where all my home-manager modules are defined.
 - [./packages](./packages) is where I put extra packages not available in the official repo and `NUR`.
-- [./hosts/configuration.nix](./hosts/configuration.nix) contains default configuration for all machines.
-- [./hosts/\<hostname\>/configuration.nix](./hosts/budimanjojo-vm/configuration.nix) contains machine specific configuration.
+- [./hosts/nixos-configuration.nix](./hosts/nixos-configuration.nix) contains default NixOS configuration for all machines.
+- [./hosts/hm-configuration.nix](./hosts/hm-configuration.nix) contains default home-manager configuration for all machines.
+- [./hosts/\<hostname\>/nixos-configuration.nix](./hosts/budimanjojo-main/nixos-configuration.nix) contains machine specific NixOS configuration.
+- [./hosts/\<hostname\>/hm-configuration.nix](./hosts/budimanjojo-main/hm-configuration.nix) contains machine specific home-manager configuration.
+- [./hosts/\<hostname\>/shared-configuration.nix](./hosts/budimanjojo-main/shared-configuration.nix) contains machine specific shared configuration for both NixOS and home-manager.
 - [./hosts/\<hostname\>/hardware-configuration.nix](./hosts/budimanjojo-vm/hardware-configuration.nix) contains machine specific hardware configuration.
 
 ## :inbox_tray:&nbsp; How to use
@@ -45,9 +49,9 @@ I shamelessly took the pieces I believe is the best from people and modified it.
 - Fork this repository, or clone it, or do whatever you want.
 - Copy a directory in `./hosts` to your machine name, i.e from the root of this repo do `cp ./nixos/hosts/budimanjojo-vm ./nixos/hosts/your-machine`
 - Copy your `/etc/nixos/hardware-configuration.nix` into `./nixos/hosts/your-machine/hardware-configuration.nix`
-- Edit `./nixos/hosts/your-machine/configuration.nix` to your liking.
-- Edit `./flake.nix`, under `outputs.nixosConfigurations` put `your-machine = mkNixosSystem inputs.nixpkgs "your-machine" "<username>"`
-- Do `sudo nixos-rebuild --flake .#your-machine` and you're done.
+- Edit `./nixos/hosts/your-machine/{hm|shared|nixos}-configuration.nix` to your liking.
+- Edit `./flake.nix`, under `outputs.nixosConfigurations` put `your-machine = myLib.mkNixosSystem "<cpu-arch>" "<hostname>" "<username>;"` and optionally under `outputs.homeConfigurations` put `"your-username@yourmachine" = myLib.mkHome "<cpu-arch>" "<hostname>" "<username>";`.
+- Do `sudo nixos-rebuild --flake .#your-machine` and optionally `nix run nixpkgs#home-manager -- switch --flake .` and you're done.
 
 ## :lock_with_ink_pen:&nbsp; Secret management
 
