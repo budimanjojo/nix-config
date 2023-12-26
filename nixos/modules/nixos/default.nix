@@ -4,6 +4,7 @@
     ../device.nix
 
     ./homelab/diy-keyboard
+    ./homelab/docker
 
     ./monitoring/grafana
     ./monitoring/prometheus

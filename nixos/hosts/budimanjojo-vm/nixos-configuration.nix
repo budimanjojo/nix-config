@@ -6,6 +6,7 @@
       # Uncomment/comment do enable/disable module
 
       # homelab.diy-keyboard.enable = true;
+      # homelab.docker.enable = true;
 
       monitoring.grafana.enable = true;
       monitoring.prometheus.enable = true;

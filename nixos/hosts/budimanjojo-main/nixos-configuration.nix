@@ -5,6 +5,7 @@
       # All of the available modules are listed below
       # Uncomment/comment do enable/disable module
       homelab.diy-keyboard.enable = true;
+      homelab.docker.enable = true;
 
       monitoring.smartd.enable = true;
 
