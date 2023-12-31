@@ -183,11 +183,11 @@
             "name": null,
             "owner": "L3MON4D3",
             "repo": "LuaSnip",
-            "rev": "v2.1.1",
-            "sha256": "sha256-LVvrliJJQxyu12KMF0qRmf7KKAQ8tRHUzzW7rofjd1U=",
+            "rev": "v2.2.0",
+            "sha256": "sha256-qxDKlbKK5IL4/FJctpkiDI5uITAVXVXXoC0p84aepRU=",
             "type": "github"
         },
-        "version": "v2.1.1"
+        "version": "v2.2.0"
     },
     "mason-lspconfig-nvim": {
         "cargoLocks": null,
