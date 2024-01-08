@@ -6,7 +6,6 @@ in {
   options.hm-modules.editor.neovim = { enable = mkEnableOption "neovim"; };
 
   config = mkIf cfg.enable {
-    programs.go.enable = true;
     home.packages = [
       (inputs.nixvim.legacyPackages.${system}.makeNixvimWithModule {
         extraSpecialArgs = {

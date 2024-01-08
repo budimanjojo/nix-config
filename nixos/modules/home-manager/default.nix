@@ -16,6 +16,7 @@
 
     ./program/default
     ./program/discord
+    ./program/go
     ./program/hugo
     ./program/nextcloud
     ./program/obs-studio
