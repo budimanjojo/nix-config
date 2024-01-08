@@ -63,6 +63,7 @@ in {
         }
         inputs.nur.nixosModules.nur
         inputs.sops-nix.homeManagerModules.sops
+        inputs.nixvim.homeManagerModules.nixvim
         # Load the home-manager modules
         ../modules/home-manager
         # Default configurations

@@ -53,6 +53,11 @@ I shamelessly took the pieces I believe is the best from people and modified it.
 - Edit `./flake.nix`, under `outputs.nixosConfigurations` put `your-machine = myLib.mkNixosSystem "<cpu-arch>" "<hostname>" "<username>;"` and optionally under `outputs.homeConfigurations` put `"your-username@yourmachine" = myLib.mkHome "<cpu-arch>" "<hostname>" "<username>";`.
 - Do `sudo nixos-rebuild --flake .#your-machine` and optionally `nix run nixpkgs#home-manager -- switch --flake .` and you're done.
 
+## :pencil:&nbsp; Neovim
+
+My `neovim` setup is packaged with [nixvim](https://github.com/nix-community/nixvim) and exposed at `packages.neovim` from this flake.
+You can run it directly if you have `nix` installed and `flakes` enabled with: `nix run github:budimanjojo/dotfiles#neovim`.
+
 ## :lock_with_ink_pen:&nbsp; Secret management
 
 I'm using `sops-nix` to manage secrets.

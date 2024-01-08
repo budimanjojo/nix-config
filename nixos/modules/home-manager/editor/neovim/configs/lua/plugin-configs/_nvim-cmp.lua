@@ -4,7 +4,6 @@ local lspkind = require('lspkind')
 
 vim.o.completeopt = 'menu,menuone,noselect'
 require("luasnip.loaders.from_vscode").lazy_load({exclude = {'gitcommit'}})
-require("luasnip.loaders.from_lua").lazy_load({paths = "./snippets"})
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))

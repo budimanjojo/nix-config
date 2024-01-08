@@ -18,6 +18,8 @@
     nh.url = "github:viperML/nh";
     nvfetcher.url = "github:berberman/nvfetcher";
     nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { flake-parts, ... }@inputs:
@@ -29,8 +31,19 @@
       perSystem = {
         inputs',
         pkgs,
+        self',
         ...
-      }: {
+      }: let
+        nixvim = inputs'.nixvim.legacyPackages.makeNixvimWithModule {
+          extraSpecialArgs = {
+            myPkgs = self'.legacyPackages;
+          };
+          module = {
+            imports = [ ./nixos/modules/home-manager/editor/neovim/configs ];
+          };
+        };
+      in {
+        packages.neovim = nixvim;
         legacyPackages = import ./nixos/packages { inherit inputs' pkgs; };
         devShells.default = import ./nixos/packages/shell.nix { inherit inputs' pkgs; };
       };
