@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ lib, config, ... }:
 with lib;
 let
   cfg = config.modules.windowmanager.add-on.blueman-applet;

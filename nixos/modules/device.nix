@@ -1,4 +1,4 @@
-{ pkgs, config, lib, myConfig, ... }:
+{ lib, myConfig, ... }:
 with lib;
 {
   options.deviceCfg = {

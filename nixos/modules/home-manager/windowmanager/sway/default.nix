@@ -1,4 +1,4 @@
-{ pkgs, lib, config, myPkgs, ... }:
+{ pkgs, lib, config, ... }:
 with lib;
 let 
   cfg = config.hm-modules.windowmanager.sway;

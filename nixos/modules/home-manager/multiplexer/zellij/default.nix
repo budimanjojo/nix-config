@@ -1,4 +1,4 @@
-{ pkgs, lib, config, pkgs-stable, ... }:
+{ lib, config, ... }:
 with lib;
 let cfg = config.hm-modules.multiplexer.zellij;
 in {

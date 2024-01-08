@@ -1,4 +1,4 @@
-{ stdenvNoCC, fetchFromGitHub, lib, callPackage }:
+{ stdenvNoCC, lib, callPackage }:
 
 let
   sourceData = callPackage ../_sources/generated.nix {};

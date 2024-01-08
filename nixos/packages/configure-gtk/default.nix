@@ -1,4 +1,4 @@
-{ lib, pkgs, stdenvNoCC }:
+{ pkgs }:
 pkgs.writeTextFile {
   name = "configure-gtk";
   destination = "/bin/configure-gtk";

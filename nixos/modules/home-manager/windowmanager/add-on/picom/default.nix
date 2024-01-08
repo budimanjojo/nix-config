@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ lib, config, ... }:
 with lib;
 let
   cfg = config.hm-modules.windowmanager.add-on.picom;
