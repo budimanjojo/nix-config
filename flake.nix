@@ -55,6 +55,7 @@
 
       flake.homeConfigurations = {
         "budiman@budimanjojo-main" = myLib.mkHome "x86_64-linux" "budimanjojo-main" "budiman";
+        "budiman@budimanjojo-ubuntu" = myLib.mkHome "x86_64-linux" "budimanjojo-ubuntu" "budiman";
       };
     };
 }

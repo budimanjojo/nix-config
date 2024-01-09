@@ -1,5 +1,0 @@
-require('plugins')
-require('general')
-require('appearance')
-require('keymaps')
-require('autocmds')
