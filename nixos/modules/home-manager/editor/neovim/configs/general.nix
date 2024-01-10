@@ -8,7 +8,7 @@
       -- Temporary undodir
       local undodir = "/tmp/.vim-undodir-" .. vim.env.USER
       if vim.fn.isdirectory(undodir) ~= 1 then
-        fn.mkdir(undodir, "p", "0700")
+        vim.fn.mkdir(undodir, "p", "0700")
       end
       vim.o.undodir = undodir
       vim.o.undofile = true
