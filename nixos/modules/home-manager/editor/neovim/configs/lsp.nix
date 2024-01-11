@@ -87,6 +87,7 @@
             };
           };
 
+          taplo.enable = true; ## taplo
           tsserver.enable = true; ## tsserver
 
           ## jsonls
