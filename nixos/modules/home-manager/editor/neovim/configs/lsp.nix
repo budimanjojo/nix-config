@@ -8,6 +8,11 @@
     ];
     plugins = {
       trouble.enable = true;
+      ## clangd requires extra care
+      clangd-extensions = {
+        enable = true;
+        enableOffsetEncodingWorkaround = true;
+      };
       lsp = {
         enable = true;
         preConfig = ''
@@ -50,8 +55,6 @@
               'additionalTextEdits',
             },
           }
-          -- Only for clangd
-          capabilities.offsetEncoding = 'utf-8'
         '';
         onAttach = ''
           require 'lsp_signature'.on_attach()
@@ -69,7 +72,6 @@
         servers = {
           ansiblels.enable = true; ## ansiblels
           bashls.enable = true; ## bashls
-          clangd.enable = true; ## clangd
           cssls.enable = true; ## cssls
           dockerls.enable = true; ## dockerls
 
