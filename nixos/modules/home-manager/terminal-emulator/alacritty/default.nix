@@ -9,29 +9,39 @@ in {
     programs.alacritty = {
       enable = true;
       settings = {
+        live_config_reload = true;
         env.TERM = "xterm-256color";
         window = {
-          dimensions = {
-            columns = 0;
-            lines = 0;
-          };
           padding = {
             x = 10;
             y = 10;
           };
+          dynamic_padding = true;
+          decoration = "none";
+          startup_mode = "Maximized";
         };
         scrolling.history = 10000;
-        font.normal = {
-          family = "UbuntuMono Nerd Font";
-          style = "Regular";
+        font = {
           size = 13.0;
-        };
-        draw_bold_text_with_bright_colors = false;
-        colors = {
-          primary = {
-            background = "#1A1B26";
-            foreground = "#C0CAF5";
+          normal = {
+            family = "UbuntuMono Nerd Font";
+            style = "Regular";
           };
+        };
+        colors = {
+          draw_bold_text_with_bright_colors = false;
+          primary = {
+            foreground = "#C0CAF5";
+            background = "#1A1B26";
+          };
+          cursor = {
+            cursor = "#C0CAF5";
+            text = "#1A1B26";
+          };
+          indexed_colors = [
+            { index = 16; color = "#FF9E64"; }
+            { index = 17; color = "#DB4B4B"; }
+          ];
           normal = {
             black = "#15161E";
             red = "#F7768E";
@@ -52,13 +62,8 @@ in {
             cyan = "#7DCFFF";
             white = "#C0CAF5";
           };
-          indexed_colors = [
-            { index = 16; color = "#FF9E64"; }
-            { index = 17; color = "#DB4B4B"; }
-          ];
         };
         bell.duration = 0;
-        live_config_reload = true;
       };
     };
   };
