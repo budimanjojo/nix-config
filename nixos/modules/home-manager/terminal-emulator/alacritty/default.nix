@@ -17,12 +17,12 @@ in {
             y = 10;
           };
           dynamic_padding = true;
-          decoration = "none";
+          decorations = "none";
           startup_mode = "Maximized";
         };
         scrolling.history = 10000;
         font = {
-          size = 13.0;
+          size = 12.0;
           normal = {
             family = "UbuntuMono Nerd Font";
             style = "Regular";
