@@ -66,23 +66,7 @@ in
         config = "lua require('colorizer').setup()";
       }
       {
-        plugin = nvim-treesitter.withPlugins (plugins: with plugins; [
-          tree-sitter-bash
-          tree-sitter-comment
-          tree-sitter-dockerfile
-          tree-sitter-fish
-          tree-sitter-go
-          tree-sitter-html
-          tree-sitter-json
-          tree-sitter-json5
-          tree-sitter-lua
-          tree-sitter-nix
-          tree-sitter-python
-          tree-sitter-regex
-          tree-sitter-typescript
-          tree-sitter-vim
-          tree-sitter-yaml
-        ]);
+        plugin = nvim-treesitter.withAllGrammars;
         config = "lua require('plugin-configs._treesitter')";
       }
       chezmoi-vim
