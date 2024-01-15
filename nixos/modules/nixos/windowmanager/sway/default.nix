@@ -3,6 +3,15 @@ with lib;
 let 
   cfg = config.modules.windowmanager.sway;
   deviceCfg = config.deviceCfg;
+  greetdSwayNvidia = pkgs.writeShellScript "greetd-sway-nvidia.sh"
+    ''
+      export LIBVA_DRIVER_NAME=nvidia
+      export XDG_SESSION_TYPE=wayland
+      export GBM_BACKEND=nvidia-drm
+      export __GLX_VENDOR_LIBRARY_NAME=nvidia
+      export WLR_NO_HARDWARE_CURSORS=1
+      ${pkgs.sway}/bin/sway --unsupported-gpu
+    '';
 in {
   options.modules.windowmanager.sway = { enable = mkEnableOption "sway"; };
 
@@ -31,10 +40,14 @@ in {
       enable = true;
       settings = {
         initial_session = {
-          command = "${pkgs.sway}/bin/sway";
+          command = if (deviceCfg.gpu == "nvidia")
+            then "${greetdSwayNvidia}"
+            else "${pkgs.sway}/bin/sway";
         };
         default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd ${pkgs.sway}/bin/sway";
+          command = if (deviceCfg.gpu == "nvidia")
+            then "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd ${greetdSwayNvidia}"
+            else "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd ${pkgs.sway}/bin/sway";
         };
       };
     };
@@ -51,8 +64,10 @@ in {
       myPkgs.rofi-firefox-wrapper
     ];
 
-    programs.sway.enable = true;
-    programs.sway.wrapperFeatures.gtk = true;
+    programs.sway = {
+      enable = true;
+      wrapperFeatures.gtk = true;
+    };
 
     services.dbus.enable = true;
     xdg.portal = {

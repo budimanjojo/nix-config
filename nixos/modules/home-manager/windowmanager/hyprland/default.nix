@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... }:
 with lib;
-let 
+let
   cfg = config.hm-modules.windowmanager.hyprland;
   deviceCfg = config.deviceCfg;
 in {
@@ -36,7 +36,7 @@ in {
 
     wayland.windowManager.hyprland = {
       enable = true;
-      extraConfig = import ./config.nix { inherit lib  pkgs;deviceCfg = deviceCfg; };
+      extraConfig = import ./config.nix { inherit lib pkgs; deviceCfg = deviceCfg; };
     };
 
     home.packages = with pkgs; [
