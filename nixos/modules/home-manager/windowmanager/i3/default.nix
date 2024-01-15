@@ -83,7 +83,7 @@ in {
       config = {
         floating.modifier = "Mod1";
         focus = {
-          forceWrapping = true;
+          wrapping = "yes";
           followMouse = true;
           newWindow = "urgent";
         };

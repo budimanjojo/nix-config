@@ -17,6 +17,20 @@ in {
       };
       users.users.${deviceCfg.username}.extraGroups = [ "video" ];
     }
+    (mkIf (deviceCfg.gpu == "nvidia") {
+      # enable nvidia kernel module
+      boot.initrd.kernelModules = [ "nvidia" ];
+      boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+      services.xserver.videoDrivers = [ "nvidia" ];
+      # hardware acceleration
+      hardware.opengl.extraPackages = [ pkgs.vaapiVdpau ];
+      hardware.nvidia = {
+        modesetting.enable = true;
+        # enable Nvidia settings menu
+        nvidiaSettings = true;
+      };
+    })
+
     (mkIf (deviceCfg.gpu == "amd") {
       # enable amdgpu kernel module
       boot.initrd.kernelModules = [ "amdgpu" ];
@@ -34,7 +48,7 @@ in {
       environment.variables.AMD_VULKAN_ICD = "RADV";
     })
 
-    (lib.mkIf (deviceCfg.gpu == "intel") {
+    (mkIf (deviceCfg.gpu == "intel") {
       # enable the i915 kernel module
       boot.initrd.kernelModules = ["i915"];
       # better performance than the actual Intel driver

@@ -1,6 +1,6 @@
 { pkgs, lib, config, myPkgs, inputs, system, ... }:
 with lib;
-let 
+let
   cfg = config.modules.windowmanager.hyprland;
   deviceCfg = config.deviceCfg;
 in {

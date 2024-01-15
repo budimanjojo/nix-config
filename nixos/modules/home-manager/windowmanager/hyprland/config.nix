@@ -4,6 +4,13 @@ let
   mon1 = getAttr "name" (elemAt deviceCfg.monitors 0);
   mon2 = if length deviceCfg.monitors >= 2 then getAttr "name" (elemAt deviceCfg.monitors 1) else getAttr "name" (elemAt deviceCfg.monitors 0);
   mon2width = if mon2 != mon1 then getAttr "width" (elemAt deviceCfg.monitors 1) else getAttr "width" (elemAt deviceCfg.monitors 0);
+  nvidiaSpecific = if deviceCfg.gpu != "nvidia" then "" else ''
+    env = LIBVA_DRIVER_NAME,nvidia
+    env = XDG_SESSION_TYPE,wayland
+    env = GBM_BACKEND,nvidia-drm
+    env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+    env = WLR_NO_HARDWARE_CURSORS,1
+  '';
 in
  ''
   # VARIABLES ARE SET HERE
@@ -56,6 +63,7 @@ in
     mouse_move_enables_dpms = true
     key_press_enables_dpms = true
   }
+  ${nvidiaSpecific}
 
   source = ./configs/keybindings.conf
   source = ./configs/modes.conf
