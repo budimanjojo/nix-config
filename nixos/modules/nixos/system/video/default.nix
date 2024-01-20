@@ -23,11 +23,15 @@ in {
       boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
       services.xserver.videoDrivers = [ "nvidia" ];
       # hardware acceleration
-      hardware.opengl.extraPackages = [ pkgs.vaapiVdpau ];
+      hardware.opengl.extraPackages = [ pkgs.vaapiVdpau pkgs.libvdpau-va-gl ];
       hardware.nvidia = {
         modesetting.enable = true;
         # enable Nvidia settings menu
         nvidiaSettings = true;
+      };
+      environment.variables = {
+        VDPAU_DRIVER = "va_gl";
+        LIBVA_DRIVER_NAME = "nvidia";
       };
     })
 

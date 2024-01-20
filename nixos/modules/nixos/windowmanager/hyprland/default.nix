@@ -51,6 +51,8 @@ in {
       myPkgs.rofi-firefox-wrapper
     ];
 
+    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
     programs.hyprland.enable = true;
 
     services.dbus.enable = true;

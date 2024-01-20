@@ -64,6 +64,8 @@ in {
       myPkgs.rofi-firefox-wrapper
     ];
 
+    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
     programs.sway = {
       enable = true;
       wrapperFeatures.gtk = true;
