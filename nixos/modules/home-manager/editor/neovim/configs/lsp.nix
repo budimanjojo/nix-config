@@ -169,7 +169,10 @@
         diagnosticsFormat = "[#{c}] #{m} (#{s})";
         sources = {
           formatting = {
-            prettier_d_slim.enable = true;
+            prettier = {
+              enable = true;
+              disableTsServerFormatter = true;
+            };
             shfmt = {
               enable = true;
               withArgs = "{ extra_args = { '-i', '2', '-ci' } }";
