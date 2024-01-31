@@ -11,6 +11,7 @@
     ./monitoring/smartd
 
     ./program/adb
+    ./program/beeaccounting
     ./program/default
     ./program/hugo
     ./program/msmtp

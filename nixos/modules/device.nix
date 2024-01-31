@@ -43,6 +43,10 @@ with lib;
       type = types.str;
       default = myConfig.username;
     };
+    uid = mkOption {
+      type = types.int;
+      default = 1000;
+    };
     isWayland = mkOption {
       type = types.bool;
       default = false;

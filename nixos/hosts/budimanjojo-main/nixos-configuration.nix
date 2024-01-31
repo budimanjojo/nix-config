@@ -10,6 +10,7 @@
       monitoring.smartd.enable = true;
 
       program.adb.enable = true;
+      program.beeaccounting.enable = true;
       program.hugo.enable = true;
       program.gaming.enable = true;
 

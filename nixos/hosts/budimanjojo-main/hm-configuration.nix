@@ -15,6 +15,7 @@
       multiplexer.zellij.enable = true;
 
       program.discord.enable = true;
+      program.beeaccounting.enable = true;
       program.hugo.enable = true;
       program.gaming.enable = true;
       program.go.enable = true;

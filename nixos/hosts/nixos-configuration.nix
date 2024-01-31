@@ -2,14 +2,20 @@
 let
   deviceCfg = config.deviceCfg;
 in {
-  sops.secrets.budiman-password = {
-    sopsFile = ./secret.sops.yaml;
-    neededForUsers = true;
+  sops.secrets = {
+    budiman-password = {
+      sopsFile = ./secret.sops.yaml;
+      neededForUsers = true;
+    };
+    budimanjojo-ghcr-pull-token = {
+      sopsFile = ./secret.sops.yaml;
+    };
   };
 
   users.mutableUsers = false;
   users.users.${deviceCfg.username} = {
     isNormalUser = true;
+    uid = deviceCfg.uid;
     extraGroups = [ "wheel" "networkmanager" "audio" ];
     shell = pkgs.fish;
     hashedPasswordFile = config.sops.secrets.budiman-password.path;

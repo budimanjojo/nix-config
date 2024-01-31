@@ -15,6 +15,7 @@
     ./multiplexer/zellij
 
     ./program/default
+    ./program/beeaccounting
     ./program/discord
     ./program/go
     ./program/hugo
