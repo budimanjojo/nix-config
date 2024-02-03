@@ -41,6 +41,7 @@ in {
             ## There's no good way to get $DISPLAY from the host and it's unpure
             DISPLAY = ":0";
             TZ = "Asia/Jakarta";
+            _JAVA_AWT_WM_NONREPARENTING = "1";
             PUID = "${toString config.deviceCfg.uid}";
           };
         };
