@@ -15,7 +15,7 @@ in {
         exec = let
           script = pkgs.writeShellScriptBin "bee-app" ''
             ${pkgs.xorg.xhost}/bin/xhost +local:${toString deviceCfg.uid} > /dev/null 2>&1 && \
-            ${pkgs.docker}/bin/docker exec --user ${toString deviceCfg.uid} beeaccounting java -Xmx1g -jar /app/BeeUI-2.9.jar
+            ${pkgs.docker}/bin/docker exec --user ${toString deviceCfg.uid} beeaccounting-app java -Xmx1g -jar /app/BeeUI-2.9.jar
           '';
         in "${script}/bin/bee-app";
         categories = ["Office" "Finance" "Java"];
@@ -33,7 +33,7 @@ in {
         exec = let
           script = pkgs.writeShellScriptBin "bee-updater" ''
             ${pkgs.xorg.xhost}/bin/xhost +local:${toString deviceCfg.uid} > /dev/null 2>&1 && \
-            ${pkgs.docker}/bin/docker exec --user ${toString deviceCfg.uid} beeaccounting java -Xmx1g -jar /app/BeeUpdater-2.9.jar
+            ${pkgs.docker}/bin/docker exec --user ${toString deviceCfg.uid} beeaccounting-app java -Xmx1g -jar /app/BeeUpdater-2.9.jar
           '';
         in "${script}/bin/bee-updater";
         categories = ["Office" "Finance" "Java"];
