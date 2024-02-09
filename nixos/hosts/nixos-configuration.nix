@@ -22,7 +22,7 @@ in {
   };
 
   # Autologin
-  services.getty.autologinUser = deviceCfg.username;
+  # services.getty.autologinUser = deviceCfg.username;
   services.greetd.settings.initial_session.user = deviceCfg.username;
   services.greetd.settings.default_session.user = deviceCfg.username;
   services.xserver.displayManager.autoLogin.user = deviceCfg.username;
