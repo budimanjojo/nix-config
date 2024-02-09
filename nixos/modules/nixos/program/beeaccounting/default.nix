@@ -11,6 +11,7 @@ in {
   options.modules.program.beeaccounting = { enable = mkEnableOption "beeaccounting"; };
 
   config = mkIf cfg.enable {
+    networking.firewall.allowedTCPPorts = [ 5432 631 5353 ];
     users.users.${config.deviceCfg.username}.extraGroups = [ "docker" ];
     virtualisation = {
       docker.enable = true;
@@ -19,14 +20,14 @@ in {
         backend = "docker";
         containers = {
           beeaccounting-db = {
-            image = "ghcr.io/budimanjojo/beeaccounting/beeplat-database:v1.1.0";
+            image = "ghcr.io/budimanjojo/beeaccounting/beeplat-database:v1.1.1";
             autoStart = true;
             login = ghcr-login;
             ports = [ "5432:5432" ];
             volumes = [ "beeaccounting-db:/data" ];
           };
           beeaccounting-app = {
-            image = "ghcr.io/budimanjojo/beeaccounting/beeplat-client:v1.1.0";
+            image = "ghcr.io/budimanjojo/beeaccounting/beeplat-client:v1.1.1";
             autoStart = true;
             login = ghcr-login;
             extraOptions = [
@@ -50,6 +51,7 @@ in {
               TZ = "Asia/Jakarta";
               _JAVA_AWT_WM_NONREPARENTING = "1";
               PUID = "${toString config.deviceCfg.uid}";
+              TYPE = "server";
             };
           };
         };
