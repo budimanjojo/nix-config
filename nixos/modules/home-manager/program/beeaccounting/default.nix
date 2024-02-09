@@ -42,5 +42,17 @@ in {
         terminal = false;
       };
     };
+
+    wayland.windowManager.hyprland.settings.windowrulev2 = [
+      "workspace 2, class:^(AppLauncher)$"
+      "noinitialfocus, class:^(AppLauncher)$, title:^(win)(.*)$"
+      "opaque, class:^(AppLauncher)$, title:^(win)(.*)$"
+      "noborder, class:^(AppLauncher)$, title:^(win)(.*)$"
+      "noanim, class:^(AppLauncher)$, title:^(win)(.*)$"
+      "nofocus, class:^(AppLauncher)$, title:^(JidePopup)$"
+      "noborder, class:^(AppLauncher)$, title:^(JidePopup)$"
+      "noanim, class:^(AppLauncher)$, title:^(JidePopup)$"
+      "maxsize 400 180, class:^(AppLauncher)$, title:^(JidePopup)$"
+    ];
   };
 }
