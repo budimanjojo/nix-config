@@ -21,7 +21,7 @@ in {
         size = 12;
       };
       theme = {
-        name = "Tokyonight-Dark-B";
+        name = "Tokyonight-Dark-BL";
         package = myPkgs.tokyonight-gtk-theme;
       };
       iconTheme = {
@@ -29,8 +29,5 @@ in {
         package = myPkgs.tokyonight-icon-theme;
       };
     };
-
-    # TODO: This is needed for Gnome42 apps
-    xdg.configFile."gtk-4.0/gtk.css".source = "${myPkgs.tokyonight-gtk-theme}/share/themes/Gnome42/Tokyonight-Dark-B.css";
   };
 }
