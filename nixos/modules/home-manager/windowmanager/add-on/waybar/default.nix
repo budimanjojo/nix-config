@@ -1,4 +1,4 @@
-{ pkgs, lib, config, inputs, system, ... }:
+{ lib, config, inputs, system, ... }:
 with lib;
 let
   cfg = config.hm-modules.windowmanager.add-on.waybar;
@@ -15,42 +15,25 @@ in {
           "output" = monitor.name;
           "layer" = "top";
           "position" = "top";
+          "margin" = "10 20 -5 20";
           "modules-center" = [
             "clock"
           ];
 
           "network#down" = {
-            "format" = " {bandwidthDownBits}";
+            "format" = "󰁅 {bandwidthDownBits}";
             "tooltip-format" = "{ifname} {ipaddr}";
             "interval" = 1;
           };
 
           "network#up" = {
-            "format" = " {bandwidthUpBits}";
+            "format" = "󰁝 {bandwidthUpBits}";
             "tooltip-format" = "{ifname} {ipaddr}";
             "interval" = 1;
           };
 
-          "disk#home" = {
-            "format" = " {used}";
-            "interval" = 30;
-            "path" = "/home/budiman";
-          };
-
-          "disk#root" = {
-            "format" = " {used}";
-            "interval" = 30;
-            "path" = "/";
-          };
-
-          "custom/uname" = {
-            "format" = "󰌽 {}";
-            "exec" = "${pkgs.coreutils-full}/bin/uname -r";
-            "tooltip" = false;
-          };
-
           "clock" = {
-            "format" = "{: %a,%d%b  %I:%M%p}";
+            "format" = "{:%A, %d %b %I:%M%p}";
             "interval" = 1;
             "timezone" = "Asia/Jakarta";
             "tooltip" = false;
@@ -60,10 +43,7 @@ in {
           "modules-right" = [
             "network#down"
             "network#up"
-            "disk#home"
-            "disk#root"
           ] ++ (if monitor == last deviceCfg.monitors then [
-            "custom/uname"
             "tray"
           ] else [ ]);
         } //
@@ -76,7 +56,7 @@ in {
             "format" = "{value}";
           };
           "sway/mode" = {
-            "format" = "󰃼 {}";
+            "format" = "󰔡 {}";
             "max-length" = 100;
           };
         } else if config.hm-modules.windowmanager.hyprland.enable then {
@@ -91,7 +71,7 @@ in {
             "on-scroll-down" = "${inputs.hyprland.packages.${system}.hyprland}/bin/hyprctl dispatch workspace e-1";
           };
           "hyprland/submap" = {
-            "format" = "󰃼 {}";
+            "format" = "󰔡 {}";
             "max-length" = 100;
           };
         } else {
@@ -104,8 +84,8 @@ in {
             border-radius: 0;
             font-family: "UbuntuMono Nerd Font";
             font-size: 16px;
-            font-weight: bold;
-            padding-top: 1px;
+            font-weight: normal;
+            padding: 1px;
         }
 
         button {
@@ -118,6 +98,8 @@ in {
             color: #C0CAF5;
             transition-property: background-color;
             transition-duration: .5s;
+            border: 1px solid #C0CAF5;
+            border-radius: 10px;
         }
 
         window#waybar.hidden {
@@ -143,13 +125,17 @@ in {
         }
 
         #mode {
-            color: #C0CAF5;
+            color: #F7768E;
             padding-left: 2px;
-            box-shadow: inset 0 -1.5px;
+        }
+
+        #submap {
+            color: #F7768E;
+            padding-left: 2px;
         }
 
         #clock {
-            color: #C0CAF5;
+            color: #BB9AF7;
         }
 
         #network.down {
@@ -162,35 +148,9 @@ in {
             padding-right: 8px;
         }
 
-        #disk.home {
-            color: #E0AF68;
-            padding-right: 8px;
-        }
-
-        #disk.root {
-            color: #F7768E;
-            padding-right: 8px;
-        }
-
-        #custom-uname {
-            color: #BB9AF7;
-            padding-right: 8px;
-        }
-
-        #custom-update {
-            color: #C0CAF5;
-            padding-right: 2px;
-        }
-
-        #custom-update.needsupdate {
-            color: #F7768E;
-            padding-right: 2px;
-        }
-
         #tray {
             color: #C0CAF5;
             padding-right: 8px;
-            font-weight: normal;
         }
       '';
     };
