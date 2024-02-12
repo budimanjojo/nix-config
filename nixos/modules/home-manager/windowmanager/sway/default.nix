@@ -42,9 +42,8 @@ in {
           mon2width = if length deviceCfg.monitors >= 2 then getAttr "width" (elemAt deviceCfg.monitors 1) else getAttr "width" (elemAt deviceCfg.monitors 0);
         in ''
           # VARIABLES ARE SET HERE
-          # Modifier default to Super key. Alt key for window navigating
+          # Modifier default to Super key
           set $super Mod4
-          set $alt Mod1
           # Default applications
           set $terminal wezterm
           set $browser rofi-firefox-wrapper
@@ -96,7 +95,7 @@ in {
         '';
       config = {
         floating = {
-          modifier = "Mod1";
+          modifier = "Mod4";
           titlebar = false;
           border = 0;
         };

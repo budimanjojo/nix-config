@@ -147,9 +147,9 @@ Then do `chezmoi init --apply budimanjojo`
 
 ## :scroll:&nbsp; Cheatsheet
 
-### Sway/i3 keybindings
+### Sway/i3/Hyprland keybindings
 
-I use `Super` and `Alt` key for Sway/i3.
+I use `Super` key for Sway/i3.
 `hjkl` keys are mapped to `left`, `down`, `up`, `right` arrow keys.
 `S` means Super key, [0-9] means number key 0 to 9.
 
@@ -165,34 +165,34 @@ I use `Super` and `Alt` key for Sway/i3.
 | `S+Tab`         | Open rofi opened apps menu |
 | `Alt+F4`        | Close window |
 | `S+F4`          | Close window |
-| `Alt+k`         | Change focus to window above |
-| `Alt+j`         | Change focus to window below |
-| `Alt+h`         | Change focus to left side window |
-| `Alt+l`         | Change focus to right side window |
-| `Alt+Shift+k`   | Move focused window up |
-| `Alt+Shift+j`   | Move focused window down |
-| `Alt+Shift+h`   | Move focused window left |
-| `Alt+Shift+l`   | Move focused window right |
-| `Alt+Ctrl+h`    | Split opened windows horizontally |
-| `Alt+Ctrl+v`    | Split opened windows vertically |
-| `Alt+Ctrl+q`    | Toggle opened windows split |
+| `S+k`           | Change focus to window above |
+| `S+j`           | Change focus to window below |
+| `S+h`           | Change focus to left side window |
+| `S+l`           | Change focus to right side window |
+| `S+Shift+k`     | Move focused window up |
+| `S+Shift+j`     | Move focused window down |
+| `S+Shift+h`     | Move focused window left |
+| `S+Shift+l`     | Move focused window right |
+| `S+Ctrl+h`      | Split opened windows horizontally |
+| `S+Ctrl+v`      | Split opened windows vertically |
+| `S+Ctrl+q`      | Toggle opened windows split |
 | `S+Tab`         | Go to next workspace |
 | `S+Shift+Tab`   | Go to previous workspace |
-| `Alt+Ctrl+t`    | Toggle window border on/off |
-| `Alt+Ctrl+g`    | Toggle gaps on/off |
-| `Alt+Ctrl+f`    | Toggle fullscreen mode on/off |
-| `Alt+Ctrl+s`    | Change container layout to stacking |
-| `Alt+Ctrl+w`    | Change container layout to tabbed |
-| `Alt+Ctrl+e`    | Toggle split layout to horizontal/vertical |
+| `S+Ctrl+t`      | Toggle window border on/off |
+| `S+Ctrl+g`      | Toggle gaps on/off |
+| `S+Ctrl+f`      | Toggle fullscreen mode on/off |
+| `S+Ctrl+s`      | Change container layout to stacking |
+| `S+Ctrl+w`      | Change container layout to tabbed |
+| `S+Ctrl+e`      | Toggle split layout to horizontal/vertical |
 | `S+Shift+Space` | Toggle window floating on/off |
 | `S+Space`       | Swap focus between tiling/floating window |
-| `S+Shift+-`     | Move current focused window to scratchpad |
-| `S+-`           | Show/hide scratchpad window |
+| `S+Shift+p`     | Move current focused window to scratchpad |
+| `S+p`           | Show/hide scratchpad window |
 | `S+[0-9]`       | Go to workspace #[0-9] |
 | `S+Shift+[0-9]` | Move focused window to workspace #[0-9] |
-| `Alt+Shift+r`   | Go to resize container mode |
-| `Alt+Shift+g`   | Go to resize gaps mode |
-| `Alt+Ctrl+Del`  | Go to logout mode |
+| `S+Shift+r`     | Go to resize container mode |
+| `S+Shift+g`     | Go to resize gaps mode |
+| `S+Ctrl+Del`    | Go to logout mode |
 | `Printscreen`   | Go to screenshot mode |
 | `S+Shift+c`     | Reload Sway configuration |
 | `S+Shift+e`     | Exit Sway |

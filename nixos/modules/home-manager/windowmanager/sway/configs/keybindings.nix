@@ -1,38 +1,37 @@
 {
   # Kill focused window
-  "$alt+F4" = "kill";
   "$super+F4" = "kill";
   # Change focus around
-  "$alt+h" = "focus left";
-  "$alt+j" = "focus down";
-  "$alt+k" = "focus up";
-  "$alt+l" = "focus right";
+  "$super+h" = "focus left";
+  "$super+j" = "focus down";
+  "$super+k" = "focus up";
+  "$super+l" = "focus right";
   # Or use arrow keys
-  "$alt+Left" = "focus left";
-  "$alt+Down" = "focus down";
-  "$alt+Up" = "focus up";
-  "$alt+Right" = "focus right";
+  "$super+Left" = "focus left";
+  "$super+Down" = "focus down";
+  "$super+Up" = "focus up";
+  "$super+Right" = "focus right";
   # Move the focused window with the same, but add Shift
-  "$alt+Shift+h" = "move left";
-  "$alt+Shift+j" = "move down";
-  "$alt+Shift+k" = "move up";
-  "$alt+Shift+l" = "move right";
+  "$super+Shift+h" = "move left";
+  "$super+Shift+j" = "move down";
+  "$super+Shift+k" = "move up";
+  "$super+Shift+l" = "move right";
   # Or use arrow keys
-  "$alt+Shift+Left" = "move left";
-  "$alt+Shift+Down" = "move down";
-  "$alt+Shift+Up" = "move up";
-  "$alt+Shift+Right" = "move right";
+  "$super+Shift+Left" = "move left";
+  "$super+Shift+Down" = "move down";
+  "$super+Shift+Up" = "move up";
+  "$super+Shift+Right" = "move right";
   # Split current container
-  "$alt+Control+h" = "splith; exec notify-send 'tile horizontally'";
-  "$alt+Control+v" = "splitv; exec notify-send 'tile vertically'";
-  "$alt+Control+q" = "split toggle";
+  "$super+Control+h" = "splith; exec notify-send 'tile horizontally'";
+  "$super+Control+v" = "splitv; exec notify-send 'tile vertically'";
+  "$super+Control+q" = "split toggle";
   # Next/previous workspace
   "$super+Tab" = "workspace next";
   "$super+Shift+Tab" = "workspace prev";
   # Toggle window border
-  "$alt+Control+t" = "border toggle";
+  "$super+Control+t" = "border toggle";
   # toggle gaps on and off
-  "$alt+Control+g" = ''
+  "$super+Control+g" = ''
     exec "if [ `swaymsg -t get_tree | grep -Po \
       '.*\\"gaps\\":{\\"inner\\":\K(-|)[0-9]+(?=.*\\"focused\\":true)'` -eq 0 ]; then \
               swaymsg gaps inner current set 0; swaymsg gaps outer current set 0; \
@@ -41,11 +40,11 @@
       fi
   '';
   # Toggle fullscreen mode
-  "$alt+Control+f" = "fullscreen toggle";
+  "$super+Shift+f" = "fullscreen toggle";
   # Change container layout
-  "$alt+Control+s" = "layout stacking";
-  "$alt+Control+w" = "layout tabbed";
-  "$alt+Control+e" = "layout toggle split";
+  "$super+Control+s" = "layout stacking";
+  "$super+Control+w" = "layout tabbed";
+  "$super+Control+e" = "layout toggle split";
   # Toggle floating mode
   "$super+Shift+space" = "floating toggle";
   # Swap focus between tiling / floating windows
@@ -55,9 +54,9 @@
   # Focus the child container
   #"$super+d" = "focus child";
   # Move the currently focused window to the scratchpad
-  "$super+Shift+minus" = "move scratchpad";
+  "$super+Shift+p" = "move scratchpad";
   # Show the next scratchpad window or hide the focused scratchpad window.
-  "$super+minus" = "scratchpad show";
+  "$super+p" = "scratchpad show";
   # Switch to workspace
   "$super+1" = "workspace $ws1";
   "$super+2" = "workspace $ws2";
@@ -94,8 +93,8 @@
   # Rofi as dmenu replacement
   "$super+grave" = "exec rofi -show drun";
   # Modes
-  "$alt+Shift+r" = "mode \"$resize\"";
-  "$alt+Shift+g" = "mode \"$gaps\"";
-  "$alt+Control+Delete" = "mode \"$system\"";
+  "$super+Shift+r" = "mode \"$resize\"";
+  "$super+Shift+g" = "mode \"$gaps\"";
+  "$super+Control+Delete" = "mode \"$system\"";
   "Print" = "mode \"$screenshot\"";
 }

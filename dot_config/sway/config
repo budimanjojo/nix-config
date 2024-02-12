@@ -9,15 +9,13 @@ set $filemanager thunar
 set $launcher rofi
 
 ## KEYBINDING
-# Modifier default to Super key. Alt key for window navigating
+# Modifier default to Super key
 set $super Mod4
-set $alt Mod1
 
-# Alt+mouse to drag/resize floating windows
-floating_modifier $alt
+# Super+mouse to drag/resize floating windows
+floating_modifier $super
 
 # Kill focused window
-bindsym $alt+F4 kill
 bindsym $super+F4 kill
 
 # Vim navigation
@@ -27,43 +25,43 @@ set $up k
 set $right l
 
 # Change focus around
-bindsym $alt+$left focus left
-bindsym $alt+$down focus down
-bindsym $alt+$up focus up
-bindsym $alt+$right focus right
+bindsym $super+$left focus left
+bindsym $super+$down focus down
+bindsym $super+$up focus up
+bindsym $super+$right focus right
 # Or use arrow keys
-bindsym $alt+Left focus left
-bindsym $alt+Down focus down
-bindsym $alt+Up focus up
-bindsym $alt+Right focus right
+bindsym $super+Left focus left
+bindsym $super+Down focus down
+bindsym $super+Up focus up
+bindsym $super+Right focus right
 
 # Move the focused window with the same, but add Shift
-bindsym $alt+Shift+$left move left
-bindsym $alt+Shift+$down move down
-bindsym $alt+Shift+$up move up
-bindsym $alt+Shift+$right move right
+bindsym $super+Shift+$left move left
+bindsym $super+Shift+$down move down
+bindsym $super+Shift+$up move up
+bindsym $super+Shift+$right move right
 # Or use arrow keys
-bindsym $alt+Shift+Left move left
-bindsym $alt+Shift+Down move down
-bindsym $alt+Shift+Up move up
-bindsym $alt+Shift+Right move right
+bindsym $super+Shift+Left move left
+bindsym $super+Shift+Down move down
+bindsym $super+Shift+Up move up
+bindsym $super+Shift+Right move right
 
 # Split current container
-bindsym $alt+Control+h splith; exec notify-send 'tile horizontally'
-bindsym $alt+Control+v splitv; exec notify-send 'tile vertically'
-bindsym $alt+Control+q split toggle
+bindsym $super+Control+h splith; exec notify-send 'tile horizontally'
+bindsym $super+Control+v splitv; exec notify-send 'tile vertically'
+bindsym $super+Control+q split toggle
 
 # Next/previous workspace
 bindsym $super+Tab workspace next
 bindsym $super+Shift+Tab workspace prev
 
 # Toggle window border
-bindsym $alt+Control+t border toggle
+bindsym $super+Control+t border toggle
 
 # toggle gaps on and off
 set $gaps_inner 10
 set $gaps_outer 5
-bindsym $alt+Control+g exec "if [ `swaymsg -t get_tree | grep -Po \
+bindsym $super+Control+g exec "if [ `swaymsg -t get_tree | grep -Po \
         '.*\\"gaps\\":{\\"inner\\":\K(-|)[0-9]+(?=.*\\"focused\\":true)'` -eq 0 ]; then \
                 swaymsg gaps inner current set 0; swaymsg gaps outer current set 0; \
         else \
@@ -71,12 +69,12 @@ bindsym $alt+Control+g exec "if [ `swaymsg -t get_tree | grep -Po \
         fi
 
 # Toggle fullscreen mode
-bindsym $alt+Control+f fullscreen toggle
+bindsym $super+Control+f fullscreen toggle
 
 # Change container layout
-bindsym $alt+Control+s layout stacking
-bindsym $alt+Control+w layout tabbed
-bindsym $alt+Control+e layout toggle split
+bindsym $super+Control+s layout stacking
+bindsym $super+Control+w layout tabbed
+bindsym $super+Control+e layout toggle split
 
 # Toggle floating mode
 bindsym $super+Shift+space floating toggle
@@ -91,10 +89,10 @@ bindsym $super+space focus mode_toggle
 #bindsym $super+d focus child
 
 # Move the currently focused window to the scratchpad
-bindsym $super+Shift+minus move scratchpad
+bindsym $super+Shift+p move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
-bindsym $super+minus scratchpad show
+bindsym $super+p scratchpad show
 
 # Switch to workspace
 bindsym $super+1 workspace $ws1
@@ -136,7 +134,7 @@ mode "$resize" {
     bindsym Return      mode "default"
     bindsym Escape      mode "default"
 }
-bindsym $alt+Shift+r mode "$resize"
+bindsym $super+Shift+r mode "$resize"
 
 # Resize gaps
 set $gaps Gaps (o) outer, (i) inner
@@ -177,7 +175,7 @@ mode "$gaps_inner" {
     bindsym Return      mode "$gaps"
     bindsym Escape      mode "default"
 }
-bindsym $alt+Shift+g mode "$gaps"
+bindsym $super+Shift+g mode "$gaps"
 
 # Reload the configuration file
 bindsym $super+Shift+c reload
@@ -198,7 +196,7 @@ mode "$system" {
     bindsym Return      mode "default"
     bindsym Escape      mode "default"
 }
-bindsym $alt+Control+Delete mode "$system"
+bindsym $super+Control+Delete mode "$system"
 
 ## APPLICATION SHORTCUTS
 # Most used applications
@@ -222,7 +220,6 @@ bindsym Print mode "$screenshot"
 
 # Rofi as dmenu replacement
 bindsym $super+grave exec rofi -show drun
-# bindsym $alt+Tab exec rofi -show window
 
 ## WORKSPACE NAMING AND PLACEMENT
 # Workspace naming

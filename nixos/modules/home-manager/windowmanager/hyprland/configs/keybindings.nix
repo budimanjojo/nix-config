@@ -1,51 +1,50 @@
 {
   bindm = [
-    # Alt+mouse to drag/resize floating windows
-    "$alt, mouse:272, movewindow"
-    "$alt, mouse:273, resizewindow"
+    # Super+mouse to drag/resize floating windows
+    "$super, mouse:272, movewindow"
+    "$super, mouse:273, resizewindow"
   ];
   bind = [
     # Kill focused window
-    "$alt, F4, killactive,"
     "$super, F4, killactive,"
 
     # Change focus around
-    "$alt, $left, movefocus, l"
-    "$alt, $down, movefocus, d"
-    "$alt, $up, movefocus, u"
-    "$alt, $right, movefocus, r"
+    "$super, $left, movefocus, l"
+    "$super, $down, movefocus, d"
+    "$super, $up, movefocus, u"
+    "$super, $right, movefocus, r"
     # Or use arrow keys
-    "$alt, left, movefocus, l"
-    "$alt, down, movefocus, d"
-    "$alt, up, movefocus, u"
-    "$alt, right, movefocus, r"
+    "$super, left, movefocus, l"
+    "$super, down, movefocus, d"
+    "$super, up, movefocus, u"
+    "$super, right, movefocus, r"
 
     # Move the focused window with the same, but add Shift
-    "$alt SHIFT, $left, movewindow, l"
-    "$alt SHIFT, $down, movewindow, d"
-    "$alt SHIFT, $up, movewindow, u"
-    "$alt SHIFT, $right, movewindow, r"
+    "$super SHIFT, $left, movewindow, l"
+    "$super SHIFT, $down, movewindow, d"
+    "$super SHIFT, $up, movewindow, u"
+    "$super SHIFT, $right, movewindow, r"
     # Or use arrow keys
-    "$alt SHIFT, left, movewindow, l"
-    "$alt SHIFT, down, movewindow, d"
-    "$alt SHIFT, up, movewindow, u"
-    "$alt SHIFT, right, movewindow, r"
+    "$super SHIFT, left, movewindow, l"
+    "$super SHIFT, down, movewindow, d"
+    "$super SHIFT, up, movewindow, u"
+    "$super SHIFT, right, movewindow, r"
 
     # Next/previous workspace
     "$super, tab, workspace, e+1"
     "$super SHIFT, tab, workspace, e-1"
 
     # Toggle fullscreen mode
-    "CTRL $alt, f, fullscreen, 1"
+    "$super SHIFT, f, fullscreen, 1"
 
     # Toggle floating mode
     "$super SHIFT, space, togglefloating,"
 
     # Move the currently focused window to the scratchpad
-    "$super SHIFT, minus, movetoworkspacesilent, special"
+    "$super SHIFT, p, movetoworkspacesilent, special"
 
     # Show the next scratchpad window or hide the focused scratchpad window
-    "$super, minus, togglespecialworkspace,"
+    "$super, p, togglespecialworkspace,"
 
     # Switch to workspace
     "$super, 1, workspace, 1"
@@ -83,8 +82,8 @@
     "$super, grave, exec, rofi -show drun"
 
     # Modes
-    "$alt SHIFT, r, submap, $resize"
-    "CTRL $alt, delete, submap, $system"
+    "$super SHIFT, r, submap, $resize"
+    "CTRL $super, delete, submap, $system"
     ", print, submap, $screenshot"
   ];
 }

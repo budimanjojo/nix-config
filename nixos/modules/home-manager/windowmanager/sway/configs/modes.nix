@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 {
   # Resize  window
   "$resize" = {
