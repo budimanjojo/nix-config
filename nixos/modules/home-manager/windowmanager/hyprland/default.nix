@@ -57,6 +57,7 @@ in {
         # Show log out menu
         submap = $system
         bind = , l, execr, $locker
+        bind = , l, submap, reset
         bind = , e, exit,
         bind = , r, execr, systemctl reboot
         bind = , s, execr, systemctl poweroff -i
