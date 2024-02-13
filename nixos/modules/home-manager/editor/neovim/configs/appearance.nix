@@ -15,7 +15,7 @@
       }
     ];
 
-    highlight = {
+    highlightOverride = {
       ## Floating window border color
       FloatBorder.fg = "#C0CAF5";
     };
