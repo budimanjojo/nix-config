@@ -16,6 +16,7 @@ in {
     hm-modules.windowmanager.add-on.pasystray.enable = true;
     hm-modules.windowmanager.add-on.rofi.enable = true;
     hm-modules.windowmanager.add-on.swayidle.enable = true;
+    hm-modules.windowmanager.add-on.swaylock.enable = true;
     hm-modules.windowmanager.add-on.waybar.enable = true;
     hm-modules.windowmanager.add-on.xdg.enable = true;
     hm-modules.terminal-emulator.alacritty.enable = true;

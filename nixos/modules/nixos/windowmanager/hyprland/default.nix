@@ -57,5 +57,7 @@ in {
 
     services.dbus.enable = true;
     networking.networkmanager.enable = true;
+    # Needed for swaylock to work
+    security.pam.services.swaylock = {};
   };
 }

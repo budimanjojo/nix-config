@@ -44,6 +44,7 @@
     ./windowmanager/add-on/py3status
     ./windowmanager/add-on/rofi
     ./windowmanager/add-on/swayidle
+    ./windowmanager/add-on/swaylock
     ./windowmanager/add-on/waybar
     ./windowmanager/add-on/xdg
 
