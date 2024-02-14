@@ -31,6 +31,7 @@ in {
         text-wrong-color = "C0CAF5";
         text-ver-color = "C0CAF5";
         text-clear-color = "C0CAF5";
+        text-caps-lock-color = "E0AF68";
         # Ring colors
         ring-color = "9ECE6A";
         ring-wrong-color = "F7768E";
