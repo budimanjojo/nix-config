@@ -39,6 +39,7 @@
     ./windowmanager/add-on/dunst
     ./windowmanager/add-on/gtk-theme
     ./windowmanager/add-on/nm-applet
+    ./windowmanager/add-on/nwg-bar
     ./windowmanager/add-on/pasystray
     ./windowmanager/add-on/picom
     ./windowmanager/add-on/py3status

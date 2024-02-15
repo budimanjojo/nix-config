@@ -13,10 +13,10 @@ in {
     hm-modules.windowmanager.add-on.dunst.enable = true;
     hm-modules.windowmanager.add-on.gtk-theme.enable = true;
     hm-modules.windowmanager.add-on.nm-applet.enable = true;
+    hm-modules.windowmanager.add-on.nwg-bar.enable = true;
     hm-modules.windowmanager.add-on.pasystray.enable = true;
     hm-modules.windowmanager.add-on.rofi.enable = true;
     hm-modules.windowmanager.add-on.swayidle.enable = true;
-    hm-modules.windowmanager.add-on.swaylock.enable = true;
     hm-modules.windowmanager.add-on.waybar.enable = true;
     hm-modules.windowmanager.add-on.xdg.enable = true;
 
@@ -54,7 +54,6 @@ in {
           set $gaps Gaps (o) outer, (i) inner
           set $gaps_outer Outer Gaps (k/Up) grow locally, (K/Shift+Up) grow globally
           set $gaps_inner Inner Gaps (k/Up) grow locally, (K/Shift+Up) grow globally
-          set $system System: (l) lock, (e) logout, (r) reboot, (s) shutdown (f) uefi
           set $screenshot Screenshot: (Enter) Full Screenshot, (S) Select Region
           # locker command
           set $Locker swaylock && sleep 1

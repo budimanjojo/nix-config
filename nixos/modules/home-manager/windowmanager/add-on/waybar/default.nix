@@ -1,4 +1,4 @@
-{ lib, config, inputs, system, ... }:
+{ pkgs, lib, config, inputs, system, ... }:
 with lib;
 let
   cfg = config.hm-modules.windowmanager.add-on.waybar;
@@ -38,6 +38,11 @@ in {
             "timezone" = "Asia/Jakarta";
             "tooltip" = false;
           };
+          "custom/power" = {
+            "format" = "󰤆 ";
+            "tooltip" = true;
+            "on-click" = "${pkgs.nwg-bar}/bin/nwg-bar";
+          };
         } //
         {
           "modules-right" = [
@@ -45,6 +50,7 @@ in {
             "network#up"
           ] ++ (if monitor == last deviceCfg.monitors then [
             "tray"
+            "custom/power"
           ] else [ ]);
         } //
         (if config.hm-modules.windowmanager.sway.enable then {
@@ -150,6 +156,11 @@ in {
 
         #tray {
             color: #C0CAF5;
+            padding-right: 8px;
+        }
+
+        #custom-power {
+            color: #F7768E;
             padding-right: 8px;
         }
       '';

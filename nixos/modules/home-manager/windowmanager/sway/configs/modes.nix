@@ -51,17 +51,6 @@
     "Return" = "mode \"$gaps\"";
     "Escape" = "mode default";
   };
-  # Show log out menu
-  "$system" = {
-    "l" = "exec $Locker, mode default";
-    "e" = "exec swaymsg exit, mode default";
-    "r" = "exec systemctl reboot, mode default";
-    "s" = "exec systemctl poweroff -i, mode default";
-    "f" = "exec systemctl reboot --firmware-setup, mode default";
-    # Return to normal mode
-    "Return" = "mode default";
-    "Escape" = "mode default";
-  };
   # Take a screenshot with grim, put it in Desktop folder
   "$screenshot" = {
     "Return" = "exec $grim_capture && pw-cat -p ~/.config/sway/sounds/camera-shutter.oga && notify-send \"Screenshot saved in your Desktop folder\", mode default";

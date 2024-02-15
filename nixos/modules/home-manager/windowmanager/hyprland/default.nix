@@ -13,10 +13,10 @@ in {
     hm-modules.windowmanager.add-on.dunst.enable = true;
     hm-modules.windowmanager.add-on.gtk-theme.enable = true;
     hm-modules.windowmanager.add-on.nm-applet.enable = true;
+    hm-modules.windowmanager.add-on.nwg-bar.enable = true;
     hm-modules.windowmanager.add-on.pasystray.enable = true;
     hm-modules.windowmanager.add-on.rofi.enable = true;
     hm-modules.windowmanager.add-on.swayidle.enable = true;
-    hm-modules.windowmanager.add-on.swaylock.enable = true;
     hm-modules.windowmanager.add-on.waybar.enable = true;
     hm-modules.windowmanager.add-on.xdg.enable = true;
     hm-modules.terminal-emulator.alacritty.enable = true;
@@ -52,19 +52,6 @@ in {
         binde = , right, resizeactive, 10 0
         # Return to normal mode
         bind = , escape, submap, reset
-        submap = reset
-
-        # Show log out menu
-        submap = $system
-        bind = , l, execr, $locker
-        bind = , l, submap, reset
-        bind = , e, exit,
-        bind = , r, execr, systemctl reboot
-        bind = , s, execr, systemctl poweroff -i
-        bind = , f, execr, systemctl reboot --firmware-setup
-        # Return to normal mode
-        bind = , escape, submap, reset
-        bind = , return, submap, reset
         submap = reset
 
         # Take a screenshot with grim, put it in Desktop folder

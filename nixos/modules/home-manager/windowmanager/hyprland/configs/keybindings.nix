@@ -83,8 +83,10 @@
 
     # Modes
     "$super SHIFT, r, submap, $resize"
-    "CTRL $super, delete, submap, $system"
     ", print, submap, $screenshot"
+
+    # Logout menu
+    "CTRL $super, delete, exec, nwg-bar"
   ];
 }
 

@@ -95,6 +95,7 @@
   # Modes
   "$super+Shift+r" = "mode \"$resize\"";
   "$super+Shift+g" = "mode \"$gaps\"";
-  "$super+Control+Delete" = "mode \"$system\"";
   "Print" = "mode \"$screenshot\"";
+  # Logout menu
+  "$super+Control+Delete" = "exec nwg-bar";
 }
