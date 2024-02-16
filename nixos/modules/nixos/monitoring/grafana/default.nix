@@ -7,6 +7,7 @@ in {
 
   config = mkIf cfg.enable {
     sops.secrets.grafana-password = {
+      sopsFile = ./secret.sops.yaml;
       owner = config.users.users.grafana.name;
     };
     services = {
