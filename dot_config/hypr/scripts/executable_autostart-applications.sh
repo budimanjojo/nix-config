@@ -8,4 +8,3 @@ nm-applet --indicator &
 # exec xfce4-power-manager
 # exec $HOME/.conkyrc/.conkyrci3/start_conky_i3.sh
 /usr/bin/nextcloud --background &
-exec "sleep 5; /usr/bin/syncthingtray" &

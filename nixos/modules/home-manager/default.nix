@@ -22,7 +22,6 @@
     ./program/nextcloud
     ./program/obs-studio
     ./program/libreoffice
-    ./program/syncthing
     ./program/yamllint
 
     ./shell/fish

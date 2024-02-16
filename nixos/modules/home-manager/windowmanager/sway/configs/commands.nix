@@ -50,10 +50,6 @@
     command = "floating enable, resize set 1000 640";
   }
   {
-    criteria = { app_id = "syncthingtray"; };
-    command = "floating enable";
-  }
-  {
     criteria = { title = "File Transfer*"; };
     command = "floating enable";
   }

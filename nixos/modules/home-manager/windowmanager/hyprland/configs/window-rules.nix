@@ -11,8 +11,6 @@
     "float, class:^(nm-connection-editor)$"
     "float, class:^(rhythmbox)$"
     "size 1000 640, class:^(rhythmbox)$"
-    "float, class:^(syncthingtray)$"
-    "float, title:^(Syncthing Tray( \(.*\))?)$"
     "float, title:^(File Transfer*)$"
     "float, title:^(Lxappearance)$"
     "pin, title:^(Lxappearance)$"
