@@ -20,7 +20,7 @@ in {
         datestr = "%a, %d %b";
         indicator = true;
         effect-blur = "7x5";
-        effect-compose = "40%,39%;${./text.png}";
+        effect-compose = "40%,35%;center;${./text.png}";
         # Inside colors
         inside-color = "1A1B26";
         inside-wrong-color = "1A1B26";
