@@ -147,10 +147,10 @@
   };
   prometheus-api-client = {
     pname = "prometheus-api-client";
-    version = "0.5.4";
+    version = "0.5.5";
     src = fetchurl {
-      url = "https://pypi.org/packages/source/p/prometheus-api-client/prometheus-api-client-0.5.4.tar.gz";
-      sha256 = "sha256-OFaBB+GCqibyJZn3lCFeo93l7NPvFJRO72FO6qRsm2o=";
+      url = "https://pypi.org/packages/source/p/prometheus-api-client/prometheus-api-client-0.5.5.tar.gz";
+      sha256 = "sha256-WUScS+BIXqWi37vtJILrCj7qyMExs+/IZt9MmgxAO7c=";
     };
   };
   puffer-fish = {
