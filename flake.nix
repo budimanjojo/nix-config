@@ -14,7 +14,6 @@
     nur.url = "github:nix-community/NUR";
     talhelper.url = "github:budimanjojo/talhelper";
     talhelper.inputs.nixpkgs.follows = "nixpkgs";
-    hyprland.url = "github:hyprwm/Hyprland";
     nh.url = "github:viperML/nh";
     nvfetcher.url = "github:berberman/nvfetcher";
     nvfetcher.inputs.nixpkgs.follows = "nixpkgs";

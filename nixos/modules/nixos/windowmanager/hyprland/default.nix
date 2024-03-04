@@ -1,4 +1,4 @@
-{ pkgs, lib, config, myPkgs, inputs, system, ... }:
+{ pkgs, lib, config, myPkgs, ... }:
 with lib;
 let
   cfg = config.modules.windowmanager.hyprland;
@@ -31,10 +31,10 @@ in {
       enable = true;
       settings = {
         initial_session = {
-          command = "${inputs.hyprland.packages.${system}.hyprland}/bin/Hyprland";
+          command = "${config.programs.hyprland.finalPackage}/bin/Hyprland";
         };
         default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd ${inputs.hyprland.packages.${system}.hyprland}/bin/Hyprland";
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd ${config.programs.hyprland.finalPackage}/bin/Hyprland";
         };
       };
     };
@@ -53,7 +53,10 @@ in {
 
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-    programs.hyprland.enable = true;
+    programs.hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
 
     services.dbus.enable = true;
     networking.networkmanager.enable = true;
