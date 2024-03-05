@@ -177,8 +177,6 @@
               enable = true;
               withArgs = "{ extra_args = { '-i', '2', '-ci' } }";
             };
-            trim_newlines.enable = true;
-            trim_whitespace.enable = true;
           };
           diagnostics = {
             ansiblelint = {
