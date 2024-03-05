@@ -187,11 +187,9 @@
             };
             golangci_lint.enable = true;
             markdownlint.enable = true;
-            shellcheck.enable = true;
             write_good.enable = true;
             yamllint.enable = true;
           };
-          code_actions.shellcheck.enable = true;
         };
       };
     };

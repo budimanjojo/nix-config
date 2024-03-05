@@ -56,6 +56,7 @@ in
       git
       gzip
       sad
+      shellcheck
     ];
 
     extraPlugins = with vimPlugins; [
