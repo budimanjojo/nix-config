@@ -414,11 +414,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1709819603,
-        "narHash": "sha256-joUMMXG8dym/KCJMWYT5wDy086FWvLHuhja0u2zYJk4=",
+        "lastModified": 1709837370,
+        "narHash": "sha256-TlJ9iOw4HQmGIzycmwNT2OHOTUMkO5zHHKxnzMWa1tY=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "e9564ac336bc5151a0f0671a460e64af9342e8aa",
+        "rev": "45dec97e806ecee29856cb714e5c4979b143ef94",
         "type": "github"
       },
       "original": {
@@ -429,11 +429,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1709833488,
-        "narHash": "sha256-LSu85QgQyKUMd1IITQSWDzQ1DDT6xOxHrQNp6ubdwkM=",
+        "lastModified": 1709836276,
+        "narHash": "sha256-YV+exYcs+MlU3Owi7kkaeMVHHFn8DLa7BsWaM9iFdIM=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "05b548306e488860c6ff962680b086a481451c4d",
+        "rev": "d0659ed2332119b1f89ae82f7adf3b9e0d0efd09",
         "type": "github"
       },
       "original": {
