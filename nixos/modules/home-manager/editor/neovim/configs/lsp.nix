@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, myPkgs, ... }:
 {
   config = {
     extraPlugins = [
@@ -78,6 +78,8 @@
           ## gopls
           gopls = {
             enable = true;
+            # TODO: https://github.com/NixOS/nixpkgs/issues/293180
+            package = myPkgs.gopls;
             extraOptions = {
               settings = {
                 gopls = {

@@ -7,4 +7,5 @@
   rofi-firefox-wrapper = pkgs.callPackage ./rofi-firefox-wrapper/default.nix {};
   krr = pkgs.callPackage ./krr/default.nix {};
   kubectl-rook-ceph = pkgs.callPackage ./kubectl-rook-ceph/default.nix {};
+  gopls = pkgs.callPackage ./gopls/default.nix {};
 }
