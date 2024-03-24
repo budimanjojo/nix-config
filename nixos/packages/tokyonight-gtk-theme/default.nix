@@ -1,4 +1,4 @@
-{ stdenvNoCC, lib, callPackage }:
+{ stdenvNoCC, lib, callPackage, pkgs, }:
 
 let
   sourceData = callPackage ../_sources/generated.nix {};
@@ -6,11 +6,25 @@ in
 stdenvNoCC.mkDerivation {
   inherit (sourceData.tokyonight-gtk-theme) pname version src;
 
+  nativeBuildInputs = [
+    pkgs.gnome.gnome-shell
+    pkgs.sassc
+  ];
+
+  builtInputs = [
+    pkgs.gnome.gnome-themes-extra
+  ];
+
   installPhase = ''
     runHook preInstall
 
+    find -name "*.sh" -print0 | while IFS= read -r -d ''' file; do
+      patchShebangs "$file"
+    done
+
     mkdir -p $out/share/themes
-    cp -r ./themes/* $out/share/themes/
+    cd theme
+    ./install.sh --dest $out/share/themes
 
     runHook postInstall
   '';
@@ -18,9 +32,8 @@ stdenvNoCC.mkDerivation {
   meta = with lib; {
     description = "A GTK theme based on the Tokyo Night colour palette";
     longDescription = ''
-      Tokyonight is a GTK theme based on the colour palette of the Tokyonight for Neovim by @Folke, the Graphite GTK theme by @VinceLiuice and the Suru Plus icons by @gusbemacbe.
-      The idea was born from the need for GTK themes that match the most prominent colour palettes of Neovim code editor and Tiling Window Manager, such as Xmonad, Awesome, DWM, etc, which use these colour schemes to give a uniform and unique look to working environments. See on Reddit: r/unixporn.
-      The colour palettes in this series of themes are the ones I have used the most in my setup for Neovim, Xmonad and Gnome DE, so creating themes started as something personal that I then decided to share thanks to several people asking me to share them because they seemed good, I hope you find them useful and make your desktops look good too.
+      A GTK theme based on the colours of Folke's great theme: Tokyonight for Neovim, the VinceLiuice's awesome: Magnetic GTK theme and the creativity of Gusbemacbe's: Suru Plus Icon Theme.
+Great to combine in your Gnome Desktop Environment and TWMs like: XmonadWM, AwesomeWM, BSPWM, etc... With support also for the desktop environments Cinnamon and XFCE.
     '';
     homepage = "https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme";
     license = licenses.gpl3Only;
