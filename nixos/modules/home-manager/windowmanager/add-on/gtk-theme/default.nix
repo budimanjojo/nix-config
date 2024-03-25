@@ -21,7 +21,7 @@ in {
         size = 12;
       };
       theme = {
-        name = "Tokyonight-Dark-BL";
+        name = "Tokyonight-Dark";
         package = myPkgs.tokyonight-gtk-theme;
       };
       iconTheme = {

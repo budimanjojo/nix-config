@@ -24,7 +24,7 @@ stdenvNoCC.mkDerivation {
 
     mkdir -p $out/share/themes
     cd theme
-    ./install.sh --dest $out/share/themes
+    ./install.sh --dest $out/share/themes --name Tokyonight
 
     runHook postInstall
   '';
