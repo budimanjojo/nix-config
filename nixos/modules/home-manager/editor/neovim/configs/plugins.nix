@@ -26,6 +26,7 @@ in
       "lua/plugin-configs/_oil.lua" = builtins.readFile ./lua/plugin-configs/_oil.lua;
       "lua/plugin-configs/_sad-nvim.lua" = builtins.readFile ./lua/plugin-configs/_sad-nvim.lua;
       "lua/plugin-configs/_treesitter.lua" = builtins.readFile ./lua/plugin-configs/_treesitter.lua;
+      "lua/plugin-configs/_indent-blankline.lua" = builtins.readFile ./lua/plugin-configs/_indent-blankline.lua;
 
       ## lua highlighting in extraConfigLua
       "queries/nix/injections.scm" = ''
@@ -81,7 +82,7 @@ in
       }
       {
         plugin = indent-blankline-nvim;
-        config = "lua require('ibl').setup()";
+        config = "lua require('plugin-configs._indent-blankline')";
       }
       # Autocompletion
       cmp-nvim-lsp
