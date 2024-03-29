@@ -220,6 +220,7 @@ bindsym Print mode "$screenshot"
 
 # Rofi as dmenu replacement
 bindsym $super+grave exec rofi -show drun
+bindsym $super+Escape exec rofi -show drun
 
 ## WORKSPACE NAMING AND PLACEMENT
 # Workspace naming

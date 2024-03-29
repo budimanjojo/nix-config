@@ -92,6 +92,7 @@
   "$super+s" = "exec steam";
   # Rofi as dmenu replacement
   "$super+grave" = "exec rofi -show drun";
+  "$super+Escape" = "exec rofi -show drun";
   # Modes
   "$super+Shift+r" = "mode \"$resize\"";
   "$super+Shift+g" = "mode \"$gaps\"";
