@@ -80,6 +80,7 @@
 
     # Rofi as dmenu replacement
     "$super, grave, exec, rofi -show drun"
+    "$super, Escape, exec, rofi -show drun"
 
     # Modes
     "$super SHIFT, r, submap, $resize"
@@ -89,4 +90,3 @@
     "CTRL $super, delete, exec, nwg-bar"
   ];
 }
-
