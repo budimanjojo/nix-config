@@ -4,7 +4,7 @@
 set -eufo pipefail
 
 # renovate: depName=aquaproj/aqua datasource=github-releases
-current_aqua_version=v2.25.1
+current_aqua_version=v2.25.2
 
 if [ ! $(command -v aqua) ] || [ $(aqua -v | head -n1 | cut -d" " -f3 | sed "s/^/v/") != $current_aqua_version ]; then
   echo "installing / upgrading aqua"
