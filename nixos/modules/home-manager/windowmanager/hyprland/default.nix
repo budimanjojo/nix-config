@@ -54,11 +54,11 @@ in {
         bind = , escape, submap, reset
         submap = reset
 
-        # Take a screenshot with grim, put it in Desktop folder
+        # Take a screenshot with grim, copy to clipboard, put it in Desktop folder
         submap = $screenshot
-        bind = , return, execr, $grim_capture && pw-cat -p ~/.config/hypr/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder"
+        bind = , return, execr, $grim_capture && pw-cat -p ~/.config/hypr/sounds/camera-shutter.oga && notify-send "Screenshot copied to clipboard and saved in your Desktop folder"
         bind = , return, submap, reset
-        bind = , s, exec, $grim_region && pw-cat -p ~/.config/hypr/sounds/camera-shutter.oga && notify-send "Screenshot saved in your Desktop folder"
+        bind = , s, exec, $grim_region && pw-cat -p ~/.config/hypr/sounds/camera-shutter.oga && notify-send "Screenshot copied to clipboard and saved in your Desktop folder"
         bind = , s, submap, reset
         # Return to normal mode
         bind = , escape, submap, reset
