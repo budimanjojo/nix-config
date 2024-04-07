@@ -35,8 +35,8 @@ in
   # locker command
   "$locker" = "swaylock && sleep 1";
   # grim command
-  "$grim_capture" = "GRIM_DEFAULT_DIR=~/Desktop grim - | wl-copy";
-  "$grim_region" = "GRIM_DEFAULT_DIR=~/Desktop grim -g \"$(slurp)\" - | wl-copy";
+  "$grim_capture" = "IMG=~/Desktop/$(date +%Y%m%d_%Hh%mm%Ss)_grim.png && grim $IMG && wl-copy < $IMG";
+  "$grim_region" = "IMG=~/Desktop/$(date +%Y%m%d_%Hh%mm%Ss)_grim.png && grim -g \"$(slurp)\" $IMG && wl-copy < $IMG";
   # Monitors
   "$monleft" = "${mon1}";
   "$monright" = "${mon2}";
