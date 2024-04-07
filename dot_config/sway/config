@@ -208,8 +208,8 @@ bindsym $super+b exec obs
 bindsym $super+s exec steam
 
 # Take a screenshot with grim, copy to clipboard, put it in Desktop folder
-set $grim_capture GRIM_DEFAULT_DIR=~/Desktop grim - | wl-copy
-set $grim_region GRIM_DEFAULT_DIR=~/Desktop grim -g "$(slurp)" - | wl-copy
+set $grim_capture IMG=~/Desktop/$(date +%Y%m%d_%Hh%mm%Ss)_grim.png && grim $IMG && wl-copy < $IMG
+set $grim_region IMG=~/Desktop/$(date +%Y%m%d_%Hh%mm%Ss)_grim.png && grim -g "$(slurp)" $IMG && wl-copy < $IMG
 set $screenshot Screenshot: (Enter) Full Screenshot, (S) Select Region
 mode "$screenshot" {
         bindsym Return      exec $grim_capture && pw-cat -p ~/.i3/sounds/camera-shutter.oga && notify-send "Screenshot copied to clipboard and saved in your Desktop folder", mode "default"

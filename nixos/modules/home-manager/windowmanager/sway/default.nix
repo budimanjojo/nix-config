@@ -58,8 +58,8 @@ in {
           # locker command
           set $Locker swaylock && sleep 1
           # grim command
-          set $grim_capture GRIM_DEFAULT_DIR=~/Desktop grim - | wl-copy
-          set $grim_region GRIM_DEFAULT_DIR=~/Desktop grim -g "$(slurp)" - | wl-copy
+          set $grim_capture IMG=~/Desktop/$(date +%Y%m%d_%Hh%mm%Ss)_grim.png && grim $IMG && wl-copy < $IMG
+          set $grim_region IMG=~/Desktop/$(date +%Y%m%d_%Hh%mm%Ss)_grim.png && grim -g "$(slurp)" $IMG && wl-copy < $IMG
           # Workspace naming
           set $ws0 0
           set $ws1 1
