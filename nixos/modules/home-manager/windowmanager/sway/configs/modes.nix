@@ -51,11 +51,11 @@
     "Return" = "mode \"$gaps\"";
     "Escape" = "mode default";
   };
-  # Take a screenshot with grim, put it in Desktop folder
+  # Take a screenshot with grim, copy to clipboard, put it in Desktop folder
   "$screenshot" = {
-    "Return" = "exec $grim_capture && pw-cat -p ~/.config/sway/sounds/camera-shutter.oga && notify-send \"Screenshot saved in your Desktop folder\", mode default";
+    "Return" = "exec $grim_capture && pw-cat -p ~/.config/sway/sounds/camera-shutter.oga && notify-send \"Screenshot copied to clipboard and saved in your Desktop folder\", mode default";
 
-    "--release s" = "exec $grim_region && pw-cat -p ~/.config/sway/sounds/camera-shutter.oga && notify-send \"Screenshot saved in your Desktop folder\", mode default";
+    "--release s" = "exec $grim_region && pw-cat -p ~/.config/sway/sounds/camera-shutter.oga && notify-send \"Screenshot copied to clipboard and saved in your Desktop folder\", mode default";
     "Escape" = "mode default";
   };
 }

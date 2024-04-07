@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... }:
 with lib;
-let 
+let
   cfg = config.hm-modules.windowmanager.sway;
   deviceCfg = config.deviceCfg;
 in {
@@ -58,8 +58,8 @@ in {
           # locker command
           set $Locker swaylock && sleep 1
           # grim command
-          set $grim_capture GRIM_DEFAULT_DIR=~/Desktop grim
-          set $grim_region GRIM_DEFAULT_DIR=~/Desktop grim -g "$(slurp)"
+          set $grim_capture GRIM_DEFAULT_DIR=~/Desktop grim - | wl-copy
+          set $grim_region GRIM_DEFAULT_DIR=~/Desktop grim -g "$(slurp)" - | wl-copy
           # Workspace naming
           set $ws0 0
           set $ws1 1
