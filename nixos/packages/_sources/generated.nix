@@ -54,13 +54,13 @@
   };
   fzf-fish = {
     pname = "fzf-fish";
-    version = "v10.2";
+    version = "v10.3";
     src = fetchFromGitHub {
       owner = "patrickF1";
       repo = "fzf.fish";
-      rev = "v10.2";
+      rev = "v10.3";
       fetchSubmodules = false;
-      sha256 = "sha256-1/MLKkUHe4c9YLDrH+cnL+pLiSOSERbIZSM4FTG3wF0=";
+      sha256 = "sha256-T8KYLA/r/gOKvAivKRoeqIwE2pINlxFQtZJHpOy9GMM=";
     };
   };
   guihua-lua = {
