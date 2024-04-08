@@ -20,7 +20,7 @@
       FloatBorder.fg = "#C0CAF5";
     };
 
-    options = {
+    opts = {
       background = "dark";
       termguicolors = true;
       signcolumn = "yes";

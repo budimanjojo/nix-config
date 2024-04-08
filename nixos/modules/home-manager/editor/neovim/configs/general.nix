@@ -13,7 +13,7 @@
       vim.o.undodir = undodir
       vim.o.undofile = true
     '';
-    options = {
+    opts = {
       mouse = "a";                                              ## Enable mouse support in all modes
       number = true;                                            ## Show line numbers
       relativenumber = true;                                    ## Relative line numbers
