@@ -123,15 +123,15 @@
   };
   mason-tool-installer-nvim = {
     pname = "mason-tool-installer-nvim";
-    version = "1212fb6082b7177dde17ea65e429e027835aeb40";
+    version = "6c15772d5e4a01d0b2ad3ad6df23cf38517c4ad2";
     src = fetchFromGitHub {
       owner = "WhoIsSethDaniel";
       repo = "mason-tool-installer.nvim";
-      rev = "1212fb6082b7177dde17ea65e429e027835aeb40";
+      rev = "6c15772d5e4a01d0b2ad3ad6df23cf38517c4ad2";
       fetchSubmodules = false;
-      sha256 = "sha256-bKahGL+fElajwLxKCoPTEROIRE9A1KhfcmFWOnG7LX8=";
+      sha256 = "sha256-UKWKdH1WmMjKl7diyTnvV/GAtlPfdXO0kzwLgs5lGIs=";
     };
-    date = "2024-02-13";
+    date = "2024-04-08";
   };
   oil-nvim = {
     pname = "oil-nvim";
