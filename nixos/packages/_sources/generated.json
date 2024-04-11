@@ -211,7 +211,7 @@
     },
     "mason-tool-installer-nvim": {
         "cargoLocks": null,
-        "date": "2024-04-08",
+        "date": "2024-04-10",
         "extract": null,
         "name": "mason-tool-installer-nvim",
         "passthru": null,
@@ -223,11 +223,11 @@
             "name": null,
             "owner": "WhoIsSethDaniel",
             "repo": "mason-tool-installer.nvim",
-            "rev": "6c15772d5e4a01d0b2ad3ad6df23cf38517c4ad2",
-            "sha256": "sha256-UKWKdH1WmMjKl7diyTnvV/GAtlPfdXO0kzwLgs5lGIs=",
+            "rev": "b129892f783740e6cf741f2ea09fa5dd512aa584",
+            "sha256": "sha256-h88kcUoKxX7BLOmYk472I2+KihXp7ni2QLurqs8XJSA=",
             "type": "github"
         },
-        "version": "6c15772d5e4a01d0b2ad3ad6df23cf38517c4ad2"
+        "version": "b129892f783740e6cf741f2ea09fa5dd512aa584"
     },
     "oil-nvim": {
         "cargoLocks": null,
