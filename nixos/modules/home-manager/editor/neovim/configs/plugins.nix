@@ -54,6 +54,7 @@ in
     extraPackages = with pkgs; [
       fd
       fzf
+      ripgrep
       git
       gzip
       sad
