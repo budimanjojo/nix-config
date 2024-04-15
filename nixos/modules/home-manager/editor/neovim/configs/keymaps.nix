@@ -361,17 +361,6 @@
         options.desc = "Toggle floating terminal";
       }
 
-      ## hop
-      {
-        mode = "n";
-        key = "<C-g>";
-        action = "function()
-          return require('hop').hint_char2({ uppercase_labels = true })
-        end";
-        lua = true;
-        options.desc = "Hop with 2 characters";
-      }
-
       ## b64.nvim
       {
         mode = "v";

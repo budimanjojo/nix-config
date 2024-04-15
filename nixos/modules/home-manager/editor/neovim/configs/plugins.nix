@@ -108,10 +108,6 @@ in
         config = "lua require('plugin-configs._fzf-lua')";
       }
       {
-        plugin = hop-nvim;
-        config = "lua require('hop').setup()";
-      }
-      {
         plugin = sad-nvim;
         config = "lua require('plugin-configs._sad-nvim')";
       }
