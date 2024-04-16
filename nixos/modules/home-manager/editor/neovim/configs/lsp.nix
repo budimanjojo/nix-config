@@ -171,6 +171,10 @@
         diagnosticsFormat = "[#{c}] #{m} (#{s})";
         sources = {
           formatting = {
+            nixfmt = {
+              enable = true;
+              package = pkgs.nixfmt-rfc-style;
+            };
             prettier = {
               enable = true;
               disableTsServerFormatter = true;

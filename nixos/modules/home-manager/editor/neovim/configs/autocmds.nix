@@ -6,6 +6,7 @@
     autoGroups.ftconfiguration.clear = true;
     autoGroups.closewithq.clear = true;
     autoGroups.autoimportformatgo.clear = true;
+    autoGroups.autoformatnix.clear = true;
     autoGroups.choicepopup.clear = true;
 
     autoCmd = [
@@ -111,6 +112,18 @@
                 end
               end
             end
+            vim.lsp.buf.format({ async = false })
+          end";
+        };
+      }
+
+      ## Auto format on save for nix files
+      {
+        event = [ "BufWritePre" ];
+        pattern = "*.nix";
+        group = "autoformatnix";
+        callback = {
+          __raw = "function()
             vim.lsp.buf.format({ async = false })
           end";
         };
