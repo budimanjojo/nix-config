@@ -2,11 +2,14 @@
 with lib;
 let
   cfg = config.modules.program.tui-utils;
-in {
-  options.modules.program.tui-utils = { enable = mkEnableOption "default tui-utils"; };
+in
+{
+  options.modules.program.tui-utils = {
+    enable = mkEnableOption "default tui-utils";
+  };
 
   config = mkIf cfg.enable {
-    nh = {
+    programs.nh = {
       enable = true;
       clean = {
         enable = true;
