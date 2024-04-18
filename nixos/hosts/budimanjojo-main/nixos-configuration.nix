@@ -1,4 +1,4 @@
-{ config,  ... }:
+{ config, ... }:
 {
   config = {
     modules = {
@@ -23,7 +23,7 @@
       # windowmanager.sway.enable = true;
     };
 
-    environment.variables.FLAKE = "${config.deviceCfg.username}/Github/dotfiles";
+    programs.nh.flake = "/home/${config.deviceCfg.username}/Github/dotfiles";
 
     boot = {
       initrd.verbose = false;

@@ -26,12 +26,15 @@
       windowmanager.sway.enable = true;
     };
 
-    environment.variables.FLAKE = "/home/${config.deviceCfg.username}/dotfiles";
+    programs.nh.flake = "/home/${config.deviceCfg.username}/dotfiles";
 
     boot = {
       initrd.verbose = false;
       consoleLogLevel = 0;
-      kernelParams = [ "quiet" "rd.udev.log_level=3" ];
+      kernelParams = [
+        "quiet"
+        "rd.udev.log_level=3"
+      ];
       plymouth.enable = true;
       loader = {
         systemd-boot = {
