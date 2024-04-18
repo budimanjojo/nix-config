@@ -21,31 +21,35 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { flake-parts, ... }@inputs:
+  outputs =
+    { flake-parts, ... }@inputs:
     let
       myLib = import ./nixos/lib/default.nix { inherit inputs; };
     in
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" ];
-      perSystem = {
-        inputs',
-        pkgs,
-        self',
-        ...
-      }: let
-        nixvim = inputs'.nixvim.legacyPackages.makeNixvimWithModule {
-          extraSpecialArgs = {
-            myPkgs = self'.legacyPackages;
+      perSystem =
+        {
+          inputs',
+          pkgs,
+          self',
+          ...
+        }:
+        let
+          nixvim = inputs'.nixvim.legacyPackages.makeNixvimWithModule {
+            extraSpecialArgs = {
+              myPkgs = self'.legacyPackages;
+            };
+            module = {
+              imports = [ ./nixos/modules/home-manager/editor/neovim/configs ];
+            };
           };
-          module = {
-            imports = [ ./nixos/modules/home-manager/editor/neovim/configs ];
-          };
+        in
+        {
+          packages.neovim = nixvim;
+          legacyPackages = import ./nixos/packages { inherit inputs' pkgs; };
+          devShells.default = import ./nixos/packages/shell.nix { inherit inputs' pkgs; };
         };
-      in {
-        packages.neovim = nixvim;
-        legacyPackages = import ./nixos/packages { inherit inputs' pkgs; };
-        devShells.default = import ./nixos/packages/shell.nix { inherit inputs' pkgs; };
-      };
 
       flake.nixosConfigurations = {
         budimanjojo-vm = myLib.mkNixosSystem "x86_64-linux" "budimanjojo-vm" "budiman";
