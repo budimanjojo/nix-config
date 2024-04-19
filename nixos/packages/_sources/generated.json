@@ -306,7 +306,7 @@
     },
     "tmux-fish": {
         "cargoLocks": null,
-        "date": "2023-12-29",
+        "date": "2024-04-19",
         "extract": null,
         "name": "tmux-fish",
         "passthru": null,
@@ -318,11 +318,11 @@
             "name": null,
             "owner": "budimanjojo",
             "repo": "tmux.fish",
-            "rev": "f36b077b2d5ebd577240679cd0adf5cff11380b4",
-            "sha256": "sha256-rS8YPem8tGEeKF1HfHt0eFASx1ihNUD7Z7goLfSzN0Q=",
+            "rev": "e95dbc11fa57d738cd837cb659d50b73ec0a8d90",
+            "sha256": "sha256-tNq/F9NQZZ1pd0ZWPzQVwuHABCVECmXRN12ovGSUUFU=",
             "type": "github"
         },
-        "version": "f36b077b2d5ebd577240679cd0adf5cff11380b4"
+        "version": "e95dbc11fa57d738cd837cb659d50b73ec0a8d90"
     },
     "tokyonight-gtk-theme": {
         "cargoLocks": null,
