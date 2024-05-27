@@ -176,11 +176,38 @@
         "type": "github"
       }
     },
+    "git-hooks": {
+      "inputs": {
+        "flake-compat": "flake-compat_2",
+        "gitignore": "gitignore",
+        "nixpkgs": [
+          "nixvim",
+          "nixpkgs"
+        ],
+        "nixpkgs-stable": [
+          "nixvim",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1716213921,
+        "narHash": "sha256-xrsYFST8ij4QWaV6HEokCUNIZLjjLP1bYC60K8XiBVA=",
+        "owner": "cachix",
+        "repo": "git-hooks.nix",
+        "rev": "0e8fcc54b842ad8428c9e705cb5994eaf05c26a0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cachix",
+        "repo": "git-hooks.nix",
+        "type": "github"
+      }
+    },
     "gitignore": {
       "inputs": {
         "nixpkgs": [
           "nixvim",
-          "pre-commit-hooks",
+          "git-hooks",
           "nixpkgs"
         ]
       },
@@ -364,20 +391,20 @@
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts_2",
         "flake-root": "flake-root",
+        "git-hooks": "git-hooks",
         "home-manager": "home-manager_2",
         "nix-darwin": "nix-darwin",
         "nixpkgs": [
           "nixpkgs"
         ],
-        "pre-commit-hooks": "pre-commit-hooks",
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1716746631,
-        "narHash": "sha256-0/G9FQaVm321BoCKREwRqr4l93ZwtvW+4x8gjN67bWs=",
+        "lastModified": 1716833970,
+        "narHash": "sha256-K3tVrTna4EN86GW9IeOQJkbj57zT2xNGJg1hh26xy5c=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "9697385115fe557468b2ddcbd1277602b3e58d5e",
+        "rev": "a2afa5634495ee739e682e5ccb743c5c6dd90ec1",
         "type": "github"
       },
       "original": {
@@ -388,11 +415,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1716748641,
-        "narHash": "sha256-jObXJHm63nxlQ3+1TwrvulAzCHaWezqfxRR5iAvf8Q4=",
+        "lastModified": 1716831937,
+        "narHash": "sha256-2ZWdZNYWa7f3G69vfGtnSVEByCeGWn6PrIv+yZ2isbw=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "7051f62411132e4d0c293596ed0edf59eaa2a54a",
+        "rev": "8aca52eea8fc4ce0282f55c63b3f64a83ded0b74",
         "type": "github"
       },
       "original": {
@@ -420,33 +447,6 @@
       "original": {
         "owner": "berberman",
         "repo": "nvfetcher",
-        "type": "github"
-      }
-    },
-    "pre-commit-hooks": {
-      "inputs": {
-        "flake-compat": "flake-compat_2",
-        "gitignore": "gitignore",
-        "nixpkgs": [
-          "nixvim",
-          "nixpkgs"
-        ],
-        "nixpkgs-stable": [
-          "nixvim",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1716213921,
-        "narHash": "sha256-xrsYFST8ij4QWaV6HEokCUNIZLjjLP1bYC60K8XiBVA=",
-        "owner": "cachix",
-        "repo": "pre-commit-hooks.nix",
-        "rev": "0e8fcc54b842ad8428c9e705cb5994eaf05c26a0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "cachix",
-        "repo": "pre-commit-hooks.nix",
         "type": "github"
       }
     },
