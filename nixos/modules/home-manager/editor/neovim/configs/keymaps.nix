@@ -41,22 +41,34 @@
 
       ## Better cursor movement on wrapped line
       {
-        mode = [ "n" "v" ];
+        mode = [
+          "n"
+          "v"
+        ];
         key = "k";
         action = "gk";
       }
       {
-        mode = [ "n" "v" ];
+        mode = [
+          "n"
+          "v"
+        ];
         key = "j";
         action = "gj";
       }
       {
-        mode = [ "n" "v" ];
+        mode = [
+          "n"
+          "v"
+        ];
         key = "<Up>";
         action = "gk";
       }
       {
-        mode = [ "n" "v" ];
+        mode = [
+          "n"
+          "v"
+        ];
         key = "<Down>";
         action = "gj";
       }
@@ -203,8 +215,7 @@
       {
         mode = "n";
         key = "<Tab>";
-        action = "function() return require('utils').always_working_indent_line() end";
-        lua = true;
+        action.__raw = "function() return require('utils').always_working_indent_line() end";
         options.desc = "Add indentation";
       }
       {
@@ -316,48 +327,47 @@
       {
         mode = "n";
         key = "<C-f>";
-        action = "function()
+        action.__raw = "function()
           if vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(0), 'filetype') == 'oil' then
             return require('oil').close()
           else
             return require('oil').open_float(require('utils').current_path())
           end
         end";
-        lua = true;
       }
 
       ## null-ls
       {
         mode = "n";
         key = "<Leader>pp";
-        action = "function()
+        action.__raw = "function()
           if vim.fn.has('nvim-0.8') == 1 then
             return vim.lsp.buf.format()
           else
             return vim.lsp.buf.formatting()
           end
         end";
-        lua = true;
         options.desc = "Fix document formatting";
       }
       {
         mode = "v";
         key = "<Leader>pp";
-        action = "function()
+        action.__raw = "function()
           return vim.lsp.buf.range_formatting()
         end";
-        lua = true;
         options.desc = "Fix document formatting";
       }
 
       ## FTerm
       {
-        mode = [ "n" "t" ];
+        mode = [
+          "n"
+          "t"
+        ];
         key = "<C-t>";
-        action = "function()
+        action.__raw = "function()
           return require('FTerm').toggle()
         end";
-        lua = true;
         options.desc = "Toggle floating terminal";
       }
 
