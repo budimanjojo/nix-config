@@ -1,10 +1,19 @@
-{ pkgs, lib, config, myPkgs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  myPkgs,
+  ...
+}:
 with lib;
 let
   cfg = config.modules.windowmanager.hyprland;
   deviceCfg = config.deviceCfg;
-in {
-  options.modules.windowmanager.hyprland = { enable = mkEnableOption "hyprland"; };
+in
+{
+  options.modules.windowmanager.hyprland = {
+    enable = mkEnableOption "hyprland";
+  };
 
   config = mkIf cfg.enable {
     deviceCfg.isWayland = true;
@@ -31,25 +40,28 @@ in {
       enable = true;
       settings = {
         initial_session = {
-          command = "${config.programs.hyprland.finalPackage}/bin/Hyprland";
+          command = "${config.programs.hyprland.package}/bin/Hyprland";
         };
         default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd ${config.programs.hyprland.finalPackage}/bin/Hyprland";
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd ${config.programs.hyprland.package}/bin/Hyprland";
         };
       };
     };
 
-    environment.systemPackages = with pkgs; [
-      at-spi2-core
-      libappindicator-gtk3
-      libappindicator-gtk2
-      libappindicator
-      wl-clipboard
-      xdg-utils
-    ] ++ [
-      myPkgs.configure-gtk
-      myPkgs.rofi-firefox-wrapper
-    ];
+    environment.systemPackages =
+      with pkgs;
+      [
+        at-spi2-core
+        libappindicator-gtk3
+        libappindicator-gtk2
+        libappindicator
+        wl-clipboard
+        xdg-utils
+      ]
+      ++ [
+        myPkgs.configure-gtk
+        myPkgs.rofi-firefox-wrapper
+      ];
 
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -61,6 +73,6 @@ in {
     services.dbus.enable = true;
     networking.networkmanager.enable = true;
     # Needed for swaylock to work
-    security.pam.services.swaylock = {};
+    security.pam.services.swaylock = { };
   };
 }
