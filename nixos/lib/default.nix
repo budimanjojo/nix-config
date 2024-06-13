@@ -1,6 +1,7 @@
 { inputs, ... }:
 let
   inherit (inputs.nixpkgs) lib;
+  overlayAttrs = import ../overlays { inherit inputs; };
 in
 {
   mkNixosSystem =
@@ -10,7 +11,7 @@ in
       pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ (import ../packages/overlay.nix { inherit inputs system; }) ];
+        overlays = builtins.attrValues overlayAttrs;
       };
       modules = [
         {
@@ -22,11 +23,6 @@ in
             };
             nvfetcherPath = ../packages/_sources/generated.nix;
             myPkgs = inputs.self.legacyPackages.${system};
-            pkgs-stable = import inputs.nixpkgs-stable {
-              inherit system;
-              config.allowUnfree = true;
-              overlays = [ (import ../packages/overlay.nix { inherit inputs system; }) ];
-            };
           };
         }
         inputs.sops-nix.nixosModules.sops
@@ -47,7 +43,7 @@ in
       pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ (import ../packages/overlay.nix { inherit inputs system; }) ];
+        overlays = builtins.attrValues overlayAttrs;
       };
       modules = [
         {
@@ -59,14 +55,8 @@ in
             };
             nvfetcherPath = ../packages/_sources/generated.nix;
             myPkgs = inputs.self.legacyPackages.${system};
-            pkgs-stable = import inputs.nixpkgs-stable {
-              inherit system;
-              config.allowUnfree = true;
-              overlays = [ (import ../packages/overlay.nix { inherit inputs system; }) ];
-            };
           };
         }
-        inputs.nur.nixosModules.nur
         inputs.sops-nix.homeManagerModules.sops
         # Load the home-manager modules
         ../modules/home-manager
