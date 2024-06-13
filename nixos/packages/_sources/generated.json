@@ -15,6 +15,7 @@
             "repo": "fish-abbreviation-tips",
             "rev": "v0.7.0",
             "sha256": "sha256-F1t81VliD+v6WEWqj1c1ehFBXzqLyumx5vV46s/FZRU=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "v0.7.0"
@@ -65,6 +66,7 @@
             "repo": "autopair.fish",
             "rev": "4d1752ff5b39819ab58d7337c69220342e9de0e2",
             "sha256": "sha256-qt3t1iKRRNuiLWiVoiAYOu+9E7jsyECyIqZJ/oRIT1A=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "4d1752ff5b39819ab58d7337c69220342e9de0e2"
@@ -85,6 +87,7 @@
             "repo": "chezmoi.vim",
             "rev": "10f2692791b5e512a2c1bb4dc560b42ca5bf71fd",
             "sha256": "sha256-+XRJWcgwDc0gnbkMsvyLsNONe6JaTRMYj4T8Ra1TUYM=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "10f2692791b5e512a2c1bb4dc560b42ca5bf71fd"
@@ -105,6 +108,7 @@
             "repo": "fzf.fish",
             "rev": "v10.3",
             "sha256": "sha256-T8KYLA/r/gOKvAivKRoeqIwE2pINlxFQtZJHpOy9GMM=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "v10.3"
@@ -125,6 +129,7 @@
             "repo": "guihua.lua",
             "rev": "225db770e36aae6a1e9e3a65578095c8eb4038d3",
             "sha256": "sha256-V5rlORFlhgjAT0n+LcpMNdY+rEqQpur/KGTGH6uFxMY=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "225db770e36aae6a1e9e3a65578095c8eb4038d3"
@@ -145,6 +150,7 @@
             "repo": "k8s-snippets",
             "rev": "ba5ca9b1b12a3b1c3fb0237494380f4feff668c8",
             "sha256": "sha256-vVDKI9HR1QqJDHh10oZQ9Zr01gvJhj1iIEgwP+gssx8=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "ba5ca9b1b12a3b1c3fb0237494380f4feff668c8"
@@ -165,6 +171,7 @@
             "repo": "krr",
             "rev": "v1.60-alpha",
             "sha256": "sha256-rIKL1SHVO3kA8xMgKwkYsnRkYepEGmGXAPUkilYboHc=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "v1.60-alpha"
@@ -185,6 +192,7 @@
             "repo": "LuaSnip",
             "rev": "v2.3.0",
             "sha256": "sha256-E1Ov6aF9DJ0poVM6q6jK1ypsJf6cRzHqC2Gi6u9kai0=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "v2.3.0"
@@ -205,6 +213,7 @@
             "repo": "mason-lspconfig.nvim",
             "rev": "37a336b653f8594df75c827ed589f1c91d91ff6c",
             "sha256": "sha256-8bxAfirD7dzBu5yGkBt7XhWOXRiuKIGx/ciPWuokO/Y=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "37a336b653f8594df75c827ed589f1c91d91ff6c"
@@ -225,6 +234,7 @@
             "repo": "mason-tool-installer.nvim",
             "rev": "c5e07b8ff54187716334d585db34282e46fa2932",
             "sha256": "sha256-HjBJkSZirQM9ZVEV0brdWx7zxAavgngXFIi8pcxO7v4=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "c5e07b8ff54187716334d585db34282e46fa2932"
@@ -245,6 +255,7 @@
             "repo": "oil.nvim",
             "rev": "c82b26eb4ba35c0eb7ec38d88dd400597fb34883",
             "sha256": "sha256-Tq2/PXLNYLwWVSFv2l8YIo0w130tNzX3JhIUlGHma5Y=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "c82b26eb4ba35c0eb7ec38d88dd400597fb34883"
@@ -280,6 +291,7 @@
             "repo": "puffer-fish",
             "rev": "12d062eae0ad24f4ec20593be845ac30cd4b5923",
             "sha256": "sha256-2niYj0NLfmVIQguuGTA7RrPIcorJEPkxhH6Dhcy+6Bk=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "12d062eae0ad24f4ec20593be845ac30cd4b5923"
@@ -300,6 +312,7 @@
             "repo": "sad.nvim",
             "rev": "869c7f3ca3dcd28fd78023db6a7e1bf8af0f4714",
             "sha256": "sha256-uwXldYA7JdZHqoB4qfCnZcQW9YBjlRWmiz8mKb9jHuI=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "869c7f3ca3dcd28fd78023db6a7e1bf8af0f4714"
@@ -320,6 +333,7 @@
             "repo": "tmux.fish",
             "rev": "e95dbc11fa57d738cd837cb659d50b73ec0a8d90",
             "sha256": "sha256-tNq/F9NQZZ1pd0ZWPzQVwuHABCVECmXRN12ovGSUUFU=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "e95dbc11fa57d738cd837cb659d50b73ec0a8d90"
@@ -340,6 +354,7 @@
             "repo": "Tokyo-Night-GTK-Theme",
             "rev": "cd2f0d5852dac469b6abb3fd995e32017ff73ffb",
             "sha256": "sha256-+YKk5tWvvPTLeaQ+DU6O1txHKBbzEK3Kr1VqNT4C6eA=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "cd2f0d5852dac469b6abb3fd995e32017ff73ffb"
@@ -360,6 +375,7 @@
             "repo": "Tokyo-Night-GTK-Theme",
             "rev": "cd2f0d5852dac469b6abb3fd995e32017ff73ffb",
             "sha256": "sha256-+YKk5tWvvPTLeaQ+DU6O1txHKBbzEK3Kr1VqNT4C6eA=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "cd2f0d5852dac469b6abb3fd995e32017ff73ffb"
