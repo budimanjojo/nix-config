@@ -8,7 +8,7 @@
     ];
     plugins = {
       trouble.enable = true;
-      ## clangd requires extra care
+      # clangd requires extra care
       clangd-extensions = {
         enable = true;
         enableOffsetEncodingWorkaround = true;
@@ -70,10 +70,10 @@
           keymap.set('n', 'gi', vim.lsp.buf.implementation, { unpack(opts), desc = "Do LSP get implementation action" })
         '';
         servers = {
-          ansiblels.enable = true; # # ansiblels
-          bashls.enable = true; # # bashls
-          cssls.enable = true; # # cssls
-          dockerls.enable = true; # # dockerls
+          ansiblels.enable = true; # ansiblels
+          bashls.enable = true; # bashls
+          cssls.enable = true; # cssls
+          dockerls.enable = true; # dockerls
 
           ## gopls
           gopls = {
@@ -89,8 +89,8 @@
             };
           };
 
-          taplo.enable = true; # # taplo
-          tsserver.enable = true; # # tsserver
+          taplo.enable = true; # taplo
+          tsserver.enable = true; # tsserver
 
           ## jsonls
           jsonls = {
@@ -109,9 +109,9 @@
             };
           };
 
-          nil-ls.enable = true; # # nil
-          pyright.enable = true; # # pyright
-          lua-ls.enable = true; # # lua-language-server
+          nil-ls.enable = true; # nil
+          pyright.enable = true; # pyright
+          lua-ls.enable = true; # lua-language-server
 
           ## yamlls
           yamlls = {
