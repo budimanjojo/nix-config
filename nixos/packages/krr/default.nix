@@ -1,8 +1,13 @@
-{ lib, python3, callPackage, pkgs }:
+{
+  lib,
+  python3,
+  callPackage,
+  pkgs,
+}:
 let
-  sourceData = callPackage ../_sources/generated.nix {};
-  prometheus-api-client = callPackage ./prometheus-api-client.nix {};
-  alive-progress = callPackage ./alive-progress.nix {};
+  sourceData = callPackage ../_sources/generated.nix { };
+  prometheus-api-client = callPackage ./prometheus-api-client.nix { };
+  alive-progress = callPackage ./alive-progress.nix { };
 in
 
 python3.pkgs.buildPythonPackage {
@@ -16,7 +21,7 @@ python3.pkgs.buildPythonPackage {
       --replace "typer = {extras = [\"all\"], version = \"^0.7.0\"}" "typer = {extras = [\"all\"], version = \">=0.7.0\"}"
   '';
 
-  propagatedBuildInputs = with pkgs.python3Packages; [ 
+  propagatedBuildInputs = with pkgs.python3Packages; [
     alive-progress
     cachetools
     certifi

@@ -1,8 +1,14 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 with lib;
 let
   cfg = config.hm-modules.windowmanager.add-on.nwg-bar;
-in {
+in
+{
   options.hm-modules.windowmanager.add-on.nwg-bar = {
     enable = mkEnableOption "nwg-bar";
   };
@@ -22,9 +28,12 @@ in {
           {
             "label": "_Exit",
             "exec": "${
-              if config.hm-modules.windowmanager.sway.enable then "swaymsg exit"
-              else if config.hm-modules.windowmanager.hyprland.enable then "hyprctl dispatch exit"
-              else ""
+              if config.hm-modules.windowmanager.sway.enable then
+                "swaymsg exit"
+              else if config.hm-modules.windowmanager.hyprland.enable then
+                "hyprctl dispatch exit"
+              else
+                ""
             }",
             "icon": "${pkgs.nwg-bar}/share/nwg-bar/images/system-log-out.svg"
           },

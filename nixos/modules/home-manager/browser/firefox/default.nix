@@ -1,10 +1,13 @@
 { lib, config, ... }:
 with lib;
-let 
+let
   cfg = config.hm-modules.browser.firefox;
   deviceCfg = config.deviceCfg;
-in {
-  options.hm-modules.browser.firefox = { enable = mkEnableOption "firefox"; };
+in
+{
+  options.hm-modules.browser.firefox = {
+    enable = mkEnableOption "firefox";
+  };
 
   config = mkIf cfg.enable {
     programs.firefox = {

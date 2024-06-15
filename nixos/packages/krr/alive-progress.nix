@@ -1,8 +1,14 @@
-{ lib, python3, pkgs, callPackage, ... }:
+{
+  lib,
+  python3,
+  pkgs,
+  callPackage,
+  ...
+}:
 
 let
-  sourceData = callPackage ../_sources/generated.nix {};
-  about-time = callPackage ./about-time.nix {};
+  sourceData = callPackage ../_sources/generated.nix { };
+  about-time = callPackage ./about-time.nix { };
 in
 
 python3.pkgs.buildPythonPackage {

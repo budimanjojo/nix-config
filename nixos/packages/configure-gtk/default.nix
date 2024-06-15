@@ -3,10 +3,12 @@ pkgs.writeTextFile {
   name = "configure-gtk";
   destination = "/bin/configure-gtk";
   executable = true;
-  text = let
-    schema = pkgs.gsettings-desktop-schemas;
-    datadir = "${schema}/share/gsettings-schemas/${schema.name}";
-  in "
+  text =
+    let
+      schema = pkgs.gsettings-desktop-schemas;
+      datadir = "${schema}/share/gsettings-schemas/${schema.name}";
+    in
+    "
     export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
     gsettings set org.gnome.desktop.interface gtk-theme 'Tokyonight-Dark-B'
     gsettings set org.gnome.desktop.interface icon-theme 'Tokyonight-Dark'

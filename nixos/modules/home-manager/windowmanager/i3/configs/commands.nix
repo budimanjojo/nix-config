@@ -5,79 +5,117 @@
   #   command = "floating enable border pixel 1";
   # }
   {
-    criteria = { window_role = "pop-up"; };
+    criteria = {
+      window_role = "pop-up";
+    };
     command = "floating enable";
   }
   {
-    criteria = { window_role = "prefwindow"; };
+    criteria = {
+      window_role = "prefwindow";
+    };
     command = "floating enable";
   }
   {
-    criteria = { class = "notify"; };
+    criteria = {
+      class = "notify";
+    };
     command = "floating enable border pixel 1";
   }
   {
-    criteria = { title = "File Transfer*"; };
+    criteria = {
+      title = "File Transfer*";
+    };
     command = "floating enable";
   }
   {
-    criteria = { class = "Galculator"; };
+    criteria = {
+      class = "Galculator";
+    };
     command = "floating enable";
   }
   {
-    criteria = { class = "Lxappearance"; };
+    criteria = {
+      class = "Lxappearance";
+    };
     command = "floating enable sticky enable border normal";
   }
   {
-    criteria = { class = "Nitrogen"; };
+    criteria = {
+      class = "Nitrogen";
+    };
     command = "floating enable sticky enable border normal";
   }
   {
-    criteria = { class = "Oblogout"; };
+    criteria = {
+      class = "Oblogout";
+    };
     command = "fullscreen enable";
   }
   {
-    criteria = { class = "octopi"; };
+    criteria = {
+      class = "octopi";
+    };
     command = "floating enable";
   }
   {
-    criteria = { class = "Pamac-manager"; };
+    criteria = {
+      class = "Pamac-manager";
+    };
     command = "floating enable";
   }
   {
-    criteria = { class = "Pavucontrol"; };
+    criteria = {
+      class = "Pavucontrol";
+    };
     command = "floating enable";
   }
   {
-    criteria = { class = "VirtualBox"; };
+    criteria = {
+      class = "VirtualBox";
+    };
     command = "floating enable";
   }
   {
-    criteria = { class = "Skype"; };
+    criteria = {
+      class = "Skype";
+    };
     command = "floating enable";
   }
   {
-    criteria = { class = "Steam"; };
+    criteria = {
+      class = "Steam";
+    };
     command = "layout tabbed";
   }
   {
-    criteria = { class = "(?i)nvidia-settings"; };
+    criteria = {
+      class = "(?i)nvidia-settings";
+    };
     command = "floating enable";
   }
   {
-    criteria = { class = "smplayer"; };
+    criteria = {
+      class = "smplayer";
+    };
     command = "floating enable";
   }
   {
-    criteria = { class = "Eog"; };
+    criteria = {
+      class = "Eog";
+    };
     command = "floating enable";
   }
   {
-    criteria = { class = "Rhythmbox"; };
+    criteria = {
+      class = "Rhythmbox";
+    };
     command = "floating enable resize set 1000 640";
   }
   {
-    criteria = { class = "obs"; };
+    criteria = {
+      class = "obs";
+    };
     command = "floating enable";
   }
 ]

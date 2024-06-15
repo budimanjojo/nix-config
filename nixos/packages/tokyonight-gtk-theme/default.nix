@@ -1,7 +1,12 @@
-{ stdenvNoCC, lib, callPackage, pkgs, }:
+{
+  stdenvNoCC,
+  lib,
+  callPackage,
+  pkgs,
+}:
 
 let
-  sourceData = callPackage ../_sources/generated.nix {};
+  sourceData = callPackage ../_sources/generated.nix { };
 in
 stdenvNoCC.mkDerivation {
   inherit (sourceData.tokyonight-gtk-theme) pname version src;
@@ -11,9 +16,7 @@ stdenvNoCC.mkDerivation {
     pkgs.sassc
   ];
 
-  builtInputs = [
-    pkgs.gnome.gnome-themes-extra
-  ];
+  builtInputs = [ pkgs.gnome.gnome-themes-extra ];
 
   installPhase = ''
     runHook preInstall
@@ -32,8 +35,8 @@ stdenvNoCC.mkDerivation {
   meta = with lib; {
     description = "A GTK theme based on the Tokyo Night colour palette";
     longDescription = ''
-      A GTK theme based on the colours of Folke's great theme: Tokyonight for Neovim, the VinceLiuice's awesome: Magnetic GTK theme and the creativity of Gusbemacbe's: Suru Plus Icon Theme.
-Great to combine in your Gnome Desktop Environment and TWMs like: XmonadWM, AwesomeWM, BSPWM, etc... With support also for the desktop environments Cinnamon and XFCE.
+            A GTK theme based on the colours of Folke's great theme: Tokyonight for Neovim, the VinceLiuice's awesome: Magnetic GTK theme and the creativity of Gusbemacbe's: Suru Plus Icon Theme.
+      Great to combine in your Gnome Desktop Environment and TWMs like: XmonadWM, AwesomeWM, BSPWM, etc... With support also for the desktop environments Cinnamon and XFCE.
     '';
     homepage = "https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme";
     license = licenses.gpl3Only;

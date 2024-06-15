@@ -58,6 +58,7 @@
           };
         in
         {
+          formatter = pkgs.nixfmt-rfc-style;
           packages.neovim = nixvim;
           legacyPackages = import ./nixos/packages { inherit inputs' pkgs; };
           devShells.default = import ./nixos/packages/shell.nix { inherit inputs' pkgs; };

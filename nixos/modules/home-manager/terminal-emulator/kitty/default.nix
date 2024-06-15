@@ -1,9 +1,12 @@
 { lib, config, ... }:
 with lib;
-let 
+let
   cfg = config.hm-modules.terminal-emulator.kitty;
-in {
-  options.hm-modules.terminal-emulator.kitty = { enable = mkEnableOption "kitty"; };
+in
+{
+  options.hm-modules.terminal-emulator.kitty = {
+    enable = mkEnableOption "kitty";
+  };
 
   config = mkIf cfg.enable {
     programs.kitty = {

@@ -1,8 +1,14 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 with lib;
 let
   cfg = config.hm-modules.windowmanager.add-on.swaylock;
-in {
+in
+{
   options.hm-modules.windowmanager.add-on.swaylock = {
     enable = mkEnableOption "swaylock";
   };

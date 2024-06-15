@@ -1,4 +1,8 @@
-{ lib, buildGo122Module, fetchFromGitHub }:
+{
+  lib,
+  buildGo122Module,
+  fetchFromGitHub,
+}:
 
 buildGo122Module rec {
   pname = "gopls";
@@ -24,7 +28,12 @@ buildGo122Module rec {
     homepage = "https://github.com/golang/tools/tree/master/gopls";
     changelog = "https://github.com/golang/tools/releases/tag/${src.rev}";
     license = licenses.bsd3;
-    maintainers = with maintainers; [ mic92 rski SuperSandro2000 zimbatm ];
+    maintainers = with maintainers; [
+      mic92
+      rski
+      SuperSandro2000
+      zimbatm
+    ];
     mainProgram = "gopls";
   };
 }

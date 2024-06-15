@@ -1,7 +1,12 @@
-{ lib, python3, callPackage, ... }:
+{
+  lib,
+  python3,
+  callPackage,
+  ...
+}:
 
 let
-  sourceData = callPackage ../_sources/generated.nix {};
+  sourceData = callPackage ../_sources/generated.nix { };
 in
 
 python3.pkgs.buildPythonPackage {

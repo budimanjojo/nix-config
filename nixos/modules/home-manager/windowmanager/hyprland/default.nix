@@ -1,10 +1,18 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 with lib;
 let
   cfg = config.hm-modules.windowmanager.hyprland;
   deviceCfg = config.deviceCfg;
-in {
-  options.hm-modules.windowmanager.hyprland = { enable = mkEnableOption "hyprland"; };
+in
+{
+  options.hm-modules.windowmanager.hyprland = {
+    enable = mkEnableOption "hyprland";
+  };
 
   config = mkIf cfg.enable {
     deviceCfg.isWayland = true;

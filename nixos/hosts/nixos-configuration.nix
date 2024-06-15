@@ -1,7 +1,13 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 let
   deviceCfg = config.deviceCfg;
-in {
+in
+{
   sops.secrets = {
     budiman-password = {
       sopsFile = ./secret.sops.yaml;
@@ -16,7 +22,11 @@ in {
   users.users.${deviceCfg.username} = {
     isNormalUser = true;
     uid = deviceCfg.uid;
-    extraGroups = [ "wheel" "networkmanager" "audio" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "audio"
+    ];
     shell = pkgs.fish;
     hashedPasswordFile = config.sops.secrets.budiman-password.path;
   };

@@ -1,8 +1,12 @@
 { lib, config, ... }:
 with lib;
-let cfg = config.hm-modules.shell.git;
-in {
-  options.hm-modules.shell.git = { enable = mkEnableOption "git"; };
+let
+  cfg = config.hm-modules.shell.git;
+in
+{
+  options.hm-modules.shell.git = {
+    enable = mkEnableOption "git";
+  };
 
   config = mkIf cfg.enable {
     programs.git = {

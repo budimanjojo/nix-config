@@ -1,24 +1,33 @@
-{ pkgs, lib, config, inputs, system, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  inputs,
+  system,
+  ...
+}:
 with lib;
 let
   cfg = config.hm-modules.windowmanager.add-on.waybar;
   deviceCfg = config.deviceCfg;
-in {
-  options.hm-modules.windowmanager.add-on.waybar = { enable = mkEnableOption "waybar"; };
+in
+{
+  options.hm-modules.windowmanager.add-on.waybar = {
+    enable = mkEnableOption "waybar";
+  };
 
   config = mkIf cfg.enable {
     programs.waybar = {
       enable = true;
       systemd.enable = true;
-      settings = forEach deviceCfg.monitors (monitor: mapAttrs (n: v: v)
-        {
+      settings = forEach deviceCfg.monitors (
+        monitor:
+        mapAttrs (n: v: v) {
           "output" = monitor.name;
           "layer" = "top";
           "position" = "top";
           "margin" = "10 20 -5 20";
-          "modules-center" = [
-            "clock"
-          ];
+          "modules-center" = [ "clock" ];
 
           "network#down" = {
             "format" = "󰁅 {bandwidthDownBits}";
@@ -43,45 +52,58 @@ in {
             "tooltip" = true;
             "on-click" = "${pkgs.nwg-bar}/bin/nwg-bar";
           };
-        } //
-        {
-          "modules-right" = [
-            "network#down"
-            "network#up"
-          ] ++ (if monitor == last deviceCfg.monitors then [
-            "tray"
-            "custom/power"
-          ] else [ ]);
-        } //
-        (if config.hm-modules.windowmanager.sway.enable then {
-          "modules-left" = [
-            "sway/workspaces"
-            "sway/mode"
-          ];
-          "sway/workspaces" = {
-            "format" = "{value}";
-          };
-          "sway/mode" = {
-            "format" = "󰔡 {}";
-            "max-length" = 100;
-          };
-        } else if config.hm-modules.windowmanager.hyprland.enable then {
-          "modules-left" = [
-            "hyprland/workspaces"
-            "hyprland/submap"
-          ];
-          "hyprland/workspaces" = {
-            "format" = "{name}";
-            "on-click" = "activate";
-            "on-scroll-up" = "${config.wayland.windowManager.hyprland.finalPackage}/bin/hyprctl dispatch workspace e+1";
-            "on-scroll-down" = "${config.wayland.windowManager.hyprland.finalPackage}/bin/hyprctl dispatch workspace e-1";
-          };
-          "hyprland/submap" = {
-            "format" = "󰔡 {}";
-            "max-length" = 100;
-          };
-        } else {
-        })
+        }
+        // {
+          "modules-right" =
+            [
+              "network#down"
+              "network#up"
+            ]
+            ++ (
+              if monitor == last deviceCfg.monitors then
+                [
+                  "tray"
+                  "custom/power"
+                ]
+              else
+                [ ]
+            );
+        }
+        // (
+          if config.hm-modules.windowmanager.sway.enable then
+            {
+              "modules-left" = [
+                "sway/workspaces"
+                "sway/mode"
+              ];
+              "sway/workspaces" = {
+                "format" = "{value}";
+              };
+              "sway/mode" = {
+                "format" = "󰔡 {}";
+                "max-length" = 100;
+              };
+            }
+          else if config.hm-modules.windowmanager.hyprland.enable then
+            {
+              "modules-left" = [
+                "hyprland/workspaces"
+                "hyprland/submap"
+              ];
+              "hyprland/workspaces" = {
+                "format" = "{name}";
+                "on-click" = "activate";
+                "on-scroll-up" = "${config.wayland.windowManager.hyprland.finalPackage}/bin/hyprctl dispatch workspace e+1";
+                "on-scroll-down" = "${config.wayland.windowManager.hyprland.finalPackage}/bin/hyprctl dispatch workspace e-1";
+              };
+              "hyprland/submap" = {
+                "format" = "󰔡 {}";
+                "max-length" = 100;
+              };
+            }
+          else
+            { }
+        )
       );
 
       style = ''

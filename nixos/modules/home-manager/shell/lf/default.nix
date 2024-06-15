@@ -1,8 +1,17 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 with lib;
-let cfg = config.hm-modules.shell.lf;
-in {
-  options.hm-modules.shell.lf = { enable = mkEnableOption "lf"; };
+let
+  cfg = config.hm-modules.shell.lf;
+in
+{
+  options.hm-modules.shell.lf = {
+    enable = mkEnableOption "lf";
+  };
 
   config = mkIf cfg.enable {
     xdg.configFile."lf/colors".source = ./configs/colors;

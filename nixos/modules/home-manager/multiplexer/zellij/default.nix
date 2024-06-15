@@ -1,8 +1,12 @@
 { lib, config, ... }:
 with lib;
-let cfg = config.hm-modules.multiplexer.zellij;
-in {
-  options.hm-modules.multiplexer.zellij = { enable = mkEnableOption "zellij"; };
+let
+  cfg = config.hm-modules.multiplexer.zellij;
+in
+{
+  options.hm-modules.multiplexer.zellij = {
+    enable = mkEnableOption "zellij";
+  };
 
   config = mkIf cfg.enable {
     programs.zellij.enable = true;

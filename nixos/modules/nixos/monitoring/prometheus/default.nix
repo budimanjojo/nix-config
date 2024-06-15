@@ -1,12 +1,15 @@
 { lib, config, ... }:
 with lib;
-let 
+let
   cfg = config.modules.monitoring.prometheus;
-in {
-  options.modules.monitoring.prometheus = { enable = mkEnableOption "prometheus"; };
+in
+{
+  options.modules.monitoring.prometheus = {
+    enable = mkEnableOption "prometheus";
+  };
 
   config = mkIf cfg.enable {
-    sops.secrets.alertmanager-secret = {};
+    sops.secrets.alertmanager-secret = { };
     services = {
       prometheus = {
         enable = true;
@@ -69,24 +72,22 @@ in {
 
         alertmanagers = [
           {
-            static_configs = [{
-              targets = [ "localhost:${toString config.services.prometheus.alertmanager.port}" ];
-            }];
+            static_configs = [
+              { targets = [ "localhost:${toString config.services.prometheus.alertmanager.port}" ]; }
+            ];
           }
         ];
 
         scrapeConfigs = [
           {
             job_name = "prometheus";
-            static_configs = [{
-              targets = [ "localhost:${toString config.services.prometheus.port}" ];
-            }];
+            static_configs = [ { targets = [ "localhost:${toString config.services.prometheus.port}" ]; } ];
           }
           {
             job_name = "node";
-            static_configs = [{
-              targets = [ "localhost:${toString config.services.prometheus.exporters.node.port}" ];
-            }];
+            static_configs = [
+              { targets = [ "localhost:${toString config.services.prometheus.exporters.node.port}" ]; }
+            ];
           }
         ];
       };

@@ -1,19 +1,27 @@
-{ pkgs, lib, config, myPkgs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  myPkgs,
+  ...
+}:
 with lib;
-let 
+let
   cfg = config.modules.windowmanager.sway;
   deviceCfg = config.deviceCfg;
-  greetdSwayNvidia = pkgs.writeShellScript "greetd-sway-nvidia.sh"
-    ''
-      export LIBVA_DRIVER_NAME=nvidia
-      export XDG_SESSION_TYPE=wayland
-      export GBM_BACKEND=nvidia-drm
-      export __GLX_VENDOR_LIBRARY_NAME=nvidia
-      export WLR_NO_HARDWARE_CURSORS=1
-      ${pkgs.sway}/bin/sway --unsupported-gpu
-    '';
-in {
-  options.modules.windowmanager.sway = { enable = mkEnableOption "sway"; };
+  greetdSwayNvidia = pkgs.writeShellScript "greetd-sway-nvidia.sh" ''
+    export LIBVA_DRIVER_NAME=nvidia
+    export XDG_SESSION_TYPE=wayland
+    export GBM_BACKEND=nvidia-drm
+    export __GLX_VENDOR_LIBRARY_NAME=nvidia
+    export WLR_NO_HARDWARE_CURSORS=1
+    ${pkgs.sway}/bin/sway --unsupported-gpu
+  '';
+in
+{
+  options.modules.windowmanager.sway = {
+    enable = mkEnableOption "sway";
+  };
 
   config = mkIf cfg.enable {
     deviceCfg.isWayland = true;
@@ -40,29 +48,32 @@ in {
       enable = true;
       settings = {
         initial_session = {
-          command = if (deviceCfg.gpu == "nvidia")
-            then "${greetdSwayNvidia}"
-            else "${pkgs.sway}/bin/sway";
+          command = if (deviceCfg.gpu == "nvidia") then "${greetdSwayNvidia}" else "${pkgs.sway}/bin/sway";
         };
         default_session = {
-          command = if (deviceCfg.gpu == "nvidia")
-            then "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd ${greetdSwayNvidia}"
-            else "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd ${pkgs.sway}/bin/sway";
+          command =
+            if (deviceCfg.gpu == "nvidia") then
+              "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd ${greetdSwayNvidia}"
+            else
+              "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd ${pkgs.sway}/bin/sway";
         };
       };
     };
 
-    environment.systemPackages = with pkgs; [
-      at-spi2-core
-      libappindicator-gtk3
-      libappindicator-gtk2
-      libappindicator
-      wl-clipboard
-      xdg-utils
-    ] ++ [
-      myPkgs.configure-gtk
-      myPkgs.rofi-firefox-wrapper
-    ];
+    environment.systemPackages =
+      with pkgs;
+      [
+        at-spi2-core
+        libappindicator-gtk3
+        libappindicator-gtk2
+        libappindicator
+        wl-clipboard
+        xdg-utils
+      ]
+      ++ [
+        myPkgs.configure-gtk
+        myPkgs.rofi-firefox-wrapper
+      ];
 
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -75,7 +86,10 @@ in {
     xdg.portal = {
       enable = true;
       wlr.enable = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk ];
+      extraPortals = [
+        pkgs.xdg-desktop-portal-wlr
+        pkgs.xdg-desktop-portal-gtk
+      ];
     };
 
     networking.networkmanager.enable = true;

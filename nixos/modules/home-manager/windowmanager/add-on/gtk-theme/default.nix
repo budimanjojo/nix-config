@@ -1,9 +1,18 @@
-{ pkgs, lib, config, myPkgs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  myPkgs,
+  ...
+}:
 with lib;
 let
   cfg = config.hm-modules.windowmanager.add-on.gtk-theme;
-in {
-  options.hm-modules.windowmanager.add-on.gtk-theme = { enable = mkEnableOption "gtk-theme"; };
+in
+{
+  options.hm-modules.windowmanager.add-on.gtk-theme = {
+    enable = mkEnableOption "gtk-theme";
+  };
 
   config = mkIf cfg.enable {
     home.pointerCursor = {

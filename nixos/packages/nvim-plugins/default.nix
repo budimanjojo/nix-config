@@ -1,7 +1,11 @@
-{ fetchFromGitHub, pkgs, callPackage }:
+{
+  fetchFromGitHub,
+  pkgs,
+  callPackage,
+}:
 
 let
-  sourceData = callPackage ../_sources/generated.nix {};
+  sourceData = callPackage ../_sources/generated.nix { };
 in
 
 {
@@ -21,9 +25,7 @@ in
     inherit (sourceData.oil-nvim) pname src;
     version = sourceData.oil-nvim.date;
   };
-  luasnip = pkgs.vimUtils.buildVimPlugin {
-    inherit (sourceData.luasnip) pname src version;
-  };
+  luasnip = pkgs.vimUtils.buildVimPlugin { inherit (sourceData.luasnip) pname src version; };
   sad-nvim = pkgs.vimUtils.buildVimPlugin {
     inherit (sourceData.sad-nvim) pname src;
     version = sourceData.sad-nvim.date;

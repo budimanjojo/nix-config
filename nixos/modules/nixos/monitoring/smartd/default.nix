@@ -1,9 +1,12 @@
 { lib, config, ... }:
 with lib;
-let 
+let
   cfg = config.modules.monitoring.smartd;
-in {
-  options.modules.monitoring.smartd = { enable = mkEnableOption "smartd"; };
+in
+{
+  options.modules.monitoring.smartd = {
+    enable = mkEnableOption "smartd";
+  };
 
   config = mkIf cfg.enable {
     modules.program.msmtp.enable = true;

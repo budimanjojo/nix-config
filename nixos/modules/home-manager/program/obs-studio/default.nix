@@ -1,9 +1,17 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 with lib;
-let 
+let
   cfg = config.hm-modules.program.obs-studio;
-in {
-  options.hm-modules.program.obs-studio = { enable = mkEnableOption "obs-studio"; };
+in
+{
+  options.hm-modules.program.obs-studio = {
+    enable = mkEnableOption "obs-studio";
+  };
 
   config = mkIf cfg.enable {
     programs.obs-studio = {

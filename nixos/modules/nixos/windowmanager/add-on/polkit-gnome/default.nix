@@ -1,9 +1,17 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 with lib;
 let
   cfg = config.modules.windowmanager.add-on.polkit-gnome;
-in {
-  options.modules.windowmanager.add-on.polkit-gnome = { enable = mkEnableOption "polkit-gnome"; };
+in
+{
+  options.modules.windowmanager.add-on.polkit-gnome = {
+    enable = mkEnableOption "polkit-gnome";
+  };
 
   config = mkIf cfg.enable {
     security.polkit.enable = true;

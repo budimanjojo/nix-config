@@ -1,10 +1,19 @@
-{ lib, config, pkgs, myPkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  myPkgs,
+  ...
+}:
 
 with lib;
 let
   cfg = config.hm-modules.homelab.kubernetes;
-in {
-  options.hm-modules.homelab.kubernetes = { enable = mkEnableOption "kubernetes"; };
+in
+{
+  options.hm-modules.homelab.kubernetes = {
+    enable = mkEnableOption "kubernetes";
+  };
   config = mkIf cfg.enable {
     hm-modules.shell.git.enable = true;
     hm-modules.shell.nix-direnv.enable = true;
@@ -20,7 +29,6 @@ in {
           path = "${config.home.homeDirectory}/.talos/config";
         };
       };
-
     };
 
     xdg.configFile."k9s".source = ./k9s;
@@ -69,25 +77,28 @@ in {
       };
     };
 
-    home.packages = with pkgs; [
-      age
-      envsubst
-      fluxcd
-      go-task
-      jq
-      k9s
-      kubectl
-      kubernetes-helm
-      kustomize
-      minio-client
-      nodePackages.zx
-      pulumi-bin
-      sops
-      talosctl
-    ] ++ [
-      # myPkgs.krr
-      myPkgs.kubectl-rook-ceph
-      myPkgs.talhelper
-    ];
+    home.packages =
+      with pkgs;
+      [
+        age
+        envsubst
+        fluxcd
+        go-task
+        jq
+        k9s
+        kubectl
+        kubernetes-helm
+        kustomize
+        minio-client
+        nodePackages.zx
+        pulumi-bin
+        sops
+        talosctl
+      ]
+      ++ [
+        # myPkgs.krr
+        myPkgs.kubectl-rook-ceph
+        myPkgs.talhelper
+      ];
   };
 }

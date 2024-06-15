@@ -1,9 +1,12 @@
 { lib, config, ... }:
 with lib;
-let 
+let
   cfg = config.hm-modules.terminal-emulator.alacritty;
-in {
-  options.hm-modules.terminal-emulator.alacritty = { enable = mkEnableOption "alacritty"; };
+in
+{
+  options.hm-modules.terminal-emulator.alacritty = {
+    enable = mkEnableOption "alacritty";
+  };
 
   config = mkIf cfg.enable {
     programs.alacritty = {
@@ -39,8 +42,14 @@ in {
             text = "#1A1B26";
           };
           indexed_colors = [
-            { index = 16; color = "#FF9E64"; }
-            { index = 17; color = "#DB4B4B"; }
+            {
+              index = 16;
+              color = "#FF9E64";
+            }
+            {
+              index = 17;
+              color = "#DB4B4B";
+            }
           ];
           normal = {
             black = "#15161E";

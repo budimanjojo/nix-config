@@ -1,9 +1,17 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 with lib;
 let
   cfg = config.hm-modules.windowmanager.add-on.dunst;
-in {
-  options.hm-modules.windowmanager.add-on.dunst = { enable = mkEnableOption "dunst"; };
+in
+{
+  options.hm-modules.windowmanager.add-on.dunst = {
+    enable = mkEnableOption "dunst";
+  };
 
   config = mkIf cfg.enable {
     home.packages = [ pkgs.libnotify ];
@@ -66,7 +74,9 @@ in {
           mouse_middle_click = "close_current";
           mouse_right_click = "close_current";
         };
-        experimental = { per_monitor_dpi = false; };
+        experimental = {
+          per_monitor_dpi = false;
+        };
         urgency_low = {
           background = "#1A1B26";
           foreground = "#7AA2F7";

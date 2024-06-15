@@ -1,9 +1,17 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 with lib;
-let 
+let
   cfg = config.hm-modules.terminal-emulator.wezterm;
-in {
-  options.hm-modules.terminal-emulator.wezterm = { enable = mkEnableOption "wezterm"; };
+in
+{
+  options.hm-modules.terminal-emulator.wezterm = {
+    enable = mkEnableOption "wezterm";
+  };
 
   config = mkIf cfg.enable {
     programs.wezterm = {

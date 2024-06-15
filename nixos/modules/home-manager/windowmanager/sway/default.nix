@@ -1,10 +1,18 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 with lib;
 let
   cfg = config.hm-modules.windowmanager.sway;
   deviceCfg = config.deviceCfg;
-in {
-  options.hm-modules.windowmanager.sway = { enable = mkEnableOption "sway"; };
+in
+{
+  options.hm-modules.windowmanager.sway = {
+    enable = mkEnableOption "sway";
+  };
 
   config = mkIf cfg.enable {
     deviceCfg.isWayland = true;
@@ -39,9 +47,18 @@ in {
         let
           mon1 = getAttr "name" (elemAt deviceCfg.monitors 0);
           mon1width = getAttr "width" (elemAt deviceCfg.monitors 0);
-          mon2 = if length deviceCfg.monitors >= 2 then getAttr "name" (elemAt deviceCfg.monitors 1) else getAttr "name" (elemAt deviceCfg.monitors 0);
-          mon2width = if length deviceCfg.monitors >= 2 then getAttr "width" (elemAt deviceCfg.monitors 1) else getAttr "width" (elemAt deviceCfg.monitors 0);
-        in ''
+          mon2 =
+            if length deviceCfg.monitors >= 2 then
+              getAttr "name" (elemAt deviceCfg.monitors 1)
+            else
+              getAttr "name" (elemAt deviceCfg.monitors 0);
+          mon2width =
+            if length deviceCfg.monitors >= 2 then
+              getAttr "width" (elemAt deviceCfg.monitors 1)
+            else
+              getAttr "width" (elemAt deviceCfg.monitors 0);
+        in
+        ''
           # VARIABLES ARE SET HERE
           # Modifier default to Super key
           set $super Mod4
@@ -112,11 +129,15 @@ in {
         input = {
           # Enable numlock on boot
           # Temporary fix for Firefox crashing on reload (https://bugzilla.mozilla.org/show_bug.cgi?id=1652820)
-          "9494:26:CM_Storm_Keyboard_--_QuickFire_XT" = { xkb_numlock = "enable"; };
-          "64562:647:JosefAdamcik_Sofle_Consumer_Control" = { xkb_numlock = "enable"; };
+          "9494:26:CM_Storm_Keyboard_--_QuickFire_XT" = {
+            xkb_numlock = "enable";
+          };
+          "64562:647:JosefAdamcik_Sofle_Consumer_Control" = {
+            xkb_numlock = "enable";
+          };
         };
         gaps.inner = 10;
-        bars = [];
+        bars = [ ];
         keybindings = import ./configs/keybindings.nix;
         modes = import ./configs/modes.nix { inherit config; };
         workspaceOutputAssign = import ./configs/ws-outputs.nix;

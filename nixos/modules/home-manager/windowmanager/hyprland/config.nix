@@ -1,18 +1,35 @@
-{ lib, deviceCfg, pkgs, ... }:
+{
+  lib,
+  deviceCfg,
+  pkgs,
+  ...
+}:
 with lib;
 let
   mon1 = getAttr "name" (elemAt deviceCfg.monitors 0);
-  mon2 = if length deviceCfg.monitors >= 2 then getAttr "name" (elemAt deviceCfg.monitors 1) else getAttr "name" (elemAt deviceCfg.monitors 0);
-  mon2width = if mon2 != mon1 then getAttr "width" (elemAt deviceCfg.monitors 1) else getAttr "width" (elemAt deviceCfg.monitors 0);
-  nvidiaSpecific = if deviceCfg.gpu != "nvidia" then {} else {
-    env = [
-      "LIBVA_DRIVER_NAME,nvidia"
-      "XDG_SESSION_TYPE,wayland"
-      "GBM_BACKEND,nvidia-drm"
-      "__GLX_VENDOR_LIBRARY_NAME,nvidia"
-      "WLR_NO_HARDWARE_CURSORS,1"
-    ];
-  };
+  mon2 =
+    if length deviceCfg.monitors >= 2 then
+      getAttr "name" (elemAt deviceCfg.monitors 1)
+    else
+      getAttr "name" (elemAt deviceCfg.monitors 0);
+  mon2width =
+    if mon2 != mon1 then
+      getAttr "width" (elemAt deviceCfg.monitors 1)
+    else
+      getAttr "width" (elemAt deviceCfg.monitors 0);
+  nvidiaSpecific =
+    if deviceCfg.gpu != "nvidia" then
+      { }
+    else
+      {
+        env = [
+          "LIBVA_DRIVER_NAME,nvidia"
+          "XDG_SESSION_TYPE,wayland"
+          "GBM_BACKEND,nvidia-drm"
+          "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+          "WLR_NO_HARDWARE_CURSORS,1"
+        ];
+      };
 in
 {
   # VARIABLES ARE SET HERE

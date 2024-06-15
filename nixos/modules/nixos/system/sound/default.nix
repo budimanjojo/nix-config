@@ -1,10 +1,18 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 with lib;
-let 
+let
   cfg = config.modules.system.sound;
   deviceCfg = config.deviceCfg;
-in {
-  options.modules.system.sound = { enable = mkEnableOption "sound"; };
+in
+{
+  options.modules.system.sound = {
+    enable = mkEnableOption "sound";
+  };
 
   config = mkIf (cfg.enable && deviceCfg.hasSound) {
     # security.rtkit.enable = true;
@@ -26,4 +34,3 @@ in {
     };
   };
 }
-

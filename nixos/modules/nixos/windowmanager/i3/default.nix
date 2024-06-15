@@ -1,10 +1,19 @@
-{ pkgs, lib, config, myPkgs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  myPkgs,
+  ...
+}:
 with lib;
-let 
+let
   cfg = config.modules.windowmanager.i3;
   deviceCfg = config.deviceCfg;
-in {
-  options.modules.windowmanager.i3 = { enable = mkEnableOption "i3"; };
+in
+{
+  options.modules.windowmanager.i3 = {
+    enable = mkEnableOption "i3";
+  };
 
   config = mkIf cfg.enable {
     modules.windowmanager.add-on.blueman-applet.enable = true;
@@ -41,20 +50,27 @@ in {
       windowManager.i3 = {
         enable = true;
         package = pkgs.i3-gaps;
-        extraPackages = with pkgs; [
-          feh
-          numlockx
-          picom
-          rofi
-          scrot
-          (python3Packages.py3status.overrideAttrs (oldAttrs: {
-            propagatedBuildInputs = with python3Packages; [ pytz tzlocal ] ++ oldAttrs.propagatedBuildInputs;
-          }))
-          xdg-utils
-          xfce.xfce4-power-manager
-        ] ++ [
-          myPkgs.rofi-firefox-wrapper
-        ];
+        extraPackages =
+          with pkgs;
+          [
+            feh
+            numlockx
+            picom
+            rofi
+            scrot
+            (python3Packages.py3status.overrideAttrs (oldAttrs: {
+              propagatedBuildInputs =
+                with python3Packages;
+                [
+                  pytz
+                  tzlocal
+                ]
+                ++ oldAttrs.propagatedBuildInputs;
+            }))
+            xdg-utils
+            xfce.xfce4-power-manager
+          ]
+          ++ [ myPkgs.rofi-firefox-wrapper ];
       };
     };
     networking.networkmanager.enable = true;

@@ -4,14 +4,23 @@ with lib;
   options.deviceCfg = {
     # Options below NEED to be set on each host
     cpu = mkOption {
-      type = types.enum ["amd" "intel" "vm"];
+      type = types.enum [
+        "amd"
+        "intel"
+        "vm"
+      ];
     };
     gpu = mkOption {
-      type = types.enum ["amd" "intel" "nvidia" "vm"];
+      type = types.enum [
+        "amd"
+        "intel"
+        "nvidia"
+        "vm"
+      ];
     };
     monitors = mkOption {
       type = with types; listOf (attrsOf (either str bool));
-      default = [];
+      default = [ ];
     };
     firefoxProfiles = mkOption {
       type = types.attrs;
@@ -23,15 +32,11 @@ with lib;
         };
       };
     };
-    hasBluetooth = mkOption {
-      type = types.bool;
-    };
-    hasSound = mkOption {
-      type = types.bool;
-    };
+    hasBluetooth = mkOption { type = types.bool; };
+    hasSound = mkOption { type = types.bool; };
     authorizedKeys = mkOption {
       type = types.listOf types.str;
-      default = [];
+      default = [ ];
     };
 
     # Options below DON't NEED to be set, will be set by automatically

@@ -1,9 +1,17 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 with lib;
-let 
+let
   cfg = config.modules.program.msmtp;
-in {
-  options.modules.program.msmtp = { enable = mkEnableOption "msmtp"; };
+in
+{
+  options.modules.program.msmtp = {
+    enable = mkEnableOption "msmtp";
+  };
 
   config = mkIf cfg.enable {
     sops.secrets.gmail-password = {

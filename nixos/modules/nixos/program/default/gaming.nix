@@ -1,11 +1,12 @@
 { lib, config, ... }:
 with lib;
-let 
+let
   cfg = config.modules.program.gaming;
-in {
-  options.modules.program.gaming = { enable = mkEnableOption "default gaming"; };
-
-  config = mkIf cfg.enable {
-    programs.gamemode.enable = true;
+in
+{
+  options.modules.program.gaming = {
+    enable = mkEnableOption "default gaming";
   };
+
+  config = mkIf cfg.enable { programs.gamemode.enable = true; };
 }

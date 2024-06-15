@@ -2,7 +2,10 @@
   {
     trayOutput = "$monright";
     statusCommand = "py3status";
-    fonts = { names = [ "UbuntuMono Nerd Font" ]; size = 12.0; };
+    fonts = {
+      names = [ "UbuntuMono Nerd Font" ];
+      size = 12.0;
+    };
     position = "top";
     extraConfig = "strip_workspace_numbers yes";
     colors = {

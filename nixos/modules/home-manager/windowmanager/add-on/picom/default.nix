@@ -2,8 +2,11 @@
 with lib;
 let
   cfg = config.hm-modules.windowmanager.add-on.picom;
-in {
-  options.hm-modules.windowmanager.add-on.picom = { enable = mkEnableOption "picom"; };
+in
+{
+  options.hm-modules.windowmanager.add-on.picom = {
+    enable = mkEnableOption "picom";
+  };
 
   config = mkIf cfg.enable {
     services.picom = {
@@ -12,7 +15,7 @@ in {
         # Shadows
         shadow = true;
         shadow-radius = 7;
-        shadow-opacity = .7;
+        shadow-opacity = 0.7;
         shadow-offset-x = -7;
         shadow-offset-y = -7;
         shadow-red = 0.8;
@@ -33,12 +36,10 @@ in {
 
         # Fading
         fading = true;
-        fade-in-step = 0.03;
-        fade-out-step = 0.03;
+        fade-in-step = 3.0e-2;
+        fade-out-step = 3.0e-2;
         # fade-delta = 10
-        fade-exclude = [
-          "_NET_WM_STATE@:32a *= '_NET_WM_STATE_FULLSCREEN'"
-        ];
+        fade-exclude = [ "_NET_WM_STATE@:32a *= '_NET_WM_STATE_FULLSCREEN'" ];
         # no-fading-openclose = false
         # no-fading-destroyed-argb = false
 
@@ -95,11 +96,11 @@ in {
         use-ewmh-active-win = true;
         unredir-if-possible = false;
         unredir-if-possible-delay = 5000; # miliseconds
-        unredir-if-possible-exclude = [];
+        unredir-if-possible-exclude = [ ];
         detect-transient = true;
         detect-client-leader = true;
         # resize-damage = 1
-        invert-color-include = [];
+        invert-color-include = [ ];
         glx-no-stencil = true;
         glx-no-rebind-pixmap = true;
         use-damage = true;
@@ -113,8 +114,7 @@ in {
         # log-file = "/path/to/your/log/file"
         # show-all-xerrors = false
         # write-pid-path = "/path/to/your/log/file"
-        wintypes =
-        {
+        wintypes = {
           tooltip = {
             fade = true;
             shadow = false;

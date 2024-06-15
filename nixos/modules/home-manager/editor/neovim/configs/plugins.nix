@@ -9,9 +9,7 @@ in
   ## c) LSP and syntax highlighting will work without any effort
 
   ## But, to configure LSP, it's easier to make use of nixvim provided module so I use that
-  imports = [
-    ./lsp.nix
-  ];
+  imports = [ ./lsp.nix ];
   config = {
     ## load the lua snippets from nix store
     extraConfigLua = "require('luasnip.loaders.from_lua').lazy_load({paths = '${./snippets}'})";
@@ -115,8 +113,8 @@ in
       # System utility
       FTerm-nvim
       {
-       plugin = oil-nvim;
-       config = "lua require('plugin-configs._oil')";
+        plugin = oil-nvim;
+        config = "lua require('plugin-configs._oil')";
       }
       {
         plugin = gitsigns-nvim;

@@ -1,8 +1,12 @@
 { lib, config, ... }:
 with lib;
-let cfg = config.hm-modules.shell.nix-direnv;
-in {
-  options.hm-modules.shell.nix-direnv = { enable = mkEnableOption "nix-direnv"; };
+let
+  cfg = config.hm-modules.shell.nix-direnv;
+in
+{
+  options.hm-modules.shell.nix-direnv = {
+    enable = mkEnableOption "nix-direnv";
+  };
 
   config = mkIf cfg.enable {
     programs.direnv = {

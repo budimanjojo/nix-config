@@ -1,9 +1,17 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 with lib;
 let
   cfg = config.modules.windowmanager.add-on.thunar;
-in {
-  options.modules.windowmanager.add-on.thunar = { enable = mkEnableOption "thunar"; };
+in
+{
+  options.modules.windowmanager.add-on.thunar = {
+    enable = mkEnableOption "thunar";
+  };
 
   config = mkIf cfg.enable {
     programs.thunar = {
@@ -20,8 +28,6 @@ in {
       enable = true;
       package = pkgs.gvfs;
     };
-    environment.systemPackages = with pkgs; [
-      ffmpegthumbnailer
-    ];
+    environment.systemPackages = with pkgs; [ ffmpegthumbnailer ];
   };
 }

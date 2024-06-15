@@ -1,9 +1,17 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 with lib;
-let 
+let
   cfg = config.hm-modules.program.gaming;
-in {
-  options.hm-modules.program.gaming = { enable = mkEnableOption "default gaming"; };
+in
+{
+  options.hm-modules.program.gaming = {
+    enable = mkEnableOption "default gaming";
+  };
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [

@@ -1,8 +1,12 @@
 { lib, config, ... }:
 with lib;
-let cfg = config.hm-modules.shell.starship;
-in {
-  options.hm-modules.shell.starship = { enable = mkEnableOption "starship"; };
+let
+  cfg = config.hm-modules.shell.starship;
+in
+{
+  options.hm-modules.shell.starship = {
+    enable = mkEnableOption "starship";
+  };
 
   config = mkIf cfg.enable {
     programs.starship = {

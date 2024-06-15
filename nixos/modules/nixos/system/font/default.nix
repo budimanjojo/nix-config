@@ -1,9 +1,17 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 with lib;
-let 
+let
   cfg = config.modules.system.font;
-in {
-  options.modules.system.font = { enable = mkEnableOption "font"; };
+in
+{
+  options.modules.system.font = {
+    enable = mkEnableOption "font";
+  };
 
   config = mkIf cfg.enable {
     fonts.packages = with pkgs; [

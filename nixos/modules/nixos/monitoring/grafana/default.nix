@@ -1,9 +1,12 @@
 { lib, config, ... }:
 with lib;
-let 
+let
   cfg = config.modules.monitoring.grafana;
-in {
-  options.modules.monitoring.grafana = { enable = mkEnableOption "grafana"; };
+in
+{
+  options.modules.monitoring.grafana = {
+    enable = mkEnableOption "grafana";
+  };
 
   config = mkIf cfg.enable {
     sops.secrets.grafana-password = {
@@ -37,8 +40,6 @@ in {
       };
     };
 
-    networking.firewall.allowedTCPPorts = [
-      config.services.grafana.settings.server.http_port
-    ];
+    networking.firewall.allowedTCPPorts = [ config.services.grafana.settings.server.http_port ];
   };
 }

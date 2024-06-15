@@ -1,8 +1,14 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 with lib;
 let
   cfg = config.hm-modules.windowmanager.add-on.rofi;
-in {
+in
+{
   options.hm-modules.windowmanager.add-on.rofi = {
     enable = mkEnableOption "rofi";
     package = mkOption {

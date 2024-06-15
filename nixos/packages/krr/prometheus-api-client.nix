@@ -1,7 +1,13 @@
-{ lib, python3, pkgs, callPackage, ... }:
+{
+  lib,
+  python3,
+  pkgs,
+  callPackage,
+  ...
+}:
 
 let
-  sourceData = callPackage ../_sources/generated.nix {};
+  sourceData = callPackage ../_sources/generated.nix { };
 in
 
 python3.pkgs.buildPythonPackage {
@@ -9,7 +15,7 @@ python3.pkgs.buildPythonPackage {
 
   doCheck = false;
 
-  propagatedBuildInputs = with pkgs.python3Packages; [ 
+  propagatedBuildInputs = with pkgs.python3Packages; [
     matplotlib
     numpy
     pandas

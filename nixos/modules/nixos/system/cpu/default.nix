@@ -1,8 +1,9 @@
 { lib, config, ... }:
 with lib;
-let 
+let
   deviceCfg = config.deviceCfg;
-in {
+in
+{
   config = mkMerge [
     (mkIf (deviceCfg.cpu == "amd") {
       hardware.cpu.amd.updateMicrocode = true;

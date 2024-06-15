@@ -1,7 +1,8 @@
 { config, ... }:
 let
   deviceCfg = config.deviceCfg;
-in {
+in
+{
   home = {
     username = deviceCfg.username;
     homeDirectory = "/home/" + deviceCfg.username;

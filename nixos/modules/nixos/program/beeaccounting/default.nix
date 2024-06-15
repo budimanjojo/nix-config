@@ -7,11 +7,18 @@ let
     registry = "ghcr.io";
     passwordFile = config.sops.secrets.budimanjojo-ghcr-pull-token.path;
   };
-in {
-  options.modules.program.beeaccounting = { enable = mkEnableOption "beeaccounting"; };
+in
+{
+  options.modules.program.beeaccounting = {
+    enable = mkEnableOption "beeaccounting";
+  };
 
   config = mkIf cfg.enable {
-    networking.firewall.allowedTCPPorts = [ 5432 631 5353 ];
+    networking.firewall.allowedTCPPorts = [
+      5432
+      631
+      5353
+    ];
     users.users.${config.deviceCfg.username}.extraGroups = [ "docker" ];
     virtualisation = {
       docker.enable = true;

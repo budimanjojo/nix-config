@@ -1,7 +1,13 @@
-{ stdenvNoCC, hicolor-icon-theme, gtk3, lib, callPackage }:
+{
+  stdenvNoCC,
+  hicolor-icon-theme,
+  gtk3,
+  lib,
+  callPackage,
+}:
 
 let
-  sourceData = callPackage ../_sources/generated.nix {};
+  sourceData = callPackage ../_sources/generated.nix { };
 in
 
 stdenvNoCC.mkDerivation {

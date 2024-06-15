@@ -1,10 +1,19 @@
-{ pkgs, lib, config, nvfetcherPath, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  nvfetcherPath,
+  ...
+}:
 with lib;
 let
   cfg = config.hm-modules.shell.fish;
-  nvfetcherData = pkgs.callPackage nvfetcherPath {};
-in {
-  options.hm-modules.shell.fish = { enable = mkEnableOption "fish"; };
+  nvfetcherData = pkgs.callPackage nvfetcherPath { };
+in
+{
+  options.hm-modules.shell.fish = {
+    enable = mkEnableOption "fish";
+  };
 
   config = mkIf cfg.enable {
     hm-modules.shell.starship.enable = true;
@@ -19,29 +28,36 @@ in {
     ];
     programs.fish = {
       enable = true;
-      plugins = [
-        {
-          name = "autopair";
-          src = nvfetcherData.autopair-fish.src;
-        }
-        {
-          name = "fzf";
-          src = nvfetcherData.fzf-fish.src;
-        }
-        {
-          name = "puffer-fish";
-          src = nvfetcherData.puffer-fish.src;
-        }
-        {
-          name = "abbreviation-tips";
-          src = nvfetcherData.abbreviation-tips.src;
-        }
-      ] ++ (if config.hm-modules.multiplexer.tmux.enable && !config.hm-modules.multiplexer.zellij.enable then [
-        {
-          name = "tmux-fish";
-          src = nvfetcherData.tmux-fish.src;
-        }
-      ] else [ ]);
+      plugins =
+        [
+          {
+            name = "autopair";
+            src = nvfetcherData.autopair-fish.src;
+          }
+          {
+            name = "fzf";
+            src = nvfetcherData.fzf-fish.src;
+          }
+          {
+            name = "puffer-fish";
+            src = nvfetcherData.puffer-fish.src;
+          }
+          {
+            name = "abbreviation-tips";
+            src = nvfetcherData.abbreviation-tips.src;
+          }
+        ]
+        ++ (
+          if config.hm-modules.multiplexer.tmux.enable && !config.hm-modules.multiplexer.zellij.enable then
+            [
+              {
+                name = "tmux-fish";
+                src = nvfetcherData.tmux-fish.src;
+              }
+            ]
+          else
+            [ ]
+        );
 
       functions = {
         mkcd = {
@@ -99,7 +115,7 @@ in {
         w = "hwatch";
 
         # edit config files
-        evim  = "$EDITOR $HOME/.vimrc";
+        evim = "$EDITOR $HOME/.vimrc";
         envim = "$EDITOR $HOME/.config/nvim/init.vim";
         ezsh = "$EDITOR $HOME/.zshrc";
         ebash = "$EDITOR $HOME/.bashrc";

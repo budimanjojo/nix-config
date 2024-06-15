@@ -24,7 +24,10 @@
 
       ## Disable autocomment on enter
       {
-        event = [ "BufEnter" "CmdLineLeave" ];
+        event = [
+          "BufEnter"
+          "CmdLineLeave"
+        ];
         pattern = [ "*" ];
         group = "disableautocomment";
         callback = {
@@ -36,7 +39,10 @@
 
       ## Filetype detection
       {
-        event = [ "BufRead" "BufNewFile" ];
+        event = [
+          "BufRead"
+          "BufNewFile"
+        ];
         pattern = [ "*" ];
         group = "ftdetection";
         callback = {
@@ -132,7 +138,11 @@
       ## ChoiceNode popup in snippet
       {
         event = [ "User" ];
-        pattern = [ "LuasnipChoiceNodeEnter" "LuasnipChoiceNodeLeave" "LuasnipChangeChoice" ];
+        pattern = [
+          "LuasnipChoiceNodeEnter"
+          "LuasnipChoiceNodeLeave"
+          "LuasnipChangeChoice"
+        ];
         group = "choicepopup";
         callback = {
           __raw = "function(arg)
@@ -147,7 +157,6 @@
           end";
         };
       }
-
     ];
     extraConfigLua = ''
       -- Filetype detection function

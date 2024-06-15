@@ -1,9 +1,17 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 with lib;
 let
   cfg = config.hm-modules.program.tui-utils;
-in {
-  options.hm-modules.program.tui-utils = { enable = mkEnableOption "default tui-utils"; };
+in
+{
+  options.hm-modules.program.tui-utils = {
+    enable = mkEnableOption "default tui-utils";
+  };
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
