@@ -109,7 +109,7 @@
             };
           };
 
-          nil_ls.enable = true; # # nil
+          nil-ls.enable = true; # # nil
           pyright.enable = true; # # pyright
           lua-ls.enable = true; # # lua-language-server
 
