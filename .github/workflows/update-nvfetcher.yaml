@@ -18,7 +18,7 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-      - uses: workflow/nix-shell-action@v3.3.0
+      - uses: workflow/nix-shell-action@v3.3.2
         id: update_nvfetcher
         with:
           flakes-from-devshell: true
