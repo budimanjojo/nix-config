@@ -352,12 +352,12 @@
             "name": null,
             "owner": "Fausto-Korpsvart",
             "repo": "Tokyo-Night-GTK-Theme",
-            "rev": "65565df0b1930be9f92069f8c21b53c1cba11470",
-            "sha256": "sha256-PBfo8LDlCJu3eeirGTyeAm9769MVHezQnMc42c1nSCc=",
+            "rev": "49554a119f02b448aa2898e71437c2184b287cb0",
+            "sha256": "sha256-ijYF1P6ZnlPZRCcWm+6ETf4qatvyFWMCY/MzVxZaLHk=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "65565df0b1930be9f92069f8c21b53c1cba11470"
+        "version": "49554a119f02b448aa2898e71437c2184b287cb0"
     },
     "tokyonight-icon-theme": {
         "cargoLocks": null,
@@ -373,11 +373,11 @@
             "name": null,
             "owner": "Fausto-Korpsvart",
             "repo": "Tokyo-Night-GTK-Theme",
-            "rev": "65565df0b1930be9f92069f8c21b53c1cba11470",
-            "sha256": "sha256-PBfo8LDlCJu3eeirGTyeAm9769MVHezQnMc42c1nSCc=",
+            "rev": "49554a119f02b448aa2898e71437c2184b287cb0",
+            "sha256": "sha256-ijYF1P6ZnlPZRCcWm+6ETf4qatvyFWMCY/MzVxZaLHk=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "65565df0b1930be9f92069f8c21b53c1cba11470"
+        "version": "49554a119f02b448aa2898e71437c2184b287cb0"
     }
 }
