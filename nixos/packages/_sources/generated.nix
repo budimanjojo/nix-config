@@ -135,15 +135,15 @@
   };
   oil-nvim = {
     pname = "oil-nvim";
-    version = "10fbfdd37b6904c0776c5db1a27ab47eecba335e";
+    version = "9e5eb2fcd1dfee2ff30c89273ffff179e42034b9";
     src = fetchFromGitHub {
       owner = "stevearc";
       repo = "oil.nvim";
-      rev = "10fbfdd37b6904c0776c5db1a27ab47eecba335e";
+      rev = "9e5eb2fcd1dfee2ff30c89273ffff179e42034b9";
       fetchSubmodules = false;
-      sha256 = "sha256-0sx6lbVDnplhHxD+YdxIWN9DWpDgy7xQQcO/YWygux0=";
+      sha256 = "sha256-VYcamtUZA6pXJcigkJynemhEVwp2tVmyZq+SM3WYByE=";
     };
-    date = "2024-07-06";
+    date = "2024-07-15";
   };
   prometheus-api-client = {
     pname = "prometheus-api-client";
