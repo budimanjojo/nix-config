@@ -191,26 +191,26 @@
   };
   tokyonight-gtk-theme = {
     pname = "tokyonight-gtk-theme";
-    version = "2f566d89856516bef988df3cc32261f752299886";
+    version = "8846a27879ec8aa548e42f801b114b425e772a44";
     src = fetchFromGitHub {
       owner = "Fausto-Korpsvart";
       repo = "Tokyo-Night-GTK-Theme";
-      rev = "2f566d89856516bef988df3cc32261f752299886";
+      rev = "8846a27879ec8aa548e42f801b114b425e772a44";
       fetchSubmodules = false;
-      sha256 = "sha256-oKqLb66N4swHfhjUZJIGryE0D9MkuLdKFQa6j3TFmOg=";
+      sha256 = "sha256-E/6gH9KdcFGnwrdBNQbxlwXN+/soCazhDYKdHf5y6MI=";
     };
-    date = "2024-06-27";
+    date = "2024-07-17";
   };
   tokyonight-icon-theme = {
     pname = "tokyonight-icon-theme";
-    version = "2f566d89856516bef988df3cc32261f752299886";
+    version = "8846a27879ec8aa548e42f801b114b425e772a44";
     src = fetchFromGitHub {
       owner = "Fausto-Korpsvart";
       repo = "Tokyo-Night-GTK-Theme";
-      rev = "2f566d89856516bef988df3cc32261f752299886";
+      rev = "8846a27879ec8aa548e42f801b114b425e772a44";
       fetchSubmodules = false;
-      sha256 = "sha256-oKqLb66N4swHfhjUZJIGryE0D9MkuLdKFQa6j3TFmOg=";
+      sha256 = "sha256-E/6gH9KdcFGnwrdBNQbxlwXN+/soCazhDYKdHf5y6MI=";
     };
-    date = "2024-06-27";
+    date = "2024-07-17";
   };
 }
