@@ -340,7 +340,7 @@
     },
     "tokyonight-gtk-theme": {
         "cargoLocks": null,
-        "date": "2024-07-17",
+        "date": "2024-07-22",
         "extract": null,
         "name": "tokyonight-gtk-theme",
         "passthru": null,
@@ -352,16 +352,16 @@
             "name": null,
             "owner": "Fausto-Korpsvart",
             "repo": "Tokyo-Night-GTK-Theme",
-            "rev": "8846a27879ec8aa548e42f801b114b425e772a44",
-            "sha256": "sha256-E/6gH9KdcFGnwrdBNQbxlwXN+/soCazhDYKdHf5y6MI=",
+            "rev": "a9a25010e9fbfca783c3c27258dbad76a9cc7842",
+            "sha256": "sha256-HbrDDiMej4DjvskGItele/iCUY1NzlWlu3ZneA76feM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "8846a27879ec8aa548e42f801b114b425e772a44"
+        "version": "a9a25010e9fbfca783c3c27258dbad76a9cc7842"
     },
     "tokyonight-icon-theme": {
         "cargoLocks": null,
-        "date": "2024-07-17",
+        "date": "2024-07-22",
         "extract": null,
         "name": "tokyonight-icon-theme",
         "passthru": null,
@@ -373,11 +373,11 @@
             "name": null,
             "owner": "Fausto-Korpsvart",
             "repo": "Tokyo-Night-GTK-Theme",
-            "rev": "8846a27879ec8aa548e42f801b114b425e772a44",
-            "sha256": "sha256-E/6gH9KdcFGnwrdBNQbxlwXN+/soCazhDYKdHf5y6MI=",
+            "rev": "a9a25010e9fbfca783c3c27258dbad76a9cc7842",
+            "sha256": "sha256-HbrDDiMej4DjvskGItele/iCUY1NzlWlu3ZneA76feM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "8846a27879ec8aa548e42f801b114b425e772a44"
+        "version": "a9a25010e9fbfca783c3c27258dbad76a9cc7842"
     }
 }
