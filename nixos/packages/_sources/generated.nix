@@ -42,15 +42,15 @@
   };
   chezmoi-vim = {
     pname = "chezmoi-vim";
-    version = "10f2692791b5e512a2c1bb4dc560b42ca5bf71fd";
+    version = "abf37336437867cbd99ce2f8849b717415391cc3";
     src = fetchFromGitHub {
       owner = "alker0";
       repo = "chezmoi.vim";
-      rev = "10f2692791b5e512a2c1bb4dc560b42ca5bf71fd";
+      rev = "abf37336437867cbd99ce2f8849b717415391cc3";
       fetchSubmodules = false;
-      sha256 = "sha256-+XRJWcgwDc0gnbkMsvyLsNONe6JaTRMYj4T8Ra1TUYM=";
+      sha256 = "sha256-S1/myC1dEydi1F9a6XV0lJW3S/wWQe+A2ZXPo8GbtQo=";
     };
-    date = "2024-05-08";
+    date = "2024-07-26";
   };
   fzf-fish = {
     pname = "fzf-fish";
