@@ -1,6 +1,6 @@
 ---
 creation_rules:
-  - path_regex: nixos/.*secret\.sops\.ya?ml$
+  - path_regex: .*secret\.sops\.ya?ml$
     key_groups:
       - age:
           - age1zeqkpfz7e3s207ynea0z0auc0mrct0pc7w4sh6j3d0c4qac3dahqj9ufdg

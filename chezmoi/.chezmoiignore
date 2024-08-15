@@ -1,0 +1,6 @@
+{{- if .headless }}
+.config/alacritty/
+.config/kitty/
+.config/termite/
+.config/wezterm/
+{{- end }}
