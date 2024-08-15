@@ -1,17 +1,25 @@
 <div align="center">
 
-### ~/. my dotfiles ~/. :house:&nbsp;
+<img src="https://raw.githubusercontent.com/NixOS/nixos-artwork/376ed4ba8dc2e611b7e8a62fdc680967ead5bd87/logo/nix-snowflake.svg" align="center" width="100px" height="100px"/>
 
-#### \> Managed with chezmoi :robot:&nbsp; and NixOS :snowflake:&nbsp;
+### My Infrastructure IaC
+
+...Managed with NixOS :snowflake:&nbsp; and chezmoi :robot:&nbsp;
 
 </div>
 
 ## :book:&nbsp; Overview
 
-This repository contains all my dotfiles managed by [chezmoi](https://github.com/twpayne/chezmoi).
-Please note that this is my own personal dotfiles.
-Stuffs may change without further notice and this README can get outdated.
-For [NixOS](https://nixos.org) users, head over [here](./nixos)
+This repository contains my machine configurations in Infrastructure as Code style.
+This is possible thanks to combination of [NixOS](https://nixos.org) modules, `home-manager`, and `chezmoi`.
+This repo is a [Nix Flake](https://nixos.wiki/wiki/Flakes) that you can import and use yourself but I don't recommend doing that.
+You should take it as an inspiration for your infrastructure instead.
+Please note that this is a Work In Progress, so stuffs may change without further notice and this README can get outdated.
+My goal is to have everything as reproducible as possible.
+
+For NixOS machines, everything is managed by NixOS modules and `home-manager`.
+As for non NixOS machines, I use combination of `home-manager` and `chezmoi`.
+I use `chezmoi` mainly to configure system using [chezmoi scripts](https://www.chezmoi.io/user-guide/use-scripts-to-perform-actions/) while `home-manager` will be for CLI applications in the userspace.
 
 ## :camera:&nbsp; Screenshots
 
@@ -28,11 +36,56 @@ For [NixOS](https://nixos.org) users, head over [here](./nixos)
 ![nvim1](https://user-images.githubusercontent.com/13085918/155890675-a3b8b3f8-479c-4fd0-9ed6-c74e0fc4de0a.png)
 ![nvim2](https://user-images.githubusercontent.com/13085918/155890676-38b95046-c35d-4db5-aa01-b9d8ee44f9d0.png)
 
-## :file_folder:&nbsp; Included Plugins
+## :package:&nbsp; Modules
 
-### :fish:&nbsp; Fish
+- [Flake Parts](https://github.com/hercules-ci/flake-parts) to manage `flakes` outputs.
+- [home-manager](https://github.com/nix-community/home-manager) to manage my home directory.
+- [sops-nix](https://github.com/Mic92/sops-nix) is used to encrypt/decrypt my secrets safely.
+- [Disko](https://github.com/nix-community/disko) to declaratively manage disks.
+- [NUR](https://github.com/nix-community/NUR) for packages not available in the official NixOS repository.
+- [nixvim](https://github.com/nix-community/nixvim) to create reproducible Neovim package.
 
-I use [fisher](https://github.com/jorgebucaran/fisher) as my plugin manager.
+## :open_file_folder:&nbsp; Directory structure
+
+The structure of this repository is highly opinionated.
+I shamelessly took the pieces I believe is the best from people and modified it.
+
+- [./flake.nix](./flake.nix) is the entrypoint for `nixos-rebuild` and `home-manager` commands.
+- [./flake.lock](./flake.lock) is the lock file for this flake, updated daily by [budimanjojo-bot](https://github.com/apps/budimanjojo-bot) powered by [Renovate](https://github.com/renovatebot/renovate).
+- [./flakeLib.nix](./flakeLib.nix) is where I put helper functions used in `flake.nix` file, this is where the magic happens.
+- [./lib](./lib) is where I put helper functions used in NixOS and `home-manager` modules.
+- [./packages](./packages) is where I put my own packages, updated daily by [budimanjojo-bot](https://github.com/apps/budimanjojo-bot) powered by [nvfetcher](https://github.com/berberman/nvfetcher).
+- [./overlays](./overlays) contains overlays for packages used in NixOS and `home-manager` modules.
+- [./shell.nix](./shell.nix) accessible via `nix develop` to have tools needed available in current shell.
+- [./system](./system) contains my own NixOS modules and per machine system configurations.
+- [./home](./home) contains my own `home-manager` modules and per user configurations.
+- [./chezmoi](./chezmoi) contains files used by `chezmoi`.
+
+## :inbox_tray:&nbsp; How do I bootstrap a new machine
+
+### NixOS
+
+- Clone this repository in a directory inside the machine.
+- Edit `./flake.nix` file and add the new machine specs inside `outputs.flake.nixosConfigurations` schema.
+- Create `./system/hosts/<hostname>/default.nix` for the new machine and configure it.
+- Create `./home/budiman/hosts/<hostname>.nix` for the new machine and configure it.
+- Run `git add .` then `sudo nixos-rebuild switch --flake .#<hostname>` and I'm done.
+
+### Non NixOS
+
+- Install Nix and enable Flake.
+- Edit `./flake.nix` file and add the new machine specs inside `outputs.flake.homeConfigurations` schema.
+- Create `./home/budiman/hosts/<hostname>.nix` for the new machine and configure it.
+- Run `git add .` then `nix run nixpkgs.home-manager -c home-manager switch --flake .#budiman@<hostname>` and I'm done.
+
+## :pencil:&nbsp; Neovim
+
+My `neovim` setup is packaged with [nixvim](https://github.com/nix-community/nixvim) and exposed at `legacyPackages.neovim` from this flake.
+You can run it directly if you have `nix` installed and `flakes` enabled with: `nix run github:budimanjojo/dotfiles#neovim`.
+
+## :fish:&nbsp; Fish
+
+On my non NixOS machines, I use [fisher](https://github.com/jorgebucaran/fisher) as my plugin manager.
 These are the plugins I'm using:
 
 - [Starship](https://starship.rs/)
@@ -41,109 +94,16 @@ These are the plugins I'm using:
 - [autopair.fish](https://github.com/jorgebucaran/autopair.fish)
 - [fish-abbreviation-tips](https://github.com/gazorby/fish-abbreviation-tips)
 
+`chezmoi` will manage the installation of the plugins but not updating them unless you modify the file in `./chezmoi/dot_config/private_fish/fish_plugins.tmpl`.
 To update fish plugins, type in `fisher update` in terminal.
-To install or remove fish plugins, you can run `fisher` command.
-
-### :memo:&nbsp; Neovim
-
-I use [lazy.nvim](https://github.com/folke/lazy.nvim) as my plugin manager.
-These are the plugins I'm using:
-
-- [ansible-vim](https://github.com/pearofducks/ansible-vim)
-- [chezmoi.vim](https://github.com/alker0/chezmoi.vim)
-- [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
-- [Comment.nvim](https://github.com/numToStr/Comment.nvim)
-- [FTerm.nvim](https://github.com/numToStr/FTerm.nvim)
-- [fzf-lua](https://github.com/ibhagwan/fzf-lua)
-- [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
-- [lspconfig](https://github.com/neovim/nvim-lspconfig)
-- [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
-- [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
-- [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
-- [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
-- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-- [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
-- [mason.nvim](https://github.com/williamboman/mason.nvim)
-- [mason-tool-installer.nvim](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim)
-- [oil.nvim](https://github.com/stevearc/oil.nvim)
-- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
-- [nvim-surround](https://github.com/kylechui/nvim-surround)
-- [trouble](https://github.com/folke/trouble.nvim)
-- [presence.nvim](https://github.com/andweeb/presence.nvim)
-- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
-- [b64.nvim](https://github.com/taybart/b64.nvim)
-
-To update Neovim plugins, do `:Lazy update` in your nvim.
-**Note**: You need Neovim version >=0.7.0
-
-## :package:&nbsp; Dependencies
-
-You need to have these packages installed in your system if you want to set up:
-
-**For Sway:**
-
-```
-waybar
-grim
-slurp
-swayidle
-python-i3ipc
-rofi (optional)
-nwg-dock (optional)
-```
-
-**For i3**
-
-```
-py3status
-scrot
-i3lock
-picom (optional)
-rofi (optional)
-xfce4-panel (optional)
-```
-
-**For Fish:**
-
-```
-fish
-git
-fd
-bat
-chsh
-fzf
-zoxide
-curl/wget
-exa
-```
-
-**For Neovim:**
-
-```
-nvim
-git
-curl
-npm
-fzf
-unzip
-```
 
 ## :abcd:&nbsp; Fonts
 
-Starship and Lualine requires powerline fonts to work.
+Starship requires powerline fonts to work.
 I suggest [Nerd-fonts](https://github.com/ryanoasis/nerd-fonts).
 The font in the screenshot above is using UbuntuMono Nerd Font Regular.
 I also need Unifont installed in the system for some glyphs to work.
-Chezmoi will do this automatically for you.
-
-## :inbox_tray:&nbsp; Installation
-
-Git clone this repository into your host machine:
-`git clone https://github.com/budimanjojo/dotfiles.git`
-Run install.sh:
-`./install.sh`
-Then do `chezmoi init --apply budimanjojo`
+On non NixOS machines, `chezmoi` will install these fonts automatically.
 
 ## :scroll:&nbsp; Cheatsheet
 
@@ -158,12 +118,8 @@ I use `Super` key for Sway/i3.
 | `S+t`           | Open terminal app |
 | `S+w`           | Open browser |
 | `S+f`           | Open file manager |
-| `S+g`           | Open GIMP |
-| `S+b`           | Open OBS |
-| `S+s`           | Open Steam |
 | `S+grave`       | Open rofi apps menu|
-| `S+Tab`         | Open rofi opened apps menu |
-| `Alt+F4`        | Close window |
+| `S+Esc`         | Open rofi apps menu|
 | `S+F4`          | Close window |
 | `S+k`           | Change focus to window above |
 | `S+j`           | Change focus to window below |
@@ -194,8 +150,8 @@ I use `Super` key for Sway/i3.
 | `S+Shift+g`     | Go to resize gaps mode |
 | `S+Ctrl+Del`    | Go to logout mode |
 | `Printscreen`   | Go to screenshot mode |
-| `S+Shift+c`     | Reload Sway configuration |
-| `S+Shift+e`     | Exit Sway |
+| `S+Shift+c`     | Reload configuration |
+| `S+Shift+e`     | Exit |
 
 ### Neovim keybindings
 
@@ -336,3 +292,12 @@ The table below lists all the keybindings set.
 | `<renametab>Alt+a`     | Switch to normal mode |
 | `<renametab>"\n"`      | Switch to locked mode |
 | `<renametab>Esc`       | Confirm tab name and back to locked mode |
+
+## :coffee:&nbsp; Acknowledgements
+
+I wrote most of the codes by myself, but there are a lot of stuffs inspired by these repositories.
+
+* [MatthiasBenaets/nixos-config](https://github.com/MatthiasBenaets/nixos-config) for the awesome YouTube video introducing NixOS to me.
+* [viperML/dotfiles](https://github.com/viperML/dotfiles) for answering stupid questions on Discord.
+* [bjw-s/nix-config](https://github.com/bjw-s/nix-config) for being inspiration for my repo structure.
+* [truxnell/nix-config](https://github.com/truxnell/nix-config) for being inspiration for my flakeLib functions.
