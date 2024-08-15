@@ -1,0 +1,48 @@
+[tokyonight-gtk-theme]
+src.git = "https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme"
+fetch.github = "Fausto-Korpsvart/Tokyo-Night-GTK-Theme"
+[tokyonight-icon-theme]
+src.git = "https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme"
+fetch.github = "Fausto-Korpsvart/Tokyo-Night-GTK-Theme"
+[chezmoi-vim]
+src.git = "https://github.com/alker0/chezmoi.vim"
+fetch.github = "alker0/chezmoi.vim"
+[mason-lspconfig-nvim]
+src.git = "https://github.com/williamboman/mason-lspconfig.nvim"
+fetch.github = "williamboman/mason-lspconfig.nvim"
+[mason-tool-installer-nvim]
+src.git = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
+fetch.github = "WhoIsSethDaniel/mason-tool-installer.nvim"
+[oil-nvim]
+src.git = "https://github.com/stevearc/oil.nvim"
+fetch.github = "stevearc/oil.nvim"
+[luasnip]
+src.github = "L3MON4D3/LuaSnip"
+fetch.github = "L3MON4D3/LuaSnip"
+[sad-nvim]
+src.git = "https://github.com/ray-x/sad.nvim"
+fetch.github = "ray-x/sad.nvim"
+[k8s-snippets]
+src.git = "https://github.com/budimanjojo/k8s-snippets"
+fetch.github = "budimanjojo/k8s-snippets"
+[guihua-lua]
+src.git = "https://github.com/ray-x/guihua.lua"
+fetch.github = "ray-x/guihua.lua"
+[prometheus-api-client]
+src.pypi = "prometheus-api-client"
+fetch.pypi = "prometheus-api-client"
+[alive-progress]
+src.pypi = "alive-progress"
+fetch.pypi = "alive-progress"
+[about-time]
+src.pypi = "about-time"
+fetch.pypi = "about-time"
+[krr]
+src.github_tag = "robusta-dev/krr"
+fetch.github = "robusta-dev/krr"
+[abbreviation-tips]
+src.github_tag = "gazorby/fish-abbreviation-tips"
+fetch.github = "gazorby/fish-abbreviation-tips"
+[tmux-fish]
+src.git = "https://github.com/budimanjojo/tmux.fish"
+fetch.github = "budimanjojo/tmux.fish"

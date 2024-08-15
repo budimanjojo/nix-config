@@ -1,0 +1,320 @@
+{
+    "abbreviation-tips": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "abbreviation-tips",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "gazorby",
+            "repo": "fish-abbreviation-tips",
+            "rev": "v0.7.0",
+            "sha256": "sha256-F1t81VliD+v6WEWqj1c1ehFBXzqLyumx5vV46s/FZRU=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.7.0"
+    },
+    "about-time": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "about-time",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-alOIYtM85n2ZdCnRSZgxDh2/2my32bv795nEcJhH/s4=",
+            "type": "url",
+            "url": "https://pypi.org/packages/source/a/about-time/about-time-4.2.1.tar.gz"
+        },
+        "version": "4.2.1"
+    },
+    "alive-progress": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "alive-progress",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-QuOZpmyBUNxQdgLf97eVPxBe8R+vl92qbSexy/RcTJg=",
+            "type": "url",
+            "url": "https://pypi.org/packages/source/a/alive-progress/alive-progress-3.1.5.tar.gz"
+        },
+        "version": "3.1.5"
+    },
+    "chezmoi-vim": {
+        "cargoLocks": null,
+        "date": "2024-07-26",
+        "extract": null,
+        "name": "chezmoi-vim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "alker0",
+            "repo": "chezmoi.vim",
+            "rev": "abf37336437867cbd99ce2f8849b717415391cc3",
+            "sha256": "sha256-S1/myC1dEydi1F9a6XV0lJW3S/wWQe+A2ZXPo8GbtQo=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "abf37336437867cbd99ce2f8849b717415391cc3"
+    },
+    "guihua-lua": {
+        "cargoLocks": null,
+        "date": "2024-06-05",
+        "extract": null,
+        "name": "guihua-lua",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "ray-x",
+            "repo": "guihua.lua",
+            "rev": "225db770e36aae6a1e9e3a65578095c8eb4038d3",
+            "sha256": "sha256-V5rlORFlhgjAT0n+LcpMNdY+rEqQpur/KGTGH6uFxMY=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "225db770e36aae6a1e9e3a65578095c8eb4038d3"
+    },
+    "k8s-snippets": {
+        "cargoLocks": null,
+        "date": "2023-12-13",
+        "extract": null,
+        "name": "k8s-snippets",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "budimanjojo",
+            "repo": "k8s-snippets",
+            "rev": "ba5ca9b1b12a3b1c3fb0237494380f4feff668c8",
+            "sha256": "sha256-vVDKI9HR1QqJDHh10oZQ9Zr01gvJhj1iIEgwP+gssx8=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "ba5ca9b1b12a3b1c3fb0237494380f4feff668c8"
+    },
+    "krr": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "krr",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "robusta-dev",
+            "repo": "krr",
+            "rev": "v1.60-alpha",
+            "sha256": "sha256-rIKL1SHVO3kA8xMgKwkYsnRkYepEGmGXAPUkilYboHc=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v1.60-alpha"
+    },
+    "luasnip": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "luasnip",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "L3MON4D3",
+            "repo": "LuaSnip",
+            "rev": "v2.3.0",
+            "sha256": "sha256-E1Ov6aF9DJ0poVM6q6jK1ypsJf6cRzHqC2Gi6u9kai0=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v2.3.0"
+    },
+    "mason-lspconfig-nvim": {
+        "cargoLocks": null,
+        "date": "2024-08-13",
+        "extract": null,
+        "name": "mason-lspconfig-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "williamboman",
+            "repo": "mason-lspconfig.nvim",
+            "rev": "f2acd4a21db1ca0a12559e7a9f7cdace3bdbfb09",
+            "sha256": "sha256-82qY3MCHFVpliCfa1qCD3hQaUe1fhuBCYVLogB2AZSE=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "f2acd4a21db1ca0a12559e7a9f7cdace3bdbfb09"
+    },
+    "mason-tool-installer-nvim": {
+        "cargoLocks": null,
+        "date": "2024-06-03",
+        "extract": null,
+        "name": "mason-tool-installer-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "WhoIsSethDaniel",
+            "repo": "mason-tool-installer.nvim",
+            "rev": "c5e07b8ff54187716334d585db34282e46fa2932",
+            "sha256": "sha256-HjBJkSZirQM9ZVEV0brdWx7zxAavgngXFIi8pcxO7v4=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "c5e07b8ff54187716334d585db34282e46fa2932"
+    },
+    "oil-nvim": {
+        "cargoLocks": null,
+        "date": "2024-07-29",
+        "extract": null,
+        "name": "oil-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "stevearc",
+            "repo": "oil.nvim",
+            "rev": "fcca212c2e966fc3dec1d4baf888e670631d25d1",
+            "sha256": "sha256-IB6GhUEVtsuW0ru4PYqi/P0opjKKuPkpI10YUyj9JdM=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "fcca212c2e966fc3dec1d4baf888e670631d25d1"
+    },
+    "prometheus-api-client": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "prometheus-api-client",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-WUScS+BIXqWi37vtJILrCj7qyMExs+/IZt9MmgxAO7c=",
+            "type": "url",
+            "url": "https://pypi.org/packages/source/p/prometheus-api-client/prometheus-api-client-0.5.5.tar.gz"
+        },
+        "version": "0.5.5"
+    },
+    "sad-nvim": {
+        "cargoLocks": null,
+        "date": "2023-03-13",
+        "extract": null,
+        "name": "sad-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "ray-x",
+            "repo": "sad.nvim",
+            "rev": "869c7f3ca3dcd28fd78023db6a7e1bf8af0f4714",
+            "sha256": "sha256-uwXldYA7JdZHqoB4qfCnZcQW9YBjlRWmiz8mKb9jHuI=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "869c7f3ca3dcd28fd78023db6a7e1bf8af0f4714"
+    },
+    "tmux-fish": {
+        "cargoLocks": null,
+        "date": "2024-04-19",
+        "extract": null,
+        "name": "tmux-fish",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "budimanjojo",
+            "repo": "tmux.fish",
+            "rev": "e95dbc11fa57d738cd837cb659d50b73ec0a8d90",
+            "sha256": "sha256-tNq/F9NQZZ1pd0ZWPzQVwuHABCVECmXRN12ovGSUUFU=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "e95dbc11fa57d738cd837cb659d50b73ec0a8d90"
+    },
+    "tokyonight-gtk-theme": {
+        "cargoLocks": null,
+        "date": "2024-07-22",
+        "extract": null,
+        "name": "tokyonight-gtk-theme",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Fausto-Korpsvart",
+            "repo": "Tokyo-Night-GTK-Theme",
+            "rev": "a9a25010e9fbfca783c3c27258dbad76a9cc7842",
+            "sha256": "sha256-HbrDDiMej4DjvskGItele/iCUY1NzlWlu3ZneA76feM=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "a9a25010e9fbfca783c3c27258dbad76a9cc7842"
+    },
+    "tokyonight-icon-theme": {
+        "cargoLocks": null,
+        "date": "2024-07-22",
+        "extract": null,
+        "name": "tokyonight-icon-theme",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Fausto-Korpsvart",
+            "repo": "Tokyo-Night-GTK-Theme",
+            "rev": "a9a25010e9fbfca783c3c27258dbad76a9cc7842",
+            "sha256": "sha256-HbrDDiMej4DjvskGItele/iCUY1NzlWlu3ZneA76feM=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "a9a25010e9fbfca783c3c27258dbad76a9cc7842"
+    }
+}

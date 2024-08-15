@@ -1,0 +1,50 @@
+{{- /* Checks if running interactively */ -}}
+{{- $interactive := stdinIsATTY -}}
+
+{{- /* Template file for chezmoi config file */ -}}
+{{- $headless := false -}}{{/* true if this machine does not have a screen and keyboard */}}
+{{- $agekey := false -}}{{/* true if this machine has agekey to decrypt secret */}}
+
+{{- $hostname := .chezmoi.hostname -}}
+{{- if eq $hostname "budimanjojo-main" -}}
+{{-   $headless = false -}}
+{{-   $agekey = true -}}
+{{- end -}}
+{{- if eq $hostname "budimanjojo-ubuntu" -}}
+{{-   $headless = false -}}
+{{-   $agekey = true -}}
+{{- end -}}
+{{- if hasKey . "headless" -}}
+{{-   $headless = .headless -}}
+{{- else if $interactive -}}
+{{-   $headless = promptBool "headless" -}}
+{{- end -}}
+{{- if hasKey . "agekey" -}}
+{{-   $agekey = .agekey -}}
+{{- else if $interactive -}}
+{{-   $agekey = promptBool "agekey" -}}
+{{- end -}}
+
+{{- if $interactive -}}
+{{-   writeToStdout "💡 Tip: you can re-enter your data with `chezmoi init --data=false`.\n" -}}
+{{- end -}}
+
+data:
+  headless: {{ $headless }}
+  agekey: {{ $agekey }}
+format: yaml
+encryption: age
+{{- if $agekey }}
+age:
+  identity: /home/budiman/.config/sops/age/keys.txt
+  recipient: age1zeqkpfz7e3s207ynea0z0auc0mrct0pc7w4sh6j3d0c4qac3dahqj9ufdg
+{{- end }}
+merge:
+  command: nvim
+  args:
+    - -d
+    - "{{ "{{ .Destination }}" }}"
+    - "{{ "{{ .Source }}" }}"
+    - "{{ "{{ .Target }}" }}"
+git:
+  autoAdd: true
