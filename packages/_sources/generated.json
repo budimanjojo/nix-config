@@ -15,6 +15,7 @@
             "repo": "fish-abbreviation-tips",
             "rev": "v0.7.0",
             "sha256": "sha256-F1t81VliD+v6WEWqj1c1ehFBXzqLyumx5vV46s/FZRU=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "v0.7.0"
@@ -86,6 +87,7 @@
             "repo": "guihua.lua",
             "rev": "225db770e36aae6a1e9e3a65578095c8eb4038d3",
             "sha256": "sha256-V5rlORFlhgjAT0n+LcpMNdY+rEqQpur/KGTGH6uFxMY=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "225db770e36aae6a1e9e3a65578095c8eb4038d3"
@@ -106,6 +108,7 @@
             "repo": "k8s-snippets",
             "rev": "ba5ca9b1b12a3b1c3fb0237494380f4feff668c8",
             "sha256": "sha256-vVDKI9HR1QqJDHh10oZQ9Zr01gvJhj1iIEgwP+gssx8=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "ba5ca9b1b12a3b1c3fb0237494380f4feff668c8"
@@ -126,6 +129,7 @@
             "repo": "krr",
             "rev": "v1.60-alpha",
             "sha256": "sha256-rIKL1SHVO3kA8xMgKwkYsnRkYepEGmGXAPUkilYboHc=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "v1.60-alpha"
@@ -146,6 +150,7 @@
             "repo": "LuaSnip",
             "rev": "v2.3.0",
             "sha256": "sha256-E1Ov6aF9DJ0poVM6q6jK1ypsJf6cRzHqC2Gi6u9kai0=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "v2.3.0"
@@ -187,6 +192,7 @@
             "repo": "mason-tool-installer.nvim",
             "rev": "c5e07b8ff54187716334d585db34282e46fa2932",
             "sha256": "sha256-HjBJkSZirQM9ZVEV0brdWx7zxAavgngXFIi8pcxO7v4=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "c5e07b8ff54187716334d585db34282e46fa2932"
@@ -243,6 +249,7 @@
             "repo": "sad.nvim",
             "rev": "869c7f3ca3dcd28fd78023db6a7e1bf8af0f4714",
             "sha256": "sha256-uwXldYA7JdZHqoB4qfCnZcQW9YBjlRWmiz8mKb9jHuI=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "869c7f3ca3dcd28fd78023db6a7e1bf8af0f4714"
@@ -263,6 +270,7 @@
             "repo": "tmux.fish",
             "rev": "e95dbc11fa57d738cd837cb659d50b73ec0a8d90",
             "sha256": "sha256-tNq/F9NQZZ1pd0ZWPzQVwuHABCVECmXRN12ovGSUUFU=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "e95dbc11fa57d738cd837cb659d50b73ec0a8d90"
