@@ -2,8 +2,6 @@
 
 echo -e "\033[0;32m>>>>> Begin Setting Up Fish Completions <<<<<\033[0m"
 
-# This script will run whenever there's an update in .config/aqua.yaml
-# .config/aqua.yaml hash: {{ include "dot_config/aqua.yaml.tmpl" | sha256sum }}
 ## Setup completions
 if not test -d $__fish_config_dir/completions
   mkdir -p $__fish_config_dir/completions

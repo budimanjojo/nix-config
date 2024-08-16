@@ -12,7 +12,12 @@ function not_needed_executable () {
   local dir=$2
   local path=$dir/$1
   local current_path
-  current_path=$(command -v "$1")
+  current_path=$(command -v "$1" || echo "notfound")
+
+  if [ "$current_path" == "notfound" ]; then
+    echo "\"$1\" not found, skip deleting"
+    return
+  fi
 
   if [ "$current_path" != "$path" ] && [ -f "$path" ]; then
     if [ "$EUID" -ne 0 ]; then
