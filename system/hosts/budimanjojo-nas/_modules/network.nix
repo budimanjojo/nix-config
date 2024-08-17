@@ -9,19 +9,9 @@
       "20-br0" = {
         netdevConfig = {
           Name = "br0";
-          Description = "virtual network interface with MAC address inherited from bridge members";
+          Description = "virtual network interface with fixed MAC address";
           Kind = "bridge";
-          MACAddress = "none";
-        };
-      };
-    };
-
-    links = {
-      "20-br0" = {
-        matchConfig.OriginalName = "br0";
-        linkConfig = {
-          Description = "do not modify the MAC address specified the netdev of br0";
-          MACAddressPolicy = "none";
+          MACAddress = "d0:50:99:25:88:91";
         };
       };
     };
