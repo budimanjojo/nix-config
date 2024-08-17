@@ -10,6 +10,7 @@ in
     ];
     sops.age = {
       keyFile = "${config.users.users.${mySystem.adminUser}.home}/.config/sops/age/keys.txt";
+      generateKey = true; # generate the key if it doesn't exist
     };
   };
 }

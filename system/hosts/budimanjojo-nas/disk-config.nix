@@ -67,6 +67,11 @@
         device = "/dev/disk/by-label/BTRFS-RAID10";
         fsType = "btrfs";
       };
+      "/home" = {
+        # This is needed for `sops-nix` to work properly on reboot
+        # see: https://github.com/Mic92/sops-nix/issues/149
+        neededForBoot = true;
+      };
     };
   };
 }
