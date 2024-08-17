@@ -2,8 +2,7 @@
 {
   imports = [
     ./disk-config.nix
-    # to be added once I'm ready to install Nixos on this machine
-    # ./hardware-configuration.nix
+    ./hardware-configuration.nix
     ./_modules # host specific modules
     ../../profiles/server.nix
   ];
