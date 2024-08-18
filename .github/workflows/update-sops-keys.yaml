@@ -23,6 +23,7 @@ jobs:
         with:
           packages: sops,findutils
           script: |
+            export SOPS_AGE_KEY=${{ secrets.SOPS_AGE_KEY }}
             find . -type f -name \*.sops.yaml ! -name .sops.yaml -exec sops updatekeys --yes {} \;
       - name: Generate token
         uses: tibdex/github-app-token@v2
