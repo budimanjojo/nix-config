@@ -12,7 +12,10 @@ in
   # only enable when we are not on NixOS
   nix = lib.mkIf (!isNixos) {
     package = pkgs.nix;
-    registry.nixpkgs.flake = inputs.nixpkgs;
+    registry = {
+      stable.flake = inputs.nixpkgs;
+      unstable.flake = inputs.nixpkgs-unstable;
+    };
 
     gc.automatic = true;
 

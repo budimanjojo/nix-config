@@ -1,8 +1,12 @@
 { inputs, ... }:
 {
   nix = {
-    # make `nix run nixpkgs#nixpkgs` use the same nixpkgs as the one used by this flake
-    registry.nixpkgs.flake = inputs.nixpkgs;
+    # make `nix run` and `nix shell` use the same nixpkgs as the one used by this flake
+    # for example, to run `talosctl` from the `unstable` branch, we can run `nix shell unstable#talosctl`
+    registry = {
+      stable.flake = inputs.nixpkgs;
+      unstable.flake = inputs.nixpkgs-unstable;
+    };
     channel.enable = false; # remove nix-channel related tools & configs, we use flakes instead
 
     settings = {
