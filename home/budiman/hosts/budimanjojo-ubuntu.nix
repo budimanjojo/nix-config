@@ -9,7 +9,7 @@
       multiplexer.zellij.enable = true;
       homelab.kubernetes.enable = true;
       shell.lf.enable = true;
-      shell.starship.enable = true;
+      shell.fish.enable = true;
     };
 
     programs.go.enable = true;

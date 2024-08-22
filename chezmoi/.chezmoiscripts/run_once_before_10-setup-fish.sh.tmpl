@@ -4,42 +4,55 @@ set -eufo pipefail
 
 echo -e "\0033[0;32m>>>>> Begin Setting Up Fish Shell <<<<<\033[0m"
 
-# Installing fish
-{{   if (eq .chezmoi.osRelease.id "debian" "ubuntu") -}}
-ppa_repo_source=fish-shell/release-3
-if ! $(apt-cache policy | grep http | awk '{print $2}' | sort -u | grep $ppa_repo_source &> /dev/null); then
-  echo "adding ppa:$ppa_repo_source repository to apt"
-{{     if ne .chezmoi.username "root" -}}
-  sudo add-apt-repository -y ppa:$ppa_repo_source
-{{     else -}}
-  add-apt-repository -y ppa:$ppa_repo_source
-{{     end -}}
-fi
-if ! $(dpkg-query -W -f='installed' fish &> /dev/null); then
-  echo "installing fish"
-{{     if ne .chezmoi.username "root" -}}
-  sudo apt install -y fish
-{{     else -}}
-  apt install -y fish
-{{     end -}}
-fi
+set_default_shell() {
+  local expected_default="{{ .chezmoi.homeDir }}/.nix-profile/bin/fish"
+  local current_default
 
-{{   else if eq .chezmoi.osRelease.id "arch" -}}
-if [ "$(pacman -Qq fish 2> /dev/null)" != fish ]; then
-  echo "installing fish"
-{{     if ne .chezmoi.username "root" -}}
-  sudo pacman -S --noconfirm fish
-{{     else -}}
-  pacman -S --noconfirm fish
-{{     end -}}
-fi
-{{   end -}}
+  current_default=$(grep "^{{ .chezmoi.username }}:" /etc/passwd | cut -d: -f7)
+
+  if [ ! -x "$expected_default" ]; then
+    echo "No fish binary found in $expected_default, skip changing default shell"
+    return
+  fi
+
+  if [ "$current_default" != "$expected_default" ]; then
+    echo "Changing default shell to fish"
+    if grep -wq "$expected_default" /etc/shells; then
+      echo "Adding $expected_default to /etc/shells"
+      echo "$expected_default" | sudo tee -a /etc/shells >/dev/null
+    fi
+    chsh -s "$expected_default"
+  fi
+}
+
+fish_source_lines() {
+  cat <<EOF
+# Nix
+if test -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
+end
+
+EOF
+}
+
+ensure_nix_fish_profile_sourced() {
+  if [ ! -f "{{ .chezmoi.homeDir }}/.config/fish/conf.d/nix.fish" ]; then
+    local target_dir="{{ .chezmoi.homeDir }}/.config/fish/conf.d"
+    mkdir -p "$target_dir"
+    echo "Writing nix.fish file to $target_dir"
+    fish_source_lines | tee "$target_dir/nix.fish" >/dev/null
+  fi
+}
 
 # Set fish as default shell
-if [ $SHELL != $(which fish) ]; then
-  echo "Changing default shell to fish"
-  chsh -s $(which fish)
-fi
+set_default_shell
+
+# Nix official installer doesn't handle fish shell Nix integration properly
+# when the operating system doesn't have fish installed in the system beforehand
+# This is not the case with Detsys installer (at least in Ubuntu)
+# Because the provided `nix-daemon.fish` is idempotent anyway
+# so there's no harm in handling it ourselves in case the installer fails to do it
+ensure_nix_fish_profile_sourced
 
 echo -e "\0033[0;32m>>>>> Finish Setting Up Fish Shell <<<<<\033[0m"
 {{ end -}}
