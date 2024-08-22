@@ -17,7 +17,7 @@ set_default_shell() {
 
   if [ "$current_default" != "$expected_default" ]; then
     echo "Changing default shell to fish"
-    if grep -wq "$expected_default" /etc/shells; then
+    if ! grep -wq "$expected_default" /etc/shells; then
       echo "Adding $expected_default to /etc/shells"
       echo "$expected_default" | sudo tee -a /etc/shells >/dev/null
     fi
