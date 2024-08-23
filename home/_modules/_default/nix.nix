@@ -28,6 +28,8 @@ in
       auto-optimise-store = true;
       keep-outputs = true;
       keep-derivations = false;
+      cores = 0;
+      max-jobs = "auto";
     };
   };
 }
