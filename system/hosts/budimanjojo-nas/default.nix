@@ -13,7 +13,7 @@
     mySystem = {
       programs.nh = {
         enable = true;
-        flake = "/home/budiman/Github/dotfiles";
+        flake = "/home/budiman/Github/nix-config";
       };
       services.btrfs-autoscrub = {
         enable = true;

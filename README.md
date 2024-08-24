@@ -81,7 +81,7 @@ I shamelessly took the pieces I believe is the best from people and modified it.
 ## :pencil:&nbsp; Neovim
 
 My `neovim` setup is packaged with [nixvim](https://github.com/nix-community/nixvim) and exposed at `legacyPackages.neovim` from this flake.
-You can run it directly if you have `nix` installed and `flakes` enabled with: `nix run github:budimanjojo/dotfiles#neovim`.
+You can run it directly if you have `nix` installed and `flakes` enabled with: `nix run github:budimanjojo/nix-config#neovim`.
 
 ## :fish:&nbsp; Fish
 

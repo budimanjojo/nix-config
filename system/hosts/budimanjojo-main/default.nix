@@ -53,7 +53,7 @@ in
       services.smartd.enable = true;
       programs.nh = {
         enable = true;
-        flake = "/home/budiman/Github/dotfiles";
+        flake = "/home/budiman/Github/nix-config";
       };
 
       services = {

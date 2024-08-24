@@ -19,7 +19,7 @@ in
 
   config.system.autoUpgrade = mkIf (cfg.enable) {
     enable = true;
-    flake = "github:budimanjojo/dotfiles";
+    flake = "github:budimanjojo/nix-config";
     flags = [
       "-L" # print build logs
     ];
