@@ -43,6 +43,19 @@ function not_needed_directory () {
   fi
 }
 
+function not_needed_file() {
+  local file=$1
+  if [ -f "$file" ]; then
+    if [ "$EUID" -ne 0 ]; then
+      sudo rm "$file"
+      echo "deleted $file, not needed anymore"
+    else
+      rm "$file"
+      echo "deleted $file, not needed anymore"
+    fi
+  fi
+}
+
 not_needed_executable "kubectl" "{{ .chezmoi.homeDir }}/.local/bin"
 not_needed_executable "flux" "{{ .chezmoi.homeDir }}/.local/bin"
 not_needed_executable "kustomize" "/usr/local/bin"
@@ -60,6 +73,8 @@ not_needed_executable "node" "/usr/local/bin"
 
 not_needed_directory "{{ .chezmoi.homeDir }}/.local/share/nvim/lsp_servers"
 not_needed_directory "{{ .chezmoi.homeDir }}/.local/share/aquaproj-aqua"
+
+not_needed_file "{{ .chezmoi.homeDir }}/.config/fish/conf.d/nix.fish"
 
 if [ "$(command -v brew)" ]; then
   echo "uninstalling brew"

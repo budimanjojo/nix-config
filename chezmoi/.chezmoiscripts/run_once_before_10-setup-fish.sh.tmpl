@@ -25,34 +25,8 @@ set_default_shell() {
   fi
 }
 
-fish_source_lines() {
-  cat <<EOF
-# Nix
-if test -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
-  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
-end
-
-EOF
-}
-
-ensure_nix_fish_profile_sourced() {
-  if [ ! -f "{{ .chezmoi.homeDir }}/.config/fish/conf.d/nix.fish" ]; then
-    local target_dir="{{ .chezmoi.homeDir }}/.config/fish/conf.d"
-    mkdir -p "$target_dir"
-    echo "Writing nix.fish file to $target_dir"
-    fish_source_lines | tee "$target_dir/nix.fish" >/dev/null
-  fi
-}
-
 # Set fish as default shell
 set_default_shell
-
-# Nix official installer doesn't handle fish shell Nix integration properly
-# when the operating system doesn't have fish installed in the system beforehand
-# This is not the case with Detsys installer (at least in Ubuntu)
-# Because the provided `nix-daemon.fish` is idempotent anyway
-# so there's no harm in handling it ourselves in case the installer fails to do it
-ensure_nix_fish_profile_sourced
 
 echo -e "\0033[0;32m>>>>> Finish Setting Up Fish Shell <<<<<\033[0m"
 {{ end -}}
