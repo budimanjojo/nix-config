@@ -21,6 +21,7 @@ in
           "$git_status"
           "$\{custom.direnv\}"
           "$fill"
+          "$nix_shell"
           "$python"
           "$status"
           "$cmd_duration"
@@ -75,6 +76,11 @@ in
 
         fill = {
           symbol = " ";
+        };
+
+        nix_shell = {
+          format = "[$symbol\\($name\\) ]($style)";
+          heuristic = true; # needed to detect `nix shell`
         };
 
         python = {
