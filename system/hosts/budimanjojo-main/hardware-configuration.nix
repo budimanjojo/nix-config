@@ -38,5 +38,9 @@
     };
     swapDevices = [ ];
     networking.useDHCP = lib.mkDefault true;
+    hardware.bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
   };
 }
