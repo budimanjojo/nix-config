@@ -79,7 +79,7 @@ in
         };
 
         nix_shell = {
-          format = "[$symbol\\($name\\) ]($style)";
+          format = "[$symbol(\\($name\\)) ]($style)";
           heuristic = true; # needed to detect `nix shell`
           symbol = "󱄅 "; # the default unicode is causing issue https://github.com/starship/starship/issues/5924
         };
