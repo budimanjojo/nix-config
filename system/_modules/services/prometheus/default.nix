@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.mySystem.monitoring.prometheus;
+  cfg = config.mySystem.services.prometheus;
   inherit (lib)
     mkEnableOption
     mkOption
@@ -9,7 +9,7 @@ let
     ;
 in
 {
-  options.mySystem.monitoring.prometheus = {
+  options.mySystem.services.prometheus = {
     enable = mkEnableOption "Prometheus";
     discordWHKey = mkOption {
       type = types.nullOr types.str;
