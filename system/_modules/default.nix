@@ -12,6 +12,9 @@
 
     ./displaymanager/sddm
 
+    ./monitoring/node-exporter
+    ./monitoring/smartctl-exporter
+
     ./programs/adb
     ./programs/hugo
     ./programs/msmtp
@@ -22,7 +25,6 @@
     ./services/grafana
     ./services/openssh
     ./services/prometheus
-    ./services/smartd
 
     ./system/autoupgrade
     ./system/bootloader

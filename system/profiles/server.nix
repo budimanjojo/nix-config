@@ -5,7 +5,6 @@ in
 {
   config = {
     mySystem = {
-      services.smartd.enable = true;
       system.autoupgrade.enable = true;
       services.openssh = {
         enable = true;
@@ -15,7 +14,10 @@ in
           pubkeys.op9-termux
         ];
       };
-
+      monitoring = {
+        node-exporter.enable = true;
+        smartctl-exporter.enable = true;
+      };
     };
   };
 }

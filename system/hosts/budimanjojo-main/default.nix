@@ -50,7 +50,6 @@ in
 
     mySystem = {
       displaymanager.sddm.wallpaper = ./wallpapers/tokyonight01-left.png;
-      services.smartd.enable = true;
       programs.nh = {
         enable = true;
         flake = "/home/budiman/Github/nix-config";
