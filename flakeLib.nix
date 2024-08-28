@@ -50,7 +50,7 @@ in
       mkHomeUsers =
         users:
         if users == [ ] then
-          users
+          [ ]
         else
           [
             {
