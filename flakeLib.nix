@@ -33,6 +33,7 @@ in
       baseModules ? [
         inputs.sops-nix.nixosModules.sops
         inputs.home-manager.nixosModules.home-manager
+        inputs.catppuccin.nixosModules.catppuccin
         ./system/_modules # all machines get my own NixOS modules
         ./system/hosts # entrypoint to all machines
         {
@@ -73,6 +74,7 @@ in
                 };
                 sharedModules = [
                   inputs.sops-nix.homeManagerModules.sops
+                  inputs.catppuccin.homeManagerModules.catppuccin
                   ./home/_modules # all users get my own home-manager modules
                 ];
               };
@@ -107,6 +109,7 @@ in
       };
       modules = [
         inputs.sops-nix.homeManagerModules.sops
+        inputs.catppuccin.homeManagerModules.catppuccin
         ./home/_modules # all users get my own home-manager modules
         {
           imports = [ ./home/${username} ];

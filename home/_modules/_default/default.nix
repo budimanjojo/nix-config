@@ -16,5 +16,10 @@ in
     };
 
     programs.home-manager.enable = true;
+
+    catppuccin = {
+      flavor = "mocha";
+      accent = "mauve";
+    };
   };
 }

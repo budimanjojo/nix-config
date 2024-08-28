@@ -21,6 +21,11 @@ in
 
     services.displayManager.autoLogin.user = mySystem.adminUser;
 
+    catppuccin = {
+      flavor = "mocha";
+      accent = "mauve";
+    };
+
     # do not change unless you know what you are doing
     system.stateVersion = "23.11";
     documentation.nixos.enable = false;
