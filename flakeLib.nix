@@ -1,20 +1,7 @@
-{ inputs }:
+{ inputs, mkPkgsWithSystem }:
 let
   # my own custom lib will be accessible with `lib.myLib.<name>`
   lib = inputs.nixpkgs.lib.extend (final: prev: { myLib = import ./lib { lib = final; }; });
-
-  overlayAttrs = import ./overlays { inherit inputs; };
-  # function to make `pkgs` for defined system with my overlays
-  mkPkgsWithSystem =
-    system:
-    import inputs.nixpkgs {
-      inherit system;
-      overlays = builtins.attrValues overlayAttrs;
-      config = {
-        allowUnfree = true;
-        allowUnfreePredicate = _: true;
-      };
-    };
 in
 {
   mkSystem =

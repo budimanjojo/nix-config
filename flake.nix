@@ -64,7 +64,19 @@
   outputs =
     { flake-parts, ... }@inputs:
     let
-      flakeLib = import ./flakeLib.nix { inherit inputs; };
+      # function to make `pkgs` for defined system with my overlays
+      mkPkgsWithSystem =
+        system:
+        import inputs.nixpkgs {
+          inherit system;
+          overlays = builtins.attrValues (import ./overlays { inherit inputs; });
+          config = {
+            allowUnfree = true;
+            allowUnfreePredicate = _: true;
+          };
+        };
+
+      flakeLib = import ./flakeLib.nix { inherit inputs mkPkgsWithSystem; };
     in
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       # systems for which you want to build the `perSystem` attributes
@@ -74,12 +86,15 @@
       # added in the middle by `flake-parts`
       perSystem =
         {
+          system,
           inputs',
           self',
           pkgs,
           ...
         }:
         {
+          # override pkgs used by everything in `perSystem` to have my overlays
+          _module.args.pkgs = mkPkgsWithSystem system;
           # accessible via `nix fmt` to format code
           formatter = pkgs.nixfmt-rfc-style;
           # accessible via `nix build .#<name>`
@@ -110,11 +125,5 @@
           "budiman@budimanjojo-ubuntu" = flakeLib.mkHome { hostname = "budimanjojo-ubuntu"; };
         };
       };
-      # flake.nixosConfigurations = {
-      #   budimanjojo-vm = myLib.mkNixosSystem "x86_64-linux" "budimanjojo-vm" "budiman";
-      # };
-      #
-      # flake.homeConfigurations = {
-      # };
     };
 }
