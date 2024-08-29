@@ -199,7 +199,7 @@
     },
     "oil-nvim": {
         "cargoLocks": null,
-        "date": "2024-08-25",
+        "date": "2024-08-28",
         "extract": null,
         "name": "oil-nvim",
         "passthru": null,
@@ -211,12 +211,12 @@
             "name": null,
             "owner": "stevearc",
             "repo": "oil.nvim",
-            "rev": "4f3c6780ff272d8facab69a658cf8693582b7a54",
-            "sha256": "sha256-zP0Z/I5f264+mXtLNqHxyjeO8i9w8uk/o1n6s2ajtBY=",
+            "rev": "30e0438ff08f197d7ce4a417445ab97ee72efe2d",
+            "sha256": "sha256-YY+hxNbxHCAlH5TxlYMDdNPwVEPOfVZHXv760vDuO1M=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "4f3c6780ff272d8facab69a658cf8693582b7a54"
+        "version": "30e0438ff08f197d7ce4a417445ab97ee72efe2d"
     },
     "prometheus-api-client": {
         "cargoLocks": null,
