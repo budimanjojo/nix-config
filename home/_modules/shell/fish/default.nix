@@ -91,7 +91,6 @@ in
           fish_vi_key_bindings
 
           # fzf-fish
-          set -x FZF_DEFAULT_OPTS '--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*" --color=fg:white,bg:black,hl:red,fg+:white,hl+:red,info:yellow,prompt:blue,pointer:magenta,marker:magenta,spinner:green,header:blue,border:white'
           set fzf_preview_dir_cmd eza --all --color=always
           set fzf_fd_opts --hidden --exclude=.git --exclude=.github --exclude=.cache
           fzf_configure_bindings --git_log=\cg --git_status=\cs --variables=\cv --directory=\cf --history=\cr
@@ -134,16 +133,33 @@ in
           ll = "eza -l --git --icons --sort = type";
         };
       };
+
       zoxide.enable = true;
+
       bat = {
         enable = true;
         config.theme = "ansi";
+      };
+
+      fzf = {
+        enable = true;
+        defaultCommand = "${pkgs.fd}/bin/fd --type f";
+        defaultOptions = [
+          "--cycle"
+          "--layout reverse"
+          "--border"
+          "--height 40%"
+          "--preview-window wrap"
+          "--marker *"
+        ];
+        changeDirWidgetCommand = "${pkgs.fd}/bin/fd --type d";
+        changeDirWidgetOptions = [ "--preview 'tree -C {} | head -200'" ];
+        catppuccin.enable = true;
       };
     };
     home.packages = with pkgs; [
       eza
       fd
-      fzf
     ];
   };
 }
