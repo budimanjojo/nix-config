@@ -15,20 +15,27 @@
       }
     ];
 
-    highlightOverride = {
-      ## Floating window border color
-      FloatBorder.fg = "#C0CAF5";
-    };
-
     opts = {
       background = "dark";
       termguicolors = true;
       signcolumn = "yes";
       cursorcolumn = true;
     };
-    colorschemes.tokyonight = {
+
+    colorschemes.catppuccin = {
       enable = true;
-      settings.style = "night";
+      settings = {
+        flavor = "mocha";
+        integrations = {
+          fzf = true;
+          indent_blankline = {
+            enabled = true;
+            scope_color = "mauve";
+          };
+          nvim_surround = true;
+          lsp_trouble = true;
+        };
+      };
     };
   };
 }

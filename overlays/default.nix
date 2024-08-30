@@ -15,6 +15,18 @@
 
   # Your own overlays for nixpkgs should be declared here
   nixpkgs-overlays = final: prev: {
+    vimPlugins = prev.vimPlugins // {
+      # this version have fzf integration added
+      catppuccin-nvim = prev.vimPlugins.catppuccin-nvim.overrideAttrs (oldAttrs: {
+        version = "2024-08-20";
+        src = prev.fetchFromGitHub {
+          owner = "catppuccin";
+          repo = "nvim";
+          rev = "4fd72a9ab64b393c2c22b168508fd244877fec96";
+          sha256 = "sha256-aNmnn7Ym3+OnuvSgpke6rw4AkoVfNCpbjV71JF1c9rs=";
+        };
+      });
+    };
     # talosctl = prev.talosctl.override {
     #   buildGoModule =
     #     args:

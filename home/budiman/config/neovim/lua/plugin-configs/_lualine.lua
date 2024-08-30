@@ -2,7 +2,7 @@ require('lualine').setup {
   options = {
     globalstatus = false,
     icons_enabled = true,
-    theme = 'tokyonight',
+    theme = 'catppuccin',
     section_separators = { left = '', right = '' },
     component_separators = '',
     disabled_filetypes = { 'oil' },

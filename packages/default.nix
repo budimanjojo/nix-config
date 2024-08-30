@@ -15,6 +15,8 @@
   kubectl-rook-ceph = pkgs.callPackage ./kubectl-rook-ceph/default.nix { };
   gopls = pkgs.callPackage ./gopls/default.nix { };
   neovim = inputs'.nixvim.legacyPackages.makeNixvimWithModule {
+    # make nixvim use the same pkgs with my overlays added
+    inherit pkgs;
     extraSpecialArgs = {
       myPkgs = self'.legacyPackages;
     };
