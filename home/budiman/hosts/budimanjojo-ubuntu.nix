@@ -14,5 +14,8 @@
 
     programs.go.enable = true;
     home.packages = [ pkgs.hugo ];
+
+    # this add nix installed desktop files to be shown in application menu
+    targets.genericLinux.enable = true;
   };
 }
