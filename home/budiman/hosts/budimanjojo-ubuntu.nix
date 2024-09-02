@@ -10,6 +10,7 @@
       homelab.kubernetes.enable = true;
       shell.lf.enable = true;
       shell.fish.enable = true;
+      terminal-emulator.alacritty.enable = true;
     };
 
     programs.go.enable = true;
@@ -17,5 +18,6 @@
 
     # this add nix installed desktop files to be shown in application menu
     targets.genericLinux.enable = true;
+    nixGL.prefix = "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel";
   };
 }

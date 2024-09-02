@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 with lib;
 let
   cfg = config.myHome.terminal-emulator.alacritty;
@@ -11,6 +16,7 @@ in
   config = mkIf (cfg.enable) {
     programs.alacritty = {
       enable = true;
+      package = (config.lib.nixGL.wrap pkgs.alacritty);
       settings = {
         live_config_reload = true;
         env.TERM = "xterm-256color";

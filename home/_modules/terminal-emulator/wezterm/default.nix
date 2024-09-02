@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.myHome.terminal-emulator.wezterm;
 in
@@ -10,6 +15,7 @@ in
   config = lib.mkIf (cfg.enable) {
     programs.wezterm = {
       enable = true;
+      package = (config.lib.nixGL.wrap pkgs.wezterm);
       extraConfig = ''
         local wezterm = require 'wezterm'
         local act = wezterm.action

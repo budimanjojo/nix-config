@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.myHome.terminal-emulator.kitty;
 in
@@ -10,6 +15,7 @@ in
   config = lib.mkIf (cfg.enable) {
     programs.kitty = {
       enable = true;
+      package = (config.lib.nixGL.wrap pkgs.kitty);
       font = {
         name = "UbuntuMono Nerd Font";
         size = 12;

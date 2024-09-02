@@ -1,0 +1,44 @@
+{{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "debian" "ubuntu")) -}}
+#!/bin/bash
+
+echo -e "\033[0;32m>>>>> Begin Setting Up Nix Applications <<<<<\033[0m"
+
+set -eufo pipefail
+
+# This script will ensure the applications installed by Nix is known by the OS
+# So `update-alternatives` program used by Debian based OS to open program can work properly
+
+function add_nix_app_to_update_alternative() {
+  local program="{{ .chezmoi.homeDir }}/.nix-profile/bin/$1"
+  local priority=$2
+  local to_link="${3:-x-terminal-emulator}"
+
+  # skip if program is not installed
+  if [[ ! -x "$program" ]]; then
+    return
+  fi
+
+  local found
+  found=$(update-alternatives --list "$to_link" | grep -x "$program")
+
+  if [[ -n "$found" ]]; then
+    local cur_priority
+    cur_priority="$(update-alternatives --display "$to_link" | sed -n "s|^$program - priority \([0-9]\+\)$|\1|p")"
+    if [ "$cur_priority" != "$priority" ]; then
+      echo "updating $program priority as $to_link from $cur_priority to $priority"
+      sudo update-alternatives --install "$(which "$to_link")" "$to_link" "$program" "$priority"
+      return
+    fi
+  else
+    echo "installing $program as $to_link with priority of $priority"
+    sudo update-alternatives --install "$(which "$to_link")" "$to_link" "$program" "$priority"
+    return
+  fi
+}
+
+add_nix_app_to_update_alternative "alacritty" "9999"
+add_nix_app_to_update_alternative "kitty" "9998"
+add_nix_app_to_update_alternative "wezterm" "9997"
+
+echo -e "\033[0;32m>>>>> Finish Setting Up Nix Applications <<<<<\033[0m"
+{{ end -}}

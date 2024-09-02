@@ -4,6 +4,10 @@
   # through `pkgs.nur`
   nur = inputs.nur.overlay;
 
+  # nixGL pkgs set (declared in the flake inputs) will be accessible
+  # through `pkgs.nixgl`
+  nixgl = inputs.nixgl.overlay;
+
   # The unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through `pkgs.unstable`
   unstable-packages = final: prev: {
