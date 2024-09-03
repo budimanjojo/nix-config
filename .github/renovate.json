@@ -4,7 +4,7 @@
   ],
   "username": "budimanjojo-bot[bot]",
   "gitAuthor": "budimanjojo-bot <111944664+budimanjojo-bot[bot]@users.noreply.github.com>",
-  "repositories": ["budimanjojo/dotfiles"],
+  "repositories": ["budimanjojo/nix-config"],
   "automerge": true,
   "ignoreTests": true,
   "lockFileMaintenance": {
