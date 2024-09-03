@@ -33,7 +33,7 @@ jobs:
           private_key: ${{ secrets.BOT_APP_PRIVATE_KEY }}
       - name: Create Pull Request
         id: cpr
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ steps.generate-token.outputs.token }}
           title: "chore(sops): update sops secrets with new public keys"
