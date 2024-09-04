@@ -26,6 +26,7 @@ in
     programs = {
       fish = {
         enable = true;
+        catppuccin.enable = true;
         package = mkIf (!isNixos) (
           pkgs.fish.override {
             fishEnvPreInit = ''
@@ -94,32 +95,6 @@ in
           set fzf_preview_dir_cmd eza --all --color=always
           set fzf_fd_opts --hidden --exclude=.git --exclude=.github --exclude=.cache
           fzf_configure_bindings --git_log=\cg --git_status=\cs --variables=\cv --directory=\cf --history=\cr
-
-          # override default colors
-          set -l orange FF9E64
-          set -l pink BB9AF7
-          set -l purple 9D7CD8
-          set -l grey1 565F89
-          set -l grey2 33467C
-          set fish_color_normal white
-          set fish_color_command cyan
-          set fish_color_keyword $pink
-          set fish_color_quote yellow
-          set fish_color_redirection white
-          set fish_color_end $orange
-          set fish_color_error red --bold
-          set fish_color_param $purple
-          set fish_color_comment $grey1
-          set fish_color_selection --background $selection
-          set fish_color_match yellow
-          set fish_color_search_match --background $grey2
-          set fish_color_operator green  You, 2023-12-12 -
-          set fish_color_escape $pink
-          set fish_color_autosuggestion $comment
-          set fish_pager_color_progress $comment
-          set fish_pager_color_prefix cyan
-          set fish_pager_color_completion white
-          set fish_pager_color_description $comment
         '';
 
         shellAbbrs = {
