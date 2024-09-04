@@ -3,7 +3,6 @@ require('fzf-lua').setup {
     ['--layout'] = 'reverse-list',
     ['--prompt'] = ' ',
     ['--info'] = 'default',
-    ['--color'] = 'fg:white,bg:black,hl:red,fg+:white,hl+:red,info:yellow,prompt:blue,pointer:magenta,marker:magenta,spinner:green,header:blue',
   },
   winopts = {
     hl = {
