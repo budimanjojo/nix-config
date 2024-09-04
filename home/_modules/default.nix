@@ -27,6 +27,7 @@ in
     ./programs/beeaccounting
     ./programs/chezmoi
     ./programs/obs-studio
+    ./programs/go
     ./programs/qmk
     ./programs/yamllint
 

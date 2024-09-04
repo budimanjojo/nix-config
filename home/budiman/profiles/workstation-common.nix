@@ -10,9 +10,8 @@
       browser.firefox.enable = true;
       services.nextcloud-client.enable = true;
       homelab.kubernetes.enable = true;
+      programs.go.enable = true;
     };
-
-    programs.go.enable = true;
 
     home.packages = with pkgs; [
       geany

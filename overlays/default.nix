@@ -14,10 +14,17 @@
     unstable = import inputs.nixpkgs-unstable {
       inherit (final) system;
       config.allowUnfree = true;
+      overlays = [
+        # overlays of unstable packages are declared here
+        (final: prev: {
+          gopls = prev.gopls.override { buildGoModule = prev.buildGo123Module; };
+          golangci-lint = prev.golangci-lint.override { buildGoModule = prev.buildGo123Module; };
+        })
+      ];
     };
   };
 
-  # Your own overlays for nixpkgs should be declared here
+  # Your own overlays for stable nixpkgs should be declared here
   nixpkgs-overlays = final: prev: {
     vimPlugins = prev.vimPlugins // {
       # this version have fzf integration added

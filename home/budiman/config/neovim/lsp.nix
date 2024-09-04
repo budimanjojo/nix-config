@@ -1,4 +1,4 @@
-{ pkgs, myPkgs, ... }:
+{ pkgs, ... }:
 {
   config = {
     extraPlugins = [
@@ -78,8 +78,7 @@
           ## gopls
           gopls = {
             enable = true;
-            # TODO: https://github.com/NixOS/nixpkgs/issues/293180
-            package = myPkgs.gopls;
+            package = pkgs.unstable.gopls;
             extraOptions = {
               settings = {
                 gopls = {
@@ -193,7 +192,10 @@
               enable = true;
               withArgs = "{ filetypes = { 'yaml.ansible' } }";
             };
-            golangci_lint.enable = true;
+            golangci_lint = {
+              enable = true;
+              package = pkgs.unstable.golangci-lint;
+            };
             markdownlint.enable = true;
             write_good.enable = true;
             yamllint.enable = true;

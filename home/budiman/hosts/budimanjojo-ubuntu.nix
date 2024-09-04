@@ -4,6 +4,7 @@
     myHome = {
       programs = {
         chezmoi.enable = true;
+        go.enable = true;
         qmk.enable = true;
       };
       multiplexer.zellij.enable = true;
@@ -13,7 +14,6 @@
       terminal-emulator.alacritty.enable = true;
     };
 
-    programs.go.enable = true;
     home.packages = [ pkgs.hugo ];
 
     # this add nix installed desktop files to be shown in application menu
