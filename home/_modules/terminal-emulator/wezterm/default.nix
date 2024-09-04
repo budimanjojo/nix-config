@@ -40,7 +40,7 @@ in
           window_close_confirmation = "NeverPrompt",
 
           -- Color scheme
-          color_scheme = "tokyonight_night",
+          color_scheme = "Catppuccin Mocha",
 
           -- Keyboard shortcuts
           disable_default_key_bindings = true,
