@@ -10,57 +10,65 @@ in
   config = lib.mkIf (cfg.enable) {
     programs.starship = {
       enable = true;
+      catppuccin.enable = true;
       settings = {
         add_newline = false;
         command_timeout = 1000;
         format = lib.concatStrings [
+          "$os"
           "$username"
           "$hostname"
           "$directory"
           "$git_branch"
           "$git_status"
-          "$\{custom.direnv\}"
           "$fill"
+          "$direnv"
           "$nix_shell"
           "$python"
-          "$status"
           "$cmd_duration"
+          "$status"
           "$line_break"
           "$character"
         ];
 
+        os = {
+          disabled = false;
+          format = "[](fg:blue)[ $symbol ](fg:mantle bg:blue)[](fg:blue bg:surface0)";
+          symbols = {
+            Arch = "󰣇 ";
+            NixOS = "󱄅 ";
+            Ubuntu = " ";
+          };
+        };
+
         username = {
-          style_user = "yellow";
-          style_root = "red";
-          format = "[$user]($style)";
+          style_user = "fg:peach bg:surface0";
+          style_root = "fg:red bg:surface0";
+          format = "[ $user]($style)";
           show_always = false;
         };
 
         hostname = {
           ssh_only = true;
-          format = "[@$hostname]($style) in ";
-          style = "green";
+          format = "[@$hostname](fg:green bg:surface0)";
         };
 
         directory = {
           truncation_length = 3;
-          format = "[$path]($style)[$read_only]($read_only_style) ";
-          style = "blue";
-          read_only = " ";
+          format = "[ in](fg:text bg:surface0)[ $path ](fg:blue bg:surface0)([$read_only ](fg:red bg:surface0))[](fg:surface0)";
+          read_only = "";
           truncation_symbol = "../";
           truncate_to_repo = true;
           fish_style_pwd_dir_length = 1;
         };
 
         git_branch = {
-          format = "on [$symbol$branch]($style) ";
-          style = "purple";
+          format = "[ $symbol$branch ](fg:mauve)";
           symbol = " ";
         };
 
         git_status = {
-          format = "([$all_status$ahead_behind]($style) )";
-          style = "purple";
+          format = "[$all_status$ahead_behind](fg:mauve)";
           conflicted = " ";
           ahead = " ";
           behind = " ";
@@ -78,8 +86,14 @@ in
           symbol = " ";
         };
 
+        direnv = {
+          disabled = false;
+          format = "[$symbol\\($loaded/$allowed\\) ](fg:blue)";
+          symbol = "  ";
+        };
+
         nix_shell = {
-          format = "[$symbol(\\($name\\)) ]($style)";
+          format = "[$symbol(\\($name\\)) ](fg:blue)";
           heuristic = true; # needed to detect `nix shell`
           symbol = "󱄅 "; # the default unicode is causing issue https://github.com/starship/starship/issues/5924
         };
@@ -89,31 +103,22 @@ in
           symbol = "🐍 ";
         };
 
-        status = {
-          disabled = false;
-          format = "[$symbol]($style) ";
-          symbol = " ";
-          success_symbol = " ";
-          style = "red";
+        cmd_duration = {
+          min_time = 0;
+          format = "[](fg:surface0)[ took](fg:text bg:surface0)[ $duration ](fg:yellow bg:surface0)";
         };
 
-        cmd_duration = {
-          min_time = 2000;
-          format = "took [$duration]($style) ";
-          style = "yellow";
+        status = {
+          disabled = false;
+          format = "[](fg:blue bg:surface0)[ $symbol](fg:mantle bg:blue)[](fg:blue)";
+          symbol = " ";
+          success_symbol = " ";
         };
 
         character = {
           success_symbol = "[](green)";
           error_symbol = "[](green)";
-          vicmd_symbol = "[](purple)";
-        };
-
-        custom.direnv = {
-          format = "[$symbol]($style)";
-          symbol = "  ";
-          style = "blue";
-          when = "env | grep -E '^DIRENV_FILE='";
+          vicmd_symbol = "[](mauve)";
         };
       };
     };
