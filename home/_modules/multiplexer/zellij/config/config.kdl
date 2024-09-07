@@ -1,4 +1,5 @@
 default_mode "normal"
+theme "catppuccin-mocha"
 keybinds clear-defaults=true {
   normal {
     bind "Alt a" { SwitchToMode "tmux"; }
@@ -34,22 +35,6 @@ keybinds clear-defaults=true {
     bind "Alt a" { SwitchToMode "tmux"; }
     bind "Enter" { SwitchToMode "normal"; }
     bind "Esc" { UndoRenameTab; SwitchToMode "normal"; }
-  }
-}
-
-themes {
-  default {
-    fg "#C0CAF5"
-    bg "#1A1B26"
-    black "#15161E"
-    red "#F7768E"
-    green "#9ECE6A"
-    yellow "#E0AF68"
-    blue "#7AA2F7"
-    magenta "#BB9AF7"
-    cyan "#7DCFFF"
-    white "#C0CAF5"
-    orange "#FF9E64"
   }
 }
 
