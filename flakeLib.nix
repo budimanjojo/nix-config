@@ -35,38 +35,33 @@ in
       extraModules ? [ ],
     }:
     let
-      mkHomeUsers =
-        users:
-        if users == [ ] then
-          [ ]
-        else
-          [
-            {
-              config.home-manager = {
-                users = builtins.listToAttrs (
-                  builtins.map (name: {
-                    name = name;
-                    value = {
-                      imports = [ ./home/${name} ];
-                      config.myHome = {
-                        username = name;
-                      };
-                    };
-                  }) users
-                );
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = {
-                  inherit inputs myPkgs hostname;
+      mkHomeUsers = lib.optionals (homeUsers != [ ]) [
+        {
+          config.home-manager = {
+            users = builtins.listToAttrs (
+              builtins.map (name: {
+                name = name;
+                value = {
+                  imports = [ ./home/${name} ];
+                  config.myHome = {
+                    username = name;
+                  };
                 };
-                sharedModules = [
-                  inputs.sops-nix.homeManagerModules.sops
-                  inputs.catppuccin.homeManagerModules.catppuccin
-                  ./home/_modules # all users get my own home-manager modules
-                ];
-              };
-            }
-          ];
+              }) homeUsers
+            );
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            extraSpecialArgs = {
+              inherit inputs myPkgs hostname;
+            };
+            sharedModules = [
+              inputs.sops-nix.homeManagerModules.sops
+              inputs.catppuccin.homeManagerModules.catppuccin
+              ./home/_modules # all users get my own home-manager modules
+            ];
+          };
+        }
+      ];
     in
     nixpkgs.lib.nixosSystem {
       inherit system lib;
@@ -74,7 +69,7 @@ in
       specialArgs = {
         inherit inputs myPkgs hostname;
       };
-      modules = baseModules ++ extraModules ++ mkHomeUsers homeUsers;
+      modules = baseModules ++ extraModules ++ mkHomeUsers;
     };
 
   mkHome =
