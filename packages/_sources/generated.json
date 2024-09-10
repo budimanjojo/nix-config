@@ -199,7 +199,7 @@
     },
     "oil-nvim": {
         "cargoLocks": null,
-        "date": "2024-08-30",
+        "date": "2024-09-10",
         "extract": null,
         "name": "oil-nvim",
         "passthru": null,
@@ -211,12 +211,12 @@
             "name": null,
             "owner": "stevearc",
             "repo": "oil.nvim",
-            "rev": "1fe476daf0b3c108cb8ee1fc1226cc282fa2c9c1",
-            "sha256": "sha256-vBQA+IhqakMmAVQrAZbvJkN9wLGqJ3m0EjoUi4uI9MA=",
+            "rev": "1eb9fb35a4613518f79790117ed82c367a0b4a22",
+            "sha256": "sha256-B/YSQmoq4ksvXmqIgOa2sRrPV/rf5sgJaRWRDYBx5zk=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "1fe476daf0b3c108cb8ee1fc1226cc282fa2c9c1"
+        "version": "1eb9fb35a4613518f79790117ed82c367a0b4a22"
     },
     "prometheus-api-client": {
         "cargoLocks": null,
@@ -277,7 +277,7 @@
     },
     "tokyonight-gtk-theme": {
         "cargoLocks": null,
-        "date": "2024-08-27",
+        "date": "2024-09-10",
         "extract": null,
         "name": "tokyonight-gtk-theme",
         "passthru": null,
@@ -289,16 +289,16 @@
             "name": null,
             "owner": "Fausto-Korpsvart",
             "repo": "Tokyo-Night-GTK-Theme",
-            "rev": "5fd0d64467f16cc87ae005374a58b4f5b10ea327",
-            "sha256": "sha256-ZlW7IbLaniC+d4G9cp7cncqHP/yW42jW7+M3kT9kusk=",
+            "rev": "95f659c786d3614b6a31491e4a00926b694edc91",
+            "sha256": "sha256-GSNG+SpAlvNEVUZ5SPobwr6R3tDiZ5o2EjwyUXBj67Y=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "5fd0d64467f16cc87ae005374a58b4f5b10ea327"
+        "version": "95f659c786d3614b6a31491e4a00926b694edc91"
     },
     "tokyonight-icon-theme": {
         "cargoLocks": null,
-        "date": "2024-08-27",
+        "date": "2024-09-10",
         "extract": null,
         "name": "tokyonight-icon-theme",
         "passthru": null,
@@ -310,11 +310,11 @@
             "name": null,
             "owner": "Fausto-Korpsvart",
             "repo": "Tokyo-Night-GTK-Theme",
-            "rev": "5fd0d64467f16cc87ae005374a58b4f5b10ea327",
-            "sha256": "sha256-ZlW7IbLaniC+d4G9cp7cncqHP/yW42jW7+M3kT9kusk=",
+            "rev": "95f659c786d3614b6a31491e4a00926b694edc91",
+            "sha256": "sha256-GSNG+SpAlvNEVUZ5SPobwr6R3tDiZ5o2EjwyUXBj67Y=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "5fd0d64467f16cc87ae005374a58b4f5b10ea327"
+        "version": "95f659c786d3614b6a31491e4a00926b694edc91"
     }
 }
