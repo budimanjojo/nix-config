@@ -112,15 +112,15 @@
   };
   oil-nvim = {
     pname = "oil-nvim";
-    version = "1fe476daf0b3c108cb8ee1fc1226cc282fa2c9c1";
+    version = "1eb9fb35a4613518f79790117ed82c367a0b4a22";
     src = fetchFromGitHub {
       owner = "stevearc";
       repo = "oil.nvim";
-      rev = "1fe476daf0b3c108cb8ee1fc1226cc282fa2c9c1";
+      rev = "1eb9fb35a4613518f79790117ed82c367a0b4a22";
       fetchSubmodules = false;
-      sha256 = "sha256-vBQA+IhqakMmAVQrAZbvJkN9wLGqJ3m0EjoUi4uI9MA=";
+      sha256 = "sha256-B/YSQmoq4ksvXmqIgOa2sRrPV/rf5sgJaRWRDYBx5zk=";
     };
-    date = "2024-08-30";
+    date = "2024-09-10";
   };
   prometheus-api-client = {
     pname = "prometheus-api-client";
@@ -156,26 +156,26 @@
   };
   tokyonight-gtk-theme = {
     pname = "tokyonight-gtk-theme";
-    version = "5fd0d64467f16cc87ae005374a58b4f5b10ea327";
+    version = "95f659c786d3614b6a31491e4a00926b694edc91";
     src = fetchFromGitHub {
       owner = "Fausto-Korpsvart";
       repo = "Tokyo-Night-GTK-Theme";
-      rev = "5fd0d64467f16cc87ae005374a58b4f5b10ea327";
+      rev = "95f659c786d3614b6a31491e4a00926b694edc91";
       fetchSubmodules = false;
-      sha256 = "sha256-ZlW7IbLaniC+d4G9cp7cncqHP/yW42jW7+M3kT9kusk=";
+      sha256 = "sha256-GSNG+SpAlvNEVUZ5SPobwr6R3tDiZ5o2EjwyUXBj67Y=";
     };
-    date = "2024-08-27";
+    date = "2024-09-10";
   };
   tokyonight-icon-theme = {
     pname = "tokyonight-icon-theme";
-    version = "5fd0d64467f16cc87ae005374a58b4f5b10ea327";
+    version = "95f659c786d3614b6a31491e4a00926b694edc91";
     src = fetchFromGitHub {
       owner = "Fausto-Korpsvart";
       repo = "Tokyo-Night-GTK-Theme";
-      rev = "5fd0d64467f16cc87ae005374a58b4f5b10ea327";
+      rev = "95f659c786d3614b6a31491e4a00926b694edc91";
       fetchSubmodules = false;
-      sha256 = "sha256-ZlW7IbLaniC+d4G9cp7cncqHP/yW42jW7+M3kT9kusk=";
+      sha256 = "sha256-GSNG+SpAlvNEVUZ5SPobwr6R3tDiZ5o2EjwyUXBj67Y=";
     };
-    date = "2024-08-27";
+    date = "2024-09-10";
   };
 }
