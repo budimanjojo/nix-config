@@ -19,7 +19,7 @@ function add_nix_app_to_update_alternative() {
   fi
 
   local found
-  found=$(update-alternatives --list "$to_link" | grep -x "$program")
+  found=$(update-alternatives --list "$to_link" | grep -x "$program" || true)
 
   if [[ -n "$found" ]]; then
     local cur_priority
