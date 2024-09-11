@@ -8,22 +8,27 @@ set -eufo pipefail
 # This script will ensure the applications installed by Nix is known by the OS
 # So `update-alternatives` program used by Debian based OS to open program can work properly
 
+# Run this script whenever the content of the host configuration for this machine changes
+# {{ include (print "../" "/home/" .chezmoi.username "/hosts/" .chezmoi.hostname ".nix") | sha256sum }}
+
 function add_nix_app_to_update_alternative() {
   local program="{{ .chezmoi.homeDir }}/.nix-profile/bin/$1"
   local priority=$2
   local to_link="${3:-x-terminal-emulator}"
 
-  # skip if program is not installed
+  local found
+  found=$(update-alternatives --quiet --list "$to_link" | grep -x "$program" || true)
+
+  # if program is not installed, proceed to remove it from the list
+  # this is not really an efficient approach but there's no way to get `update-alternatives` to show binary that doesn't exist
   if [[ ! -x "$program" ]]; then
+    sudo update-alternatives --quiet --remove "$to_link" "$program"
     return
   fi
 
-  local found
-  found=$(update-alternatives --list "$to_link" | grep -x "$program" || true)
-
   if [[ -n "$found" ]]; then
     local cur_priority
-    cur_priority="$(update-alternatives --display "$to_link" | sed -n "s|^$program - priority \([0-9]\+\)$|\1|p")"
+    cur_priority="$(update-alternatives --quiet --display "$to_link" | sed -n "s|^$program - priority \([0-9]\+\)$|\1|p")"
     if [ "$cur_priority" != "$priority" ]; then
       echo "updating $program priority as $to_link from $cur_priority to $priority"
       sudo update-alternatives --install "$(which "$to_link")" "$to_link" "$program" "$priority"
