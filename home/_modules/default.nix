@@ -26,6 +26,7 @@ in
 
     ./programs/beeaccounting
     ./programs/chezmoi
+    ./programs/fontconfig
     ./programs/obs-studio
     ./programs/go
     ./programs/qmk

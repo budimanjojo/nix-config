@@ -105,7 +105,7 @@ Starship requires powerline fonts to work.
 I suggest [Nerd-fonts](https://github.com/ryanoasis/nerd-fonts).
 The font in the screenshot above is using UbuntuMono Nerd Font Regular.
 Unifont is also for some glyphs to work.
-On non NixOS machines, `chezmoi` will install these fonts automatically.
+On non NixOS machines, `home-manager` will install these fonts automatically.
 
 ## :scroll:&nbsp; Cheatsheet
 
