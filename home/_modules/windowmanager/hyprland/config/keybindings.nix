@@ -79,7 +79,7 @@
     "SUPER SHIFT, c, execr, hyprctl reload"
 
     # Most used applications
-    "SUPER, t, exec, ${config.programs.alacritty.package}/bin/alacritty"
+    "SUPER, t, exec, ${config.programs.wezterm.package}/bin/wezterm"
     "SUPER, f, exec, thunar" # use system provided thunar package
     "SUPER, c, exec, ${pkgs.gnome.gnome-calculator}/bin/gnome-calculator"
 
