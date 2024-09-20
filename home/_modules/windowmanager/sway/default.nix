@@ -3,7 +3,6 @@
   osConfig,
   lib,
   pkgs,
-  myPkgs,
   ...
 }:
 let
@@ -35,7 +34,7 @@ in
         xdg.enable = true;
       };
 
-      terminal-emulator.alacritty.enable = true;
+      terminal-emulator.wezterm.enable = true;
     };
 
     warnings = lib.mkIf (!systemEnabled) [

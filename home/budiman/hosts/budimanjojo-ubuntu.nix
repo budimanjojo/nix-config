@@ -11,7 +11,7 @@
       homelab.kubernetes.enable = true;
       shell.lf.enable = true;
       shell.fish.enable = true;
-      terminal-emulator.alacritty.enable = true;
+      terminal-emulator.wezterm.enable = true;
     };
 
     home.packages = [ pkgs.hugo ];
