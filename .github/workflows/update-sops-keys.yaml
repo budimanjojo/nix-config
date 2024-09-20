@@ -19,7 +19,7 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-      - uses: workflow/nix-shell-action@v3.3.2
+      - uses: workflow/nix-shell-action@v3.4.0
         with:
           packages: sops,findutils
           script: |
