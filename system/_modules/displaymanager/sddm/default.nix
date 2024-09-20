@@ -37,7 +37,11 @@ in
         sddm = {
           enable = true;
           wayland.enable = mySystem.isWayland;
-          theme = "catppuccin-mocha";
+          catppuccin = {
+            enable = true;
+            background = cfg.wallpaper;
+            loginBackground = true;
+          };
           package = pkgs.kdePackages.sddm;
         };
         defaultSession = cfg.defaultSession;
@@ -58,13 +62,5 @@ in
         ) myHardware.monitors)
       );
     };
-
-    environment.systemPackages = [
-      (pkgs.catppuccin-sddm.override {
-        flavor = "mocha";
-        background = cfg.wallpaper;
-        loginBackground = true;
-      })
-    ];
   };
 }
