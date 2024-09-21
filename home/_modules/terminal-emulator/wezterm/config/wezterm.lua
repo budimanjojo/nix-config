@@ -19,6 +19,7 @@ return {
   enable_scroll_bar = false,
   warn_about_missing_glyphs = false,
   window_close_confirmation = "NeverPrompt",
+  enable_wayland = false, -- this fixes weird issues that I don't understand why it's happening
 
   -- Window layout
   window_padding = {
