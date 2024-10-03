@@ -33,7 +33,7 @@ in
         xdg.enable = true;
       };
 
-      terminal-emulator.alacritty.enable = true;
+      terminal-emulator.contour.enable = true;
     };
 
     warnings = lib.mkIf (!systemEnabled) [

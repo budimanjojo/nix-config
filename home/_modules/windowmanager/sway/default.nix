@@ -34,7 +34,7 @@ in
         xdg.enable = true;
       };
 
-      terminal-emulator.wezterm.enable = true;
+      terminal-emulator.contour.enable = true;
     };
 
     warnings = lib.mkIf (!systemEnabled) [

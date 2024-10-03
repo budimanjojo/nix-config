@@ -1,0 +1,92 @@
+---
+on_mouse_select: CopyToSelectionClipboard
+profiles:
+  main:
+    show_title_bar: false
+    maximized: true
+    # without this neovim floating window inside zellij is acting weird
+    # https://github.com/contour-terminal/contour/issues/1602
+    terminal_size:
+      columns: 80
+      lines: 25
+    environment:
+      TERM: xterm-256color
+      COLORTERM: truecolor
+    margins:
+      horizontal: 10
+      vertical: 10
+    history:
+      limit: 10000
+      auto_scroll_on_update: true
+      scroll_multiplier: 3
+    scrollbar:
+      position: Hidden
+    mouse:
+      hide_while_typing: true
+    font:
+      # using 12 causes the underscore and long characters to cut off
+      # https://github.com/contour-terminal/contour/issues/1603
+      size: 12.1
+      regular:
+        family: UbuntuMono Nerd Font
+        weight: normal
+        slant: normal
+      emoji: emoji
+    draw_bold_text_with_bright_colors: false
+    cursor:
+      shape: rectangle
+      blinking: false
+    vi_mode_highlight_timeout: 300
+    vi_mode_scrolloff: 8
+    status_line:
+      display: none
+    colors: catppuccin_mocha
+    hyperlink_decoration:
+      normal: dotted
+      hover: underline
+color_schemes:
+  catppuccin_mocha:
+    default:
+      background: "#1E1E2E" # base
+      foreground: "#CDD6F4" # text
+    cursor:
+      default: "#F5E0DC" # rosewater
+      text: "#1E1E2E" # base
+    normal:
+      black: "#45475A" # surface1
+      red: "#F38BA8" # red
+      green: "#A6E3A1" # green
+      yellow: "#F9E2AF" # yellow
+      blue: "#89B4FA" # blue
+      magenta: "#F5C2E7" # pink
+      cyan: "#94E2D5" # teal
+      white: "#BAC2DE" # subtext1
+    bright:
+      black: "#585B70" # surface2
+      red: "#F38BA8" # red
+      green: "#A6E3A1" # green
+      yellow: "#F9E2AF" # yellow
+      blue: "#89B4FA" # blue
+      magenta: "#F5C2E7" # pink
+      cyan: "#94E2D5" # teal
+      white: "#A6ADC8" # subtext0
+    vi_mode_highlight:
+      foreground: CellForeground
+      background: "#1E1E2E" # base
+    vi_mode_cursorline:
+      foreground: CellForeground
+      background: "#585B70" # surface2
+      background_alpha: 0.1
+    selection:
+      foreground: CellForeground
+      background: "#585B70" # surface2
+    indicator_statusline:
+      foreground: CellForeground
+      background: "#89B4FA" # blue
+
+input_mapping:
+  - { mods: [Control, Shift], key: Plus, action: IncreaseFontSize }
+  - { mods: [Control, Shift], key: Minus, action: DecreaseFontSize }
+  - { mods: [Control], key: Backspace, action: ResetFontSize }
+  - { mods: [Control, Shift], key: V, action: PasteClipboard, strip: false }
+  - { mods: [Control, Shift], key: C, action: ViNormalMode, mode: "Insert" }

@@ -18,5 +18,6 @@ in
       package = (config.lib.nixGL.wrap pkgs.wezterm);
       extraConfig = builtins.readFile ./config/wezterm.lua;
     };
+    home.packages = [ (config.lib.nixGL.wrap pkgs.contour) ];
   };
 }

@@ -42,6 +42,7 @@ in
     ./shell/starship
 
     ./terminal-emulator/alacritty
+    ./terminal-emulator/contour
     ./terminal-emulator/kitty
     ./terminal-emulator/wezterm
 
