@@ -1,4 +1,5 @@
-extends: default
+---
+extends: relaxed
 
 yaml-files:
   - '*.yaml'
@@ -11,8 +12,6 @@ rules:
   empty-values: enable
   indentation:
     indent-sequences: consistent
-  line-length:
-    level: warning
   new-line-at-end-of-file: disable
   truthy:
     allowed-values:
