@@ -30,7 +30,7 @@ in
         theme.tokyonight.enable = true;
         screenshotter.enable = true;
         swayidle.enable = true;
-        terminal-emaulator.default = "contour";
+        terminal-emulator.default = "contour";
         waybar.enable = true;
         xdg.enable = true;
       };
