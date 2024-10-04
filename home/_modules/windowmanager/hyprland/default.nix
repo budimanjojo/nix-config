@@ -30,10 +30,9 @@ in
         swayidle.enable = true;
         waybar.enable = true;
         screenshotter.enable = true;
+        terminal-emulator.default = "contour";
         xdg.enable = true;
       };
-
-      terminal-emulator.contour.enable = true;
     };
 
     warnings = lib.mkIf (!systemEnabled) [

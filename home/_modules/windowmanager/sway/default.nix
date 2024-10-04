@@ -30,11 +30,10 @@ in
         theme.tokyonight.enable = true;
         screenshotter.enable = true;
         swayidle.enable = true;
+        terminal-emaulator.default = "contour";
         waybar.enable = true;
         xdg.enable = true;
       };
-
-      terminal-emulator.contour.enable = true;
     };
 
     warnings = lib.mkIf (!systemEnabled) [

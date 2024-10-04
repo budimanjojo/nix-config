@@ -58,6 +58,7 @@ in
     ./windowmanager/add-on/screenshotter
     ./windowmanager/add-on/swayidle
     ./windowmanager/add-on/swaylock
+    ./windowmanager/add-on/terminal-emulator
     ./windowmanager/add-on/theme/tokyonight
     ./windowmanager/add-on/waybar
     ./windowmanager/add-on/xdg

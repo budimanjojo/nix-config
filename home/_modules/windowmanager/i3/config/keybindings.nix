@@ -84,7 +84,6 @@ in
   # exit i3 (logs you out of your X session)
   "${super}+Shift+e" = "exec \"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'\"";
   # most used application shortcuts
-  "${super}+t" = "exec --no-startup-id ${config.programs.contour.package}/bin/contour";
   "${super}+f" = "exec --no-startup-id thunar"; # use system provided thunar package
   "${super}+c" = "exec ${pkgs.gnome.gnome-calculator}/bin/gnome-calculator";
   # rofi as dmenu replacement

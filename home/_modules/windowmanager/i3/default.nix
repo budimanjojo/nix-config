@@ -30,10 +30,9 @@ in
         pasystray.enable = true;
         picom.enable = true;
         py3status.enable = true;
+        terminal-emulator.default = "contour";
         xdg.enable = true;
       };
-
-      terminal-emulator.contour.enable = true;
     };
 
     warnings = lib.mkIf (!systemEnabled) [
