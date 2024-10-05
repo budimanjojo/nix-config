@@ -30,7 +30,7 @@ in
         swayidle.enable = true;
         waybar.enable = true;
         screenshotter.enable = true;
-        terminal-emulator.default = "contour";
+        terminal-emulator.default = "wezterm";
         xdg.enable = true;
       };
     };

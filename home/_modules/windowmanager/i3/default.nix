@@ -30,7 +30,7 @@ in
         pasystray.enable = true;
         picom.enable = true;
         py3status.enable = true;
-        terminal-emulator.default = "contour";
+        terminal-emulator.default = "wezterm";
         xdg.enable = true;
       };
     };
