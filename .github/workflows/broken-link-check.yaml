@@ -24,7 +24,7 @@ jobs:
           token: "${{ steps.generate-token.outputs.token }}"
 
       - name: Scan for broken links
-        uses: lycheeverse/lychee-action@v1
+        uses: lycheeverse/lychee-action@v2
         id: lychee
         env:
           GITHUB_TOKEN: "${{ steps.generate-token.outputs.token }}"
