@@ -22,10 +22,10 @@
   };
   alive-progress = {
     pname = "alive-progress";
-    version = "3.1.5";
+    version = "3.2.0";
     src = fetchurl {
-      url = "https://pypi.org/packages/source/a/alive-progress/alive-progress-3.1.5.tar.gz";
-      sha256 = "sha256-QuOZpmyBUNxQdgLf97eVPxBe8R+vl92qbSexy/RcTJg=";
+      url = "https://pypi.org/packages/source/a/alive-progress/alive-progress-3.2.0.tar.gz";
+      sha256 = "sha256-7eKdBG/0VP5WuUH2hvid2TiUMMSlt2WORFywuA4OTes=";
     };
   };
   chezmoi-vim = {
