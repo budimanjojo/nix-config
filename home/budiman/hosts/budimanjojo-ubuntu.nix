@@ -7,7 +7,7 @@
         go.enable = true;
         qmk.enable = true;
       };
-      multiplexer.zellij.enable = true;
+      multiplexer.tmux.enable = true;
       homelab.kubernetes.enable = true;
       shell.lf.enable = true;
       shell.fish.enable = true;

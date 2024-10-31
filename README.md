@@ -217,43 +217,48 @@ If they are not in the table, that means it's using the default Vim keybindings.
 
 I override the default keybindings for Tmux to be more reasonable.
 Prefix key is `Alt+a` for local session and `Alt+z` for nested session.
-You can of course override this.
-`<prefix>` means you need to press prefix key first, `<repeat>` means you don't need to press prefix key again after triggering it within `repeat-time` set (default set to 1 second), `<copy-mode>` means you must be in copy-mode first.
+`<prefix>` means you need to press prefix key first, `<repeat>` means you don't need to press prefix key again after triggering it (I use unconventional way instead of `-r` flag so it will stay forever unless I press `Esc` key), `<copy-mode>` means you must be in copy-mode first.
 The table below lists all the keybindings set.
-If they are not in the table, that means it's using the default Tmux keybindings.
 
-|        Keypress         | Description                                                     |
-| :---------------------: | :-------------------------------------------------------------- |
-|     `<prefix>Alt+r`     | Reload tmux configuration                                       |
-|       `<prefix>f`       | Find session, window, pane from list                            |
-|     `<prefix>Alt+s`     | Create new horizontal split window                              |
-|     `<prefix>Alt+v`     | Create new vertical split window                                |
-|       `<prefix>r`       | Rename current window                                           |
-|       `<prefix>R`       | Rename current session                                          |
-|   `<prefix><repeat>k`   | Move selection to pane above                                    |
-|   `<prefix><repeat>j`   | Move selection to pane below                                    |
-|   `<prefix><repeat>h`   | Move selection to left pane                                     |
-|   `<prefix><repeat>l`   | Move selection to right pane                                    |
-|   `<prefix><repeat>>`   | Swap to next pane                                               |
-|   `<prefix><repeat><`   | Swap to previous pane                                           |
-|   `<prefix><repeat>K`   | Resize current pane upwards                                     |
-|   `<prefix><repeat>J`   | Resize current pane downwards                                   |
-|   `<prefix><repeat>H`   | Resize current pane to the left                                 |
-|   `<prefix><repeat>L`   | Resize current pane to the right                                |
-| `<prefix><repeat>Alt+n` | Move selection to next window                                   |
-| `<prefix><repeat>Alt+p` | Move selection to previous window                               |
-|  `<prefix><repeat>Tab`  | Move selection to next window                                   |
-|       `<prefix>S`       | Join current pane to selected window in horizontal split        |
-|       `<prefix>V`       | Join current pane to selected window in vertical split          |
-|       `<prefix>x`       | Close current pane                                              |
-|       `<prefix>X`       | Close current window                                            |
-|     `<prefix>Alt+x`     | Close all other windows                                         |
-|       `<prefix>a`       | Get into copy mode                                              |
-|       `<prefix>p`       | Paste copied text from last buffer                              |
-|       `<prefix>P`       | Paste copied text from list                                     |
-|     `<copy-mode>y`      | Copy selected text                                              |
-|     `<copy-mode>Y`      | Copy the whole line of selected text                            |
-|     `<copy-mode>D`      | Copy till the end of line from selected text                    |
+| Keypress              | Description                                                     |
+| :-------------------: | :-------------------------------------------------------------- |
+|`<prefix><repeat>h`    | Move selection to left pane                                     |
+|`<prefix><repeat>j`    | Move selection to pane below                                    |
+|`<prefix><repeat>k`    | Move selection to pane above                                    |
+|`<prefix><repeat>l`    | Move selection to right pane                                    |
+|`<prefix><repeat>H`    | Resize current pane to the left by 2 columns                    |
+|`<prefix><repeat>J`    | Resize current pane downwards by 2 lines                        |
+|`<prefix><repeat>K`    | Resize current pane upwards by 2 lines                          |
+|`<prefix><repeat>L`    | Resize current pane to the right by 2 columns                   |
+|`<prefix><repeat>Alt+n`| Move selection to next window                                   |
+|`<prefix><repeat>Alt+p`| Move selection to previous window                               |
+|`<prefix><repeat>>`    | Swap to next pane                                               |
+|`<prefix><repeat><`    | Swap to previous pane                                           |
+|`<prefix>Alt+s`        | Split window horizontally with current pane path                |
+|`<prefix>Alt+v`        | Split window vertically with current pane path                  |
+|`<prefix>c`            | Open a new window with current pane path                        |
+|`<prefix>Esc`          | Exit prefix key table                                           |
+|`<prefix>Space`        | Exit prefix key table                                           |
+|`<prefix>a`            | Enter copy mode                                                 |
+|`<prefix>:`            | Enter tmux command prompt                                       |
+|`<prefix>x`            | Close current pane                                              |
+|`<prefix>X`            | Close current window                                            |
+|`<copy-mode>b`         | Move cursor to word beginning                                   |
+|`<copy-mode>e`         | Move cursor to word ending                                      |
+|`<copy-mode>Home`      | Move cursor to start of line                                    |
+|`<copy-mode>0`         | Move cursor to start of line                                    |
+|`<copy-mode>End`       | Move cursor to end of line                                      |
+|`<copy-mode>$`         | Move cursor to end of line                                      |
+|`<copy-mode>PageUp`    | Move cursor one page up                                         |
+|`<copy-mode>PageDn`    | Move cursor one page down                                       |
+|`<copy-mode>v`         | Begin selection                                                 |
+|`<copy-mode>Space`     | Begin selection                                                 |
+|`<copy-mode>V`         | Select a line                                                   |
+|`<copy-mode>Alt+v`     | Toggle box selection                                            |
+|`<copy-mode>y`         | Copy selection to clipboard                                     |
+|`<copy-mode>Y`         | Copy from cursor to end of line to clipboard                    |
+|`<copy-mode>Esc`       | Exit copy mode                                                  |
+|`<copy-mode>q`         | Exit copy mode                                                  |
 
 ### Zellij keybindings
 

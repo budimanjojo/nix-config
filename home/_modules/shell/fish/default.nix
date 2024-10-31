@@ -95,6 +95,8 @@ in
           set fzf_preview_dir_cmd eza --all --color=always
           set fzf_fd_opts --hidden --exclude=.git --exclude=.github --exclude=.cache
           fzf_configure_bindings --git_log=\cg --git_status=\cs --variables=\cv --directory=\cf --history=\cr
+
+          ${lib.optionalString config.programs.tmux.enable "set fish_tmux_autostart true"}
         '';
 
         shellAbbrs = {

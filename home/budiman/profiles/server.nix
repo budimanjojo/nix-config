@@ -5,7 +5,7 @@
       shell = {
         fish.enable = true;
       };
-      multiplexer.zellij.enable = true;
+      multiplexer.tmux.enable = true;
     };
   };
 }

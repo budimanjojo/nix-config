@@ -6,7 +6,7 @@
         fish.enable = true;
         lf.enable = true;
       };
-      multiplexer.zellij.enable = true;
+      multiplexer.tmux.enable = true;
       browser.firefox.enable = true;
       services.nextcloud-client.enable = true;
       homelab.kubernetes.enable = true;
