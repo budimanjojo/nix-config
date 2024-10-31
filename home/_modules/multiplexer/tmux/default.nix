@@ -50,7 +50,7 @@ in
       extraConfig = ''
         ${
           if config.myHome.isWayland then
-            "set -g copy-command '${pkgs.wl-copy}/bin/wl-copy'"
+            "set -g copy-command '${pkgs.wl-clipboard}/bin/wl-copy'"
           else
             "set -g copy-command '${pkgs.xsel}/bin/xsel -i -b'"
         }
