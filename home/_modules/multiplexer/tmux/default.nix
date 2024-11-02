@@ -42,8 +42,7 @@ in
           set -g window-status-separator ""
           set -g status-left-length 0
           set -g status-left "#[fg=#{@thm_fg} bold]TMUX (#S) "
-          set -ga status-left "#{?client_prefix,#[fg=#{@thm_red} bold]PREFIX ,#[fg=#{@thm_green} bold]NORMAL }"
-          set -ga status-left "#{?#{==:#{pane_mode},copy-mode},#[fg=#{@thm_yellow}]COPY,}"
+          set -ga status-left "#{?client_prefix,#[fg=#{@thm_red} bold]PREFIX ,#{?#{==:#{pane_mode},copy-mode},#[fg=#{@thm_yellow} bold]COPY ,#[fg=#{@thm_green} bold]NORMAL }}"
           set -g status-right ""
         '';
       };
