@@ -2,7 +2,7 @@
 {
   sops.secrets."wireguard/privatekey" = {
     sopsFile = ./secret.sops.yaml;
-    group = "systemd-network";
+    owner = "systemd-network";
     restartUnits = [ "systemd-networkd.service" ];
   };
   systemd.network = {
@@ -11,7 +11,7 @@
         Name = "wg0";
         Description = "WireGuard";
         Kind = "wireguard";
-        MTUBytes = 1420;
+        MTUBytes = "1420";
       };
       wireguardConfig = {
         PrivateKeyFile = "${config.sops.secrets."wireguard/privatekey".path}";

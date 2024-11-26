@@ -12,5 +12,6 @@
 
     ./network.nix
     ./podman.nix
+    ./wireguard.nix
   ];
 }
