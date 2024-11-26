@@ -3,7 +3,7 @@
 $TTL 3600
 $ORIGIN home.arpa.
 @ 3600 IN SOA home.arpa. gateway.home.arpa. (
-    1731378228  ; serial number (epoch timestamp)
+    1732634041  ; serial number (epoch timestamp)
     7200        ; refresh period
     3600        ; retry period
     1209600     ; expire time
@@ -11,7 +11,7 @@ $ORIGIN home.arpa.
 )
 
 ; NS records
-@                         IN  NS gateway.home.arpa
+@                         IN  NS gateway.home.arpa.
 
 ; LAN
 gateway                   IN  A  192.168.10.1
