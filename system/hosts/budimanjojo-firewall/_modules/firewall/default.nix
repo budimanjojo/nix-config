@@ -26,7 +26,7 @@
             }
             chain POSTROUTING {
               type nat hook postrouting priority srcnat; policy accept;
-              oifname "lan0" ip daddr 0.0.0.0/0 counter masquerade comment "outbound will use the public IP so I can browse internet"
+              oifname "wan0" ip daddr 0.0.0.0/0 counter masquerade comment "outbound will use the public IP so I can browse internet"
             }
           '';
         };
