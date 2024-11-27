@@ -2,7 +2,6 @@
 # ZONE_TO_LOCAL #
 #################
 chain LAN0-LOCAL {
-  udp sport { 67, 68 } udp dport { 67, 68 } counter return comment "allow access to dhcp server"
   udp dport 123 counter return comment "allow access to ntp server"
   meta l4proto { tcp, udp } th dport { 53, 853 } ip daddr @dns_server counter return comment "allow access to dns server"
   ct state invalid counter log prefix "[LAN0-LOCAL-invalid-D]" drop comment "drop invalid"
@@ -10,7 +9,6 @@ chain LAN0-LOCAL {
 }
 
 chain HOME-LOCAL {
-  udp sport { 67, 68 } udp dport { 67, 68 } counter return comment "allow access to dhcp server"
   udp dport 123 counter return comment "allow access to ntp server"
   meta l4proto { tcp, udp } th dport { 53, 853 } ip daddr @dns_server counter return comment "allow access to dns server"
   ip saddr @trusted_devices tcp dport 22 counter return comment "allow access to ssh server from trusted_devices"
@@ -20,7 +18,6 @@ chain HOME-LOCAL {
 }
 
 chain IOT-LOCAL {
-  udp sport { 67, 68 } udp dport { 67, 68 } counter return comment "allow access to dhcp server"
   udp dport 123 counter return comment "allow access to ntp server"
   meta l4proto { tcp, udp } th dport { 53, 853 } ip daddr @dns_server counter return comment "allow access to dns server"
   ct state invalid counter log prefix "[IOT-LOCAL-invalid-D]" drop comment "drop invalid"
@@ -28,7 +25,6 @@ chain IOT-LOCAL {
 }
 
 chain SERVER-LOCAL {
-  udp sport { 67, 68 } udp dport { 67, 68 } counter return comment "allow access to dhcp server"
   udp dport 123 counter return comment "allow access to ntp server"
   meta l4proto { tcp, udp } th dport { 53, 853 } ip daddr @dns_server counter return comment "allow access to dns server"
   tcp dport 179 counter return comment "allow access to bgp server"
@@ -41,7 +37,6 @@ chain SERVER-LOCAL {
 }
 
 chain GUEST-LOCAL {
-  udp sport { 67, 68 } udp dport { 67, 68 } counter return comment "allow access to dhcp server"
   udp dport 123 counter return comment "allow access to ntp server"
   meta l4proto { tcp, udp } th dport { 53, 853 } ip daddr @dns_server counter return comment "allow access to dns server"
   ct state invalid counter log prefix "[GUEST-LOCAL-invalid-D]" drop comment "drop invalid"
@@ -49,7 +44,6 @@ chain GUEST-LOCAL {
 }
 
 chain CONTAINERS-LOCAL {
-  udp sport { 67, 68 } udp dport { 67, 68 } counter return comment "allow access to dhcp server"
   udp dport 123 counter return comment "allow access to ntp server"
   meta l4proto { tcp, udp } th dport { 53, 853 } ip daddr @dns_server counter return comment "allow access to dns server"
   ct state invalid counter log prefix "[CONTAINERS-LOCAL-invalid-D]" drop comment "drop invalid"
@@ -57,7 +51,6 @@ chain CONTAINERS-LOCAL {
 }
 
 chain WIREGUARD-LOCAL {
-  udp sport { 67, 68 } udp dport { 67, 68 } counter return comment "allow access to dhcp server"
   udp dport 123 counter return comment "allow access to ntp server"
   meta l4proto { tcp, udp } th dport { 53, 853 } ip daddr @dns_server counter return comment "allow access to dns server"
   tcp dport 22 counter return comment "allow access to ssh server"

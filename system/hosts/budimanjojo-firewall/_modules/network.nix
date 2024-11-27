@@ -1,25 +1,4 @@
 { ... }:
-let
-  dhcpServerOptions = {
-    PoolOffset = 50;
-    PoolSize = 150;
-    DefaultLeaseTimeSec = 86400;
-    MaxLeaseTimeSec = 86400;
-    EmitDNS = "yes";
-    DNS = "192.168.10.1";
-    SendOption = "15:string:home.arpa"; # domain name for clients
-  };
-
-  # [ { dhcpServerStaticLeaseConfig = { Address = <IP>; MACAddress = <MAC>; }; } {...} ]
-  mkStaticLeases =
-    leases:
-    builtins.map (lease: {
-      dhcpServerStaticLeaseConfig = {
-        Address = lease.addr;
-        MACAddress = lease.MAC;
-      };
-    }) leases;
-in
 {
   networking = {
     domain = "home.arpa";
@@ -138,7 +117,6 @@ in
           "lan0.200" # SERVER
           "lan0.250" # GUEST
         ];
-        dhcpServerConfig = dhcpServerOptions;
       };
 
       # HOME VLAN
@@ -146,45 +124,6 @@ in
         matchConfig.Name = "lan0.50";
         address = [ "192.168.50.1/24" ];
         linkConfig.RequiredForOnline = "routable";
-        networkConfig.DHCPServer = "yes";
-        dhcpServerConfig = dhcpServerOptions;
-        dhcpServerStaticLeases = mkStaticLeases [
-          {
-            # jojo-oneplus
-            addr = "192.168.50.10";
-            MAC = "ac:d6:18:e5:b5:34";
-          }
-          {
-            # lina-samsung
-            addr = "192.168.50.11";
-            MAC = "ae:9c:e8:65:f4:76";
-          }
-          {
-            # eunice-tablet
-            addr = "192.168.50.12";
-            MAC = "00:03:f7:bd:70:d0";
-          }
-          {
-            # eugene-oneplus
-            addr = "192.168.50.13";
-            MAC = "98:09:cf:0c:70:af";
-          }
-          {
-            # firehd-8-livingroom
-            addr = "192.168.50.40";
-            MAC = "40:a9:cf:3b:a3:7d";
-          }
-          {
-            # raspberry-pi4-tv
-            addr = "192.168.50.41";
-            MAC = "dc:a6:32:10:60:45";
-          }
-          {
-            # budimanjojo-main
-            addr = "192.168.50.49";
-            MAC = "b4:2e:99:62:8d:06";
-          }
-        ];
       };
 
       # IOT VLAN
@@ -192,25 +131,6 @@ in
         matchConfig.Name = "lan0.69";
         address = [ "192.168.69.1/24" ];
         linkConfig.RequiredForOnline = "routable";
-        networkConfig.DHCPServer = "yes";
-        dhcpServerConfig = dhcpServerOptions;
-        dhcpServerStaticLeases = mkStaticLeases [
-          {
-            # broadlink-livingroom-plug
-            addr = "192.168.69.10";
-            MAC = "34:ea:34:79:f0:91";
-          }
-          {
-            # broadlink-bedroom-rm4c
-            addr = "192.168.69.11";
-            MAC = "24:df:a7:4f:9a:8e";
-          }
-          {
-            # ezviz-bedroom-camera
-            addr = "192.168.69.21";
-            MAC = "a0:ff:0c:9f:A7:7a";
-          }
-        ];
       };
 
       # SERVER VLAN
@@ -218,15 +138,6 @@ in
         matchConfig.Name = "lan0.200";
         address = [ "192.168.200.1/24" ];
         linkConfig.RequiredForOnline = "routable";
-        networkConfig.DHCPServer = "yes";
-        dhcpServerConfig = dhcpServerOptions;
-        dhcpServerStaticLeases = mkStaticLeases [
-          {
-            # budimanjojo-nas
-            addr = "192.168.200.30";
-            MAC = "d0:50:99:25:88:91";
-          }
-        ];
       };
 
       # GUEST VLAN
@@ -234,8 +145,6 @@ in
         matchConfig.Name = "lan0.250";
         address = [ "192.168.250.1/24" ];
         linkConfig.RequiredForOnline = "routable";
-        networkConfig.DHCPServer = "yes";
-        dhcpServerConfig = dhcpServerOptions;
       };
     };
   };
