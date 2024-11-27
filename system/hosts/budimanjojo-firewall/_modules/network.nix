@@ -31,7 +31,17 @@ in
   };
   systemd.network = {
     enable = true;
-    wait-online.anyInterface = true;
+    wait-online = {
+      anyInterface = false;
+      ignoredInterfaces = [
+        "wan0"
+        "wan1"
+        "lan1"
+        "lan2"
+        "ctr0"
+        "wg0"
+      ];
+    };
     links = {
       # rename all interface names to be easier to identify
       "10-wan0" = {
