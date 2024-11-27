@@ -6,10 +6,10 @@
     podman = {
       enable = true;
       defaultNetwork.settings = {
+        network_interface = "ctr0";
         dns_enabled = true;
         subnets = [
           {
-            network_interface = "ctr0";
             subnet = "10.5.0.0/24";
             gateway = "10.5.0.1";
             lease_range = {
