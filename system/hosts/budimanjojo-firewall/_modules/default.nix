@@ -10,6 +10,7 @@
     ./services/frr/default.nix
     ./services/kea/default.nix
     ./services/omada-controller/default.nix
+    ./services/rsyslogd/default.nix
 
     ./network.nix
     ./podman.nix
