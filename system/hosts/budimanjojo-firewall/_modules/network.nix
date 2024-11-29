@@ -43,6 +43,14 @@
         matchConfig.Path = "pci-0000:08:00.0";
         linkConfig.Name = "lan2";
       };
+      "10-lan3" = {
+        matchConfig.Path = "pci-0000:09:00.0";
+        linkConfig.Name = "lan3";
+      };
+      "10-wifi0" = {
+        matchConfig.Path = "pci-0000:00:14.0-usb-0:8:1.0";
+        linkConfig.Name = "wifi0";
+      };
     };
 
     netdevs = {
@@ -85,14 +93,27 @@
       # Disabled interfaces
       "30-wan1" = {
         matchConfig.Name = "wan1";
+        networkConfig.ConfigureWithoutCarrier = true;
         linkConfig.ActivationPolicy = "always-down";
       };
       "30-lan1" = {
         matchConfig.Name = "lan1";
+        networkConfig.ConfigureWithoutCarrier = true;
         linkConfig.ActivationPolicy = "always-down";
       };
       "30-lan2" = {
         matchConfig.Name = "lan2";
+        networkConfig.ConfigureWithoutCarrier = true;
+        linkConfig.ActivationPolicy = "always-down";
+      };
+      "30-lan3" = {
+        matchConfig.Name = "lan3";
+        networkConfig.ConfigureWithoutCarrier = true;
+        linkConfig.ActivationPolicy = "always-down";
+      };
+      "30-wifi0" = {
+        matchConfig.Name = "wifi0";
+        networkConfig.ConfigureWithoutCarrier = true;
         linkConfig.ActivationPolicy = "always-down";
       };
 
