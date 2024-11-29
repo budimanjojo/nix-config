@@ -11,8 +11,8 @@
       "--stop-timeout=30"
     ];
     volumes = [
-      "omada-controller-data:/opt/tplink/EAPController/data:rw"
-      "omada-controller-logs:/opt/tplink/EAPController/logs:rw"
+      "/var/lib/omada-controller-data:/opt/tplink/EAPController/data:rw"
+      "/var/lib/omada-controller-logs:/opt/tplink/EAPController/logs:rw"
     ];
     environment = {
       TZ = "Asia/Jakarta";
