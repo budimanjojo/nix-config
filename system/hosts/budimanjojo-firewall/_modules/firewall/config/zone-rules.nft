@@ -29,6 +29,7 @@ chain SERVER-LOCAL {
   meta l4proto { tcp, udp } th dport { 53, 853 } ip daddr @dns_server counter return comment "allow access to dns server"
   tcp dport 179 counter return comment "allow access to bgp server"
   udp dport 69 counter return comment "allow access to tftp server"
+  ip saddr @k8s_nodes tcp dport { 80, 3000 } counter return comment "allow access to adguardhome from k8s_nodes"
   ip saddr @k8s_nodes meta l4proto icmp counter return comment "allow icmp request from k8s_nodes"
   ip saddr @k8s_nodes tcp dport 9100 counter return comment "allow access to node-exporter from k8s_nodes"
   ip saddr @k8s_nodes tcp dport 9633 counter return comment "allow access to smartctl-exporter from k8s_nodes"
