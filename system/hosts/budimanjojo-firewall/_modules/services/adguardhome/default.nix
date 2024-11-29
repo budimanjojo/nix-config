@@ -41,7 +41,7 @@ in
       ${pkgs.envsubst}/bin/envsubst -no-unset -i "$STATE_DIRECTORY/AdGuardHome.yaml" -o "$STATE_DIRECTORY/AdGuardHome.yaml"
 
       PASSWORD=$(cat ${config.sops.secrets."adguardhome/password".path})
-      HASHED_PASSWORD=$(${pkgs.apacheHttpd}/bin/htpasswd -niB "" | cut -c 2-)
+      HASHED_PASSWORD=$(${pkgs.apacheHttpd}/bin/htpasswd -nbB "" $PASSWORD | cut -c 2-)
       ${pkgs.gnused}/bin/sed -i "s,ADGUARDHOMEPASSWORD,$HASHED_PASSWORD," "$STATE_DIRECTORY/AdGuardHome.yaml"
     '';
   };
@@ -144,8 +144,8 @@ in
         enabled = true;
       };
       statistics = {
-        interval = "24h";
         enabled = true;
+        interval = "24h";
       };
       filters =
         let
@@ -194,6 +194,8 @@ in
             tags = [ ];
             ids = [ "192.168.250.0/24" ];
             use_global_settings = true;
+            use_global_blocked_services = true;
+            blocked_services.ids = [ ];
             upstreams = [ "tls://one.one.one.one" ];
           }
           {
@@ -201,6 +203,8 @@ in
             tags = [ ];
             ids = [ "192.168.69.0/24" ];
             use_global_settings = false;
+            use_global_blocked_services = true;
+            blocked_services.ids = [ ];
             upstreams = [
               "1.1.1.1"
               "8.8.8.8"
@@ -211,6 +215,7 @@ in
             tags = [ "device_tv" ];
             ids = [ "192.168.50.41" ];
             use_global_settings = false;
+            blocked_services.ids = [ ];
             upstreams = [
               "1.1.1.1"
               "8.8.8.8"
@@ -225,7 +230,7 @@ in
               "10.10.0.4"
             ];
             use_global_settings = false;
-            blocked_services = [
+            blocked_services.ids = [
               "reddit"
               "tiktok"
               "facebook"
@@ -248,6 +253,7 @@ in
             use_global_blocked_services = false;
             ignore_querylog = false;
             ignore_statistics = false;
+            safebrowsing_enabled = true;
           }
         ];
       };
