@@ -3,7 +3,7 @@
 $TTL 3600
 $ORIGIN 168.192.in-addr.arpa.
 @ 3600 IN SOA 168.192.in-addr.arpa. gateway.home.arpa. (
-    1732634120  ; serial number (epoch timestamp)
+    1732939828  ; serial number (epoch timestamp)
     7200        ; refresh period
     3600        ; retry period
     1209600     ; expire time
@@ -20,7 +20,7 @@ $ORIGIN in-addr.arpa.
 1.10.168.192    IN  NS  gateway.home.arpa.
 
 ; HOME
-10.50.168.192   IN  PTR jojo-oneplus.home.arpa.
+10.50.168.192   IN  PTR jojo-poco.home.arpa.
 11.50.168.192   IN  PTR lina-samsung.home.arpa.
 12.50.168.192   IN  PTR eunice-tablet.home.arpa.
 13.50.168.192   IN  PTR eugene-oneplus.home.arpa.

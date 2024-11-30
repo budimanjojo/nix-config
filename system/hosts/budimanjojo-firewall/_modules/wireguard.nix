@@ -19,7 +19,7 @@
       };
       wireguardPeers = [
         {
-          # oneplus9-phone
+          # pocof6-phone
           wireguardPeerConfig = {
             PublicKey = "WCESN/SAmvJekIxJSlmw+2FQg+uhvlseGhGvN/VZ0AU=";
             AllowedIPs = [ "10.10.0.2/32" ];

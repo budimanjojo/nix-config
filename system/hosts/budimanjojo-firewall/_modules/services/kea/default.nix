@@ -71,9 +71,9 @@ in
             ] ++ commonDhcpOptions;
             reservations = [
               {
-                hostname = "jojo-oneplus";
+                hostname = "jojo-poco";
                 ip-address = "192.168.50.10";
-                hw-address = "ac:d6:18:e5:b5:34";
+                hw-address = "e8:5f:b4:2d:ce:5d";
               }
               {
                 hostname = "lina-samsung";
