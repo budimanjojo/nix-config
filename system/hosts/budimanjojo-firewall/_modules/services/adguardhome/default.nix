@@ -121,7 +121,7 @@ in
             answer = "192.168.15.0";
           }
           {
-            domain = "\${SECRET_DOMAIN_1}";
+            domain = "*.\${SECRET_DOMAIN_1}";
             answer = "192.168.15.0";
           }
           {
