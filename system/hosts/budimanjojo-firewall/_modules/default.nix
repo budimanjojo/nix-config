@@ -1,17 +1,17 @@
 { ... }:
 {
   imports = [
-    ./firewall/default.nix
+    ./firewall
 
-    ./services/adguardhome/default.nix
-    ./services/bind/default.nix
-    ./services/chrony/default.nix
-    ./services/cloudflare-ddns/default.nix
-    ./services/fireqos/default.nix
-    ./services/frr/default.nix
-    ./services/kea/default.nix
-    ./services/omada-controller/default.nix
-    ./services/rsyslogd/default.nix
+    ./services/adguardhome
+    ./services/bind
+    ./services/chrony
+    ./services/cloudflare-ddns
+    ./services/fireqos
+    ./services/frr
+    ./services/kea
+    ./services/omada-controller
+    ./services/rsyslogd
 
     ./network.nix
     ./podman.nix
