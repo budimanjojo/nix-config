@@ -30,6 +30,11 @@ set k8s_qbittorrent {
   elements = { 192.168.15.10 }
 }
 
+set k8s_minio {
+  type ipv4_addr
+  elements = { 192.168.15.15 }
+}
+
 set k8s_services {
   type ipv4_addr
   flags interval
