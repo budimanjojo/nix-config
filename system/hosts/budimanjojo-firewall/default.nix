@@ -15,9 +15,12 @@
         enable = true;
         flake = "/home/budiman/Github/nix-config";
       };
-      services.btrfs-autoscrub = {
-        enable = true;
-        fileSystems = [ "/" ];
+      services = {
+        btrfs-autoscrub = {
+          enable = true;
+          fileSystems = [ "/" ];
+        };
+        restic-backup.enable = true;
       };
     };
 
