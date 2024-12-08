@@ -1,0 +1,4 @@
+{ ... }:
+{
+  imports = [ ../profiles/server.nix ];
+}

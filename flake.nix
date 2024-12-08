@@ -126,6 +126,10 @@
             hostname = "budimanjojo-nas";
             extraModules = [ inputs.disko.nixosModules.disko ];
           };
+          budimanjojo-firewall = flakeLib.mkSystem {
+            hostname = "budimanjojo-firewall";
+            extraModules = [ inputs.disko.nixosModules.disko ];
+          };
         };
 
         homeConfigurations = {

@@ -1,0 +1,218 @@
+chain ZONE_INPUT {
+  type filter hook input priority filter + 1; policy accept;
+  jump STATE_POLICY
+  counter jump ZONE_TO_LOCAL
+}
+
+chain ZONE_FORWARD {
+  type filter hook forward priority filter + 1; policy accept;
+  jump STATE_POLICY
+  oifname "lan0" counter jump ZONE_TO_LAN0
+  oifname "lan0.50" counter jump ZONE_TO_HOME
+  oifname "lan0.69" counter jump ZONE_TO_IOT
+  oifname "lan0.200" counter jump ZONE_TO_SERVER
+  oifname "lan0.250" counter jump ZONE_TO_GUEST
+  oifname "ctr0" counter jump ZONE_TO_CONTAINERS
+  oifname "wg0" counter jump ZONE_TO_WIREGUARD
+  oifname "wan0" counter jump ZONE_TO_WAN
+}
+
+chain ZONE_OUTPUT {
+  type filter hook output priority filter + 1; policy accept;
+  jump STATE_POLICY
+  counter jump ZONE_FROM_LOCAL
+}
+
+chain ZONE_TO_LOCAL {
+  iifname "lo" counter return
+  iifname "lan0" counter jump LAN0-LOCAL
+  iifname "lan0" counter return
+  iifname "lan0.50" counter jump HOME-LOCAL
+  iifname "lan0.50" counter return
+  iifname "lan0.69" counter jump IOT-LOCAL
+  iifname "lan0.69" counter return
+  iifname "lan0.200" counter jump SERVER-LOCAL
+  iifname "lan0.200" counter return
+  iifname "lan0.250" counter jump GUEST-LOCAL
+  iifname "lan0.250" counter return
+  iifname "ctr0" counter jump CONTAINERS-LOCAL
+  iifname "ctr0" counter return
+  iifname "wg0" counter jump WIREGUARD-LOCAL
+  iifname "wg0" counter return
+  iifname "wan0" counter jump WAN-LOCAL
+  iifname "wan0" counter return
+  counter drop comment "ZONE_TO_LOCAL default-action drop"
+}
+
+chain ZONE_TO_LAN0 {
+  iifname "lan0" counter return
+  iifname "lan0.50" counter jump HOME-LAN0
+  iifname "lan0.50" counter return
+  iifname "lan0.69" counter jump IOT-LAN0
+  iifname "lan0.69" counter return
+  iifname "lan0.200" counter jump SERVER-LAN0
+  iifname "lan0.200" counter return
+  iifname "lan0.250" counter jump GUEST-LAN0
+  iifname "lan0.250" counter return
+  iifname "ctr0" counter jump CONTAINERS-LAN0
+  iifname "ctr0" counter return
+  iifname "wg0" counter jump WIREGUARD-LAN0
+  iifname "wg0" counter return
+  iifname "wan0" counter jump WAN-LAN0
+  iifname "wan0" counter return
+  counter drop comment "ZONE_TO_LAN0 default-action drop"
+}
+
+chain ZONE_TO_HOME {
+  iifname "lan0.50" counter return
+  iifname "lan0" counter jump LAN0-HOME
+  iifname "lan0" counter return
+  iifname "lan0.69" counter jump IOT-HOME
+  iifname "lan0.69" counter return
+  iifname "lan0.200" counter jump SERVER-HOME
+  iifname "lan0.200" counter return
+  iifname "lan0.250" counter jump GUEST-HOME
+  iifname "lan0.250" counter return
+  iifname "ctr0" counter jump CONTAINERS-HOME
+  iifname "ctr0" counter return
+  iifname "wg0" counter jump WIREGUARD-HOME
+  iifname "wg0" counter return
+  iifname "wan0" counter jump WAN-HOME
+  iifname "wan0" counter return
+  counter drop comment "ZONE_TO_HOME default-action drop"
+}
+
+chain ZONE_TO_IOT {
+  iifname "lan0.69" counter return
+  iifname "lan0" counter jump LAN0-IOT
+  iifname "lan0" counter return
+  iifname "lan0.50" counter jump HOME-IOT
+  iifname "lan0.50" counter return
+  iifname "lan0.200" counter jump SERVER-IOT
+  iifname "lan0.200" counter return
+  iifname "lan0.250" counter jump GUEST-IOT
+  iifname "lan0.250" counter return
+  iifname "ctr0" counter jump CONTAINERS-IOT
+  iifname "ctr0" counter return
+  iifname "wg0" counter jump WIREGUARD-IOT
+  iifname "wg0" counter return
+  iifname "wan0" counter jump WAN-IOT
+  iifname "wan0" counter return
+  counter drop comment "ZONE_TO_IOT default-action drop"
+}
+
+chain ZONE_TO_SERVER {
+  iifname "lan0.200" counter return
+  iifname "lan0" counter jump LAN0-SERVER
+  iifname "lan0" counter return
+  iifname "lan0.50" counter jump HOME-SERVER
+  iifname "lan0.50" counter return
+  iifname "lan0.69" counter jump IOT-SERVER
+  iifname "lan0.69" counter return
+  iifname "lan0.250" counter jump GUEST-SERVER
+  iifname "lan0.250" counter return
+  iifname "ctr0" counter jump CONTAINERS-SERVER
+  iifname "ctr0" counter return
+  iifname "wg0" counter jump WIREGUARD-SERVER
+  iifname "wg0" counter return
+  iifname "wan0" counter jump WAN-SERVER
+  iifname "wan0" counter return
+  counter drop comment "ZONE_TO_SERVER default-action drop"
+}
+
+chain ZONE_TO_GUEST {
+  iifname "lan0.250" counter return
+  iifname "lan0" counter jump LAN0-GUEST
+  iifname "lan0" counter return
+  iifname "lan0.50" counter jump HOME-GUEST
+  iifname "lan0.50" counter return
+  iifname "lan0.69" counter jump IOT-GUEST
+  iifname "lan0.69" counter return
+  iifname "lan0.200" counter jump SERVER-GUEST
+  iifname "lan0.200" counter return
+  iifname "ctr0" counter jump CONTAINERS-GUEST
+  iifname "ctr0" counter return
+  iifname "wg0" counter jump WIREGUARD-GUEST
+  iifname "wg0" counter return
+  iifname "wan0" counter jump WAN-GUEST
+  iifname "wan0" counter return
+  counter drop comment "ZONE_TO_GUEST default-action drop"
+}
+
+chain ZONE_TO_CONTAINERS {
+  iifname "ctr0" counter return
+  iifname "lan0" counter jump LAN0-CONTAINERS
+  iifname "lan0" counter return
+  iifname "lan0.50" counter jump HOME-CONTAINERS
+  iifname "lan0.50" counter return
+  iifname "lan0.69" counter jump IOT-CONTAINERS
+  iifname "lan0.69" counter return
+  iifname "lan0.200" counter jump SERVER-CONTAINERS
+  iifname "lan0.200" counter return
+  iifname "lan0.250" counter jump GUEST-CONTAINERS
+  iifname "lan0.250" counter return
+  iifname "wg0" counter jump WIREGUARD-CONTAINERS
+  iifname "wg0" counter return
+  iifname "wan0" counter jump WAN-CONTAINERS
+  iifname "wan0" counter return
+  counter drop comment "ZONE_TO_CONTAINERS default-action drop"
+}
+
+chain ZONE_TO_WIREGUARD {
+  iifname "wg0" counter return
+  iifname "lan0" counter jump LAN0-WIREGUARD
+  iifname "lan0" counter return
+  iifname "lan0.50" counter jump HOME-WIREGUARD
+  iifname "lan0.50" counter return
+  iifname "lan0.69" counter jump IOT-WIREGUARD
+  iifname "lan0.69" counter return
+  iifname "lan0.200" counter jump SERVER-WIREGUARD
+  iifname "lan0.200" counter return
+  iifname "lan0.250" counter jump GUEST-WIREGUARD
+  iifname "lan0.250" counter return
+  iifname "ctr0" counter jump CONTAINERS-WIREGUARD
+  iifname "ctr0" counter return
+  iifname "wan0" counter jump WAN-WIREGUARD
+  iifname "wan0" counter return
+  counter drop comment "ZONE_TO_WIREGUARD default-action drop"
+}
+
+chain ZONE_TO_WAN {
+  iifname "wan0" counter return
+  iifname "lan0" counter jump LAN0-WAN
+  iifname "lan0" counter return
+  iifname "lan0.50" counter jump HOME-WAN
+  iifname "lan0.50" counter return
+  iifname "lan0.69" counter jump IOT-WAN
+  iifname "lan0.69" counter return
+  iifname "lan0.200" counter jump SERVER-WAN
+  iifname "lan0.200" counter return
+  iifname "lan0.250" counter jump GUEST-WAN
+  iifname "lan0.250" counter return
+  iifname "ctr0" counter jump CONTAINERS-WAN
+  iifname "ctr0" counter return
+  iifname "wg0" counter jump WIREGUARD-WAN
+  iifname "wg0" counter return
+  counter drop comment "ZONE_TO_WAN default-action drop"
+}
+
+chain ZONE_FROM_LOCAL {
+  oifname "lo" counter return
+  oifname "lan0" counter jump LOCAL-LAN0
+  oifname "lan0" counter return
+  oifname "lan0.50" counter jump LOCAL-HOME
+  oifname "lan0.50" counter return
+  oifname "lan0.69" counter jump LOCAL-IOT
+  oifname "lan0.69" counter return
+  oifname "lan0.200" counter jump LOCAL-SERVER
+  oifname "lan0.200" counter return
+  oifname "lan0.250" counter jump LOCAL-GUEST
+  oifname "lan0.250" counter return
+  oifname "ctr0" counter jump LOCAL-CONTAINERS
+  oifname "ctr0" counter return
+  oifname "wg0" counter jump LOCAL-WIREGUARD
+  oifname "wg0" counter return
+  oifname "wan0" counter jump LOCAL-WAN
+  oifname "wan0" counter return
+  counter drop comment "ZONE_FROM_LOCAL default-action drop"
+}
