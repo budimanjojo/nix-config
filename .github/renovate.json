@@ -27,7 +27,7 @@
     {
       "customType": "regex",
       "fileMatch": [
-        "^system/.\\*\\.nix$"
+        "^system/.*\\.nix$"
       ],
       "matchStrings": [
         "image *= *\"(?<depName>.*?):(?<currentValue>.*?)(@(?<currentDigest>sha256:[a-f0-9]+))?\""
