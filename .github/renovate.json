@@ -16,12 +16,23 @@
   "nix": {
     "enabled": true
   },
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "fileMatch": ["chezmoi\\/\\.chezmoiscripts\\/.+\\.sh\\.tmpl$"],
       "matchStrings": [
         "# renovate: depName=(?<depName>.*) datasource=(?<datasource>.*)\\n\\s*current_\\w+_version=(?<currentValue>.+)\\b"
       ]
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^system/.\\*\\.nix$"
+      ],
+      "matchStrings": [
+        "image *= *\"(?<depName>.*?):(?<currentValue>.*?)(@(?<currentDigest>sha256:[a-f0-9]+))?\""
+      ],
+      "datasourceTemplate": "docker"
     }
   ],
   "packageRules": [
