@@ -10,7 +10,7 @@ in
     "d ${logsDir} 0755 508 508"
   ];
   virtualisation.oci-containers.containers.omada-controller = {
-    image = "docker.io/mbentley/omada-controller:5.14";
+    image = "docker.io/mbentley/omada-controller:5.15";
     extraOptions = [
       "--ip=10.5.0.10"
       "--stop-timeout=30"
