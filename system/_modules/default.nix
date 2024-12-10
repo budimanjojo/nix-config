@@ -25,6 +25,7 @@
     ./services/grafana
     ./services/openssh
     ./services/prometheus
+    ./services/restic-backup
 
     ./system/autoupgrade
     ./system/bootloader
