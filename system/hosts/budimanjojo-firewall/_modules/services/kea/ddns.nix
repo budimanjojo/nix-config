@@ -1,6 +1,6 @@
-{ config, lib, ... }:
+{ config, ... }:
 let
-  keaddnsUser = "kea-ddns";
+  keaddnsUser = "kea";
 in
 {
   # add user, needed to access the secret
@@ -72,6 +72,4 @@ in
         };
     };
   };
-
-  systemd.services.kea-dhcp-ddns-server.serviceConfig.User = lib.mkForce keaddnsUser;
 }
