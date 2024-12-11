@@ -39,7 +39,7 @@ in
           ];
         in
         {
-          tsig-key = [
+          tsig-keys = [
             {
               name = "kea";
               algorithm = "hmac-sha512";
@@ -56,7 +56,7 @@ in
             ];
           };
           reverse-ddns = {
-            ddns = [
+            ddns-domains = [
               {
                 name = "168.192.in-addr.arpa.";
                 key-name = "kea";
