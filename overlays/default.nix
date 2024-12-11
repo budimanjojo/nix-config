@@ -2,7 +2,7 @@
 {
   # NUR pkgs set (declared in the flake inputs) will be accessible
   # through `pkgs.nur`
-  nur = inputs.nur.overlay;
+  nur = inputs.nur.overlays.default;
 
   # nixGL pkgs set (declared in the flake inputs) will be accessible
   # through `pkgs.nixgl`
