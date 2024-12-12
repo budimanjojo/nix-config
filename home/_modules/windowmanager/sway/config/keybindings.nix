@@ -93,7 +93,7 @@ in
   "${super}+Shift+e" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
   # Most used applications
   "${super}+f" = "exec thunar"; # use system provided thunar package
-  "${super}+c" = "exec ${pkgs.gnome.gnome-calculator}/bin/gnome-calculator";
+  "${super}+c" = "exec ${pkgs.gnome-calculator}/bin/gnome-calculator";
   # Rofi as dmenu replacement
   "${super}+grave" = "exec ${config.programs.rofi.package}/bin/rofi -show drun";
   "${super}+Escape" = "exec ${config.programs.rofi.package}/bin/rofi -show drun";

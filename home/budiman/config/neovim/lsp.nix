@@ -8,6 +8,7 @@
     ];
     plugins = {
       trouble.enable = true;
+      web-devicons.enable = true;
       # clangd requires extra care
       clangd-extensions = {
         enable = true;
@@ -89,7 +90,7 @@
           };
 
           taplo.enable = true; # taplo
-          tsserver.enable = true; # tsserver
+          ts_ls.enable = true; # tsserver
 
           ## jsonls
           jsonls = {
@@ -108,9 +109,9 @@
             };
           };
 
-          nil-ls.enable = true; # nil
+          nil_ls.enable = true; # nil
           pyright.enable = true; # pyright
-          lua-ls.enable = true; # lua-language-server
+          lua_ls.enable = true; # lua-language-server
 
           ## yamlls
           yamlls = {
@@ -171,7 +172,7 @@
 
       none-ls = {
         enable = true;
-        diagnosticsFormat = "[#{c}] #{m} (#{s})";
+        settings.diagnostics_format = "[#{c}] #{m} (#{s})";
         sources = {
           formatting = {
             nixfmt = {
@@ -184,13 +185,17 @@
             };
             shfmt = {
               enable = true;
-              withArgs = "{ extra_args = { '-i', '2', '-ci' } }";
+              settings.extra_args = [
+                "-i"
+                "2"
+                "-ci"
+              ];
             };
           };
           diagnostics = {
             ansiblelint = {
               enable = true;
-              withArgs = "{ filetypes = { 'yaml.ansible' } }";
+              settings.filetypes = [ "yaml.ansible" ];
             };
             golangci_lint = {
               enable = true;

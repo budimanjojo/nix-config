@@ -1,7 +1,7 @@
 { ... }:
 {
-  services.frr.bgp = {
-    enable = true;
+  services.frr = {
+    bgpd.enable = true;
     config = ''
       router bgp 65400
         bgp router-id 192.168.200.1

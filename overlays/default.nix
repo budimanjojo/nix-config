@@ -23,14 +23,6 @@
 
   # Your own overlays for stable nixpkgs should be declared here
   nixpkgs-overlays = final: prev: {
-    # TODO: remove this after finish upgrading to 24.11
-    kea = prev.kea.overrideAttrs (old: {
-      src = prev.fetchurl {
-        url = "https://ftp.isc.org/isc/kea/2.6.1/kea-2.6.1.tar.gz";
-        hash = "sha256-0s4UqRwuJIrSh24pFS1ke8xeQzvGja+tDuluwWb8+tE=";
-      };
-    });
-
     vimPlugins = prev.vimPlugins // {
       # this version have fzf integration added
       catppuccin-nvim = prev.vimPlugins.catppuccin-nvim.overrideAttrs (oldAttrs: {
