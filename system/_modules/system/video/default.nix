@@ -18,9 +18,9 @@ in
   config = mkIf (cfg.enable) (mkMerge [
     {
       hardware = {
-        opengl = {
+        graphics = {
           enable = true;
-          driSupport32Bit = true;
+          enable32Bit = true;
         };
       };
       users.users.${mySystem.adminUser}.extraGroups = [ "video" ];
@@ -42,7 +42,7 @@ in
       boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
       services.xserver.videoDrivers = [ "nvidia" ];
       # hardware acceleration
-      hardware.opengl.extraPackages = [
+      hardware.graphics.extraPackages = [
         pkgs.vaapiVdpau
         pkgs.libvdpau-va-gl
       ];
@@ -63,12 +63,12 @@ in
       boot.initrd.kernelModules = [ "amdgpu" ];
       services.xserver.videoDrivers = [ "amdgpu" ];
       # enables AMDVLK & OpenCL support
-      hardware.opengl.extraPackages = with pkgs; [
+      hardware.graphics.extraPackages = with pkgs; [
         amdvlk
         rocm-opencl-icd
         rocm-opencl-runtime
       ];
-      hardware.opengl.extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
+      hardware.graphics.extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
       # force use of RADV, can be unset if AMDVLK should be used
       environment.variables.AMD_VULKAN_ICD = "RADV";
     })
@@ -79,7 +79,7 @@ in
       # better performance than the actual Intel driver
       services.xserver.videoDrivers = [ "modesetting" ];
       # OpenCL support and VAAPI
-      hardware.opengl.extraPackages = [
+      hardware.graphics.extraPackages = [
         pkgs.intel-compute-runtime
         pkgs.intel-media-driver
         pkgs.vaapiIntel
