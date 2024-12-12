@@ -80,7 +80,7 @@
 
     # Most used applications
     "SUPER, f, exec, thunar" # use system provided thunar package
-    "SUPER, c, exec, ${pkgs.gnome.gnome-calculator}/bin/gnome-calculator"
+    "SUPER, c, exec, ${pkgs.gnome-calculator}/bin/gnome-calculator"
 
     # Rofi as dmenu replacement
     "SUPER, grave, exec, ${config.programs.rofi.package}/bin/rofi -show drun"
