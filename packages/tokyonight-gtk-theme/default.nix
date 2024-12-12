@@ -12,11 +12,11 @@ stdenvNoCC.mkDerivation {
   inherit (sourceData.tokyonight-gtk-theme) pname version src;
 
   nativeBuildInputs = [
-    pkgs.gnome.gnome-shell
+    pkgs.gnome-shell
     pkgs.sassc
   ];
 
-  builtInputs = [ pkgs.gnome.gnome-themes-extra ];
+  builtInputs = [ pkgs.gnome-themes-extra ];
 
   dontBuild = true;
 
