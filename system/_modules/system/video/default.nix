@@ -20,7 +20,6 @@ in
       hardware = {
         opengl = {
           enable = true;
-          driSupport = true;
           driSupport32Bit = true;
         };
       };
@@ -48,6 +47,7 @@ in
         pkgs.libvdpau-va-gl
       ];
       hardware.nvidia = {
+        open = false;
         modesetting.enable = true;
         # enable Nvidia settings menu
         nvidiaSettings = true;
