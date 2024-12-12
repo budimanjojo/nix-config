@@ -16,9 +16,6 @@
       shell = pkgs.fish;
       hashedPasswordFile = config.sops.secrets.adminPassword.path;
     };
-    users.test = {
-      isNormalUser = true;
-    };
   };
 
   programs.fish.enable = true;
