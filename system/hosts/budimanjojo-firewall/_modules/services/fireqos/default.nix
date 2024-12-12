@@ -26,8 +26,5 @@
   systemd.services.fireqos = {
     after = [ "network-online.target" ];
     wants = [ "network-online.target" ];
-    # TODO: can be removed after upgrading to 24.11
-    # see: https://github.com/NixOS/nixpkgs/pull/361402
-    wantedBy = [ "multi-user.target" ];
   };
 }
