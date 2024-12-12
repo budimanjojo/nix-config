@@ -8,7 +8,7 @@
   ];
   config = {
     extraFiles = {
-      "lua/utils.lua" = builtins.readFile ./lua/utils.lua;
+      "lua/utils.lua".source = ./lua/utils.lua;
     };
   };
 }

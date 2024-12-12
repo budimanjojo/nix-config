@@ -45,7 +45,7 @@
     # nixvim - Neovim distribution built around Nix modules
     # https://github.com/nix-community/nixvim
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.05";
+      url = "github:nix-community/nixvim/nixos-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
