@@ -20,27 +20,21 @@
       wireguardPeers = [
         {
           # pocof6-phone
-          wireguardPeerConfig = {
-            PublicKey = "WCESN/SAmvJekIxJSlmw+2FQg+uhvlseGhGvN/VZ0AU=";
-            AllowedIPs = [ "10.10.0.2/32" ];
-            PersistentKeepalive = 15;
-          };
+          PublicKey = "WCESN/SAmvJekIxJSlmw+2FQg+uhvlseGhGvN/VZ0AU=";
+          AllowedIPs = [ "10.10.0.2/32" ];
+          PersistentKeepalive = 15;
         }
         {
           # work-pc
-          wireguardPeerConfig = {
-            PublicKey = "E+sLt3iBptnj6+7X/9S2ROglx8G3urufr18wCBt8bGQ=";
-            AllowedIPs = [ "10.10.0.3/32" ];
-            PersistentKeepalive = 15;
-          };
+          PublicKey = "E+sLt3iBptnj6+7X/9S2ROglx8G3urufr18wCBt8bGQ=";
+          AllowedIPs = [ "10.10.0.3/32" ];
+          PersistentKeepalive = 15;
         }
         {
           # oneplus6t-phone
-          wireguardPeerConfig = {
-            PublicKey = "4g38+3wtUHHlrOCl/HsIM6i8p1QeoWgHtPh7hjcQx10=";
-            AllowedIPs = [ "10.10.0.4/32" ];
-            PersistentKeepalive = 15;
-          };
+          PublicKey = "4g38+3wtUHHlrOCl/HsIM6i8p1QeoWgHtPh7hjcQx10=";
+          AllowedIPs = [ "10.10.0.4/32" ];
+          PersistentKeepalive = 15;
         }
       ];
     };
