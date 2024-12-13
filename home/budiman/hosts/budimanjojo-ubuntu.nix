@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   config = {
     myHome = {
@@ -19,6 +19,6 @@
 
     # this add nix installed desktop files to be shown in application menu
     targets.genericLinux.enable = true;
-    nixGL.prefix = "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel";
+    nixGL.packages = inputs.nixgl.packages;
   };
 }

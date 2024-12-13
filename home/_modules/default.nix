@@ -22,8 +22,6 @@ in
     ./multiplexer/tmux
     ./multiplexer/zellij
 
-    ./nixgl
-
     ./programs/beeaccounting
     ./programs/chezmoi
     ./programs/fontconfig
