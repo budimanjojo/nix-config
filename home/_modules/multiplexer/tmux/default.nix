@@ -22,7 +22,7 @@ in
     };
     programs.tmux = {
       enable = true;
-      package = pkgs.unstable.tmux;
+      package = pkgs.tmux;
       catppuccin = {
         enable = true;
         extraConfig = ''
