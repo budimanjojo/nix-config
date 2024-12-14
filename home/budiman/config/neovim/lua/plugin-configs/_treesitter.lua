@@ -6,10 +6,4 @@ require('nvim-treesitter.configs').setup {
       return vim.api.nvim_buf_line_count(bufnr) > 50000
     end,
   },
-  autotag = {
-    enable = true,
-    disable = function(_, bufnr)
-      return vim.api.nvim_buf_line_count(bufnr) > 50000
-    end,
-  }
 }
