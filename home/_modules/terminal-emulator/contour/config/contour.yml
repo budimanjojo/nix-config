@@ -4,11 +4,6 @@ profiles:
   main:
     show_title_bar: false
     maximized: true
-    # without this neovim floating window inside zellij is acting weird
-    # https://github.com/contour-terminal/contour/issues/1602
-    terminal_size:
-      columns: 80
-      lines: 25
     environment:
       TERM: xterm-256color
       COLORTERM: truecolor
