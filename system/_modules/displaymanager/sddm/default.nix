@@ -32,16 +32,17 @@ in
   };
 
   config = mkIf (cfg.enable) {
+    catppuccin.sddm = {
+      enable = true;
+      background = cfg.wallpaper;
+      loginBackground = true;
+    };
+
     services = {
       displayManager = {
         sddm = {
           enable = true;
           wayland.enable = mySystem.isWayland;
-          catppuccin = {
-            enable = true;
-            background = cfg.wallpaper;
-            loginBackground = true;
-          };
           package = pkgs.kdePackages.sddm;
         };
         defaultSession = cfg.defaultSession;
