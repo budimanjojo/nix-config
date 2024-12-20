@@ -8,9 +8,10 @@ in
   };
 
   config = lib.mkIf (cfg.enable) {
+    catppuccin.starship.enable = true;
+
     programs.starship = {
       enable = true;
-      catppuccin.enable = true;
       settings = {
         add_newline = false;
         command_timeout = 1000;

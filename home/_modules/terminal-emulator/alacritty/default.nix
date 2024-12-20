@@ -14,10 +14,11 @@ in
   };
 
   config = mkIf (cfg.enable) {
+    catppuccin.alacritty.enable = true;
+
     programs.alacritty = {
       enable = true;
       package = (config.lib.nixGL.wrap pkgs.alacritty);
-      catppuccin.enable = true;
       settings = {
         general.live_config_reload = true;
         env.TERM = "xterm-256color";

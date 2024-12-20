@@ -23,10 +23,15 @@ in
       starship.enable = true;
     };
 
+    catppuccin = {
+      fish.enable = true;
+      fzf.enable = true;
+      bat.enable = true;
+    };
+
     programs = {
       fish = {
         enable = true;
-        catppuccin.enable = true;
         package = mkIf (!isNixos) (
           pkgs.fish.override {
             fishEnvPreInit = ''
@@ -112,11 +117,7 @@ in
       };
 
       zoxide.enable = true;
-
-      bat = {
-        enable = true;
-        catppuccin.enable = true;
-      };
+      bat.enable = true;
 
       fzf = {
         enable = true;
@@ -131,7 +132,6 @@ in
         ];
         changeDirWidgetCommand = "${pkgs.fd}/bin/fd --type d";
         changeDirWidgetOptions = [ "--preview 'tree -C {} | head -200'" ];
-        catppuccin.enable = true;
       };
     };
     home.packages = with pkgs; [
