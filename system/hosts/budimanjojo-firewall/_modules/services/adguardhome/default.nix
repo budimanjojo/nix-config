@@ -134,7 +134,7 @@ in
           }
           {
             domain = "oracle.\${SECRET_DOMAIN_0}";
-            answer = "\${SECRET_DOMAIN_0}";
+            answer = "oracle.\${SECRET_DOMAIN_0}";
           }
         ];
       };
