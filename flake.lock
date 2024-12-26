@@ -2,11 +2,11 @@
   "nodes": {
     "catppuccin": {
       "locked": {
-        "lastModified": 1735028008,
-        "narHash": "sha256-crbQNRVQgPH0hX5vZk8xL9JStXo74Es7zDBjRcc4i+A=",
+        "lastModified": 1735203532,
+        "narHash": "sha256-m7KAHLOeF93S8vhT5Mn+KxLfWnI6N7+S6H552tNUlYs=",
         "owner": "catppuccin",
         "repo": "nix",
-        "rev": "bfd20bcf45f1de0e97b551be51495abf8a727f1a",
+        "rev": "58d020d4c85416e2a75ec820e290d3d5b13b3427",
         "type": "github"
       },
       "original": {
@@ -488,11 +488,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1735153333,
-        "narHash": "sha256-ncARAAy4GlR7rzYV1xNkSwvMTsg8m8XXkfp6ax83wD0=",
+        "lastModified": 1735237216,
+        "narHash": "sha256-c7IFiXsaTfalRBApLsCv6tGt3CSrdkITxipRvVZn7hg=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "31d01522af365c4ada5f3b65af6868c678813bda",
+        "rev": "86c4147c65c9b5305ed2669cf97ac8a007b1ef0f",
         "type": "github"
       },
       "original": {
