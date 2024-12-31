@@ -52,7 +52,7 @@ in
     port = 3000;
     mutableSettings = false;
     settings = {
-      schema_version = 28; # the default is pkgs.adguardhome.schema_version
+      schema_version = 29; # the default is pkgs.adguardhome.schema_version
       users = [
         {
           name = "budiman";
@@ -191,6 +191,7 @@ in
         persistent = [
           {
             name = "GUEST";
+            uid = "2e755b04-5463-4f69-93a2-6d620f42c6e1";
             tags = [ ];
             ids = [ "192.168.250.0/24" ];
             use_global_settings = true;
@@ -200,6 +201,7 @@ in
           }
           {
             name = "IOT";
+            uid = "7a8b3ec5-5915-4bdc-b368-92c1c123bfb1";
             tags = [ ];
             ids = [ "192.168.69.0/24" ];
             use_global_settings = false;
@@ -212,6 +214,7 @@ in
           }
           {
             name = "Android TV";
+            uid = "3635575c-a9bb-4303-a2e2-75ffd1d0a967";
             tags = [ "device_tv" ];
             ids = [ "192.168.50.41" ];
             use_global_settings = false;
@@ -223,6 +226,7 @@ in
           }
           {
             name = "Children";
+            uid = "27337a9f-d874-497c-9037-39519f1384a5";
             tags = [ "user_child" ];
             ids = [
               "192.168.10.12"
