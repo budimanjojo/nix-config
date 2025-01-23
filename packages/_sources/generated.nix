@@ -112,13 +112,13 @@
   };
   oil-nvim = {
     pname = "oil-nvim";
-    version = "1488f0d96b1cb820dd12f05a7bf5283a631a7c4d";
+    version = "7a782c9a9cb7a16ec52199e55a1e892262c5dbbc";
     src = fetchFromGitHub {
       owner = "stevearc";
       repo = "oil.nvim";
-      rev = "1488f0d96b1cb820dd12f05a7bf5283a631a7c4d";
+      rev = "7a782c9a9cb7a16ec52199e55a1e892262c5dbbc";
       fetchSubmodules = false;
-      sha256 = "sha256-5JljkD4ei9Kh3+RSOJy+8RGU9nqmZyPAEbz5dRWp8ek=";
+      sha256 = "sha256-ejWwxjjKxMPs77O574chomMAFpBUHpFOFkT6romk480=";
     };
     date = "2025-01-22";
   };

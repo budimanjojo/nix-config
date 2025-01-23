@@ -211,12 +211,12 @@
             "name": null,
             "owner": "stevearc",
             "repo": "oil.nvim",
-            "rev": "1488f0d96b1cb820dd12f05a7bf5283a631a7c4d",
-            "sha256": "sha256-5JljkD4ei9Kh3+RSOJy+8RGU9nqmZyPAEbz5dRWp8ek=",
+            "rev": "7a782c9a9cb7a16ec52199e55a1e892262c5dbbc",
+            "sha256": "sha256-ejWwxjjKxMPs77O574chomMAFpBUHpFOFkT6romk480=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "1488f0d96b1cb820dd12f05a7bf5283a631a7c4d"
+        "version": "7a782c9a9cb7a16ec52199e55a1e892262c5dbbc"
     },
     "prometheus-api-client": {
         "cargoLocks": null,
