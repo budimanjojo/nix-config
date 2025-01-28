@@ -422,11 +422,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1737942377,
-        "narHash": "sha256-8Eo/jRAgT3CbAloyqOj6uPN1EqBvLI/Tv2g+RxHjkhU=",
+        "lastModified": 1738009863,
+        "narHash": "sha256-KxmFlQ2j9PpDhKRXWu85bv3R2wmfkUqdpJhEwz9JN/E=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "88a55dffa4d44d294c74c298daf75824dc0aafb5",
+        "rev": "f898cbfddfab52593da301a397a17d0af801bbc3",
         "type": "github"
       },
       "original": {
@@ -504,11 +504,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1738002119,
-        "narHash": "sha256-aoc7vbA2+0RBDiMvNla8J6lsxtVbqjHEYybFwX1tTJY=",
+        "lastModified": 1738083586,
+        "narHash": "sha256-6NUXBkmQVn3bbklus/QsKGT3llRHrhgYDyLoHtja/PU=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "8d3343193ef659770b68eedb6f8cdecd2017aa91",
+        "rev": "46d45ab1273f9a47ea20c2b147b1b3c74dab33c1",
         "type": "github"
       },
       "original": {
@@ -636,11 +636,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1737862560,
-        "narHash": "sha256-i5FV1/V4Rew5NYal5Q+VsoVWhGwAqUjA5XiFswsaD9I=",
+        "lastModified": 1738035934,
+        "narHash": "sha256-F/aKgPVGNHh2GaWByMaCy6CAG4Wj+s7jdocuUClJVQI=",
         "owner": "budimanjojo",
         "repo": "talhelper",
-        "rev": "eac464ee2305fa0daab5a59842b24b5e18c13a93",
+        "rev": "0b04684857f60ebff327575ed58ace16c3c25fc5",
         "type": "github"
       },
       "original": {
