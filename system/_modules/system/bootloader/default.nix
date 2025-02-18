@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   myHardware = config.myHardware;
 in
@@ -20,7 +25,8 @@ in
       boot.loader = {
         systemd-boot = {
           enable = true;
-          memtest86.enable = true;
+          # memtest86 is not available in aarch64-linux
+          memtest86.enable = lib.mkIf (pkgs.system != "aarch64-linux") true;
           configurationLimit = 10;
         };
         efi.canTouchEfiVariables = true;

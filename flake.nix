@@ -87,7 +87,10 @@
     in
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       # systems for which you want to build the `perSystem` attributes
-      systems = [ "x86_64-linux" ];
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
 
       # everything below `perSystem` will be enumerated and have `${system}`
       # added in the middle by `flake-parts`
@@ -129,6 +132,13 @@
           budimanjojo-firewall = flakeLib.mkSystem {
             hostname = "budimanjojo-firewall";
             extraModules = [ inputs.disko.nixosModules.disko ];
+          };
+          # this is my Oracle always free instance that I use as my WireGuard relay server
+          # so my firewall can live behind a NAT and be fine in case I switch to a different
+          # ISP that doesn't give me public routeable IP
+          budimanjojo-oracle = flakeLib.mkSystem {
+            hostname = "budimanjojo-oracle";
+            system = "aarch64-linux";
           };
         };
 
