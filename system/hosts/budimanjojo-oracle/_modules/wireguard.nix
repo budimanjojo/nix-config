@@ -30,6 +30,7 @@
             "192.168.200.0/24" # SERVER network
             "192.168.250.0/24" # GUEST network
             "10.5.0.0/24" # CONTAINER network
+            "192.168.15.0/24" # k8s LB network
           ];
         }
         {
