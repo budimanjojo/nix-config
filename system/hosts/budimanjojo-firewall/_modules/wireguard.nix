@@ -15,12 +15,13 @@
       };
       wireguardConfig = {
         PrivateKeyFile = "${config.sops.secrets."wireguard/privatekey".path}";
+        RouteTable = "main";
       };
       wireguardPeers = [
         {
           # budimanjojo-oracle
           PublicKey = "e71Old3Ax2DEw8QB9yvhyOIIuNJHtp8nBYKJJaDVPkw=";
-          AllowedIPs = [ "10.10.10.12/32" ];
+          AllowedIPs = [ "10.10.10.10/24" ];
           Endpoint = "140.245.111.170:51821";
           PersistentKeepalive = 15;
         }
