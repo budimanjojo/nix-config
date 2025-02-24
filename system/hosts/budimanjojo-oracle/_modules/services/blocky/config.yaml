@@ -1,0 +1,30 @@
+---
+upstreams:
+  groups:
+    default:
+      - 1.1.1.1
+      - 8.8.8.8
+# we let the adguardhome running in my home network to handle my own domains
+conditional:
+  mapping:
+    ${SECRET_DOMAIN_0}: 192.168.10.1
+    ${SECRET_DOMAIN_1}: 192.168.10.1
+blocking:
+  denylists:
+    ads:
+      - https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt
+      - https://raw.githubusercontent.com/ABPindo/indonesianadblockrules/master/subscriptions/abpindo.txt
+  allowlists:
+    ads:
+      - |
+        s2.youtube.com
+        graph.facebook.com
+        i.instagram.com
+        fonts.gstatic.com
+        click.redditmail.com
+        aypbpr.tokopedia.com
+        plenty.vidio.com
+        i.sgsnssdk.com
+  clientGroupsBlock:
+    default:
+      - ads
