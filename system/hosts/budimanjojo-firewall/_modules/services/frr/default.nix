@@ -2,8 +2,14 @@
 {
   # TODO: everytime networkd is being reconfigured, frr will be broken because networkd deletes nexthops it doesn't manage
   # needs https://github.com/NixOS/nixpkgs/pull/376630 to be merged first though, maybe in the next nixos release
-  # for now, a simple `systemctl restart frr` will do
   # systemd.network.config.networkConfig.ManageForeignNextHops = false;
+
+  # for now, this will do
+  environment.etc."systemd/networkd.conf.d/frr.conf".text = ''
+    [Network]
+    ManageForeignNextHops=false
+  '';
+
   services.frr = {
     bgpd.enable = true;
     config = ''
