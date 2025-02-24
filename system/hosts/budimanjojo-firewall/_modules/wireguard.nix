@@ -15,33 +15,20 @@
       };
       wireguardConfig = {
         PrivateKeyFile = "${config.sops.secrets."wireguard/privatekey".path}";
-        ListenPort = 51821;
       };
       wireguardPeers = [
         {
-          # pocof6-phone
-          PublicKey = "WCESN/SAmvJekIxJSlmw+2FQg+uhvlseGhGvN/VZ0AU=";
-          AllowedIPs = [ "10.10.0.2/32" ];
-          PersistentKeepalive = 15;
-        }
-        {
-          # work-pc
-          PublicKey = "E+sLt3iBptnj6+7X/9S2ROglx8G3urufr18wCBt8bGQ=";
-          AllowedIPs = [ "10.10.0.3/32" ];
-          PersistentKeepalive = 15;
-        }
-        {
-          # oneplus6t-phone
-          PublicKey = "4g38+3wtUHHlrOCl/HsIM6i8p1QeoWgHtPh7hjcQx10=";
-          AllowedIPs = [ "10.10.0.4/32" ];
+          # budimanjojo-oracle
+          PublicKey = "e71Old3Ax2DEw8QB9yvhyOIIuNJHtp8nBYKJJaDVPkw=";
+          AllowedIPs = [ "10.10.10.12/32" ];
+          Endpoint = "140.245.111.170:51821";
           PersistentKeepalive = 15;
         }
       ];
     };
     networks."50-wg0" = {
       matchConfig.Name = "wg0";
-      address = [ "10.10.0.1/24" ];
-      networkConfig.IPMasquerade = "ipv4";
+      address = [ "10.10.10.11/32" ];
     };
   };
 }
