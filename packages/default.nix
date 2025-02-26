@@ -11,7 +11,7 @@
   tokyonight-icon-theme = pkgs.callPackage ./tokyonight-icon-theme/default.nix { };
   nvim-plugins = pkgs.callPackage ./nvim-plugins/default.nix { };
   fish-plugins = pkgs.fishPlugins.callPackage ./fish-plugins/default.nix { };
-  krr = pkgs.callPackage ./krr/default.nix { };
+  # krr = pkgs.callPackage ./krr/default.nix { };
   kubectl-rook-ceph = pkgs.callPackage ./kubectl-rook-ceph/default.nix { };
   neovim = inputs'.nixvim.legacyPackages.makeNixvimWithModule {
     # make nixvim use the same pkgs with my overlays added
