@@ -28,18 +28,6 @@ fetch.github = "budimanjojo/k8s-snippets"
 [guihua-lua]
 src.git = "https://github.com/ray-x/guihua.lua"
 fetch.github = "ray-x/guihua.lua"
-[prometheus-api-client]
-src.pypi = "prometheus-api-client"
-fetch.pypi = "prometheus-api-client"
-[alive-progress]
-src.pypi = "alive-progress"
-fetch.pypi = "alive-progress"
-[about-time]
-src.pypi = "about-time"
-fetch.pypi = "about-time"
-[krr]
-src.github_tag = "robusta-dev/krr"
-fetch.github = "robusta-dev/krr"
 [abbreviation-tips]
 src.github_tag = "gazorby/fish-abbreviation-tips"
 fetch.github = "gazorby/fish-abbreviation-tips"
