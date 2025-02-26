@@ -12,22 +12,6 @@
       sha256 = "sha256-F1t81VliD+v6WEWqj1c1ehFBXzqLyumx5vV46s/FZRU=";
     };
   };
-  about-time = {
-    pname = "about-time";
-    version = "4.2.1";
-    src = fetchurl {
-      url = "https://pypi.org/packages/source/a/about-time/about-time-4.2.1.tar.gz";
-      sha256 = "sha256-alOIYtM85n2ZdCnRSZgxDh2/2my32bv795nEcJhH/s4=";
-    };
-  };
-  alive-progress = {
-    pname = "alive-progress";
-    version = "3.2.0";
-    src = fetchurl {
-      url = "https://pypi.org/packages/source/a/alive-progress/alive-progress-3.2.0.tar.gz";
-      sha256 = "sha256-7eKdBG/0VP5WuUH2hvid2TiUMMSlt2WORFywuA4OTes=";
-    };
-  };
   chezmoi-vim = {
     pname = "chezmoi-vim";
     version = "abf37336437867cbd99ce2f8849b717415391cc3";
@@ -64,17 +48,6 @@
     };
     date = "2023-12-13";
   };
-  krr = {
-    pname = "krr";
-    version = "v1.60-alpha";
-    src = fetchFromGitHub {
-      owner = "robusta-dev";
-      repo = "krr";
-      rev = "v1.60-alpha";
-      fetchSubmodules = false;
-      sha256 = "sha256-rIKL1SHVO3kA8xMgKwkYsnRkYepEGmGXAPUkilYboHc=";
-    };
-  };
   luasnip = {
     pname = "luasnip";
     version = "v2.3.0";
@@ -88,47 +61,39 @@
   };
   mason-lspconfig-nvim = {
     pname = "mason-lspconfig-nvim";
-    version = "805c31ec6bfb557975143712ecff6956d3227141";
+    version = "1a31f824b9cd5bc6f342fc29e9a53b60d74af245";
     src = fetchFromGitHub {
       owner = "williamboman";
       repo = "mason-lspconfig.nvim";
-      rev = "805c31ec6bfb557975143712ecff6956d3227141";
+      rev = "1a31f824b9cd5bc6f342fc29e9a53b60d74af245";
       fetchSubmodules = false;
-      sha256 = "sha256-ITz4BN9n01gET6zrDRv1fqkbPKnAjrFj0r8NQpV3MVQ=";
+      sha256 = "sha256-+Rji3UH32QQZADqQhMcJpgmkwbDumKaBlZO6cqNvUGY=";
     };
-    date = "2025-02-11";
+    date = "2025-02-15";
   };
   mason-tool-installer-nvim = {
     pname = "mason-tool-installer-nvim";
-    version = "374c78d3ebb5c53f43ea6bd906b6587b5e899b9e";
+    version = "5639d58a3d11ff7c05c8e31e159bfedae55d7961";
     src = fetchFromGitHub {
       owner = "WhoIsSethDaniel";
       repo = "mason-tool-installer.nvim";
-      rev = "374c78d3ebb5c53f43ea6bd906b6587b5e899b9e";
+      rev = "5639d58a3d11ff7c05c8e31e159bfedae55d7961";
       fetchSubmodules = false;
-      sha256 = "sha256-d/AFk/ILAkqtYYGfxoSYsFkWHT8cIAzUGKNdIkrn3vM=";
+      sha256 = "sha256-KUX0bmh3x1w37dhfON6QMaXNBUTHgAwQD7XJyJhpLxE=";
     };
-    date = "2025-01-30";
+    date = "2025-02-25";
   };
   oil-nvim = {
     pname = "oil-nvim";
-    version = "add50252b5e9147c0a09d36480d418c7e2737472";
+    version = "975a77cce3c8cb742bc1b3629f4328f5ca977dad";
     src = fetchFromGitHub {
       owner = "stevearc";
       repo = "oil.nvim";
-      rev = "add50252b5e9147c0a09d36480d418c7e2737472";
+      rev = "975a77cce3c8cb742bc1b3629f4328f5ca977dad";
       fetchSubmodules = false;
-      sha256 = "sha256-qrtBfIAJRBdxOBgAu7Q97SpCxdTX+jCmaAaZ5bXBohw=";
+      sha256 = "sha256-jCuOwTd6QIy3USuE7X/rHYUbriW6+2WaK9JxCx4/O2c=";
     };
-    date = "2025-01-26";
-  };
-  prometheus-api-client = {
-    pname = "prometheus-api-client";
-    version = "0.5.5";
-    src = fetchurl {
-      url = "https://pypi.org/packages/source/p/prometheus-api-client/prometheus-api-client-0.5.5.tar.gz";
-      sha256 = "sha256-WUScS+BIXqWi37vtJILrCj7qyMExs+/IZt9MmgxAO7c=";
-    };
+    date = "2025-02-15";
   };
   sad-nvim = {
     pname = "sad-nvim";
