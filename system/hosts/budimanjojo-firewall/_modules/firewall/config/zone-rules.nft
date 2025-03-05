@@ -54,13 +54,12 @@ chain CONTAINERS-LOCAL {
 chain WIREGUARD-LOCAL {
   udp dport 123 counter return comment "allow access to ntp server"
   meta l4proto { tcp, udp } th dport { 53, 853 } ip daddr @dns_server counter return comment "allow access to dns server"
-  tcp dport 22 counter return comment "allow access to ssh server"
+  ip saddr @trusted_devices tcp dport 22 counter return comment "allow access to ssh server from trusted_devices"
   ct state invalid counter log prefix "[WIREGUARD-LOCAL-invalid-D]" drop comment "drop invalid"
   counter log prefix "[WIREGUARD-LOCAL-default-D]" drop comment "default-action drop"
 }
 
 chain WAN-LOCAL {
-  udp dport 51821 counter return comment "allow access to wireguard server"
   ct state invalid counter log prefix "[WAN-LOCAL-invalid-D]" drop comment "drop invalid"
   counter log prefix "[WAN-LOCAL-default-D]" drop comment "default-action drop"
 }
@@ -69,7 +68,7 @@ chain WAN-LOCAL {
 # ZONE_TO_LAN0 #
 ################
 chain HOME-LAN0 {
-  ip saddr @trusted_devices counter return comment "accept from trusted devices"
+  ip saddr @trusted_devices counter return comment "accept from trusted_devices"
   ct state invalid counter log prefix "[HOME-LAN0-invalid-D]" drop comment "drop invalid"
   counter log prefix "[HOME-LAN0-default-D]" drop comment "default-action drop"
 }
@@ -136,8 +135,9 @@ chain CONTAINERS-HOME {
 }
 
 chain WIREGUARD-HOME {
+  ip saddr @trusted_devices return comment "allow access from trusted_devices"
   ct state invalid counter log prefix "[WIREGUARD-HOME-invalid-D]" drop comment "drop invalid"
-  counter log prefix "[WIREGUARD-HOME-default-A]" return comment "default-action accept"
+  counter log prefix "[WIREGUARD-HOME-default-D]" drop comment "default-action drop"
 }
 
 chain WAN-HOME {
@@ -174,8 +174,9 @@ chain CONTAINERS-IOT {
 }
 
 chain WIREGUARD-IOT {
+  ip saddr @trusted_devices return comment "allow access from trusted_devices"
   ct state invalid counter log prefix "[WIREGUARD-IOT-invalid-D]" drop comment "drop invalid"
-  counter log prefix "[WIREGUARD-IOT-default-A]" accept comment "default-action accept"
+  counter log prefix "[WIREGUARD-IOT-default-D]" drop comment "default-action drop"
 }
 
 chain WAN-IOT {
@@ -219,8 +220,9 @@ chain CONTAINERS-SERVER {
 
 chain WIREGUARD-SERVER {
   tcp dport { 80, 443 } ip daddr @k8s_ingress counter return comment "allow access to k8s_ingress"
+  ip saddr @trusted_devices return comment "allow access from trusted_devices"
   ct state invalid counter log prefix "[WIREGUARD-SERVER-invalid-D]" drop comment "drop invalid"
-  counter log prefix "[WIREGUARD-SERVER-default-A]" accept comment "default-action accept"
+  counter log prefix "[WIREGUARD-SERVER-default-D]" drop comment "default-action drop"
 }
 
 chain WAN-SERVER {
@@ -300,8 +302,9 @@ chain GUEST-CONTAINERS {
 }
 
 chain WIREGUARD-CONTAINERS {
+  ip saddr @trusted_devices return comment "allow access from trusted_devices"
   ct state invalid counter log prefix "[WIREGUARD-CONTAINERS-invalid-D]" drop comment "drop invalid"
-  counter log prefix "[WIREGUARD-CONTAINERS-default-A]" return comment "default-action accept"
+  counter log prefix "[WIREGUARD-CONTAINERS-default-D]" drop comment "default-action drop"
 }
 
 chain WAN-CONTAINERS {
