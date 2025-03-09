@@ -31,6 +31,9 @@ in
   };
 
   systemd.services.adguardhome = {
+    # see: https://github.com/AdguardTeam/AdGuardHome/issues/4880
+    wants = [ "time-sync.target" ];
+    after = [ "time-sync.target" ];
     serviceConfig = {
       EnvironmentFile = "${config.sops.secrets."adguardhome/env".path}";
       User = adguardUser;
