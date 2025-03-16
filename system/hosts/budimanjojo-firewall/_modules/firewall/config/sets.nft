@@ -15,7 +15,7 @@ set k8s_api {
 
 set k8s_ingress {
   type ipv4_addr
-  elements = { 192.168.15.0 }
+  elements = { 192.168.15.1 }
 }
 
 set k8s_nodes {

@@ -117,15 +117,15 @@ in
         rewrites = [
           {
             domain = "\${SECRET_DOMAIN_0}";
-            answer = "192.168.15.0";
+            answer = "192.168.15.1";
           }
           {
             domain = "*.\${SECRET_DOMAIN_0}";
-            answer = "192.168.15.0";
+            answer = "192.168.15.1";
           }
           {
             domain = "*.\${SECRET_DOMAIN_1}";
-            answer = "192.168.15.0";
+            answer = "192.168.15.1";
           }
           {
             domain = "\${SECRET_WIREGUARD_ENTRYPOINT}";
