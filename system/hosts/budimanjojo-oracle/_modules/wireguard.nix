@@ -51,6 +51,11 @@ in
           PublicKey = "4g38+3wtUHHlrOCl/HsIM6i8p1QeoWgHtPh7hjcQx10=";
           AllowedIPs = [ "10.10.10.14/32" ];
         }
+        {
+          # android-livingroom-tv
+          PublicKey = "LYF3KLxBtfD1tIy2qS4Rl4COGlBLxFye7OaIUkZtfHM=";
+          AllowedIPs = [ "10.10.10.15/32" ];
+        }
       ];
     };
     networks = {
