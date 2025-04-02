@@ -56,7 +56,7 @@ in
             };
             sharedModules = [
               inputs.sops-nix.homeManagerModules.sops
-              inputs.catppuccin.homeManagerModules.catppuccin
+              inputs.catppuccin.homeModules.catppuccin
               ./home/_modules # all users get my own home-manager modules
             ];
           };
@@ -91,7 +91,7 @@ in
       };
       modules = [
         inputs.sops-nix.homeManagerModules.sops
-        inputs.catppuccin.homeManagerModules.catppuccin
+        inputs.catppuccin.homeModules.catppuccin
         ./home/_modules # all users get my own home-manager modules
         {
           imports = [ ./home/${username} ];
