@@ -139,12 +139,12 @@
             "name": null,
             "owner": "WhoIsSethDaniel",
             "repo": "mason-tool-installer.nvim",
-            "rev": "d567210dc3a460a2ff577ad88ab8219f572a39aa",
-            "sha256": "sha256-NSw9/QoI4N7hTVttVAK0E8YpyK7VxaNeARmxZJLbLF8=",
+            "rev": "4aa03a08c3705e622f2e7886783fd450f7749cdd",
+            "sha256": "sha256-qPVPWYVuxALadX8YRXsouSxEHNnezbZ8H8e9/DzAci8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "d567210dc3a460a2ff577ad88ab8219f572a39aa"
+        "version": "4aa03a08c3705e622f2e7886783fd450f7749cdd"
     },
     "oil-nvim": {
         "cargoLocks": null,
