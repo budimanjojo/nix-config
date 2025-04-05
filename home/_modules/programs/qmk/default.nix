@@ -25,7 +25,7 @@ in
     ];
     myHome.shell.git.enable = true;
 
-    xdg.configFile."qmk".source = ./qmk.ini;
+    xdg.configFile."qmk/qmk.ini".source = ./qmk.ini;
 
     home.packages = with pkgs; [ qmk ];
   };
