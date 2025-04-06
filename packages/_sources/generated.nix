@@ -109,15 +109,15 @@
   };
   tmux-fish = {
     pname = "tmux-fish";
-    version = "d5e3ff87abc462aff8896d74f06e5f3dbcfed466";
+    version = "db0030b7f4f78af4053dc5c032c7512406961ea5";
     src = fetchFromGitHub {
       owner = "budimanjojo";
       repo = "tmux.fish";
-      rev = "d5e3ff87abc462aff8896d74f06e5f3dbcfed466";
+      rev = "db0030b7f4f78af4053dc5c032c7512406961ea5";
       fetchSubmodules = false;
-      sha256 = "sha256-11rzsR5WHKA/aKfksWk8nZXi6tx5d2RKZHoJGvb9k70=";
+      sha256 = "sha256-rRibn+FN8VNTSC1HmV05DXEa6+3uOHNx03tprkcjjs8=";
     };
-    date = "2025-03-03";
+    date = "2025-04-07";
   };
   tokyonight-gtk-theme = {
     pname = "tokyonight-gtk-theme";
