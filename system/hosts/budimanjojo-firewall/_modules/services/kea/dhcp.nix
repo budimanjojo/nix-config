@@ -143,7 +143,7 @@ in
               {
                 hostname = "android-livingroom-tv";
                 ip-address = "192.168.69.30";
-                hw-address = "84:c5:a6:7a:9f:e5";
+                hw-address = "8c:90:2d:cd:00:56";
               }
             ];
           }
