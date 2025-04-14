@@ -98,11 +98,6 @@ in
                 hw-address = "40:a9:cf:3b:a3:7d";
               }
               {
-                hostname = "raspberry-pi4-tv";
-                ip-address = "192.168.50.41";
-                hw-address = "dc:a6:32:10:60:45";
-              }
-              {
                 hostname = "budimanjojo-main";
                 ip-address = "192.168.50.49";
                 hw-address = "b4:2e:99:62:8d:06";

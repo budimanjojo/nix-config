@@ -188,13 +188,13 @@ chain WAN-IOT {
 # ZONE_TO_SERVER #
 ##################
 chain LAN0-SERVER {
-  tcp dport { 80, 443 } ip daddr @k8s_ingress counter return comment "allow access to k8s ingress"
+  tcp dport { 80, 443 } ip daddr @k8s_ingress counter return comment "allow access to k8s_ingress"
   ct state invalid counter log prefix "[LAN0-SERVER-invalid-D]" drop comment "drop invalid"
   counter log prefix "[LAN0-SERVER-default-D]" drop comment "default-action drop"
 }
 
 chain HOME-SERVER {
-  tcp dport { 80, 443 } ip daddr @k8s_ingress counter return comment "allow access to k8s ingress"
+  tcp dport { 80, 443 } ip daddr @k8s_ingress counter return comment "allow access to k8s_ingress"
   ip saddr @trusted_devices tcp dport 22 counter return comment "allow access to ssh from trusted_devices"
   ip saddr @trusted_devices ip daddr @k8s_nodes counter return comment "allow access to k8s nodes from trusted_devices"
   ip saddr @trusted_devices tcp dport 50000 counter return comment "allow access to talos api port from trusted_devices"
@@ -204,6 +204,7 @@ chain HOME-SERVER {
 
 chain IOT-SERVER {
   ip saddr @broadlink_plugs ip daddr @k8s_nodes counter return comment "allow broadlink_plugs to access k8s_nodes"
+  ip saddr @android_livingroom_tv tcp dport { 80, 443 } ip daddr @k8s_ingress return comment "allow access to k8s_ingress from android_livingroom_tv"
   ct state invalid counter log prefix "[IOT-SERVER-invalid-D]" drop comment "drop invalid"
   counter log prefix "[IOT-SERVER-default-D]" drop comment "default-action drop"
 }

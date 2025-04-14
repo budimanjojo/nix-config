@@ -3,6 +3,11 @@ set broadlink_plugs {
   elements = { 192.168.69.10 }
 }
 
+set android_livingroom_tv {
+  type ipv4_addr
+  elements = { 192.168.69.30 }
+}
+
 set dns_server {
   type ipv4_addr
   elements = { 192.168.10.1 }

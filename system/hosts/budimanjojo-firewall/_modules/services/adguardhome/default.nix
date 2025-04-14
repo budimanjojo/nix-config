@@ -219,13 +219,11 @@ in
             name = "Android TV";
             uid = "3635575c-a9bb-4303-a2e2-75ffd1d0a967";
             tags = [ "device_tv" ];
-            ids = [ "192.168.50.41" ];
-            use_global_settings = false;
+            ids = [ "192.168.69.30" ];
+            use_global_settings = true;
+            use_global_blocked_services = true;
             blocked_services.ids = [ ];
-            upstreams = [
-              "1.1.1.1"
-              "8.8.8.8"
-            ];
+            upstreams = [ "tls://one.one.one.one" ];
           }
           {
             name = "Children";
