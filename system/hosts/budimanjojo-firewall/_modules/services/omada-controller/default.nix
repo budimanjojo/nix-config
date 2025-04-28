@@ -5,6 +5,10 @@ let
   logsDir = "/var/lib/omada-controller-logs";
 in
 {
+  sops.secrets."omada-controller/sslkey" = {
+    sopsFile = ./secret.sops.yaml;
+    restartUnits = [ "podman-omada-controller.service" ];
+  };
   systemd.tmpfiles.rules = [
     "d ${dataDir} 0755 508 508"
     "d ${logsDir} 0755 508 508"
@@ -18,6 +22,8 @@ in
     volumes = [
       "${dataDir}:/opt/tplink/EAPController/data:rw"
       "${logsDir}:/opt/tplink/EAPController/logs:rw"
+      "${config.sops.secrets."omada-controller/sslkey".path}:/cert/tls.key:ro"
+      "${./ssl.crt}:/cert/tls.crt:ro"
     ];
     environment = {
       TZ = "Asia/Jakarta";
