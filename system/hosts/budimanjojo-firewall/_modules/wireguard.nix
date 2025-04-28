@@ -21,7 +21,7 @@
         {
           # budimanjojo-oracle
           PublicKey = "e71Old3Ax2DEw8QB9yvhyOIIuNJHtp8nBYKJJaDVPkw=";
-          AllowedIPs = [ "10.10.10.10/24" ];
+          AllowedIPs = [ "10.10.10.0/24" ];
           Endpoint = "140.245.111.170:51821";
           PersistentKeepalive = 15;
         }
