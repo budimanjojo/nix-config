@@ -97,15 +97,15 @@
   };
   sad-nvim = {
     pname = "sad-nvim";
-    version = "d5bb4e98b42ae0084ae6ec03aa285d1b2fa1ba8e";
+    version = "e7511767b59fcff237cc7209d47d08aba64b9f63";
     src = fetchFromGitHub {
       owner = "ray-x";
       repo = "sad.nvim";
-      rev = "d5bb4e98b42ae0084ae6ec03aa285d1b2fa1ba8e";
+      rev = "e7511767b59fcff237cc7209d47d08aba64b9f63";
       fetchSubmodules = false;
-      sha256 = "sha256-ldU9B6ABUy9GM/K+ysRtplj3sdFf0jjqv3L74oTMiF0=";
+      sha256 = "sha256-CBX1EAch/cAE432g8/Tt8QqU8tIkTviXVdRyOwRyNEo=";
     };
-    date = "2024-10-28";
+    date = "2025-05-01";
   };
   tmux-fish = {
     pname = "tmux-fish";
