@@ -53,7 +53,7 @@ in
     enable = true;
     host = "192.168.10.1";
     port = 3000;
-    mutableSettings = false;
+    mutableSettings = true;
     settings = {
       schema_version = 29; # the default is pkgs.adguardhome.schema_version
       users = [
@@ -78,6 +78,8 @@ in
         refuse_any = true;
         upstream_dns = [
           "[/home.arpa/]192.168.10.1:8853"
+          "[/internal.\${SECRET_DOMAIN_0}/]192.168.10.1"
+          "[/external.\${SECRET_DOMAIN_0}/]192.168.10.1"
           "tls://one.one.one.one"
         ];
         bootstrap_dns = [
@@ -114,32 +116,6 @@ in
         parental_enabled = false;
         filtering_enabled = true;
         filters_update_interval = 24;
-        rewrites = [
-          {
-            domain = "\${SECRET_DOMAIN_0}";
-            answer = "192.168.15.1";
-          }
-          {
-            domain = "*.\${SECRET_DOMAIN_0}";
-            answer = "192.168.15.1";
-          }
-          {
-            domain = "*.\${SECRET_DOMAIN_1}";
-            answer = "192.168.15.1";
-          }
-          {
-            domain = "\${SECRET_WIREGUARD_ENTRYPOINT}";
-            answer = "\${SECRET_WIREGUARD_ENTRYPOINT}";
-          }
-          {
-            domain = "vault.\${SECRET_DOMAIN_0}";
-            answer = "vault.\${SECRET_DOMAIN_0}";
-          }
-          {
-            domain = "oracle.\${SECRET_DOMAIN_0}";
-            answer = "oracle.\${SECRET_DOMAIN_0}";
-          }
-        ];
       };
       tls.enabled = false;
       querylog = {
