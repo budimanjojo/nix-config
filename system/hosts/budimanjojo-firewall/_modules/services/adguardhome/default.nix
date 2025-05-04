@@ -78,8 +78,8 @@ in
         refuse_any = true;
         upstream_dns = [
           "[/home.arpa/]192.168.10.1:8853"
-          "[/internal.\${SECRET_DOMAIN_0}/]192.168.10.1"
-          "[/external.\${SECRET_DOMAIN_0}/]192.168.10.1"
+          "[/internal.\${SECRET_DOMAIN_1}/]192.168.10.1"
+          "[/external.\${SECRET_DOMAIN_1}/]192.168.10.1"
           "tls://one.one.one.one"
         ];
         bootstrap_dns = [
