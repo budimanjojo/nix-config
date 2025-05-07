@@ -5,7 +5,6 @@
 
     ./services/adguardhome
     ./services/chrony
-    ./services/cloudflare-ddns
     ./services/fireqos
     ./services/frr
     ./services/kea
