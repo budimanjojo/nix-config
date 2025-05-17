@@ -3,7 +3,7 @@
 
   inputs = {
     # nixpkgs and unstable
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     # flake-parts - very lightweight flake framework
