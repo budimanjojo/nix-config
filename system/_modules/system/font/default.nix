@@ -14,7 +14,7 @@ in
 
   config = lib.mkIf (cfg.enable) {
     fonts.packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
+      nerd-fonts.ubuntu-mono
       unifont
     ];
   };

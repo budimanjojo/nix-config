@@ -15,7 +15,7 @@ in
 
   config = lib.mkIf (cfg.enable) {
     home.pointerCursor = {
-      package = pkgs.vimix-cursor-theme;
+      package = pkgs.vimix-cursors;
       name = "Vimix-Cursors";
       size = 24;
       gtk.enable = true;
@@ -25,7 +25,7 @@ in
       enable = true;
       font = {
         name = "UbuntuMono Nerd Font";
-        package = pkgs.nerdfonts.override { fonts = [ "UbuntuMono" ]; };
+        package = pkgs.nerd-fonts.ubuntu-mono;
         size = 12;
       };
       theme = {

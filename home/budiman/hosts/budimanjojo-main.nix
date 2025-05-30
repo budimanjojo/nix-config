@@ -14,7 +14,7 @@
           id = 0;
           name = "budiman";
           isDefault = true;
-          extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+          extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
             bitwarden
             tokyo-night-v2
           ];
@@ -23,7 +23,7 @@
           id = 1;
           name = "lina";
           isDefault = false;
-          extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+          extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
             bitwarden
             tokyo-night-v2
           ];

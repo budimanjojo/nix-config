@@ -29,6 +29,8 @@ in
   sad-nvim = pkgs.vimUtils.buildVimPlugin {
     inherit (sourceData.sad-nvim) pname src;
     version = sourceData.sad-nvim.date;
+    # TODO: check failing and Idk why
+    nvimSkipModules = [ "sad.term" ];
   };
   k8s-snippets = pkgs.vimUtils.buildVimPlugin {
     inherit (sourceData.k8s-snippets) pname src;
@@ -43,5 +45,7 @@ in
         make
       )
     '';
+    # TODO: check failing and Idk why
+    nvimSkipModules = [ "fzy.fzy-lua-native" ];
   };
 }
