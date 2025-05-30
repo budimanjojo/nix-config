@@ -1,6 +1,6 @@
 {
   config = {
-    extraConfigLua = ''
+    extraConfigLuaPre = ''
       -- Space is <Leader>
       vim.keymap.set("", "<Space>", "<Nop>", { silent = true })
       vim.g.mapleader = " "
