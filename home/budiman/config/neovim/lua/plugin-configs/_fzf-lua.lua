@@ -4,10 +4,8 @@ require('fzf-lua').setup {
     ['--prompt'] = ' ',
     ['--info'] = 'default',
   },
-  winopts = {
-    hl = {
-      border = 'FloatBorder',
-    }
+  hl = {
+    border = 'FloatBorder',
   },
   builtin = {
     prompt = 'FzfLua  '
