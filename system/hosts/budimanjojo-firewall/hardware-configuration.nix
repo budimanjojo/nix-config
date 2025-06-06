@@ -6,14 +6,12 @@
     initrd = {
       availableKernelModules = [
         "xhci_pci"
-        "ehci_pci"
         "ahci"
-        "mpt3sas"
+        "nvme"
         "usbhid"
         "usb_storage"
         "sd_mod"
       ];
-      kernelModules = [ "dm-snapshot" ];
     };
   };
 }

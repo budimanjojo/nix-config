@@ -4,7 +4,7 @@
     # filesystems managed by Disko are defined here
     disko.devices.disk.main = {
       type = "disk";
-      device = "/dev/disk/by-id/ata-Kston_64GB_202108132048";
+      device = "/dev/disk/by-id/ata-BR_128GB_202209231491";
       content = {
         type = "gpt";
         partitions = {

@@ -16,7 +16,6 @@
         "wan0"
         "wan1"
         "lan1"
-        "lan2"
         "ctr0"
         "wg0"
       ];
@@ -24,32 +23,20 @@
     links = {
       # rename all interface names to be easier to identify
       "10-wan0" = {
-        matchConfig.Path = "pci-0000:03:00.0";
+        matchConfig.Path = "pci-0000:01:00.0";
         linkConfig.Name = "wan0";
       };
       "10-wan1" = {
-        matchConfig.Path = "pci-0000:05:00.0";
+        matchConfig.Path = "pci-0000:02:00.0";
         linkConfig.Name = "wan1";
       };
       "10-lan0" = {
-        matchConfig.Path = "pci-0000:06:00.0";
+        matchConfig.Path = "pci-0000:03:00.0";
         linkConfig.Name = "lan0";
       };
       "10-lan1" = {
-        matchConfig.Path = "pci-0000:07:00.0";
+        matchConfig.Path = "pci-0000:04:00.0";
         linkConfig.Name = "lan1";
-      };
-      "10-lan2" = {
-        matchConfig.Path = "pci-0000:08:00.0";
-        linkConfig.Name = "lan2";
-      };
-      "10-lan3" = {
-        matchConfig.Path = "pci-0000:09:00.0";
-        linkConfig.Name = "lan3";
-      };
-      "10-wifi0" = {
-        matchConfig.Path = "pci-0000:00:14.0-usb-0:8:1.0";
-        linkConfig.Name = "wifi0";
       };
     };
 
@@ -98,21 +85,6 @@
       };
       "30-lan1" = {
         matchConfig.Name = "lan1";
-        networkConfig.ConfigureWithoutCarrier = true;
-        linkConfig.ActivationPolicy = "always-down";
-      };
-      "30-lan2" = {
-        matchConfig.Name = "lan2";
-        networkConfig.ConfigureWithoutCarrier = true;
-        linkConfig.ActivationPolicy = "always-down";
-      };
-      "30-lan3" = {
-        matchConfig.Name = "lan3";
-        networkConfig.ConfigureWithoutCarrier = true;
-        linkConfig.ActivationPolicy = "always-down";
-      };
-      "30-wifi0" = {
-        matchConfig.Name = "wifi0";
         networkConfig.ConfigureWithoutCarrier = true;
         linkConfig.ActivationPolicy = "always-down";
       };
