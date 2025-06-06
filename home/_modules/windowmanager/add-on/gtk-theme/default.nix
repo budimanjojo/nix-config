@@ -15,8 +15,8 @@ in
 
   config = lib.mkIf (cfg.enable) {
     home.pointerCursor = {
-      package = pkgs.vimix-cursors;
-      name = "Vimix-Cursors";
+      package = pkgs.catppuccin-cursors.mochaMauve;
+      name = "catppuccin-mocha-mauve-cursors";
       size = 24;
       gtk.enable = true;
       x11.enable = true;
