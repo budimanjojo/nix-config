@@ -22,7 +22,7 @@ in
       "lua/plugin-configs/_lualine.lua".source = ./lua/plugin-configs/_lualine.lua;
       "lua/plugin-configs/_nvim-cmp.lua".source = ./lua/plugin-configs/_nvim-cmp.lua;
       "lua/plugin-configs/_oil.lua".source = ./lua/plugin-configs/_oil.lua;
-      "lua/plugin-configs/_sad-nvim.lua".source = ./lua/plugin-configs/_sad-nvim.lua;
+      "lua/plugin-configs/_grug-far.lua".source = ./lua/plugin-configs/_grug-far.lua;
       "lua/plugin-configs/_treesitter.lua".source = ./lua/plugin-configs/_treesitter.lua;
       "lua/plugin-configs/_indent-blankline.lua".source = ./lua/plugin-configs/_indent-blankline.lua;
 
@@ -55,7 +55,6 @@ in
       ripgrep
       git
       gzip
-      sad
       shellcheck
     ];
 
@@ -107,8 +106,8 @@ in
         config = "lua require('plugin-configs._fzf-lua')";
       }
       {
-        plugin = sad-nvim;
-        config = "lua require('plugin-configs._sad-nvim')";
+        plugin = grug-far-nvim;
+        config = "lua require('plugin-configs._grug-far')";
       }
       # System utility
       FTerm-nvim

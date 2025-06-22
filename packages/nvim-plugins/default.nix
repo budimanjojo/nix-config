@@ -26,12 +26,6 @@ in
     version = sourceData.oil-nvim.date;
   };
   luasnip = pkgs.vimUtils.buildVimPlugin { inherit (sourceData.luasnip) pname src version; };
-  sad-nvim = pkgs.vimUtils.buildVimPlugin {
-    inherit (sourceData.sad-nvim) pname src;
-    version = sourceData.sad-nvim.date;
-    # TODO: check failing and Idk why
-    nvimSkipModules = [ "sad.term" ];
-  };
   k8s-snippets = pkgs.vimUtils.buildVimPlugin {
     inherit (sourceData.k8s-snippets) pname src;
     version = sourceData.k8s-snippets.date;
