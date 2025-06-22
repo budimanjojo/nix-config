@@ -167,27 +167,6 @@
         },
         "version": "08c2bce8b00fd780fb7999dbffdf7cd174e896fb"
     },
-    "sad-nvim": {
-        "cargoLocks": null,
-        "date": "2025-05-01",
-        "extract": null,
-        "name": "sad-nvim",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "ray-x",
-            "repo": "sad.nvim",
-            "rev": "e7511767b59fcff237cc7209d47d08aba64b9f63",
-            "sha256": "sha256-CBX1EAch/cAE432g8/Tt8QqU8tIkTviXVdRyOwRyNEo=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "e7511767b59fcff237cc7209d47d08aba64b9f63"
-    },
     "tmux-fish": {
         "cargoLocks": null,
         "date": "2025-04-07",
