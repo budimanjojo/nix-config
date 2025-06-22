@@ -95,18 +95,6 @@
     };
     date = "2025-06-04";
   };
-  sad-nvim = {
-    pname = "sad-nvim";
-    version = "e7511767b59fcff237cc7209d47d08aba64b9f63";
-    src = fetchFromGitHub {
-      owner = "ray-x";
-      repo = "sad.nvim";
-      rev = "e7511767b59fcff237cc7209d47d08aba64b9f63";
-      fetchSubmodules = false;
-      sha256 = "sha256-CBX1EAch/cAE432g8/Tt8QqU8tIkTviXVdRyOwRyNEo=";
-    };
-    date = "2025-05-01";
-  };
   tmux-fish = {
     pname = "tmux-fish";
     version = "db0030b7f4f78af4053dc5c032c7512406961ea5";
