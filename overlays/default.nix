@@ -16,7 +16,6 @@
       config.allowUnfree = true;
       overlays = [
         # overlays of unstable packages are declared here
-        (final: prev: { gopls = prev.gopls.override { buildGoModule = prev.buildGo123Module; }; })
       ];
     };
   };
