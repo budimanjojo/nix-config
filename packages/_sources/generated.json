@@ -76,12 +76,12 @@
             "name": null,
             "owner": "budimanjojo",
             "repo": "k8s-snippets",
-            "rev": "780817661ce82daf2d433f058611dfb518ac97c2",
-            "sha256": "sha256-Y8kuPZcoMsWkUsplMKw6iCppFdlwEJVAIZ2lkx3Gkpw=",
+            "rev": "ac225582362a1c640f07a2a059926ec5e3b2f42c",
+            "sha256": "sha256-yn8dhMoxwvD8/GKZ9PNex4WL+ksVRo+RnlJi1bdOyCg=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "780817661ce82daf2d433f058611dfb518ac97c2"
+        "version": "ac225582362a1c640f07a2a059926ec5e3b2f42c"
     },
     "luasnip": {
         "cargoLocks": null,
