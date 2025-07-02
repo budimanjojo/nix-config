@@ -148,7 +148,7 @@
     },
     "oil-nvim": {
         "cargoLocks": null,
-        "date": "2025-07-01",
+        "date": "2025-07-02",
         "extract": null,
         "name": "oil-nvim",
         "passthru": null,
@@ -160,12 +160,12 @@
             "name": null,
             "owner": "stevearc",
             "repo": "oil.nvim",
-            "rev": "3b7c74798e699633d602823aefd9a4e4e36c02a8",
-            "sha256": "sha256-Rwx2dRXghf39JAF2cghibw4e5YDYsSWeFAbcPJEv9Oc=",
+            "rev": "bbad9a76b2617ce1221d49619e4e4b659b3c61fc",
+            "sha256": "sha256-GhI6RwFg3Kep3CPGFCVnDPl8R6LMMz+kiSfIoR6nrfQ=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "3b7c74798e699633d602823aefd9a4e4e36c02a8"
+        "version": "bbad9a76b2617ce1221d49619e4e4b659b3c61fc"
     },
     "tmux-fish": {
         "cargoLocks": null,
