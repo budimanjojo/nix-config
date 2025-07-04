@@ -80,7 +80,7 @@ in
           "[/home.arpa/]192.168.10.1:8853"
           "[/internal.\${SECRET_DOMAIN_1}/]192.168.10.1"
           "[/external.\${SECRET_DOMAIN_1}/]192.168.10.1"
-          "tls://one.one.one.one"
+          "quic://dns.adguard-dns.com"
         ];
         bootstrap_dns = [
           "1.1.1.1"
@@ -176,7 +176,7 @@ in
             use_global_settings = true;
             use_global_blocked_services = true;
             blocked_services.ids = [ ];
-            upstreams = [ "tls://one.one.one.one" ];
+            upstreams = [ "quic://dns.adguard-dns.com" ];
           }
           {
             name = "IOT";
@@ -199,7 +199,7 @@ in
             use_global_settings = true;
             use_global_blocked_services = true;
             blocked_services.ids = [ ];
-            upstreams = [ "tls://one.one.one.one" ];
+            upstreams = [ "quic://dns.adguard-dns.com" ];
           }
           {
             name = "Children";
