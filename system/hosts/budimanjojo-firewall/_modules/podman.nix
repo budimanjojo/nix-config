@@ -5,6 +5,7 @@
     oci-containers.backend = "podman";
     podman = {
       enable = true;
+      autoPrune.enable = true;
       defaultNetwork.settings = {
         network_interface = "ctr0";
         # setting this to true ironically breaks the dns because dns server is not running in the gateway ip
