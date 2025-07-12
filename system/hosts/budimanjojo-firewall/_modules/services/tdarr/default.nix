@@ -8,7 +8,7 @@ let
 in
 {
   # we mount media directory from the NFS server
-  boot.supportedFileSystems = [ "nfs" ];
+  boot.supportedFilesystems = [ "nfs" ];
   services.rpcbind.enable = true;
   systemd.mounts = [
     {
