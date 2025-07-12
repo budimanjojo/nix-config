@@ -63,7 +63,7 @@ in
   };
 
   # restic backup
-  services.restic.backups = config.lib.mkRestic {
+  services.restic.backups = config.lib.mySystem.mkRestic {
     inherit app;
     paths = [
       "${serverDir}"
