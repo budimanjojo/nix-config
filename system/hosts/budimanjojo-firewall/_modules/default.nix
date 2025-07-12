@@ -11,6 +11,7 @@
     ./services/omada-controller
     ./services/powerdns
     ./services/rsyslogd
+    ./services/tdarr
 
     ./network.nix
     ./podman.nix

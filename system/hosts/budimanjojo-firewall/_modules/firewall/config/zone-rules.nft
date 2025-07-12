@@ -408,6 +408,7 @@ chain LOCAL-SERVER {
   tcp dport 179 counter return comment "allow access to bgp server"
   tcp dport 6000 ip daddr @k8s_vector_aggregator counter return comment "allow access to k8s_vector_aggregator"
   tcp dport 9000 ip daddr @k8s_minio counter return comment "allow access to k8s_minio"
+  tcp dport 2049 ip daddr 192.168.200.30 counter return comment "allow access to NFS server"
   ct state invalid counter log prefix "[LOCAL-SERVER-invalid-D]" drop comment "drop invalid"
   counter log prefix "[LOCAL-SERVER-default-D]" drop comment "default-action drop"
 }
