@@ -5,5 +5,6 @@
     eog
     totem
     rhythmbox
+    jellyfin-media-player
   ];
 }
