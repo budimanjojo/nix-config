@@ -1,50 +1,12 @@
-{ pkgs, config, ... }:
+{ config, inputs, ... }:
 let
   app = "tdarr";
   serverDir = "/var/lib/tdarr-server";
   configsDir = "/var/lib/tdarr-config";
   logsDir = "/var/lib/tdarr-logs";
   cacheDir = "/var/lib/tdarr-cache";
-  tdarr-plugins-start = pkgs.writeShellApplication {
-    name = "start";
-    runtimeInputs = [ pkgs.git ];
-    text = ''
-      if [ -z "$STATE_DIRECTORY" ]; then
-        echo "STATE_DIRECTORY is not set, exiting..."
-        exit 1
-      fi
-
-      repoURL="https://github.com/budimanjojo/tdarr-plugins.git"
-      if [ ! -d "$STATE_DIRECTORY"/.git ]; then
-        echo "cloning repository into $STATE_DIRECTORY..."
-        git clone "$repoURL" "$STATE_DIRECTORY"
-      else
-        echo "repository already exists in $STATE_DIRECTORY"
-        originURL=$(git -C "$STATE_DIRECTORY" remote get-url origin)
-        if [ "$repoURL" != "$originURL" ]; then
-          echo "remote URL mismatch, remove everything and re pull"
-          rm -rf "''${STATE_DIRECTORY:?}"/{*,.*}
-          git clone "$repoURL" "$STATE_DIRECTORY"
-        else
-          echo "pulling latest commits..."
-          git -C "$STATE_DIRECTORY" pull
-        fi
-      fi
-    '';
-  };
 in
 {
-  # this service ensures that /var/lib/tdarr-plugins directory is
-  # pre populated with my own Tdarr plugins
-  systemd.services.tdarr-plugins-dir = {
-    requiredBy = [ "podman-tdarr.service" ];
-    before = [ "podman-tdarr.service" ];
-    serviceConfig = {
-      ExecStart = "${tdarr-plugins-start}/bin/start";
-      User = "${config.mySystem.adminUser}";
-      StateDirectory = "tdarr-plugins";
-    };
-  };
   # we mount media directory from the NFS server
   boot.supportedFilesystems = [ "nfs" ];
   services.rpcbind.enable = true;
@@ -84,7 +46,9 @@ in
       "${configsDir}:/app/configs:rw"
       "${logsDir}:/app/logs:rw"
       "${cacheDir}:/temp:rw"
-      "/var/lib/tdarr-plugins:/tdarr-plugins:ro"
+      # my own tdarr-plugins repo fork that contains my personal flow
+      # it is fetched into a nix-store so I can mount it
+      "${inputs.tdarr-plugins}:/tdarr-plugins:ro"
       "/mnt/media-nfs:/media:rw"
     ];
     environment = {

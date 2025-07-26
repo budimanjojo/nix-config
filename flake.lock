@@ -451,7 +451,8 @@
         "nur": "nur",
         "nvfetcher": "nvfetcher",
         "sops-nix": "sops-nix",
-        "talhelper": "talhelper"
+        "talhelper": "talhelper",
+        "tdarr-plugins": "tdarr-plugins"
       }
     },
     "sops-nix": {
@@ -552,6 +553,22 @@
       "original": {
         "owner": "budimanjojo",
         "repo": "talhelper",
+        "type": "github"
+      }
+    },
+    "tdarr-plugins": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1752855811,
+        "narHash": "sha256-mJKf5lF4Q2HwSsDb0bU7NdMedaJDNrjFn9Gs2XDTmX0=",
+        "owner": "budimanjojo",
+        "repo": "tdarr-plugins",
+        "rev": "38aece3a53f77a9dcc868ca411b37b76c4bc37e1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "budimanjojo",
+        "repo": "tdarr-plugins",
         "type": "github"
       }
     }

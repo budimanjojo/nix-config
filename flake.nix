@@ -66,6 +66,13 @@
       url = "github:nix-community/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # tdarr-plugins - My Tdarr plugins repo fork
+    # https://github.com/budimanjojo/tdarr-plugins
+    tdarr-plugins = {
+      url = "github:budimanjojo/tdarr-plugins";
+      flake = false;
+    };
   };
 
   outputs =
