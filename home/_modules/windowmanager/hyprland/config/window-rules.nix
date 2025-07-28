@@ -18,6 +18,7 @@
     "float, title:^(VirtualBox)$"
     "idleinhibit focus, fullscreen:1"
     "idleinhibit focus, class:^(org.libretro.RetroArch)$"
+    "idleinhibit focus, class:^(com.github.iwalton3.jellyfin-media-player)$"
 
     # Window placement
     "workspace silent special, title:^(updater)$, class:^(kitty)$"
