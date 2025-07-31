@@ -40,6 +40,8 @@ in
       "--ip=10.5.0.20"
       # we use our local dns server to connect to Radarr/Sonarr inside my internal k8s gateway
       "--dns=192.168.10.1"
+      # tdarr can take out the system by eating all RAM sometimes
+      "--memory=5g"
     ];
     volumes = [
       "${serverDir}:/app/server:rw"
