@@ -28,3 +28,5 @@ blocking:
   clientGroupsBlock:
     default:
       - ads
+caching:
+  cacheTimeNegative: -1
