@@ -199,7 +199,6 @@ in
             use_global_settings = true;
             use_global_blocked_services = true;
             blocked_services.ids = [ ];
-            upstreams = [ "quic://dns.adguard-dns.com" ];
           }
           {
             name = "Children";
