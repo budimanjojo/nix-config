@@ -106,7 +106,8 @@ in
         config = "lua require('plugin-configs._fzf-lua')";
       }
       {
-        plugin = grug-far-nvim;
+        # TODO: stable package fails to build
+        plugin = pkgs.unstable.vimPlugins.grug-far-nvim;
         config = "lua require('plugin-configs._grug-far')";
       }
       # System utility
