@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.myHome.shell.starship;
 in
@@ -8,7 +13,9 @@ in
   };
 
   config = lib.mkIf (cfg.enable) {
-    catppuccin.starship.enable = true;
+    # TODO: wait for the IFD issue is fixed
+    # ref: https://github.com/catppuccin/nix/issues/392
+    catppuccin.starship.enable = lib.mkIf (pkgs.system == "x86_64-linux") true;
 
     programs.starship = {
       enable = true;
