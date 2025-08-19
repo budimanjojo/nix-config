@@ -11,7 +11,7 @@
           family = "inet";
           content = ''
             chain INPUT {
-              type nat hook input priority filter; policy drop;
+              type filter hook input priority filter; policy drop;
               ct state vmap {
                 established : accept, related : accept,
                 invalid : drop
