@@ -56,6 +56,11 @@ in
           PublicKey = "LYF3KLxBtfD1tIy2qS4Rl4COGlBLxFye7OaIUkZtfHM=";
           AllowedIPs = [ "10.10.10.15/32" ];
         }
+        {
+          # qbit-gluetun
+          PublicKey = "U1/0yWmjrRQapq+TWNv0mi1+gJkKkyBmN/ZtJWGbb0k=";
+          AllowedIPs = [ "10.10.10.50/32" ];
+        }
       ];
     };
     networks = {
@@ -87,6 +92,12 @@ in
             ${builtins.concatStringsSep ", " homeNetworks}
           }
         }
+
+        chain PREROUTING {
+          type nat hook prerouting priority dstnat; policy accept;
+          tcp dport 50413 counter dnat to 10.10.10.50 comment "port forward 50413 to qbit-gluetun"
+        }
+
         chain POSTROUTING {
           type nat hook postrouting priority srcnat; policy accept;
           ip saddr 10.10.10.0/24 ip daddr != @home_networks masquerade

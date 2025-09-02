@@ -227,7 +227,6 @@ chain WIREGUARD-SERVER {
 }
 
 chain WAN-SERVER {
-  meta l4proto { tcp, udp } th dport 50413 ip daddr @k8s_qbittorrent counter return comment "allow access to k8s_qbittorrent"
   ct state invalid counter log prefix "[WAN-SERVER-invalid-D]" drop comment "drop invalid"
   counter log prefix "[WAN-SERVER-default-D]" drop comment "default-action drop"
 }

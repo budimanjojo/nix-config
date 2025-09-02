@@ -16,7 +16,6 @@
           content = ''
             chain PREROUTING {
               type nat hook prerouting priority dstnat; policy accept;
-              iifname "wan0" meta l4proto { tcp, udp } th dport 50413 counter dnat to 192.168.15.10 comment "port forward 50413 to qBittorrent"
               iifname {
                 lan0.69, lan0.250
               } meta l4proto { tcp, udp } th dport 53 ip daddr != 192.168.10.1 counter dnat to 192.168.10.1:53 comment "force DNS for IOT and GUEST VLAN"
