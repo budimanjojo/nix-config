@@ -322,6 +322,7 @@ chain LAN0-WIREGUARD {
 
 chain HOME-WIREGUARD {
   ip saddr @trusted_devices tcp dport 22 counter return comment "allow access to ssh from trusted_devices"
+  ip saddr @trusted_devices ip daddr 10.10.10.10 tcp dport 8080 counter return comment "allow access to seedbox webuiPort from trusted_devices"
   tcp dport 5432 ip daddr 10.10.10.13 counter return comment "allow access to postgres database on work-pc"
   ct state invalid counter log prefix "[HOME-WIREGUARD-invalid-D]" drop comment "drop invalid"
   counter log prefix "[HOME-WIREGUARD-default-D]" drop comment "default-action drop"

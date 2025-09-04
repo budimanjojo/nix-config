@@ -21,10 +21,12 @@
               # FROM OUTSIDE
               iifname enp0s6 udp dport 51821 counter accept comment "allow access to WireGuard"
               iifname enp0s6 tcp dport 22 counter accept comment "allow access to SSH"
+              iifname enp0s6 tcp dport 60413 counter accept comment "allow access to qBittorrent torrentingPort"
 
               # FROM WIREGUARD
               iifname wg0 tcp dport 22 counter accept comment "allow access to SSH"
               iifname wg0 ip saddr 10.10.10.0/24 counter accept comment "allow access from own CIDR"
+              iifname wg0 tcp dport 8080 counter accept comment "allow access to qBittorrent webuiPort"
             }
           '';
         };
