@@ -27,6 +27,7 @@ in
           ClickjackingProtection = false;
           HostHeaderValidation = false;
           SecureCookie = false;
+          CSRFProtection = false;
         };
         Connection.UPnP = false;
       };
