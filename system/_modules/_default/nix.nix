@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, hostname, ... }:
 {
   nix = {
     # make `nix run` and `nix shell` use the same nixpkgs as the one used by this flake
@@ -17,8 +17,19 @@
         "nix-command"
         "flakes"
       ];
-      substituters = [ "https://viperml.cachix.org" ];
-      trusted-public-keys = [ "viperml.cachix.org-1:qZhKBMTfmcLL+OG6fj/hzsMEedgKvZVFRRAhq7j8Vh8=" ];
+      substituters = [
+        "https://viperml.cachix.org"
+        (
+          if (hostname == "budimanjojo-nas") then
+            "http://localhost:8080/main"
+          else
+            "https://cachix.budimanjojo.com/main"
+        )
+      ];
+      trusted-public-keys = [
+        "viperml.cachix.org-1:qZhKBMTfmcLL+OG6fj/hzsMEedgKvZVFRRAhq7j8Vh8="
+        "main:/YN8d6q0MRN8mmI+zazPFn/72TFYP6j7XFVgiEIm7Mw="
+      ];
       auto-optimise-store = true;
       keep-outputs = true;
       keep-derivations = false;
