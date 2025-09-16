@@ -13,7 +13,7 @@ in
   config = lib.mkIf (cfg.enable) {
     programs.go = {
       enable = true;
-      package = pkgs.unstable.go_1_23;
+      package = pkgs.unstable.go;
     };
   };
 }
