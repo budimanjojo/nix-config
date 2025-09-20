@@ -115,14 +115,21 @@
           # accessible via `nix fmt` to format code
           formatter = pkgs.nixfmt-rfc-style;
           # accessible via `nix build .#<name>`
-          legacyPackages = (import ./packages { inherit inputs' self' pkgs; }) // {
-            homeConfigurations = {
-              "budiman@budimanjojo-ubuntu" = flakeLib.mkHome {
-                inherit system;
-                hostname = "budimanjojo-ubuntu";
-              };
-            };
-          };
+          legacyPackages =
+            (import ./packages { inherit inputs' self' pkgs; })
+            // (
+              if system == "x86_64-linux" then
+                {
+                  homeConfigurations = {
+                    "budiman@budimanjojo-ubuntu" = flakeLib.mkHome {
+                      inherit system;
+                      hostname = "budimanjojo-ubuntu";
+                    };
+                  };
+                }
+              else
+                { }
+            );
           # accessible via `nix develop`
           devShells.default = import ./shell.nix { inherit inputs' pkgs; };
         };
