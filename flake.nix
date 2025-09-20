@@ -58,7 +58,7 @@
 
     # Catppuccin for Nix - Soothing pastel theme for Nix
     # https://github.com/catppuccin/nix
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin.url = "github:catppuccin/nix/release-25.05";
 
     # nixGL - A wrapper tool for nix OpenGL application
     # https://github.com/nix-community/nixGL
