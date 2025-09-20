@@ -72,7 +72,7 @@ in
       chezmoi-vim
       # Appearance
       dressing-nvim
-      guihua-lua
+      # guihua-lua
       nvim-web-devicons
       {
         plugin = lualine-nvim;
