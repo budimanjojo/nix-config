@@ -1,6 +1,6 @@
 {
     "abbreviation-tips": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "abbreviation-tips",
@@ -21,7 +21,7 @@
         "version": "v0.7.0"
     },
     "chezmoi-vim": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-09-06",
         "extract": null,
         "name": "chezmoi-vim",
@@ -42,7 +42,7 @@
         "version": "ca5f2ed602046d5662cb76d845c4b510aae0ce84"
     },
     "guihua-lua": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-09-18",
         "extract": null,
         "name": "guihua-lua",
@@ -63,7 +63,7 @@
         "version": "9ed0b3f920d52380e2290416846f19fd2bf61467"
     },
     "k8s-snippets": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-06-26",
         "extract": null,
         "name": "k8s-snippets",
@@ -84,7 +84,7 @@
         "version": "ac225582362a1c640f07a2a059926ec5e3b2f42c"
     },
     "luasnip": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "luasnip",
@@ -105,7 +105,7 @@
         "version": "v2.4.0"
     },
     "mason-lspconfig-nvim": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-09-11",
         "extract": null,
         "name": "mason-lspconfig-nvim",
@@ -126,7 +126,7 @@
         "version": "7f9a39fcd2ac6e979001f857727d606888f5909c"
     },
     "mason-tool-installer-nvim": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-06-26",
         "extract": null,
         "name": "mason-tool-installer-nvim",
@@ -147,7 +147,7 @@
         "version": "517ef5994ef9d6b738322664d5fdd948f0fdeb46"
     },
     "oil-nvim": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-08-20",
         "extract": null,
         "name": "oil-nvim",
@@ -168,7 +168,7 @@
         "version": "07f80ad645895af849a597d1cac897059d89b686"
     },
     "tmux-fish": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-04-07",
         "extract": null,
         "name": "tmux-fish",
@@ -189,7 +189,7 @@
         "version": "db0030b7f4f78af4053dc5c032c7512406961ea5"
     },
     "tokyonight-gtk-theme": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-09-09",
         "extract": null,
         "name": "tokyonight-gtk-theme",
@@ -210,7 +210,7 @@
         "version": "93295bf8688724ea8c529c4fe3fa3fda1ebda2c6"
     },
     "tokyonight-icon-theme": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-09-09",
         "extract": null,
         "name": "tokyonight-icon-theme",
