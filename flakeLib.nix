@@ -4,6 +4,37 @@ let
   lib = inputs.nixpkgs.lib.extend (final: prev: { myLib = import ./lib { lib = final; }; });
 in
 {
+  mkGithubMatrix =
+    {
+      nixosConfigurations ? { },
+      homes ? { },
+      runners ? {
+        "x86_64-linux" = "ubuntu-24.04";
+        "aarch64-linux" = "ubuntu-24.04-arm";
+        "x86_64-darwin" = "macos-13";
+        "aarch64-darwin" = "macos-14";
+      },
+    }:
+    let
+      nixos = name: cfg: rec {
+        system = cfg.pkgs.stdenv.hostPlatform.system;
+        type = "nixosConfiguration";
+        runner = runners.${system};
+        attrset = "nixosConfigurations.${name}.config.system.build.toplevel";
+      };
+
+      home = name: cfg: rec {
+        system = cfg.system;
+        type = "homeConfiguration";
+        runner = runners.${system};
+        attrset = "homeConfigurations.${name}.activationPackage";
+      };
+
+      mkList = attr: cfg: builtins.attrValues (builtins.mapAttrs attr cfg);
+      result.include = (mkList nixos nixosConfigurations) ++ (mkList home homes);
+    in
+    result;
+
   mkSystem =
     {
       hostname,

@@ -115,53 +115,53 @@
           # accessible via `nix fmt` to format code
           formatter = pkgs.nixfmt-rfc-style;
           # accessible via `nix build .#<name>`
-          legacyPackages =
-            (import ./packages { inherit inputs' self' pkgs; })
-            // (
-              if system == "x86_64-linux" then
-                {
-                  homeConfigurations = {
-                    "budiman@budimanjojo-ubuntu" = flakeLib.mkHome {
-                      inherit system;
-                      hostname = "budimanjojo-ubuntu";
-                    };
-                  };
-                }
-              else
-                { }
-            );
+          legacyPackages = import ./packages { inherit inputs' self' pkgs; };
           # accessible via `nix develop`
           devShells.default = import ./shell.nix { inherit inputs' pkgs; };
         };
 
       # all the other flake outputs those don't require `${system}`
       # string will be here and handled by `flake-parts`
-      flake = {
-        nixosConfigurations = {
-          # this is a NixOS live CD that has SSH enabled and some of my stuffs baked in
-          # build with `nix build .#nixosConfigurations.livecd.config.system.build.isoImage`
-          nixos-livecd = flakeLib.mkSystem {
-            hostname = "nixos-livecd";
-            homeUsers = [ ];
-            baseModules = [ ./system/hosts ];
+      flake =
+        let
+          homes = {
+            "budiman@budimanjojo-ubuntu" = {
+              hostname = "budimanjojo-ubuntu";
+              system = "x86_64-linux";
+            };
           };
-          budimanjojo-main = flakeLib.mkSystem { hostname = "budimanjojo-main"; };
-          budimanjojo-nas = flakeLib.mkSystem {
-            hostname = "budimanjojo-nas";
-            extraModules = [ inputs.disko.nixosModules.disko ];
+        in
+        rec {
+          ghActions.matrix = flakeLib.mkGithubMatrix {
+            inherit nixosConfigurations homes;
           };
-          budimanjojo-firewall = flakeLib.mkSystem {
-            hostname = "budimanjojo-firewall";
-            extraModules = [ inputs.disko.nixosModules.disko ];
-          };
-          # this is my Oracle always free instance that I use as my WireGuard relay server
-          # so my firewall can live behind a NAT and be fine in case I switch to a different
-          # ISP that doesn't give me public routeable IP
-          budimanjojo-oracle = flakeLib.mkSystem {
-            hostname = "budimanjojo-oracle";
-            system = "aarch64-linux";
+
+          homeConfigurations = builtins.mapAttrs (n: v: flakeLib.mkHome v) homes;
+          nixosConfigurations = {
+            # this is a NixOS live CD that has SSH enabled and some of my stuffs baked in
+            # build with `nix build .#nixosConfigurations.livecd.config.system.build.isoImage`
+            nixos-livecd = flakeLib.mkSystem {
+              hostname = "nixos-livecd";
+              homeUsers = [ ];
+              baseModules = [ ./system/hosts ];
+            };
+            budimanjojo-main = flakeLib.mkSystem { hostname = "budimanjojo-main"; };
+            budimanjojo-nas = flakeLib.mkSystem {
+              hostname = "budimanjojo-nas";
+              extraModules = [ inputs.disko.nixosModules.disko ];
+            };
+            budimanjojo-firewall = flakeLib.mkSystem {
+              hostname = "budimanjojo-firewall";
+              extraModules = [ inputs.disko.nixosModules.disko ];
+            };
+            # this is my Oracle always free instance that I use as my WireGuard relay server
+            # so my firewall can live behind a NAT and be fine in case I switch to a different
+            # ISP that doesn't give me public routeable IP
+            budimanjojo-oracle = flakeLib.mkSystem {
+              hostname = "budimanjojo-oracle";
+              system = "aarch64-linux";
+            };
           };
         };
-      };
     };
 }
