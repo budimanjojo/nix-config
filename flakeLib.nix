@@ -2,36 +2,70 @@
 let
   # my own custom lib will be accessible with `lib.myLib.<name>`
   lib = inputs.nixpkgs.lib.extend (final: prev: { myLib = import ./lib { lib = final; }; });
+
+  # This module is passed to all `nixosConfigurations` and `homeConfigurations` so I can
+  # specify whether a machine should be built and pushed on CI or not
+  ghMatrixModules =
+    {
+      config,
+      lib,
+      system,
+      ...
+    }:
+    let
+      cfg = config.ghMatrix;
+      inherit (lib) mkOption types;
+
+      defaultRunners = {
+        x86_64-linux = "ubuntu-24.04";
+        aarch64-linux = "ubuntu-24.04-arm";
+        x86_64-darwin = "macos-13";
+        aarch64-darwin = "macos-14";
+      };
+    in
+    {
+      options.ghMatrix = {
+        enable = mkOption {
+          type = types.bool;
+          default = true;
+        };
+        system = mkOption {
+          type = types.str;
+          default = system;
+          readOnly = true;
+        };
+        runner = mkOption {
+          type = types.oneOf [
+            types.str
+            (types.listOf types.str)
+          ];
+          default = defaultRunners.${cfg.system};
+        };
+      };
+    };
 in
 {
   mkGithubMatrix =
     {
       nixosConfigurations ? { },
-      homes ? { },
-      runners ? {
-        "x86_64-linux" = "ubuntu-24.04";
-        "aarch64-linux" = "ubuntu-24.04-arm";
-        "x86_64-darwin" = "macos-13";
-        "aarch64-darwin" = "macos-14";
-      },
+      homeConfigurations ? { },
     }:
     let
-      nixos = name: cfg: rec {
-        system = cfg.pkgs.stdenv.hostPlatform.system;
-        type = "nixosConfiguration";
-        runner = runners.${system};
-        attrset = "nixosConfigurations.${name}.config.system.build.toplevel";
+      matrixSet = name: cfg: {
+        system = cfg.config.ghMatrix.system;
+        runner = cfg.config.ghMatrix.runner;
+        attrset =
+          if cfg.config ? system && cfg.config.system ? build then
+            "nixosConfigurations.${name}.config.system.build.toplevel"
+          else if cfg ? activationPackage then
+            "homeConfigurations.${name}.activationPackage"
+          else
+            throw "${name} is neither `nixosConfigurations` or `homeConfigurations`";
       };
 
-      home = name: cfg: rec {
-        system = cfg.system;
-        type = "homeConfiguration";
-        runner = runners.${system};
-        attrset = "homeConfigurations.${name}.activationPackage";
-      };
-
-      mkList = attr: cfg: builtins.attrValues (builtins.mapAttrs attr cfg);
-      result.include = (mkList nixos nixosConfigurations) ++ (mkList home homes);
+      filterAttr = attr: lib.filterAttrs (n: v: v.config.ghMatrix.enable) attr;
+      mkList = attr: cfgs: builtins.attrValues (builtins.mapAttrs attr cfgs);
+      result.include = mkList matrixSet (filterAttr (nixosConfigurations // homeConfigurations));
     in
     result;
 
@@ -98,9 +132,14 @@ in
       inherit system lib;
       pkgs = mkPkgsWithSystem system;
       specialArgs = {
-        inherit inputs myPkgs hostname;
+        inherit
+          inputs
+          myPkgs
+          hostname
+          system
+          ;
       };
-      modules = baseModules ++ extraModules ++ mkHomeUsers;
+      modules = baseModules ++ extraModules ++ mkHomeUsers ++ [ ghMatrixModules ];
     };
 
   mkHome =
@@ -116,7 +155,12 @@ in
       inherit lib;
       pkgs = mkPkgsWithSystem system;
       extraSpecialArgs = {
-        inherit inputs myPkgs hostname;
+        inherit
+          inputs
+          myPkgs
+          hostname
+          system
+          ;
         # need to have this because a lot of my modules depends on `osConfig` argument
         osConfig = { };
       };
@@ -128,6 +172,7 @@ in
           imports = [ ./home/${username} ];
           config.myHome.username = username;
         }
+        ghMatrixModules
       ];
     };
 }
