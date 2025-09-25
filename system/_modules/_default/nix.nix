@@ -19,16 +19,11 @@
       ];
       substituters = [
         "https://viperml.cachix.org"
-        (
-          if (hostname == "budimanjojo-nas") then
-            "http://localhost:8080/main"
-          else
-            "https://cachix.budimanjojo.com/main"
-        )
+        "https://budimanjojo.cachix.org"
       ];
       trusted-public-keys = [
         "viperml.cachix.org-1:qZhKBMTfmcLL+OG6fj/hzsMEedgKvZVFRRAhq7j8Vh8="
-        "main:/YN8d6q0MRN8mmI+zazPFn/72TFYP6j7XFVgiEIm7Mw="
+        "budimanjojo.cachix.org-1:S0gy6IKTFXis9fFqEbVAS2zsvnZw/30NV2bWvGiN1YQ="
       ];
       auto-optimise-store = true;
       keep-outputs = true;

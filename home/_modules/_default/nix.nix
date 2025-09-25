@@ -21,10 +21,10 @@ in
 
     settings = {
       nix-path = "nixpkgs=${inputs.nixpkgs.outPath}";
-      extra-substituters = [ "https://cachix.budimanjojo.com/main" ];
-      trusted-substituters = [ "https://cachix.budimanjojo.com/main" ];
+      extra-substituters = [ "https://budimanjojo.cachix.org" ];
+      trusted-substituters = [ "https://budimanjojo.cachix.org" ];
       extra-trusted-public-keys = [
-        "main:/YN8d6q0MRN8mmI+zazPFn/72TFYP6j7XFVgiEIm7Mw="
+        "budimanjojo.cachix.org-1:S0gy6IKTFXis9fFqEbVAS2zsvnZw/30NV2bWvGiN1YQ="
       ];
       experimental-features = [
         "nix-command"
