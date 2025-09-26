@@ -140,10 +140,6 @@
           };
           budimanjojo-main = flakeLib.mkSystem {
             hostname = "budimanjojo-main";
-            extraModules = [
-              # will use self hosted runner when it's ready
-              { config.ghMatrix.enable = false; }
-            ];
           };
           budimanjojo-nas = flakeLib.mkSystem {
             hostname = "budimanjojo-nas";
