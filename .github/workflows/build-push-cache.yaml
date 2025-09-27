@@ -40,7 +40,7 @@ jobs:
       - name: Brutally add more storage to our runner
         uses: wimpysworld/nothing-but-nix@6af122a9403f936ef689e44cc013ae3f3e2f1c3b # v6
         with:
-          hatchet-protocol: rampage
+          hatchet-protocol: carve
 
       - uses: DeterminateSystems/nix-installer-action@786fff0690178f1234e4e1fe9b536e94f5433196 # v20
 
