@@ -33,9 +33,9 @@ jobs:
       - id: update_nvfetcher
         run: |
           cd packages
-          alias nvfetcher="nix run github:berberman/nvfetcher"
           echo "OUTPUT<<EOF" >> $GITHUB_OUTPUT
-          echo "$(nvfetcher | sed -n '/Changes/,/$!d/p')" >> $GITHUB_OUTPUT
+          nix run github:berberman/nvfetcher -- \
+            | sed -n '/Changes/,/$!d/p' >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
       - name: Generate token
         uses: tibdex/github-app-token@v2
