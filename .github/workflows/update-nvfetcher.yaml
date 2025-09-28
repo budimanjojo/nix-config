@@ -29,12 +29,12 @@ jobs:
           purge-created: 0
           purge-last-accessed: 0
           purge-primary-key: never
+      - run: nix profile install github:berberman/nvfetcher
       - id: update_nvfetcher
         run: |
           cd packages
           echo "OUTPUT<<EOF" >> $GITHUB_OUTPUT
-          nix run github:berberman/nvfetcher -- \
-            | sed -n '/Changes/,/$!d/p' >> $GITHUB_OUTPUT
+          nvfetcher | sed -n '/Changes/,/$!d/p' >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
       - name: Generate token
         uses: tibdex/github-app-token@v2
