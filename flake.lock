@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "cache-nix-action": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1754213534,
+        "narHash": "sha256-4QgmQ8UAecAuu84hh5dYni1ahlvXvu2UdCDme6Jnh68=",
+        "owner": "nix-community",
+        "repo": "cache-nix-action",
+        "rev": "e2cf51da82e145785f5db595f553f7cbc2ca54df",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "cache-nix-action",
+        "type": "github"
+      }
+    },
     "catppuccin": {
       "inputs": {
         "nixpkgs": "nixpkgs"
@@ -441,6 +457,7 @@
     },
     "root": {
       "inputs": {
+        "cache-nix-action": "cache-nix-action",
         "catppuccin": "catppuccin",
         "disko": "disko",
         "flake-parts": "flake-parts",

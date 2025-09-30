@@ -73,6 +73,13 @@
       url = "github:budimanjojo/tdarr-plugins";
       flake = false;
     };
+
+    # cache-nix-action - Cache Nix Store in GitHub Actions
+    # https://github.com/nix-community/cache-nix-action
+    cache-nix-action = {
+      url = "github:nix-community/cache-nix-action";
+      flake = false;
+    };
   };
 
   outputs =
@@ -116,6 +123,18 @@
           formatter = pkgs.nixfmt-rfc-style;
           # accessible via `nix build .#<name>`
           legacyPackages = import ./packages { inherit inputs' self' pkgs; };
+          packages = {
+            # this is for cache-nix-action so stuffs don't get garbage collected
+            # before I cache the nix store, mostly to not redownload inputs a lot
+            gc-keep =
+              (import "${inputs.cache-nix-action}/saveFromGC.nix" {
+                inherit pkgs inputs;
+                inputsExclude = [
+                  # TODO: errors from nixpkgs.lib that I can't fix
+                  inputs.flake-parts
+                ];
+              }).saveFromGC;
+          };
           # accessible via `nix develop`
           devShells.default = import ./shell.nix { inherit inputs' pkgs; };
         };
