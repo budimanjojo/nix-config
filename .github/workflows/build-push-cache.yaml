@@ -37,7 +37,7 @@ jobs:
           purge-last-accessed: 0
           purge-primary-key: never
       - run: nix build .#gc-keep # this keeps stuffs from getting garbage collected
-        if: steps.cache.outputs.hit != 'true'
+        if: steps.cache.outputs.hit-primary-key != 'true'
 
       - id: set-matrix
         run: |
