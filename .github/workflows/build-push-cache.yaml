@@ -19,11 +19,22 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
-      - uses: DeterminateSystems/determinate-nix-action@dbda91f6efef3ee627f56175120aa9543687d830 # v3.11.2
+      - uses: nixbuild/nix-quick-install-action@2c9db80fb984ceb1bcaa77cdda3fdf8cfba92035 # v34
         with:
-          extra-conf: |
-            lazy-trees = true
-            eval-cores = 0
+          nix_conf: |
+            keep-env-derivations = true
+            keep-outputs = true
+      - uses: nix-community/cache-nix-action@135667ec418502fa5a3598af6fb9eb733888ce6a # v6.1.3
+        with:
+          primary-key: nix-flake-inputs-${{ runner.os }}-${{ hashFiles('**/*.nix', '**/flake.lock') }}
+          restore-prefixes-first-match: nix-flake-inputs-${{ runner.os }}-
+          gc-max-store-size-linux: 1G
+          purge: true
+          purge-prefixes: nix-flake-inputs-${{ runner.os }}-
+          purge-created: 0
+          purge-last-accessed: 0
+          purge-primary-key: never
+      - run: nix build .#gc-keep # this keeps stuffs from getting garbage collected
       - id: set-matrix
         run: |
           set -Eeu
