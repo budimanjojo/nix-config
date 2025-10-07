@@ -36,7 +36,12 @@
         fsType = "vfat";
       };
     };
-    swapDevices = [ ];
+    swapDevices = [
+      {
+        device = "/var/lib/swapfile";
+        size = 16 * 1024;
+      }
+    ];
     networking.useDHCP = lib.mkDefault true;
     hardware.bluetooth = {
       enable = true;
