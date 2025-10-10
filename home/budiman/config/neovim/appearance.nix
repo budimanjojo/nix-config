@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   config = {
     ## Highlght on yank
@@ -24,6 +25,7 @@
 
     colorschemes.catppuccin = {
       enable = true;
+      package = pkgs.unstable.vimPlugins.catppuccin-nvim;
       settings = {
         flavor = "mocha";
         integrations = {
