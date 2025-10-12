@@ -17,25 +17,6 @@
       lsp = {
         enable = true;
         preConfig = ''
-          -- Diagnostic looks
-          vim.diagnostic.config {
-            virtual_text = false,
-            update_in_insert = true,
-            float = {
-              source = 'if_many'
-            }
-          }
-
-          --Signcolumn symbols
-          local signs = { Error = '󰅚 ', Warn = '󰗖 ', Hint = '󰌶 ', Info = ' ' }
-          for type, icon in pairs(signs) do
-            local hl = 'DiagnosticSign' .. type
-            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-          end
-
-          -- Show diagnostics on hover
-          vim.o.updatetime = 150
-          vim.cmd([[autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })]])
 
           -- Use neodev for lua
           require('neodev').setup()

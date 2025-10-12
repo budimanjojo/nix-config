@@ -4,6 +4,7 @@
     ./general.nix
     ./appearance.nix
     ./autocmds.nix
+    ./diagnostic.nix
     ./keymaps.nix
   ];
   config = {
