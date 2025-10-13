@@ -1,6 +1,8 @@
 {
   imports = [
     ./plugins.nix
+    ./lsp.nix
+    ./plugins
     ./general.nix
     ./appearance.nix
     ./autocmds.nix

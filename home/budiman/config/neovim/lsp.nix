@@ -1,190 +1,151 @@
 { pkgs, ... }:
 {
   config = {
-    extraPlugins = [
-      pkgs.vimPlugins.lsp_signature-nvim
-      pkgs.vimPlugins.SchemaStore-nvim
-      pkgs.vimPlugins.neodev-nvim
-    ];
     plugins = {
+      # make lua_ls works with neovim API
+      lazydev = {
+        enable = true;
+        settings.library = [
+          {
+            path = "\${3rd}/luv/library";
+            words = [ "vim%.uv" ];
+          }
+        ];
+      };
+
+      lspconfig.enable = true; # this provides sane defaults for LSP servers
+      schemastore.enable = true;
+      lsp-signature.enable = true;
       trouble.enable = true;
       web-devicons.enable = true;
-      # clangd requires extra care
-      clangd-extensions = {
-        enable = true;
-        enableOffsetEncodingWorkaround = true;
-      };
-      lsp = {
-        enable = true;
-        preConfig = ''
+    };
 
-          -- Use neodev for lua
-          require('neodev').setup()
-        '';
-        capabilities = ''
-          capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
-          capabilities.textDocument.completion.completionItem.snippetSupport = true
-          capabilities.textDocument.completion.completionItem.preselectSupport = true
-          capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
-          capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
-          capabilities.textDocument.completion.completionItem.deprecatedSupport = true
-          capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
-          capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
-          capabilities.textDocument.completion.completionItem.resolveSupport = {
-            properties = {
-              'documentation',
-              'detail',
-              'additionalTextEdits',
-            },
-          }
-        '';
-        onAttach = ''
-          require 'lsp_signature'.on_attach()
-          local keymap = vim.keymap
-          local opts = { buffer = bufnr }
+    lsp = {
+      keymaps = [
+        {
+          key = "<Leader>rn";
+          lspBufAction = "rename";
+          mode = [ "n" ];
+          options.desc = "Do LSP rename action";
+        }
+        {
+          key = "<Leader>ca";
+          lspBufAction = "code_action";
+          mode = [ "n" ];
+          options.desc = "Do LSP code action";
+        }
+        {
+          key = "gd";
+          lspBufAction = "definition";
+          mode = [ "n" ];
+          options.desc = "Do LSP get definition action";
+        }
+        {
+          key = "gD";
+          lspBufAction = "declaration";
+          mode = [ "n" ];
+          options.desc = "Do LSP get declaration action";
+        }
+        {
+          key = "gh";
+          action.__raw = ''
+            function()
+              return require('utils').fix_buf_hover()
+            end
+          '';
+          mode = [ "n" ];
+          options.desc = "Do LSP hover action";
+        }
+        {
+          key = "gr";
+          lspBufAction = "references";
+          mode = [ "n" ];
+          options.desc = "Do LSP get references action";
+        }
+        {
+          key = "gi";
+          lspBufAction = "implementation";
+          mode = [ "n" ];
+          options.desc = "Do LSP get implementation action";
+        }
+      ];
 
-          keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, { unpack(opts), desc = "Do LSP rename action" })
-          keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, { unpack(opts), desc = "Do LSP code action" })
-          keymap.set('n', 'gd', vim.lsp.buf.definition, { unpack(opts), desc = "Do LSP get definition action" })
-          keymap.set('n', 'gD', vim.lsp.buf.declaration, { unpack(opts), desc = "Do LSP get definition action" })
-          keymap.set('n', 'gh', function() return require('utils').fix_buf_hover() end, { unpack(opts), desc = "Do LSP hover action" })
-          keymap.set('n', 'gr', vim.lsp.buf.references, { unpack(opts), desc = "Do LSP get references action" })
-          keymap.set('n', 'gi', vim.lsp.buf.implementation, { unpack(opts), desc = "Do LSP get implementation action" })
-        '';
-        servers = {
-          ansiblels.enable = true; # ansiblels
-          bashls.enable = true; # bashls
-          cssls.enable = true; # cssls
-          dockerls.enable = true; # dockerls
+      servers = {
+        # ansiblels.enable = true;
+        bashls.enable = true;
+        cssls.enable = true;
+        dockerls.enable = true;
 
-          ## gopls
-          gopls = {
-            enable = true;
-            package = pkgs.unstable.gopls;
-            extraOptions = {
-              settings = {
-                gopls = {
-                  gofumpt = true;
-                };
-              };
-            };
-          };
-
-          taplo.enable = true; # taplo
-          ts_ls.enable = true; # tsserver
-
-          ## jsonls
-          jsonls = {
-            enable = true;
-            filetypes = [
-              "json"
-              "jsonc"
-              "json5"
-            ];
-            extraOptions = {
-              settings = {
-                json = {
-                  schemas.__raw = "require('schemastore').json.schemas()";
-                };
-              };
-            };
-          };
-
-          nil_ls.enable = true; # nil
-          pyright.enable = true; # pyright
-          lua_ls.enable = true; # lua-language-server
-
-          ## yamlls
-          yamlls = {
-            enable = true;
-            extraOptions = {
-              settings.yaml = {
-                customTags = [
-                  "!include_dir_list"
-                  "!include_dir_named"
-                  "!include_dir_merge_list"
-                  "!include_dir_merge_named"
-                  "!secret"
-                  "!env_var"
-                ];
-                schemas = {
-                  kubernetes = [
-                    "namespace.yaml"
-                    "deployment.yaml"
-                    "daemonset.yaml"
-                    "statefulset.yaml"
-                    "service.yaml"
-                    "pv.yaml"
-                    "pvc.yaml"
-                    "configmmap.yaml"
-                    "secret.yaml"
-                    "rbac.yaml"
-                    "crd.yaml"
-                    "storageclass.yaml"
-                    "cronjob.yaml"
-                  ];
-                  "https://raw.githubusercontent.com/docker/compose/master/compose/config/compose_spec.json" = [
-                    "docker-compose.yml"
-                    "docker-compose.yaml"
-                  ];
-                  "https://json.schemastore.org/github-workflow" = [
-                    ".github/workflows/**.yml"
-                    ".github/workflows/**.yaml"
-                  ];
-                  "https://json.schemastore.org/github-actions" = [
-                    "action.yml"
-                    "action.yaml"
-                  ];
-                  "https://json.schemastore.org/gitlab-ci" = ".gitlab-ci.yml";
-                  "https://json.schemastore.org/kustomization" = [
-                    "kustomization.yml"
-                    "kustomization.yaml"
-                  ];
-                  "https://json.schemastore.org/pre-commit-config" = [
-                    ".pre-commit-config.yml"
-                    ".pre-commit-config.yaml"
-                  ];
-                };
-              };
-            };
-          };
+        gopls = {
+          enable = true;
+          package = pkgs.unstable.gopls;
+          settings.settings.gopls.gofumpt = true;
         };
-      };
 
-      none-ls = {
-        enable = true;
-        settings.diagnostics_format = "[#{c}] #{m} (#{s})";
-        sources = {
-          formatting = {
-            nixfmt = {
-              enable = true;
-              package = pkgs.nixfmt-rfc-style;
-            };
-            prettier = {
-              enable = true;
-              disableTsServerFormatter = true;
-            };
-            shfmt = {
-              enable = true;
-              settings.extra_args = [
-                "-i"
-                "2"
-                "-ci"
+        jsonls = {
+          enable = true;
+          settings.filetypes = [
+            "json"
+            "jsonc"
+            "json5"
+          ];
+        };
+
+        nil_ls.enable = true;
+        pyright.enable = true;
+        lua_ls.enable = true;
+        taplo.enable = true;
+        ts_ls.enable = true;
+
+        yamlls = {
+          enable = true;
+          settings.settings.yaml = {
+            customTags = [
+              "!include_dir_list"
+              "!include_dir_named"
+              "!include_dir_merge_list"
+              "!include_dir_merge_named"
+              "!secret"
+              "!env_var"
+            ];
+            schemas = {
+              kubernetes = [
+                "namespace.yaml"
+                "deployment.yaml"
+                "daemonset.yaml"
+                "statefulset.yaml"
+                "service.yaml"
+                "pv.yaml"
+                "pvc.yaml"
+                "configmmap.yaml"
+                "secret.yaml"
+                "rbac.yaml"
+                "crd.yaml"
+                "storageclass.yaml"
+                "cronjob.yaml"
+              ];
+              "https://raw.githubusercontent.com/docker/compose/master/compose/config/compose_spec.json" = [
+                "docker-compose.yml"
+                "docker-compose.yaml"
+              ];
+              "https://json.schemastore.org/github-workflow" = [
+                ".github/workflows/**.yml"
+                ".github/workflows/**.yaml"
+              ];
+              "https://json.schemastore.org/github-actions" = [
+                "action.yml"
+                "action.yaml"
+              ];
+              "https://json.schemastore.org/gitlab-ci" = ".gitlab-ci.yml";
+              "https://json.schemastore.org/kustomization" = [
+                "kustomization.yml"
+                "kustomization.yaml"
+              ];
+              "https://json.schemastore.org/pre-commit-config" = [
+                ".pre-commit-config.yml"
+                ".pre-commit-config.yaml"
               ];
             };
-          };
-          diagnostics = {
-            ansiblelint = {
-              enable = true;
-              settings.filetypes = [ "yaml.ansible" ];
-            };
-            golangci_lint = {
-              enable = true;
-              package = pkgs.unstable.golangci-lint;
-            };
-            markdownlint.enable = true;
-            write_good.enable = true;
-            yamllint.enable = true;
           };
         };
       };
