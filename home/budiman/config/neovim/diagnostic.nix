@@ -40,7 +40,15 @@
         pattern = "*";
         callback = {
           __raw = "function()
-            vim.diagnostic.open_float(nil, { focusable = false })
+            local float_opt = {
+              focusable = false,
+              close_events = {
+                'BufLeave',
+                'CursorMoved',
+                'InsertEnter',
+              }
+            }
+            vim.diagnostic.open_float(nil, float_opt)
           end";
         };
       }
