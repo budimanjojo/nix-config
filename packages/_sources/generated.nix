@@ -90,15 +90,15 @@
   };
   oil-nvim = {
     pname = "oil-nvim";
-    version = "200df01e4b92d0010a3bfbde92b91a4ef5a5c9db";
+    version = "64dbcaa91d6e378e9c84fcb24756f6f452f7b49d";
     src = fetchFromGitHub {
       owner = "stevearc";
       repo = "oil.nvim";
-      rev = "200df01e4b92d0010a3bfbde92b91a4ef5a5c9db";
+      rev = "64dbcaa91d6e378e9c84fcb24756f6f452f7b49d";
       fetchSubmodules = false;
-      sha256 = "sha256-yKYuzQVheMils/9zSQcnOu/jywi37T/jTPHnboz6ubg=";
+      sha256 = "sha256-9AchPQ4zBq4Oqcyu9RynkB9U6f/Bh/X7+cfpMBriLUU=";
     };
-    date = "2025-10-14";
+    date = "2025-10-15";
   };
   tmux-fish = {
     pname = "tmux-fish";
