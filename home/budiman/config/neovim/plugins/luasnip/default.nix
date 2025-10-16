@@ -108,7 +108,7 @@ in
     autoGroups.choicepopup.clear = true;
     autoCmd = [
       {
-        even = [ "User" ];
+        event = [ "User" ];
         pattern = [
           "LuasnipChoiceNodeEnter"
           "LuasnipChoiceNodeLeave"
