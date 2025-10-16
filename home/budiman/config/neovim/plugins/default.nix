@@ -1,5 +1,7 @@
 {
   imports = [
+    ./blink-cmp
+    ./luasnip
     ./none-ls
   ];
 

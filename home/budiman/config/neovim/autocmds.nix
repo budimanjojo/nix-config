@@ -7,7 +7,6 @@
     autoGroups.closewithq.clear = true;
     autoGroups.autoimportformatgo.clear = true;
     autoGroups.autoformatnix.clear = true;
-    autoGroups.choicepopup.clear = true;
 
     autoCmd = [
       ## Disable removing indentation on files when first letter is # except some filetypes
@@ -131,29 +130,6 @@
         callback = {
           __raw = "function()
             vim.lsp.buf.format({ async = false })
-          end";
-        };
-      }
-
-      ## ChoiceNode popup in snippet
-      {
-        event = [ "User" ];
-        pattern = [
-          "LuasnipChoiceNodeEnter"
-          "LuasnipChoiceNodeLeave"
-          "LuasnipChangeChoice"
-        ];
-        group = "choicepopup";
-        callback = {
-          __raw = "function(arg)
-            local match = arg.match
-            if match == 'LuasnipChoiceNodeEnter' then
-              require('utils').choice_popup(require('luasnip').session.event_node)
-            elseif match == 'LuasnipChoiceNodeLeave' then
-              require('utils').choice_popup_close()
-            elseif match == 'LuasnipChangeChoice' then
-              require('utils').update_choice_popup(require('luasnip').session.event_node)
-            end
           end";
         };
       }

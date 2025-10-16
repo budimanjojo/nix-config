@@ -157,28 +157,6 @@
         options.desc = "Open new vertical split";
       }
 
-      ## Move cursors in Insert mode
-      {
-        mode = "i";
-        key = "<C-k>";
-        action = "<Up>";
-      }
-      {
-        mode = "i";
-        key = "<C-j>";
-        action = "<Down>";
-      }
-      {
-        mode = "i";
-        key = "<C-h>";
-        action = "<Left>";
-      }
-      {
-        mode = "i";
-        key = "<C-l>";
-        action = "<Right>";
-      }
-
       ## Tab navigation
       {
         mode = "n";

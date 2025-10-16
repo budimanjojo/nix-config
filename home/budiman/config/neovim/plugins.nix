@@ -11,16 +11,12 @@ in
   ## But, to configure LSP, it's easier to make use of nixvim provided module so I use that
   # imports = [ ./lsp.nix ];
   config = {
-    ## load the lua snippets from nix store
-    extraConfigLua = "require('luasnip.loaders.from_lua').lazy_load({paths = '${./snippets}'})";
-
     extraFiles = {
       ## These are raw lua files of plugin configs so I can require them in the plugin set
       "lua/plugin-configs/_autopairs.lua".source = ./lua/plugin-configs/_autopairs.lua;
       "lua/plugin-configs/_fzf-lua.lua".source = ./lua/plugin-configs/_fzf-lua.lua;
       "lua/plugin-configs/_gitsigns.lua".source = ./lua/plugin-configs/_gitsigns.lua;
       "lua/plugin-configs/_lualine.lua".source = ./lua/plugin-configs/_lualine.lua;
-      "lua/plugin-configs/_nvim-cmp.lua".source = ./lua/plugin-configs/_nvim-cmp.lua;
       "lua/plugin-configs/_oil.lua".source = ./lua/plugin-configs/_oil.lua;
       "lua/plugin-configs/_grug-far.lua".source = ./lua/plugin-configs/_grug-far.lua;
       "lua/plugin-configs/_treesitter.lua".source = ./lua/plugin-configs/_treesitter.lua;
@@ -83,19 +79,7 @@ in
         config = "lua require('plugin-configs._indent-blankline')";
       }
       # Autocompletion
-      cmp-nvim-lsp
-      cmp-buffer
-      cmp-path
-      cmp-spell
-      cmp_luasnip
       lspkind-nvim
-      luasnip
-      friendly-snippets
-      k8s-snippets
-      {
-        plugin = nvim-cmp;
-        config = "lua require('plugin-configs._nvim-cmp')";
-      }
       {
         plugin = nvim-ts-autotag;
         config = "lua require('nvim-ts-autotag').setup()";
