@@ -9,15 +9,10 @@
         snippets.preset = "luasnip";
         sources = {
           providers = {
-            lsp.score_offset = 20;
-            snippets.score_offset = 10;
+            path.score_offset = 40;
+            lsp.score_offset = 30;
+            snippets.score_offset = 20;
             buffer.score_offset = 10;
-            spell = {
-              module = "blink-cmp-spell";
-              name = "Spell";
-              min_keyword_length = 3;
-              score_offset = -10;
-            };
             snippets.opts.use_label_description = true;
           };
           default = [
@@ -25,7 +20,6 @@
             "path"
             "snippets"
             "buffer"
-            "spell"
           ];
         };
         keymap = {
@@ -54,14 +48,13 @@
             { __raw = "{'source_name'}"; }
           ];
           documentation.auto_show = true;
-          trigger = {
-            show_on_backspace = true;
-            show_on_backspace_in_keyword = true;
+          ghost_text = {
+            enabled = true;
+            show_without_selection = true;
           };
-          ghost_text.enabled = true;
         };
         fuzzy.sorts = [
-          # "exact" # TODO: waiting for https://github.com/nix-community/nixvim/pull/3622
+          "exact"
           "score"
           "sort_text"
         ];
@@ -71,7 +64,5 @@
         };
       };
     };
-
-    blink-cmp-spell.enable = true;
   };
 }
