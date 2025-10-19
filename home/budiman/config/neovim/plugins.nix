@@ -18,29 +18,7 @@ in
       "lua/plugin-configs/_lualine.lua".source = ./lua/plugin-configs/_lualine.lua;
       "lua/plugin-configs/_oil.lua".source = ./lua/plugin-configs/_oil.lua;
       "lua/plugin-configs/_grug-far.lua".source = ./lua/plugin-configs/_grug-far.lua;
-      "lua/plugin-configs/_treesitter.lua".source = ./lua/plugin-configs/_treesitter.lua;
       "lua/plugin-configs/_indent-blankline.lua".source = ./lua/plugin-configs/_indent-blankline.lua;
-
-      ## lua highlighting in extraConfigLua
-      "queries/nix/injections.scm".text = ''
-        ;; extends
-
-        (binding
-          attrpath: (attrpath (identifier) @_path)
-          expression: [
-            (string_expression (string_fragment) @lua)
-            (indented_string_expression (string_fragment) @lua)
-          ]
-          (#match? @_path "^extraConfigLua(Pre|Post)?$"))
-
-        (binding
-          attrpath: (attrpath (identifier) @_path)
-          expression: [
-            (string_expression (string_fragment) @vim)
-            (indented_string_expression (string_fragment) @vim)
-          ]
-          (#match? @_path "^extraConfigVim(Pre|Post)?$"))
-      '';
     };
 
     ## dependencies needed for plugins
@@ -59,10 +37,6 @@ in
       {
         plugin = nvim-colorizer-lua;
         config = "lua require('colorizer').setup()";
-      }
-      {
-        plugin = nvim-treesitter.withAllGrammars;
-        config = "lua require('plugin-configs._treesitter')";
       }
       chezmoi-vim
       # Appearance

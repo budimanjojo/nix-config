@@ -4,6 +4,7 @@
     ./blink-cmp
     ./luasnip
     ./none-ls
+    ./treesitter
   ];
 
   config.plugins = {
