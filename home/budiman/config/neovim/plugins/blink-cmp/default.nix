@@ -11,9 +11,11 @@
           providers = {
             path.score_offset = 40;
             lsp.score_offset = 30;
-            snippets.score_offset = 20;
+            snippets = {
+              score_offset = 20;
+              opts.use_label_description = true;
+            };
             buffer.score_offset = 10;
-            snippets.opts.use_label_description = true;
           };
           default = [
             "lsp"
@@ -22,7 +24,9 @@
             "buffer"
           ];
         };
+
         keymap = {
+          preset = "none";
           "<C-j>" = [
             "select_next"
             "fallback"
@@ -31,16 +35,26 @@
             "select_prev"
             "fallback"
           ];
-          "<C-Space>" = [
-            "select_and_accept"
+          "<Up>" = [
+            "scroll_documentation_up"
+            "fallback"
+          ];
+          "<Down>" = [
+            "scroll_documentation_down"
             "fallback"
           ];
           "<CR>" = [
             "accept"
             "fallback"
           ];
+          "<C-y>" = [
+            "select_and_accept"
+            "fallback"
+          ];
         };
+
         completion = {
+          keyword.range = "full";
           list.selection.preselect = false;
           menu.draw.columns = [
             { __raw = "{'label', 'label_description', gap = 1}"; }
@@ -53,14 +67,44 @@
             show_without_selection = true;
           };
         };
+
         fuzzy.sorts = [
           "exact"
           "score"
           "sort_text"
         ];
+
         cmdline = {
-          keymap.preset = "inherit";
-          completion.menu.auto_show = true;
+          keymap = {
+            preset = "none";
+            "<Tab>" = [
+              "show_and_insert_or_accept_single"
+              "select_next"
+            ];
+            "<S-Tab>" = [
+              "show_and_insert_or_accept_single"
+              "select_prev"
+            ];
+            "<C-j>" = [
+              "select_next"
+              "fallback"
+            ];
+            "<C-k>" = [
+              "select_prev"
+              "fallback"
+            ];
+            "<CR>" = [
+              "accept"
+              "fallback"
+            ];
+            "<C-y>" = [
+              "select_accept_and_enter"
+              "fallback"
+            ];
+          };
+          completion = {
+            menu.auto_show = false;
+          };
         };
       };
     };
