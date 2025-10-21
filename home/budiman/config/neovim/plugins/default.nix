@@ -1,6 +1,7 @@
 {
   imports = [
     ./blink-cmp
+    ./gitsigns
     ./lualine
     ./luasnip
     ./none-ls

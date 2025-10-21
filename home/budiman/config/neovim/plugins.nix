@@ -14,7 +14,6 @@ in
     extraFiles = {
       ## These are raw lua files of plugin configs so I can require them in the plugin set
       "lua/plugin-configs/_fzf-lua.lua".source = ./lua/plugin-configs/_fzf-lua.lua;
-      "lua/plugin-configs/_gitsigns.lua".source = ./lua/plugin-configs/_gitsigns.lua;
       "lua/plugin-configs/_grug-far.lua".source = ./lua/plugin-configs/_grug-far.lua;
       "lua/plugin-configs/_indent-blankline.lua".source = ./lua/plugin-configs/_indent-blankline.lua;
     };
@@ -63,10 +62,6 @@ in
       }
       # System utility
       FTerm-nvim
-      {
-        plugin = gitsigns-nvim;
-        config = "lua require('plugin-configs._gitsigns')";
-      }
       # Editing support
       {
         plugin = comment-nvim;
