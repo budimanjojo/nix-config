@@ -48,11 +48,9 @@
           end, { desc = "Git reset hunk" })
 
           map('n', '<Leader>gaa', gitsigns.stage_buffer, { desc = "Git stage buffer" })
-          map('n', '<Leader>gu', gitsigns.undo_stage_hunk, { desc = "Undo git stage" })
           map('n', '<Leader>gra', gitsigns.reset_buffer, { desc = "Reset git actions in buffer" })
           map('n', '<Leader>gh', gitsigns.preview_hunk, { desc = "Preview git actions in hunk" })
           map('n', '<Leader>gd', gitsigns.diffthis, { desc = "Git diff this hunk" })
-          map('n', '<Leader>gD', function() gitsigns.diffthis('~') end, { desc = "Git diff this commit" })
         end
       '';
     };
