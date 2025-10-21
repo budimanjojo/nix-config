@@ -2,6 +2,7 @@
   imports = [
     ./nvim-autopairs
     ./blink-cmp
+    ./lualine
     ./luasnip
     ./none-ls
     ./treesitter
