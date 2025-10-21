@@ -1,10 +1,11 @@
 {
   imports = [
-    ./nvim-autopairs
     ./blink-cmp
     ./lualine
     ./luasnip
     ./none-ls
+    ./nvim-autopairs
+    ./oil
     ./treesitter
   ];
 
