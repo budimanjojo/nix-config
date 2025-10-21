@@ -301,19 +301,6 @@
         action = ":TroubleToggle lsp_references<CR>";
       }
 
-      ## oil.nvim
-      {
-        mode = "n";
-        key = "<C-f>";
-        action.__raw = "function()
-          if vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(0), 'filetype') == 'oil' then
-            return require('oil').close()
-          else
-            return require('oil').open_float(require('utils').current_path())
-          end
-        end";
-      }
-
       ## null-ls
       {
         mode = "n";
