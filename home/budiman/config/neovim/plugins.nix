@@ -39,7 +39,6 @@ in
       # Appearance
       dressing-nvim
       # guihua-lua
-      nvim-web-devicons
       {
         plugin = indent-blankline-nvim;
         config = "lua require('plugin-configs._indent-blankline')";

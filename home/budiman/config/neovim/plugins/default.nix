@@ -4,6 +4,7 @@
     ./gitsigns
     ./lualine
     ./luasnip
+    ./mini
     ./none-ls
     ./nvim-autopairs
     ./oil
