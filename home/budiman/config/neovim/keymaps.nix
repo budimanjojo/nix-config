@@ -40,10 +40,12 @@
       }
 
       ## Better cursor movement on wrapped line
+      ## NOTE: we use "x" instead of "v" because luasnip uses select
+      ## mode for snippet node and I don't want it to do weird stuffs
       {
         mode = [
           "n"
-          "v"
+          "x"
         ];
         key = "k";
         action = "gk";
@@ -51,7 +53,7 @@
       {
         mode = [
           "n"
-          "v"
+          "x"
         ];
         key = "j";
         action = "gj";
