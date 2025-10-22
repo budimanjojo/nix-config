@@ -58,10 +58,6 @@ in
       FTerm-nvim
       # Editing support
       {
-        plugin = comment-nvim;
-        config = "lua require('Comment').setup()";
-      }
-      {
         plugin = nvim-surround;
         config = "lua require('nvim-surround').setup()";
       }

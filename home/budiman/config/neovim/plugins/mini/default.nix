@@ -4,6 +4,7 @@
     mockDevIcons = true;
     modules = {
       icons = { };
+      comment = { };
       indentscope = import ./indentscope.nix;
     };
   };
