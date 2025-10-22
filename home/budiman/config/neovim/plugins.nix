@@ -15,7 +15,6 @@ in
       ## These are raw lua files of plugin configs so I can require them in the plugin set
       "lua/plugin-configs/_fzf-lua.lua".source = ./lua/plugin-configs/_fzf-lua.lua;
       "lua/plugin-configs/_grug-far.lua".source = ./lua/plugin-configs/_grug-far.lua;
-      "lua/plugin-configs/_indent-blankline.lua".source = ./lua/plugin-configs/_indent-blankline.lua;
     };
 
     ## dependencies needed for plugins
@@ -39,10 +38,6 @@ in
       # Appearance
       dressing-nvim
       # guihua-lua
-      {
-        plugin = indent-blankline-nvim;
-        config = "lua require('plugin-configs._indent-blankline')";
-      }
       # Autocompletion
       lspkind-nvim
       {
