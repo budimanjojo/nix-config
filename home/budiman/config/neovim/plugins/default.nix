@@ -3,6 +3,7 @@
     ./blink-cmp
     ./gitsigns
     ./lualine
+    ./grug-far
     ./luasnip
     ./mini
     ./none-ls

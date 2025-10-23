@@ -351,21 +351,6 @@
         action = ":<C-u>lua require('b64').decode()<CR>";
         options.desc = "Decode base64 encoded text";
       }
-
-      ## grug-far
-      {
-        mode = [
-          "n"
-          "v"
-        ];
-        key = "<Leader>sr";
-        action.__raw = "function()
-          return require('grug-far').open({
-            prefills = { search = vim.api.nvim_get_current_line() }
-          })
-        end";
-        options.desc = "Open grug-far search and replace window with current line under cursor prefilled";
-      }
     ];
   };
 }

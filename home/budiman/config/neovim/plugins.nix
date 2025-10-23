@@ -14,7 +14,6 @@ in
     extraFiles = {
       ## These are raw lua files of plugin configs so I can require them in the plugin set
       "lua/plugin-configs/_fzf-lua.lua".source = ./lua/plugin-configs/_fzf-lua.lua;
-      "lua/plugin-configs/_grug-far.lua".source = ./lua/plugin-configs/_grug-far.lua;
     };
 
     ## dependencies needed for plugins
@@ -48,11 +47,6 @@ in
       {
         plugin = fzf-lua;
         config = "lua require('plugin-configs._fzf-lua')";
-      }
-      {
-        # TODO: stable package fails to build
-        plugin = pkgs.unstable.vimPlugins.grug-far-nvim;
-        config = "lua require('plugin-configs._grug-far')";
       }
       # System utility
       FTerm-nvim
