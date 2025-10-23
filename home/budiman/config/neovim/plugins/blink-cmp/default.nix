@@ -9,7 +9,10 @@
         snippets.preset = "luasnip";
         sources = {
           providers = {
-            path.score_offset = 40;
+            path = {
+              score_offset = 40;
+              opts.trailing_slash = false;
+            };
             lsp.score_offset = 30;
             snippets = {
               score_offset = 20;
