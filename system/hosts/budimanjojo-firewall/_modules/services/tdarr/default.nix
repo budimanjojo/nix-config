@@ -35,7 +35,7 @@ in
 
   # the actual Tdarr service in container
   virtualisation.oci-containers.containers.tdarr = {
-    image = "ghcr.io/haveagitgat/tdarr:2.49.01";
+    image = "ghcr.io/haveagitgat/tdarr:2.50.01";
     extraOptions = [
       "--ip=10.5.0.20"
       # we use our local dns server to connect to Radarr/Sonarr inside my internal k8s gateway
