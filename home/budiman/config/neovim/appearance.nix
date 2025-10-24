@@ -28,6 +28,7 @@
       package = pkgs.unstable.vimPlugins.catppuccin-nvim;
       settings = {
         flavor = "mocha";
+        float.transparent = true;
         integrations = {
           fzf = true;
           indent_blankline = {
