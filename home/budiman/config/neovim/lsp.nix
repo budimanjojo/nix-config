@@ -1,4 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
+let
+  snacksPickerEnabled =
+    let
+      snacks = config.plugins.snacks;
+    in
+    snacks.settings != { } && builtins.hasAttr "picker" snacks.settings;
+in
 {
   config = {
     plugins = {
@@ -36,13 +43,21 @@
         }
         {
           key = "gd";
-          lspBufAction = "definition";
+          action.__raw =
+            if snacksPickerEnabled then
+              "function() Snacks.picker.lsp_definitions() end"
+            else
+              "function() vim.lsp.buf.definition() end";
           mode = [ "n" ];
           options.desc = "Do LSP get definition action";
         }
         {
           key = "gD";
-          lspBufAction = "declaration";
+          action.__raw =
+            if snacksPickerEnabled then
+              "function() Snacks.picker.lsp_declarations() end"
+            else
+              "function() vim.lsp.buf.declaration() end";
           mode = [ "n" ];
           options.desc = "Do LSP get declaration action";
         }
@@ -58,13 +73,21 @@
         }
         {
           key = "gr";
-          lspBufAction = "references";
+          action.__raw =
+            if snacksPickerEnabled then
+              "function() Snacks.picker.lsp_references() end"
+            else
+              "function() vim.lsp.buf.references() end";
           mode = [ "n" ];
           options.desc = "Do LSP get references action";
         }
         {
           key = "gi";
-          lspBufAction = "implementation";
+          action.__raw =
+            if snacksPickerEnabled then
+              "function() Snacks.picker.lsp_implementations() end"
+            else
+              "function() vim.lsp.buf.implementation() end";
           mode = [ "n" ];
           options.desc = "Do LSP get implementation action";
         }

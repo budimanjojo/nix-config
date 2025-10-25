@@ -9,6 +9,7 @@
     ./none-ls
     ./nvim-autopairs
     ./oil
+    ./snacks
     ./treesitter
   ];
 

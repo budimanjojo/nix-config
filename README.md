@@ -190,16 +190,14 @@ If they are not in the table, that means it's using the default Vim keybindings.
 | `Normal/Visual` |    `Tab`     | Indent current line or selection        |
 | `Normal/Visual` | `Shift+Tab`  | De-indent current line or selection     |
 |    `Normal`     | `<Leader>lr` | Restart LSP client                      |
-|    `Normal`     | `<Leader>fz` | Open FzfLua                             |
-|    `Normal`     | `<Leader>ff` | Open FzfLua to find files               |
-|    `Normal`     | `<Leader>fg` | Open FzfLua to live grep                |
-|    `Normal`     | `<Leader>fc` | Open FzfLua to see git commits          |
-|    `Normal`     | `<Leader>fb` | Open FzfLua to see opened buffers       |
-|    `Normal`     | `<Leader>fh` | Open FzfLua to find help                |
-|    `Normal`     | `<Leader>fk` | Open FzfLua to see keymappings          |
-|    `Normal`     | `<Leader>fe` | Open FzfLua to find lsp diagnostics     |
-|    `Normal`     | `<Leader>fr` | Open FzfLua to find lsp references      |
-|    `Normal`     | `<Leader>fd` | Open FzfLua to find lsp typedefs        |
+|    `Normal`     | `<Leader>fz` | Open Picker                             |
+|    `Normal`     | `<Leader>ff` | Open Picker to find files               |
+|    `Normal`     | `<Leader>fg` | Open Picker to live grep                |
+|    `Normal`     | `<Leader>fc` | Open Picker to see git log              |
+|    `Normal`     | `<Leader>fb` | Open Picker to see opened buffers       |
+|    `Normal`     | `<Leader>fh` | Open Picker to find help                |
+|    `Normal`     | `<Leader>fk` | Open Picker to see keymappings          |
+|    `Normal`     | `<Leader>fe` | Open Picker to find lsp diagnostics     |
 |    `Normal`     | `<Leader>xx` | Toggle Trouble                          |
 |    `Normal`     | `<Leader>xr` | Toggle Trouble to find lsp references   |
 |    `Normal`     | `Control+f`  | Toggle oil.nvim file manager            |

@@ -239,58 +239,6 @@
         options.desc = "Restart LSP";
       }
 
-      ## FzfLua
-      {
-        mode = "n";
-        key = "<Leader>fz";
-        action = ":FzfLua<CR>";
-      }
-      {
-        mode = "n";
-        key = "<Leader>ff";
-        action = ":FzfLua files<CR>";
-      }
-      {
-        mode = "n";
-        key = "<Leader>fg";
-        action = ":FzfLua live_grep<CR>";
-      }
-      {
-        mode = "n";
-        key = "<Leader>fc";
-        action = ":FzfLua git_commit<CR>";
-      }
-      {
-        mode = "n";
-        key = "<Leader>fb";
-        action = ":FzfLua buffers<CR>";
-      }
-      {
-        mode = "n";
-        key = "<Leader>fh";
-        action = ":FzfLua help_tags<CR>";
-      }
-      {
-        mode = "n";
-        key = "<Leader>fk";
-        action = ":FzfLua keymaps<CR>";
-      }
-      {
-        mode = "n";
-        key = "<Leader>fe";
-        action = ":FzfLua lsp_document_diagnostics<CR>";
-      }
-      {
-        mode = "n";
-        key = "<Leader>fr";
-        action = ":FzfLua lsp_references<CR>";
-      }
-      {
-        mode = "n";
-        key = "<Leader>fd";
-        action = ":FzfLua lsp_typedefs<CR>";
-      }
-
       ## Trouble
       {
         mode = "n";

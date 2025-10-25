@@ -13,15 +13,10 @@ in
   config = {
     extraFiles = {
       ## These are raw lua files of plugin configs so I can require them in the plugin set
-      "lua/plugin-configs/_fzf-lua.lua".source = ./lua/plugin-configs/_fzf-lua.lua;
     };
 
     ## dependencies needed for plugins
     extraPackages = with pkgs; [
-      fd
-      fzf
-      ripgrep
-      git
       gzip
       shellcheck
     ];
@@ -42,11 +37,6 @@ in
       {
         plugin = nvim-ts-autotag;
         config = "lua require('nvim-ts-autotag').setup()";
-      }
-      # Fuzzy finder
-      {
-        plugin = fzf-lua;
-        config = "lua require('plugin-configs._fzf-lua')";
       }
       # System utility
       FTerm-nvim
