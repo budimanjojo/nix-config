@@ -42,14 +42,6 @@ npairs.add_rules{
   -- [ | ] press ] => [ ]|
   mkSpaceBracketExitRule({'[', ']'}),
 
-  -- <| => <|> for certain filetypes
-  rule('<', '>', { 'html' })
-    :with_pair(cond.not_after_regex(string.gsub([[ [%w%%%[%.] ]], "%s+", "")))
-    :with_move(function(opts)
-      return opts.char == '>'
-    end)
-    :with_pair(cond.is_bracket_line()),
-
   -- |; press ; => ;|
   rule('', ';')
     :with_move(function(opts) return opts.char == ';' end)
