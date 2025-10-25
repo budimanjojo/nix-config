@@ -24,10 +24,6 @@ in
     extraPlugins = with vimPlugins; [
       # Syntax highlighting
       ansible-vim
-      {
-        plugin = nvim-colorizer-lua;
-        config = "lua require('colorizer').setup()";
-      }
       chezmoi-vim
       # Appearance
       dressing-nvim
