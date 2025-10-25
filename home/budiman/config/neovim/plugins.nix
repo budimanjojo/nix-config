@@ -30,10 +30,6 @@ in
       # guihua-lua
       # Autocompletion
       lspkind-nvim
-      {
-        plugin = nvim-ts-autotag;
-        config = "lua require('nvim-ts-autotag').setup()";
-      }
       # System utility
       FTerm-nvim
       # Editing support
