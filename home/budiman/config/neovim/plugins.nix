@@ -26,8 +26,6 @@ in
       ansible-vim
       chezmoi-vim
       # guihua-lua
-      # Autocompletion
-      lspkind-nvim
       # System utility
       FTerm-nvim
       # Editing support
