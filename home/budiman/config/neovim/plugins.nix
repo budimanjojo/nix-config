@@ -25,8 +25,6 @@ in
       # Syntax highlighting
       ansible-vim
       chezmoi-vim
-      # Appearance
-      dressing-nvim
       # guihua-lua
       # Autocompletion
       lspkind-nvim
