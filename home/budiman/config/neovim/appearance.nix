@@ -10,7 +10,7 @@
         group = "yankhighlight";
         callback = {
           __raw = "function()
-            vim.highlight.on_yank()
+            vim.hl.on_yank()
           end";
         };
       }
@@ -30,7 +30,7 @@
         flavor = "mocha";
         float.transparent = true;
         integrations = {
-          fzf = true;
+          snacks.enabled = true;
           indent_blankline = {
             enabled = true;
             scope_color = "mauve";
