@@ -14,6 +14,7 @@
     sources = {
       files.hidden = true;
       help.win.preview.wo.wrap = true;
+      buffers.current = false; # don't show current buffer
     };
 
     win.input.keys = {
