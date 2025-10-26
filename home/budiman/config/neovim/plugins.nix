@@ -26,8 +26,6 @@ in
       ansible-vim
       chezmoi-vim
       # guihua-lua
-      # System utility
-      FTerm-nvim
       # Editing support
       {
         plugin = nvim-surround;

@@ -273,19 +273,6 @@
         options.desc = "Fix document formatting";
       }
 
-      ## FTerm
-      {
-        mode = [
-          "n"
-          "t"
-        ];
-        key = "<C-t>";
-        action.__raw = "function()
-          return require('FTerm').toggle()
-        end";
-        options.desc = "Toggle floating terminal";
-      }
-
       ## b64.nvim
       {
         mode = "v";

@@ -10,6 +10,7 @@
     ./nvim-autopairs
     ./oil
     ./snacks
+    ./toggleterm
     ./treesitter
   ];
 
