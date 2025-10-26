@@ -1,11 +1,9 @@
 {
-  config.plugins.mini = {
-    enable = true;
-    mockDevIcons = true;
-    modules = {
-      icons = { };
-      comment = { };
-      indentscope = import ./indentscope.nix;
-    };
-  };
+  imports = [
+    ./comment.nix
+    ./icons.nix
+    ./indentscope.nix
+  ];
+
+  config.plugins.mini.enable = true;
 }
