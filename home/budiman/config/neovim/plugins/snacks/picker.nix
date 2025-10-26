@@ -11,7 +11,10 @@
     # TODO: very long title is being truncated with defaults
     layouts.select.layout.min_width = 120;
 
-    sources.files.hidden = true;
+    sources = {
+      files.hidden = true;
+      help.win.preview.wo.wrap = true;
+    };
 
     win.input.keys = {
       "<Esc>" = {
