@@ -239,18 +239,6 @@
         options.desc = "Restart LSP";
       }
 
-      ## Trouble
-      {
-        mode = "n";
-        key = "<Leader>xx";
-        action = ":TroubleToggle<CR>";
-      }
-      {
-        mode = "n";
-        key = "<Leader>xr";
-        action = ":TroubleToggle lsp_references<CR>";
-      }
-
       ## null-ls
       {
         mode = "n";
