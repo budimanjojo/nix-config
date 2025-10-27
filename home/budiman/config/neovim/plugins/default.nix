@@ -1,6 +1,7 @@
 {
   imports = [
     ./blink-cmp
+    ./endec
     ./gitsigns
     ./lualine
     ./grug-far

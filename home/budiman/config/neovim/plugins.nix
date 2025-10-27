@@ -26,7 +26,6 @@ in
       ansible-vim
       chezmoi-vim
       # guihua-lua
-      b64-nvim
       # Other
       presence-nvim
     ];

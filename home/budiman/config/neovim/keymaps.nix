@@ -272,20 +272,6 @@
         end";
         options.desc = "Fix document formatting";
       }
-
-      ## b64.nvim
-      {
-        mode = "v";
-        key = "<Leader>be";
-        action = ":<C-u>lua require('b64').encode()<CR>";
-        options.desc = "Encode text with base64";
-      }
-      {
-        mode = "v";
-        key = "<Leader>bd";
-        action = ":<C-u>lua require('b64').decode()<CR>";
-        options.desc = "Decode base64 encoded text";
-      }
     ];
   };
 }
