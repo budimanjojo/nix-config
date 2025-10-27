@@ -15,12 +15,6 @@ in
       ## These are raw lua files of plugin configs so I can require them in the plugin set
     };
 
-    ## dependencies needed for plugins
-    extraPackages = with pkgs; [
-      gzip
-      shellcheck
-    ];
-
     extraPlugins = with vimPlugins; [
       # Syntax highlighting
       ansible-vim

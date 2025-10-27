@@ -173,5 +173,9 @@ in
         };
       };
     };
+
+    extraPackages = [
+      pkgs.shellcheck # dependency for bashls
+    ];
   };
 }
