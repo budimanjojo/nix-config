@@ -26,8 +26,6 @@ in
       ansible-vim
       chezmoi-vim
       # guihua-lua
-      # Other
-      presence-nvim
     ];
   };
 }
