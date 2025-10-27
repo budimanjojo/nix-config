@@ -31,10 +31,6 @@ in
         plugin = nvim-surround;
         config = "lua require('nvim-surround').setup()";
       }
-      {
-        plugin = trim-nvim;
-        config = "lua require('trim').setup()";
-      }
       b64-nvim
       # Other
       presence-nvim
