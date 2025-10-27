@@ -26,11 +26,6 @@ in
       ansible-vim
       chezmoi-vim
       # guihua-lua
-      # Editing support
-      {
-        plugin = nvim-surround;
-        config = "lua require('nvim-surround').setup()";
-      }
       b64-nvim
       # Other
       presence-nvim

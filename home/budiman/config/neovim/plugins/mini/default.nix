@@ -3,6 +3,7 @@
     ./comment.nix
     ./icons.nix
     ./indentscope.nix
+    ./surround.nix
     ./trailspace.nix
   ];
 
