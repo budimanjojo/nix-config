@@ -100,6 +100,12 @@ in
           ];
           options.desc = "Do LSP format action";
         }
+        {
+          key = "<Leader>lr";
+          action = ":LspRestart<CR>";
+          mode = [ "n" ];
+          options.desc = "Restart LSP";
+        }
       ];
 
       servers = {

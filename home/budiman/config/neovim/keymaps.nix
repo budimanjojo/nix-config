@@ -230,14 +230,6 @@
         action = "<C-i>";
         options.desc = "Jump to newer cursor position";
       }
-
-      ## lspconfig
-      {
-        mode = "n";
-        key = "<Leader>lr";
-        action = ":LspRestart<CR>";
-        options.desc = "Restart LSP";
-      }
     ];
   };
 }
