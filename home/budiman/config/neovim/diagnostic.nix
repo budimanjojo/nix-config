@@ -40,17 +40,7 @@
         pattern = "*";
         callback = {
           __raw = "function()
-            -- TODO: not needed after v0.11.4
-            -- ref: https://github.com/neovim/neovim/pull/34946
-            local float_opt = {
-              focusable = false,
-              close_events = {
-                'BufLeave',
-                'CursorMoved',
-                'InsertEnter',
-              }
-            }
-            vim.diagnostic.open_float(nil, float_opt)
+            vim.diagnostic.open_float()
           end";
         };
       }
