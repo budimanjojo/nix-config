@@ -91,6 +91,15 @@ in
           mode = [ "n" ];
           options.desc = "Do LSP get implementation action";
         }
+        {
+          key = "<Leader>pp";
+          lspBufAction = "format";
+          mode = [
+            "n"
+            "v"
+          ];
+          options.desc = "Do LSP format action";
+        }
       ];
 
       servers = {

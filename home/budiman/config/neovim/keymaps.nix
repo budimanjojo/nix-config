@@ -238,28 +238,6 @@
         action = ":LspRestart<CR>";
         options.desc = "Restart LSP";
       }
-
-      ## null-ls
-      {
-        mode = "n";
-        key = "<Leader>pp";
-        action.__raw = "function()
-          if vim.fn.has('nvim-0.8') == 1 then
-            return vim.lsp.buf.format()
-          else
-            return vim.lsp.buf.formatting()
-          end
-        end";
-        options.desc = "Fix document formatting";
-      }
-      {
-        mode = "v";
-        key = "<Leader>pp";
-        action.__raw = "function()
-          return vim.lsp.buf.range_formatting()
-        end";
-        options.desc = "Fix document formatting";
-      }
     ];
   };
 }
