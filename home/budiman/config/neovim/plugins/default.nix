@@ -1,6 +1,7 @@
 {
   imports = [
     ./blink-cmp
+    ./chezmoi-vim
     ./cord
     ./endec
     ./gitsigns

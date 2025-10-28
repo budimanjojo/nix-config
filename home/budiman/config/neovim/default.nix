@@ -1,6 +1,5 @@
 {
   imports = [
-    ./plugins.nix
     ./lsp.nix
     ./plugins
     ./general.nix
