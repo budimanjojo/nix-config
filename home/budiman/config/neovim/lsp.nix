@@ -129,7 +129,11 @@ in
           ];
         };
 
-        nil_ls.enable = true;
+        nil_ls = {
+          enable = true;
+          settings.settings.nil.nix.flake.autoArchive = true;
+        };
+
         pyright.enable = true;
         lua_ls.enable = true;
         taplo.enable = true;
