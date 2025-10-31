@@ -106,7 +106,7 @@
     },
     "mason-lspconfig-nvim": {
         "cargoLock": null,
-        "date": "2025-10-29",
+        "date": "2025-10-31",
         "extract": null,
         "name": "mason-lspconfig-nvim",
         "passthru": null,
@@ -118,12 +118,12 @@
             "name": null,
             "owner": "williamboman",
             "repo": "mason-lspconfig.nvim",
-            "rev": "3590d66effccc7376d8c3dbe45e8291f9fed2843",
-            "sha256": "sha256-aBYt6hsQNc9/jieK1x8LmWnNDPdJKueikWO8qg7fEAU=",
+            "rev": "d7b5feb6e769e995f7fcf44d92f49f811c51d10c",
+            "sha256": "sha256-A6R7nd47SbnJrMPyqedJqe5JEW/9Aw4BxXlOoLxWiYg=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "3590d66effccc7376d8c3dbe45e8291f9fed2843"
+        "version": "d7b5feb6e769e995f7fcf44d92f49f811c51d10c"
     },
     "mason-tool-installer-nvim": {
         "cargoLock": null,
