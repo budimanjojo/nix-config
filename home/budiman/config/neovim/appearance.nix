@@ -37,6 +37,8 @@
           };
           nvim_surround = true;
           lsp_trouble = true;
+          noice = true;
+          notify = true;
         };
       };
     };

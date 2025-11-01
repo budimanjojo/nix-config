@@ -38,7 +38,6 @@
       writebackup = false; # # Disable creating backup file
       swapfile = false; # # Disable creating swap file
       showmode = false; # # Don't show current mode
-      lazyredraw = true; # # Don't redraw while executing macro for better performance
       showmatch = true; # # Show matching brackets when cursor is over them
       splitbelow = true; # # Open new split below
       splitright = true; # # Open new vertical split on the right

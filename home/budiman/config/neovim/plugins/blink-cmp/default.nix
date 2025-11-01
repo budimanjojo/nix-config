@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   config.plugins = {
     blink-cmp = {
@@ -106,7 +111,14 @@
             ];
           };
           completion = {
-            menu.auto_show = false;
+            menu.auto_show = lib.mkIf config.plugins.noice.enable {
+              __raw = ''
+                function(ctx)
+                  return vim.fn.getcmdtype() == ':'
+                end
+              '';
+            };
+            list.selection.preselect = false;
           };
         };
       };

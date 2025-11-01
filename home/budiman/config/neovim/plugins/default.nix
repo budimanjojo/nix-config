@@ -9,6 +9,7 @@
     ./grug-far
     ./luasnip
     ./mini
+    ./noice
     ./none-ls
     ./nvim-autopairs
     ./oil
