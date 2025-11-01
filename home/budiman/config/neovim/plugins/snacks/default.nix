@@ -4,5 +4,8 @@
     ./input.nix
   ];
 
-  config.plugins.snacks.enable = true;
+  config = {
+    plugins.snacks.enable = true;
+    colorschemes.catppuccin.settings.integrations.snacks.enabled = true;
+  };
 }

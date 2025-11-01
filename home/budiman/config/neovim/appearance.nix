@@ -29,17 +29,6 @@
       settings = {
         flavor = "mocha";
         float.transparent = true;
-        integrations = {
-          snacks.enabled = true;
-          indent_blankline = {
-            enabled = true;
-            scope_color = "mauve";
-          };
-          nvim_surround = true;
-          lsp_trouble = true;
-          noice = true;
-          notify = true;
-        };
       };
     };
   };
