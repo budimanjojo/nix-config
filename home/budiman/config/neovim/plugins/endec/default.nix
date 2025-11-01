@@ -7,10 +7,10 @@
       require('endec').setup({
         keymaps = {
           defaults = false,
-          decode_base64_popup = "bd",
-          vdecode_base64_popup = "bd",
-          encode_base64_inplace = "be",
-          vencode_base64_inplace = "be",
+          decode_base64_popup = "<Leader>bd",
+          vdecode_base64_popup = "<Leader>bd",
+          encode_base64_inplace = "<Leader>be",
+          vencode_base64_inplace = "<Leader>be",
         }
       })
     '';
