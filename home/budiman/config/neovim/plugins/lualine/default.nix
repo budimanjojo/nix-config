@@ -87,7 +87,11 @@
         ];
         lualine_z = [
           {
-            __unkeyed-1 = "hostname";
+            # display macro recording
+            cond.__raw = "function() return vim.fn.reg_recording() ~= '' end";
+            __unkeyed-1.__raw = "function()
+              return 'Recording @' .. vim.fn.reg_recording()
+            end";
             separator = {
               left = "";
               right = "";
