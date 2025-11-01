@@ -12,31 +12,46 @@
         mode = "n";
         key = "<Leader>w";
         action = ":w!<CR>";
-        options.desc = "Write!";
+        options = {
+          desc = "Write!";
+          silent = true;
+        };
       }
       {
         mode = "n";
         key = "<Leader>x";
         action = ":x<CR>";
-        options.desc = "Write and exit";
+        options = {
+          desc = "Write and exit";
+          silent = true;
+        };
       }
       {
         mode = "n";
         key = "<Leader>qq";
         action = ":q<CR>";
-        options.desc = "Quit";
+        options = {
+          desc = "Quit";
+          silent = true;
+        };
       }
       {
         mode = "n";
         key = "<Leader>qa";
         action = ":qa!<CR>";
-        options.desc = "Quit all!";
+        options = {
+          desc = "Quit all!";
+          silent = true;
+        };
       }
       {
         mode = "n";
         key = "<Leader>wq";
         action = ":wq!<CR>";
-        options.desc = "Write and quit!";
+        options = {
+          desc = "Write and quit!";
+          silent = true;
+        };
       }
 
       ## Better cursor movement on wrapped line
@@ -150,13 +165,19 @@
         mode = "n";
         key = "<Leader>s";
         action = ":new<CR>";
-        options.desc = "Open new horizontal split";
+        options = {
+          desc = "Open new horizontal split";
+          silent = true;
+        };
       }
       {
         mode = "n";
         key = "<Leader>v";
         action = ":vnew<CR>";
-        options.desc = "Open new vertical split";
+        options = {
+          desc = "Open new vertical split";
+          silent = true;
+        };
       }
 
       ## Tab navigation
@@ -164,25 +185,37 @@
         mode = "n";
         key = "<Leader>tn";
         action = ":tabnew<CR>";
-        options.desc = "Create new tab";
+        options = {
+          desc = "Create new tab";
+          silent = true;
+        };
       }
       {
         mode = "n";
         key = "<Leader>tq";
         action = ":tabclose<CR>";
-        options.desc = "Close current tab";
+        options = {
+          desc = "Close current tab";
+          silent = true;
+        };
       }
       {
         mode = "n";
         key = "<Leader>th";
         action = ":tabprev<CR>";
-        options.desc = "Go to the previous tab";
+        options = {
+          desc = "Go to the previous tab";
+          silent = true;
+        };
       }
       {
         mode = "n";
         key = "<Leader>tl";
         action = ":tabnext<CR>";
-        options.desc = "Go to the next tab";
+        options = {
+          desc = "Go to the next tab";
+          silent = true;
+        };
       }
       {
         mode = "n";
