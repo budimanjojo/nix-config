@@ -55,13 +55,13 @@
   };
   luasnip = {
     pname = "luasnip";
-    version = "v2.4.0";
+    version = "v2.4.1";
     src = fetchFromGitHub {
       owner = "L3MON4D3";
       repo = "LuaSnip";
-      rev = "v2.4.0";
+      rev = "v2.4.1";
       fetchSubmodules = false;
-      sha256 = "sha256-FtDpvgbtKN9PN1cPXU0jdxj9VdScRE9W7P6d9rVftRQ=";
+      sha256 = "sha256-/uOwzVLT4nyENefKVf2/+jnAjqPFcuZ7Izeh3bkDVu4=";
     };
   };
   mason-lspconfig-nvim = {
