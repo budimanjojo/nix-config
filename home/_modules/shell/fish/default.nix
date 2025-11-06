@@ -69,6 +69,10 @@ in
               name = "abbreviation-tips";
               src = myPkgs.fish-plugins.abbreviation-tips.src;
             }
+            {
+              name = "fish-completion-sync";
+              src = myPkgs.fish-plugins.fish-completion-sync.src;
+            }
           ]
           ++ [
             (mkIf (config.programs.tmux.enable && !config.programs.zellij.enable) {

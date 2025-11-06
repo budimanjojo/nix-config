@@ -8,4 +8,7 @@ in
     inherit (sourceData.tmux-fish) pname src;
     version = sourceData.tmux-fish.date;
   };
+  fish-completion-sync = buildFishPlugin {
+    inherit (sourceData.fish-completion-sync) pname src version;
+  };
 }

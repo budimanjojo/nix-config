@@ -31,3 +31,6 @@ fetch.github = "gazorby/fish-abbreviation-tips"
 [tmux-fish]
 src.git = "https://github.com/budimanjojo/tmux.fish"
 fetch.github = "budimanjojo/tmux.fish"
+[fish-completion-sync]
+src.git = "https://github.com/iynaix/fish-completion-sync"
+fetch.github = "iynaix/fish-completion-sync"
