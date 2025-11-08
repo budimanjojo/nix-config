@@ -53,7 +53,6 @@
     # https://github.com/budimanjojo/talhelper
     talhelper = {
       url = "github:budimanjojo/talhelper";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     # Catppuccin for Nix - Soothing pastel theme for Nix
