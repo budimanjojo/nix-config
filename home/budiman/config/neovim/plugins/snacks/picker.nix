@@ -11,6 +11,8 @@
     # TODO: very long title is being truncated with defaults
     layouts.select.layout.min_width = 120;
 
+    formatters.file.min_width = 60;
+
     sources = {
       files.hidden = true;
       help.win.preview.wo.wrap = true;
