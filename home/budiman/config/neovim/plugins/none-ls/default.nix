@@ -25,6 +25,9 @@
       diagnostics = {
         ansiblelint = {
           enable = true;
+          # TODO: ansible-lint is currently broken on stable
+          # ref: https://github.com/NixOS/nixpkgs/issues/460422
+          package = pkgs.unstable.ansible-lint;
           settings.filetypes = [ "yaml.ansible" ];
         };
         golangci_lint = {
