@@ -11,9 +11,14 @@
         'trim_trailing_lastline must be either "true" or "false"'
       )
 
+      local group = vim.api.nvim_create_augroup(
+        'nvim.editorconfig.trim_trailing_ll',
+        {}
+      )
+
       if val == 'true' then
         vim.api.nvim_create_autocmd('BufWritePre', {
-          group = 'nvim.editorconfig',
+          group = group,
           buffer = bufnr,
           callback = function()
             MiniTrailspace.trim_last_lines()
@@ -22,7 +27,7 @@
       else
         vim.api.nvim_clear_autocmds({
           event = 'BufWritePre',
-          group = 'nvim.editorconfig',
+          group = group,
         })
       end
     end
