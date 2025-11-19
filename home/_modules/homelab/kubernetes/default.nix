@@ -39,6 +39,7 @@ in
       fluxcd
       go-task
       jq
+      just
       kubectl
       kubernetes-helm
       kustomize
