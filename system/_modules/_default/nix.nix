@@ -30,6 +30,7 @@
       keep-derivations = false;
       # this make sure we always check for new commit when fetching source
       tarball-ttl = 0;
+      trusted-users = [ "@wheel" ];
     };
   };
 }
