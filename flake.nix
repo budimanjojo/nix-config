@@ -147,7 +147,7 @@
 
         nixosConfigurations = {
           # this is a NixOS live CD that has SSH enabled and some of my stuffs baked in
-          # build with `nix build .#nixosConfigurations.livecd.config.system.build.isoImage`
+          # build with `nix build .#nixosConfigurations.nixos-livecd.config.system.build.isoImage`
           nixos-livecd = flakeLib.mkSystem {
             hostname = "nixos-livecd";
             homeUsers = [ ];
