@@ -44,7 +44,6 @@ in
           pkgs.runCommand "man-cache-test"
             {
               nativeBuildInputs = [ buildPackage ];
-              preferLocalBuild = true;
             }
             ''
               echo "MANDB_MAP ${cfg.manualPages}/share/man $out" > man.conf
