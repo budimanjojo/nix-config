@@ -41,7 +41,7 @@ in
         cfg = config.documentation.man.man-db;
         buildPackage = cfg.package;
         manualCache =
-          pkgs.runCommand "man-cache"
+          pkgs.runCommand "man-cache-test"
             {
               nativeBuildInputs = [ buildPackage ];
               preferLocalBuild = true;
