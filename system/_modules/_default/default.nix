@@ -50,7 +50,7 @@ in
               mandb -C man.conf -psc
             '';
       in
-      lib.mkOverride 999 ''
+      lib.mkForce ''
         # Manual pages paths for NixOS
         MANPATH_MAP /run/current-system/sw/bin /run/current-system/sw/share/man
         MANPATH_MAP /run/wrappers/bin          /run/current-system/sw/share/man
