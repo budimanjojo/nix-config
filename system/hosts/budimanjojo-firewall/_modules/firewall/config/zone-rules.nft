@@ -274,7 +274,7 @@ chain WAN-GUEST {
 ######################
 chain LAN0-CONTAINERS {
   ip daddr @omada_controller udp dport @omada_udp counter return comment "accept omada_controller udp ports"
-  ip daddr @omada_controller tcp dport @omada_udp counter return comment "accept omada_controller tcp ports"
+  ip daddr @omada_controller tcp dport @omada_tcp counter return comment "accept omada_controller tcp ports"
   ct state invalid counter log prefix "[LAN0-CONTAINERS-invalid-D]" drop comment "drop invalid"
   counter log prefix "[LAN0-CONTAINERS-default-A]" return comment "default-action accept"
 }

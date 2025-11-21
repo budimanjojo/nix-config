@@ -78,7 +78,7 @@ set omada_tcp {
   type inet_service
   flags interval
   auto-merge
-  elements = { 443, 8043, 29811-29816 }
+  elements = { 443, 8043, 29811-29817 }
 }
 
 set omada_udp {
