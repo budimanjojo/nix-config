@@ -59,7 +59,6 @@ jobs:
         uses: wimpysworld/nothing-but-nix@6af122a9403f936ef689e44cc013ae3f3e2f1c3b # v6
         with:
           hatchet-protocol: carve
-          nix-permission-edict: true
 
       - uses: cachix/install-nix-action@0b0e072294b088b73964f1d72dfdac0951439dbd # v31.8.4
 
