@@ -30,10 +30,10 @@ jobs:
       - name: Import or export Nix store cache
         run: |
           if [ "${{ steps.cache.outputs.cache-hit }}" == "true" ]; then
-            nix copy --all --from /tmp/nix-cache
+            nix copy --all --no-check-sigs --from /tmp/nix-cache
           else
             nix build .#gc-keep # this keeps stuffs from getting garbage collected
-            nix copy --to /tmp/nix-cache .#gc-keep
+            nix copy --no-check-sigs --to /tmp/nix-cache .#gc-keep
           fi
 
       - id: set-matrix
@@ -67,7 +67,7 @@ jobs:
 
       - name: Import Nix store cache
         if: steps.cache.outputs.cache-hit == 'true'
-        run: nix copy --all --from /tmp/nix-cache
+        run: nix copy --no-check-sigs --all --from /tmp/nix-cache
 
       - name: Login to Cachix
         uses: cachix/cachix-action@0fc020193b5a1fa3ac4575aa3a7d3aa6a35435ad # v16
