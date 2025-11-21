@@ -56,7 +56,7 @@ jobs:
       - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
 
       - name: Brutally add more storage to our runner
-        uses: wimpysworld/nothing-but-nix@6af122a9403f936ef689e44cc013ae3f3e2f1c3b # v6
+        uses: wimpysworld/nothing-but-nix@10c936d9e46521bf923f75458e0cbd4fa309300d # main
         with:
           hatchet-protocol: carve
 
