@@ -4,7 +4,10 @@
     diagnostic.settings = {
       virtual_text = false;
       update_in_insert = true;
-      float.source = "if_many";
+      float = {
+        source = "if_many";
+        focusable = false;
+      };
       signs =
         let
           signs = {
