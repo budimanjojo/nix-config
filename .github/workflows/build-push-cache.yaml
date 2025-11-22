@@ -34,7 +34,10 @@ jobs:
         run: nix copy --all --no-check-sigs --from /tmp/nix-cache
 
       - name: Build and Export .#gc-keep to Nix store cache
-        run: nix copy --no-check-sigs --to /tmp/nix-cache .#gc-keep
+        run: |
+          # remove everything before copying so the cache doesn't grow over time
+          rm -rf /tmp/nix-cache
+          nix copy --no-check-sigs --to /tmp/nix-cache .#gc-keep
 
       - id: set-matrix
         run: |
