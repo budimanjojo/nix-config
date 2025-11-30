@@ -7,6 +7,7 @@
       float = {
         source = "if_many";
         focusable = false;
+        zindex = 1;
       };
       signs =
         let
