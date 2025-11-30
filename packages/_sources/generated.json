@@ -181,12 +181,12 @@
             "name": null,
             "owner": "stevearc",
             "repo": "oil.nvim",
-            "rev": "e5a1398790de2aa9eb7f795f592b8ee91a03eccc",
-            "sha256": "sha256-nHEMrQ+ELaXFNAlEjjRK/Ba8wuGHha2n4pGFmXe2sTw=",
+            "rev": "cbcb3f997f6f261c577b943ec94e4ef55108dd95",
+            "sha256": "sha256-JWPQnPzAXqratmV8F44W5EB1ty1/lb8lETawtyXskqE=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "e5a1398790de2aa9eb7f795f592b8ee91a03eccc"
+        "version": "cbcb3f997f6f261c577b943ec94e4ef55108dd95"
     },
     "tmux-fish": {
         "cargoLock": null,
