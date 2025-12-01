@@ -26,6 +26,15 @@
           popupmenu.enabled = false;
 
           routes = [
+            # use mini notification for :w messages
+            {
+              filter = {
+                event = "msg_show";
+                kind = "";
+                find = "written";
+              };
+              view = "mini";
+            }
             # hide search virtual text
             {
               filter = {
