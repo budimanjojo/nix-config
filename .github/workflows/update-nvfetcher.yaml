@@ -22,7 +22,7 @@ jobs:
           nix_conf: |
             keep-env-derivations = true
             keep-outputs = true
-      - uses: nix-community/cache-nix-action@eca69c462eda8455304862773d53bfe08a7c1fad # v7.0.2
+      - uses: nix-community/cache-nix-action@7df957e333c1e5da7721f60227dbba6d06080569 # v7.0.2
         with:
           primary-key: nvfetcher-${{ runner.os }}-${{ hashFiles('**/*.nix', '**/flake.lock') }}
           restore-prefixes-first-match: nvfetcher-${{ runner.os }}-
