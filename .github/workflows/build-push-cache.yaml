@@ -62,7 +62,7 @@ jobs:
           key: nix-flake-inputs-${{ hashFiles('**/flake.lock') }}
 
       - name: Brutally add more storage to our runner
-        uses: wimpysworld/nothing-but-nix@dd6ef566962bfa4656301706035da97ebbe90e9b # main
+        uses: wimpysworld/nothing-but-nix@687c797a730352432950c707ab493fcc951818d7 # main
         with:
           hatchet-protocol: carve
 
