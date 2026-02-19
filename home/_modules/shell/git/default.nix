@@ -33,9 +33,13 @@ in
   config = mkIf (cfg.enable) {
     programs.git = {
       enable = true;
-      userName = cfg.username;
-      userEmail = cfg.email;
-      extraConfig = cfg.config;
+      settings = {
+        user = {
+          name = cfg.username;
+          email = cfg.username;
+        }
+        // cfg.config;
+      };
     };
 
     programs.gh = {
