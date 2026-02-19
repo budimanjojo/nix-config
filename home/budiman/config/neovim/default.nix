@@ -9,6 +9,8 @@
     ./keymaps.nix
   ];
   config = {
+    withNodeJs = true;
+    withPerl = true;
     extraFiles = {
       "lua/utils.lua".source = ./lua/utils.lua;
     };
