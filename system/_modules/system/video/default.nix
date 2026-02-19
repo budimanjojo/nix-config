@@ -43,7 +43,7 @@ in
       services.xserver.videoDrivers = [ "nvidia" ];
       # hardware acceleration
       hardware.graphics.extraPackages = [
-        pkgs.vaapiVdpau
+        pkgs.libva-vdpau-driver
         pkgs.libvdpau-va-gl
       ];
       hardware.nvidia = {
