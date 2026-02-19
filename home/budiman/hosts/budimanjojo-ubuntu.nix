@@ -17,8 +17,10 @@
 
     home.packages = [ pkgs.hugo ];
 
-    # this add nix installed desktop files to be shown in application menu
-    targets.genericLinux.enable = true;
-    nixGL.packages = inputs.nixgl.packages;
+    targets.genericLinux = {
+      # this add nix installed desktop files to be shown in application menu
+      enable = true;
+      nixGL.packages = inputs.nixgl.packages;
+    };
   };
 }
