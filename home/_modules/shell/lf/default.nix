@@ -118,7 +118,7 @@ in
 
     home.packages = with pkgs; [
       chafa
-      poppler_utils
+      poppler-utils
       ffmpegthumbnailer
     ];
   };
