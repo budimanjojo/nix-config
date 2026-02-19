@@ -9,7 +9,7 @@ let
     {
       config,
       lib,
-      system,
+      pkgs,
       ...
     }:
     let
@@ -31,7 +31,7 @@ let
         };
         system = mkOption {
           type = types.str;
-          default = system;
+          default = pkgs.stdenv.hostPlatform.system;
           readOnly = true;
         };
         runner = mkOption {
