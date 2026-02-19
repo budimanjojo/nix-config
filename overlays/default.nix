@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
 {
   # NUR pkgs set (declared in the flake inputs) will be accessible
   # through `pkgs.nur`
@@ -12,8 +12,8 @@
   # be accessible through `pkgs.unstable`
   unstable-packages = final: prev: {
     unstable = import inputs.nixpkgs-unstable {
-      inherit (final) system;
-      config.allowUnfree = true;
+      localSystem = final.stdenv.hostPlatform;
+      config = config;
       overlays = [
         # overlays of unstable packages are declared here
       ];

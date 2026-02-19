@@ -136,7 +136,6 @@ in
           inputs
           myPkgs
           hostname
-          system
           ;
       };
       modules = baseModules ++ extraModules ++ mkHomeUsers ++ [ ghMatrixModules ];
@@ -159,7 +158,6 @@ in
           inputs
           myPkgs
           hostname
-          system
           ;
         # need to have this because a lot of my modules depends on `osConfig` argument
         osConfig = { };

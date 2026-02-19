@@ -27,7 +27,7 @@ in
       fish.enable = true;
       # TODO: wait for the IFD issue is fixed
       # ref: https://github.com/catppuccin/nix/issues/392
-      fzf.enable = mkIf (pkgs.system == "x86_64-linux") true;
+      fzf.enable = mkIf (pkgs.stdenv.hostPlatform.system == "x86_64-linux") true;
       bat.enable = true;
     };
 

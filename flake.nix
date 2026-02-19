@@ -87,13 +87,16 @@
       # function to make `pkgs` for defined system with my overlays
       mkPkgsWithSystem =
         system:
-        import inputs.nixpkgs {
-          inherit system;
-          overlays = builtins.attrValues (import ./overlays { inherit inputs; });
+        let
+          localSystem = system;
           config = {
             allowUnfree = true;
             allowUnfreePredicate = _: true;
           };
+        in
+        import inputs.nixpkgs {
+          inherit localSystem config;
+          overlays = builtins.attrValues (import ./overlays { inherit inputs config; });
         };
 
       flakeLib = import ./flakeLib.nix { inherit inputs mkPkgsWithSystem; };

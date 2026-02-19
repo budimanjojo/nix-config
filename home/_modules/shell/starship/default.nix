@@ -15,7 +15,7 @@ in
   config = lib.mkIf (cfg.enable) {
     # TODO: wait for the IFD issue is fixed
     # ref: https://github.com/catppuccin/nix/issues/392
-    catppuccin.starship.enable = lib.mkIf (pkgs.system == "x86_64-linux") true;
+    catppuccin.starship.enable = lib.mkIf (pkgs.stdenv.hostPlatform.system == "x86_64-linux") true;
 
     programs.starship = {
       enable = true;
