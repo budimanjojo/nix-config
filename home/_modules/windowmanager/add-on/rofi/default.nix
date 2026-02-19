@@ -16,7 +16,6 @@ in
   config = lib.mkIf (cfg.enable) {
     programs.rofi = {
       enable = true;
-      package = lib.mkIf (myHome.isWayland) pkgs.rofi-wayland;
       extraConfig = {
         font = "UbuntuMono Nerd Font 12";
         display-drun = " ";
