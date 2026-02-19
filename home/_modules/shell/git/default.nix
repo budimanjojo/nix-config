@@ -9,21 +9,12 @@ let
   inherit (lib)
     mkEnableOption
     mkOption
-    types
     mkIf
     ;
 in
 {
   options.myHome.shell.git = {
     enable = mkEnableOption "git";
-    username = mkOption {
-      type = types.str;
-      default = "";
-    };
-    email = mkOption {
-      type = types.str;
-      default = "";
-    };
     config = mkOption {
       type = options.programs.git.extraConfig.type;
       default = options.programs.git.extraConfig.default;
@@ -33,13 +24,7 @@ in
   config = mkIf (cfg.enable) {
     programs.git = {
       enable = true;
-      settings = {
-        user = {
-          name = cfg.username;
-          email = cfg.username;
-        }
-        // cfg.config;
-      };
+      settings = cfg.config;
     };
 
     programs.gh = {

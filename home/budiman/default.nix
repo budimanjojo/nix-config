@@ -18,14 +18,14 @@
 
       shell.git = {
         enable = true;
-        username = "budimanjojo";
-        email = "budimanjojo@gmail.com";
         config = {
           commit = {
             template = "${./config/gitcommit-message}";
             gpgSign = true;
           };
           user = {
+            name = "budimanjojo";
+            email = "budimanjojo@gmail.com";
             signingKey = "${config.home.homeDirectory}/.ssh/id_rsa.pub";
           };
           gpg = {
