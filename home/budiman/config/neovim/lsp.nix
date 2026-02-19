@@ -12,7 +12,7 @@ in
       # make lua_ls works with neovim API
       lazydev = {
         enable = true;
-        config.library = [
+        settings.library = [
           {
             path = "\${3rd}/luv/library";
             words = [ "vim%.uv" ];
