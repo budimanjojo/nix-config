@@ -22,7 +22,6 @@ in
           thunar-media-tags-plugin
         ];
       };
-      file-roller.enable = true;
     };
     services = {
       tumbler.enable = true;
@@ -31,6 +30,9 @@ in
         package = pkgs.gvfs;
       };
     };
-    environment.systemPackages = [ pkgs.ffmpegthumbnailer ];
+    environment.systemPackages = with pkgs; [
+      ffmpegthumbnailer
+      file-roller
+    ];
   };
 }
