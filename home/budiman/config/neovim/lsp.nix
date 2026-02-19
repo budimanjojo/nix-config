@@ -12,7 +12,7 @@ in
       # make lua_ls works with neovim API
       lazydev = {
         enable = true;
-        settings.library = [
+        config.library = [
           {
             path = "\${3rd}/luv/library";
             words = [ "vim%.uv" ];
@@ -117,12 +117,12 @@ in
         gopls = {
           enable = true;
           package = pkgs.unstable.gopls;
-          settings.settings.gopls.gofumpt = true;
+          config.settings.gopls.gofumpt = true;
         };
 
         jsonls = {
           enable = true;
-          settings.filetypes = [
+          config.filetypes = [
             "json"
             "jsonc"
             "json5"
@@ -131,7 +131,7 @@ in
 
         nil_ls = {
           enable = true;
-          settings.settings.nil.nix.flake.autoArchive = true;
+          config.settings.nil.nix.flake.autoArchive = true;
         };
 
         pyright.enable = true;
@@ -141,7 +141,7 @@ in
 
         yamlls = {
           enable = true;
-          settings.settings.yaml = {
+          config.settings.yaml = {
             customTags = [
               "!include_dir_list"
               "!include_dir_named"
