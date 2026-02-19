@@ -3,7 +3,7 @@
 
   inputs = {
     # nixpkgs and unstable
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     # flake-parts - very lightweight flake framework
@@ -13,7 +13,7 @@
     # home-manager - home user modules
     # https://github.com/nix-community/home-manager
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -45,7 +45,7 @@
     # nixvim - Neovim distribution built around Nix modules
     # https://github.com/nix-community/nixvim
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-25.05";
+      url = "github:nix-community/nixvim/nixos-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -57,7 +57,7 @@
 
     # Catppuccin for Nix - Soothing pastel theme for Nix
     # https://github.com/catppuccin/nix
-    catppuccin.url = "github:catppuccin/nix/release-25.05";
+    catppuccin.url = "github:catppuccin/nix/release-25.11";
 
     # nixGL - A wrapper tool for nix OpenGL application
     # https://github.com/nix-community/nixGL
