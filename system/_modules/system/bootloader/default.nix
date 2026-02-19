@@ -26,7 +26,7 @@ in
         systemd-boot = {
           enable = true;
           # memtest86 is not available in aarch64-linux
-          memtest86.enable = lib.mkIf (pkgs.system != "aarch64-linux") true;
+          memtest86.enable = lib.mkIf (pkgs.stdenv.hostPlatform.system != "aarch64-linux") true;
           configurationLimit = 10;
         };
         efi.canTouchEfiVariables = true;
