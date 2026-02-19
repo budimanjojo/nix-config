@@ -131,11 +131,21 @@
             gc-keep =
               (import "${inputs.cache-nix-action}/saveFromGC.nix" {
                 inherit pkgs inputs;
-                inputsExclude = [
-                  # TODO: errors from nixpkgs.lib that I can't fix
-                  inputs.flake-parts
+                inputsInclude = [
+                  "nixpkgs"
+                  "nixpkgs-unstable"
+                  "flake-parts"
+                  "home-manager"
+                  "sops-nix"
+                  "disko"
+                  "nur"
+                  "nvfetcher"
+                  "nixvim"
+                  "talhelper"
+                  "catppuccin"
+                  "nixgl"
                 ];
-              }).saveFromGC;
+              }).package;
           };
           # accessible via `nix develop`
           devShells.default = import ./shell.nix { inherit inputs' pkgs; };
