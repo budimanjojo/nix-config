@@ -43,15 +43,15 @@
   };
   guihua-lua = {
     pname = "guihua-lua";
-    version = "ef44ba40f12e56c1c9fa45967f2b4d142e4b97a0";
+    version = "5494320b04dd03f31267f0e0f961d74be6f105da";
     src = fetchFromGitHub {
       owner = "ray-x";
       repo = "guihua.lua";
-      rev = "ef44ba40f12e56c1c9fa45967f2b4d142e4b97a0";
+      rev = "5494320b04dd03f31267f0e0f961d74be6f105da";
       fetchSubmodules = false;
-      sha256 = "sha256-9iFqh12orsGnQniDloO+aXoBYuTqOW4pGHi3LBB2m4Q=";
+      sha256 = "sha256-AYXpzBA0CDtupBCavT306vVnWtBIjKaYNo6fMXrj0VQ=";
     };
-    date = "2025-11-13";
+    date = "2026-03-06";
   };
   k8s-snippets = {
     pname = "k8s-snippets";
