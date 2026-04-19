@@ -30,7 +30,7 @@ in
     ./programs/qmk
     ./programs/yamllint
 
-    ./services/nextcloud-client
+    ./services/opencloud-client
 
     ./shell/dircolors
     ./shell/fish

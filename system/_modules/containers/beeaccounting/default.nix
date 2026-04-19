@@ -55,7 +55,7 @@ in
               "/tmp/.X11-unix:/tmp/.X11-unix"
               "beeaccounting-app:/app"
               "beeaccounting-cups:/etc/cups"
-              "/home/${mySystem.adminUser}/Nextcloud:/nextcloud"
+              "/home/${mySystem.adminUser}/OpenCloud:/opencloud"
             ];
             environment = {
               ## There's no good way to get $DISPLAY from the host and it's unpure

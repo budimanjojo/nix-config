@@ -8,7 +8,7 @@
       };
       multiplexer.tmux.enable = true;
       browser.firefox.enable = true;
-      services.nextcloud-client.enable = true;
+      services.opencloud-client.enable = true;
       homelab.kubernetes.enable = true;
       programs.go.enable = true;
     };
