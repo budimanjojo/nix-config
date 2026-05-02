@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       options = {
-        theme = "catppuccin";
+        theme = "catppuccin-nvim";
         globalstatus = false;
         icons_enabled = true;
         section_separators = {
