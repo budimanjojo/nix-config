@@ -43,15 +43,15 @@
   };
   guihua-lua = {
     pname = "guihua-lua";
-    version = "d3dfb53fef990668996f2499c34a31eb3f2a2774";
+    version = "ae1a09035709a5952ae6f2fab742c2097c31a8f2";
     src = fetchFromGitHub {
       owner = "ray-x";
       repo = "guihua.lua";
-      rev = "d3dfb53fef990668996f2499c34a31eb3f2a2774";
+      rev = "ae1a09035709a5952ae6f2fab742c2097c31a8f2";
       fetchSubmodules = false;
-      sha256 = "sha256-3GtbyzmApCPA1keG2SOSMkiqbX+2ELQS7PmA09wl95g=";
+      sha256 = "sha256-LSds5HBIex4mGL6zDSEEZT16Jd69kpEuAwQIWy7aDaA=";
     };
-    date = "2026-05-14";
+    date = "2026-05-15";
   };
   k8s-snippets = {
     pname = "k8s-snippets";
@@ -78,15 +78,15 @@
   };
   mason-lspconfig-nvim = {
     pname = "mason-lspconfig-nvim";
-    version = "eaa34887d444cb002e1b165fac399ae4bbc771f7";
+    version = "7b01e2974a47d489bb92f47a41e4c0088ea8f86e";
     src = fetchFromGitHub {
       owner = "williamboman";
       repo = "mason-lspconfig.nvim";
-      rev = "eaa34887d444cb002e1b165fac399ae4bbc771f7";
+      rev = "7b01e2974a47d489bb92f47a41e4c0088ea8f86e";
       fetchSubmodules = false;
-      sha256 = "sha256-z5gYUB7K1YkZfrAwmEREFkhilz89BTJdqhiWTsBgS+8=";
+      sha256 = "sha256-s6iYL4iUKdupO5Db7VzZig50Q88IwPHaGZQM7H3vI0Q=";
     };
-    date = "2026-05-12";
+    date = "2026-05-15";
   };
   mason-tool-installer-nvim = {
     pname = "mason-tool-installer-nvim";

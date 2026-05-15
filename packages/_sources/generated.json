@@ -64,7 +64,7 @@
     },
     "guihua-lua": {
         "cargoLock": null,
-        "date": "2026-05-14",
+        "date": "2026-05-15",
         "extract": null,
         "name": "guihua-lua",
         "passthru": null,
@@ -76,12 +76,12 @@
             "name": null,
             "owner": "ray-x",
             "repo": "guihua.lua",
-            "rev": "d3dfb53fef990668996f2499c34a31eb3f2a2774",
-            "sha256": "sha256-3GtbyzmApCPA1keG2SOSMkiqbX+2ELQS7PmA09wl95g=",
+            "rev": "ae1a09035709a5952ae6f2fab742c2097c31a8f2",
+            "sha256": "sha256-LSds5HBIex4mGL6zDSEEZT16Jd69kpEuAwQIWy7aDaA=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "d3dfb53fef990668996f2499c34a31eb3f2a2774"
+        "version": "ae1a09035709a5952ae6f2fab742c2097c31a8f2"
     },
     "k8s-snippets": {
         "cargoLock": null,
@@ -127,7 +127,7 @@
     },
     "mason-lspconfig-nvim": {
         "cargoLock": null,
-        "date": "2026-05-12",
+        "date": "2026-05-15",
         "extract": null,
         "name": "mason-lspconfig-nvim",
         "passthru": null,
@@ -139,12 +139,12 @@
             "name": null,
             "owner": "williamboman",
             "repo": "mason-lspconfig.nvim",
-            "rev": "eaa34887d444cb002e1b165fac399ae4bbc771f7",
-            "sha256": "sha256-z5gYUB7K1YkZfrAwmEREFkhilz89BTJdqhiWTsBgS+8=",
+            "rev": "7b01e2974a47d489bb92f47a41e4c0088ea8f86e",
+            "sha256": "sha256-s6iYL4iUKdupO5Db7VzZig50Q88IwPHaGZQM7H3vI0Q=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "eaa34887d444cb002e1b165fac399ae4bbc771f7"
+        "version": "7b01e2974a47d489bb92f47a41e4c0088ea8f86e"
     },
     "mason-tool-installer-nvim": {
         "cargoLock": null,
