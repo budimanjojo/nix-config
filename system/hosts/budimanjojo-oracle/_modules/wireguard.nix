@@ -64,7 +64,7 @@ in
         {
           # lina-samsung
           PublicKey = "G5e7PRogUb2NmpIb5CN7JSchSoDaqVvS2oauWv28F2U=";
-          AllowedIPs = [ "10.10.10.15/32" ];
+          AllowedIPs = [ "10.10.10.16/32" ];
         }
       ];
     };
