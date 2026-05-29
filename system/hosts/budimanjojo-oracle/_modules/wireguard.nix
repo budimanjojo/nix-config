@@ -61,6 +61,11 @@ in
           PublicKey = "U1/0yWmjrRQapq+TWNv0mi1+gJkKkyBmN/ZtJWGbb0k=";
           AllowedIPs = [ "10.10.10.50/32" ];
         }
+        {
+          # lina-samsung
+          PublicKey = "G5e7PRogUb2NmpIb5CN7JSchSoDaqVvS2oauWv28F2U=";
+          AllowedIPs = [ "10.10.10.15/32" ];
+        }
       ];
     };
     networks = {
