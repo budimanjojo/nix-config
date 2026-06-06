@@ -44,7 +44,6 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.inputs.flake-parts.follows = "flake-parts";
     nixvim.inputs.systems.follows = "systems";
-    nixvim.inputs.nuschtosSearch.follows = "nuschtosSearch";
 
     # Talhelper - A tool to help creating Talos Kubernetes cluster
     # https://github.com/budimanjojo/talhelper
