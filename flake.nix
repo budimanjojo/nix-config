@@ -13,7 +13,7 @@
 
     # home-manager - home user modules
     # https://github.com/nix-community/home-manager
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
+    home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # sops-nix - secrets with `sops`
@@ -40,7 +40,7 @@
 
     # nixvim - Neovim distribution built around Nix modules
     # https://github.com/nix-community/nixvim
-    nixvim.url = "github:nix-community/nixvim/nixos-25.11";
+    nixvim.url = "github:nix-community/nixvim/nixos-26.05";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.inputs.flake-parts.follows = "flake-parts";
     nixvim.inputs.systems.follows = "systems";
@@ -56,7 +56,7 @@
 
     # Catppuccin for Nix - Soothing pastel theme for Nix
     # https://github.com/catppuccin/nix
-    catppuccin.url = "github:catppuccin/nix/release-25.11";
+    catppuccin.url = "github:catppuccin/nix/release-26.05";
     catppuccin.inputs.nixpkgs.follows = "nixpkgs";
 
     # nixGL - A wrapper tool for Nix OpenGL application
