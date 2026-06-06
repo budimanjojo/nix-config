@@ -1,6 +1,6 @@
 {
     "abbreviation-tips": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "abbreviation-tips",
@@ -21,7 +21,7 @@
         "version": "v0.7.0"
     },
     "chezmoi-vim": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-10-31",
         "extract": null,
         "name": "chezmoi-vim",
@@ -42,7 +42,7 @@
         "version": "73b30df35c6b645ebd2e6a440eea8463ef3c3f47"
     },
     "fish-completion-sync": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-03-09",
         "extract": null,
         "name": "fish-completion-sync",
@@ -63,7 +63,7 @@
         "version": "4f058ad2986727a5f510e757bc82cbbfca4596f0"
     },
     "k8s-snippets": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-11-13",
         "extract": null,
         "name": "k8s-snippets",
@@ -84,7 +84,7 @@
         "version": "d253da00664caa43584d8e245d25992650827dee"
     },
     "tmux-fish": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-04-07",
         "extract": null,
         "name": "tmux-fish",
@@ -105,7 +105,7 @@
         "version": "db0030b7f4f78af4053dc5c032c7512406961ea5"
     },
     "tokyonight-icon-theme": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-10-23",
         "extract": null,
         "name": "tokyonight-icon-theme",
