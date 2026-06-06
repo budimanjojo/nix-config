@@ -13,10 +13,10 @@
       options.myHome.terminal-emulator.kitty.enable = lib.mkEnableOption "kitty";
 
       config = lib.mkIf (cfg.enable) {
+        catppuccin.kitty.enable = true;
         programs.kitty = {
           enable = true;
           package = (config.lib.nixGL.wrap pkgs.kitty);
-          catppuccin.enable = true;
           font = {
             name = "UbuntuMono Nerd Font";
             size = 12;
