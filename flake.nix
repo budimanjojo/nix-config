@@ -74,9 +74,6 @@
     systems.url = "github:nix-systems/default";
     flake-utils.url = "github:numtide/flake-utils";
     flake-utils.inputs.systems.follows = "systems";
-    nuschtosSearch.url = "github:nuschtOS/search";
-    nuschtosSearch.inputs.nixpkgs.follows = "nixpkgs";
-    nuschtosSearch.inputs.flake-utils.follows = "flake-utils";
   };
 
   outputs =
