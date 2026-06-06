@@ -1,4 +1,0 @@
-{ ... }:
-{
-  imports = [ ../profiles/server.nix ];
-}

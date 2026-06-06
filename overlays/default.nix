@@ -1,4 +1,9 @@
-{ inputs, config, ... }:
+{
+  inputs,
+  config,
+  self',
+  ...
+}:
 {
   # NUR pkgs set (declared in the flake inputs) will be accessible
   # through `pkgs.nur`
@@ -19,6 +24,9 @@
       ];
     };
   };
+
+  # Packages from this flake will be accessible through `pkgs.thisflake`
+  thisflake = final: prev: { thisflake = self'.packages; };
 
   # Your own overlays for stable nixpkgs should be declared here
   nixpkgs-overlays = final: prev: {

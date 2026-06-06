@@ -1,6 +1,6 @@
 {
     "abbreviation-tips": {
-        "cargoLock": null,
+        "cargoLocks": null,
         "date": null,
         "extract": null,
         "name": "abbreviation-tips",
@@ -21,7 +21,7 @@
         "version": "v0.7.0"
     },
     "chezmoi-vim": {
-        "cargoLock": null,
+        "cargoLocks": null,
         "date": "2025-10-31",
         "extract": null,
         "name": "chezmoi-vim",
@@ -42,7 +42,7 @@
         "version": "73b30df35c6b645ebd2e6a440eea8463ef3c3f47"
     },
     "fish-completion-sync": {
-        "cargoLock": null,
+        "cargoLocks": null,
         "date": "2025-03-09",
         "extract": null,
         "name": "fish-completion-sync",
@@ -62,29 +62,8 @@
         },
         "version": "4f058ad2986727a5f510e757bc82cbbfca4596f0"
     },
-    "guihua-lua": {
-        "cargoLock": null,
-        "date": "2026-05-27",
-        "extract": null,
-        "name": "guihua-lua",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "ray-x",
-            "repo": "guihua.lua",
-            "rev": "f8e06bd8a26dee3377d63c2adf1e57cdb58ac474",
-            "sha256": "sha256-lupDg/yt75164H8zQs/HTKqC3Y1FnQCzoMq90nwapO8=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "f8e06bd8a26dee3377d63c2adf1e57cdb58ac474"
-    },
     "k8s-snippets": {
-        "cargoLock": null,
+        "cargoLocks": null,
         "date": "2025-11-13",
         "extract": null,
         "name": "k8s-snippets",
@@ -104,92 +83,8 @@
         },
         "version": "d253da00664caa43584d8e245d25992650827dee"
     },
-    "luasnip": {
-        "cargoLock": null,
-        "date": null,
-        "extract": null,
-        "name": "luasnip",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "L3MON4D3",
-            "repo": "LuaSnip",
-            "rev": "v2.5.0",
-            "sha256": "sha256-diZO1on0rlSp6XuNGN2lNa85rhkNe1QQOejJD+LKkZk=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "v2.5.0"
-    },
-    "mason-lspconfig-nvim": {
-        "cargoLock": null,
-        "date": "2026-05-31",
-        "extract": null,
-        "name": "mason-lspconfig-nvim",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "williamboman",
-            "repo": "mason-lspconfig.nvim",
-            "rev": "0a695750d747db1e7e70bcf0267ef8951c95fc83",
-            "sha256": "sha256-gl/yMl+H12KPCISOO44jG5hxK4PiDvnee6kxtGBFOXk=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "0a695750d747db1e7e70bcf0267ef8951c95fc83"
-    },
-    "mason-tool-installer-nvim": {
-        "cargoLock": null,
-        "date": "2026-01-22",
-        "extract": null,
-        "name": "mason-tool-installer-nvim",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "WhoIsSethDaniel",
-            "repo": "mason-tool-installer.nvim",
-            "rev": "443f1ef8b5e6bf47045cb2217b6f748a223cf7dc",
-            "sha256": "sha256-OZGq2TKZx1+GSzrQAdk2fAUv3052NMfTkm5QdO+EXXk=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "443f1ef8b5e6bf47045cb2217b6f748a223cf7dc"
-    },
-    "oil-nvim": {
-        "cargoLock": null,
-        "date": "2026-06-02",
-        "extract": null,
-        "name": "oil-nvim",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "stevearc",
-            "repo": "oil.nvim",
-            "rev": "b73018b75affd13fa38e2fc94ef753b465f770d7",
-            "sha256": "sha256-Q8t2GYOEBWcR19Ht2ZCx5FEusscY76LhXVae4ZW/3j0=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "b73018b75affd13fa38e2fc94ef753b465f770d7"
-    },
     "tmux-fish": {
-        "cargoLock": null,
+        "cargoLocks": null,
         "date": "2025-04-07",
         "extract": null,
         "name": "tmux-fish",
@@ -209,29 +104,8 @@
         },
         "version": "db0030b7f4f78af4053dc5c032c7512406961ea5"
     },
-    "tokyonight-gtk-theme": {
-        "cargoLock": null,
-        "date": "2025-10-23",
-        "extract": null,
-        "name": "tokyonight-gtk-theme",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "Fausto-Korpsvart",
-            "repo": "Tokyo-Night-GTK-Theme",
-            "rev": "6c340e058e84c1975a038a8e5d1e384477225dc0",
-            "sha256": "sha256-7H2n9wTaW8Db1RejWK071ITV1j5KIuzfql0Tx9WT6zM=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "6c340e058e84c1975a038a8e5d1e384477225dc0"
-    },
     "tokyonight-icon-theme": {
-        "cargoLock": null,
+        "cargoLocks": null,
         "date": "2025-10-23",
         "extract": null,
         "name": "tokyonight-icon-theme",

@@ -1,0 +1,23 @@
+{
+  flake.modules.homeManager.workstation-common =
+    { pkgs, ... }:
+    {
+      myHome = {
+        shell = {
+          fish.enable = true;
+          lf.enable = true;
+        };
+        multiplexer.tmux.enable = true;
+        browser.firefox.enable = true;
+        services.opencloud-client.enable = true;
+        homelab.kubernetes.enable = true;
+        programs.go.enable = true;
+      };
+
+      home.packages = with pkgs; [
+        geany
+        libreoffice-fresh
+        discord
+      ];
+    };
+}

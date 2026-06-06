@@ -10,6 +10,8 @@
 
 ## :book:&nbsp; Overview
 
+This repo is using [Dendritic Pattern](https://github.com/mightyiam/dendritic).
+
 This repository contains my machine configurations in Infrastructure as Code style.
 This is possible thanks to combination of [NixOS modules](https://nixos.wiki/NixOS_modules), [home-manager](https://github.com/nix-community/home-manager/), and [chezmoi](https://www.chezmoi.io/).
 
@@ -41,26 +43,25 @@ I use `chezmoi` mainly to configure the system using [chezmoi scripts](https://w
 ## :package:&nbsp; Modules
 
 - [Flake Parts](https://github.com/hercules-ci/flake-parts) to manage `flakes` outputs.
+- [import-tree](https://github.com/denful/import-tree) to recursively import Nix modules from a directory.
 - [home-manager](https://github.com/nix-community/home-manager) to manage my home directory.
 - [sops-nix](https://github.com/Mic92/sops-nix) is used to encrypt/decrypt my secrets safely.
 - [Disko](https://github.com/nix-community/disko) to declaratively manage disks.
 - [NUR](https://github.com/nix-community/NUR) for packages not available in the official NixOS repository.
 - [nixvim](https://github.com/nix-community/nixvim) to create reproducible Neovim package.
+- [nixGL](https://github.com/nix-community/nixGL) to wrap Nix OpenGL applications for non NixOS machines.
 
 ## :open_file_folder:&nbsp; Directory structure
 
 The structure of this repository is highly opinionated.
-I shamelessly took the pieces I believe is the best from people and modified it.
+As of now, I follow [Dendritic Pattern](https://github.com/mightyiam/dendritic) to design the structure.
 
-- [./flake.nix](./flake.nix) is the entrypoint for `nixos-rebuild` and `home-manager` commands.
+- [./flake.nix](./flake.nix) is the entrypoint for `import-tree` to collect modules from [./modules](./modules).
 - [./flake.lock](./flake.lock) is the lock file for this flake, updated daily by [budimanjojo-bot](https://github.com/apps/budimanjojo-bot) powered by [Renovate](https://github.com/renovatebot/renovate).
-- [./flakeLib.nix](./flakeLib.nix) is where I put helper functions used in `flake.nix` file, this is where the magic happens.
+- [./modules](./modules) is where everything lives. I try to name the files as descriptive as possible.
 - [./lib](./lib) is where I put helper functions used in NixOS and `home-manager` modules.
 - [./packages](./packages) is where I put my own packages, updated daily by [budimanjojo-bot](https://github.com/apps/budimanjojo-bot) powered by [nvfetcher](https://github.com/berberman/nvfetcher).
 - [./overlays](./overlays) contains overlays for packages used in NixOS and `home-manager` modules.
-- [./shell.nix](./shell.nix) accessible via `nix develop` to have tools needed available in current shell.
-- [./system](./system) contains my own NixOS modules and per machine system configurations.
-- [./home](./home) contains my own `home-manager` modules and per user configurations.
 - [./chezmoi](./chezmoi) contains files used by `chezmoi`.
 
 ## :inbox_tray:&nbsp; How do I bootstrap a new machine
@@ -68,21 +69,36 @@ I shamelessly took the pieces I believe is the best from people and modified it.
 ### NixOS
 
 - Clone this repository in a directory inside the machine.
-- Edit `./flake.nix` file and add the new machine specs inside `outputs.flake.nixosConfigurations` schema.
-- Create `./system/hosts/<hostname>/default.nix` for the new machine and configure it.
-- Create `./home/budiman/hosts/<hostname>.nix` for the new machine and configure it.
-- Run `git add .` then `sudo nixos-rebuild switch --flake .#<hostname>` and I'm done.
+- Add a file anywhere you like with a structure like so:
+
+```nix
+{
+  nixosHosts.<hostname> = {};
+  flake.modules.nixos.<hostname> = { <nixos-modules-here>; };
+}
+```
+
+- Run `git add .` then `sudo nixos-rebuild switch --flake .#<hostname>` and you're done.
 
 ### Non NixOS
 
 - Install Nix and enable Flake.
-- Edit `./flake.nix` file and add the new machine specs inside `outputs.flake.homeConfigurations` schema.
-- Create `./home/budiman/hosts/<hostname>.nix` for the new machine and configure it.
-- Run `git add .` then `nix run nixpkgs.home-manager -c home-manager switch --flake .#budiman@<hostname>` and I'm done.
+- Add a file anywhere you like with a structure like so:
+
+```nix
+{
+  homeHosts.<hostname> = {
+    primaryUser = "<username>";
+  };
+  flake.modules.homeManager."<username>@<hostname>" = { <homeManager-modules-here>; };
+}
+```
+
+- Run `git add .` then `nix run nixpkgs.home-manager -c home-manager switch --flake .#<username>@<hostname>` and you're done.
 
 ## :pencil:&nbsp; Neovim
 
-My `neovim` setup is packaged with [nixvim](https://github.com/nix-community/nixvim) and exposed at `legacyPackages.neovim` from this flake.
+My `neovim` setup is packaged with [nixvim](https://github.com/nix-community/nixvim) and exposed at `packages.neovim` from this flake.
 You can run it directly if you have `nix` installed and `flakes` enabled with: `nix run github:budimanjojo/nix-config#neovim`.
 
 ## :fish:&nbsp; Fish
@@ -98,6 +114,7 @@ These are the plugins I'm using:
 - [Puffer Fish](https://github.com/nickeb96/puffer-fish)
 - [autopair.fish](https://github.com/jorgebucaran/autopair.fish)
 - [fish-abbreviation-tips](https://github.com/gazorby/fish-abbreviation-tips)
+- [tmux.fish](https://github.com/budimanjojo/tmux.fish)
 
 ## :abcd:&nbsp; Fonts
 
@@ -297,5 +314,5 @@ I wrote most of the codes by myself, but there are a lot of stuffs inspired by t
 
 - [MatthiasBenaets/nixos-config](https://github.com/MatthiasBenaets/nixos-config) for the awesome YouTube video introducing NixOS to me.
 - [viperML/dotfiles](https://github.com/viperML/dotfiles) for answering stupid questions on Discord.
-- [bjw-s/nix-config](https://github.com/bjw-s/nix-config) for being inspiration for my repo structure.
-- [truxnell/nix-config](https://github.com/truxnell/nix-config) for being inspiration for my flakeLib functions.
+- [mightyiam/dendritic](https://github.com/mightyiam/dendritic) for being the Dendritic Pattern designer.
+- [GaetanLepage/nix-config](https://github.com/GaetanLepage/nix-config) for being inspiration of my `nixosHosts` and `homeHosts` implementation.

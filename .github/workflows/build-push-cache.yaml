@@ -5,12 +5,11 @@ on:
   workflow_dispatch: {}
   push:
     paths:
-      - "system/**"
-      - "home/**"
+      - "modules/**"
       - "packages/**"
       - "overlays/**"
       - "flake.lock"
-      - "*nix"
+      - "flake.nix"
 
 jobs:
   define-matrix:
@@ -42,7 +41,7 @@ jobs:
       - id: set-matrix
         run: |
           set -Eeu
-          matrix="$(nix eval --json '.#ghActions.matrix')"
+          matrix="$(nix eval --json '.#ghActions.perHostMatrix')"
           echo "matrix=$matrix" >> "$GITHUB_OUTPUT"
 
   build-push:

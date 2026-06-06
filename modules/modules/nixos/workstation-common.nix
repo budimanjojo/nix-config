@@ -1,0 +1,13 @@
+{
+  flake.modules.nixos.workstation-common = {
+    mySystem = {
+      programs = {
+        adb.enable = true;
+        hugo.enable = true;
+        qmk.enable = true;
+      };
+      monitoring.smartctl-exporter.enable = true;
+    };
+    boot.plymouth.enable = true;
+  };
+}
