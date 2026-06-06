@@ -44,7 +44,7 @@
           kubectl
           kubernetes-helm
           kustomize
-          nodePackages.zx
+          zx
           talosctl
           kubectl-rook-ceph
           thisflake.talhelper

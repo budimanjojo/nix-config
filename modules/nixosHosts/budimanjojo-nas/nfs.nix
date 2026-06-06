@@ -3,6 +3,7 @@
     fileSystems = {
       "/export/Kubernetes-Volumes" = {
         device = "/nas-data/Kubernetes-Volumes";
+        fsType = "auto";
         options = [
           "bind"
           "nfsvers=4.2"
@@ -11,6 +12,7 @@
       };
       "/export/Media" = {
         device = "/nas-data/Media";
+        fsType = "auto";
         options = [
           "bind"
           "nfsvers=4.2"
@@ -19,6 +21,7 @@
       };
       "/export/Backups" = {
         device = "/nas-data/Backups";
+        fsType = "auto";
         options = [
           "bind"
           "nfsvers=4.2"

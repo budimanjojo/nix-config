@@ -3,7 +3,7 @@
     {
       config,
       lib,
-      primaryUser,
+      pkgs,
       ...
     }:
     let
@@ -15,8 +15,7 @@
       };
 
       config = lib.mkIf (cfg.enable) {
-        programs.adb.enable = true;
-        users.users.${primaryUser}.extraGroups = [ "adbusers" ];
+        environment.systemPackages = [ pkgs.android-tools ];
       };
     };
 }

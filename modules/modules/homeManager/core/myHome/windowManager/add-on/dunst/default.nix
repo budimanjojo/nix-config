@@ -58,7 +58,6 @@
               icon_position = "left";
               min_icon_size = 16;
               max_icon_size = 16;
-              icon_path = "/usr/share/icons/Vimix-Doder-dark/16/actions/:/usr/share/icons/Vimix-Doder-dark/16/devices:/usr/share/icons/Vimix-Doder-dark/places/:/usr/share/icons/Vimix-Doder-dark/16/mimetypes/:/usr/share/icons/Vimix-Doder-dark/16/panel/:/usr/share/icons/Vimix-Doder-dark/16/status/";
               sticky_history = "yes";
               history_length = 20;
               dmenu = "/usr/bin/dmenu -p dunst:";
