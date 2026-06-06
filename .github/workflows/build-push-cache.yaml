@@ -81,7 +81,7 @@ jobs:
       - name: Build
         id: build
         run: |
-          result=$(nix build .#${{ matrix.attrset }} --print-out-paths)
+          result=$(nix build ${{ matrix.attrset }} --print-out-paths)
           echo "result=$result" >> $GITHUB_OUTPUT
 
       - name: Push
