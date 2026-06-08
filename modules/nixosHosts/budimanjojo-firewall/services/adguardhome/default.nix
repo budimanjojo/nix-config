@@ -11,15 +11,10 @@
     in
     {
       sops.secrets = {
-        "adguardhome/password" = {
-          sopsFile = ./secret.sops.yaml;
-          owner = adguardUser;
-          restartUnits = [ "adguardhome.service" ];
-        };
         "adguardhome/env" = {
           sopsFile = ./secret.sops.yaml;
           owner = adguardUser;
-          restartUnits = [ "adugardhome.service" ];
+          restartUnits = [ "adguardhome.service" ];
         };
       };
 
@@ -41,13 +36,12 @@
           User = adguardUser;
         };
         # we do `envsubst` to substitute string like ${VAR} using the environment secrets
-        # and also `bcrypt` the substituted unencrypted password with `htpasswd` as per config requirement
         preStart = lib.mkAfter ''
-          ${pkgs.envsubst}/bin/envsubst -no-unset -i "$STATE_DIRECTORY/AdGuardHome.yaml" -o "$STATE_DIRECTORY/AdGuardHome.yaml"
-
-          PASSWORD=$(cat ${config.sops.secrets."adguardhome/password".path})
-          HASHED_PASSWORD=$(${pkgs.apacheHttpd}/bin/htpasswd -nbB "" $PASSWORD | cut -c 2-)
-          ${pkgs.gnused}/bin/sed -i "s,ADGUARDHOMEPASSSWORD,$HASHED_PASSWORD," "$STATE_DIRECTORY/AdGuardHome.yaml"
+          # create a temp file instead of dumping the file on top in case there's error
+          # causing the file to become an empty yaml file
+          tmpfile=$STATE_DIRECTORY/AdGuardHome.yaml.substituted
+          ${pkgs.envsubst}/bin/envsubst -no-unset -i "$STATE_DIRECTORY/AdGuardHome.yaml" -o "$tmpfile"
+          mv "$tmpfile" "$STATE_DIRECTORY/AdGuardHome.yaml"
         '';
       };
 
@@ -61,7 +55,8 @@
           users = [
             {
               name = "budiman";
-              password = "ADGUARDHOMEPASSSWORD"; # placeholder
+              # double dollar sign to escape dollar sign
+              password = "$$2y$$10$$FSUW7/JIInDl4LMYtVTrquaiQJ31GqDWISorE0KTfdGzM9bp2I0Wq";
             }
           ];
           auth_attempts = 5;
@@ -80,7 +75,7 @@
             refuse_any = true;
             upstream_dns = [
               "[/home.arpa/]192.168.10.1:8853"
-              "[/internal\${SECRET_DOMAIN_1}/]192.168.10.1"
+              "[/internal.\${SECRET_DOMAIN_1}/]192.168.10.1"
               "[/external.\${SECRET_DOMAIN_1}/]192.168.10.1"
               "quic://dns.adguard-dns.com"
             ];
@@ -114,7 +109,7 @@
             blocking_mode = "default";
             protection_enabled = true;
             safe_search.enabled = false;
-            safebrowsing.enabled = true;
+            safebrowsing_enabled = true;
             parental_enabled = false;
             filtering_enabled = true;
             filters_update_interval = 24;
