@@ -23,7 +23,7 @@
             exec =
               let
                 script = pkgs.writeShellScriptBin "bee-app" ''
-                  ${pkgs.xorg.xhost}/bin/xhost +local:${toString adminUserID} > /dev/null 2>&1 && \
+                  ${pkgs.xhost}/bin/xhost +local:${toString adminUserID} > /dev/null 2>&1 && \
                   ${pkgs.docker}/bin/docker exec --user ${toString adminUserID} beeaccounting-app java -Xmx1g -jar /app/BeeUI-2.9.jar
                 '';
               in
@@ -48,7 +48,7 @@
             exec =
               let
                 script = pkgs.writeShellScriptBin "bee-updater" ''
-                  ${pkgs.xorg.xhost}/bin/xhost +local:${toString adminUserID} > /dev/null 2>&1 && \
+                  ${pkgs.xhost}/bin/xhost +local:${toString adminUserID} > /dev/null 2>&1 && \
                   ${pkgs.docker}/bin/docker exec --user ${toString adminUserID} beeaccounting-app java -Xmx1g -jar /app/BeeUpdater-2.9.jar
                 '';
               in
