@@ -33,6 +33,7 @@
             name = "Tokyonight-Dark";
             package = pkgs.tokyonight-gtk-theme;
           };
+          gtk4.theme = config.gtk.theme;
           iconTheme = {
             name = "Tokyonight-Dark";
             package = pkgs.thisflake.tokyonight-icon-theme;
