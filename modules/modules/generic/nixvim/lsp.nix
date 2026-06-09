@@ -14,6 +14,7 @@
         lazydev = {
           enable = true;
           settings.library = [
+            "${pkgs.hyprland.outPath}/share/hypr/stubs"
             {
               path = "\${3rd}/luv/library";
               words = [ "vim%.uv" ];
