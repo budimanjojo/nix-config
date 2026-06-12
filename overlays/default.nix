@@ -17,7 +17,7 @@
   # be accessible through `pkgs.unstable`
   unstable-packages = final: prev: {
     unstable = import inputs.nixpkgs-unstable {
-      localSystem = final.stdenv.hostPlatform;
+      localSystem = final.stdenv.hostPlatform.system;
       config = config;
       overlays = [
         # overlays of unstable packages are declared here
