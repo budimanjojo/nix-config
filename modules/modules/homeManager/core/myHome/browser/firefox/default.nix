@@ -34,7 +34,7 @@
           done < <(echo "$profiles")
 
           if [ $i -gt 1 ]; then
-            options=$(echo "$profiles" | sed ':a; N; $!ba; s/\n\\n/g')
+            options=$(echo "$profiles" | sed ':a; N; $!ba; s/\n/\\n/g')
             chosen=$(echo -e "$options" | ${rofiExe} -dmenu -P "Select Firefox Profile")
             if [ "$chosen" != "" ]; then
               ${firefoxExe} -P "$chosen"
