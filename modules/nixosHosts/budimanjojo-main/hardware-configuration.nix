@@ -15,7 +15,7 @@
 
       fileSystems = {
         "/" = {
-          device = "/dev/disk/by-uuid/d1d4bccb-7efb-4af3-b0c8-6b3cf162604f";
+          device = "/dev/disk/by-uuid/0350e758-e88b-4dcd-aa79-08fd960a4d12";
           fsType = "btrfs";
           options = [ "subvol=root" ];
         };
@@ -26,12 +26,12 @@
           neededForBoot = true;
         };
         "/nix" = {
-          device = "/dev/disk/by-uuid/d1d4bccb-7efb-4af3-b0c8-6b3cf162604f";
+          device = "/dev/disk/by-uuid/0350e758-e88b-4dcd-aa79-08fd960a4d12";
           fsType = "btrfs";
           options = [ "subvol=nix" ];
         };
         "/boot" = {
-          device = "/dev/disk/by-uuid/294B-A128";
+          device = "/dev/disk/by-uuid/3695-A7A1";
           fsType = "vfat";
         };
       };
