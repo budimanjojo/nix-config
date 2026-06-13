@@ -42,6 +42,7 @@ in
                   "amd"
                   "intel"
                   "nvidia"
+                  "nvidia_legacy_580"
                   "nouveau"
                 ]);
               default = null;

@@ -50,6 +50,29 @@
           };
         })
 
+        (lib.mkIf (hardware.gpuDriver == "nvidia_legacy_580") {
+          # enable nvidia kernel module
+          boot.initrd.kernelModules = [ "nvidia" ];
+          # boot.extraModulePackages = [ config.boot.kernelPackages.nvidiaPackages.legacy_580 ];
+          services.xserver.videoDrivers = [ "nvidia" ];
+          # hardware acceleration
+          hardware.graphics.extraPackages = [
+            pkgs.libva-vdpau-driver
+            pkgs.libvdpau-va-gl
+          ];
+          hardware.nvidia = {
+            open = false;
+            package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
+            modesetting.enable = true;
+            # enable nvidia settings menu
+            nvidiaSettings = true;
+          };
+          environment.variables = {
+            VDPAU_DRIVER = "va_gl";
+            LIBVA_DRIVER_NAME = "nvidia";
+          };
+        })
+
         (lib.mkIf (hardware.gpuDriver == "amd") {
           # enable amdgpu kernel module
           boot.initrd.kernelModules = [ "amdgpu" ];

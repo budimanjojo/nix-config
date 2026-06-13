@@ -6,7 +6,7 @@
 
     hardware = {
       cpu = "amd";
-      gpuDriver = "nvidia";
+      gpuDriver = "nvidia_legacy_580";
       monitors = [
         {
           name = "HDMI-A-1";
