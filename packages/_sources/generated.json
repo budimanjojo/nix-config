@@ -34,12 +34,12 @@
             "name": null,
             "owner": "alker0",
             "repo": "chezmoi.vim",
-            "rev": "59d2262bab660bedd0db883f37e8c27cf7ddfe55",
-            "sha256": "sha256-X7uUFHOQrJJhTKcxUgyJmAtmdOXQU970UNCgg5c2R/U=",
+            "rev": "816cbdbe268e6a32367f012c760dd665bb5aa4d4",
+            "sha256": "sha256-aWzfKmQeFef6JX0RdIjSngMml0qXtQ90Dc8WJZoNLa0=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "59d2262bab660bedd0db883f37e8c27cf7ddfe55"
+        "version": "816cbdbe268e6a32367f012c760dd665bb5aa4d4"
     },
     "fish-completion-sync": {
         "cargoLock": null,
