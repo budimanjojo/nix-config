@@ -19,13 +19,13 @@
   };
   chezmoi-vim = {
     pname = "chezmoi-vim";
-    version = "92721d7e29826f215689192dd99a22f5b490aba0";
+    version = "59d2262bab660bedd0db883f37e8c27cf7ddfe55";
     src = fetchFromGitHub {
       owner = "alker0";
       repo = "chezmoi.vim";
-      rev = "92721d7e29826f215689192dd99a22f5b490aba0";
+      rev = "59d2262bab660bedd0db883f37e8c27cf7ddfe55";
       fetchSubmodules = false;
-      sha256 = "sha256-VqksAzwX+nF9RlUMBMjDPSGl3aF2H0PYmhK8dQY27+E=";
+      sha256 = "sha256-X7uUFHOQrJJhTKcxUgyJmAtmdOXQU970UNCgg5c2R/U=";
     };
     date = "2026-06-17";
   };
