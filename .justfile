@@ -32,6 +32,15 @@ update-sops-keys:
     #! {{ nixShebang }} nixpkgs#sops nixpkgs#findutils -c {{ realShebang }}
     find . -type f -name \*.sops.yaml ! -name .sops.yaml -exec sops updatekeys --yes {} \;
 
+# get catppuccin palette from upstream
+# we sanitize the output to only contains the hex value
+# TODO: not needed once the IFD issue is fixed
+# ref: https://github.com/catppuccin/nix/issues/392
+[group('repository')]
+get-catppuccin-palette:
+    #! {{ nixShebang }} nixpkgs#nixfmt -c {{ realShebang }}
+    nix eval --file ./scripts/get_catppuccin_palette.nix | nixfmt - > catppuccin-palette.nix
+
 # do `nixos-rebuild switch` for current system
 [group('nix')]
 nixos-switch:

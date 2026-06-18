@@ -12,6 +12,29 @@
       cfg = config.myHome.shell.fish;
       isNixos = myLib.isNixos osConfig;
       sourceData = pkgs.callPackage "${self}/packages/_sources/generated.nix" { };
+
+      # TODO: wait for the IFD issue is fixed
+      # ref: https://github.com/catppuccin/nix/issues/392
+      fzfColors =
+        let
+          cfg = config.catppuccin.fzf;
+          palette = import "${self}/catppuccin-palette.nix";
+          accent = cfg.accent;
+        in
+        builtins.mapAttrs (_: color: palette.${cfg.flavor}.${color}) {
+          "bg+" = "surface0";
+          bg = "base";
+          spinner = "rosewater";
+          hl = accent;
+          fg = "text";
+          header = accent;
+          info = accent;
+          pointer = accent;
+          marker = accent;
+          "fg+" = "text";
+          prompt = accent;
+          "hl+" = accent;
+        };
     in
     {
       options.myHome.shell.fish.enable = lib.mkEnableOption "fish shell";
@@ -24,9 +47,6 @@
 
         catppuccin = {
           fish.enable = true;
-          # TODO: wait for the IFD issue is fixed
-          # ref: https://github.com/catppuccin/nix/issues/392
-          fzf.enable = lib.mkIf (pkgs.stdenv.hostPlatform.system == "x86_64-linux") true;
           bat.enable = true;
         };
 
@@ -126,6 +146,7 @@
 
           fzf = {
             enable = true;
+            colors = fzfColors;
             defaultCommand = "${pkgs.fd}/bin/fd --type f";
             defaultOptions = [
               "--cycle"
