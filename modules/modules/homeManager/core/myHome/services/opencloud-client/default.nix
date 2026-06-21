@@ -33,6 +33,10 @@
             NoNewPrivileges = true;
             RestrictRealtime = true;
           };
+
+          Install = {
+            WantedBy = [ "graphical-session.target" ];
+          };
         };
       };
     };
