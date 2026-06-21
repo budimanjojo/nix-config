@@ -36,7 +36,6 @@
               );
             }
           ];
-          systemdTargets = mkIf (wmCfg.hyprland.enable) [ "hyprland-session.target" ];
         };
       };
     };
