@@ -17,10 +17,10 @@
       config = lib.mkIf (cfg.enable) {
         myHome = {
           programs.yamllint.enable = true;
-          # shell = {
-          #   git.enable = true;
-          #   nix-direnv.enable = true;
-          # };
+          shell = {
+            git.enable = true;
+            nix-direnv.enable = true;
+          };
         };
 
         sops.secrets = {
