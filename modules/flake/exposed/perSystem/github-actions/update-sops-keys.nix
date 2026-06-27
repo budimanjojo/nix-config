@@ -18,7 +18,10 @@ in
           { uses = deps.installNixAction; }
           { run = "nix develop"; }
           {
-            run = "just update-sops-keys";
+            run = ''
+              nix develop --command \
+                just update-sops-keys
+            '';
             env.SOPS_AGE_KEYS = "\${{ secrets.SOPS_AGE_KEY }}";
           }
           {

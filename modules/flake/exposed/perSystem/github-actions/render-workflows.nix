@@ -20,8 +20,8 @@ in
           { uses = deps.installNixAction; }
           {
             run = ''
-              nix develop
-              just render-workflows
+              nix develop --command \
+                just render-workflows
             '';
           }
           {

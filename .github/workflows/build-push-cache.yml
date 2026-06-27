@@ -13,7 +13,7 @@ jobs:
       - id: cache
         uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae
         with:
-          key: nix-flake-inputs-${{ hashFiles('**/flake.lock') }}-${{ matrix.system }}
+          key: nix-flake-inputs-${{ hashFiles('(**/flake.lock')) }}-${{ matrix.system }}
           path: /tmp/nix-cache
           restore-keys: nix-flake-inputs-
       - uses: cachix/install-nix-action@8aa03977d8d733052d78f4e008a241fd1dbf36b3
@@ -33,8 +33,8 @@ jobs:
           skipPush: true
       - name: Build and push to Cachix
         run: |
-          nix develop
-          just ci-build ${{ matrix.attrset }}
+          nix develop --command \
+            just ci-build ${{ matrix.attrset }}
     strategy:
       fail-fast: false
       matrix:

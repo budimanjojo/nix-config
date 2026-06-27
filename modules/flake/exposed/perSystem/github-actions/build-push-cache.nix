@@ -69,8 +69,8 @@ in
           {
             name = "Build and push to Cachix";
             run = ''
-              nix develop
-              just ci-build ''${{ matrix.attrset }}
+              nix develop --command \
+                just ci-build ''${{ matrix.attrset }}
             '';
           }
         ];
