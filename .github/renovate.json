@@ -2,9 +2,6 @@
   "extends": [
     "github>budimanjojo/renovate-config:default.json5"
   ],
-  "username": "budimanjojo-bot[bot]",
-  "gitAuthor": "budimanjojo-bot <111944664+budimanjojo-bot[bot]@users.noreply.github.com>",
-  "repositories": ["budimanjojo/nix-config"],
   "automerge": true,
   "ignoreTests": true,
   "lockFileMaintenance": {
@@ -15,6 +12,9 @@
   },
   "nix": {
     "enabled": true
+  },
+  "github-actions": {
+    "enabled": false
   },
   "customManagers": [
     {
@@ -33,9 +33,27 @@
         "image *= *\"(?<depName>.*?):(?<currentValue>.*?)(@(?<currentDigest>sha256:[a-f0-9]+))?\""
       ],
       "datasourceTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "github-actions\\/dependencies.nix"
+      ],
+      "matchStrings": [
+        "\"(?<depName>[a-zA-Z0-9\\/-]*)@(?<currentDigest>[a-f0-9]{40})\";\\s*#\\s*(?<currentValue>[^\\r\\n]+)[\\r|\\n|$]",
+        "\"(?<depName>[a-zA-Z0-9\\/-]*)@(?<currentValue>[^\"]+)\";[\\r|\\n|$]"
+      ],
+      "autoReplaceStringTemplate": "\"{{depName}}@{{#if newDigest}}{{newDigest}}\";{{#if newValue}} # {{newValue}}\n{{/if}}{{/if}}{{#unless newDigest}}{{newValue}}\";\n{{/unless}}",
+      "versioningTemplate": "github-actions",
+      "depTypeTemplate": "action",
+      "datasourceTemplate": "{{#if currentDigest}}github-digest{{else}}github-tags{{/if}}"
     }
   ],
   "packageRules": [
+    {
+      "matchDepTypes": [ "action" ],
+      "commitMessageTopic": "{{{depName}}} action"
+    },
     {
       "matchDepNames": "wez/wezterm",
       "versioning": "regex:^(?<major>\\d{4})(?<minor>\\d{2})(?<patch>\\d{2})-(?<build>\\d+)-(?<revision>.+)$"

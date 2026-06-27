@@ -69,6 +69,12 @@
     cache-nix-action.url = "github:nix-community/cache-nix-action";
     cache-nix-action.flake = false;
 
+    # github-actions.nix - Generate GitHub Actions workflows from Nix configuration
+    # https://github.com/synapdeck/github-actions.nix
+    github-actions-nix.url = "github:synapdeck/github-actions-nix";
+    github-actions-nix.inputs.nixpkgs.follows = "nixpkgs";
+    github-actions-nix.inputs.flake-parts.follows = "flake-parts";
+
     # these are just dependencies needed for other flakes above
     systems.url = "github:nix-systems/default";
     flake-utils.url = "github:numtide/flake-utils";

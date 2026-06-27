@@ -82,3 +82,16 @@ repair-store *paths:
 gcroot:
     #! {{ nixShebang }} nixpkgs#eza -c {{ realShebang }}
     eza -lag /nix/var/nix/gcroots/auto/
+
+# build in CI and push to cachix
+[group('ci')]
+ci-build attrset:
+    #! {{ nixShebang }} nixpkgs#nix-fast-build -c {{ realShebang }}
+    nix-fast-build --cachix budimanjojo --skip-cached --flake {{ attrset }}
+
+# render workflows files
+[group('ci')]
+render-workflows:
+    nix build .#workflows
+    cp -rL --no-preserve=mode result/.github/workflows .github/
+    rm result
