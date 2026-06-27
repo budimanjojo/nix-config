@@ -33,7 +33,7 @@ in
             uses = deps.createAppToken;
             id = "generate-token";
             with_ = {
-              client-id = "\${{ secrets.BOT_APP_ID }";
+              client-id = "\${{ secrets.BOT_APP_ID }}";
               private-key = "\${{ secrets.BOT_APP_PRIVATE_KEY }}";
             };
           }
