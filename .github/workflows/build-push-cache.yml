@@ -11,7 +11,7 @@ jobs:
         with:
           hatchet-protocol: carve
       - id: cache
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25
         with:
           key: nix-flake-inputs-${{ hashFiles('**/flake.lock') }}-${{ matrix.system }}
           path: /tmp/nix-cache
