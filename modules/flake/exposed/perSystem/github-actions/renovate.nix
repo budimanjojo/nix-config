@@ -48,8 +48,8 @@ in
             with_ = {
               client-id = "\${{ secrets.BOT_APP_ID }}";
               private-key = "\${{ secrets.BOT_APP_PRIVATE_KEY }}";
-              permission-check = "write";
-              permission-content = "write";
+              permission-checks = "write";
+              permission-contents = "write";
               permission-issues = "write";
               permission-pull-requests = "write";
               permission-statuses = "write";

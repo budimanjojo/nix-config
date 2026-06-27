@@ -64,16 +64,16 @@
           };
         };
 
-        wayland.windowManager.hyprland.settings.windowrulev2 = [
-          "workspace 2, class:^(AppLauncher)$"
-          "nodim, class:^(AppLauncher)$"
-          "nofocus, class:^(AppLauncher)$, title:^(win)(.*)$"
-          "noborder, class:^(AppLauncher)$, title:^(win)(.*)$"
-          "noanim, class:^(AppLauncher)$, title:^(win)(.*)$"
-          "nofocus, class:^(AppLauncher)$, title:^(JidePopup)$"
-          "noborder, class:^(AppLauncher)$, title:^(JidePopup)$"
-          "noanim, class:^(AppLauncher)$, title:^(JidePopup)$"
-          "maxsize 400 180, class:^(AppLauncher)$, title:^(JidePopup)$"
+        wayland.windowManager.hyprland.settings.windowrule = [
+          "workspace 2, match:class ^(AppLauncher)$"
+          "no_dim on, match:class ^(AppLauncher)$"
+          "no_focus on, match:class ^(AppLauncher)$, match:title ^(win)(.*)$"
+          "border_size 0, match:class ^(AppLauncher)$, match:title ^(win)(.*)$"
+          "no_anim on, match:class ^(AppLauncher)$, match:title ^(win)(.*)$"
+          "no_focus on, match:class ^(AppLauncher)$, match:title ^(JidePopup)$"
+          "border_size 0, match:class ^(AppLauncher)$, match:title ^(JidePopup)$"
+          "no_anim on, match:class ^(AppLauncher)$, match:title ^(JidePopup)$"
+          "max_size 400 180, match:class ^(AppLauncher)$, match:title ^(JidePopup)$"
         ];
       };
     };
