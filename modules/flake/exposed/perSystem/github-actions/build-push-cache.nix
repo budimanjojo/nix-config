@@ -39,7 +39,7 @@ in
             id = "cache";
             with_ = {
               path = "/tmp/nix-cache";
-              key = "nix-flake-inputs-\${{ hashFiles('**/flake.lock') }}-\${{ matrix.system }}";
+              key = "nix-flake-inputs-\${{ hashFiles('**/flake.lock') }}";
               restore-keys = "nix-flake-inputs-";
             };
           }
