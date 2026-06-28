@@ -6,10 +6,6 @@ jobs:
     runs-on: ${{ matrix.runner }}
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
-      - name: Brutally add more storage to our runner
-        uses: wimpysworld/nothing-but-nix@687c797a730352432950c707ab493fcc951818d7
-        with:
-          hatchet-protocol: carve
       - id: cache
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
