@@ -11,24 +11,7 @@ in
 {
   # this is for cache-nix-action so stuffs don't get garbage collected
   # before I cache the nix-store, mostly to not redownload inputs a lot
-  gc-keep =
-    (import "${inputs.cache-nix-action}/saveFromGC.nix" {
-      inherit pkgs inputs;
-      inputsInclude = [
-        "nixpkgs"
-        "nixpkgs-unstable"
-        "flake-parts"
-        "home-manager"
-        "sops-nix"
-        "disko"
-        "nur"
-        "nvfetcher"
-        "nixvim"
-        "talhelper"
-        "catppuccin"
-        "nixgl"
-      ];
-    }).package;
+  gc-keep = (import "${inputs.cache-nix-action}/saveFromGC.nix" { inherit pkgs inputs; }).package;
   talhelper = inputs'.talhelper.packages.default;
   configure-gtk = pkgs.callPackage ./configure-gtk/default.nix { };
   tokyonight-icon-theme = pkgs.callPackage ./tokyonight-icon-theme/default.nix { };
