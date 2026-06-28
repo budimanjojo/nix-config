@@ -27,13 +27,13 @@ in
         };
         steps = [
           { uses = deps.actionsCheckout; }
-          {
-            name = "Brutally add more storage to our runner";
-            uses = deps.nothingButNix;
-            with_ = {
-              hatchet-protocol = "carve";
-            };
-          }
+          # {
+          #   name = "Brutally add more storage to our runner";
+          #   uses = deps.nothingButNix;
+          #   with_ = {
+          #     hatchet-protocol = "carve";
+          #   };
+          # }
           {
             uses = deps.actionsCache;
             id = "cache";
