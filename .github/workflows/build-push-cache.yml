@@ -9,7 +9,7 @@ jobs:
       - id: cache
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
-          key: nix-flake-inputs-${{ hashFiles('**/flake.lock') }}-${{ matrix.system }}
+          key: nix-flake-inputs-${{ hashFiles('**/flake.lock') }}
           path: /tmp/nix-cache
           restore-keys: nix-flake-inputs-
       - uses: cachix/install-nix-action@8aa03977d8d733052d78f4e008a241fd1dbf36b3
