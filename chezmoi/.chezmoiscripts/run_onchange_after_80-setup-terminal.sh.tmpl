@@ -9,7 +9,7 @@ set -eufo pipefail
 # So `update-alternatives` program used by Debian based OS to open program can work properly
 
 # Run this script whenever the content of the host configuration for this machine changes
-# {{ include (print "../" "/home/" .chezmoi.username "/hosts/" .chezmoi.hostname ".nix") | sha256sum }}
+# {{ include (print "../" "/modules/homeHosts/" .chezmoi.hostname "/default.nix") | sha256sum }}
 
 function add_nix_app_to_update_alternative() {
   local program="{{ .chezmoi.homeDir }}/.nix-profile/bin/$1"
