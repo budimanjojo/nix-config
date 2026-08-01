@@ -35,7 +35,7 @@
             passwordeval = "${pkgs.coreutils}/bin/cat ${config.sops.secrets.gmail-password.path}";
           };
           extraConfig = ''
-            account dfault: gmail
+            account default: gmail
           '';
         };
       };
