@@ -3,7 +3,7 @@
     services.fireqos = {
       enable = true;
       config = ''
-        interface wan0 world-in input rate 200mbit
+        interface wan0 world-in input rate 500mbit
           class calls commit 300kbit
             match ports 3478:3497,16384:16387,16393:16402
 
@@ -12,7 +12,7 @@
           class torrents
             match port 50413
 
-        interface wan0 world-out output rate 65mbit
+        interface wan0 world-out output rate 250mbit
           class calls commit 300kbit
             match ports 3478:3497,16384:16387,16393:16402
 
