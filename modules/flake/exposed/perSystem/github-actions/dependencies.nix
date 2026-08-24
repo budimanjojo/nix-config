@@ -16,7 +16,7 @@ in
     installNixAction = "cachix/install-nix-action@8aa03977d8d733052d78f4e008a241fd1dbf36b3"; # v31.10.6"
     cachixActions = "cachix/cachix-action@5f2d7c5294214f71b873db4b969586b980625e71"; # v17
     createAppToken = "actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1"; # v3.2.0
-    renovatebotGithubAction = "renovatebot/github-action@e09d604f8f803bb527bd8321ed5be06c460b8682"; # v46.2.2
+    renovatebotGithubAction = "renovatebot/github-action@0a7b68676027570f113b1d6e7b69b231b56167ab"; # v46.2.3
     createPR = "peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1"; # v8.1.1
   };
 }
