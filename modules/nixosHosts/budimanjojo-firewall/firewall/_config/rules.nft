@@ -1,0 +1,123 @@
+chain INBOUND {
+  type filter hook input priority filter + 1; policy drop;
+  ct state invalid log prefix "CHAIN=INBOUND ACTION=DROP RSN=invalid " drop
+  ct state vmap { established : accept, related : accept }
+  iifname "lo" counter accept comment "allow loopback traffic"
+  udp dport 123 counter accept comment "allow access to ntp server"
+  meta l4proto { tcp, udp } th dport { 53, 853 } ip daddr @dns_server counter accept comment "allow access to dns_server"
+  ip saddr @trusted_devices tcp dport 22 counter accept comment "allow access to ssh server from trusted_devices"
+  ip saddr @trusted_devices meta l4proto icmp counter accept comment "allow icmp request from trusted_devices"
+  iifname @SERVER_IF tcp dport 179 counter accept comment "allow access to bgp server from SERVER VLAN"
+  iifname @SERVER_IF udp dport 69 counter accept comment "allow access to tftp server from SERVER VLAN"
+  ip saddr @k8s_nodes tcp dport { 88, 3000 } counter accept comment "allow access to adguardhome from k8s_nodes"
+  ip saddr @k8s_nodes meta l4proto icmp counter accept comment "allow icmp request from k8s_nodes"
+  ip saddr @k8s_nodes tcp dport 9100 counter accept comment "allow access to node-exporter from k8s_nodes"
+  ip saddr @k8s_nodes tcp dport 9633 counter accept comment "allow access to smartctl-exporter from k8s_nodes"
+  log prefix "CHAIN=INBOUND ACTION=DROP RSN=default-policy " comment "log dropped inbound traffic"
+}
+
+chain OUTBOUND {
+  type filter hook output priority filter + 1; policy drop;
+  ct state invalid log prefix "CHAIN=OUTBOUND ACTION=DROP RSN=invalid " drop
+  ct state vmap { established : accept, related : accept }
+  oifname "lo" counter accept comment "allow loopback traffic"
+  oifname @SERVER_IF tcp dport 179 counter accept comment "allow access to bgp server"
+  tcp dport 6000 ip daddr @k8s_vector_aggregator counter accept comment "allow access to k8s_vector_aggregator"
+  tcp dport 2049 ip daddr 192.168.200.30 counter accept comment "allow access to nfs server"
+  oifname @WAN_IF accept comment "allow access to the internet"
+  log prefix "CHAIN=OUTBOUND ACTION=DROP RSN=default-policy " comment "log dropped outbound traffic"
+}
+
+chain FORWARD {
+  type filter hook forward priority filter + 1; policy drop;
+  ct state invalid log prefix "CHAIN=FORWARD ACTION=DROP RSN=invalid " drop
+  ct state vmap { established : accept, related : accept }
+  iifname vmap {
+    "lan0"     : jump LAN0,
+    "lan0.50"  : jump HOME,
+    "lan0.69"  : jump IOT,
+    "lan0.200" : jump SERVER,
+    "lan0.250" : jump GUEST,
+    "ctr0"     : jump CONTAINERS,
+    "wg0"      : jump WIREGUARD,
+    "wan0"     : jump WAN
+  }
+  log prefix "CHAIN=FORWARD ACTION=DROP RSN=default-policy " comment "log dropped forward traffic"
+}
+
+chain LAN0 {
+  oifname @LAN0_IF counter accept comment "allow same LAN traffic"
+  tcp dport { 80, 443 } ip daddr @k8s_ingress counter accept comment "allow access to k8s_ingress"
+  ip daddr @omada_controller udp dport @omada_udp counter accept comment "allow access to omada_controller udp ports"
+  ip daddr @omada_controller tcp dport @omada_tcp counter accept comment "allow access to omada_controller tcp ports"
+  oifname @CONTAINERS_IF counter accept comment "allow access to CONTAINERS"
+  oifname @WAN_IF counter accept comment "allow access to the internet"
+  log prefix "CHAIN=LAN0 ACTION=DROP RSN=default-policy " drop comment "log dropped traffic from LAN0"
+}
+
+chain HOME {
+  oifname @HOME_IF counter accept comment "allow same LAN traffic"
+  oifname @LAN0_IF ip saddr @trusted_devices accept comment "allow access to LAN0 from trusted_devices"
+  oifname @IOT_IF counter accept comment "allow access to IOT"
+  tcp dport { 80, 443 } ip daddr @k8s_ingress counter accept comment "allow access to k8s_ingress"
+  oifname @SERVER_IF ip saddr @trusted_devices tcp dport 22 counter accept comment "allow access to ssh in SERVER from trusted_devices"
+  ip saddr @trusted_devices ip daddr @k8s_nodes counter accept comment "allow access to k8s_nodes from trusted_devices"
+  oifname @SERVER_IF ip saddr @trusted_devices tcp dport 50000 counter accept comment "allow access to talos api port in SERVER from trusted_devices"
+  oifname @CONTAINERS_IF ip saddr @trusted_devices counter accept comment "allow access to CONTAINERS from trusted_devices"
+  oifname @WIREGUARD_IF ip saddr @trusted_devices tcp dport 22 counter accept comment "allow access to ssh to WIREGUARD from trusted_devices"
+  ip saddr @trusted_devices ip daddr 10.10.10.10 counter accept comment "allow access to seedbox webuiPort from trusted_devices"
+  tcp dport 5432 ip daddr 10.10.10.13 counter accept comment "allow access to postgres database on work-pc"
+  tcp dport 631 ip daddr 10.10.10.13 counter accept comment "allow access to printers on work-pc"
+  oifname @WAN_IF counter accept comment "allow access to the internet"
+  log prefix "CHAIN=HOME ACTION=DROP RSN=default-policy " drop comment "log dropped traffic from HOME"
+}
+
+chain IOT {
+  oifname @IOT_IF counter accept comment "allow same LAN traffic"
+  ip saddr @broadlink_plugs ip daddr @k8s_nodes counter accept comment "allow broadlink_plugs to access k8s_ingress"
+  ip saddr @android_livingroom_tv tcp dport { 80, 443 } ip daddr @k8s_ingress accept comment "allow access to k8s_ingress from android_livingroom_tv"
+  oifname @WAN_IF counter accept comment "allow access to the internet"
+  log prefix "CHAIN=IOT ACTION=DROP RSN=default-policy " drop comment "log dropped traffic from IOT"
+}
+
+chain SERVER {
+  oifname @SERVER_IF counter accept comment "allow same LAN traffic"
+  ip saddr @k8s_nodes ip daddr @wall_displays tcp dport 2323 counter accept comment "allow access to fullykioskbrowser from k8s_nodes"
+  ip saddr @k8s_nodes tcp dport 9100 counter accept comment "allow access to node-exporter from k8s_nodes"
+  ip saddr @k8s_nodes tcp dport 9633 counter accept comment "allow access to smartctl-exporter from k8s_nodes"
+  oifname @IOT_IF counter accept comment "allow access to IOT"
+  oifname @CONTAINERS_IF counter accept comment "allow access to CONTAINERS"
+  oifname @WIREGUARD_IF meta l4proto icmp counter accept comment "allow icmp request to WIREGUARD"
+  tcp dport 22 ip daddr @WIREGUARD_NET counter accept comment "allow access to ssh in WIREGUARD"
+  oifname @WAN_IF counter accept comment "allow access to the internet"
+  log prefix "CHAIN=SERVER ACTION=DROP RSN=default-policy " drop comment "log dropped traffic from SERVER"
+}
+
+chain GUEST {
+  oifname @GUEST_IF counter accept comment "allow same LAN traffic"
+  oifname @CONTAINERS_IF tcp dport 8088 ip daddr @omada_controller counter accept comment "allow access to guest login portal"
+  oifname @WAN_IF counter accept comment "allow access to the internet"
+  log prefix "CHAIN=GUEST ACTION=DROP RSN=default-policy " drop comment "log dropped traffic from GUEST"
+}
+
+chain CONTAINERS {
+  oifname @CONTAINERS_IF counter accept comment "allow same LAN traffic"
+  oifname @SERVER_IF counter accept comment "allow access to SERVER"
+  oifname @WAN_IF counter accept comment "allow access to the internet"
+  log prefix "CHAIN=CONTAINERS ACTION=DROP RSN=default-policy " drop comment "log dropped traffic from CONTAINERS"
+}
+
+chain WIREGUARD {
+  oifname @WIREGUARD_IF counter accept comment "allow same LAN traffic"
+  oifname @HOME_IF ip saddr @trusted_devices accept comment "allow access to HOME from trusted_devices"
+  oifname @IOT_IF ip saddr @trusted_devices accept comment "allow access to IOT from trusted_devices"
+  oifname @SERVER_IF ip saddr @trusted_devices accept comment "allow access to SERVER from trusted_devices"
+  oifname @CONTAINERS_IF ip saddr @trusted_devices accept comment "allow access to CONTAINERS from trusted_devices"
+  tcp dport { 80, 443 } ip daddr @k8s_ingress counter accept comment "allow access to k8s_ingress"
+  oifname @WAN_IF counter accept comment "allow access to the internet"
+  log prefix "CHAIN=WIREGUARD ACTION=DROP RSN=default-policy " drop comment "log dropped traffic from WIREGUARD"
+}
+
+chain WAN {
+  log prefix "CHAIN=WAN ACTION=DROP RSN=default-policy " drop comment "log dropped traffic from WAN"
+}
