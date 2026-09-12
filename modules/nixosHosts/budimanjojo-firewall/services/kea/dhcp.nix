@@ -71,7 +71,7 @@
                 option-data = [
                   {
                     name = "routers";
-                    data = "192.168.10.1";
+                    data = "192.168.50.1";
                   }
                 ]
                 ++ commonDhcpOptions;
@@ -120,7 +120,7 @@
                 option-data = [
                   {
                     name = "routers";
-                    data = "192.168.10.1";
+                    data = "192.168.69.1";
                   }
                 ]
                 ++ commonDhcpOptions;
@@ -159,7 +159,7 @@
                 option-data = [
                   {
                     name = "routers";
-                    data = "192.168.10.1";
+                    data = "192.168.200.1";
                   }
                 ]
                 ++ commonDhcpOptions;
@@ -183,7 +183,7 @@
                 option-data = [
                   {
                     name = "routers";
-                    data = "192.168.10.1";
+                    data = "192.168.250.1";
                   }
                 ]
                 ++ commonDhcpOptions;
