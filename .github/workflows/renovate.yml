@@ -33,7 +33,7 @@ jobs:
           RENOVATE_PLATFORM: github
           RENOVATE_PLATFORM_COMMIT: "true"
         name: Run Renovate
-        uses: renovatebot/github-action@f3a31a786096ba6b40d0f0ffe11a494ef73bfa7c
+        uses: renovatebot/github-action@1cd96b855fee0da6f230617e89dbff0e06ea393a
         with:
           token: ${{ steps.app-token.outputs.token }}
 name: Renovate
