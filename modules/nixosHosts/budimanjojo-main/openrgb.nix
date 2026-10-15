@@ -17,22 +17,39 @@
           now=$(date +%H%M)
           cmd=(${pkgs.openrgb}/bin/openrgb --noautoconnect)
 
+          echo "Time is $now"
+
           if [[ "$now" > "0659" && "$now" < "2200" ]]; then
-            echo "Time is $now"
-            "''${cmd[@]}" \
-              -d 0 -m "Rainbow" \
-              -d 1 -m "Rainbow" \
-              -d 2 -z 0 -m "Direct" -c 666666 \
+            args=(
+              -d 0 -m "Rainbow"
+              -d 1 -m "Rainbow"
+              -d 2 -z 0 -m "Direct" -c 666666
               -d 2 -m "Digital D" -s 15
-            echo "It's party time!"
+            )
+            message="It's party time!"
           else
-            echo "Time is $now"
-            "''${cmd[@]}" \
-              -d 0 -m "Off" \
-              -d 1 -m "Off" \
+            args=(
+              -d 0 -m "Off"
+              -d 1 -m "Off"
               -d 2 -m "Direct" -c 000000
-            echo "It's lights out time!"
+            )
+            message="It's lights out time!"
           fi
+
+          for attempt in 1 2 3; do
+            if "''${cmd[@]}" "''${args[@]}"; then
+              echo "Command completed successfully on attempt $attempt"
+              echo "$message"
+              exit 0
+            fi
+
+            echo "Command failed on attempt $attempt"
+
+            if [[ "$attempt" -lt 3 ]]; then
+              echo "Sleeping for 5 seconds before trying again..."
+              sleep 5
+            fi
+          done
         '';
         serviceConfig = {
           Type = "oneshot";
