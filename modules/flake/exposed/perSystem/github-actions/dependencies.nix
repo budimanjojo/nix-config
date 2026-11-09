@@ -17,6 +17,6 @@ in
     cachixActions = "cachix/cachix-action@38b082610b782e7e93e209c35fd730d399dee866"; # v17
     createAppToken = "actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510"; # v3.3.0
     renovatebotGithubAction = "renovatebot/github-action@266fef21329c44765ad42f9dea1f01f5d2d91084"; # v46.3.13
-    createPR = "peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1"; # v8.1.1
+    createPR = "peter-evans/create-pull-request@15733dbdfeedb4f7fdb73d13c6f5ac83b710fab8"; # v8.1.2
   };
 }
